@@ -14,7 +14,10 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 │   └── assets/             # Images, charts, data files
 ├── report.md               # Final research report/show notes
 ├── script.md               # Episode script/outline (optional)
-└── YYYY-MM-DD-topic-slug.mp3  # Final audio file
+├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters
+├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript
+├── YYYY-MM-DD-topic-slug_chapters.txt     # FFmpeg chapter format
+└── YYYY-MM-DD-topic-slug_chapters.json    # Podcasting 2.0 format
 ```
 
 ## Complete Workflow
@@ -119,7 +122,7 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
    - File size (bytes)
    - Duration (MM:SS or HH:MM:SS format)
 
-4. **Optional: Generate chapters with local Whisper transcription**
+4. **Generate transcript and chapters with local Whisper + Claude analysis**
 
    **First-time setup only:**
    ```bash
@@ -132,20 +135,12 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
    pip install -r requirements.txt
    ```
 
-   **To generate transcript and chapters:**
+   **Transcription workflow:**
 
-   Option A: Let Claude generate chapters (recommended)
+   a. Run local Whisper transcription (no API key needed):
    ```bash
-   # Run local transcription only (no API key needed)
+   cd /Users/tomcounsell/src/protocols/podcast/tools
    python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
-
-   # Then ask Claude to analyze transcript and create chapters
-   ```
-
-   Option B: Use full automation (requires API key)
-   ```bash
-   # Transcribe + auto-generate chapters
-   python generate_chapters.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
    ```
 
    **Whisper model options:**
@@ -153,15 +148,45 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
    - `base`: **[recommended]** Fast (~5-10 min), good accuracy
    - `small`: Slower (~15-20 min), better accuracy
 
+   b. Once transcription completes, analyze the transcript to identify major topic transitions and create 10-15 chapter markers
+
+   c. Create chapter files in the episode directory:
+      - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
+      - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
+
+   d. Embed chapters into the mp3 file:
+   ```bash
+   cd /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug
+   ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
+   mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
+   ```
+
+   **Chapter creation guidelines:**
+   - Aim for 10-15 chapters for a 30-40 minute episode
+   - Each chapter should be 2-4 minutes long
+   - Chapter titles should be descriptive and capture the key topic/story
+   - Include subtitles or key concepts after the main title when helpful
+   - Analyze the full transcript to identify natural topic transitions
+
    **Note:**
    - Transcription runs 100% locally (free, private, no API)
-   - Chapter generation can be done by Claude or via API
+   - The transcript JSON file can be large (300-400KB) - read in sections if needed
+   - Chapters will appear in podcast apps that support them (Overcast, Pocket Casts, Apple Podcasts)
 
 ### 5. Publishing Phase
+
+**Generate episode description:**
+- Based on the research report and transcript, create a compelling 1-2 sentence description
+- Should highlight the key topics, major stories/events covered, and main takeaways
+- Focus on what makes this episode valuable and what listeners will learn
+- Examples:
+  - "A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins."
+  - "Exploring the three pillars of trust in stablecoin design and why fully-backed models dominate the $280B market."
 
 **Ask user for episode-specific keywords:**
 - What are 5-10 specific keywords for this episode?
 - Examples: technology names, protocols, key concepts, events covered
+- These improve discoverability in podcast apps
 
 **Update feed.xml:**
 
@@ -197,10 +222,19 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
    git diff feed.xml
    ```
 
-2. Add files:
+2. Add all episode files (research, audio, transcript, chapters) and updated feed:
    ```bash
-   git add podcast/feed.xml podcast/episodes/
+   git add podcast/feed.xml podcast/episodes/YYYY-MM-DD-slug/
    ```
+
+   **Files to include:**
+   - `report.md` - Research report
+   - `research/sources.md` - Source links
+   - `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
+   - `YYYY-MM-DD-slug_transcript.json` - Full transcript
+   - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg chapter format
+   - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
+   - Updated `feed.xml`
 
 3. Commit with descriptive message using heredoc:
    ```bash
@@ -209,6 +243,9 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 
    - Add episode "[title]" covering [key topics]
    - Include comprehensive research report with [main sections]
+   - Generate full transcript using local Whisper (base model)
+   - Create [N] chapter markers covering key topics
+   - Embed chapters into mp3 for podcast app support
    - Update feed.xml with episode metadata
    - Episode duration: MM:SS, covers [key highlights]
    EOF
@@ -219,6 +256,8 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
    ```bash
    git push
    ```
+
+5. GitHub Pages will automatically deploy changes in 2-3 minutes
 
 ### 7. Verify Publishing
 
@@ -238,9 +277,12 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 - **Mark tasks complete** immediately after finishing each step
 - **Use ffmpeg** for audio conversion (128kbps mp3 is recommended)
 - **File sizes** - aim to keep episodes under 100MB
+- **Transcription** - Always generate transcript and chapters for every episode
+- **Chapters** - Aim for 10-15 chapters, each 2-4 minutes, with descriptive titles
+- **Episode descriptions** - Generate compelling 1-2 sentence descriptions based on research and transcript
 - **Commit messages** - use heredoc format for multi-line messages
 - **User handles** - research (deep research tools, NotebookLM) and audio creation
-- **You handle** - file organization, format conversion, feed.xml updates, git workflow
+- **You handle** - file organization, format conversion, transcription, chapter generation, feed.xml updates, git workflow
 
 ## Getting Started
 
