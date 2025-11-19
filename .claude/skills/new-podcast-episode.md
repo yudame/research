@@ -14,10 +14,28 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 │   └── assets/             # Images, charts, data files
 ├── report.md               # Final research report/show notes
 ├── script.md               # Episode script/outline (optional)
-├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters
-├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript
-├── YYYY-MM-DD-topic-slug_chapters.txt     # FFmpeg chapter format
-└── YYYY-MM-DD-topic-slug_chapters.json    # Podcasting 2.0 format
+├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters (~30MB)
+├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript (~400KB)
+├── YYYY-MM-DD-topic-slug_chapters.txt     # FFmpeg chapter format (~2KB)
+└── YYYY-MM-DD-topic-slug_chapters.json    # Podcasting 2.0 format (~1KB)
+```
+
+### Example: Completed Episode
+
+```
+podcast/episodes/2025-11-19-stablecoin-history/
+├── research/
+│   ├── sources.md                    # 14 validated source links
+│   ├── documents/                    # (empty - sources were web-based)
+│   └── assets/                       # (empty)
+├── report.md                         # 25KB - comprehensive research report
+├── 2025-11-19-stablecoin-history.mp3 # 30MB - 32:41 duration, 128kbps
+├── 2025-11-19-stablecoin-history_transcript.json      # 403KB - full transcript
+├── 2025-11-19-stablecoin-history_chapters.txt         # 2KB - 14 chapters
+└── 2025-11-19-stablecoin-history_chapters.json        # 1KB - 14 chapters
+
+Plus original audio files (can keep for archival):
+├── Stablecoins_Global_Rules_Failure_and_Genius_Act.m4a  # Original from NotebookLM
 ```
 
 ## Complete Workflow
