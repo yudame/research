@@ -4,7 +4,7 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yudame Protocols Podcast</title>
-    <link>https://tomcounsell.github.io/protocols/podcast/</link>
+    <link>https://yudame.github.io/protocols/podcast/</link>
     <description>Deep dives into blockchain protocols, crypto markets, and decentralized systems</description>
     <language>en-us</language>
     <itunes:author>Tom Counsell</itunes:author>
@@ -16,7 +16,7 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
-    <itunes:image href="https://tomcounsell.github.io/protocols/podcast/cover.png"/>
+    <itunes:image href="https://yudame.github.io/protocols/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
     <!-- Episode 1: Stablecoin History -->
@@ -24,10 +24,10 @@
       <title>Stablecoin Market: Strategies and Pitfalls</title>
       <description>A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</description>
       <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://tomcounsell.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
+      <enclosure url="https://yudame.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
                  length="15240599"
                  type="audio/mpeg"/>
-      <guid>https://tomcounsell.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
+      <guid>https://yudame.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
       <itunes:duration>15:52</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>stablecoins, cryptocurrency, regulation, GENIUS Act, Terra UST, USDC, Tether, blockchain, DeFi, financial regulation</itunes:keywords>
