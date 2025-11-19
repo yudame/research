@@ -15,3 +15,6 @@ yarn-error.log
 
 # Transcripts directory
 transcripts/
+
+# Podcast source files (keep only converted mp3s)
+*.m4a
