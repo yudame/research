@@ -121,29 +121,41 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
 4. **Optional: Generate chapters with local Whisper transcription**
 
-   Run the chapter generation tool (requires first-time setup of dependencies):
-
+   **First-time setup only:**
    ```bash
    cd /Users/tomcounsell/src/protocols/podcast/tools
 
-   # First time only: install dependencies
-   pip install -r requirements.txt
+   # Fix SSL certificates (macOS Python)
+   /Applications/Python\ 3.12/Install\ Certificates.command
 
-   # Generate chapters (runs Whisper locally, uses Claude for titles)
+   # Install dependencies
+   pip install -r requirements.txt
+   ```
+
+   **To generate transcript and chapters:**
+
+   Option A: Let Claude generate chapters (recommended)
+   ```bash
+   # Run local transcription only (no API key needed)
+   python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
+
+   # Then ask Claude to analyze transcript and create chapters
+   ```
+
+   Option B: Use full automation (requires API key)
+   ```bash
+   # Transcribe + auto-generate chapters
    python generate_chapters.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
    ```
 
-   This will:
-   - Transcribe the audio locally using Whisper (no API calls)
-   - Generate chapter titles using Claude
-   - Output chapter files for embedding in MP3
-
    **Whisper model options:**
-   - `tiny`: Fastest, basic accuracy (~1-2 min for 30 min audio)
-   - `base`: Fast, good accuracy (~5-10 min for 30 min audio) **[recommended]**
-   - `small`: Slower, better accuracy (~15-20 min for 30 min audio)
+   - `tiny`: Fastest (~1-2 min for 30 min audio), basic accuracy
+   - `base`: **[recommended]** Fast (~5-10 min), good accuracy
+   - `small`: Slower (~15-20 min), better accuracy
 
-   **Note:** This step requires `ANTHROPIC_API_KEY` to be set for chapter title generation. The transcription itself runs entirely locally.
+   **Note:**
+   - Transcription runs 100% locally (free, private, no API)
+   - Chapter generation can be done by Claude or via API
 
 ### 5. Publishing Phase
 
