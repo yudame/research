@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Foundation of Digital Finance"
+    },
+    {
+      "startTime": 116,
+      "title": "Four Stablecoin Archetypes: Fiat, Crypto, Algorithmic, Bank-Issued"
+    },
+    {
+      "startTime": 296,
+      "title": "The Terra/UST Collapse: Anatomy of a Death Spiral"
+    },
+    {
+      "startTime": 542,
+      "title": "MakerDAO and the Governance Minimization Paradox"
+    },
+    {
+      "startTime": 702,
+      "title": "The US GENIUS Act: Executive Accountability and Federal Framework"
+    },
+    {
+      "startTime": 1026,
+      "title": "Global Regulation: EU MiCA, Japan, and Jurisdictional Fragmentation"
+    },
+    {
+      "startTime": 1110,
+      "title": "Reserve Standards: HQLA Requirements and Bankruptcy Remoteness"
+    },
+    {
+      "startTime": 1326,
+      "title": "The USDC Depeg: When Traditional Banking Pauses But Blockchain Doesn't"
+    },
+    {
+      "startTime": 1454,
+      "title": "Tether's Evolution: From Opacity to Transparency"
+    },
+    {
+      "startTime": 1562,
+      "title": "The Yield Trap: Anchor Protocol's 19.5% APY Disaster"
+    },
+    {
+      "startTime": 1702,
+      "title": "Celsius Bankruptcy: The CASP Consumer Protection Gap"
+    },
+    {
+      "startTime": 1790,
+      "title": "Smart Contract Risks: Code as Financial Infrastructure"
+    },
+    {
+      "startTime": 1870,
+      "title": "Centralized Compliance: The Unavoidable Trade-off"
+    },
+    {
+      "startTime": 1940,
+      "title": "Synthesis: Three Pillars of Trust and Future Tensions"
+    }
+  ]
+}

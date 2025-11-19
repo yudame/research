@@ -1,0 +1,87 @@
+;FFMETADATA1
+title=Stablecoin Market: Strategies and Pitfalls
+artist=Yudame Protocols Podcast
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0000
+END=116000
+title=Introduction: The Foundation of Digital Finance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=116000
+END=296000
+title=Four Stablecoin Archetypes: Fiat, Crypto, Algorithmic, Bank-Issued
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=296000
+END=542000
+title=The Terra/UST Collapse: Anatomy of a Death Spiral
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=542000
+END=702000
+title=MakerDAO and the Governance Minimization Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=702000
+END=1026000
+title=The US GENIUS Act: Executive Accountability and Federal Framework
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1026000
+END=1110000
+title=Global Regulation: EU MiCA, Japan, and Jurisdictional Fragmentation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1110000
+END=1326000
+title=Reserve Standards: HQLA Requirements and Bankruptcy Remoteness
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1326000
+END=1454000
+title=The USDC Depeg: When Traditional Banking Pauses But Blockchain Doesn't
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1454000
+END=1562000
+title=Tether's Evolution: From Opacity to Transparency
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1562000
+END=1702000
+title=The Yield Trap: Anchor Protocol's 19.5% APY Disaster
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1702000
+END=1790000
+title=Celsius Bankruptcy: The CASP Consumer Protection Gap
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1790000
+END=1870000
+title=Smart Contract Risks: Code as Financial Infrastructure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1870000
+END=1940000
+title=Centralized Compliance: The Unavoidable Trade-off
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1940000
+END=1961000
+title=Synthesis: Three Pillars of Trust and Future Tensions
