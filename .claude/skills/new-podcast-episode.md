@@ -175,13 +175,26 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
 ### 5. Publishing Phase
 
-**Generate episode description:**
-- Based on the research report and transcript, create a compelling 1-2 sentence description
-- Should highlight the key topics, major stories/events covered, and main takeaways
-- Focus on what makes this episode valuable and what listeners will learn
-- Examples:
-  - "A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins."
-  - "Exploring the three pillars of trust in stablecoin design and why fully-backed models dominate the $280B market."
+**Generate episode description with source links:**
+
+a. Create compelling 1-2 sentence description:
+   - Based on the research report and transcript
+   - Highlight key topics, major stories/events covered, and main takeaways
+   - Focus on what makes this episode valuable and what listeners will learn
+   - Include link to full research report: `https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/report.md`
+
+b. Add validated source links:
+   - Search for and validate 3-5 key official sources mentioned in the episode
+   - Prioritize: official legislation/regulation, academic analysis, primary sources
+   - Use WebSearch to find official URLs
+   - Verify links are accessible with WebFetch when possible
+   - Add "Key Sources:" section with validated links
+
+   Example sources to validate:
+   - Official legislation (congress.gov, official government sites)
+   - Regulatory frameworks (ESMA, SEC, FSB, etc.)
+   - Academic/central bank analysis (Fed papers, university research)
+   - Primary documents (whitepapers, official announcements)
 
 **Ask user for episode-specific keywords:**
 - What are 5-10 specific keywords for this episode?
@@ -196,7 +209,13 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 <!-- Episode N: Short Description -->
 <item>
   <title>Episode Title Here</title>
-  <description>Compelling 1-2 sentence description covering key topics and takeaways.</description>
+  <description>Compelling 1-2 sentence description (full report: https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
+
+Key Sources:
+• Official Source 1: [validated URL]
+• Official Source 2: [validated URL]
+• Official Source 3: [validated URL]
+• Analysis/Research: [validated URL]</description>
   <pubDate>Day, DD Mon YYYY 12:00:00 GMT</pubDate>
   <enclosure url="https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
              length="FILE_SIZE_IN_BYTES"
