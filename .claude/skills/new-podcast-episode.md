@@ -56,6 +56,40 @@ mkdir -p /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug/resea
 
 ### 2. Research Phase (User-led with your support)
 
+**Help user craft a deep research prompt:**
+
+Before the user conducts research, help them create a focused research prompt for tools like Grok, ChatGPT, or other deep research tools.
+
+**Research prompt principles:**
+- Start with the user's topic and refine it into a clear research question
+- Keep the prompt concise - focus on gathering quality information, not prescribing structure
+- Avoid preconceived assumptions about results or predetermined frameworks
+- Emphasize research methodology over expected outcomes
+
+**Template for research prompts:**
+```
+Research [topic/question].
+
+**Context:** [Specific constraints, target audience, or parameters]
+
+**Research methodology:**
+- Prioritize peer-reviewed studies, meta-analyses, and authoritative sources
+- Distinguish between correlation and causation in findings
+- Report effect sizes and practical significance, not just statistical significance
+- Note the study populations and whether findings generalize to the target demographic
+- Compare individual studies against meta-analyses and systematic reviews
+- Identify preliminary research vs. well-replicated findings
+- Note funding sources and potential conflicts of interest when relevant
+- Include contradictory findings and areas of scientific uncertainty
+- Cite specific studies, researchers, and sources throughout
+
+**Output:** Comprehensive research report with extensive citations and source links.
+```
+
+**Key point:** Let the research lead where the evidence goes. Don't impose structure or conclusions upfront.
+
+---
+
 **When user provides research:**
 - Save the research report to `report.md`
 - Create `research/sources.md` with this template:
@@ -325,7 +359,9 @@ Key Sources:
 
 When user wants to create a new episode, start with:
 1. Create a todo list for tracking
-2. Ask for episode date, slug, and title
-3. Create directory structure
-4. Wait for user's research materials
-5. Guide through each subsequent phase
+2. **Help craft the research prompt** - work with user to refine their topic into a clear, methodology-focused research prompt
+3. User conducts research using Grok/ChatGPT/other tools
+4. Once research is complete, ask for episode date, slug, and title
+5. Create directory structure
+6. Save research materials (report.md, sources.md)
+7. Guide through each subsequent phase
