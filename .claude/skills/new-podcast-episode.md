@@ -119,6 +119,32 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
    - File size (bytes)
    - Duration (MM:SS or HH:MM:SS format)
 
+4. **Optional: Generate chapters with local Whisper transcription**
+
+   Run the chapter generation tool (requires first-time setup of dependencies):
+
+   ```bash
+   cd /Users/tomcounsell/src/protocols/podcast/tools
+
+   # First time only: install dependencies
+   pip install -r requirements.txt
+
+   # Generate chapters (runs Whisper locally, uses Claude for titles)
+   python generate_chapters.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
+   ```
+
+   This will:
+   - Transcribe the audio locally using Whisper (no API calls)
+   - Generate chapter titles using Claude
+   - Output chapter files for embedding in MP3
+
+   **Whisper model options:**
+   - `tiny`: Fastest, basic accuracy (~1-2 min for 30 min audio)
+   - `base`: Fast, good accuracy (~5-10 min for 30 min audio) **[recommended]**
+   - `small`: Slower, better accuracy (~15-20 min for 30 min audio)
+
+   **Note:** This step requires `ANTHROPIC_API_KEY` to be set for chapter title generation. The transcription itself runs entirely locally.
+
 ### 5. Publishing Phase
 
 **Ask user for episode-specific keywords:**
