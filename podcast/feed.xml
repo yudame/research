@@ -15,6 +15,8 @@
     </itunes:owner>
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Education"/>
+    <itunes:image href="https://tomcounsell.github.io/protocols/podcast/cover.png"/>
+    <itunes:type>episodic</itunes:type>
 
     <!-- Episode 1: Stablecoin History -->
     <item>
