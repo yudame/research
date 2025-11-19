@@ -4,32 +4,30 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Personal Learning Podcast</title>
-    <link>https://YOUR_USERNAME.github.io/protocols/podcast/</link>
+    <link>https://tomcounsell.github.io/protocols/podcast/</link>
     <description>Private podcast feed for personal education content</description>
     <language>en-us</language>
-    <itunes:author>Your Name</itunes:author>
+    <itunes:author>Tom Counsell</itunes:author>
     <itunes:summary>Private podcast feed for personal education content</itunes:summary>
     <itunes:owner>
-      <itunes:name>Your Name</itunes:name>
-      <itunes:email>your.email@example.com</itunes:email>
+      <itunes:name>Tom Counsell</itunes:name>
+      <itunes:email>tom@tomcounsell.com</itunes:email>
     </itunes:owner>
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Education"/>
 
-    <!-- EXAMPLE EPISODE - Copy this <item> block for each new episode -->
-    <!--
+    <!-- Episode 1: Stablecoin History -->
     <item>
-      <title>Episode Title Goes Here</title>
-      <description>Episode description and show notes go here.</description>
-      <pubDate>Sun, 19 Jan 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://YOUR_USERNAME.github.io/protocols/podcast/episodes/2025-01-19-episode-title.mp3"
-                 length="58000000"
+      <title>Stablecoin Market: Strategies and Pitfalls</title>
+      <description>A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</description>
+      <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://tomcounsell.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
+                 length="15240599"
                  type="audio/mpeg"/>
-      <guid>https://YOUR_USERNAME.github.io/protocols/podcast/episodes/2025-01-19-episode-title.mp3</guid>
-      <itunes:duration>01:15:30</itunes:duration>
+      <guid>https://tomcounsell.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
+      <itunes:duration>15:52</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
     </item>
-    -->
 
   </channel>
 </rss>
