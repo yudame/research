@@ -92,6 +92,10 @@ mkdir -p /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug/resea
 
 ### 4. Publishing Phase
 
+**Ask user for episode-specific keywords:**
+- What are 5-10 specific keywords for this episode?
+- Examples: technology names, protocols, key concepts, events covered
+
 **Update feed.xml:**
 
 Add a new `<item>` block after the opening `<channel>` metadata and before the closing `</channel>` tag:
@@ -108,10 +112,13 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
   <guid>https://tomcounsell.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
   <itunes:duration>MM:SS</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
+  <itunes:keywords>keyword1, keyword2, keyword3, specific-protocol, specific-concept</itunes:keywords>
 </item>
 ```
 
 **Date format for pubDate:** Use RFC 2822 format (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
+
+**Note:** Podcast-level categories are Technology and Education. Each episode has unique keywords for discoverability.
 
 ### 5. Git Workflow
 
