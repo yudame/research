@@ -22,7 +22,13 @@
     <!-- Episode 1: Stablecoin History -->
     <item>
       <title>Stablecoin Market: Strategies and Pitfalls</title>
-      <description>A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</description>
+      <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://yudame.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
+
+Key Sources:
+• US GENIUS Act: https://www.congress.gov/bill/119th-congress/senate-bill/1582
+• EU MiCA Regulation: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica
+• FSB Stablecoin Recommendations: https://www.fsb.org/2023/07/high-level-recommendations-for-the-regulation-supervision-and-oversight-of-global-stablecoin-arrangements-final-report/
+• Terra Collapse Analysis: https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24</description>
       <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
       <enclosure url="https://yudame.github.io/protocols/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
                  length="31387616"
