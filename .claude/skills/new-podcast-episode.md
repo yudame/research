@@ -106,10 +106,10 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
   <title>Episode Title Here</title>
   <description>Compelling 1-2 sentence description covering key topics and takeaways.</description>
   <pubDate>Day, DD Mon YYYY 12:00:00 GMT</pubDate>
-  <enclosure url="https://tomcounsell.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
+  <enclosure url="https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
              length="FILE_SIZE_IN_BYTES"
              type="audio/mpeg"/>
-  <guid>https://tomcounsell.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
+  <guid>https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
   <itunes:duration>MM:SS</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
   <itunes:keywords>keyword1, keyword2, keyword3, specific-protocol, specific-concept</itunes:keywords>

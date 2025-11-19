@@ -8,12 +8,12 @@
   - Select branch: `main` and folder: `/ (root)`
   - Save and wait for deployment
 
-- [ ] Update feed.xml with your information
-  - [ ] Replace `YOUR_USERNAME` with your GitHub username (3 places)
-  - [ ] Update podcast title if desired
-  - [ ] Update author name
-  - [ ] Update email address
-  - [ ] Update description/summary
+- [x] Update feed.xml with your information
+  - [x] Replace `YOUR_USERNAME` with GitHub organization (yudame)
+  - [x] Update podcast title (Yudame Protocols Podcast)
+  - [x] Update author name (Tom Counsell)
+  - [x] Update email address
+  - [x] Update description/summary
 
 - [ ] Install BFG Repo-Cleaner (for purging old episodes)
   ```bash
@@ -31,7 +31,7 @@
 
 - [ ] Test the feed
   - [ ] Wait for GitHub Pages to deploy (check Actions tab)
-  - [ ] Visit `https://YOUR_USERNAME.github.io/protocols/podcast/feed.xml` in browser
+  - [ ] Visit `https://yudame.github.io/protocols/podcast/feed.xml` in browser
   - [ ] Subscribe in your podcast app
   - [ ] Verify episode appears and plays correctly
 
