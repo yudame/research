@@ -72,9 +72,38 @@ mkdir -p /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug/resea
 
 **Ask user** if they have specific source URLs to add to sources.md.
 
-### 3. Audio Production Phase
+### 3. AI Audio Generation Phase
 
-**When user adds an audio file:**
+**Generate podcast audio using NotebookLM:**
+
+1. Upload research materials to NotebookLM (report.md and any source documents)
+
+2. Use "Audio Overview" feature with this prompt:
+
+```
+Combine vivid storytelling with rigorous analysis - tell compelling stories AND extract the frameworks.
+
+What to emphasize:
+• Specific stories with concrete details - the decisions people made, what happened, and why
+• Pattern recognition across stories - identify the underlying frameworks and principles
+• Both micro (individual decisions) and macro (systemic dynamics) perspectives
+• Technical depth where relevant - don't simplify for simplicity's sake
+• Counter-intuitive insights and non-obvious connections between events
+
+Target audience: High-IQ protocol builders, founders, investors, and researchers who want both narrative understanding and analytical frameworks.
+
+Tone: Intellectually rigorous but engaging. Use stories to illustrate concepts, then zoom out to extract the patterns. Make it vivid enough to remember the examples, and analytical enough to understand the principles. Think "This happened to Terra/Do Kwon in 2020, which illustrates a broader principle about algorithmic stability..."
+
+Balance the concrete and the abstract - neither dumbed down nor dry.
+```
+
+3. Select format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
+4. Select length: **Long** (or adjust based on topic complexity)
+5. Generate and download the audio file
+
+### 4. Audio File Processing Phase
+
+**When user adds the generated audio file:**
 
 1. **Check the format** - if it's .m4a, convert to .mp3:
    ```bash
@@ -90,7 +119,7 @@ mkdir -p /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug/resea
    - File size (bytes)
    - Duration (MM:SS or HH:MM:SS format)
 
-### 4. Publishing Phase
+### 5. Publishing Phase
 
 **Ask user for episode-specific keywords:**
 - What are 5-10 specific keywords for this episode?
@@ -120,7 +149,7 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 
 **Note:** Podcast-level categories are Technology and Education. Each episode has unique keywords for discoverability.
 
-### 5. Git Workflow
+### 6. Git Workflow
 
 **Commit and push the episode:**
 
@@ -153,7 +182,7 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
    git push
    ```
 
-### 6. Verify Publishing
+### 7. Verify Publishing
 
 **Remind user to:**
 1. Ensure GitHub Pages is enabled at: `https://github.com/yudame/protocols/settings/pages`
