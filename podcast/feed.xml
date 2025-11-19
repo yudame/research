@@ -3,12 +3,12 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Personal Learning Podcast</title>
+    <title>Yudame Protocols Podcast</title>
     <link>https://tomcounsell.github.io/protocols/podcast/</link>
-    <description>Private podcast feed for personal education content</description>
+    <description>Deep dives into blockchain protocols, crypto markets, and decentralized systems</description>
     <language>en-us</language>
     <itunes:author>Tom Counsell</itunes:author>
-    <itunes:summary>Private podcast feed for personal education content</itunes:summary>
+    <itunes:summary>Deep dives into blockchain protocols, crypto markets, and decentralized systems</itunes:summary>
     <itunes:owner>
       <itunes:name>Tom Counsell</itunes:name>
       <itunes:email>tom@tomcounsell.com</itunes:email>
