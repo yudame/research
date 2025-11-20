@@ -51,7 +51,7 @@ Plus original audio files (can keep for archival):
 
 **Then create the directory structure:**
 ```bash
-mkdir -p /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug/research/{documents,assets}
+mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug/research/{documents,assets}
 ```
 
 ### 2. Research Phase (User-led with your support)
@@ -162,7 +162,7 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
 1. **Check the format** - if it's .m4a, convert to .mp3:
    ```bash
-   cd /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug
+   cd /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug
    ffmpeg -i "original-file.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
    ```
 
@@ -178,7 +178,7 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
    **First-time setup only:**
    ```bash
-   cd /Users/tomcounsell/src/protocols/podcast/tools
+   cd /Users/tomcounsell/src/research/podcast/tools
 
    # Fix SSL certificates (macOS Python)
    /Applications/Python\ 3.12/Install\ Certificates.command
@@ -191,7 +191,7 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
    a. Run local Whisper transcription (no API key needed):
    ```bash
-   cd /Users/tomcounsell/src/protocols/podcast/tools
+   cd /Users/tomcounsell/src/research/podcast/tools
    python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
    ```
 
@@ -208,7 +208,7 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
    d. Embed chapters into the mp3 file:
    ```bash
-   cd /Users/tomcounsell/src/protocols/podcast/episodes/YYYY-MM-DD-slug
+   cd /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug
    ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
    mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
    ```
@@ -233,7 +233,7 @@ a. Create compelling 1-2 sentence description:
    - Based on the research report and transcript
    - Highlight key topics, major stories/events covered, and main takeaways
    - Focus on what makes this episode valuable and what listeners will learn
-   - Include link to full research report: `https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/report.md`
+   - Include link to full research report: `https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
 b. Add validated source links:
    - Search for and validate 3-5 key official sources mentioned in the episode
@@ -261,7 +261,7 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 <!-- Episode N: Short Description -->
 <item>
   <title>Episode Title Here</title>
-  <description>Compelling 1-2 sentence description (full report: https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
+  <description>Compelling 1-2 sentence description (full report: https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
 
 Key Sources:
 • Official Source 1: [validated URL]
@@ -269,10 +269,10 @@ Key Sources:
 • Official Source 3: [validated URL]
 • Analysis/Research: [validated URL]</description>
   <pubDate>Day, DD Mon YYYY 12:00:00 GMT</pubDate>
-  <enclosure url="https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
+  <enclosure url="https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
              length="FILE_SIZE_IN_BYTES"
              type="audio/mpeg"/>
-  <guid>https://yudame.github.io/protocols/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
+  <guid>https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
   <itunes:duration>MM:SS</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
   <itunes:keywords>keyword1, keyword2, keyword3, specific-protocol, specific-concept</itunes:keywords>
@@ -333,12 +333,12 @@ Key Sources:
 ### 7. Verify Publishing
 
 **Remind user to:**
-1. Ensure GitHub Pages is enabled at: `https://github.com/yudame/protocols/settings/pages`
+1. Ensure GitHub Pages is enabled at: `https://github.com/yudame/research/settings/pages`
    - Source: Deploy from a branch
    - Branch: main
    - Folder: / (root)
 
-2. Feed URL will be: `https://yudame.github.io/protocols/podcast/feed.xml`
+2. Feed URL will be: `https://yudame.github.io/research/podcast/feed.xml`
 
 3. Wait 2-3 minutes for GitHub Pages to deploy
 

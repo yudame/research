@@ -1,8 +1,8 @@
-## AI Teacher Architecture for Learning Protocols Library
+## AI Teacher Architecture for Learning Research Library
 
 ### 1. Introduction and Vision
 
-*   The AI Teacher is a core component of the Learning Protocols Library, designed to provide personalized and engaging learning experiences for young children.
+*   The AI Teacher is a core component of the Learning Research Library, designed to provide personalized and engaging learning experiences for young children.
 *   It aligns with the project's vision of leveraging neuroscience-based principles and Montessori-inspired methodologies to foster holistic child development.
 *   The initial focus is on Level 0 (Pre-K/Kindergarten), covering foundational skills in early reading, writing, and counting.
 

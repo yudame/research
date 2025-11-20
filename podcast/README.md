@@ -37,7 +37,7 @@ git push --force
 
 Once GitHub Pages is enabled, subscribe to:
 ```
-https://yudame.github.io/protocols/podcast/feed.xml
+https://yudame.github.io/research/podcast/feed.xml
 ```
 
 ## Limits

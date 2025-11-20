@@ -1,4 +1,4 @@
-# Comprehensive TODO List for Learning Protocols Development
+# Comprehensive TODO List for Learning Research Development
 
 ## Research & Knowledge Base Development
 

@@ -10,7 +10,7 @@
 
 - [x] Update feed.xml with your information
   - [x] Replace `YOUR_USERNAME` with GitHub organization (yudame)
-  - [x] Update podcast title (Yudame Protocols Podcast)
+  - [x] Update podcast title (Yudame Research Podcast)
   - [x] Update author name (Tom Counsell)
   - [x] Update email address
   - [x] Update description/summary
@@ -31,7 +31,7 @@
 
 - [ ] Test the feed
   - [ ] Wait for GitHub Pages to deploy (check Actions tab)
-  - [ ] Visit `https://yudame.github.io/protocols/podcast/feed.xml` in browser
+  - [ ] Visit `https://yudame.github.io/research/podcast/feed.xml` in browser
   - [ ] Subscribe in your podcast app
   - [ ] Verify episode appears and plays correctly
 

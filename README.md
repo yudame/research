@@ -1,4 +1,4 @@
-# Learning Protocols Library
+# Learning Research Library
 
 <div style="display: flex; align-items: flex-start;">
 <div style="flex: 1;">
@@ -23,7 +23,7 @@ Our approach can be visualized as a trellis structure—a sturdy framework that 
 
 </div>
 <div style="flex: 1;">
-<img src="protocols.png" alt="Learning Protocols Trellis Model" style="max-width: 100%;">
+<img src="research.png" alt="Learning Research Trellis Model" style="max-width: 100%;">
 </div>
 </div>
 
@@ -31,7 +31,7 @@ Our approach can be visualized as a trellis structure—a sturdy framework that 
 
 ```mermaid
 mindmap
-  root(Learning Protocols Library)
+  root(Learning Research Library)
     STRUCTURAL FRAMEWORK
       Level Progression(0-12)
         Pre-K/Kindergarten(Level 0)
