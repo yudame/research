@@ -5,220 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yudame Research</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f5f5f5;
-        }
-
-        .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-        }
-
-        header {
-            background: white;
-            padding: 3rem 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #fff;
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-        }
-
-        section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: 600;
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            margin-top: 2rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
             padding-bottom: 0.5rem;
         }
 
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
         .feed-url {
-            background: #ecf0f1;
-            padding: 1rem;
+            background: #f5f5f5;
+            padding: 0.75rem;
             border-radius: 4px;
-            font-family: 'Courier New', monospace;
+            font-family: monospace;
             font-size: 0.9rem;
-            word-break: break-all;
             margin: 1rem 0;
         }
 
-        .button {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 0.5rem 0.5rem 0.5rem 0;
-            transition: background 0.3s;
-        }
-
-        .button:hover {
-            background: #2980b9;
-        }
-
-        .episode {
-            border-left: 4px solid #3498db;
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .episode h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .episode-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .episode-description {
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .episode a {
-            color: #3498db;
+        a {
+            color: #0066cc;
             text-decoration: none;
         }
 
-        .episode a:hover {
+        a:hover {
             text-decoration: underline;
         }
 
-        footer {
-            text-align: center;
-            color: #7f8c8d;
-            padding: 2rem;
-            font-size: 0.9rem;
+        .episode {
+            margin-bottom: 2rem;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid #3498db;
-        }
-
-        .card h3 {
+        .episode h3 {
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
+            margin-bottom: 0.25rem;
         }
 
-        .card p {
-            color: #666;
-            font-size: 0.95rem;
+        .episode-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Yudame Research</h1>
-            <p class="tagline">Deep dives into research topics, including blockchain, health optimization, and evidence-based analysis</p>
-        </header>
+    <h1>Yudame Research</h1>
+    <p class="tagline">Evidence-based research and analysis across technology, health, economics, and human performance</p>
 
-        <section>
-            <h2>Podcast</h2>
-            <p>Subscribe to the Yudame Research Podcast for in-depth explorations of complex topics backed by rigorous research and analysis.</p>
+    <h2>Podcast</h2>
+    <p>Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources to build frameworks for understanding important subjects.</p>
 
-            <div class="feed-url">
-                https://yudame.github.io/research/podcast/feed.xml
-            </div>
+    <div class="feed-url">https://yudame.github.io/research/podcast/feed.xml</div>
 
-            <a href="podcast/feed.xml" class="button">RSS Feed</a>
-            <a href="https://podcasts.apple.com/podcast/id?feed=https://yudame.github.io/research/podcast/feed.xml" class="button">Apple Podcasts</a>
+    <p>
+        <a href="podcast/feed.xml">RSS Feed</a> •
+        <a href="https://podcasts.apple.com/podcast/id?feed=https://yudame.github.io/research/podcast/feed.xml">Apple Podcasts</a>
+    </p>
 
-            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Recent Episodes</h3>
+    <h3>Recent Episodes</h3>
 
-            <div class="episode">
-                <h3>Maximizing VO₂ Max and Heart Health: An Evidence-Based Guide</h3>
-                <div class="episode-meta">November 20, 2025 • 34:27</div>
-                <div class="episode-description">
-                    Exploring heart rate variability (HRV) as your body's master index of adaptability and resilience.
-                    This deep dive synthesizes data from landmark studies including the Whitehall II cohort, behavioral
-                    modification trials, and temperature-controlled sleep research.
-                    <br><br>
-                    <a href="podcast/episodes/2025-11-19-cardiovascular-health-optimization/report.md">Full Research Report →</a>
-                </div>
-            </div>
-
-            <div class="episode">
-                <h3>Stablecoin Market: Strategies and Pitfalls</h3>
-                <div class="episode-meta">November 19, 2025 • 32:41</div>
-                <div class="episode-description">
-                    A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the
-                    Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins.
-                    <br><br>
-                    <a href="podcast/episodes/2025-11-19-stablecoin-history/report.md">Full Research Report →</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Learning Research Library</h2>
-            <p>A comprehensive repository of evidence-based learning protocols and educational frameworks for early childhood development, combining Montessori principles with neuroscience-based learning strategies.</p>
-
-            <div class="grid">
-                <div class="card">
-                    <h3>Neuroscience-Based</h3>
-                    <p>Built on foundations from Andrew Huberman's research and peer-reviewed studies on neuroplasticity and learning.</p>
-                </div>
-                <div class="card">
-                    <h3>Montessori Integration</h3>
-                    <p>Incorporating prepared environments, self-directed learning, and practical life skills development.</p>
-                </div>
-                <div class="card">
-                    <h3>AI-Human Collaboration</h3>
-                    <p>Leveraging both AI tutoring and human teacher facilitation for optimal learning experiences.</p>
-                </div>
-            </div>
-
-            <a href="README.md" class="button">Learn More</a>
-            <a href="https://github.com/yudame/research" class="button">View on GitHub</a>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Yudame Research • Hosted on GitHub Pages</p>
-        </footer>
+    <div class="episode">
+        <h3>Maximizing VO₂ Max and Heart Health: An Evidence-Based Guide</h3>
+        <div class="episode-meta">November 20, 2025 • 34:27</div>
+        <p>Heart rate variability (HRV) as a master index of resilience. Synthesizes findings from the Whitehall II cohort, behavioral modification trials, and sleep optimization research.</p>
+        <p><a href="podcast/episodes/2025-11-19-cardiovascular-health-optimization/report.md">Full research report →</a></p>
     </div>
+
+    <div class="episode">
+        <h3>Stablecoin Market: Strategies and Pitfalls</h3>
+        <div class="episode-meta">November 19, 2025 • 32:41</div>
+        <p>Analysis of stablecoin evolution from 2017-2025, covering the Terra/UST collapse, regulatory frameworks like the GENIUS Act, and lessons for protocol design.</p>
+        <p><a href="podcast/episodes/2025-11-19-stablecoin-history/report.md">Full research report →</a></p>
+    </div>
+
+    <h2>Research Approach</h2>
+    <p>This repository documents research across multiple domains with an emphasis on:</p>
+    <ul>
+        <li>Peer-reviewed studies and meta-analyses over individual anecdotes</li>
+        <li>Effect sizes and practical significance, not just statistical significance</li>
+        <li>Distinguishing correlation from causation</li>
+        <li>Identifying contradictory findings and areas of uncertainty</li>
+        <li>Understanding study populations and generalizability</li>
+        <li>Noting funding sources and potential conflicts of interest</li>
+    </ul>
+
+    <h2>Topics</h2>
+    <ul>
+        <li><strong>Health & Performance:</strong> Evidence-based optimization of physical and cognitive performance</li>
+        <li><strong>Technology & Blockchain:</strong> Protocol design, cryptoeconomics, and decentralized systems</li>
+        <li><strong>Economics & Markets:</strong> Market dynamics, regulatory frameworks, and financial systems</li>
+        <li><strong>Learning & Development:</strong> Educational frameworks for all ages based on neuroscience research</li>
+    </ul>
+
+    <p><a href="https://github.com/yudame/research">View on GitHub →</a></p>
+
+    <footer>
+        <p>© 2025 Yudame Research</p>
+    </footer>
 </body>
 </html>
