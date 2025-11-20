@@ -1,0 +1,49 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The System of Resilience"
+    },
+    {
+      "startTime": 143,
+      "title": "Whitehall II Study: The Power of Consistency"
+    },
+    {
+      "startTime": 502,
+      "title": "The Cost of Deterioration"
+    },
+    {
+      "startTime": 682,
+      "title": "Behavioral Modification and Training"
+    },
+    {
+      "startTime": 902,
+      "title": "VO2 Max and Body Composition Gains"
+    },
+    {
+      "startTime": 1082,
+      "title": "Sleep Quality vs Objective Metrics"
+    },
+    {
+      "startTime": 1282,
+      "title": "Exercise Modalities: HIIT and Multimodal Training"
+    },
+    {
+      "startTime": 1502,
+      "title": "Resistance Training and Sex Differences"
+    },
+    {
+      "startTime": 1682,
+      "title": "Physiological Mechanisms of Training"
+    },
+    {
+      "startTime": 1862,
+      "title": "HRV-Guided Personalized Training"
+    },
+    {
+      "startTime": 1990,
+      "title": "Supplementation and Environmental Control"
+    }
+  ]
+}

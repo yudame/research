@@ -19,6 +19,26 @@
     <itunes:image href="https://yudame.github.io/protocols/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 2: Cardiovascular Health Optimization -->
+    <item>
+      <title>Maximizing VO₂ Max and Heart Health: An Evidence-Based Guide</title>
+      <description>Exploring heart rate variability (HRV) as your body's master index of adaptability and resilience (full report: https://yudame.github.io/protocols/podcast/episodes/2025-11-19-cardiovascular-health-optimization/report.md). This deep dive synthesizes data from landmark studies including the Whitehall II cohort (showing 6-20 year biological age differences from simple lifestyle consistency), behavioral modification trials that doubled training effectiveness, and temperature-controlled sleep research revealing sex-specific optimization strategies for busy professionals.
+
+Key Sources:
+• Whitehall II Study on Cardiac Vagal Modulation: https://www.ahajournals.org/doi/10.1161/JAHA.119.012420
+• PubMed - Whitehall II Lifestyle and HRV: https://pubmed.ncbi.nlm.nih.gov/31547790/
+• Temperature-Controlled Sleep Study: https://pmc.ncbi.nlm.nih.gov/articles/PMC11048088/
+• Sleep and Cardiovascular Recovery Research: https://pubmed.ncbi.nlm.nih.gov/38671774/</description>
+      <pubDate>Wed, 20 Nov 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://yudame.github.io/protocols/podcast/episodes/2025-11-19-cardiovascular-health-optimization/2025-11-19-cardiovascular-health-optimization.mp3"
+                 length="33087874"
+                 type="audio/mpeg"/>
+      <guid>https://yudame.github.io/protocols/podcast/episodes/2025-11-19-cardiovascular-health-optimization/2025-11-19-cardiovascular-health-optimization.mp3</guid>
+      <itunes:duration>34:27</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>heart rate variability, HRV, vagal tone, RMSSD, Whitehall II study, behavioral modification, VO2 max, sleep optimization, HIIT training, temperature control, autonomic nervous system, parasympathetic activity, recovery protocols, circadian alignment</itunes:keywords>
+    </item>
+
     <!-- Episode 1: Stablecoin History -->
     <item>
       <title>Stablecoin Market: Strategies and Pitfalls</title>
