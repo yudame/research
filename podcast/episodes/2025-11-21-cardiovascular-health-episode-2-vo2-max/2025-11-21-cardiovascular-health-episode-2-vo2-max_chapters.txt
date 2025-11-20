@@ -1,0 +1,76 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction & The Longevity Link
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=330000
+title=Understanding the Fick Equation
+[CHAPTER]
+TIMEBASE=1/1000
+START=330000
+END=520000
+title=Longevity Data & Mortality Risk
+[CHAPTER]
+TIMEBASE=1/1000
+START=520000
+END=690000
+title=Measurement & Testing Protocols
+[CHAPTER]
+TIMEBASE=1/1000
+START=690000
+END=840000
+title=The Polarized Training Framework
+[CHAPTER]
+TIMEBASE=1/1000
+START=840000
+END=970000
+title=The Gray Zone Problem
+[CHAPTER]
+TIMEBASE=1/1000
+START=970000
+END=1080000
+title=High-Intensity Interval Training Design
+[CHAPTER]
+TIMEBASE=1/1000
+START=1080000
+END=1180000
+title=Volume & Expected Gains
+[CHAPTER]
+TIMEBASE=1/1000
+START=1180000
+END=1390000
+title=Weekly Training Structure (7-Day Blueprint)
+[CHAPTER]
+TIMEBASE=1/1000
+START=1390000
+END=1540000
+title=Modality Selection & Injury Prevention
+[CHAPTER]
+TIMEBASE=1/1000
+START=1540000
+END=1640000
+title=Recovery & Sleep Protocols
+[CHAPTER]
+TIMEBASE=1/1000
+START=1640000
+END=1750000
+title=Nutrition & Fueling Strategy
+[CHAPTER]
+TIMEBASE=1/1000
+START=1750000
+END=1860000
+title=Detraining & Maintenance
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=1970000
+title=Supplements for Marginal Gains
+[CHAPTER]
+TIMEBASE=1/1000
+START=1970000
+END=2173000
+title=Testing, Tracking & Long-Term Strategy
