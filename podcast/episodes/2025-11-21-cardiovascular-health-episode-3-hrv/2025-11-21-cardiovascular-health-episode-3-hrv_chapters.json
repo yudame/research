@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: HRV as Autonomic Flexibility Index"
+    },
+    {
+      "startTime": 317,
+      "title": "The Science: Beat-to-Beat Variability & the ANS"
+    },
+    {
+      "startTime": 657,
+      "title": "RMSSD: The Gold Standard for Daily Tracking"
+    },
+    {
+      "startTime": 1037,
+      "title": "SDNN vs Clinical Mortality Prediction"
+    },
+    {
+      "startTime": 1313,
+      "title": "The LF/HF Ratio Reversal: Debunking the Myth"
+    },
+    {
+      "startTime": 1593,
+      "title": "Measurement Protocols & Device Validation"
+    },
+    {
+      "startTime": 2013,
+      "title": "Reference Ranges & Within-Person Tracking"
+    },
+    {
+      "startTime": 2333,
+      "title": "Lifestyle Factors: Exercise, Sleep, Alcohol & Stress"
+    },
+    {
+      "startTime": 2653,
+      "title": "HRV-Guided Training: Green/Yellow/Red Zones"
+    },
+    {
+      "startTime": 3013,
+      "title": "Active Interventions: Breathing & Biofeedback"
+    },
+    {
+      "startTime": 3333,
+      "title": "Limitations, Red Flags & When to See a Doctor"
+    },
+    {
+      "startTime": 3593,
+      "title": "The Core Playbook: 3 Practical Principles"
+    }
+  ]
+}

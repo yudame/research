@@ -19,6 +19,26 @@
     <itunes:image href="https://yudame.github.io/research/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 5: Cardiovascular Health Episode 3 - HRV -->
+    <item>
+      <title>Cardiovascular Health Episode 3: HRV</title>
+      <description>Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health. Full research report: https://yudame.github.io/research/podcast/episodes/2025-11-21-cardiovascular-health-episode-3-hrv/report.md
+
+Key Sources:
+• Shaffer & Ginsberg (2017) - HRV Metrics Overview: https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/
+• Amekran et al. (2024) - Exercise Training Meta-Analysis: https://www.frontiersin.com/journals/cardiovascular-medicine/articles/10.3389/fcvm.2024.1354559/fulltext
+• Lehrer et al. (2020) - HRV Biofeedback Meta-Analysis: https://link.springer.com/article/10.1007/s10484-020-09466-z
+• Tegegne et al. (2018) - Lifelines Cohort Study: https://www.heartrhythmjournal.com/article/S1547-5271(18)30674-4/fulltext</description>
+      <pubDate>Thu, 21 Nov 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://yudame.github.io/research/podcast/episodes/2025-11-21-cardiovascular-health-episode-3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3"
+                 length="41070895"
+                 type="audio/mpeg"/>
+      <guid>https://yudame.github.io/research/podcast/episodes/2025-11-21-cardiovascular-health-episode-3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3</guid>
+      <itunes:duration>42:46</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>HRV, heart rate variability, RMSSD, SDNN, autonomic nervous system, vagal tone, wearables, Oura Ring, Apple Watch, WHOOP, training optimization, recovery monitoring, biofeedback, cardiovascular health, VO2 max</itunes:keywords>
+    </item>
+
     <!-- Episode 4: Cardiovascular Health Episode 2 - VO2 Max -->
     <item>
       <title>Cardiovascular Health Episode 2: VO2 Max</title>
