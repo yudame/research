@@ -8,11 +8,13 @@ Each episode follows this organization:
 ```
 podcast/episodes/YYYY-MM-DD-topic-slug/
 ├── research/
+│   ├── research-results.md # Raw research outputs from ChatGPT, Perplexity, etc.
 │   ├── sources.md          # Organized list of source links
-│   ├── raw-notes.md        # NotebookLM/research tool outputs (optional)
 │   ├── documents/          # PDFs, articles, downloads
 │   └── assets/             # Images, charts, data files
+├── prompts.md              # All prompts used during episode creation
 ├── report.md               # Final research report/show notes
+├── review-notes.md         # Episode review for continuous improvement (optional)
 ├── script.md               # Episode script/outline (optional)
 ├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters (~30MB)
 ├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript (~400KB)
@@ -25,9 +27,11 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 ```
 podcast/episodes/2025-11-19-stablecoin-history/
 ├── research/
+│   ├── research-results.md           # Raw outputs from ChatGPT/Perplexity
 │   ├── sources.md                    # 14 validated source links
 │   ├── documents/                    # (empty - sources were web-based)
 │   └── assets/                       # (empty)
+├── prompts.md                        # All prompts used during creation
 ├── report.md                         # 25KB - comprehensive research report
 ├── 2025-11-19-stablecoin-history.mp3 # 30MB - 32:41 duration, 128kbps
 ├── 2025-11-19-stablecoin-history_transcript.json      # 403KB - full transcript
@@ -48,11 +52,6 @@ Plus original audio files (can keep for archival):
 1. What date should we use? (YYYY-MM-DD format) - Offer today's date or custom
 2. What's the episode slug? (e.g., "stablecoin-history") - Suggest options based on topic
 3. What's the episode title? (e.g., "Stablecoin Market: Strategies and Pitfalls")
-
-**Then create the directory structure:**
-```bash
-mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug/research/{documents,assets}
-```
 
 ### 2. Research Phase (User-led with your support)
 
@@ -88,18 +87,92 @@ Research [topic/question].
 
 **Key point:** Let the research lead where the evidence goes. Don't impose structure or conclusions upfront.
 
+**Now create all episode files and directories:**
+
+```bash
+mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug/research/{documents,assets}
+```
+
+**Create prompts.md to track all prompts used:**
+
+Create `prompts.md` with this template:
+```markdown
+# Prompts Used for Episode: [Episode Title]
+
+This document tracks all prompts used during the creation of this episode for reproducibility and learning.
+
 ---
 
-**When user provides research:**
-- Save the research report to `report.md`
-- Create `research/sources.md` with this template:
+## Setup Phase
 
+**Episode Details:**
+- Date: YYYY-MM-DD
+- Slug: topic-slug
+- Title: [Episode Title]
+
+---
+
+## Research Phase
+
+### Research Prompt
+
+**Tool Used:** [e.g., ChatGPT, Perplexity, Grok, Claude, etc.]
+
+**Prompt:**
+```
+[The research prompt will be added here]
+```
+
+**Date:** YYYY-MM-DD
+
+---
+
+<!-- Additional prompts will be added below as we progress through the workflow -->
+```
+
+**Create research results collection file:**
+
+Create `research/research-results.md` with this template:
+```markdown
+# Research Results for [Episode Title]
+
+This file is for pasting research results from external tools (ChatGPT, Perplexity, Grok, etc.).
+
+---
+
+## Research from ChatGPT
+
+<!-- Paste ChatGPT research results here -->
+
+---
+
+## Research from Perplexity
+
+<!-- Paste Perplexity research results here -->
+
+---
+
+## Research from Other Tools
+
+<!-- Paste any other research results here -->
+
+---
+
+## Notes
+
+- Research conducted: YYYY-MM-DD
+- Tools used: [List tools used]
+- Raw outputs saved here for reference and verification
+```
+
+**Create initial sources.md file:**
+
+Create `research/sources.md` with this template:
 ```markdown
 # Sources for [Episode Title]
 
 ## Research Tools Used
-- Deep research tools
-- NotebookLM
+- [List tools used: ChatGPT, Perplexity, NotebookLM, etc.]
 
 ## Key Sources
 
@@ -125,7 +198,21 @@ Research [topic/question].
 - Sources to be added as references are identified
 ```
 
-**Ask user** if they have specific source URLs to add to sources.md.
+**Save the research prompt to prompts.md:**
+
+Add the actual research prompt to the Research Phase section in `prompts.md`.
+
+**Inform the user:**
+"Episode structure created! You can now:
+1. Paste research results into `research/research-results.md` as you gather them from ChatGPT, Perplexity, etc.
+2. When research is complete, provide the final report for `report.md`"
+
+---
+
+**When user provides research:**
+- Save the final research report to `report.md`
+- Update `research/sources.md` with any additional sources identified
+- Ask user if they have specific source URLs to add to sources.md
 
 ### 3. AI Audio Generation Phase
 
@@ -136,25 +223,98 @@ Research [topic/question].
 2. Use "Audio Overview" feature with this prompt:
 
 ```
-Combine vivid storytelling with rigorous analysis - tell compelling stories AND extract the frameworks.
+Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
+
+Core principles:
+• ALWAYS spell out acronyms before using them - "High-Quality Liquid Assets, or HQLA" not just "HQLA"
+• Define technical terms immediately with plain language THEN build on them - assume intelligent but not expert audience
+• Use concrete examples and stories ONLY when they exist in the source material - never fabricate or speculate
+• When stories exist, include human elements: what people said, felt, decided - not just mechanics
+• HIGHLIGHT surprising findings, spectacular failures, and unexpected successes - these are the memorable moments
+• Extract frameworks and principles from the research findings
+• Connect findings to practical implications and broader patterns
+• Maintain scientific rigor: distinguish correlation from causation, note effect sizes, acknowledge uncertainties
 
 What to emphasize:
-• Specific stories with concrete details - the decisions people made, what happened, and why
-• Pattern recognition across stories - identify the underlying frameworks and principles
-• Both micro (individual decisions) and macro (systemic dynamics) perspectives
-• Technical depth where relevant - don't simplify for simplicity's sake
-• Counter-intuitive insights and non-obvious connections between events
+• Spell-first approach: "The EU's Markets in Crypto-Assets regulation, called MiCA..." not "MiCA requires..."
+• Definition-first explanations: "VO2 max - the maximum rate your body can use oxygen during exercise - is..."
+• Evidence-based analysis: cite specific studies, note sample sizes, report actual effect sizes
+• Human elements in stories: decisions made, emotions felt, specific quotes when available
+• Practical insights: what does this mean for someone implementing these findings?
+• Pattern recognition: what principles emerge across multiple studies or examples?
+• Conversational check-ins: "Let me define that term..." or "To be clear, what we mean by [X] is..."
 
-Target audience: High-IQ protocol builders, founders, investors, and researchers who want both narrative understanding and analytical frameworks.
+SURPRISING MOMENTS - actively look for and highlight these:
+• Counter-intuitive findings: "You'd think X, but the research shows the opposite..."
+• Spectacular failures: "$60 billion evaporated in 48 hours" or "The supply went from millions to trillions in days"
+• Dramatic effect sizes: Not just "improved" but "300% improvement" or "cut risk in half"
+• Unexpected successes: "This obscure intervention outperformed the standard approach"
+• Reversals: "What everyone thought was safe turned out to be the riskiest"
+• Extreme comparisons: "That's equivalent to..." (make big numbers relatable)
+• Non-obvious connections: "Surprisingly, factor X affects Y through this unexpected mechanism"
+• Edge cases that reveal principles: "In this one situation, the entire system breaks because..."
 
-Tone: Intellectually rigorous but engaging. Use stories to illustrate concepts, then zoom out to extract the patterns. Make it vivid enough to remember the examples, and analytical enough to understand the principles. Think "This happened to Terra/Do Kwon in 2020, which illustrates a broader principle about algorithmic stability..."
+Signal these moments with phrases like:
+• "Here's where it gets really interesting..."
+• "And this is the shocking part..."
+• "You wouldn't expect this, but..."
+• "The numbers here are staggering..."
+• "This completely flips conventional wisdom..."
 
-Balance the concrete and the abstract - neither dumbed down nor dry.
+What to avoid:
+• Acronyms without spelling them out first (DLT, SOX, OFAC, etc.)
+• Technical jargon without immediate plain-language definition
+• Academic language when simpler words work ("endogenous" vs "internal", "exogenous" vs "external")
+• Concept stacking - introducing 3+ new technical terms in one sentence
+• Fabricated examples or hypothetical stories not in the research
+• Over-simplification that loses scientific accuracy
+• Excessive hedging that obscures clear findings
+• Dry mechanical explanations when human stories exist in the research
+
+Target audience: Intelligent listeners who want to deeply understand the topic and apply the insights. They appreciate technical depth but need terms defined to follow along.
+
+Tone: Intellectually rigorous but accessible. Think "conversational expert explaining to a bright student" - maintain depth while ensuring clarity.
+
+When presenting stories:
+• Include human drama if it exists: "Do Kwon tweeted X, causing panic..." not just "The protocol experienced stress"
+• Build narrative tension: "On that Friday afternoon, Circle announced..." not just "Circle had exposure"
+• Make it memorable through specifics: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
+• Emphasize the spectacular: "The supply didn't just increase - it went from hundreds of millions to TRILLIONS in 48 hours"
+• Use reveals for surprises: Set up expectation, then flip it - "Everyone assumed X was safe. Then this happened..."
+
+When presenting research:
+• Focus on what the numbers mean and why they matter
+• Use comparisons: "That's like losing 5 years of profits from one fine"
+• Translate statistics to implications: "A 20% effect size means..."
+
+Balance precision with engagement - neither dumbed down nor unnecessarily complex.
 ```
 
 3. Select format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
 4. Select length: **Long** (or adjust based on topic complexity)
 5. Generate and download the audio file
+
+**Save the NotebookLM prompt to prompts.md:**
+
+Append to `prompts.md`:
+```markdown
+## Audio Generation Phase
+
+### NotebookLM Audio Overview Prompt
+
+**Tool Used:** NotebookLM
+
+**Format:** Deep Dive / Long
+
+**Prompt:**
+```
+[Copy the exact prompt used for NotebookLM Audio Overview]
+```
+
+**Customizations:** [Note any customizations to the default prompt]
+
+**Date:** YYYY-MM-DD
+```
 
 ### 4. Audio File Processing Phase
 
@@ -206,6 +366,26 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
       - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
       - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
 
+   **Save the chapter analysis prompt to prompts.md:**
+
+   Append to `prompts.md`:
+   ```markdown
+   ## Chapter Generation Phase
+
+   ### Chapter Analysis Prompt
+
+   **Tool Used:** Claude / AI Assistant
+
+   **Prompt:**
+   ```
+   [Copy the exact prompt used to analyze the transcript and generate chapters]
+   ```
+
+   **Output:** [Number] chapters created covering [brief description of coverage]
+
+   **Date:** YYYY-MM-DD
+   ```
+
    d. Embed chapters into the mp3 file:
    ```bash
    cd /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug
@@ -227,15 +407,22 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 
 ### 5. Publishing Phase
 
-**Generate episode description with source links:**
+**Generate episode description, keywords, and source links:**
 
-a. Create compelling 1-2 sentence description:
+a. **Create compelling 1-2 sentence description:**
    - Based on the research report and transcript
    - Highlight key topics, major stories/events covered, and main takeaways
    - Focus on what makes this episode valuable and what listeners will learn
    - Include link to full research report: `https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
-b. Add validated source links:
+b. **Generate episode-specific keywords (5-10 keywords):**
+   - Analyze the research report, transcript, and chapter titles
+   - Extract the most important concepts, terms, protocols, people, events mentioned
+   - Prioritize: specific technical terms, proper nouns, key concepts, frameworks
+   - Examples: "VO2 max", "HRV", "stablecoins", "Terra Luna", "GENIUS Act", "sleep quality"
+   - Format as comma-separated list for iTunes keywords field
+
+c. **Add validated source links:**
    - Search for and validate 3-5 key official sources mentioned in the episode
    - Prioritize: official legislation/regulation, academic analysis, primary sources
    - Use WebSearch to find official URLs
@@ -247,11 +434,42 @@ b. Add validated source links:
    - Regulatory frameworks (ESMA, SEC, FSB, etc.)
    - Academic/central bank analysis (Fed papers, university research)
    - Primary documents (whitepapers, official announcements)
+   - Peer-reviewed studies (PubMed, academic journals)
 
-**Ask user for episode-specific keywords:**
-- What are 5-10 specific keywords for this episode?
-- Examples: technology names, protocols, key concepts, events covered
-- These improve discoverability in podcast apps
+**Save the episode description generation process to prompts.md:**
+
+Append to `prompts.md`:
+```markdown
+## Publishing Phase
+
+### Episode Description Generation
+
+**Tool Used:** Claude / AI Assistant
+
+**Prompt:**
+```
+[Copy the exact prompt used to generate the episode description]
+```
+
+**Final Description:**
+```
+[Copy the final episode description that will be used in feed.xml]
+```
+
+**Keywords:** [List of episode-specific keywords]
+
+**Date:** YYYY-MM-DD
+
+### Source Link Validation
+
+**Sources Validated:**
+1. [Source name] - [URL] - [Validation method: WebSearch, WebFetch, manual]
+2. [Source name] - [URL] - [Validation method]
+3. [Source name] - [URL] - [Validation method]
+[etc.]
+
+**Date:** YYYY-MM-DD
+```
 
 **Update feed.xml:**
 
@@ -281,7 +499,10 @@ Key Sources:
 
 **Date format for pubDate:** Use RFC 2822 format (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
 
-**Note:** Podcast-level categories are Technology and Education. Each episode has unique keywords for discoverability.
+**Note:**
+- Podcast-level categories are Technology and Education
+- Episode keywords are automatically generated from content analysis
+- Description and keywords are created without user input - just review and update feed.xml
 
 ### 6. Git Workflow
 
@@ -299,6 +520,7 @@ Key Sources:
    ```
 
    **Files to include:**
+   - `prompts.md` - All prompts used during creation
    - `report.md` - Research report
    - `research/sources.md` - Source links
    - `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
@@ -342,26 +564,90 @@ Key Sources:
 
 3. Wait 2-3 minutes for GitHub Pages to deploy
 
+### 8. Episode Review (Optional - for continuous improvement)
+
+**After listening to the episode, optionally create a review file to track improvements:**
+
+Create `review-notes.md` in the episode directory:
+```markdown
+# Episode Review: [Episode Title]
+
+## Listen Date
+YYYY-MM-DD
+
+## What Worked Well
+- [Specific examples of good explanations, storytelling, pacing, etc.]
+
+## Areas for Improvement
+- [Specific examples where definitions were missing, jargon was confusing, etc.]
+
+## Technical Term Analysis
+**Terms that needed better definition:**
+- [Term] - First mentioned at [timestamp] without clear definition
+- [Term] - Used multiple times but never defined
+
+**Terms that were well explained:**
+- [Term] - Good clear definition when introduced
+
+## Story/Example Quality
+**Effective examples:**
+- [Description and why it worked]
+
+**Missing opportunities:**
+- [Where a concrete example would have helped]
+
+**Fabricated or speculative content:**
+- [Any content that wasn't grounded in the research]
+
+## Prompt Improvements for Next Time
+Based on this episode, consider adjusting:
+- [Specific prompt modifications]
+- [Research focus areas]
+- [NotebookLM guidance]
+
+## Action Items
+- [ ] Update NotebookLM prompt if needed
+- [ ] Adjust research prompt template
+- [ ] Note patterns for future episodes
+```
+
+**Use transcript for detailed analysis:**
+- The `_transcript.json` file contains full text with timestamps
+- Review sections where technical terms were introduced
+- Identify patterns in explanation quality
+- Compare against the NotebookLM prompt to see what worked/didn't work
+
 ## Important Notes
 
 - **Always use TodoWrite** to track progress through these phases
 - **Mark tasks complete** immediately after finishing each step
+- **Create files immediately** after research prompt - create all episode directories and template files right away
+- **research-results.md** - Provide this file for user to paste raw research outputs from ChatGPT/Perplexity as they work
+- **Track all prompts** in `prompts.md` throughout the workflow for reproducibility
+- **Save prompts immediately** after using them - don't batch at the end
 - **Use ffmpeg** for audio conversion (128kbps mp3 is recommended)
 - **File sizes** - aim to keep episodes under 100MB
 - **Transcription** - Always generate transcript and chapters for every episode
 - **Chapters** - Aim for 10-15 chapters, each 2-4 minutes, with descriptive titles
-- **Episode descriptions** - Generate compelling 1-2 sentence descriptions based on research and transcript
+- **Episode descriptions and keywords** - Auto-generate both from research report, transcript, and chapters - no user input needed
+- **Source validation** - Use WebSearch and WebFetch to find and validate 3-5 official source links
 - **Commit messages** - use heredoc format for multi-line messages
 - **User handles** - research (deep research tools, NotebookLM) and audio creation
-- **You handle** - file organization, format conversion, transcription, chapter generation, feed.xml updates, git workflow
+- **You handle** - file organization, format conversion, transcription, chapter generation, description/keyword generation, source validation, feed.xml updates, git workflow, prompt tracking
 
 ## Getting Started
 
 When user wants to create a new episode, start with:
 1. Create a todo list for tracking
-2. **Help craft the research prompt** - work with user to refine their topic into a clear, methodology-focused research prompt
-3. User conducts research using Grok/ChatGPT/other tools
-4. Once research is complete, ask for episode date, slug, and title
-5. Create directory structure
-6. Save research materials (report.md, sources.md)
-7. Guide through each subsequent phase
+2. Ask for episode date, slug, and title
+3. **Help craft the research prompt** - work with user to refine their topic into a clear, methodology-focused research prompt
+4. **Immediately create all episode files and directories:**
+   - Create directory structure (research/documents/, research/assets/)
+   - Create prompts.md with episode details and research prompt
+   - Create research/research-results.md for pasting ChatGPT/Perplexity outputs
+   - Create research/sources.md template
+5. User conducts research using ChatGPT/Perplexity/Grok/other tools
+   - User can paste interim results into research/research-results.md
+6. Once research is complete, save final report to report.md
+7. Guide through each subsequent phase (audio generation, processing, publishing)
+8. Track all prompts in prompts.md as you go
