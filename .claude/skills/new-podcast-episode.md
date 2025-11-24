@@ -386,8 +386,14 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 ```
 Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
 
+Opening:
+• Begin with "Yudame Research [series name]" and introduce the episode topic
+• Set up what makes this topic interesting or valuable to explore
+
 Core principles:
-• ALWAYS spell out acronyms before using them - "High-Quality Liquid Assets, or HQLA" not just "HQLA"
+• Spell out acronyms on first use: "High-Intensity Interval Training, or HIIT"
+• For short, clear terms like HIIT, prefer saying the full phrase in speech when natural
+• Medical/technical acronyms (VO2, HRV, etc.) can remain as acronyms after introduction
 • Define technical terms immediately with plain language THEN build on them - assume intelligent but not expert audience
 • Use concrete examples and stories ONLY when they exist in the source material - never fabricate or speculate
 • When stories exist, include human elements: what people said, felt, decided - not just mechanics
@@ -431,10 +437,15 @@ What to avoid:
 • Over-simplification that loses scientific accuracy
 • Excessive hedging that obscures clear findings
 • Dry mechanical explanations when human stories exist in the research
+• Repeatedly restating context or target listener details - establish once, then focus on content
 
 Target audience: Intelligent listeners who want to deeply understand the topic and apply the insights. They appreciate technical depth but need terms defined to follow along.
 
 Tone: Intellectually rigorous but accessible. Think "conversational expert explaining to a bright student" - maintain depth while ensuring clarity.
+
+Closing:
+• Summarize 2-3 key takeaways or practical implications
+• Close with information about learning more: "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
 
 When presenting stories:
 • Include human drama if it exists: "Do Kwon tweeted X, causing panic..." not just "The protocol experienced stress"
