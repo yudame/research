@@ -23,8 +23,8 @@ except ImportError:
     sys.exit(1)
 
 
-def add_watermark(cover_path, logo_path, position='bottom-right', opacity=0.9, size_ratio=0.15,
-                  series_text=None, episode_text=None):
+def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_ratio=0.12,
+                  brand_text=None, series_text=None, episode_text=None):
     """
     Add logo watermark and text overlays to cover image.
 
@@ -34,6 +34,7 @@ def add_watermark(cover_path, logo_path, position='bottom-right', opacity=0.9, s
         position: 'bottom-right', 'bottom-left', 'top-right', 'top-left', 'center'
         opacity: Logo opacity (0.0 to 1.0)
         size_ratio: Logo size as ratio of cover width (0.1 to 0.3)
+        brand_text: Podcast brand name (e.g., "Yudame Research") - appears next to logo
         series_text: Series name text (e.g., "Cardiovascular Health")
         episode_text: Episode info text (e.g., "Ep 3 - HRV")
     """
@@ -90,8 +91,9 @@ def add_watermark(cover_path, logo_path, position='bottom-right', opacity=0.9, s
     watermarked = Image.alpha_composite(cover, watermark_layer)
 
     # Add text overlays if provided
-    if series_text or episode_text:
-        watermarked = add_text_overlays(watermarked, series_text, episode_text)
+    if brand_text or series_text or episode_text:
+        watermarked = add_text_overlays(watermarked, brand_text, series_text, episode_text,
+                                       logo_width, logo_height, pos, position)
 
     # Save back to original path
     output_path = cover_path.parent / f"{cover_path.stem}_watermarked{cover_path.suffix}"
@@ -107,14 +109,20 @@ def add_watermark(cover_path, logo_path, position='bottom-right', opacity=0.9, s
     return cover_path
 
 
-def add_text_overlays(image, series_text=None, episode_text=None):
+def add_text_overlays(image, brand_text=None, series_text=None, episode_text=None,
+                     logo_width=0, logo_height=0, logo_pos=(0, 0), logo_position='top-left'):
     """
     Add text overlays to the image.
 
     Args:
         image: PIL Image object
-        series_text: Series name (top)
-        episode_text: Episode info (below series)
+        brand_text: Podcast brand name (appears next to logo)
+        series_text: Series name
+        episode_text: Episode info
+        logo_width: Width of logo for text positioning
+        logo_height: Height of logo for text positioning
+        logo_pos: (x, y) position of logo
+        logo_position: Logo position string
     """
     # Convert to RGB for drawing
     img = image.convert('RGB')
@@ -126,49 +134,64 @@ def add_text_overlays(image, series_text=None, episode_text=None):
     # Try to load nice fonts, fall back to default
     try:
         # Try common macOS system fonts
+        brand_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.055))
         series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))
         episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.065))
     except:
         try:
+            brand_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.055))
             series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
             episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.065))
         except:
             # Fallback to default
+            brand_font = ImageFont.load_default()
             series_font = ImageFont.load_default()
             episode_font = ImageFont.load_default()
 
-    y_position = padding
+    # Start position based on logo location
+    if logo_position == 'top-left':
+        # Brand text goes to the right of logo
+        brand_x = logo_pos[0] + logo_width + int(padding * 0.4)
+        brand_y = logo_pos[1] + (logo_height // 2) - (int(width * 0.055) // 2)  # Center vertically with logo
 
-    # Draw series text at top
+        # Series/episode text starts below logo with margin
+        content_y = logo_pos[1] + logo_height + int(padding * 0.8)
+        content_x = padding
+    else:
+        # Default to top
+        brand_x = padding
+        brand_y = padding
+        content_y = brand_y + int(width * 0.055) + int(padding * 0.5)
+        content_x = padding
+
+    # Draw brand text next to logo (if logo is top-left)
+    if brand_text and logo_position == 'top-left':
+        shadow_offset = 2
+        draw.text((brand_x + shadow_offset, brand_y + shadow_offset),
+                 brand_text, fill=(0, 0, 0, 180), font=brand_font)
+        draw.text((brand_x, brand_y), brand_text, fill=(255, 255, 255, 255), font=brand_font)
+
+    # Draw series text
     if series_text:
-        # Add semi-transparent background for readability
         bbox = draw.textbbox((0, 0), series_text, font=series_font)
-        text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]
 
-        # Draw text shadow for depth
         shadow_offset = 2
-        draw.text((padding + shadow_offset, y_position + shadow_offset),
+        draw.text((content_x + shadow_offset, content_y + shadow_offset),
                  series_text, fill=(0, 0, 0, 180), font=series_font)
+        draw.text((content_x, content_y), series_text, fill=(255, 255, 255, 255), font=series_font)
 
-        # Draw main text in white
-        draw.text((padding, y_position), series_text, fill=(255, 255, 255, 255), font=series_font)
-
-        y_position += text_height + int(padding * 0.3)
+        content_y += text_height + int(padding * 0.3)
 
     # Draw episode text below series
     if episode_text:
         bbox = draw.textbbox((0, 0), episode_text, font=episode_font)
-        text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]
 
-        # Draw text shadow
         shadow_offset = 3
-        draw.text((padding + shadow_offset, y_position + shadow_offset),
+        draw.text((content_x + shadow_offset, content_y + shadow_offset),
                  episode_text, fill=(0, 0, 0, 200), font=episode_font)
-
-        # Draw main text in white
-        draw.text((padding, y_position), episode_text, fill=(255, 255, 255, 255), font=episode_font)
+        draw.text((content_x, content_y), episode_text, fill=(255, 255, 255, 255), font=episode_font)
 
     return img.convert('RGBA')
 
@@ -182,8 +205,10 @@ def main():
                        help="Logo position (default: bottom-right)")
     parser.add_argument("--opacity", type=float, default=0.9,
                        help="Logo opacity 0.0-1.0 (default: 0.9)")
-    parser.add_argument("--size", type=float, default=0.15,
-                       help="Logo size ratio 0.1-0.3 (default: 0.15)")
+    parser.add_argument("--size", type=float, default=0.12,
+                       help="Logo size ratio 0.1-0.3 (default: 0.12)")
+    parser.add_argument("--brand", default="Yudame Research",
+                       help="Podcast brand name (default: 'Yudame Research')")
     parser.add_argument("--series", help="Series name text (e.g., 'Cardiovascular Health')")
     parser.add_argument("--episode", help="Episode text (e.g., 'Ep 3 - HRV')")
 
@@ -200,6 +225,7 @@ def main():
         position=args.position,
         opacity=args.opacity,
         size_ratio=args.size,
+        brand_text=args.brand,
         series_text=args.series,
         episode_text=args.episode
     )

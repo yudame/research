@@ -42,6 +42,141 @@ Plus original audio files (can keep for archival):
 ├── Stablecoins_Global_Rules_Failure_and_Genius_Act.m4a  # Original from NotebookLM
 ```
 
+## Series Organization and Naming Conventions
+
+### When to Use Series Subdirectories
+
+**Use a series subdirectory when:**
+- Creating 3+ episodes on a related topic (e.g., cardiovascular health, blockchain fundamentals)
+- Planning a cohesive multi-part series with logical progression
+- Want to group related episodes for better organization
+
+**Use standalone episode structure when:**
+- Creating one-off episodes on different topics
+- Episode is not part of a planned series
+- Topic doesn't fit into an existing series
+
+### Series Directory Structure
+
+For multi-episode series, organize episodes into a series subdirectory:
+
+```
+podcast/episodes/
+├── series-name/                    # Series subdirectory
+│   ├── ep1-topic-slug/
+│   │   ├── research/
+│   │   ├── prompts.md
+│   │   ├── report.md
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_chapters.txt
+│   │   └── YYYY-MM-DD-series-name-episode-1-topic_chapters.json
+│   ├── ep2-topic-slug/
+│   ├── ep3-topic-slug/
+│   └── ep4-topic-slug/
+└── YYYY-MM-DD-standalone-topic/    # Standalone episodes at root
+```
+
+### Series Naming Conventions
+
+**Directory naming:**
+- Series subdirectory: `series-name/` (lowercase, hyphenated, e.g., `cardiovascular-health/`)
+- Episode subdirectory: `epX-topic-slug/` (e.g., `ep1-lifestyle/`, `ep2-vo2-max/`)
+
+**Episode title format:**
+```
+Series Name: Ep. X, Topic
+```
+
+**Examples:**
+- "Cardiovascular Health: Ep. 1, Lifestyle Foundations"
+- "Cardiovascular Health: Ep. 2, VO2 Max"
+- "Blockchain Fundamentals: Ep. 1, Consensus Mechanisms"
+- "Blockchain Fundamentals: Ep. 2, Smart Contracts"
+
+**Audio file naming (remains date-based for chronological sorting):**
+```
+YYYY-MM-DD-series-name-episode-X-topic.mp3
+```
+
+### Example: Cardiovascular Health Series
+
+```
+podcast/episodes/cardiovascular-health/
+├── ep1-lifestyle/
+│   ├── research/
+│   │   ├── chatgpt-research.md
+│   │   ├── perplexity-research.md
+│   │   └── sources.md
+│   ├── prompts.md
+│   ├── report.md
+│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3
+│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_transcript.json
+│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_chapters.txt
+│   └── 2025-11-21-cardiovascular-health-episode-1-lifestyle_chapters.json
+├── ep2-vo2-max/
+├── ep3-hrv/
+└── ep4-supplementation/
+```
+
+**Feed.xml entry for series episode:**
+```xml
+<item>
+  <title>Cardiovascular Health: Ep. 4, Supplementation</title>
+  <description>Episode description... Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
+  <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
+             length="36144828"
+             type="audio/mpeg"/>
+  <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
+</item>
+```
+
+### Creating a New Series
+
+When starting a new multi-episode series:
+
+1. **Ask the user:**
+   - Series name (e.g., "Cardiovascular Health", "Blockchain Fundamentals")
+   - How many episodes planned?
+   - Episode topics and order
+
+2. **Create series structure:**
+   ```bash
+   mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name/ep1-topic-slug/research/{documents,assets}
+   ```
+
+3. **Use standardized naming:**
+   - Episode title: "Series Name: Ep. 1, Topic"
+   - Directory: `series-name/ep1-topic-slug/`
+   - Audio file: `YYYY-MM-DD-series-name-episode-1-topic.mp3`
+
+4. **Update feed.xml** with series-aware paths and titles
+
+### Migrating Episodes to Series
+
+If standalone episodes should become a series:
+
+1. **Create series subdirectory:**
+   ```bash
+   mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name
+   ```
+
+2. **Move and rename episode directories:**
+   ```bash
+   mv podcast/episodes/YYYY-MM-DD-old-name podcast/episodes/series-name/ep1-topic-slug
+   ```
+
+3. **Update feed.xml:**
+   - Change all episode paths to `episodes/series-name/epX-topic-slug/`
+   - Normalize all titles to "Series Name: Ep. X, Topic" format
+
+4. **Commit with descriptive message:**
+   ```bash
+   git add -A
+   git commit -m "refactor: Organize [series name] episodes into series subdirectory"
+   git push
+   ```
+
 ## Complete Workflow
 
 ### 1. Setup Phase
@@ -49,9 +184,26 @@ Plus original audio files (can keep for archival):
 **Create a todo list** to track progress through the workflow.
 
 **Ask the user:**
-1. What date should we use? (YYYY-MM-DD format) - Offer today's date or custom
-2. What's the episode slug? (e.g., "stablecoin-history") - Suggest options based on topic
-3. What's the episode title? (e.g., "Stablecoin Market: Strategies and Pitfalls")
+1. **Is this part of a series?**
+   - If YES: Ask for series name and episode number
+   - If NO: Create standalone episode
+2. What date should we use? (YYYY-MM-DD format) - Offer today's date or custom
+3. What's the episode topic/slug? (e.g., "lifestyle", "vo2-max", "supplementation")
+4. What's the episode title?
+   - **For series:** "Series Name: Ep. X, Topic" (e.g., "Cardiovascular Health: Ep. 1, Lifestyle Foundations")
+   - **For standalone:** Descriptive title (e.g., "Stablecoin Market: Strategies and Pitfalls")
+
+**Create the appropriate directory structure:**
+
+**For series episodes:**
+```bash
+mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name/epX-topic-slug/research/{documents,assets}
+```
+
+**For standalone episodes:**
+```bash
+mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-topic-slug/research/{documents,assets}
+```
 
 ### 2. Research Phase (User-led with your support)
 
