@@ -105,3 +105,31 @@ Key themes to weave throughout:
 ---
 
 <!-- Additional prompts will be added below as we progress through the workflow -->
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenAI dall-e-3
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Lifestyle":
+
+Style: Clean, professional, scientific
+Layout: Bold typography with subtle data visualization elements
+Color palette: Deep blues and teals with white/silver accents
+Concept: Maximal oxygen uptake (VO2 max) represents the maximum integrated capacity of the pulmonary, cardiovascular, and muscular systems to uptake, transport, and utilize oxygen. This metric has emerged as o
+
+Design as a square format (1400x1400px) with space for episode title overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Revised Prompt:**
+```
+Create a professional and minimalist podcast episode cover art for 'Ep1 Lifestyle'. It should be in a square format (1400x1400px), suitable for Apple Podcasts, and have a clean, scientific style. The layout involves bold typography with subtle data visualization elements around the concept of maximal oxygen uptake (VO2 max). The color palette should be deep blues and teals, with white/silver accents, emphasizing deep navy blue and dark blue hues as the dominant colors filling most of the canvas. Bright teal, white, and silver should only serve as accent colors. The ENTIRE image should comprise purely abstract visualizations, with an absolute absence of text, numbers, labels, annotations, icons, logos, symbols, and letterforms of any kind. Factor in space for episode title overlay.
+```
+
+**Output:** cover.png
+
+**Date:** 2025-11-24

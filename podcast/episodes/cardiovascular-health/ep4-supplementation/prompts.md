@@ -263,3 +263,31 @@ git push
 **Feed URL:** https://yudame.github.io/research/podcast/feed.xml
 **Episode URL:** https://yudame.github.io/research/podcast/episodes/2025-11-21-cardiovascular-health-episode-4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3
 **Report URL:** https://yudame.github.io/research/podcast/episodes/2025-11-21-cardiovascular-health-episode-4-supplementation/report.md
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenAI dall-e-3
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep4 Supplementation":
+
+Style: Clean, professional, scientific
+Layout: Bold typography with subtle data visualization elements
+Color palette: Deep blues and teals with white/silver accents
+Concept: **Target Audience:** 40-year-old men optimizing cardiovascular health **Episode Context:** Episode 4 in cardiovascular optimization series - Episode 1: Foundational lifestyle factors
+
+Design as a square format (1400x1400px) with space for episode title overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Revised Prompt:**
+```
+Generate a modern podcast episode cover art for the fourth episode titled 'Supplementation'. Employ a style that exudes a clean, professional, and scientific atmosphere. The layout should incorporate bold typography with subtle data visualization elements. Colors should be deep blues and teals as the dominant hues, enhanced by white and silver accents. This cover art should appeal to the target audience of forty-year-old men aiming at optimizing their cardiovascular health. Ensure the design is square formatted (1400x1400px) and is minimalist, leaving room for an episode title overlay, and is suitable for display on Apple Podcasts. The design must be void of any text, labels, annotations, logos, symbols, or numerals. The design should be a pure abstract visualization and be filled with dark blue tones, not just as a frame or borders. The accent colors: bright teal, white, and silver should only be used sparingly.
+```
+
+**Output:** cover.png
+
+**Date:** 2025-11-24

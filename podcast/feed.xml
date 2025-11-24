@@ -22,6 +22,7 @@
     <!-- Episode 5: Cardiovascular Health Series - Episode 4 -->
     <item>
       <title>Cardiovascular Health: Ep. 4, Supplementation</title>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/cover.png"/>
       <description>Evidence-based guide to cardiovascular supplements and medications for 40-year-old men, covering what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49% in the Q-SYMBIO trial, and why vitamin D and niacin failed despite decades of hype. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
 
 Key Sources:
@@ -43,6 +44,7 @@ Key Sources:
     <!-- Episode 4: Cardiovascular Health Series - Episode 3 -->
     <item>
       <title>Cardiovascular Health: Ep. 3, HRV</title>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/cover.png"/>
       <description>Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
 
 Key Sources:
@@ -63,6 +65,7 @@ Key Sources:
     <!-- Episode 3: Cardiovascular Health Series - Episode 2 -->
     <item>
       <title>Cardiovascular Health: Ep. 2, VO2 Max</title>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/cover.png"/>
       <description>Episode 2 in the Cardiovascular Health series. Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols, performance nutrition, and strategic supplementation. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
 
 Key Sources:
@@ -83,6 +86,7 @@ Key Sources:
     <!-- Episode 2: Cardiovascular Health Series - Episode 1 -->
     <item>
       <title>Cardiovascular Health: Ep. 1, Lifestyle Foundations</title>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png"/>
       <description>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both (full report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md). This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.
 
 Key Sources:
@@ -104,6 +108,7 @@ Key Sources:
     <!-- Episode 1: Stablecoin History -->
     <item>
       <title>Stablecoin Market: Strategies and Pitfalls</title>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/cover.png"/>
       <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
 
 Key Sources:

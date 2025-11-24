@@ -135,3 +135,31 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 - Generated a comprehensive year-by-year analysis with clear strategic insights
 - 14 chapters provided good granularity for a 32-minute episode
 - Publishing phase remains to be completed
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenAI dall-e-3
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "2025 11 19 Stablecoin History":
+
+Style: Clean, professional, scientific
+Layout: Bold typography with subtle data visualization elements
+Color palette: Deep blues and teals with white/silver accents
+Concept: This report chronicles the history of stablecoins since 2017, highlighting major events, market dynamics, and critical lessons learned. Stablecoins, designed to maintain a stable value, have evolved f
+
+Design as a square format (1400x1400px) with space for episode title overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Revised Prompt:**
+```
+Generate a modern, square formatted (1400x1400px) podcast episode cover art representative of the topic 'Stablecoin History'. The style should be clean, professional, and scientific. Incorporate elements of data visualization subtly in the design. The background should be filled dominantly with shades of deep navy and dark blue, with splashes of bright teal, white, and silver used as accent colors overlaying the theme. Keep the design abstract, without any text, numbers, labels, annotations, icons, logos, symbols, or letterforms, signifying a minimalist aesthetic. There should also be adequate space for the overlay of episode title, maintaining professional standards suitable for Apple Podcasts.
+```
+
+**Output:** cover.png
+
+**Date:** 2025-11-24

@@ -145,3 +145,31 @@ Balance the concrete and the abstract - neither dumbed down nor dry.
 ---
 
 <!-- Additional prompts will be added below as we progress through the workflow -->
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenAI dall-e-3
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep2 Vo2 Max":
+
+Style: Clean, professional, scientific
+Layout: Bold typography with subtle data visualization elements
+Color palette: Deep blues and teals with white/silver accents
+Concept: **Episode 2: Cardiovascular Health Series** **Target audience:** 40-year-old man with ~10 hours/week for training **Research completed:** 2025-11-20
+
+Design as a square format (1400x1400px) with space for episode title overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Revised Prompt:**
+```
+Create a modern podcast episode cover art suitable for episode 2 of a Cardiovascular Health Series, designed particularly for a target audience of a 40-year-old man having around 10 hours per week for training. This cover art should adhere to a clean, professional, and scientific style that follows a layout of bold typography with subtle data visualization elements. It should implement a colour palette of deep blues and teals with accents of white and silver. Keep the format square (1400x1400px) with space for episode title overlay and a minimalist aesthetic to suit platforms like Apple Podcasts. The entire image should be themed in deep navy blue and dark blue tones filling most of the canvas, utilizing bright teal, white, and silver only as accent colours against the dark blue theme. Ensure no use of text, numbers, labels, annotations, icons, logos, symbols, or any letterforms and it should avoid any typography or graphic elements. The concept should reflect abstract visualization emanating a vibe of research completed in November 2025.
+```
+
+**Output:** cover.png
+
+**Date:** 2025-11-24
