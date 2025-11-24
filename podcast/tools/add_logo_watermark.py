@@ -24,7 +24,7 @@ except ImportError:
 
 
 def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_ratio=0.12,
-                  brand_text=None, series_text=None, episode_text=None):
+                  brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#FFC20E'):
     """
     Add logo watermark and text overlays to cover image.
 
@@ -37,6 +37,8 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_
         brand_text: Podcast brand name (e.g., "Yudame Research") - appears next to logo
         series_text: Series name text (e.g., "Cardiovascular Health")
         episode_text: Episode info text (e.g., "Ep 3 - HRV")
+        border_width: Width of border in pixels (0 = no border)
+        border_color: Hex color for border (default: yellow from logo)
     """
     cover_path = Path(cover_path)
     logo_path = Path(logo_path)
@@ -55,6 +57,10 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_
     # Load images
     cover = Image.open(cover_path).convert('RGBA')
     logo = Image.open(logo_path).convert('RGBA')
+
+    # Add border if requested
+    if border_width > 0:
+        cover = add_border(cover, border_width, border_color)
 
     # Calculate logo size (as percentage of cover width)
     logo_width = int(cover.width * size_ratio)
@@ -107,6 +113,30 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_
     print(f"✓ Original replaced: {cover_path}")
 
     return cover_path
+
+
+def add_border(image, border_width, border_color='#FFC20E'):
+    """
+    Add a solid color border around the image.
+
+    Args:
+        image: PIL Image object
+        border_width: Width of border in pixels
+        border_color: Hex color string (e.g., '#FFC20E' for yellow)
+    """
+    # Convert hex color to RGB
+    border_color = border_color.lstrip('#')
+    r, g, b = tuple(int(border_color[i:i+2], 16) for i in (0, 2, 4))
+
+    # Create new image with border
+    new_width = image.width + (border_width * 2)
+    new_height = image.height + (border_width * 2)
+    bordered = Image.new('RGBA', (new_width, new_height), (r, g, b, 255))
+
+    # Paste original image in center
+    bordered.paste(image, (border_width, border_width), image)
+
+    return bordered
 
 
 def add_text_overlays(image, brand_text=None, series_text=None, episode_text=None,
@@ -211,6 +241,10 @@ def main():
                        help="Podcast brand name (default: 'Yudame Research')")
     parser.add_argument("--series", help="Series name text (e.g., 'Cardiovascular Health')")
     parser.add_argument("--episode", help="Episode text (e.g., 'Ep 3 - HRV')")
+    parser.add_argument("--border", type=int, default=0,
+                       help="Border width in pixels (default: 0 = no border)")
+    parser.add_argument("--border-color", default="#FFC20E",
+                       help="Border color in hex (default: #FFC20E = yellow)")
 
     args = parser.parse_args()
 
@@ -227,7 +261,9 @@ def main():
         size_ratio=args.size,
         brand_text=args.brand,
         series_text=args.series,
-        episode_text=args.episode
+        episode_text=args.episode,
+        border_width=args.border,
+        border_color=args.border_color
     )
 
     print("\nDone! Logo and text overlays applied.")
