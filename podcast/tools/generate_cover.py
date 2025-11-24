@@ -72,15 +72,20 @@ def generate_image(prompt, output_path, size="1024x1024", model="dall-e-3"):
         print("Set it with: export OPENAI_API_KEY='your-api-key'")
         sys.exit(1)
 
+    # Append explicit instructions to avoid text/icons/annotations
+    enhanced_prompt = f"""{prompt}
+
+IMPORTANT: Pure abstract visualization only. Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind. Clean visual design without any typography or graphic elements."""
+
     client = OpenAI(api_key=api_key)
 
     print(f"Generating image with {model}...")
-    print(f"Prompt: {prompt[:100]}...")
+    print(f"Enhanced prompt: {enhanced_prompt[:150]}...")
 
     try:
         response = client.images.generate(
             model=model,
-            prompt=prompt,
+            prompt=enhanced_prompt,
             size=size,
             quality="standard",
             n=1,
