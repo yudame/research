@@ -218,7 +218,14 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 
 **Generate podcast audio using NotebookLM:**
 
-1. Upload research materials to NotebookLM (report.md and any source documents)
+1. Upload ALL research files to NotebookLM:
+   - `report.md` (overview/summary)
+   - `research/perplexity-research.md` (if present)
+   - `research/chatgpt-research.md` (if present)
+   - Any other research files in the `research/` directory
+   - Any source documents (PDFs, articles) in `research/documents/`
+
+   **User uploads ALL files** - NotebookLM will synthesize across all sources
 
 2. Use "Audio Overview" feature with this prompt:
 
@@ -305,6 +312,12 @@ Append to `prompts.md`:
 **Tool Used:** NotebookLM
 
 **Format:** Deep Dive / Long
+
+**Files Uploaded to NotebookLM:**
+- report.md
+- research/perplexity-research.md
+- research/chatgpt-research.md
+- [List any other research files or documents uploaded]
 
 **Prompt:**
 ```
