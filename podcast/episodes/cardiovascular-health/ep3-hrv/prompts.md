@@ -297,3 +297,22 @@ Create a square abstract image of heart rate variability (HRV). The primary colo
 **Output:** cover.png
 
 **Date:** 2025-11-24
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenAI dall-e-3
+
+**Original Prompt:**
+```
+Modern scientific podcast cover art visualizing heart rate variability. Abstract representation of ECG waveform showing varying beat-to-beat intervals as flowing curves. Bright teal and white waveforms on dark background. Clean, minimalist, professional medical aesthetic. Subtle motion blur effect. Square format optimized for podcast apps.
+```
+
+**Revised Prompt:**
+```
+Visualize an abstract modern podcast cover art representing heart rate variability. The artwork should focus on the portrayal of an ECG waveform, showcasing varying beat-to-beat intervals as undulating curves in bright teal and white colors. The canvas should be drenched heavily in deep navy blue and dark blue tones to create a professional medical aesthetic with a clean, minimalist approach. Bright teal, white, and silver should act merely as accent colors, enhancing the visual clarity of the ECG waveforms. Introduce a subtle motion blur effect for a dynamic touch. Maintain a pure abstract visualization without incorporating any text, numbers, labels, annotations, icons, logos, symbols, or any graphic elements. The artwork should have a square format to be optimal for podcast apps.
+```
+
+**Output:** cover.png
+
+**Date:** 2025-11-24

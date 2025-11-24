@@ -72,11 +72,13 @@ def generate_image(prompt, output_path, size="1024x1024", model="dall-e-3"):
         print("Set it with: export OPENAI_API_KEY='your-api-key'")
         sys.exit(1)
 
-    # Append explicit instructions to avoid text/icons/annotations and ensure consistent background
+    # Append explicit instructions to avoid text/icons/annotations and ensure consistent dark theme
     enhanced_prompt = f"""{prompt}
 
 IMPORTANT:
-- Use deep navy blue or dark blue as the PRIMARY BACKGROUND COLOR filling the entire canvas
+- The ENTIRE image should be themed in deep navy blue and dark blue tones as the dominant color scheme
+- Dark blue should fill most of the canvas, not just be a border or frame
+- Use bright teal, white, and silver only as accent colors on top of the dark blue theme
 - Pure abstract visualization only
 - Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
 - Clean visual design without any typography or graphic elements"""
