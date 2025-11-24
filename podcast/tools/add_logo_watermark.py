@@ -162,16 +162,17 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
     padding = int(width * 0.05)
 
     # Try to load nice fonts, fall back to default
+    # Note: series_font is BIGGER than episode_font to handle long topic names
     try:
         # Try common macOS system fonts
         brand_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.055))
-        series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))
-        episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.065))
+        series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.065))  # Bigger
+        episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))  # Smaller
     except:
         try:
             brand_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.055))
-            series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
-            episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.065))
+            series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.065))
+            episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
         except:
             # Fallback to default
             brand_font = ImageFont.load_default()
@@ -201,26 +202,26 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
                  brand_text, fill=(0, 0, 0, 180), font=brand_font)
         draw.text((brand_x, brand_y), brand_text, fill=(255, 255, 255, 255), font=brand_font)
 
-    # Draw series text
+    # Draw series text (BIGGER font - optional for standalone episodes)
     if series_text:
         bbox = draw.textbbox((0, 0), series_text, font=series_font)
         text_height = bbox[3] - bbox[1]
 
-        shadow_offset = 2
+        shadow_offset = 3
         draw.text((content_x + shadow_offset, content_y + shadow_offset),
-                 series_text, fill=(0, 0, 0, 180), font=series_font)
+                 series_text, fill=(0, 0, 0, 200), font=series_font)
         draw.text((content_x, content_y), series_text, fill=(255, 255, 255, 255), font=series_font)
 
         content_y += text_height + int(padding * 0.3)
 
-    # Draw episode text below series
+    # Draw episode text below series (SMALLER font to handle long names)
     if episode_text:
         bbox = draw.textbbox((0, 0), episode_text, font=episode_font)
         text_height = bbox[3] - bbox[1]
 
-        shadow_offset = 3
+        shadow_offset = 2
         draw.text((content_x + shadow_offset, content_y + shadow_offset),
-                 episode_text, fill=(0, 0, 0, 200), font=episode_font)
+                 episode_text, fill=(0, 0, 0, 180), font=episode_font)
         draw.text((content_x, content_y), episode_text, fill=(255, 255, 255, 255), font=episode_font)
 
     return img.convert('RGBA')
@@ -242,7 +243,7 @@ def main():
     parser.add_argument("--series", help="Series name text (e.g., 'Cardiovascular Health')")
     parser.add_argument("--episode", help="Episode text (e.g., 'Ep 3 - HRV')")
     parser.add_argument("--border", type=int, default=0,
-                       help="Border width in pixels (default: 0 = no border)")
+                       help="Border width in pixels (default: 0 = no border, recommended: 15-25)")
     parser.add_argument("--border-color", default="#FFC20E",
                        help="Border color in hex (default: #FFC20E = yellow)")
 
