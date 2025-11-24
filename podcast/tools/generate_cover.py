@@ -72,10 +72,14 @@ def generate_image(prompt, output_path, size="1024x1024", model="dall-e-3"):
         print("Set it with: export OPENAI_API_KEY='your-api-key'")
         sys.exit(1)
 
-    # Append explicit instructions to avoid text/icons/annotations
+    # Append explicit instructions to avoid text/icons/annotations and ensure consistent background
     enhanced_prompt = f"""{prompt}
 
-IMPORTANT: Pure abstract visualization only. Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind. Clean visual design without any typography or graphic elements."""
+IMPORTANT:
+- Use deep navy blue or dark blue as the PRIMARY BACKGROUND COLOR filling the entire canvas
+- Pure abstract visualization only
+- Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
+- Clean visual design without any typography or graphic elements"""
 
     client = OpenAI(api_key=api_key)
 
