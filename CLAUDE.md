@@ -74,7 +74,7 @@ ls -l file.mp3 | awk '{print $5}'  # File size in bytes
 3. Commit with descriptive message using heredoc format
 4. GitHub Pages deploys automatically in 2-3 minutes
 
-**Feed URL:** `https://yudame.github.io/research/podcast/feed.xml`
+**Feed URL:** `https://research.yuda.me/podcast/feed.xml`
 
 ## Repository Constraints
 
@@ -97,7 +97,7 @@ ls -l file.mp3 | awk '{print $5}'  # File size in bytes
 
 ## GitHub Pages Setup
 
-Located at: `https://yudame.github.io/research/`
+Located at: `https://research.yuda.me/`
 
 Configuration:
 - Source: main branch, root folder
@@ -156,7 +156,7 @@ Template in `.claude/skills/new-podcast-episode.md` lines 69-87.
 ## Episode Description Best Practices
 
 - 1-2 compelling sentences highlighting key topics and takeaways
-- Always include link to full report: `https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md`
+- Always include link to full report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
 - Add "Key Sources:" section with 3-5 validated official links
 - Prioritize: official legislation/regulation, academic analysis, primary sources
 - Use WebSearch to find and WebFetch to validate official URLs when possible

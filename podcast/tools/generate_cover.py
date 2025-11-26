@@ -173,7 +173,7 @@ def main():
 
     print(f"\nDone! Cover art ready at: {image_path}")
     print(f"\nTo use in feed.xml, add this line to the episode <item>:")
-    print(f'  <itunes:image href="https://yudame.github.io/research/podcast/episodes/{episode_dir.name}/{output_filename}"/>')
+    print(f'  <itunes:image href="https://research.yuda.me/podcast/episodes/{episode_dir.name}/{output_filename}"/>')
 
 
 if __name__ == "__main__":

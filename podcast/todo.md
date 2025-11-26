@@ -31,7 +31,7 @@
 
 - [ ] Test the feed
   - [ ] Wait for GitHub Pages to deploy (check Actions tab)
-  - [ ] Visit `https://yudame.github.io/research/podcast/feed.xml` in browser
+  - [ ] Visit `https://research.yuda.me/podcast/feed.xml` in browser
   - [ ] Subscribe in your podcast app
   - [ ] Verify episode appears and plays correctly
 

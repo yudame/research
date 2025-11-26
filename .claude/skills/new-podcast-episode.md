@@ -127,11 +127,11 @@ podcast/episodes/cardiovascular-health/
 ```xml
 <item>
   <title>Cardiovascular Health: Ep. 4, Supplementation</title>
-  <description>Episode description... Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
-  <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
+  <description>Episode description... Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
+  <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
              length="36144828"
              type="audio/mpeg"/>
-  <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
+  <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
 </item>
 ```
 
@@ -771,7 +771,7 @@ a. **Create compelling 1-2 sentence description:**
    - Based on the research report and transcript
    - Highlight key topics, major stories/events covered, and main takeaways
    - Focus on what makes this episode valuable and what listeners will learn
-   - Include link to full research report: `https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md`
+   - Include link to full research report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
 b. **Generate episode-specific keywords (5-10 keywords):**
    - Analyze the research report, transcript, and chapter titles
@@ -837,8 +837,8 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 <!-- Episode N: Short Description -->
 <item>
   <title>Episode Title Here</title>
-  <itunes:image href="https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/cover.png?v=1"/>
-  <description>Compelling 1-2 sentence description (full report: https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
+  <itunes:image href="https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/cover.png?v=1"/>
+  <description>Compelling 1-2 sentence description (full report: https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
 
 Key Sources:
 • Official Source 1: [validated URL]
@@ -846,10 +846,10 @@ Key Sources:
 • Official Source 3: [validated URL]
 • Analysis/Research: [validated URL]</description>
   <pubDate>Day, DD Mon YYYY 12:00:00 GMT</pubDate>
-  <enclosure url="https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
+  <enclosure url="https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
              length="FILE_SIZE_IN_BYTES"
              type="audio/mpeg"/>
-  <guid>https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
+  <guid>https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
   <itunes:duration>MM:SS</itunes:duration>
   <itunes:explicit>no</itunes:explicit>
   <itunes:keywords>keyword1, keyword2, keyword3, specific-protocol, specific-concept</itunes:keywords>
@@ -927,7 +927,7 @@ Key Sources:
    - Branch: main
    - Folder: / (root)
 
-2. Feed URL will be: `https://yudame.github.io/research/podcast/feed.xml`
+2. Feed URL will be: `https://research.yuda.me/podcast/feed.xml`
 
 3. Wait 2-3 minutes for GitHub Pages to deploy
 

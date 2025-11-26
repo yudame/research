@@ -6,7 +6,7 @@ Evidence-based research and analysis across technology, health, economics, and h
 
 Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources to build frameworks for understanding important subjects.
 
-**Feed:** https://yudame.github.io/research/podcast/feed.xml
+**Feed:** https://research.yuda.me/podcast/feed.xml
 
 ### Recent Episodes
 

@@ -4,7 +4,7 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yudame Research Podcast</title>
-    <link>https://yudame.github.io/research/podcast/</link>
+    <link>https://research.yuda.me/podcast/</link>
     <description>Deep dives into research topics, including blockchain, health optimization, and evidence-based analysis</description>
     <language>en-us</language>
     <itunes:author>Tom Counsell</itunes:author>
@@ -16,14 +16,14 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <itunes:category text="Education"/>
-    <itunes:image href="https://yudame.github.io/research/podcast/cover.png"/>
+    <itunes:image href="https://research.yuda.me/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
     <!-- Episode 6: Stablecoin Compliance Asia -->
     <item>
       <title>Stablecoin Compliance: Navigating GENIUS Act and MiCA from Asia</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/2025-11-26-stablecoin-compliance-asia/cover.png?v=1"/>
-      <description>An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access. Full research report: https://yudame.github.io/research/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md
+      <itunes:image href="https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/cover.png?v=1"/>
+      <description>An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access. Full research report: https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md
 
 Key Sources:
 • US GENIUS Act (S.394): https://www.congress.gov/bill/119th-congress/senate-bill/394/text
@@ -31,10 +31,10 @@ Key Sources:
 • Hong Kong Stablecoin Ordinance: https://www.hkma.gov.hk/eng/news-and-media/insight/2025/06/20250623/
 • Yale Journal on GENIUS Foreign Issuers: https://www.yalejreg.com/nc/how-the-genius-act-regulates-foreign-issuersand-how-it-compares-to-europe-and-the-uk-by-benedikt-bartylla/</description>
       <pubDate>Wed, 26 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3"
                  length="33102921"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3</guid>
       <itunes:duration>34:28</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>GENIUS Act, MiCA, stablecoin regulation, compliance, EMT, ART, PPSI, Tether, Circle, USDC, USDT, OCC, EMI, reserves, licensing, Asia, Hong Kong, Singapore, extraterritorial, kill switch, OFAC</itunes:keywords>
@@ -43,8 +43,8 @@ Key Sources:
     <!-- Episode 5: Cardiovascular Health Series - Episode 4 -->
     <item>
       <title>Cardiovascular Health: Ep. 4, Supplementation</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/cover.png?v=2"/>
-      <description>Evidence-based guide to cardiovascular supplements and medications for 40-year-old men, covering what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49% in the Q-SYMBIO trial, and why vitamin D and niacin failed despite decades of hype. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
+      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/cover.png?v=2"/>
+      <description>Evidence-based guide to cardiovascular supplements and medications for 40-year-old men, covering what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49% in the Q-SYMBIO trial, and why vitamin D and niacin failed despite decades of hype. Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
 
 Key Sources:
 • REDUCE-IT Trial (omega-3 EPA): https://www.ahajournals.org/doi/10.1161/JAHA.119.013543
@@ -53,10 +53,10 @@ Key Sources:
 • USPSTF Aspirin Guidelines (2022): https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/aspirin-to-prevent-cardiovascular-disease-preventive-medication
 • JUPITER Trial (statin primary prevention): https://www.nejm.org/doi/full/10.1056/NEJMoa0807646</description>
       <pubDate>Thu, 21 Nov 2025 18:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
                  length="36144828"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
       <itunes:duration>37:39</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>omega-3, EPA, DHA, statins, aspirin, CoQ10, magnesium, vitamin D, plant sterols, aged garlic extract, red yeast rice, supplement timing, drug interactions, cardiovascular health, heart disease prevention</itunes:keywords>
@@ -65,8 +65,8 @@ Key Sources:
     <!-- Episode 4: Cardiovascular Health Series - Episode 3 -->
     <item>
       <title>Cardiovascular Health: Ep. 3, HRV</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/cover.png?v=2"/>
-      <description>Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
+      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/cover.png?v=2"/>
+      <description>Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health. Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
 
 Key Sources:
 • Shaffer & Ginsberg (2017) - HRV Metrics Overview: https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/
@@ -74,10 +74,10 @@ Key Sources:
 • Lehrer et al. (2020) - HRV Biofeedback Meta-Analysis: https://link.springer.com/article/10.1007/s10484-020-09466-z
 • Tegegne et al. (2018) - Lifelines Cohort Study: https://www.heartrhythmjournal.com/article/S1547-5271(18)30674-4/fulltext</description>
       <pubDate>Wed, 20 Nov 2025 15:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3"
                  length="41070895"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3</guid>
       <itunes:duration>42:46</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>HRV, heart rate variability, RMSSD, SDNN, autonomic nervous system, vagal tone, wearables, Oura Ring, Apple Watch, WHOOP, training optimization, recovery monitoring, biofeedback, cardiovascular health, VO2 max</itunes:keywords>
@@ -86,8 +86,8 @@ Key Sources:
     <!-- Episode 3: Cardiovascular Health Series - Episode 2 -->
     <item>
       <title>Cardiovascular Health: Ep. 2, VO2 Max</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/cover.png?v=2"/>
-      <description>Episode 2 in the Cardiovascular Health series. Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols, performance nutrition, and strategic supplementation. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
+      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/cover.png?v=2"/>
+      <description>Episode 2 in the Cardiovascular Health series. Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols, performance nutrition, and strategic supplementation. Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
 
 Key Sources:
 • JAMA Network Open: 122,000-patient study showing 5-fold mortality difference between fitness quartiles https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2707428
@@ -95,10 +95,10 @@ Key Sources:
 • Helgerud et al. (2007): 4x4 interval protocol showed 7.2% VO2max improvement and 10% stroke volume increase https://pubmed.ncbi.nlm.nih.gov/17414804/
 • Systematic reviews on HIIT, dietary nitrates, beta-alanine, and caffeine supplementation</description>
       <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3"
                  length="34775594"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3</guid>
       <itunes:duration>36:13</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>VO2 max, polarized training, HIIT, interval training, 4x4 protocol, stroke volume, cardiorespiratory fitness, longevity, mortality risk, performance nutrition, beta-alanine, caffeine, dietary nitrates, beetroot juice, creatine, detraining, recovery, periodization, threshold training</itunes:keywords>
@@ -107,8 +107,8 @@ Key Sources:
     <!-- Episode 2: Cardiovascular Health Series - Episode 1 -->
     <item>
       <title>Cardiovascular Health: Ep. 1, Lifestyle Foundations</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png?v=2"/>
-      <description>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both (full report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md). This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.
+      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png?v=2"/>
+      <description>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both (full report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md). This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.
 
 Key Sources:
 • AHA Physical Activity Guidelines: https://www.heart.org/en/healthy-living/fitness/fitness-basics/aha-recs-for-physical-activity-in-adults
@@ -117,10 +117,10 @@ Key Sources:
 • VO₂ Max and Mortality Meta-Analysis: https://pmc.ncbi.nlm.nih.gov/articles/PMC11103301/
 • Sleep Duration and Cardiovascular Health: https://pmc.ncbi.nlm.nih.gov/articles/PMC6201443/</description>
       <pubDate>Mon, 18 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3"
                  length="42201056"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3</guid>
       <itunes:duration>43:57</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>VO2 max, heart rate variability, HRV, cardiovascular health, sleep optimization, Mediterranean diet, DASH diet, exercise physiology, HIIT training, baroreflex, autonomic nervous system, longevity, mortality risk, stress management, smoking cessation</itunes:keywords>
@@ -129,8 +129,8 @@ Key Sources:
     <!-- Episode 1: Stablecoin History -->
     <item>
       <title>Stablecoin Market: Strategies and Pitfalls</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/cover.png?v=2"/>
-      <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
+      <itunes:image href="https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/cover.png?v=2"/>
+      <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
 
 Key Sources:
 • US GENIUS Act: https://www.congress.gov/bill/119th-congress/senate-bill/1582
@@ -138,10 +138,10 @@ Key Sources:
 • FSB Stablecoin Recommendations: https://www.fsb.org/2023/07/high-level-recommendations-for-the-regulation-supervision-and-oversight-of-global-stablecoin-arrangements-final-report/
 • Terra Collapse Analysis: https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24</description>
       <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
                  length="31387616"
                  type="audio/mpeg"/>
-      <guid>https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
       <itunes:duration>32:41</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>stablecoins, cryptocurrency, regulation, GENIUS Act, Terra UST, USDC, Tether, blockchain, DeFi, financial regulation</itunes:keywords>
