@@ -8,27 +8,42 @@
         :root {
             --navy: #0a1628;
             --navy-light: #1a2d4a;
-            --yellow: #FFC20E;
-            --teal: #2dd4bf;
+            --yellow: #d4a00a;
+            --teal: #0d9488;
             --white: #ffffff;
-            --gray: #94a3b8;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --text: #1e293b;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: var(--white);
+            color: var(--text);
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background: var(--navy);
+            background: var(--white);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin: 0;
             font-weight: 600;
-            color: var(--white);
+            color: var(--navy);
         }
 
         h2 {
@@ -36,8 +51,8 @@
             margin-top: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
-            color: var(--yellow);
-            border-bottom: 1px solid var(--navy-light);
+            color: var(--navy);
+            border-bottom: 1px solid var(--gray-light);
             padding-bottom: 0.5rem;
         }
 
@@ -48,26 +63,27 @@
 
         .tagline {
             font-size: 1.1rem;
-            color: var(--gray);
+            color: var(--navy-light);
             margin-bottom: 3rem;
         }
 
         .feed-section {
-            background: var(--navy-light);
+            background: var(--gray-light);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid var(--yellow);
+            border-left: 4px solid var(--navy);
             margin: 1.5rem 0;
         }
 
         .feed-url {
-            background: var(--navy);
+            background: var(--white);
             padding: 0.75rem 1rem;
             border-radius: 4px;
             font-family: monospace;
             font-size: 0.9rem;
             margin: 1rem 0;
-            color: var(--teal);
+            color: var(--navy);
+            border: 1px solid #e2e8f0;
         }
 
         .subscribe-links {
@@ -75,13 +91,13 @@
         }
 
         a {
-            color: var(--teal);
+            color: var(--navy);
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
-            color: var(--yellow);
+            color: var(--teal);
         }
 
         ul {
@@ -95,42 +111,45 @@
         }
 
         li strong {
-            color: var(--white);
+            color: var(--text);
         }
 
         .github-link {
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
-            background: var(--navy-light);
+            background: var(--gray-light);
             border-radius: 4px;
             color: var(--gray);
         }
 
         .github-link:hover {
-            background: var(--yellow);
-            color: var(--navy);
+            background: var(--navy);
+            color: var(--white);
             text-decoration: none;
         }
 
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--navy-light);
+            border-top: 1px solid var(--gray-light);
             color: var(--gray);
             font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <h1>Yudame Research</h1>
+    <div class="header">
+        <img src="podcast/cover.png" alt="Yudame Research" class="logo">
+        <h1>Yudame Research</h1>
+    </div>
     <p class="tagline">Evidence-based research across technology, health, and human performance</p>
 
     <h2>Podcast</h2>
     <p>Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources into actionable frameworks.</p>
 
     <div class="feed-section">
-        <p style="color: var(--white); margin-bottom: 0.5rem;"><strong>Subscribe to the podcast</strong></p>
+        <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Subscribe to the podcast</strong></p>
         <div class="feed-url">https://research.yuda.me/podcast/feed.xml</div>
         <div class="subscribe-links">
             <a href="podcast/feed.xml">RSS Feed</a>
