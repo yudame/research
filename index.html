@@ -5,73 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yudame Research</title>
     <style>
+        :root {
+            --navy: #0a1628;
+            --navy-light: #1a2d4a;
+            --yellow: #FFC20E;
+            --teal: #2dd4bf;
+            --white: #ffffff;
+            --gray: #94a3b8;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--white);
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background: #fff;
+            background: var(--navy);
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            color: var(--white);
         }
 
         h2 {
             font-size: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
-            border-bottom: 1px solid #eee;
+            color: var(--yellow);
+            border-bottom: 1px solid var(--navy-light);
             padding-bottom: 0.5rem;
         }
 
         p {
             margin-bottom: 1rem;
-            color: #555;
+            color: var(--gray);
         }
 
         .tagline {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--gray);
             margin-bottom: 3rem;
         }
 
+        .feed-section {
+            background: var(--navy-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--yellow);
+            margin: 1.5rem 0;
+        }
+
         .feed-url {
-            background: #f5f5f5;
-            padding: 0.75rem;
+            background: var(--navy);
+            padding: 0.75rem 1rem;
             border-radius: 4px;
             font-family: monospace;
             font-size: 0.9rem;
             margin: 1rem 0;
+            color: var(--teal);
+        }
+
+        .subscribe-links {
+            margin-top: 1rem;
         }
 
         a {
-            color: #0066cc;
+            color: var(--teal);
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
-        }
-
-        .episode {
-            margin-bottom: 2rem;
-        }
-
-        .episode h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .episode-meta {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            color: var(--yellow);
         }
 
         ul {
@@ -80,72 +90,74 @@
         }
 
         li {
-            margin-bottom: 0.5rem;
-            color: #555;
+            margin-bottom: 0.75rem;
+            color: var(--gray);
+        }
+
+        li strong {
+            color: var(--white);
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--navy-light);
+            border-radius: 4px;
+            color: var(--gray);
+        }
+
+        .github-link:hover {
+            background: var(--yellow);
+            color: var(--navy);
+            text-decoration: none;
         }
 
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid #eee;
-            color: #888;
+            border-top: 1px solid var(--navy-light);
+            color: var(--gray);
             font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <h1>Yudame Research</h1>
-    <p class="tagline">Evidence-based research and analysis across technology, health, economics, and human performance</p>
+    <p class="tagline">Evidence-based research across technology, health, and human performance</p>
 
     <h2>Podcast</h2>
-    <p>Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources to build frameworks for understanding important subjects.</p>
+    <p>Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources into actionable frameworks.</p>
 
-    <div class="feed-url">https://research.yuda.me/podcast/feed.xml</div>
-
-    <p>
-        <a href="podcast/feed.xml">RSS Feed</a> •
-        <a href="https://podcasts.apple.com/podcast/id?feed=https://research.yuda.me/podcast/feed.xml">Apple Podcasts</a>
-    </p>
-
-    <h3>Recent Episodes</h3>
-
-    <div class="episode">
-        <h3>Maximizing VO₂ Max and Heart Health: An Evidence-Based Guide</h3>
-        <div class="episode-meta">November 20, 2025 • 34:27</div>
-        <p>Heart rate variability (HRV) as a master index of resilience. Synthesizes findings from the Whitehall II cohort, behavioral modification trials, and sleep optimization research.</p>
-        <p><a href="podcast/episodes/2025-11-19-cardiovascular-health-optimization/report.md">Full research report →</a></p>
+    <div class="feed-section">
+        <p style="color: var(--white); margin-bottom: 0.5rem;"><strong>Subscribe to the podcast</strong></p>
+        <div class="feed-url">https://research.yuda.me/podcast/feed.xml</div>
+        <div class="subscribe-links">
+            <a href="podcast/feed.xml">RSS Feed</a>
+        </div>
     </div>
 
-    <div class="episode">
-        <h3>Stablecoin Market: Strategies and Pitfalls</h3>
-        <div class="episode-meta">November 19, 2025 • 32:41</div>
-        <p>Analysis of stablecoin evolution from 2017-2025, covering the Terra/UST collapse, regulatory frameworks like the GENIUS Act, and lessons for protocol design.</p>
-        <p><a href="podcast/episodes/2025-11-19-stablecoin-history/report.md">Full research report →</a></p>
-    </div>
-
-    <h2>Research Approach</h2>
-    <p>This repository documents research across multiple domains with an emphasis on:</p>
+    <h2>Research Methodology</h2>
+    <p>Every episode follows a rigorous research process:</p>
     <ul>
-        <li>Peer-reviewed studies and meta-analyses over individual anecdotes</li>
-        <li>Effect sizes and practical significance, not just statistical significance</li>
-        <li>Distinguishing correlation from causation</li>
-        <li>Identifying contradictory findings and areas of uncertainty</li>
-        <li>Understanding study populations and generalizability</li>
-        <li>Noting funding sources and potential conflicts of interest</li>
+        <li><strong>Primary sources first:</strong> Peer-reviewed studies, meta-analyses, and official documents</li>
+        <li><strong>Effect sizes matter:</strong> Practical significance over p-values</li>
+        <li><strong>Causation vs correlation:</strong> Clear distinction in all claims</li>
+        <li><strong>Uncertainty acknowledged:</strong> Contradictory findings and limitations reported</li>
+        <li><strong>Conflicts disclosed:</strong> Funding sources and potential biases noted</li>
     </ul>
 
     <h2>Topics</h2>
     <ul>
-        <li><strong>Health & Performance:</strong> Evidence-based optimization of physical and cognitive performance</li>
-        <li><strong>Technology & Blockchain:</strong> Protocol design, cryptoeconomics, and decentralized systems</li>
-        <li><strong>Economics & Markets:</strong> Market dynamics, regulatory frameworks, and financial systems</li>
-        <li><strong>Learning & Development:</strong> Educational frameworks for all ages based on neuroscience research</li>
+        <li><strong>Health & Performance:</strong> Cardiovascular optimization, VO2 max, HRV, sleep, supplementation</li>
+        <li><strong>Blockchain & Crypto:</strong> Stablecoins, DeFi protocols, regulatory frameworks, cryptoeconomics</li>
+        <li><strong>Markets & Economics:</strong> Monetary policy, market dynamics, financial regulation</li>
     </ul>
 
-    <p><a href="https://github.com/yudame/research">View on GitHub →</a></p>
+    <a href="https://github.com/yudame/research" class="github-link">View research reports on GitHub</a>
 
     <footer>
-        <p>© 2025 Yudame Research</p>
+        <p>Yudame Research</p>
     </footer>
 </body>
 </html>
