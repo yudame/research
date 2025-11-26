@@ -22,7 +22,7 @@
     <!-- Episode 5: Cardiovascular Health Series - Episode 4 -->
     <item>
       <title>Cardiovascular Health: Ep. 4, Supplementation</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/cover.png"/>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/cover.png?v=2"/>
       <description>Evidence-based guide to cardiovascular supplements and medications for 40-year-old men, covering what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49% in the Q-SYMBIO trial, and why vitamin D and niacin failed despite decades of hype. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
 
 Key Sources:
@@ -31,7 +31,7 @@ Key Sources:
 • VITAL Trial (vitamin D &amp; omega-3): https://prevmed.bwh.harvard.edu/vital/
 • USPSTF Aspirin Guidelines (2022): https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/aspirin-to-prevent-cardiovascular-disease-preventive-medication
 • JUPITER Trial (statin primary prevention): https://www.nejm.org/doi/full/10.1056/NEJMoa0807646</description>
-      <pubDate>Thu, 21 Nov 2025 12:00:00 GMT</pubDate>
+      <pubDate>Thu, 21 Nov 2025 18:00:00 GMT</pubDate>
       <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
                  length="36144828"
                  type="audio/mpeg"/>
@@ -44,7 +44,7 @@ Key Sources:
     <!-- Episode 4: Cardiovascular Health Series - Episode 3 -->
     <item>
       <title>Cardiovascular Health: Ep. 3, HRV</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/cover.png"/>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/cover.png?v=2"/>
       <description>Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
 
 Key Sources:
@@ -52,7 +52,7 @@ Key Sources:
 • Amekran et al. (2024) - Exercise Training Meta-Analysis: https://www.frontiersin.com/journals/cardiovascular-medicine/articles/10.3389/fcvm.2024.1354559/fulltext
 • Lehrer et al. (2020) - HRV Biofeedback Meta-Analysis: https://link.springer.com/article/10.1007/s10484-020-09466-z
 • Tegegne et al. (2018) - Lifelines Cohort Study: https://www.heartrhythmjournal.com/article/S1547-5271(18)30674-4/fulltext</description>
-      <pubDate>Thu, 21 Nov 2025 12:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 Nov 2025 15:00:00 GMT</pubDate>
       <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3"
                  length="41070895"
                  type="audio/mpeg"/>
@@ -65,7 +65,7 @@ Key Sources:
     <!-- Episode 3: Cardiovascular Health Series - Episode 2 -->
     <item>
       <title>Cardiovascular Health: Ep. 2, VO2 Max</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/cover.png"/>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/cover.png?v=2"/>
       <description>Episode 2 in the Cardiovascular Health series. Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols, performance nutrition, and strategic supplementation. Full research report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
 
 Key Sources:
@@ -73,7 +73,7 @@ Key Sources:
 • Stöggl & Sperlich (2014): Polarized training produced 11.7% VO2max gains vs 2% for threshold training https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2014.00033/full
 • Helgerud et al. (2007): 4x4 interval protocol showed 7.2% VO2max improvement and 10% stroke volume increase https://pubmed.ncbi.nlm.nih.gov/17414804/
 • Systematic reviews on HIIT, dietary nitrates, beta-alanine, and caffeine supplementation</description>
-      <pubDate>Thu, 21 Nov 2025 18:00:00 GMT</pubDate>
+      <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
       <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3"
                  length="34775594"
                  type="audio/mpeg"/>
@@ -86,7 +86,7 @@ Key Sources:
     <!-- Episode 2: Cardiovascular Health Series - Episode 1 -->
     <item>
       <title>Cardiovascular Health: Ep. 1, Lifestyle Foundations</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png"/>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png?v=2"/>
       <description>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both (full report: https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md). This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.
 
 Key Sources:
@@ -95,7 +95,7 @@ Key Sources:
 • DASH Diet Meta-Analysis: https://pmc.ncbi.nlm.nih.gov/articles/PMC10551663/
 • VO₂ Max and Mortality Meta-Analysis: https://pmc.ncbi.nlm.nih.gov/articles/PMC11103301/
 • Sleep Duration and Cardiovascular Health: https://pmc.ncbi.nlm.nih.gov/articles/PMC6201443/</description>
-      <pubDate>Thu, 21 Nov 2025 12:00:00 GMT</pubDate>
+      <pubDate>Mon, 18 Nov 2025 12:00:00 GMT</pubDate>
       <enclosure url="https://yudame.github.io/research/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3"
                  length="42201056"
                  type="audio/mpeg"/>
@@ -108,7 +108,7 @@ Key Sources:
     <!-- Episode 1: Stablecoin History -->
     <item>
       <title>Stablecoin Market: Strategies and Pitfalls</title>
-      <itunes:image href="https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/cover.png"/>
+      <itunes:image href="https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/cover.png?v=2"/>
       <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://yudame.github.io/research/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
 
 Key Sources:
