@@ -361,14 +361,35 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 **Inform the user:**
 "Episode structure created! You can now:
 1. Paste research results into `research/research-results.md` as you gather them from ChatGPT, Perplexity, etc.
-2. When research is complete, provide the final report for `report.md`"
+2. Let me know when research is complete and I'll synthesize everything into report.md"
 
 ---
 
 **When user provides research:**
-- Save the final research report to `report.md`
-- Update `research/sources.md` with any additional sources identified
-- Ask user if they have specific source URLs to add to sources.md
+
+1. **Save raw research** to `research/research-results.md`
+
+2. **Immediately synthesize into report.md** - Do NOT ask the user if they want this done. Automatically consolidate the research into a cohesive report focusing on:
+   - Key findings and insights
+   - Storytelling opportunities (dramatic events, surprising facts, human elements)
+   - Practical implications and frameworks
+   - Specific examples, case studies, and real-world events
+   - Data points and statistics that illustrate key concepts
+
+   **Report structure should support podcast narrative:**
+   - Lead with the most compelling/surprising elements
+   - Group related topics that flow naturally in conversation
+   - Highlight contrasts and comparisons (before/after, success/failure, etc.)
+   - Include specific names, dates, and numbers for credibility
+   - Note areas of uncertainty or debate
+
+3. **Update `research/sources.md`** with sources identified from the research
+
+4. **Immediately provide the NotebookLM prompt** - Don't wait for user to ask. After report.md is ready:
+   - Add the NotebookLM prompt to `prompts.md` (Audio Generation Phase section)
+   - Output the full NotebookLM prompt for the user to copy
+   - List which files to upload to NotebookLM
+   - User can then proceed directly to audio generation
 
 ### 3. AI Audio Generation Phase
 
@@ -391,6 +412,7 @@ Create an intellectually rigorous podcast that balances analytical depth with cl
 Opening:
 • For series episodes: Begin with "Yudame Research [series name]" and introduce the episode topic
 • For standalone episodes: Begin with "Yudame Research" and introduce the episode topic
+• Pronunciation: "Yudame" is pronounced "you-duh-may" (three syllables, emphasis on first)
 • Set up what makes this topic interesting or valuable to explore
 
 Core principles:
@@ -978,8 +1000,8 @@ Based on this episode, consider adjusting:
 - **Episode descriptions and keywords** - Auto-generate both from research report, transcript, and chapters - no user input needed
 - **Source validation** - Use WebSearch and WebFetch to find and validate 3-5 official source links
 - **Commit messages** - use heredoc format for multi-line messages
-- **User handles** - research (deep research tools, NotebookLM) and audio creation
-- **You handle** - file organization, format conversion, cover art generation, transcription, chapter generation, description/keyword generation, source validation, feed.xml updates, git workflow, prompt tracking
+- **User handles** - research (deep research tools), NotebookLM audio creation
+- **You handle** - file organization, **report synthesis from raw research**, format conversion, cover art generation, transcription, chapter generation, description/keyword generation, source validation, feed.xml updates, git workflow, prompt tracking
 
 ## Getting Started
 
@@ -994,6 +1016,9 @@ When user wants to create a new episode, start with:
    - Create research/sources.md template
 5. User conducts research using ChatGPT/Perplexity/Grok/other tools
    - User can paste interim results into research/research-results.md
-6. Once research is complete, save final report to report.md
+6. Once research is complete, **automatically synthesize into report.md** (don't ask - just do it)
+   - Focus on key points, storytelling opportunities, and podcast narrative flow
+   - **Then immediately provide the NotebookLM prompt** - save to prompts.md AND output for user to copy
+   - List files to upload to NotebookLM
 7. Guide through each subsequent phase (audio generation, processing, publishing)
 8. Track all prompts in prompts.md as you go
