@@ -1,0 +1,84 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=110000
+title=The Stablecoin Paradox: Rules Written Elsewhere
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=110000
+END=207000
+title=Tether's Spectacular Failure: Delisted from Europe
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=207000
+END=330000
+title=GENIUS Act Triggers: When US Law Applies
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=330000
+END=450000
+title=US Timeline: 2027 Prohibitions, 2028 Hard Deadline
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=450000
+END=610000
+title=MiCA Triggers: No Equivalence, No Shortcuts
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=610000
+END=760000
+title=The 200 Million Euro Cap: Success as Liability
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=760000
+END=920000
+title=Reserve Requirements: 100% Backing Mandatory
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=920000
+END=1080000
+title=The 60% Rule: MiCA's Most Contentious Requirement
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1080000
+END=1200000
+title=Audits and Transparency: Monthly Disclosures
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1320000
+title=The Kill Switch: Freeze and Seize Capabilities
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1320000
+END=1500000
+title=US Licensing: PPSI and the GMO Blueprint
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1680000
+title=EU Licensing: Circle's EMI Strategy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1860000
+title=Penalties: $1M Per Day and Market Exclusion
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=2068850
+title=Four Takeaways: The Compliance Roadmap
