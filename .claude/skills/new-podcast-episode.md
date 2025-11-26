@@ -69,6 +69,7 @@ podcast/episodes/
 │   │   ├── research/
 │   │   ├── prompts.md
 │   │   ├── report.md
+│   │   ├── cover.png
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic_chapters.txt
@@ -112,6 +113,7 @@ podcast/episodes/cardiovascular-health/
 │   │   └── sources.md
 │   ├── prompts.md
 │   ├── report.md
+│   ├── cover.png
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_transcript.json
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_chapters.txt
@@ -387,7 +389,8 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
 
 Opening:
-• Begin with "Yudame Research [series name]" and introduce the episode topic
+• For series episodes: Begin with "Yudame Research [series name]" and introduce the episode topic
+• For standalone episodes: Begin with "Yudame Research" and introduce the episode topic
 • Set up what makes this topic interesting or valuable to explore
 
 Core principles:
@@ -711,6 +714,33 @@ export OPENAI_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
 - Cover art appears in podcast apps and directories
 - Each episode can have unique cover art or reuse podcast-level cover
 
+**Regenerating existing cover art:**
+
+If cover art needs to be updated (quality issues, theme mismatch, etc.):
+
+1. **Regenerate with DALL-E 3 and apply branding** (same commands as initial generation):
+   ```bash
+   cd /Users/tomcounsell/src/research/podcast/tools
+   export OPENAI_API_KEY="your-key"  # If not already in environment
+   python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
+   python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
+     --position top-left \
+     --brand "Yudame Research" \
+     [--series "Series Name"] \
+     --episode "Ep X - Topic" \
+     --border 20 \
+     --border-color "#FFC20E"
+   ```
+
+2. **Update the version parameter in feed.xml** for affected episodes:
+   - Change `cover.png?v=1` to `cover.png?v=2`
+   - Increment for each regeneration: `?v=3`, `?v=4`, etc.
+   - This ensures podcast apps fetch the new images immediately
+
+3. **Commit and push changes:**
+   - Note in commit message which episodes had covers regenerated
+   - Example: "feat: Regenerate cover art for episodes 1, 2, and 4"
+
 ### 6. Publishing Phase
 
 **Generate episode description, keywords, and source links:**
@@ -785,7 +815,7 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 <!-- Episode N: Short Description -->
 <item>
   <title>Episode Title Here</title>
-  <itunes:image href="https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/cover.png"/>
+  <itunes:image href="https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/cover.png?v=1"/>
   <description>Compelling 1-2 sentence description (full report: https://yudame.github.io/research/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
 
 Key Sources:
@@ -806,12 +836,18 @@ Key Sources:
 
 **Date format for pubDate:** Use RFC 2822 format (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
 
+**Cover art cache-busting:**
+- Include version parameter in cover image URL: `cover.png?v=1`
+- When regenerating cover art for existing episodes, increment the version number: `?v=2`, `?v=3`, etc.
+- This forces podcast apps to fetch updated images instead of using cached versions
+- Update version parameter in feed.xml whenever cover art is regenerated
+
 **Note:**
 - Podcast-level categories are Technology and Education
 - Episode keywords are automatically generated from content analysis
 - Description and keywords are created without user input - just review and update feed.xml
 
-### 6. Git Workflow
+### 7. Git Workflow
 
 **Commit and push the episode:**
 
@@ -861,7 +897,7 @@ Key Sources:
 
 5. GitHub Pages will automatically deploy changes in 2-3 minutes
 
-### 7. Verify Publishing
+### 8. Verify Publishing
 
 **Remind user to:**
 1. Ensure GitHub Pages is enabled at: `https://github.com/yudame/research/settings/pages`
@@ -873,7 +909,7 @@ Key Sources:
 
 3. Wait 2-3 minutes for GitHub Pages to deploy
 
-### 8. Episode Review (Optional - for continuous improvement)
+### 9. Episode Review (Optional - for continuous improvement)
 
 **After listening to the episode, optionally create a review file to track improvements:**
 
