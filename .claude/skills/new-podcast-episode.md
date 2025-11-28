@@ -822,42 +822,7 @@ Sources: https://research.yuda.me/podcast/episodes/[path]/sources.md
 [keyword1, keyword2, keyword3, specific-term, specific-concept]
 ```
 
-**Save the episode description generation process to prompts.md:**
-
-Append to `prompts.md`:
-```markdown
-## Publishing Phase
-
-### Episode Description Generation
-
-**Tool Used:** Claude / AI Assistant
-
-**Prompt:**
-```
-[Copy the exact prompt used to generate the episode description]
-```
-
-**Final Description:**
-```
-[Copy the final episode description that will be used in feed.xml]
-```
-
-**Keywords:** [List of episode-specific keywords]
-
-**Date:** YYYY-MM-DD
-
-### Source Link Validation
-
-**Sources Validated:**
-1. [Source name] - [URL] - [Validation method: WebSearch, WebFetch, manual]
-2. [Source name] - [URL] - [Validation method]
-3. [Source name] - [URL] - [Validation method]
-[etc.]
-
-**Date:** YYYY-MM-DD
-```
-
-**Update feed.xml from publish.md:**
+**Update feed.xml using content from publish.md:**
 
 Add a new `<item>` block after the opening `<channel>` metadata and before the closing `</channel>` tag:
 
