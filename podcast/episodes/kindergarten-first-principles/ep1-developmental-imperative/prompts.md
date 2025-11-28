@@ -226,3 +226,56 @@ COMPOSITION:
 **Output:** cover.png
 
 **Date:** 2025-11-28
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenRouter - google/gemini-3-pro-image-preview
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Developmental Imperative":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: *Research report for Kindergarten, from First Principles: Episode 1* --- Ages 4-6 represent a developmental inflection point. During these years, the structure of executive function itself transforms—
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Enhanced Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Developmental Imperative":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: *Research report for Kindergarten, from First Principles: Episode 1* --- Ages 4-6 represent a developmental inflection point. During these years, the structure of executive function itself transforms—
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+IMPORTANT VISUAL REQUIREMENTS:
+- The ENTIRE canvas from edge to edge must be deep navy blue and dark blue tones - no borders, frames, or light backgrounds
+- Dark blue fills the complete image area - not just a section or inner frame
+- Use bright teal, white, and silver only as accent colors on top of the dark blue theme
+- Pure abstract visualization only
+- Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
+- Clean visual design without any typography or graphic elements
+
+COMPOSITION:
+- Visual interest and detail should be concentrated in the LOWER 2/3 of the image
+- Keep the TOP 1/3 relatively simple and uncluttered for text overlay placement
+- Main graphic elements should flow from center to bottom
+- Avoid placing busy patterns or focal points in the upper third
+```
+
+**Aspect Ratio:** 1:1
+
+**Output:** cover.png
+
+**Date:** 2025-11-28
