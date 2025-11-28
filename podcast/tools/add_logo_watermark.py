@@ -23,7 +23,7 @@ except ImportError:
     sys.exit(1)
 
 
-def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_ratio=0.12,
+def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_ratio=0.12,
                   brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#FFC20E'):
     """
     Add logo watermark and text overlays to cover image.
@@ -32,7 +32,7 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=0.9, size_
         cover_path: Path to the cover image
         logo_path: Path to the logo image
         position: 'bottom-right', 'bottom-left', 'top-right', 'top-left', 'center'
-        opacity: Logo opacity (0.0 to 1.0)
+        opacity: Logo opacity (0.0 to 1.0, default: 1.0 for solid overlay)
         size_ratio: Logo size as ratio of cover width (0.1 to 0.3)
         brand_text: Podcast brand name (e.g., "Yudame Research") - appears next to logo
         series_text: Series name text (e.g., "Cardiovascular Health")
@@ -162,16 +162,16 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
     padding = int(width * 0.05)
 
     # Try to load nice fonts, fall back to default
-    # Note: series_font is BIGGER than episode_font to handle long topic names
+    # Note: series_font and episode_font use same size to prevent overflow
     try:
         # Try common macOS system fonts
         brand_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.055))
-        series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.065))  # Bigger
-        episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))  # Smaller
+        series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))  # Same as episode
+        episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))
     except:
         try:
             brand_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.055))
-            series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.065))
+            series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
             episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
         except:
             # Fallback to default
@@ -202,7 +202,7 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
                  brand_text, fill=(0, 0, 0, 180), font=brand_font)
         draw.text((brand_x, brand_y), brand_text, fill=(255, 255, 255, 255), font=brand_font)
 
-    # Draw series text (BIGGER font - optional for standalone episodes)
+    # Draw series text (same size as episode - optional for standalone episodes)
     if series_text:
         bbox = draw.textbbox((0, 0), series_text, font=series_font)
         text_height = bbox[3] - bbox[1]
@@ -214,7 +214,7 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
 
         content_y += text_height + int(padding * 0.3)
 
-    # Draw episode text below series (SMALLER font to handle long names)
+    # Draw episode text below series (same size as series)
     if episode_text:
         bbox = draw.textbbox((0, 0), episode_text, font=episode_font)
         text_height = bbox[3] - bbox[1]
@@ -234,8 +234,8 @@ def main():
     parser.add_argument("--position", default="bottom-right",
                        choices=['bottom-right', 'bottom-left', 'top-right', 'top-left', 'center'],
                        help="Logo position (default: bottom-right)")
-    parser.add_argument("--opacity", type=float, default=0.9,
-                       help="Logo opacity 0.0-1.0 (default: 0.9)")
+    parser.add_argument("--opacity", type=float, default=1.0,
+                       help="Logo opacity 0.0-1.0 (default: 1.0 for solid overlay)")
     parser.add_argument("--size", type=float, default=0.12,
                        help="Logo size ratio 0.1-0.3 (default: 0.12)")
     parser.add_argument("--brand", default="Yudame Research",
