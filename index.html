@@ -114,6 +114,22 @@
             color: var(--text);
         }
 
+        .spotify-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #1DB954;
+            color: var(--white);
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .spotify-button:hover {
+            background: #1ed760;
+            color: var(--white);
+            text-decoration: none;
+        }
+
         .github-link {
             display: inline-block;
             margin-top: 1rem;
@@ -149,12 +165,10 @@
     <p>Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources into actionable frameworks.</p>
 
     <div class="feed-section">
-        <p style="color: var(--text); margin-bottom: 0.5rem;"><strong>Subscribe to the podcast</strong></p>
+        <p style="color: var(--text); margin-bottom: 1rem;"><strong>Subscribe to the podcast</strong></p>
+        <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="spotify-button">Listen on Spotify</a>
+        <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem;">Or add to other podcast apps:</p>
         <div class="feed-url">https://research.yuda.me/podcast/feed.xml</div>
-        <div class="subscribe-links">
-            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a> ·
-            <a href="podcast/feed.xml">RSS Feed</a>
-        </div>
     </div>
 
     <h2>Research Methodology</h2>
