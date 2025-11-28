@@ -40,144 +40,11 @@ Plus original audio files (can keep for archival):
 ├── Stablecoins_Global_Rules_Failure_and_Genius_Act.m4a  # Original from NotebookLM
 ```
 
-## Series Organization and Naming Conventions
+## Series Episodes
 
-### When to Use Series Subdirectories
+For planning multi-episode series, see `.claude/skills/podcast-series.md`.
 
-**Use a series subdirectory when:**
-- Creating 3+ episodes on a related topic (e.g., cardiovascular health, blockchain fundamentals)
-- Planning a cohesive multi-part series with logical progression
-- Want to group related episodes for better organization
-
-**Use standalone episode structure when:**
-- Creating one-off episodes on different topics
-- Episode is not part of a planned series
-- Topic doesn't fit into an existing series
-
-### Series Directory Structure
-
-For multi-episode series, organize episodes into a series subdirectory:
-
-```
-podcast/episodes/
-├── series-name/                    # Series subdirectory
-│   ├── ep1-topic-slug/
-│   │   ├── prompts.md
-│   │   ├── research-results.md
-│   │   ├── sources.md
-│   │   ├── report.md
-│   │   ├── publish.md
-│   │   ├── documents/              # Only if needed
-│   │   ├── cover.png
-│   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
-│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
-│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_chapters.txt
-│   │   └── YYYY-MM-DD-series-name-episode-1-topic_chapters.json
-│   ├── ep2-topic-slug/
-│   ├── ep3-topic-slug/
-│   └── ep4-topic-slug/
-└── YYYY-MM-DD-standalone-topic/    # Standalone episodes at root
-```
-
-### Series Naming Conventions
-
-**Directory naming:**
-- Series subdirectory: `series-name/` (lowercase, hyphenated, e.g., `cardiovascular-health/`)
-- Episode subdirectory: `epX-topic-slug/` (e.g., `ep1-lifestyle/`, `ep2-vo2-max/`)
-
-**Episode title format:**
-```
-Series Name: Ep. X, Topic
-```
-
-**Examples:**
-- "Cardiovascular Health: Ep. 1, Lifestyle Foundations"
-- "Cardiovascular Health: Ep. 2, VO2 Max"
-- "Blockchain Fundamentals: Ep. 1, Consensus Mechanisms"
-- "Blockchain Fundamentals: Ep. 2, Smart Contracts"
-
-**Audio file naming (remains date-based for chronological sorting):**
-```
-YYYY-MM-DD-series-name-episode-X-topic.mp3
-```
-
-### Example: Cardiovascular Health Series
-
-```
-podcast/episodes/cardiovascular-health/
-├── ep1-lifestyle/
-│   ├── prompts.md
-│   ├── research-results.md
-│   ├── sources.md
-│   ├── report.md
-│   ├── publish.md
-│   ├── cover.png
-│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3
-│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_transcript.json
-│   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_chapters.txt
-│   └── 2025-11-21-cardiovascular-health-episode-1-lifestyle_chapters.json
-├── ep2-vo2-max/
-├── ep3-hrv/
-└── ep4-supplementation/
-```
-
-**Feed.xml entry for series episode:**
-```xml
-<item>
-  <title>Cardiovascular Health: Ep. 4, Supplementation</title>
-  <description>Episode description... Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
-  <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
-             length="36144828"
-             type="audio/mpeg"/>
-  <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
-</item>
-```
-
-### Creating a New Series
-
-When starting a new multi-episode series:
-
-1. **Ask the user:**
-   - Series name (e.g., "Cardiovascular Health", "Blockchain Fundamentals")
-   - How many episodes planned?
-   - Episode topics and order
-
-2. **Create series structure:**
-   ```bash
-   mkdir -p ~/src/research/podcast/episodes/series-name/ep1-topic-slug
-   ```
-
-3. **Use standardized naming:**
-   - Episode title: "Series Name: Ep. 1, Topic"
-   - Directory: `series-name/ep1-topic-slug/`
-   - Audio file: `YYYY-MM-DD-series-name-episode-1-topic.mp3`
-
-4. **Update feed.xml** with series-aware paths and titles
-
-### Migrating Episodes to Series
-
-If standalone episodes should become a series:
-
-1. **Create series subdirectory:**
-   ```bash
-   mkdir -p ~/src/research/podcast/episodes/series-name
-   ```
-
-2. **Move and rename episode directories:**
-   ```bash
-   mv podcast/episodes/YYYY-MM-DD-old-name podcast/episodes/series-name/ep1-topic-slug
-   ```
-
-3. **Update feed.xml:**
-   - Change all episode paths to `episodes/series-name/epX-topic-slug/`
-   - Normalize all titles to "Series Name: Ep. X, Topic" format
-
-4. **Commit with descriptive message:**
-   ```bash
-   git add -A
-   git commit -m "refactor: Organize [series name] episodes into series subdirectory"
-   git push
-   ```
+This skill focuses on standalone episodes. Series episodes follow the same workflow once the series structure is created.
 
 ## Complete Workflow
 
@@ -487,32 +354,7 @@ Balance precision with engagement - neither dumbed down nor unnecessarily comple
 4. Select length: **Long** (or adjust based on topic complexity)
 5. Generate and download the audio file
 
-**Save the NotebookLM prompt to prompts.md:**
-
-Append to `prompts.md`:
-```markdown
-## Audio Generation Phase
-
-### NotebookLM Audio Overview Prompt
-
-**Tool Used:** NotebookLM
-
-**Format:** Deep Dive / Long
-
-**Files Uploaded to NotebookLM:**
-- report.md
-- research-results.md
-- [List any documents from documents/ folder if uploaded]
-
-**Prompt:**
-```
-[Copy the exact prompt used for NotebookLM Audio Overview]
-```
-
-**Customizations:** [Note any customizations to the default prompt]
-
-**Date:** YYYY-MM-DD
-```
+**Log to prompts.md:** Note the files uploaded and any customizations to the default prompt.
 
 ### 4. Audio File Processing Phase
 
@@ -564,25 +406,7 @@ Append to `prompts.md`:
       - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
       - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
 
-   **Save the chapter analysis prompt to prompts.md:**
-
-   Append to `prompts.md`:
-   ```markdown
-   ## Chapter Generation Phase
-
-   ### Chapter Analysis Prompt
-
-   **Tool Used:** Claude / AI Assistant
-
-   **Prompt:**
-   ```
-   [Copy the exact prompt used to analyze the transcript and generate chapters]
-   ```
-
-   **Output:** [Number] chapters created covering [brief description of coverage]
-
-   **Date:** YYYY-MM-DD
-   ```
+   **Log to prompts.md:** Note the number of chapters created.
 
    d. Embed chapters into the mp3 file:
    ```bash
@@ -671,53 +495,7 @@ python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
 - File size: ~500KB PNG format
 - Clean abstract visualization without text from AI
 
-**Save the cover art generation to prompts.md:**
-
-Append to `prompts.md`:
-```markdown
-## Cover Art Generation Phase
-
-### DALL-E 3 Cover Art Prompt
-
-**Tool Used:** OpenAI DALL-E 3 via generate_cover.py
-
-**Mode:** Auto-generated from report.md [or Custom prompt]
-
-**Original Prompt:**
-```
-[The prompt generated by the script or provided by user]
-```
-
-**Revised Prompt (DALL-E 3):**
-```
-[The revised prompt returned by DALL-E 3 API]
-```
-
-**Enhancements Applied:**
-- Dark navy/blue dominant color theme enforcement
-- Text/icon/annotation blocking
-
-**Output:** cover.png (1024x1024px base image)
-
-**Date:** YYYY-MM-DD
-
-### Branding Application
-
-**Tool Used:** add_logo_watermark.py
-
-**Settings:**
-- Logo position: top-left
-- Brand text: "Yudame Research"
-- Series text: "[Series Name]" (font: 6.5%)
-- Episode text: "Ep X - Topic" (font: 5%)
-- Border: 20px, #FFC20E (yellow)
-- Opacity: 0.9
-- Logo size: 12% of image width
-
-**Output:** cover.png (1064x1064px with border and branding)
-
-**Date:** YYYY-MM-DD
-```
+**Log to prompts.md:** Note the prompt used (auto or custom) and branding settings applied.
 
 **First-time setup (if not already done):**
 ```bash
@@ -824,45 +602,13 @@ Sources: https://research.yuda.me/podcast/episodes/[path]/sources.md
 
 **Update feed.xml using content from publish.md:**
 
-Add a new `<item>` block after the opening `<channel>` metadata and before the closing `</channel>` tag:
+Add a new `<item>` block to feed.xml, copying all content from publish.md:
+- Title, description, keywords from publish.md
+- Audio metadata (duration, file size) from publish.md
+- Cover image URL with version parameter (`cover.png?v=1`)
+- Use RFC 2822 date format for pubDate (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
 
-```xml
-<!-- Episode N: Short Description -->
-<item>
-  <title>Episode Title Here</title>
-  <itunes:image href="https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/cover.png?v=1"/>
-  <description>Compelling 1-2 sentence description covering key topics and takeaways.
-
-Full Report: https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md
-
-Key Sources:
-• Official Source 1: [validated URL]
-• Official Source 2: [validated URL]
-• Official Source 3: [validated URL]
-• Analysis/Research: [validated URL]</description>
-  <pubDate>Day, DD Mon YYYY 12:00:00 GMT</pubDate>
-  <enclosure url="https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3"
-             length="FILE_SIZE_IN_BYTES"
-             type="audio/mpeg"/>
-  <guid>https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3</guid>
-  <itunes:duration>MM:SS</itunes:duration>
-  <itunes:explicit>no</itunes:explicit>
-  <itunes:keywords>keyword1, keyword2, keyword3, specific-protocol, specific-concept</itunes:keywords>
-</item>
-```
-
-**Date format for pubDate:** Use RFC 2822 format (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
-
-**Cover art cache-busting:**
-- Include version parameter in cover image URL: `cover.png?v=1`
-- When regenerating cover art for existing episodes, increment the version number: `?v=2`, `?v=3`, etc.
-- This forces podcast apps to fetch updated images instead of using cached versions
-- Update version parameter in feed.xml whenever cover art is regenerated
-
-**Note:**
-- Podcast-level categories are Technology and Education
-- Episode keywords are automatically generated from content analysis
-- Description and keywords are created without user input - just review and update feed.xml
+See existing episodes in feed.xml for XML structure reference.
 
 ### 7. Git Workflow
 
@@ -981,27 +727,23 @@ Based on this episode, consider adjusting:
 - Identify patterns in explanation quality
 - Compare against the NotebookLM prompt to see what worked/didn't work
 
-## Important Notes
+## Role Division
 
-- **Always use TodoWrite** to track progress through these phases
-- **Mark tasks complete** immediately after finishing each step
-- **Create files immediately** after research prompt - create the 4 research md files right away
-- **research-results.md** - Provide this file for user to paste raw research outputs from ChatGPT/Perplexity as they work
-- **Flat structure** - All 5 core files (prompts.md, research-results.md, sources.md, report.md, publish.md) go at episode top level
-- **publish.md** - Create during Publishing Phase with all RSS feed content (title, description, keywords, sources)
-- **documents/** - Only create this subdirectory when there are actual supporting files (PDFs, etc.)
-- **Track all prompts** in `prompts.md` throughout the workflow for reproducibility
-- **Save prompts immediately** after using them - don't batch at the end
-- **Use ffmpeg** for audio conversion (128kbps mp3 is recommended)
-- **File sizes** - aim to keep episodes under 100MB
-- **Cover art** - Always generate unique cover art for each episode using DALL-E 3 and apply branding
-- **Transcription** - Always generate transcript and chapters for every episode
-- **Chapters** - Aim for 10-15 chapters, each 2-4 minutes, with descriptive titles
-- **Episode descriptions and keywords** - Auto-generate both from research report, transcript, and chapters - no user input needed
-- **Source validation** - Use WebSearch and WebFetch to find and validate 3-5 official source links
-- **Commit messages** - use heredoc format for multi-line messages
-- **User handles** - research (deep research tools), NotebookLM audio creation
-- **You handle** - file organization, **report synthesis from raw research**, format conversion, cover art generation, transcription, chapter generation, description/keyword generation, source validation, feed.xml updates, git workflow, prompt tracking
+**User handles:**
+- Research using deep research tools (Grok, ChatGPT, Perplexity)
+- NotebookLM audio generation
+
+**You handle:**
+- File organization and directory setup
+- Report synthesis from raw research
+- Audio conversion (ffmpeg)
+- Cover art generation (DALL-E 3) and branding
+- Transcription (local Whisper)
+- Chapter generation from transcript analysis
+- Description, keywords, source validation for publish.md
+- feed.xml updates
+- Git workflow and commits
+- Logging prompts used throughout
 
 ## Getting Started
 
