@@ -19,6 +19,26 @@
     <itunes:image href="https://research.yuda.me/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 8: Kindergarten from First Principles - Episode 1 -->
+    <item>
+      <title>Kindergarten, from First Principles: Ep. 1, The Developmental Imperative</title>
+      <description>What developmental science identifies as the highest-leverage variables for children ages 4-6. Reveals the shocking Duncan study finding that early math skills—not social-emotional competence—are the strongest predictor of later academic success, examines how executive function acts as a cognitive amplifier across 25 lifespan outcomes, and exposes the implementation paradox where Tools of the Mind produced effect sizes ranging from 0.0 to 0.8 based purely on teacher fidelity. Full research report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep1-developmental-imperative/report.md
+
+Key Sources:
+• Duncan et al. (2007) School Readiness Meta-Analysis: https://pubmed.ncbi.nlm.nih.gov/18020822/
+• IES Executive Function Report: https://ies.ed.gov/ncer/2025/01/executive-function-implications-education
+• Guided Play vs Direct Instruction Meta-Analysis: https://srcd.onlinelibrary.wiley.com/doi/10.1111/cdev.13730
+• Montessori RCT Longitudinal Study: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.01783/full</description>
+      <pubDate>Thu, 28 Nov 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep1-developmental-imperative/2025-11-28-developmental-imperative.mp3"
+                 length="41783886"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep1-developmental-imperative/2025-11-28-developmental-imperative.mp3</guid>
+      <itunes:duration>43:31</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>kindergarten, early childhood education, executive function, self-regulation, developmental science, ages 4-6, Duncan study, early math, guided play, Montessori, Tools of the Mind, process skills, content mastery, prefrontal cortex, cognitive development, fade-out effect</itunes:keywords>
+    </item>
+
     <!-- Episode 7: Solomon Islands Financial Infrastructure -->
     <item>
       <title>Financial Infrastructure in the Solomon Islands: From Cash to Crypto</title>

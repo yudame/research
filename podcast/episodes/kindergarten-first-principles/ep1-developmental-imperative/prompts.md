@@ -52,4 +52,77 @@ Research what developmental science identifies as the highest-leverage variables
 
 ---
 
+## Audio Generation Phase
+
+### NotebookLM Prompt
+
+**Tool Used:** Google NotebookLM
+
+**Files to Upload:**
+1. `report.md` - Main research synthesis
+2. `research-results.md` - Raw research outputs from Claude and Gemini
+3. `sources.md` - Complete bibliography
+
+**Prompt:**
+```
+Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
+
+Opening:
+• Begin with "Yudame Research Kindergarten, from First Principles" and introduce Episode 1: The Developmental Imperative
+• Set up the disconnect between what developmental science shows and what gets prioritized
+
+Core Principles:
+• Spell out acronyms first: "Executive Function, or EF"
+• Define technical terms immediately in plain language, then build
+• Use concrete examples ONLY from source material - never fabricate
+• HIGHLIGHT surprising findings, spectacular failures, unexpected successes
+• Extract frameworks and principles from research
+• Maintain rigor: distinguish correlation from causation, note effect sizes, acknowledge uncertainty
+
+Emphasis Points:
+• Definition-first: "Self-regulation - the ability to manage emotions, attention, and behavior - is..."
+• Cite specific studies with sample sizes and actual effect sizes
+• Include human elements: "The Duncan study shocked educators when..."
+• Show practical implications and emerging patterns
+• Use conversational check-ins when introducing concepts
+
+SURPRISING MOMENTS - actively seek and highlight:
+• Counter-intuitive findings: early math predicts better than social-emotional skills
+• Spectacular failures: Tools of the Mind effect sizes 0.0 to 0.8 based on implementation
+• Dramatic numbers: "0.8 SD is massive - among the largest effects in educational research"
+• Unexpected successes: age 7 readers catch up to age 5 readers by age 11
+• Shocking reversals: Terman study found early reading predicted worse lifelong outcomes
+• Non-obvious connections: math instruction strengthens executive function bidirectionally
+
+Signal with: "Here's where it gets interesting..." "This is the shocking part..." "The numbers are staggering..."
+
+Avoid:
+• Unexplained acronyms or jargon
+• Concept stacking (3+ new terms at once)
+• Fabricated examples
+• Over-simplification or excessive hedging
+• Dry mechanics when human stories exist
+• Repeatedly restating audience/context
+
+Audience: Intelligent parents and educators wanting deep understanding of ages 4-6 research. Appreciate technical depth but need terms defined.
+
+Tone: Conversational expert explaining to bright student - maintain depth while ensuring clarity.
+
+When Presenting:
+• Build narrative tension: "Teachers scored lowest on fidelity, and that's why..."
+• Use specific numbers: "0.0 to 0.8 for same curriculum" not "variable results"
+• Translate statistics: "r = .42 means attention is one of our strongest predictors"
+• Create reveals: set expectation, then flip it
+
+Closing:
+• Summarize 2-3 key takeaways
+• "Find the full research report at research dot yuda dot me - that's Y-U-D-A dot M-E"
+```
+
+**Format:** Deep Dive
+**Length:** Long
+**Date:** 2025-11-28
+
+---
+
 <!-- Additional prompts will be added below as we progress through the workflow -->

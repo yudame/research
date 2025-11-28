@@ -1,0 +1,86 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=115000
+title=Introduction
+[CHAPTER]
+TIMEBASE=1/1000
+START=115000
+END=223000
+title=What is Executive Function?
+[CHAPTER]
+TIMEBASE=1/1000
+START=223000
+END=382000
+title=The Neurodevelopmental Window
+[CHAPTER]
+TIMEBASE=1/1000
+START=382000
+END=529000
+title=The Long Shadow of EF
+[CHAPTER]
+TIMEBASE=1/1000
+START=529000
+END=589000
+title=Motor Competence & Physical Skills
+[CHAPTER]
+TIMEBASE=1/1000
+START=589000
+END=684000
+title=Duncan Study: Early Math Prediction
+[CHAPTER]
+TIMEBASE=1/1000
+START=684000
+END=956000
+title=Attention Skills & Social-Emotional
+[CHAPTER]
+TIMEBASE=1/1000
+START=956000
+END=1064000
+title=Content vs Process: Status vs Trajectory
+[CHAPTER]
+TIMEBASE=1/1000
+START=1064000
+END=1224000
+title=The Math-EF Bidirectional Amplifier
+[CHAPTER]
+TIMEBASE=1/1000
+START=1224000
+END=1451000
+title=Implementation Paradox: Tools of the Mind
+[CHAPTER]
+TIMEBASE=1/1000
+START=1451000
+END=1629000
+title=Cognitive Training Effectiveness
+[CHAPTER]
+TIMEBASE=1/1000
+START=1629000
+END=1788000
+title=Guided Play vs Direct Instruction
+[CHAPTER]
+TIMEBASE=1/1000
+START=1788000
+END=1942000
+title=The Early Reading Paradox
+[CHAPTER]
+TIMEBASE=1/1000
+START=1942000
+END=2099000
+title=Montessori Case Study
+[CHAPTER]
+TIMEBASE=1/1000
+START=2099000
+END=2436000
+title=The Fade-Out Effect
+[CHAPTER]
+TIMEBASE=1/1000
+START=2436000
+END=2569000
+title=Environmental Factors
+[CHAPTER]
+TIMEBASE=1/1000
+START=2569000
+END=2611000
+title=Closing: Practical Takeaways
