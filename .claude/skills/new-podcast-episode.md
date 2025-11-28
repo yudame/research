@@ -275,7 +275,6 @@ Create an intellectually rigorous podcast that balances analytical depth with cl
 Opening:
 • For series episodes: Begin with "Yudame Research [series name]" and introduce the episode topic
 • For standalone episodes: Begin with "Yudame Research" and introduce the episode topic
-• Pronunciation: "Yudame" is pronounced "you-duh-may" (three syllables, emphasis on first)
 • Set up what makes this topic interesting or valuable to explore
 
 Core principles:
