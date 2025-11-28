@@ -36,7 +36,7 @@ All research follows these principles:
 
 Research findings are synthesized into podcast episodes using NotebookLM for AI-generated audio discussions.
 
-**Feed:** https://research.yuda.me/podcast/feed.xml
+**Listen:** [Spotify](https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc) | [RSS Feed](https://research.yuda.me/podcast/feed.xml)
 
 Each episode includes:
 - Full research report with citations
