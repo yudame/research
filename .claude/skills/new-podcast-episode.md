@@ -4,13 +4,14 @@ You are helping create a new podcast episode following a structured research and
 
 ## Episode Directory Structure
 
-Each episode follows a flat organization with 4 core markdown files at the top level:
+Each episode follows a flat organization with 5 core markdown files at the top level:
 ```
 podcast/episodes/YYYY-MM-DD-topic-slug/
 ├── prompts.md              # All prompts used during episode creation
 ├── research-results.md     # Raw research outputs from ChatGPT, Perplexity, etc.
 ├── sources.md              # Organized list of source links
 ├── report.md               # Final research report/show notes
+├── publish.md              # RSS feed content (title, description, keywords, sources)
 ├── documents/              # Supporting files (PDFs, articles) - only if needed
 ├── review-notes.md         # Episode review for continuous improvement (optional)
 ├── cover.png               # Episode cover art with branding (~500KB)
@@ -28,6 +29,7 @@ podcast/episodes/2025-11-19-stablecoin-history/
 ├── research-results.md               # Raw outputs from ChatGPT/Perplexity
 ├── sources.md                        # 14 validated source links
 ├── report.md                         # 25KB - comprehensive research report
+├── publish.md                        # RSS feed content for this episode
 ├── cover.png                         # Episode cover art with branding
 ├── 2025-11-19-stablecoin-history.mp3 # 30MB - 32:41 duration, 128kbps
 ├── 2025-11-19-stablecoin-history_transcript.json      # 403KB - full transcript
@@ -64,6 +66,7 @@ podcast/episodes/
 │   │   ├── research-results.md
 │   │   ├── sources.md
 │   │   ├── report.md
+│   │   ├── publish.md
 │   │   ├── documents/              # Only if needed
 │   │   ├── cover.png
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
@@ -107,6 +110,7 @@ podcast/episodes/cardiovascular-health/
 │   ├── research-results.md
 │   ├── sources.md
 │   ├── report.md
+│   ├── publish.md
 │   ├── cover.png
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle_transcript.json
@@ -785,6 +789,39 @@ c. **Add validated source links:**
    - Primary documents (whitepapers, official announcements)
    - Peer-reviewed studies (PubMed, academic journals)
 
+**Create publish.md with all RSS feed content:**
+
+Create `publish.md` in the episode directory with this template:
+```markdown
+# Episode Publishing Info
+
+## Title
+[Episode Title]
+
+## Publication Date
+[Day, DD Mon YYYY HH:MM:SS GMT - RFC 2822 format]
+
+## Audio
+- **Duration:** [MM:SS]
+- **File Size:** [bytes]
+- **Format:** audio/mpeg
+
+## Description
+[1-2 sentence compelling description covering key topics and takeaways.]
+
+Full Report: https://research.yuda.me/podcast/episodes/[path]/report.md
+Sources: https://research.yuda.me/podcast/episodes/[path]/sources.md
+
+## Key Sources
+- [Source Name]: [URL]
+- [Source Name]: [URL]
+- [Source Name]: [URL]
+- [Source Name]: [URL]
+
+## Keywords
+[keyword1, keyword2, keyword3, specific-term, specific-concept]
+```
+
 **Save the episode description generation process to prompts.md:**
 
 Append to `prompts.md`:
@@ -820,7 +857,7 @@ Append to `prompts.md`:
 **Date:** YYYY-MM-DD
 ```
 
-**Update feed.xml:**
+**Update feed.xml from publish.md:**
 
 Add a new `<item>` block after the opening `<channel>` metadata and before the closing `</channel>` tag:
 
@@ -882,6 +919,7 @@ Key Sources:
    - `research-results.md` - Raw research outputs
    - `sources.md` - Source links
    - `report.md` - Research report
+   - `publish.md` - RSS feed content
    - `cover.png` - Episode cover art with branding
    - `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
    - `YYYY-MM-DD-slug_transcript.json` - Full transcript
@@ -982,9 +1020,10 @@ Based on this episode, consider adjusting:
 
 - **Always use TodoWrite** to track progress through these phases
 - **Mark tasks complete** immediately after finishing each step
-- **Create files immediately** after research prompt - create the 4 core md files right away
+- **Create files immediately** after research prompt - create the 4 research md files right away
 - **research-results.md** - Provide this file for user to paste raw research outputs from ChatGPT/Perplexity as they work
-- **Flat structure** - All 4 core files (prompts.md, research-results.md, sources.md, report.md) go at episode top level
+- **Flat structure** - All 5 core files (prompts.md, research-results.md, sources.md, report.md, publish.md) go at episode top level
+- **publish.md** - Create during Publishing Phase with all RSS feed content (title, description, keywords, sources)
 - **documents/** - Only create this subdirectory when there are actual supporting files (PDFs, etc.)
 - **Track all prompts** in `prompts.md` throughout the workflow for reproducibility
 - **Save prompts immediately** after using them - don't batch at the end
