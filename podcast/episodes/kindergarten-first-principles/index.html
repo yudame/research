@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindergarten, from First Principles - Yudame Research</title>
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-light: #1a2d4a;
+            --yellow: #d4a00a;
+            --teal: #0d9488;
+            --white: #ffffff;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--teal);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--navy-light);
+            margin-bottom: 2rem;
+        }
+
+        .subscribe-section {
+            background: var(--gray-light);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--navy);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .subscribe-section p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--teal);
+        }
+
+        .spotify-button {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: #1DB954;
+            color: var(--white);
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .spotify-button:hover {
+            background: #1ed760;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--navy);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-left: 0.5rem;
+        }
+
+        .episode-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .episode {
+            background: var(--gray-light);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border-left: 4px solid var(--gray);
+            opacity: 0.85;
+        }
+
+        .episode.available {
+            border-left-color: var(--teal);
+            opacity: 1;
+        }
+
+        .episode-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .episode-number {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .episode.available .episode-number {
+            color: var(--teal);
+        }
+
+        .episode-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .episode-duration {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-left: auto;
+        }
+
+        .episode-summary {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .episode-details {
+            margin-bottom: 0.75rem;
+        }
+
+        .episode-details summary {
+            font-size: 0.85rem;
+            color: var(--teal);
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        .episode-details summary:hover {
+            text-decoration: underline;
+        }
+
+        .episode-details[open] summary {
+            margin-bottom: 0.75rem;
+        }
+
+        .episode-full-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            padding-left: 1rem;
+            border-left: 2px solid var(--gray-light);
+        }
+
+        .episode-links {
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .episode-links a {
+            margin-right: 1rem;
+            color: var(--teal);
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background: var(--gray-light);
+            border-radius: 4px;
+            color: var(--gray);
+        }
+
+        .back-link:hover {
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
+
+    <div class="header">
+        <img src="../../../podcast/cover.png" alt="Yudame Research" class="logo">
+        <h1>Kindergarten, from First Principles</h1>
+    </div>
+    <p class="tagline">A 6-part evidence-based series on designing optimal early childhood education for ages 4-6</p>
+
+    <div class="subscribe-section">
+        <p><strong>Subscribe to the full podcast</strong></p>
+        <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="spotify-button">Listen on Spotify</a>
+    </div>
+
+    <h2>Episodes <span class="coming-soon-badge">Coming Soon</span></h2>
+
+    <div class="episode-list">
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 1</span>
+                <span class="episode-title">The Developmental Imperative</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">What science says matters most at ages 4-6: executive function, self-regulation, and why process skills trump content.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">What developmental science identifies as the highest-leverage variables for children ages 4-6. Executive function, self-regulation, and why process skills trump content mastery. The evidence on academic acceleration versus developmental alignment, and what actually predicts long-term outcomes.</div>
+            </details>
+        </div>
+
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 2</span>
+                <span class="episode-title">Play as Pedagogy</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">The neuroscience of play and why it may be the primary engine of development, not mere enrichment.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">The neuroscience of play: what happens cognitively and neurologically during different types of play, and why play may be the primary engine of development rather than mere enrichment. Research on structured versus unstructured time ratios for optimal learning.</div>
+            </details>
+        </div>
+
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 3</span>
+                <span class="episode-title">Sleep, Memory, and the Daily Blueprint</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">How pre-nap learning windows and sleep-dependent memory consolidation should shape daily schedules.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">Sleep-dependent memory consolidation in young children. How timing of instruction affects retention, the science of pre-nap learning windows, and evidence-based principles for designing daily schedules around neurological realities.</div>
+            </details>
+        </div>
+
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 4</span>
+                <span class="episode-title">The Social Laboratory</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">Optimal group sizes, peer dynamics, and how intentional social friction builds essential skills.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">Peer dynamics, social learning, and group size effects. How children learn cooperation, conflict resolution, and social-emotional skills. Optimal teacher-to-child ratios and how intentional group composition affects developmental outcomes.</div>
+            </details>
+        </div>
+
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 5</span>
+                <span class="episode-title">Sustaining Excellence</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">Teacher wellbeing in intensive low-ratio settings: burnout, emotional labor, and support structures.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">Teacher and caregiver wellbeing in intensive low-ratio settings. The research on burnout, emotional labor, and sustainability. What support structures enable long-term effectiveness, and ecological models for educator wellbeing.</div>
+            </details>
+        </div>
+
+        <div class="episode">
+            <div class="episode-header">
+                <span class="episode-number">Ep 6</span>
+                <span class="episode-title">Frameworks and the Prepared Environment</span>
+                <span class="episode-duration">Coming soon</span>
+            </div>
+            <div class="episode-summary">Montessori, Reggio, Waldorf, and RIE compared—what elements are actually supported by research.</div>
+            <details class="episode-details">
+                <summary>More</summary>
+                <div class="episode-full-description">Comparative analysis of Montessori, Reggio Emilia, Waldorf, RIE, and other philosophies—what elements are actually supported by developmental research. Environment as pedagogy, material design, and common mistakes in private and homeschool early education.</div>
+            </details>
+        </div>
+    </div>
+
+    <a href="../../../" class="back-link">Back to Yudame Research</a>
+
+    <footer>
+        <p>Yudame Research - Evidence-based deep dives</p>
+    </footer>
+</body>
+</html>
