@@ -1,49 +1,48 @@
 # Yudame Research
 
-Evidence-based research and analysis across technology, health, economics, and human performance.
+Research tools and frameworks for evidence-based analysis across technology, health, economics, and human performance.
+
+## What This Is
+
+A personal research lab for exploring complex topics through rigorous methodology. The repository contains:
+
+- **Research tools** - Python scripts for transcription, audio processing, cover art generation, and content publishing
+- **Research outputs** - Reports, analysis, and synthesized findings on various topics
+- **Podcast episodes** - AI-generated audio discussions based on research findings
+- **Educational frameworks** - Learning protocols based on neuroscience research
+
+## Research Methodology
+
+All research follows these principles:
+
+1. **Prioritize authoritative sources** - Peer-reviewed studies, meta-analyses, regulatory documents, official data
+2. **Evaluate methodology** - Study design, sample size, control groups, potential biases
+3. **Report effect sizes** - Practical significance matters more than p-values
+4. **Note limitations** - Study populations, generalizability, contradictory findings
+5. **Identify conflicts** - Funding sources, industry relationships, potential incentives
+6. **Cite specific studies** - Enable verification and deeper exploration
+
+## Research Domains
+
+**Health & Performance** - Cardiovascular health, HRV, VO₂ max, sleep optimization, exercise protocols, supplementation
+
+**Technology & Blockchain** - Protocol design, stablecoins, DeFi mechanisms, consensus algorithms, regulatory frameworks
+
+**Economics & Markets** - Monetary policy, market dynamics, financial regulation, economic mechanisms
+
+**Learning & Development** - Educational frameworks, Montessori principles, memory consolidation, attention management
 
 ## Podcast
 
-Deep dives into complex topics backed by rigorous research. Each episode synthesizes peer-reviewed studies, expert analysis, and primary sources to build frameworks for understanding important subjects.
+Research findings are synthesized into podcast episodes using NotebookLM for AI-generated audio discussions.
 
 **Feed:** https://research.yuda.me/podcast/feed.xml
 
-### Recent Episodes
-
-**Maximizing VO₂ Max and Heart Health: An Evidence-Based Guide** (34:27)
-- Heart rate variability (HRV) as a master index of resilience
-- Synthesizes findings from the Whitehall II cohort, behavioral modification trials, and sleep optimization research
-- [Full research report](podcast/episodes/2025-11-19-cardiovascular-health-optimization/report.md)
-
-**Stablecoin Market: Strategies and Pitfalls** (32:41)
-- Analysis of stablecoin evolution from 2017-2025
-- Covers the Terra/UST collapse, regulatory frameworks like the GENIUS Act, and lessons for protocol design
-- [Full research report](podcast/episodes/2025-11-19-stablecoin-history/report.md)
-
-## Research Approach
-
-This repository documents research across multiple domains with an emphasis on:
-
-- Peer-reviewed studies and meta-analyses over individual anecdotes
-- Effect sizes and practical significance, not just statistical significance
-- Distinguishing correlation from causation
-- Identifying contradictory findings and areas of uncertainty
-- Understanding study populations and generalizability
-- Noting funding sources and potential conflicts of interest
-
-## Topics
-
-### Health & Performance
-Evidence-based optimization of physical and cognitive performance. Research on cardiovascular health, HRV, VO₂ max, sleep optimization, exercise protocols, and supplementation strategies.
-
-### Technology & Blockchain
-Protocol design, cryptoeconomics, and decentralized systems. Analysis of stablecoins, DeFi mechanisms, consensus algorithms, and regulatory frameworks affecting crypto markets.
-
-### Economics & Markets
-Market dynamics, regulatory frameworks, and financial systems. Studies on monetary policy, market behavior, financial regulation, and economic mechanisms.
-
-### Learning & Development
-Educational frameworks for all ages based on neuroscience research. Montessori principles, memory consolidation, attention management, and evidence-based learning protocols for children and professionals.
+Each episode includes:
+- Full research report with citations
+- Complete transcript
+- Chapter markers for navigation
+- Validated source links
 
 ## Repository Structure
 
@@ -51,38 +50,28 @@ Educational frameworks for all ages based on neuroscience research. Montessori p
 research/
 ├── podcast/
 │   ├── feed.xml                    # RSS feed
-│   ├── episodes/                   # Episode audio files and research
+│   ├── episodes/                   # Episode files and research
 │   │   └── YYYY-MM-DD-slug/
-│   │       ├── report.md           # Full research report
-│   │       ├── research/           # Source documents and links
-│   │       ├── YYYY-MM-DD-slug.mp3 # Episode audio with chapters
+│   │       ├── prompts.md          # All prompts used
+│   │       ├── research-results.md # Raw research outputs
+│   │       ├── sources.md          # Validated source links
+│   │       ├── report.md           # Final research report
+│   │       ├── cover.png           # Episode cover art
+│   │       ├── *.mp3               # Audio with chapters
 │   │       └── *_transcript.json   # Full transcript
-│   └── tools/                      # Transcription and processing tools
-├── learning/                       # Educational protocols and frameworks
-├── CLAUDE.md                       # Documentation for AI assistants
+│   └── tools/                      # Processing scripts
+├── learning/                       # Educational frameworks
 └── index.html                      # Landing page
 ```
 
-## Research Methodology
+## Tools
 
-When conducting research for episodes:
+Located in `podcast/tools/`:
 
-1. **Prioritize authoritative sources:** Peer-reviewed studies, meta-analyses, regulatory documents, official data
-2. **Evaluate methodology:** Study design, sample size, control groups, potential biases
-3. **Report effect sizes:** Practical significance matters more than p-values
-4. **Note limitations:** Study populations, generalizability, contradictory findings
-5. **Identify conflicts:** Funding sources, industry relationships, potential incentives
-6. **Cite specific studies:** Enable verification and deeper exploration
-
-## Contributing
-
-This is a personal research repository. Episodes are created using:
-1. Deep research with AI tools (Grok, ChatGPT, Claude)
-2. NotebookLM for audio generation
-3. Local Whisper for transcription
-4. Manual chapter creation based on transcript analysis
-
-See `.claude/skills/new-podcast-episode.md` for the complete workflow.
+- **transcribe_only.py** - Local Whisper transcription (no API needed)
+- **generate_cover.py** - DALL-E 3 cover art generation
+- **add_logo_watermark.py** - Brand overlay for cover images
+- **generate_chapters.py** - Chapter marker generation
 
 ## License
 

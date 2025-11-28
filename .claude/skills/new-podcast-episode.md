@@ -4,18 +4,15 @@ You are helping create a new podcast episode following a structured research and
 
 ## Episode Directory Structure
 
-Each episode follows this organization:
+Each episode follows a flat organization with 4 core markdown files at the top level:
 ```
 podcast/episodes/YYYY-MM-DD-topic-slug/
-├── research/
-│   ├── research-results.md # Raw research outputs from ChatGPT, Perplexity, etc.
-│   ├── sources.md          # Organized list of source links
-│   ├── documents/          # PDFs, articles, downloads
-│   └── assets/             # Images, charts, data files
 ├── prompts.md              # All prompts used during episode creation
+├── research-results.md     # Raw research outputs from ChatGPT, Perplexity, etc.
+├── sources.md              # Organized list of source links
 ├── report.md               # Final research report/show notes
+├── documents/              # Supporting files (PDFs, articles) - only if needed
 ├── review-notes.md         # Episode review for continuous improvement (optional)
-├── script.md               # Episode script/outline (optional)
 ├── cover.png               # Episode cover art with branding (~500KB)
 ├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters (~30MB)
 ├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript (~400KB)
@@ -27,12 +24,9 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 
 ```
 podcast/episodes/2025-11-19-stablecoin-history/
-├── research/
-│   ├── research-results.md           # Raw outputs from ChatGPT/Perplexity
-│   ├── sources.md                    # 14 validated source links
-│   ├── documents/                    # (empty - sources were web-based)
-│   └── assets/                       # (empty)
 ├── prompts.md                        # All prompts used during creation
+├── research-results.md               # Raw outputs from ChatGPT/Perplexity
+├── sources.md                        # 14 validated source links
 ├── report.md                         # 25KB - comprehensive research report
 ├── cover.png                         # Episode cover art with branding
 ├── 2025-11-19-stablecoin-history.mp3 # 30MB - 32:41 duration, 128kbps
@@ -66,9 +60,11 @@ For multi-episode series, organize episodes into a series subdirectory:
 podcast/episodes/
 ├── series-name/                    # Series subdirectory
 │   ├── ep1-topic-slug/
-│   │   ├── research/
 │   │   ├── prompts.md
+│   │   ├── research-results.md
+│   │   ├── sources.md
 │   │   ├── report.md
+│   │   ├── documents/              # Only if needed
 │   │   ├── cover.png
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
@@ -107,11 +103,9 @@ YYYY-MM-DD-series-name-episode-X-topic.mp3
 ```
 podcast/episodes/cardiovascular-health/
 ├── ep1-lifestyle/
-│   ├── research/
-│   │   ├── chatgpt-research.md
-│   │   ├── perplexity-research.md
-│   │   └── sources.md
 │   ├── prompts.md
+│   ├── research-results.md
+│   ├── sources.md
 │   ├── report.md
 │   ├── cover.png
 │   ├── 2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3
@@ -146,7 +140,7 @@ When starting a new multi-episode series:
 
 2. **Create series structure:**
    ```bash
-   mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name/ep1-topic-slug/research/{documents,assets}
+   mkdir -p ~/src/research/podcast/episodes/series-name/ep1-topic-slug
    ```
 
 3. **Use standardized naming:**
@@ -162,7 +156,7 @@ If standalone episodes should become a series:
 
 1. **Create series subdirectory:**
    ```bash
-   mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name
+   mkdir -p ~/src/research/podcast/episodes/series-name
    ```
 
 2. **Move and rename episode directories:**
@@ -201,12 +195,12 @@ If standalone episodes should become a series:
 
 **For series episodes:**
 ```bash
-mkdir -p /Users/tomcounsell/src/research/podcast/episodes/series-name/epX-topic-slug/research/{documents,assets}
+mkdir -p ~/src/research/podcast/episodes/series-name/epX-topic-slug
 ```
 
 **For standalone episodes:**
 ```bash
-mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-topic-slug/research/{documents,assets}
+mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug
 ```
 
 ### 2. Research Phase (User-led with your support)
@@ -246,7 +240,7 @@ Research [topic/question].
 **Now create all episode files and directories:**
 
 ```bash
-mkdir -p /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug/research/{documents,assets}
+mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-slug
 ```
 
 **Create prompts.md to track all prompts used:**
@@ -288,7 +282,7 @@ This document tracks all prompts used during the creation of this episode for re
 
 **Create research results collection file:**
 
-Create `research/research-results.md` with this template:
+Create `research-results.md` with this template:
 ```markdown
 # Research Results for [Episode Title]
 
@@ -323,7 +317,7 @@ This file is for pasting research results from external tools (ChatGPT, Perplexi
 
 **Create initial sources.md file:**
 
-Create `research/sources.md` with this template:
+Create `sources.md` with this template:
 ```markdown
 # Sources for [Episode Title]
 
@@ -360,14 +354,14 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 
 **Inform the user:**
 "Episode structure created! You can now:
-1. Paste research results into `research/research-results.md` as you gather them from ChatGPT, Perplexity, etc.
+1. Paste research results into `research-results.md` as you gather them from ChatGPT, Perplexity, etc.
 2. Let me know when research is complete and I'll synthesize everything into report.md"
 
 ---
 
 **When user provides research:**
 
-1. **Save raw research** to `research/research-results.md`
+1. **Save raw research** to `research-results.md`
 
 2. **Immediately synthesize into report.md** - Do NOT ask the user if they want this done. Automatically consolidate the research into a cohesive report focusing on:
    - Key findings and insights
@@ -383,7 +377,7 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
    - Include specific names, dates, and numbers for credibility
    - Note areas of uncertainty or debate
 
-3. **Update `research/sources.md`** with sources identified from the research
+3. **Update `sources.md`** with sources identified from the research
 
 4. **Immediately provide the NotebookLM prompt** - Don't wait for user to ask. After report.md is ready:
    - Add the NotebookLM prompt to `prompts.md` (Audio Generation Phase section)
@@ -397,10 +391,8 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 
 1. Upload ALL research files to NotebookLM:
    - `report.md` (overview/summary)
-   - `research/perplexity-research.md` (if present)
-   - `research/chatgpt-research.md` (if present)
-   - Any other research files in the `research/` directory
-   - Any source documents (PDFs, articles) in `research/documents/`
+   - `research-results.md` (raw research outputs)
+   - Any source documents (PDFs, articles) in `documents/` if present
 
    **User uploads ALL files** - NotebookLM will synthesize across all sources
 
@@ -505,9 +497,8 @@ Append to `prompts.md`:
 
 **Files Uploaded to NotebookLM:**
 - report.md
-- research/perplexity-research.md
-- research/chatgpt-research.md
-- [List any other research files or documents uploaded]
+- research-results.md
+- [List any documents from documents/ folder if uploaded]
 
 **Prompt:**
 ```
@@ -525,7 +516,7 @@ Append to `prompts.md`:
 
 1. **Check the format** - if it's .m4a, convert to .mp3:
    ```bash
-   cd /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug
+   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
    ffmpeg -i "original-file.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
    ```
 
@@ -541,7 +532,7 @@ Append to `prompts.md`:
 
    **First-time setup only:**
    ```bash
-   cd /Users/tomcounsell/src/research/podcast/tools
+   cd ~/src/research/podcast/tools
 
    # Fix SSL certificates (macOS Python)
    /Applications/Python\ 3.12/Install\ Certificates.command
@@ -554,7 +545,7 @@ Append to `prompts.md`:
 
    a. Run local Whisper transcription (no API key needed):
    ```bash
-   cd /Users/tomcounsell/src/research/podcast/tools
+   cd ~/src/research/podcast/tools
    python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
    ```
 
@@ -591,7 +582,7 @@ Append to `prompts.md`:
 
    d. Embed chapters into the mp3 file:
    ```bash
-   cd /Users/tomcounsell/src/research/podcast/episodes/YYYY-MM-DD-slug
+   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
    ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
    mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
    ```
@@ -617,7 +608,7 @@ This is a two-step process: first generate the base image with DALL-E 3, then ad
 **Step 1: Generate base cover art**
 
 ```bash
-cd /Users/tomcounsell/src/research/podcast/tools
+cd ~/src/research/podcast/tools
 
 # Generate cover art from report.md (recommended)
 python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
@@ -637,7 +628,7 @@ python generate_cover.py ../episodes/YYYY-MM-DD-slug --prompt "Your custom image
 **Step 2: Add branding to cover art**
 
 ```bash
-cd /Users/tomcounsell/src/research/podcast/tools
+cd ~/src/research/podcast/tools
 
 # For series episodes (with series and episode text)
 python add_logo_watermark.py ../episodes/series-name/epX-slug/cover.png \
@@ -726,7 +717,7 @@ Append to `prompts.md`:
 
 **First-time setup (if not already done):**
 ```bash
-cd /Users/tomcounsell/src/research/podcast/tools
+cd ~/src/research/podcast/tools
 pip install -r requirements.txt
 export OPENAI_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
 ```
@@ -742,7 +733,7 @@ If cover art needs to be updated (quality issues, theme mismatch, etc.):
 
 1. **Regenerate with DALL-E 3 and apply branding** (same commands as initial generation):
    ```bash
-   cd /Users/tomcounsell/src/research/podcast/tools
+   cd ~/src/research/podcast/tools
    export OPENAI_API_KEY="your-key"  # If not already in environment
    python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
    python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
@@ -838,7 +829,9 @@ Add a new `<item>` block after the opening `<channel>` metadata and before the c
 <item>
   <title>Episode Title Here</title>
   <itunes:image href="https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/cover.png?v=1"/>
-  <description>Compelling 1-2 sentence description (full report: https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md) covering key topics and takeaways.
+  <description>Compelling 1-2 sentence description covering key topics and takeaways.
+
+Full Report: https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md
 
 Key Sources:
 • Official Source 1: [validated URL]
@@ -886,8 +879,9 @@ Key Sources:
 
    **Files to include:**
    - `prompts.md` - All prompts used during creation
+   - `research-results.md` - Raw research outputs
+   - `sources.md` - Source links
    - `report.md` - Research report
-   - `research/sources.md` - Source links
    - `cover.png` - Episode cover art with branding
    - `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
    - `YYYY-MM-DD-slug_transcript.json` - Full transcript
@@ -988,8 +982,10 @@ Based on this episode, consider adjusting:
 
 - **Always use TodoWrite** to track progress through these phases
 - **Mark tasks complete** immediately after finishing each step
-- **Create files immediately** after research prompt - create all episode directories and template files right away
+- **Create files immediately** after research prompt - create the 4 core md files right away
 - **research-results.md** - Provide this file for user to paste raw research outputs from ChatGPT/Perplexity as they work
+- **Flat structure** - All 4 core files (prompts.md, research-results.md, sources.md, report.md) go at episode top level
+- **documents/** - Only create this subdirectory when there are actual supporting files (PDFs, etc.)
 - **Track all prompts** in `prompts.md` throughout the workflow for reproducibility
 - **Save prompts immediately** after using them - don't batch at the end
 - **Use ffmpeg** for audio conversion (128kbps mp3 is recommended)
@@ -1009,13 +1005,12 @@ When user wants to create a new episode, start with:
 1. Create a todo list for tracking
 2. Ask for episode date, slug, and title
 3. **Help craft the research prompt** - work with user to refine their topic into a clear, methodology-focused research prompt
-4. **Immediately create all episode files and directories:**
-   - Create directory structure (research/documents/, research/assets/)
-   - Create prompts.md with episode details and research prompt
-   - Create research/research-results.md for pasting ChatGPT/Perplexity outputs
-   - Create research/sources.md template
+4. **Immediately create all episode files:**
+   - Create episode directory
+   - Create the 4 core files at top level: prompts.md, research-results.md, sources.md, report.md (empty template)
+   - Only create documents/ subdirectory when needed for supporting files
 5. User conducts research using ChatGPT/Perplexity/Grok/other tools
-   - User can paste interim results into research/research-results.md
+   - User can paste interim results into research-results.md
 6. Once research is complete, **automatically synthesize into report.md** (don't ask - just do it)
    - Focus on key points, storytelling opportunities, and podcast narrative flow
    - **Then immediately provide the NotebookLM prompt** - save to prompts.md AND output for user to copy
