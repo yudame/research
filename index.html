@@ -145,6 +145,42 @@
             text-decoration: none;
         }
 
+        .series-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .series-card {
+            display: block;
+            background: var(--gray-light);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid var(--teal);
+            transition: border-color 0.2s;
+        }
+
+        .series-card:hover {
+            border-left-color: var(--navy);
+            text-decoration: none;
+        }
+
+        .series-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .series-card:hover .series-title {
+            color: var(--teal);
+        }
+
+        .series-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -181,14 +217,15 @@
         <li><strong>Conflicts disclosed:</strong> Funding sources and potential biases noted</li>
     </ul>
 
-    <h2>Topics</h2>
-    <ul>
-        <li><strong>Health & Performance:</strong> Cardiovascular optimization, VO2 max, HRV, sleep, supplementation</li>
-        <li><strong>Blockchain & Crypto:</strong> Stablecoins, DeFi protocols, regulatory frameworks, cryptoeconomics</li>
-        <li><strong>Markets & Economics:</strong> Monetary policy, market dynamics, financial regulation</li>
-    </ul>
+    <h2>Series</h2>
+    <div class="series-list">
+        <a href="podcast/episodes/cardiovascular-health/" class="series-card">
+            <div class="series-title">Cardiovascular Health</div>
+            <div class="series-meta">4 episodes · VO2 max, HRV, lifestyle, supplementation</div>
+        </a>
+    </div>
 
-    <a href="https://github.com/yudame/research/tree/main/podcast/episodes" class="github-link">View research reports on GitHub</a>
+    <a href="https://github.com/yudame/research/tree/main/podcast/episodes" class="github-link">View all episodes on GitHub</a>
 
     <footer>
         <p>Yudame Research</p>
