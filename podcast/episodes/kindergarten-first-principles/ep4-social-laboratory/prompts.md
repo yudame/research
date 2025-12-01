@@ -96,7 +96,7 @@ Research how children ages 4-6 develop social competencies through peer interact
 ```
 Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
 
-Opening: Begin with "Yudame Research: Kindergarten, from First Principles" and introduce Episode 4: The Social Laboratory - exploring how peer interaction drives social-emotional development in children ages 4-6.
+Opening: Begin with "Yudame Research: Kindergarten, from First Principles" and introduce the topic's value.
 
 Core principles:
 • Spell out acronyms first: "Theory of Mind, or ToM" - then use acronym
@@ -113,60 +113,27 @@ Emphasis areas:
 • Use conversational check-ins: "Let me define that term..." or "To be clear..."
 • Translate findings to practical meaning and broader patterns
 
-Key narrative arcs to develop:
-
-1. **The Symmetry Advantage** - Why peers provide what adults cannot: Explain how peer relationships differ from adult-child relationships through power symmetry. Use Tenenbaum meta-analysis (Hedges' g = 0.40, 71 studies) and Kasari's autism intervention RCT to show peer learning mechanisms. Define "symmetrical power dynamics" and explain Bandura's Social Learning Theory vs. Vygotsky's Zone of Proximal Development.
-
-2. **Conflict as Developmental Fuel** - Reframe conflict from management problem to learning opportunity. Explain the "Dual Concern Model" showing 3-year-olds use dominating strategies while 5-year-olds use integrating strategies. Use the Chinese study (r = 0.67 correlation between emotional comprehension and conflict resolution, N=90) to show age 4 as critical stage. Explain the 5-step mediation process and why "regulation before resolution" matters.
-
-3. **The Ratio Question** - Present the tension between large effect sizes (0.22 SD for ratios ≤7.5:1) and the Perlman finding of "few, if any relationships within regulated ranges." Explain what this methodological discrepancy reveals about research and policy. Use Tennessee STAR study for context.
-
-4. **The SEL Paradox** - Present both the optimistic case (Durlak: d = 0.69 across 270,034 students) and the cautionary evidence (Cipriano 2024: no follow-up effects 6+ months). Explain conflicts of interest (CASEL President as meta-analysis co-author), publication bias, and what "fade-out" means for educational investment.
-
-5. **Individual Pathways** - Use Jerome Kagan's 15-20% high-reactivity finding and Nathan Fox's discovery that only 40% develop anxiety to show heterogeneity. Contrast with ADHD (52% in "rejected" category, effect sizes d = 0.72-1.25) to illustrate different developmental trajectories. Explain Peer-Mediated Intervention (d = 1.13 for ASD) as evidence-based inclusive practice.
-
-6. **Screen Time's Bidirectional Trap** - Explain the mechanism: displacement (time not practicing face-to-face signaling) and the bidirectional relationship (problems → screens → more problems). Use the >2.5 hours/day threshold and video chat exception to illustrate nuance in research.
-
 Highlight insights worth examining:
-• Counter-intuitive findings: Mixed-age grouping benefits younger children but creates 4-5 month academic trade-offs for older children
-• Methodological tensions: Why observer reports show coercion while self-reports show negotiation in conflict resolution
-• The "situated" nature of conflict strategies - why rote scripts fail
-• Cultural variation in "competence" definitions (East Asian "obliging" vs. Western "assertion")
-• The causal chain: parental warmth at age 2 → self-regulation at age 3 → social competence at kindergarten
+• Counter-intuitive findings that reveal strategic lessons
+• Methodological tensions and contradictory evidence
+• Unexpected outcomes that challenge assumptions
+• Make numbers meaningful through context and comparisons
 
 Avoid:
 • Undefined acronyms and jargon
 • Academic language when simpler words work
 • Introducing 3+ new technical terms in one sentence
 • Fabricated examples or over-hedging that obscures findings
-• Dry explanations when human stories exist in research (name the researchers, describe the experimental designs)
+• Dry explanations when human stories exist in research
 • Repeatedly restating context
 
 Target: Intelligent listeners wanting deep understanding and practical insights. Appreciate technical depth but need terms defined.
 
 Tone: Intellectually rigorous but accessible - "conversational expert explaining to a bright student"
 
-When presenting research:
-• Focus on what numbers mean: "A correlation of 0.67 is very strong - it means emotional comprehension explains nearly half the variance in how children resolve conflicts"
-• Use comparisons: "Effect sizes of 0.35 to 0.69 are moderate to large - these are clinically meaningful differences"
-• Translate statistics to implications: "The Minnesota study found that adding preschool peer competence to the model increased explained variance from 39% to 62% - that's a huge jump showing peer relationships matter above and beyond early attachment"
+When presenting research: Focus on what numbers mean, use comparisons ("like losing 5 years of profits"), translate statistics to implications.
 
-Structural suggestions:
-• Part 1: The irreplaceable value of peer interaction (symmetry, ToM, language)
-• Part 2: Conflict as curriculum (regulation before resolution, scaffolding sequence)
-• Part 3: Structural design factors (ratios, mixed-age, physical space)
-• Part 4: Individual differences (temperament, ADHD, autism, attachment)
-• Part 5: The SEL evidence paradox (large effects vs. fade-out concerns)
-• Part 6: Modern risk factors (screen time, noise) and cultural context
-• Part 7: Design principles synthesis
-
-Closing: Summarize 3-4 key takeaways focusing on actionable principles:
-1. Peer interaction is not optional - it's the primary engine of social-emotional development for ages 4-6
-2. Conflict is developmental fuel when properly scaffolded (emotion regulation → cognitive problem-solving → empathy building)
-3. Structural conditions matter: ratios ≤7.5:1, class sizes ≤15, mixed-age grouping with awareness of trade-offs
-4. Support individual differences: intimate spaces for shy children, vigorous play for high-reactivity children, peer-mediated interventions for autism
-
-Close with: "Find the full research report, complete source list with links to all the studies we discussed, and detailed design principles at research dot yuda dot me - that's Y-U-D-A dot M-E. This is Episode 4 of our Kindergarten, from First Principles series."
+Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E. This is Episode 4 of our Kindergarten, from First Principles series."
 ```
 
 **Date:** 2025-12-01
