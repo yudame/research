@@ -406,6 +406,48 @@ The most actionable insight for educators is that the decision to nap or not sho
 
 Massachusetts currently mandates only a 45-minute "rest period" for preschools—a policy Rebecca Spencer notes is "based on nothing in particular." The evidence suggests that for habitually napping children, this may be insufficient, while for children who have transitioned away from naps, forced sleep may be counterproductive. Evidence-based policy would support **protected nap opportunities for those who need them** while allowing flexibility for those who have biologically transitioned. The research is clear: for young children who still nap, sleep is not time away from learning—it is when learning becomes permanent.
 
+Here are the top sources from the research, organized by type:
+
+## Meta-Analyses & Systematic Reviews
+
+1. **Giganti et al. (2025)** - "Napping and memory consolidation in early childhood: A systematic review and meta-analysis" - *Sleep Medicine Reviews*
+   - 27 studies, 67 effect sizes; Hedges' g = 0.60 for preschoolers
+   - https://pubmed.ncbi.nlm.nih.gov/40592247/
+
+2. **Wilhelm et al. (2012)** - "Sleep-dependent memory consolidation – What can be learnt from children?" - *Neuroscience & Biobehavioral Reviews*
+   - Foundational theoretical review on developmental differences
+   - https://www.sciencedirect.com/science/article/abs/pii/S0149763412000449
+
+## Landmark Experimental Studies
+
+3. **Kurdziel, Duclos & Spencer (2013)** - "Sleep spindles in midday naps enhance learning in preschool children" - *PNAS*
+   - n=40; established 10% memory loss without naps; spindle-memory correlation
+   - https://www.pnas.org/doi/10.1073/pnas.1306418110
+
+4. **Spencer & Riggins (2022)** - "Contributions of memory and brain development to the bioregulation of naps" - *PNAS*
+   - Hippocampal volume differences between nappers/non-nappers
+   - https://www.pnas.org/doi/10.1073/pnas.2123415119
+
+5. **Desrochers, Kurdziel & Spencer (2016)** - "Delayed benefit of naps on motor learning in preschool children" - *Experimental Brain Research*
+   - n=47; showed 24-hour delay for motor skill benefits
+   - https://pubmed.ncbi.nlm.nih.gov/26645305/
+
+6. **Kurdziel, Kent & Spencer (2018)** - "Sleep-dependent enhancement of emotional memory in early childhood" - *Scientific Reports*
+   - n=49; nap + overnight sleep interaction for emotional memory
+   - https://www.nature.com/articles/s41598-018-30980-y
+
+7. **Spanó et al. (2018)** - "REM sleep in naps differentially relates to memory consolidation" - *PNAS*
+   - REM sleep linked to word learning
+   - https://www.pnas.org/doi/10.1073/pnas.1811488115
+
+8. **Williams & Horst (2014)** - "Goodnight book: sleep consolidation improves word learning via storybooks" - *Frontiers in Psychology*
+   - Demonstrated vocabulary learning benefits from sleep
+   - https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.00184/full
+
+## Key Researcher
+
+**Rebecca Spencer** (UMass Amherst) is the dominant figure in this field—her lab produced the majority of preschool-specific research. This concentration is both a strength (deep programmatic research) and limitation (less independent replication).
+
 ---
 
 ## Notes
