@@ -1,0 +1,72 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction: The Midday Nap Crisis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=360000
+title=Spencer's Experiment: Catastrophic Forgetting
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=360000
+END=600000
+title=The Hippocampal Desk Hypothesis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=600000
+END=840000
+title=Sleep Architecture: SWS and Sleep Spindles
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=840000
+END=960000
+title=REM Sleep and Language Memory
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1140000
+title=Declarative Memory: The 4-Hour Window
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1320000
+title=Procedural Skills: The 24-Hour Delay
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1320000
+END=1560000
+title=Habitual vs Non-Habitual Nappers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1740000
+title=Sleep Deprivation and ADHD Symptoms
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=1920000
+title=Supporting Nighttime Sleep Quality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2280000
+title=Evidence-Based Daily Schedule
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2339200
+title=Key Takeaways and Policy Implications
