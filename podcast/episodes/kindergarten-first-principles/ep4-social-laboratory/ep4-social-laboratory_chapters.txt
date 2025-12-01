@@ -1,0 +1,81 @@
+;FFMETADATA1
+title=Kindergarten, from First Principles: Ep. 4, The Social Laboratory
+artist=Yudame Research
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=185000
+title=Introduction: Social Competence as Life Trajectory
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=185000
+END=435000
+title=Symmetrical Contexts: Why Peers Matter
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=435000
+END=701000
+title=The Causal Chain: From Age 2 to Kindergarten
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=701000
+END=1016000
+title=The Symmetry Advantage: Peer vs. Adult Learning
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1016000
+END=1394000
+title=Theory of Mind: The Cognitive Engine
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1394000
+END=1600000
+title=Language as Social Infrastructure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1600000
+END=2046000
+title=Conflict as Developmental Fuel
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2046000
+END=2587000
+title=The Scaffolding Sequence: Regulation Before Resolution
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2587000
+END=3120000
+title=Structural Design: Ratios and Class Size
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=3120000
+END=3587000
+title=Individual Differences: Temperament and Inclusion
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=3587000
+END=4080000
+title=The SEL Paradox: Large Effects vs. Fade-Out
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=4080000
+END=4485000
+title=Modern Risk Factors: Screen Time and Environment
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=4485000
+END=4690000
+title=Summary: Designing the Social Laboratory
