@@ -1,6 +1,6 @@
 # Research Results for Stablecoin Compliance: Navigating GENIUS Act and MiCA from Asia
 
-This file is for pasting research results from external tools (ChatGPT, Perplexity, Grok, etc.).
+This file is for pasting research results from external tools (Claude, Gemini, ChatGPT, Perplexity, Grok, etc.).
 
 ---
 
