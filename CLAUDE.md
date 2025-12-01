@@ -179,3 +179,4 @@ After updating feed.xml, check:
 - Correct duration format (MM:SS or HH:MM:SS)
 - RFC 2822 date format for pubDate
 - All URLs accessible
+- the api keys for Open Router and OpenAI are in .env

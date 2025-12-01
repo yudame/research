@@ -78,7 +78,7 @@ mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug
 
 **Help user craft a deep research prompt:**
 
-Before the user conducts research, help them create a focused research prompt for tools like Grok, ChatGPT, or other deep research tools.
+Before the user conducts research, help them create a focused research prompt for tools like Claude, Gemini, ChatGPT, Perplexity, Grok, or other deep research tools.
 
 **Research prompt principles:**
 - Start with the user's topic and refine it into a clear research question
@@ -137,7 +137,7 @@ This document tracks all prompts used during the creation of this episode for re
 
 ### Research Prompt
 
-**Tool Used:** [e.g., ChatGPT, Perplexity, Grok, Claude, etc.]
+**Tool Used:** [e.g., Claude, Gemini, ChatGPT, Perplexity, Grok, etc.]
 
 **Prompt:**
 ```
@@ -157,7 +157,7 @@ Create `research-results.md` with this template:
 ```markdown
 # Research Results for [Episode Title]
 
-This file is for pasting research results from external tools (ChatGPT, Perplexity, Grok, etc.).
+This file is for pasting research results from external tools (Claude, Gemini, ChatGPT, Perplexity, Grok, etc.).
 
 ---
 
@@ -272,81 +272,51 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 ```
 Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
 
-Opening:
-• For series episodes: Begin with "Yudame Research [series name]" and introduce the episode topic
-• For standalone episodes: Begin with "Yudame Research" and introduce the episode topic
-• Set up what makes this topic interesting or valuable to explore
+Opening: Begin with "Yudame Research" (add series name if applicable) and introduce the topic's value.
 
 Core principles:
-• Spell out acronyms on first use: "High-Intensity Interval Training, or HIIT"
-• For short, clear terms like HIIT, prefer saying the full phrase in speech when natural
-• Medical/technical acronyms (VO2, HRV, etc.) can remain as acronyms after introduction
-• Define technical terms immediately with plain language THEN build on them - assume intelligent but not expert audience
-• Use concrete examples and stories ONLY when they exist in the source material - never fabricate or speculate
-• When stories exist, include human elements: what people said, felt, decided - not just mechanics
-• HIGHLIGHT surprising findings, spectacular failures, and unexpected successes - these are the memorable moments
-• Extract frameworks and principles from the research findings
-• Connect findings to practical implications and broader patterns
-• Maintain scientific rigor: distinguish correlation from causation, note effect sizes, acknowledge uncertainties
+• Spell out acronyms first: "High-Intensity Interval Training, or HIIT" - then use acronym
+• Define technical terms immediately in plain language before building on them
+• Use concrete examples ONLY from source material - never fabricate
+• Highlight findings that reveal strategic lessons or challenge assumptions
+• Extract frameworks and connect to practical implications
+• Maintain scientific rigor: distinguish correlation from causation, note effect sizes and uncertainties
 
-What to emphasize:
-• Spell-first approach: "The EU's Markets in Crypto-Assets regulation, called MiCA..." not "MiCA requires..."
-• Definition-first explanations: "VO2 max - the maximum rate your body can use oxygen during exercise - is..."
-• Evidence-based analysis: cite specific studies, note sample sizes, report actual effect sizes
-• Human elements in stories: decisions made, emotions felt, specific quotes when available
-• Practical insights: what does this mean for someone implementing these findings?
-• Pattern recognition: what principles emerge across multiple studies or examples?
-• Conversational check-ins: "Let me define that term..." or "To be clear, what we mean by [X] is..."
+Emphasis areas:
+• Spell-first for acronyms, definition-first for technical terms
+• Evidence-based analysis: cite studies, report effect sizes, note sample sizes
+• Include human elements when they exist: decisions made, reasoning, outcomes
+• Use conversational check-ins: "Let me define that term..." or "To be clear..."
+• Translate findings to practical meaning and broader patterns
 
-SURPRISING MOMENTS - actively look for and highlight these:
-• Counter-intuitive findings: "You'd think X, but the research shows the opposite..."
-• Spectacular failures: "$60 billion evaporated in 48 hours" or "The supply went from millions to trillions in days"
-• Dramatic effect sizes: Not just "improved" but "300% improvement" or "cut risk in half"
-• Unexpected successes: "This obscure intervention outperformed the standard approach"
-• Reversals: "What everyone thought was safe turned out to be the riskiest"
-• Extreme comparisons: "That's equivalent to..." (make big numbers relatable)
-• Non-obvious connections: "Surprisingly, factor X affects Y through this unexpected mechanism"
-• Edge cases that reveal principles: "In this one situation, the entire system breaks because..."
+Highlight insights worth examining:
+• Counter-intuitive findings that reveal strategic lessons
+• Failures that illustrate specific mistakes or systemic issues
+• Unexpected outcomes that challenge assumptions
+• Make numbers meaningful through context and comparisons
 
-Signal these moments with phrases like:
-• "Here's where it gets really interesting..."
-• "And this is the shocking part..."
-• "You wouldn't expect this, but..."
-• "The numbers here are staggering..."
-• "This completely flips conventional wisdom..."
+Avoid:
+• Undefined acronyms and jargon
+• Academic language when simpler words work
+• Introducing 3+ new technical terms in one sentence
+• Fabricated examples or over-hedging that obscures findings
+• Dry explanations when human stories exist in research
+• Repeatedly restating context
 
-What to avoid:
-• Acronyms without spelling them out first (DLT, SOX, OFAC, etc.)
-• Technical jargon without immediate plain-language definition
-• Academic language when simpler words work ("endogenous" vs "internal", "exogenous" vs "external")
-• Concept stacking - introducing 3+ new technical terms in one sentence
-• Fabricated examples or hypothetical stories not in the research
-• Over-simplification that loses scientific accuracy
-• Excessive hedging that obscures clear findings
-• Dry mechanical explanations when human stories exist in the research
-• Repeatedly restating context or target listener details - establish once, then focus on content
+Target: Intelligent listeners wanting deep understanding and practical insights. Appreciate technical depth but need terms defined.
 
-Target audience: Intelligent listeners who want to deeply understand the topic and apply the insights. They appreciate technical depth but need terms defined to follow along.
-
-Tone: Intellectually rigorous but accessible. Think "conversational expert explaining to a bright student" - maintain depth while ensuring clarity.
-
-Closing:
-• Summarize 2-3 key takeaways or practical implications
-• Close with information about learning more: "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
+Tone: Intellectually rigorous but accessible - "conversational expert explaining to a bright student"
 
 When presenting stories:
-• Include human drama if it exists: "Do Kwon tweeted X, causing panic..." not just "The protocol experienced stress"
-• Build narrative tension: "On that Friday afternoon, Circle announced..." not just "Circle had exposure"
-• Make it memorable through specifics: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
-• Emphasize the spectacular: "The supply didn't just increase - it went from hundreds of millions to TRILLIONS in 48 hours"
-• Use reveals for surprises: Set up expectation, then flip it - "Everyone assumed X was safe. Then this happened..."
+• Include decision-making context: "Do Kwon announced X, which led to Y" not "The protocol experienced stress"
+• Provide specific details: "On Friday afternoon, Circle announced..." not "Circle had exposure"
+• Use precise numbers for context: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
+• Show scale through comparisons: "Supply increased from millions to trillions - a thousand-fold change"
+• Connect to lessons: Explain what the outcome reveals about systems, incentives, or strategy
 
-When presenting research:
-• Focus on what the numbers mean and why they matter
-• Use comparisons: "That's like losing 5 years of profits from one fine"
-• Translate statistics to implications: "A 20% effect size means..."
+When presenting research: Focus on what numbers mean, use comparisons ("like losing 5 years of profits"), translate statistics to implications.
 
-Balance precision with engagement - neither dumbed down nor unnecessarily complex.
+Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
 ```
 
 3. Select format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
@@ -430,7 +400,7 @@ Balance precision with engagement - neither dumbed down nor unnecessarily comple
 
 **Generate AI cover art and add branding:**
 
-This is a two-step process: first generate the base image with DALL-E 3, then add podcast branding (logo, text, border).
+This is a two-step process: first generate the base image with Gemini via OpenRouter, then add podcast branding (logo, text, border).
 
 **Step 1: Generate base cover art**
 
@@ -442,13 +412,17 @@ python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
 
 # OR use custom prompt
 python generate_cover.py ../episodes/YYYY-MM-DD-slug --prompt "Your custom image prompt"
+
+# Optional: specify aspect ratio (default: 1:1)
+python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto --aspect-ratio "1:1"
 ```
 
 **generate_cover.py features:**
-- Uses OpenAI DALL-E 3 API (requires OPENAI_API_KEY environment variable)
+- Uses OpenRouter API with Google Gemini 3 Pro Image model (requires OPENROUTER_API_KEY environment variable)
 - Auto-generates prompts by analyzing report.md content
 - Automatically enforces dark navy/blue color theme throughout the image
 - Automatically blocks unwanted text, icons, logos, and annotations
+- Supports multiple aspect ratios: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 21:9
 - Outputs to `cover.png` in the episode directory
 - Logs all prompts to `prompts.md` for reproducibility
 
@@ -488,8 +462,8 @@ python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
 - Replaces original cover.png with branded version
 
 **Cover art specifications:**
-- Base size: 1024x1024px (DALL-E 3 output)
-- With 20px border: 1064x1064px total
+- Base size: 1024x1024px (or custom aspect ratio)
+- With 20px border: 1064x1064px total (for 1:1)
 - Color scheme: Dark navy/blue dominant, teal/white/silver accents
 - File size: ~500KB PNG format
 - Clean abstract visualization without text from AI
@@ -499,12 +473,13 @@ python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
 **First-time setup (if not already done):**
 ```bash
 cd ~/src/research/podcast/tools
-pip install -r requirements.txt
-export OPENAI_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
+pip install requests  # Only dependency needed
+export OPENROUTER_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
 ```
 
 **Note:**
-- DALL-E 3 costs ~$0.04 per image generation
+- OpenRouter Gemini 3 Pro Image costs ~$0.30/M input tokens + $2.50/M output tokens
+- Typical image generation: ~$0.05-0.10 per image
 - Cover art appears in podcast apps and directories
 - Each episode can have unique cover art or reuse podcast-level cover
 
@@ -512,10 +487,10 @@ export OPENAI_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
 
 If cover art needs to be updated (quality issues, theme mismatch, etc.):
 
-1. **Regenerate with DALL-E 3 and apply branding** (same commands as initial generation):
+1. **Regenerate with Gemini and apply branding** (same commands as initial generation):
    ```bash
    cd ~/src/research/podcast/tools
-   export OPENAI_API_KEY="your-key"  # If not already in environment
+   export OPENROUTER_API_KEY="your-key"  # If not already in environment
    python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
    python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
      --position top-left \
@@ -644,7 +619,7 @@ See existing episodes in feed.xml for XML structure reference.
 
    - Add episode "[title]" covering [key topics]
    - Include comprehensive research report with [main sections]
-   - Generate AI cover art with DALL-E 3 and apply podcast branding
+   - Generate AI cover art with Gemini via OpenRouter and apply podcast branding
    - Generate full transcript using local Whisper (base model)
    - Create [N] chapter markers covering key topics
    - Embed chapters into mp3 for podcast app support
@@ -729,14 +704,14 @@ Based on this episode, consider adjusting:
 ## Role Division
 
 **User handles:**
-- Research using deep research tools (Grok, ChatGPT, Perplexity)
+  - Research using deep research tools (Claude, Gemini, ChatGPT, Perplexity, Grok)
 - NotebookLM audio generation
 
 **You handle:**
 - File organization and directory setup
 - Report synthesis from raw research
 - Audio conversion (ffmpeg)
-- Cover art generation (DALL-E 3) and branding
+- Cover art generation (Gemini via OpenRouter) and branding
 - Transcription (local Whisper)
 - Chapter generation from transcript analysis
 - Description, keywords, source validation for publish.md
@@ -754,7 +729,7 @@ When user wants to create a new episode, start with:
    - Create episode directory
    - Create the 4 core files at top level: prompts.md, research-results.md, sources.md, report.md (empty template)
    - Only create documents/ subdirectory when needed for supporting files
-5. User conducts research using ChatGPT/Perplexity/Grok/other tools
+5. User conducts research using Claude, Gemini, ChatGPT, Perplexity, Grok, or other tools
    - User can paste interim results into research-results.md
 6. Once research is complete, **automatically synthesize into report.md** (don't ask - just do it)
    - Focus on key points, storytelling opportunities, and podcast narrative flow

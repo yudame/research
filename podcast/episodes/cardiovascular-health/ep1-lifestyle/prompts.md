@@ -161,3 +161,50 @@ A modern, scientific, and professional sound-wave digital visualization art for 
 **Output:** cover.png
 
 **Date:** 2025-11-24
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenRouter - google/gemini-3-pro-image-preview
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Lifestyle":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: Maximal oxygen uptake (VO2 max) represents the maximum integrated capacity of the pulmonary, cardiovascular, and muscular systems to uptake, transport, and utilize oxygen. This metric has emerged as o
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Enhanced Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Lifestyle":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: Maximal oxygen uptake (VO2 max) represents the maximum integrated capacity of the pulmonary, cardiovascular, and muscular systems to uptake, transport, and utilize oxygen. This metric has emerged as o
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+IMPORTANT:
+- The ENTIRE image should be themed in deep navy blue and dark blue tones as the dominant color scheme
+- Dark blue should fill most of the canvas, not just be a border or frame
+- Use bright teal, white, and silver only as accent colors on top of the dark blue theme
+- Pure abstract visualization only
+- Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
+- Clean visual design without any typography or graphic elements
+```
+
+**Aspect Ratio:** 1:1
+
+**Output:** cover.png
+
+**Date:** 2025-11-28
