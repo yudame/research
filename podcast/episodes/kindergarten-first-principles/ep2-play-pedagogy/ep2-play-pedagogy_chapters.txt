@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction: The Play Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=420000
+title=Defining Executive Function and Effect Sizes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=660000
+title=The Neuroscience of Play: Brain Architecture
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=900000
+title=Molecular Mechanisms: BDNF and Neuroplasticity
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=900000
+END=1140000
+title=Cognitive Development and Executive Function
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1380000
+title=The Tools of the Mind Controversy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1380000
+END=1560000
+title=The Lillard Review: Challenging Causality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1740000
+title=Block Play and Mathematical Thinking
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=1920000
+title=The Perry Preschool Study
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2100000
+title=The Goldilocks Solution: Guided Play
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=2280000
+title=The Peer Laboratory: Social Development
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2460000
+title=Play Deprivation and Minimum Effective Dose
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2460000
+END=2462640
+title=Conclusion: Equity and Policy Implications
