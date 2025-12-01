@@ -19,6 +19,28 @@
     <itunes:image href="https://research.yuda.me/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 11: Kindergarten from First Principles - Episode 4 -->
+    <item>
+      <title>Kindergarten, from First Principles: Ep. 4, The Social Laboratory</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/cover.png?v=1"/>
+      <description>The kindergarten classroom is a social laboratory where children develop competencies through peer interaction that adults cannot replicate. This episode explores the unique value of symmetrical peer relationships, why conflict is developmental fuel when properly scaffolded, and the evidence-based design principles for optimal social-emotional learning environments. We examine effect sizes from major meta-analyses (d = 0.35-0.69), the ratio question (why 7.5:1 matters), the SEL paradox (large effects vs. fade-out concerns), and how individual differences (temperament, ADHD, autism, attachment) require differentiated support. Full research report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/report.md
+
+Key Sources:
+• Tenenbaum et al. (2020) Meta-Analysis: https://www.apa.org/pubs/journals/features/edu-edu0000436.pdf
+• Durlak et al. (2011) CASEL SEL Meta-Analysis: https://casel.s3.us-east-2.amazonaws.com/meta-analysis-child-development-1.pdf
+• Perlman et al. (2017) Child-Staff Ratios Systematic Review: https://pmc.ncbi.nlm.nih.gov/articles/PMC5245988/
+• Minnesota Longitudinal Study (Sroufe): Attachment and Social Competence Pathway
+• Tennessee STAR Study: https://pubmed.ncbi.nlm.nih.gov/8528684/</description>
+      <pubDate>Sun, 01 Dec 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/ep4-social-laboratory.mp3"
+                 length="36647633"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/ep4-social-laboratory.mp3</guid>
+      <itunes:duration>38:10</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>Theory of Mind, peer learning, social-emotional learning, SEL, conflict resolution, teacher-child ratio, mixed-age grouping, Bandura, Vygotsky, Zone of Proximal Development, emotional regulation, attachment security, Peer-Mediated Intervention, screen time, early childhood development</itunes:keywords>
+    </item>
+
     <!-- Episode 10: Kindergarten from First Principles - Episode 3 -->
     <item>
       <title>Kindergarten, from First Principles: Ep. 3, Sleep, Memory, and the Daily Blueprint</title>
