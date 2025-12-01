@@ -256,151 +256,17 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
    - List which files to upload to NotebookLM
    - User can then proceed directly to audio generation
 
-### 3. AI Audio Generation Phase
+5. **Generate cover art while user works on audio** - Don't wait for audio to complete:
+   - Generate AI cover art using the research report
+   - Add podcast branding (logo, text, border)
+   - See Phase 3 (Cover Art Generation) for detailed instructions
+   - This can be done in parallel while NotebookLM generates audio
 
-**Generate podcast audio using NotebookLM:**
+### 3. Cover Art Generation Phase
 
-1. Upload ALL research files to NotebookLM:
-   - `report.md` (overview/summary)
-   - `research-results.md` (raw research outputs)
-   - Any source documents (PDFs, articles) in `documents/` if present
+**Generate cover art while waiting for NotebookLM audio:**
 
-   **User uploads ALL files** - NotebookLM will synthesize across all sources
-
-2. Use "Audio Overview" feature with this prompt:
-
-```
-Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
-
-Opening: Begin with "Yudame Research" (add series name if applicable) and introduce the topic's value.
-
-Core principles:
-• Spell out acronyms first: "High-Intensity Interval Training, or HIIT" - then use acronym
-• Define technical terms immediately in plain language before building on them
-• Use concrete examples ONLY from source material - never fabricate
-• Highlight findings that reveal strategic lessons or challenge assumptions
-• Extract frameworks and connect to practical implications
-• Maintain scientific rigor: distinguish correlation from causation, note effect sizes and uncertainties
-
-Emphasis areas:
-• Spell-first for acronyms, definition-first for technical terms
-• Evidence-based analysis: cite studies, report effect sizes, note sample sizes
-• Include human elements when they exist: decisions made, reasoning, outcomes
-• Use conversational check-ins: "Let me define that term..." or "To be clear..."
-• Translate findings to practical meaning and broader patterns
-
-Highlight insights worth examining:
-• Counter-intuitive findings that reveal strategic lessons
-• Failures that illustrate specific mistakes or systemic issues
-• Unexpected outcomes that challenge assumptions
-• Make numbers meaningful through context and comparisons
-
-Avoid:
-• Undefined acronyms and jargon
-• Academic language when simpler words work
-• Introducing 3+ new technical terms in one sentence
-• Fabricated examples or over-hedging that obscures findings
-• Dry explanations when human stories exist in research
-• Repeatedly restating context
-
-Target: Intelligent listeners wanting deep understanding and practical insights. Appreciate technical depth but need terms defined.
-
-Tone: Intellectually rigorous but accessible - "conversational expert explaining to a bright student"
-
-When presenting stories:
-• Include decision-making context: "Do Kwon announced X, which led to Y" not "The protocol experienced stress"
-• Provide specific details: "On Friday afternoon, Circle announced..." not "Circle had exposure"
-• Use precise numbers for context: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
-• Show scale through comparisons: "Supply increased from millions to trillions - a thousand-fold change"
-• Connect to lessons: Explain what the outcome reveals about systems, incentives, or strategy
-
-When presenting research: Focus on what numbers mean, use comparisons ("like losing 5 years of profits"), translate statistics to implications.
-
-Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
-```
-
-3. Select format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
-4. Select length: **Long** (or adjust based on topic complexity)
-5. Generate and download the audio file
-
-**Log to prompts.md:** Note the files uploaded and any customizations to the default prompt.
-
-### 4. Audio File Processing Phase
-
-**When user adds the generated audio file:**
-
-1. **Check the format** - if it's .m4a, convert to .mp3:
-   ```bash
-   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
-   ffmpeg -i "original-file.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
-   ```
-
-2. **Get file metadata:**
-   - File size in bytes: `ls -l file.mp3 | awk '{print $5}'`
-   - Duration is shown in ffmpeg output (format: HH:MM:SS)
-
-3. **Note the metadata** - you'll need:
-   - File size (bytes)
-   - Duration (MM:SS or HH:MM:SS format)
-
-4. **Generate transcript and chapters with local Whisper + Claude analysis**
-
-   **First-time setup only:**
-   ```bash
-   cd ~/src/research/podcast/tools
-
-   # Fix SSL certificates (macOS Python)
-   /Applications/Python\ 3.12/Install\ Certificates.command
-
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
-
-   **Transcription workflow:**
-
-   a. Run local Whisper transcription (no API key needed):
-   ```bash
-   cd ~/src/research/podcast/tools
-   python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
-   ```
-
-   **Whisper model options:**
-   - `tiny`: Fastest (~1-2 min for 30 min audio), basic accuracy
-   - `base`: **[recommended]** Fast (~5-10 min), good accuracy
-   - `small`: Slower (~15-20 min), better accuracy
-
-   b. Once transcription completes, analyze the transcript to identify major topic transitions and create 10-15 chapter markers
-
-   c. Create chapter files in the episode directory:
-      - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
-      - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
-
-   **Log to prompts.md:** Note the number of chapters created.
-
-   d. Embed chapters into the mp3 file:
-   ```bash
-   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
-   ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
-   mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
-   ```
-
-   **Chapter creation guidelines:**
-   - Aim for 10-15 chapters for a 30-40 minute episode
-   - Each chapter should be 2-4 minutes long
-   - Chapter titles should be descriptive and capture the key topic/story
-   - Include subtitles or key concepts after the main title when helpful
-   - Analyze the full transcript to identify natural topic transitions
-
-   **Note:**
-   - Transcription runs 100% locally (free, private, no API)
-   - The transcript JSON file can be large (300-400KB) - read in sections if needed
-   - Chapters will appear in podcast apps that support them (Overcast, Pocket Casts, Apple Podcasts)
-
-### 5. Cover Art Generation Phase
-
-**Generate AI cover art and add branding:**
-
-This is a two-step process: first generate the base image with Gemini via OpenRouter, then add podcast branding (logo, text, border).
+After providing the NotebookLM prompt, immediately generate the cover art. This is a two-step process: first generate the base image with Gemini via OpenRouter, then add podcast branding (logo, text, border).
 
 **Step 1: Generate base cover art**
 
@@ -509,6 +375,152 @@ If cover art needs to be updated (quality issues, theme mismatch, etc.):
 3. **Commit and push changes:**
    - Note in commit message which episodes had covers regenerated
    - Example: "feat: Regenerate cover art for episodes 1, 2, and 4"
+
+### 4. AI Audio Generation Phase
+
+**Generate podcast audio using NotebookLM:**
+
+1. Upload ALL research files to NotebookLM:
+   - `report.md` (overview/summary)
+   - `research-results.md` (raw research outputs)
+   - Any source documents (PDFs, articles) in `documents/` if present
+
+   **User uploads ALL files** - NotebookLM will synthesize across all sources
+
+2. Use "Audio Overview" feature with this prompt:
+
+**IMPORTANT: This is the STANDARD TEMPLATE - use it as-is. DO NOT customize with specific content, narrative arcs, or story suggestions. The prompt defines QUALITY GUIDELINES for Yudame episodes, not content prescription. NotebookLM will synthesize the research files naturally.**
+
+```
+Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
+
+Opening: Begin with "Yudame Research" (add series name if applicable) and introduce the topic's value.
+
+Core principles:
+• Spell out acronyms first: "High-Intensity Interval Training, or HIIT" - then use acronym
+• Define technical terms immediately in plain language before building on them
+• Use concrete examples ONLY from source material - never fabricate
+• Highlight findings that reveal strategic lessons or challenge assumptions
+• Extract frameworks and connect to practical implications
+• Maintain scientific rigor: distinguish correlation from causation, note effect sizes and uncertainties
+
+Emphasis areas:
+• Spell-first for acronyms, definition-first for technical terms
+• Evidence-based analysis: cite studies, report effect sizes, note sample sizes
+• Include human elements when they exist: decisions made, reasoning, outcomes
+• Use conversational check-ins: "Let me define that term..." or "To be clear..."
+• Translate findings to practical meaning and broader patterns
+
+Highlight insights worth examining:
+• Counter-intuitive findings that reveal strategic lessons
+• Failures that illustrate specific mistakes or systemic issues
+• Unexpected outcomes that challenge assumptions
+• Make numbers meaningful through context and comparisons
+
+Avoid:
+• Undefined acronyms and jargon
+• Academic language when simpler words work
+• Introducing 3+ new technical terms in one sentence
+• Fabricated examples or over-hedging that obscures findings
+• Dry explanations when human stories exist in research
+• Repeatedly restating context
+
+Target: Intelligent listeners wanting deep understanding and practical insights. Appreciate technical depth but need terms defined.
+
+Tone: Intellectually rigorous but accessible - "conversational expert explaining to a bright student"
+
+When presenting stories:
+• Include decision-making context: "Do Kwon announced X, which led to Y" not "The protocol experienced stress"
+• Provide specific details: "On Friday afternoon, Circle announced..." not "Circle had exposure"
+• Use precise numbers for context: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
+• Show scale through comparisons: "Supply increased from millions to trillions - a thousand-fold change"
+• Connect to lessons: Explain what the outcome reveals about systems, incentives, or strategy
+
+When presenting research: Focus on what numbers mean, use comparisons ("like losing 5 years of profits"), translate statistics to implications.
+
+Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
+```
+
+**Only customization allowed:** Update the series name in "Opening" and "Closing" sections if this is a series episode.
+
+3. Select format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
+4. Select length: **Long** (or adjust based on topic complexity)
+5. Generate and download the audio file
+
+**Log to prompts.md:** Note the files uploaded and any customizations to the default prompt.
+
+**User returns with the generated audio file from NotebookLM** - Now proceed to audio processing.
+
+### 5. Audio File Processing Phase
+
+**When user provides the generated audio file:**
+
+1. **Check the format** - if it's .m4a, convert to .mp3:
+   ```bash
+   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
+   ffmpeg -i "original-file.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
+   ```
+
+2. **Get file metadata:**
+   - File size in bytes: `ls -l file.mp3 | awk '{print $5}'`
+   - Duration is shown in ffmpeg output (format: HH:MM:SS)
+
+3. **Note the metadata** - you'll need:
+   - File size (bytes)
+   - Duration (MM:SS or HH:MM:SS format)
+
+4. **Generate transcript and chapters with local Whisper + Claude analysis**
+
+   **First-time setup only:**
+   ```bash
+   cd ~/src/research/podcast/tools
+
+   # Fix SSL certificates (macOS Python)
+   /Applications/Python\ 3.12/Install\ Certificates.command
+
+   # Install dependencies
+   pip install -r requirements.txt
+   ```
+
+   **Transcription workflow:**
+
+   a. Run local Whisper transcription (no API key needed):
+   ```bash
+   cd ~/src/research/podcast/tools
+   python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
+   ```
+
+   **Whisper model options:**
+   - `tiny`: Fastest (~1-2 min for 30 min audio), basic accuracy
+   - `base`: **[recommended]** Fast (~5-10 min), good accuracy
+   - `small`: Slower (~15-20 min), better accuracy
+
+   b. Once transcription completes, analyze the transcript to identify major topic transitions and create 10-15 chapter markers
+
+   c. Create chapter files in the episode directory:
+      - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
+      - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
+
+   **Log to prompts.md:** Note the number of chapters created.
+
+   d. Embed chapters into the mp3 file:
+   ```bash
+   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
+   ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
+   mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
+   ```
+
+   **Chapter creation guidelines:**
+   - Aim for 10-15 chapters for a 30-40 minute episode
+   - Each chapter should be 2-4 minutes long
+   - Chapter titles should be descriptive and capture the key topic/story
+   - Include subtitles or key concepts after the main title when helpful
+   - Analyze the full transcript to identify natural topic transitions
+
+   **Note:**
+   - Transcription runs 100% locally (free, private, no API)
+   - The transcript JSON file can be large (300-400KB) - read in sections if needed
+   - Chapters will appear in podcast apps that support them (Overcast, Pocket Casts, Apple Podcasts)
 
 ### 6. Publishing Phase
 
@@ -735,5 +747,10 @@ When user wants to create a new episode, start with:
    - Focus on key points, storytelling opportunities, and podcast narrative flow
    - **Then immediately provide the NotebookLM prompt** - save to prompts.md AND output for user to copy
    - List files to upload to NotebookLM
-7. Guide through each subsequent phase (audio generation, processing, publishing)
-8. Track all prompts in prompts.md as you go
+7. **Immediately generate cover art** while user works on NotebookLM audio
+   - Generate base image with Gemini via OpenRouter
+   - Add podcast branding (logo, text, border)
+   - This happens in parallel with audio generation
+8. When user returns with audio file, process it (convert, transcribe, chapters)
+9. Guide through publishing phase (description, keywords, feed.xml, git commit)
+10. Track all prompts in prompts.md as you go
