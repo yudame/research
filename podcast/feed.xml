@@ -19,6 +19,27 @@
     <itunes:image href="https://research.yuda.me/podcast/cover.png"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 10: Kindergarten from First Principles - Episode 3 -->
+    <item>
+      <title>Kindergarten, from First Principles: Ep. 3, Sleep, Memory, and the Daily Blueprint</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/cover.png?v=1"/>
+      <description>Missing a single nap causes irreversible memory loss in habitual nappers—overnight sleep cannot compensate. Rebecca Spencer's landmark research reveals why the hippocampal "desk" fills up faster in young children, requiring strategic timing of declarative content before naps and procedural skills after. Sleep deprivation symptoms mimic ADHD, making sleep quality the primary upstream intervention for classroom behavior and retention. Full research report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/report.md
+
+Key Sources:
+• Spencer & Riggins (2022) - Hippocampal desk hypothesis: https://www.pnas.org/doi/10.1073/pnas.2123415119
+• Kurdziel, Duclos & Spencer (2013) - Sleep spindles and nap benefits: https://www.pnas.org/doi/10.1073/pnas.1306418110
+• Giganti et al. (2025) - Meta-analysis of napping benefits: https://pubmed.ncbi.nlm.nih.gov/40592247/
+• Wilhelm et al. (2012) - Developmental differences in sleep consolidation: https://www.sciencedirect.com/science/article/abs/pii/S0149763412000449</description>
+      <pubDate>Sun, 01 Dec 2025 12:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/ep3-sleep-memory-scheduling.mp3"
+                 length="32628537"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/ep3-sleep-memory-scheduling.mp3</guid>
+      <itunes:duration>33:59</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>sleep-dependent memory consolidation, slow-wave sleep, hippocampus, declarative memory, procedural memory, nap architecture, sleep spindles, habitual nappers, preschool education, early childhood development, Rebecca Spencer, temporal gating</itunes:keywords>
+    </item>
+
     <!-- Episode 9: Kindergarten from First Principles - Episode 2 -->
     <item>
       <title>Kindergarten, from First Principles: Ep. 2, Play as Pedagogy</title>

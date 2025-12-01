@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Midday Nap Crisis"
+    },
+    {
+      "startTime": 180,
+      "title": "Spencer's Experiment: Catastrophic Forgetting"
+    },
+    {
+      "startTime": 360,
+      "title": "The Hippocampal Desk Hypothesis"
+    },
+    {
+      "startTime": 600,
+      "title": "Sleep Architecture: SWS and Sleep Spindles"
+    },
+    {
+      "startTime": 840,
+      "title": "REM Sleep and Language Memory"
+    },
+    {
+      "startTime": 960,
+      "title": "Declarative Memory: The 4-Hour Window"
+    },
+    {
+      "startTime": 1140,
+      "title": "Procedural Skills: The 24-Hour Delay"
+    },
+    {
+      "startTime": 1320,
+      "title": "Habitual vs Non-Habitual Nappers"
+    },
+    {
+      "startTime": 1560,
+      "title": "Sleep Deprivation and ADHD Symptoms"
+    },
+    {
+      "startTime": 1740,
+      "title": "Supporting Nighttime Sleep Quality"
+    },
+    {
+      "startTime": 1920,
+      "title": "Evidence-Based Daily Schedule"
+    },
+    {
+      "startTime": 2280,
+      "title": "Key Takeaways and Policy Implications"
+    }
+  ]
+}
