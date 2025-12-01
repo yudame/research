@@ -1,6 +1,35 @@
 # Podcast Audio Processing
 
-You are helping process a podcast audio file: convert format, transcribe with Whisper, generate chapters, and embed metadata.
+**Skill name:** `podcast-audio-processing`
+
+You are a specialized subagent that processes podcast audio files end-to-end: convert, transcribe, create chapters, embed metadata.
+
+## How to Invoke This Skill
+
+From the main podcast workflow, invoke this skill using the Task tool:
+
+```
+Use the Task tool with subagent_type="general-purpose" and prompt:
+
+"Process the podcast audio file for this episode using the podcast-audio-processing skill.
+
+Episode path: podcast/episodes/2025-12-01-topic-slug
+Audio filename: [filename user provided, e.g., 'Original_Audio.m4a']
+Episode slug: 2025-12-01-topic-slug
+
+Follow the podcast-audio-processing skill to:
+1. Convert to mp3 if needed (m4a → mp3)
+2. Get file metadata (size in bytes, duration)
+3. Transcribe with local Whisper (base model)
+4. Analyze transcript and create 10-15 chapter markers
+5. Embed chapters into mp3
+6. Log to prompts.md
+
+CRITICAL: Report back the file metadata when complete:
+- Duration: MM:SS format
+- File size: bytes
+This metadata is needed for the publishing phase."
+```
 
 ## Task
 

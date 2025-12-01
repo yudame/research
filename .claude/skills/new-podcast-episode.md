@@ -264,15 +264,22 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 
 **Immediately invoke the cover art subagent** to work in parallel while user creates audio in NotebookLM.
 
-**Subagent:** `podcast-cover-art`
+Use the Task tool to invoke the `podcast-cover-art` skill:
 
-**Required info:**
-- Episode path
-- Episode title
-- Series name (if applicable)
-- Episode text for overlay
+```
+Generate podcast cover art for this episode using the podcast-cover-art skill.
 
-**What it does:** Generates AI cover art, applies branding, logs to prompts.md
+Episode path: podcast/episodes/YYYY-MM-DD-slug
+Episode title: [Full episode title]
+Series name: [Series name, or "None" for standalone episodes]
+Episode text: [Text for branding overlay, e.g., "Ep 3 - Sleep & Memory"]
+
+Follow the podcast-cover-art skill to:
+1. Generate AI cover art with Gemini via OpenRouter
+2. Apply podcast branding (logo, text, border)
+3. Log to prompts.md
+4. Report back when complete with file path and size
+```
 
 ### 4. AI Audio Generation Phase
 
@@ -353,16 +360,28 @@ Closing: Summarize 2-3 key takeaways, close with "Find full research and sources
 
 **When user provides audio file, invoke the audio processing subagent.**
 
-**Subagent:** `podcast-audio-processing`
+Use the Task tool to invoke the `podcast-audio-processing` skill:
 
-**Required info:**
-- Episode path
-- Audio filename (what user provided)
-- Episode slug
+```
+Process the podcast audio file for this episode using the podcast-audio-processing skill.
 
-**What it does:** Converts to mp3, transcribes with Whisper, creates chapters, embeds metadata, logs to prompts.md
+Episode path: podcast/episodes/YYYY-MM-DD-slug
+Audio filename: [filename user provided, e.g., 'Original_Audio.m4a']
+Episode slug: YYYY-MM-DD-slug
 
-**Critical:** Subagent will report back duration and file size - you need this for publishing phase.
+Follow the podcast-audio-processing skill to:
+1. Convert to mp3 if needed (m4a → mp3)
+2. Get file metadata (size in bytes, duration)
+3. Transcribe with local Whisper (base model)
+4. Analyze transcript and create 10-15 chapter markers
+5. Embed chapters into mp3
+6. Log to prompts.md
+
+CRITICAL: Report back the file metadata when complete:
+- Duration: MM:SS format
+- File size: bytes
+This metadata is needed for the publishing phase.
+```
 
 ### 6. Publishing Phase
 
