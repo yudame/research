@@ -10,17 +10,17 @@ The Neurocognitive Architecture of Learning: Optimizing Pre-K/Kindergarten Sched
 
 Here are the top sources and their key contributions to the report:
 
-Meta-Analytic Confirmation of Nap Benefits: The report relies on systematic reviews and meta-analyses confirming that napping throughout early childhood has beneficial effects on memory consolidation and facilitates the acquisition of new information. A crucial finding for scheduling is that memory performance losses incurred when children are deprived of a nap are not recovered during the subsequent overnight sleep, establishing distributed sleep as critical for early learning.   
+Meta-Analytic Confirmation of Nap Benefits: The report relies on systematic reviews and meta-analyses confirming that napping throughout early childhood has beneficial effects on memory consolidation and facilitates the acquisition of new information. A crucial finding for scheduling is that memory performance losses incurred when children are deprived of a nap are not recovered during the subsequent overnight sleep, establishing distributed sleep as critical for early learning.  
 
-The Active Mechanism (Slow-Wave Sleep): A key finding that dictates nap architecture is the direct association between the amount of time children spend in Slow-Wave Sleep (SWS) during the nap and improved post-nap episodic memory consolidation. This confirms SWS as the specific physiological driver (the "active ingredient") of the memory benefit.   
+The Active Mechanism (Slow-Wave Sleep): A key finding that dictates nap architecture is the direct association between the amount of time children spend in Slow-Wave Sleep (SWS) during the nap and improved post-nap episodic memory consolidation. This confirms SWS as the specific physiological driver (the "active ingredient") of the memory benefit.  
 
-Declarative Memory Timing: Studies highlight that placing new, declarative content (like vocabulary or novel actions) immediately before sleep is necessary for retention. For both infants and preschoolers, retaining new information across a 4-hour or 24-hour delay depended on having an extended nap (≥30 minutes) within 4 hours after learning. Furthermore, children who heard stories shortly before napping learned words as well as children who had repeated readings, significantly outperforming peers who remained awake.   
+Declarative Memory Timing: Studies highlight that placing new, declarative content (like vocabulary or novel actions) immediately before sleep is necessary for retention. For both infants and preschoolers, retaining new information across a 4-hour or 24-hour delay depended on having an extended nap (≥30 minutes) within 4 hours after learning. Furthermore, children who heard stories shortly before napping learned words as well as children who had repeated readings, significantly outperforming peers who remained awake.  
 
-Procedural Memory Dissociation: Research on motor skill consolidation in 4-6 year olds demonstrates a delay in benefits. Performance improvements attributable to a nap were not evident immediately after the nap but became significant and observable only after an extended 24-hour period, suggesting these skills rely on subsequent nocturnal sleep for full stabilization.   
+Procedural Memory Dissociation: Research on motor skill consolidation in 4-6 year olds demonstrates a delay in benefits. Performance improvements attributable to a nap were not evident immediately after the nap but became significant and observable only after an extended 24-hour period, suggesting these skills rely on subsequent nocturnal sleep for full stabilization.  
 
-Long-Term Developmental Impact: Longitudinal studies provided strong evidence that highly consolidated sleep patterns early in life (assessed by sleep ratios at 6 and 18 months) were negatively associated with subsequent language measures, meaning children with more consolidated sleep had better language skills up to five years later. This points to sleep consolidation as a fundamental enabler of complex long-term cognitive processes.   
+Long-Term Developmental Impact: Longitudinal studies provided strong evidence that highly consolidated sleep patterns early in life (assessed by sleep ratios at 6 and 18 months) were negatively associated with subsequent language measures, meaning children with more consolidated sleep had better language skills up to five years later. This points to sleep consolidation as a fundamental enabler of complex long-term cognitive processes.  
 
-Individual Variability (Napper Status): Experimental findings distinguished between Habitual Nappers and Non-Habitual Nappers, showing that while naps offer general benefits, they are essential for habitual nappers. Preventing a habitual napper from sleeping led to a significant decline in performance on hippocampal-dependent memory tasks compared to non-nappers who stayed awake.   
+Individual Variability (Napper Status): Experimental findings distinguished between Habitual Nappers and Non-Habitual Nappers, showing that while naps offer general benefits, they are essential for habitual nappers. Preventing a habitual napper from sleeping led to a significant decline in performance on hippocampal-dependent memory tasks compared to non-nappers who stayed awake.  
 
 Executive Function and Next-Day Learning Capacity: Reviews detail that insufficient sleep duration and lower sleep efficiency are strongly associated with increased executive functioning problems and decreased performance on attention tasks. The symptoms of sleep loss in young children—including hyperactivity, impulsiveness, and poor mood regulation—can mimic clinical conditions like ADHD, profoundly interfering with instructional effectiveness and classroom behavior.
 
@@ -28,7 +28,256 @@ Executive Function and Next-Day Learning Capacity: Reviews detail that insuffici
 
 ## Research from Perplexity
 
-<!-- Paste Perplexity research results here -->
+# Sleep-Dependent Memory Consolidation in Young Children (Ages 4-6): Implications for Learning Schedule Design
+
+## Executive Summary
+
+Sleep-dependent memory consolidation represents a critical neurodevelopmental process in preschool-aged children, with robust evidence demonstrating that both daytime naps and nighttime sleep actively strengthen newly acquired memories. Meta-analytic evidence confirms a moderate effect size (Hedges' g = 0.60) for nap-dependent memory enhancement in preschoolers specifically. The consolidation process appears particularly crucial for declarative memory types—including visuospatial information, word learning, and episodic memory—while procedural memory benefits show more variable patterns. Sleep physiology, particularly slow wave sleep (SWS) and sleep spindle density, directly predicts memory outcomes, with habitual nappers demonstrating heightened vulnerability to nap deprivation. For educational scheduling, the evidence supports preserving 60-90 minute nap opportunities within 4 hours of key learning activities, with morning instruction (8:00-11:00 AM) optimizing encoding capacity. Individual chronotype differences begin emerging even in this age group, suggesting potential for personalized timing strategies.[1]
+
+## Core Neurophysiological Mechanisms
+
+### Slow Wave Sleep and Memory Transfer
+
+Slow wave sleep serves as the primary neurophysiological substrate for declarative memory consolidation in young children. During SWS, hippocampal-neocortical dialogue facilitates the transfer of newly encoded memories from temporary hippocampal storage to long-term neocortical sites. This process is orchestrated by slow oscillations (<1 Hz) that coordinate hippocampal sharp-wave ripples and thalamocortical sleep spindles, creating temporal windows optimal for synaptic plasticity.[2][3]
+
+In preschool children, SWS constitutes approximately 20-25% of total sleep time, significantly higher than adult levels. This developmental characteristic may accelerate consolidation processes, with evidence suggesting that a 90-minute nap is sufficient to trigger neural changes associated with long-term storage in children aged 7-11 years. Critically, the amount of time spent in SWS during naps directly predicts memory performance improvements, with each additional minute of SWS associated with proportional gains in episodic memory retention.[4][5]
+
+### Sleep Spindles as Biomarkers of Consolidation
+
+Sleep spindles—brief bursts of 9-16 Hz neural activity characteristic of Stage 2 NREM—function as critical mediators of memory consolidation in preschoolers. Spindle density during naps correlates positively with memory performance changes (r = 0.647, p = 0.012), where higher spindle counts predict greater consolidation benefits. This relationship appears specific to declarative memory tasks, with spindle activity marking hippocampal-neocortical information transfer.[6]
+
+Preschool children exhibit functionally distinct spindle types: slow frontal spindles (10-13 Hz) and fast centro-parietal spindles (13-16 Hz). Slow frontal spindles specifically support maintenance of medium-quality memories, while fast centro-parietal spindles facilitate gains in low-quality memory items. This differentiation suggests sophisticated, task-dependent consolidation mechanisms even in early childhood. However, the temporal coupling between spindles and slow oscillations, while present, remains less precise than in adults, indicating maturational refinement continues beyond the preschool years.[7]
+
+### REM Sleep and Emotional/Language Memory
+
+Rapid eye movement sleep, though reduced in preschool naps compared to nighttime sleep, plays specialized roles in emotional and language memory consolidation. In typical developing children, REM sleep percentage during naps correlates positively with retention of object-label associations (word learning). Children with Down syndrome, who exhibit reduced REM sleep, actually show memory impairment following naps—contrasting with the benefit observed in typical children—highlighting REM's essential contribution.[8]
+
+Emotional memory consolidation appears to require the interaction of both nap SWS and subsequent overnight sleep. Children who napped and then experienced quality nighttime sleep showed superior emotional memory recall 24 hours later compared to those with only overnight sleep. This suggests a two-stage consolidation process where naps stabilize emotional memories and overnight sleep integrates them into long-term storage.[9]
+
+## Learning Domains Differentially Affected by Sleep
+
+### Declarative Memory: Strongest Sleep Benefit
+
+Declarative memory—explicit information that can be consciously recalled—shows the most robust sleep-dependent enhancement in preschoolers. Visuospatial memory tasks demonstrate consistent benefits, with naps improving recall by approximately 10% compared to equivalent wake intervals. In a classic study, children trained on a visuospatial memory game in the morning recalled 75% of items correctly after napping versus 65% after remaining awake—a significant 10-percentage-point difference that persisted to the next day.[10][6]
+
+Word learning similarly benefits from sleep. Three-year-olds who napped after learning novel verbs showed better retention 24 hours later than non-nappers, regardless of habitual napping status. This effect extends to letter-sound mapping in preschoolers, where naps facilitate acquisition of phonological associations essential for early literacy.[11][12]
+
+Episodic memory for sequential events also shows nap-dependent enhancement. Children remember more story events when they nap following learning, with performance improvements correlating positively with SWS duration.[5]
+
+### Procedural Memory: Mixed and Developmentally Variable
+
+Procedural memory consolidation shows more complex patterns. While adults typically exhibit sleep-dependent enhancement for motor skills, preschool children show null or even detrimental effects of sleep on some procedural tasks. When children aged 4-6 learned a motor sequence task over multiple blocks, no nap benefit emerged. This contrasts with findings that longer and deeper SWS during childhood produces superior strengthening of hippocampus-dependent declarative memories while concurrently preventing immediate sleep benefits for procedural memories typically observed in adults.[13][14]
+
+The developmental immaturity of prefrontal cortex and striatal circuits in preschoolers may shift the consolidation burden toward declarative systems, with procedural memory benefits emerging more reliably in older children (ages 9-12) and adolescents.[13]
+
+### Emotional Memory and Regulation
+
+Sleep plays a dual role in emotional processing: consolidating emotional memories while regulating next-day emotional reactivity. Nap-deprived preschoolers show heightened emotional sensitivity, responding 22 milliseconds faster to emotional faces and exhibiting more negative emotions when faced with unsolvable puzzles. Naps appear to "unload emotional baggage" by moving emotional experiences from short-term to long-term storage, resulting in better emotional regulation upon waking.[15][16]
+
+## Critical Timing Windows for Instruction
+
+### Optimal Learning-to-Sleep Intervals
+
+Evidence supports a 4-hour optimal window between learning and sleep for preschool memory consolidation. Infants who napped within 4 hours of learning object pairings showed superior retention compared to those experiencing 4- or 24-hour delays. This temporal constraint reflects the limited capacity of the immature hippocampus, which requires frequent memory offloading to prevent catastrophic interference.[17][15]
+
+For preschool classrooms, this suggests scheduling core academic content (language, literacy, math concepts) during morning sessions (8:00 AM-12:00 PM) that precede typical afternoon nap opportunities (1:00-3:00 PM). Learning occurring after naps may not consolidate until overnight sleep, potentially reducing same-day retention.
+
+### Chronotype-Dependent Performance Variation
+
+Individual chronotype differences emerge even in preschool years, affecting optimal learning times. Morning-type preschoolers show peak spatial working memory performance at 8:00 AM, while evening-types perform best in late afternoon (4:00-6:30 PM). Despite preschoolers' overall morningness preference, approximately 32% exhibit evening or intermediate chronotypes.[18]
+
+Evening-type children demonstrate significantly fewer working memory errors than morning-types in late afternoon sessions, suggesting that chronotype-based scheduling could enhance learning outcomes. However, the effect sizes are modest (η²p = 0.017), indicating chronotype accounts for less than 2% of performance variance, limiting practical significance for whole-class scheduling.[18]
+
+### Nap Timing and Circadian Considerations
+
+Preschool naps scheduled during the early afternoon (1:00-3:00 PM) align with natural circadian dips in alertness, maximizing sleep propensity and consolidation efficiency. Naps occurring later (after 3:00 PM) may delay bedtime and reduce nighttime sleep quality, potentially offsetting benefits. The optimal nap duration ranges from 60-90 minutes, allowing progression through Stage 2 NREM (spindle-rich) into SWS while avoiding sleep inertia from excessive SWS.[19][6][10]
+
+## Nap Architecture and Learning Outcomes
+
+### Duration Effects
+
+Nap duration shows dose-dependent relationships with memory outcomes, but with diminishing returns. Laboratory-based preschool naps averaging 77 minutes produced significant consolidation benefits. Shorter naps (30-45 minutes) may be insufficient for SWS attainment, while longer naps (>90 minutes) increase sleep inertia without proportional memory gains.[20][6][10]
+
+Meta-analytic evidence indicates nap total sleep time moderates memory effects, with longer naps producing stronger consolidation in preschoolers specifically. However, the relationship is not strictly linear; spindle density and SWS percentage matter more than total duration alone.[1][5]
+
+### Sleep Stage Composition
+
+The proportional distribution of sleep stages predicts learning outcomes more accurately than total nap time. For declarative memory, SWS percentage correlates positively with recall improvements. For language learning, REM percentage predicts retention in typical children.[5][8]
+
+Preschool naps characteristically contain:
+
+- 15-25% Stage 1 NREM
+- 45-55% Stage 2 NREM (spindle-rich)
+- 20-25% SWS
+- <5% REM sleep[19][8]
+
+This architecture differs from nighttime sleep, which contains more REM and deeper SWS. The relative lack of REM in naps may limit consolidation of certain memory types, explaining why combining naps with subsequent overnight sleep produces superior outcomes for emotional and complex memories.[9]
+
+### Individual Differences in Nap Physiology
+
+Habitual nappers show distinct sleep architecture compared to non-habitual nappers. When allowed to nap, habitual nappers produce more robust spindle activity and show stronger memory correlations. Non-habitual nappers, when forced to nap, often experience sleep inertia and show minimal consolidation benefits, suggesting their neurophysiology has matured beyond requiring daytime sleep for memory processing.[6][20]
+
+## Individual Differences Modulating Sleep-Learning Relationships
+
+### Habitual vs. Non-Habitual Nappers
+
+The distinction between habitual nappers (≥4 naps/week) and non-habitual nappers (≤3 naps/week) represents the most robust individual difference factor. Habitual nappers exhibit catastrophic memory decay when deprived of naps, performing no better than chance on delayed recall tests. Non-habitual nappers maintain memory performance across wake intervals equivalent to their napping peers, indicating more mature cognitive networks capable of resisting interference.[21][20]
+
+This pattern suggests a developmental transition where children shift from nap-dependent to nap-independent memory consolidation as hippocampal and prefrontal circuits mature. The transition typically occurs between ages 3-5 years but shows substantial individual variability. Critically, forcing non-habitual nappers to sleep does not improve their memory performance, while preventing habitual nappers from napping causes irreversible memory loss even after overnight sleep.[22][21][10][6]
+
+### Chronotype Variation
+
+Beyond napping status, chronotype moderates both sleep need and optimal learning times. Evening-type preschoolers show later sleep midpoints (03:40 vs 02:48 for morning-types) and greater sleep difficulties. While chronotype effects on memory consolidation per se remain understudied, evening-types demonstrate superior late-afternoon cognitive performance, suggesting circadian alignment may enhance encoding efficiency.[23][24][18]
+
+Morning-types show shorter daytime sleep duration (0.93 hours vs 1.36 hours for evening-types), potentially reflecting differential sleep pressure accumulation. However, chronotype does not appear to moderate the magnitude of sleep-dependent consolidation once sleep occurs.[18]
+
+### Neurodevelopmental Variation
+
+Children with attention-deficit/hyperactivity disorder (ADHD) show impaired sleep-dependent memory consolidation, likely attributable to reduced prefrontal cortex contributions to SWS-mediated processes. Similarly, children with Down syndrome exhibit reduced REM sleep and paradoxical memory impairment following naps, highlighting that atypical neurodevelopment alters sleep-learning relationships.[25][26][8]
+
+## Sleep Quality and Next-Day Learning Capacity
+
+### Nighttime Sleep Duration Effects
+
+Chronic sleep restriction severely impairs next-day learning capacity in children. Just five nights of modest sleep restriction (1.4 hours/night reduction) selectively impairs hippocampus-dependent memory encoding, reducing lure discrimination ability while sparing general recognition. This suggests that sleep debt specifically degrades pattern separation—the precise encoding of similar experiences—critical for classroom learning.[27]
+
+In preschoolers, shorter nighttime sleep predicts poorer working memory and attention, with each lost hour associated with measurable performance decrements. Sleep problems in Grade 1 children correlate with intellectual stagnation, while longer sleep predicts reading skill development.[28][17]
+
+### Sleep Fragmentation and Quality
+
+Beyond duration, sleep continuity matters. Fragmented sleep in infants and toddlers predicts lower performance on neurobehavioral functioning measures, particularly sustained attention tasks. In preschoolers, poor sleep quality mediates the relationship between evening chronotype and socioemotional problems, indirectly affecting learning readiness.[29][17]
+
+Actigraphy studies reveal that habitual nappers maintain consistent total sleep times when transitioning out of naps, suggesting sleep quality and timing stability may matter more than absolute duration.[22]
+
+### The Nap-Nighttime Sleep Interaction
+
+Naps and nighttime sleep function synergistically rather than additively. For emotional memories, naps provide initial stabilization that overnight sleep then consolidates; neither alone produces optimal retention. For declarative memories, naps appear to protect against daytime interference, while nighttime sleep provides longer-term consolidation.[9][5]
+
+Sleep deprivation studies show that overnight sleep cannot fully reverse nap deprivation effects. Children prevented from napping show memory decay that persists even after a full night of recovery sleep, indicating that the timing of consolidation relative to encoding is critical.[10][6]
+
+## Contradictory Findings and Scientific Uncertainty
+
+### Negative or Null Findings
+
+Not all studies demonstrate nap benefits. One investigation found no nap advantage for motor sequence learning in 4-6-year-olds, suggesting procedural memory may be less nap-dependent at this age. Another study reported that more frequent napping correlates with lower cognitive development, though this likely reflects confounding with reduced nighttime sleep rather than causation.[14][19]
+
+Population differences may explain contradictory results. Benefits appear strongest in habitual nappers and may diminish as children transition toward monophasic sleep. Cultural differences in nap expectations and measurement methods also contribute to variability.[30]
+
+### Methodological Limitations
+
+Most research relies on small samples (typically 30-50 children) from convenience populations, limiting generalizability. Laboratory-based polysomnography, while precise, may not capture natural classroom nap physiology. Classroom-based studies sacrifice physiological precision for ecological validity.[6][10]
+
+Few studies manipulate nap duration systematically, leaving optimal dosing unclear. The interaction between nap timing, sleep stages, and specific memory types requires further elucidation, particularly regarding REM sleep's role in naps that naturally contain minimal REM.[8]
+
+## Practical Implications for Schedule Design
+
+### Preserving Nap Opportunities
+
+The evidence strongly supports preserving 60-90 minute nap opportunities in preschool schedules. Meta-analytic data confirm small-to-moderate positive effects across early childhood, with preschool-aged children showing the largest benefits. Nap deprivation causes measurable memory decay that overnight sleep cannot reverse.[1][10][6]
+
+Policy makers should resist pressure to eliminate naps for academic expansion. The 10% memory enhancement from napping translates to meaningful learning gains when accumulated across hundreds of learning episodes. Moreover, nap benefits extend beyond memory to emotional regulation, reducing behavioral disruptions that interfere with instruction.[15][10]
+
+### Optimal Daily Schedule Template
+
+Based on chronotype and consolidation research, evidence-based preschool schedules should:
+
+**Morning Block (8:00-11:30 AM):** Core academic instruction (literacy, math, science) targeting declarative knowledge. This aligns with peak alertness in morning-types and allows 3.5-4 hours before typical nap times.
+
+**Pre-Nap Transition (11:30 AM-12:30 PM):** Lunch and quiet activities to reduce arousal and prepare for sleep.
+
+**Nap Opportunity (12:30-2:00 PM):** 90-minute protected sleep period in darkened, quiet rooms. Educators should encourage but not force sleep, using gentle soothing techniques (back rubbing, soft music) for children experiencing difficulty.
+
+**Post-Nap Block (2:30-4:00 PM):** Creative, procedural, and social activities (art, music, free play) that benefit less from immediate consolidation. Evening-type children may show peak performance during this window.[18]
+
+**Late Afternoon (4:00-5:30 PM):** Review and reinforcement of morning content, taking advantage of the replay consolidation that occurred during nap SWS.
+
+### Differentiation for Nap Status
+
+Schedule design must accommodate habitual and non-habitual nappers separately:
+
+- **Habitual nappers (≥4 naps/week):** Require protected nap opportunities after morning learning. Deprivation causes catastrophic memory loss. Consider quiet alternative activities for those who genuinely cannot sleep, but minimize wake time.
+- **Non-habitual nappers (≤3 naps/week):** May benefit from quiet rest periods but forced napping produces sleep inertia without consolidation gains. Allow alternative quiet activities without penalizing non-nappers.
+
+### Chronotype Considerations
+
+While evidence for chronotype-based scheduling is preliminary, offering optional challenging activities during late afternoon (4:00-5:30 PM) may capture evening-types' peak performance without disadvantaging morning-types. Flexible learning centers allowing child choice may naturally accommodate these differences.[18]
+
+## Future Research Directions
+
+Several gaps limit current applicability:
+
+1. **Long-term longitudinal studies** tracking sleep-learning relationships from preschool through early elementary years as napping naturally ceases
+2. **Intervention studies** testing whether optimizing nap timing and duration improves real-world academic outcomes beyond laboratory memory tasks
+3. **Individual difference markers** identifying which children benefit most from naps using neurophysiological or behavioral predictors
+4. **REM sleep enhancement** methods to improve language learning outcomes from naps
+5. **Chronotype-based scheduling** randomized controlled trials measuring learning outcomes in real classrooms
+
+## Conclusion
+
+Sleep-dependent memory consolidation represents a powerful, modifiable factor in early childhood learning. The evidence strongly supports preserving developmentally appropriate nap opportunities in preschool schedules, particularly for children who habitually nap. The neurophysiological mechanisms—SWS, sleep spindles, and their coordination—are well-characterized and produce measurable benefits for declarative memory that translate to real-world learning. While individual differences in nap needs and chronotype require flexible implementation, the overall pattern indicates that sleep is not passive rest but an active, essential component of the learning process. Educators and parents designing schedules should treat nap opportunities as non-negotiable educational infrastructure rather than optional downtime.
+
+[1](https://pubmed.ncbi.nlm.nih.gov/40592247/)
+[2](https://jcsm.aasm.org/doi/10.5664/jcsm.5.2S.S20)
+[3](https://pmc.ncbi.nlm.nih.gov/articles/PMC12364950/)
+[4](https://www.nature.com/articles/s41598-020-66880-3)
+[5](https://pmc.ncbi.nlm.nih.gov/articles/PMC7988587/)
+[6](https://www.pnas.org/doi/10.1073/pnas.1306418110)
+[7](https://onlinelibrary.wiley.com/doi/10.1111/psyp.13829)
+[8](https://pmc.ncbi.nlm.nih.gov/articles/PMC6243285/)
+[9](https://www.nature.com/articles/s41598-018-30980-y)
+[10](https://pmc.ncbi.nlm.nih.gov/articles/PMC3808582/)
+[11](https://srcd.onlinelibrary.wiley.com/doi/10.1111/cdev.13753)
+[12](https://news.arizona.edu/news/study-finds-naps-may-help-preschoolers-learn)
+[13](https://pubmed.ncbi.nlm.nih.gov/22430027/)
+[14](https://par.nsf.gov/servlets/purl/10251344)
+[15](https://theconversation.com/napping-helps-preschoolers-unlock-their-full-potential-for-learning-137659)
+[16](https://childrensmedicalgroup.net/naps-may-enhance-emotional-memory-in-children/)
+[17](https://pmc.ncbi.nlm.nih.gov/articles/PMC9111737/)
+[18](https://jcsm.aasm.org/doi/10.5664/jcsm.10650)
+[19](https://pmc.ncbi.nlm.nih.gov/articles/PMC11416671/)
+[20](https://www.nature.com/articles/s41598-020-72231-z)
+[21](https://pmc.ncbi.nlm.nih.gov/articles/PMC8533952/)
+[22](https://pmc.ncbi.nlm.nih.gov/articles/PMC3808584/)
+[23](https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2020.00416/full)
+[24](https://pmc.ncbi.nlm.nih.gov/articles/PMC11408432/)
+[25](https://academic.oup.com/sleep/article/48/2/zsae238/7825972)
+[26](https://www.sciencedirect.com/science/article/abs/pii/S0149763412000449)
+[27](https://academic.oup.com/sleepadvances/article/6/3/zpaf038/8161545)
+[28](https://pmc.ncbi.nlm.nih.gov/articles/PMC9685105/)
+[29](https://www.sciencedirect.com/science/article/pii/S1389945724004246)
+[30](https://pmc.ncbi.nlm.nih.gov/articles/PMC9704850/)
+[31](https://maxfortjunior.com/blogs/the-science-behind-naptime-why-preschoolers-need-rest-for-better-learning/)
+[32](https://www.pnas.org/doi/10.1073/pnas.1811488115)
+[33](https://onlinelibrary.wiley.com/doi/abs/10.1111/jsr.12119)
+[34](https://www.tandfonline.com/doi/full/10.1080/09297049.2025.2462088)
+[35](https://www.sciencedirect.com/science/article/pii/S1389945725003247)
+[36](https://arxiv.org/pdf/1904.05036.pdf)
+[37](https://practicaloutcomes.edu.au/what-early-childhood-educators-need-to-know-about-sleep-and-learning/)
+[38](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01192/full)
+[39](https://www.pnas.org/doi/10.1073/pnas.2123415119)
+[40](https://www.sciencedirect.com/science/article/abs/pii/S0193397318301771)
+[41](https://www.naeyc.org/resources/pubs/tyc/dec2016/nap-time-letting-go)
+[42](https://www.pnas.org/doi/10.1073/pnas.1316489110)
+[43](https://playto.com/blog/nap-time-policies-in-daycare-why-they-matter)
+[44](https://pubmed.ncbi.nlm.nih.gov/24062429/)
+[45](https://www.authorea.com/users/633510/articles/651861-untitled-document)
+[46](https://academic.oup.com/sleep/advance-article/doi/10.1093/sleep/zsaf217/8214907)
+[47](https://www.sciencedirect.com/science/article/abs/pii/S1087079208001020)
+[48](https://pmc.ncbi.nlm.nih.gov/articles/PMC8193563/)
+[49](https://pmc.ncbi.nlm.nih.gov/articles/PMC6492121/)
+[50](https://portlandpress.com/emergtoplifesci/article/7/5/513/234981/Sleep-and-memory-consolidation-in-healthy)
+[51](https://sleepeducation.org/study-finds-daytime-naps-improve-learning-preschoolers/)
+[52](https://www.nature.com/articles/s41598-022-25628-x)
+[53](https://www.tandfonline.com/doi/full/10.1080/10409289.2025.2506184?ai=2h2&mi=5t0s03&af=R)
+[54](https://www.liebertpub.com/doi/10.1089/chi.2024.0384)
+[55](https://penntoday.upenn.edu/news/link-between-midday-naps-and-happier-children-excel-academically-fewer-behavioral-problems)
+[56](https://onlinelibrary.wiley.com/doi/10.1111/infa.70045)
+[57](https://onlinelibrary.wiley.com/doi/10.1111/lang.12544)
+[58](https://www.nature.com/articles/srep45874)
+[59](https://pubs.asha.org/doi/10.1044/2019_JSLHR-S-19-0098)
+[60](https://www.frontiersin.org/journals/sleep/articles/10.3389/frsle.2024.1351660/full)
+[61](https://www.sciencedirect.com/science/article/abs/pii/S1876285914002423)
+[62](https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2025.1620544/full)
 
 ---
 
@@ -108,15 +357,15 @@ Behavioral indicators that a child **still needs naps** include: significant lea
 
 The educational significance of these findings can be quantified through effect sizes reported across studies:
 
-| Outcome | Effect Size | Interpretation |
-|---------|-------------|----------------|
-| Napping on declarative memory (preschoolers) | g = 0.60 | Moderate effect |
-| Napping on declarative memory (all ages) | g = 0.35 | Small effect |
-| Sleep restriction on cognitive processing | g = -0.38 | Moderate negative |
-| Sleep restriction on sustained attention | g = -0.41 | Moderate negative |
-| Sleep spindle density - memory correlation | r = 0.65 | Large correlation |
-| SWS percentage - memory correlation | r = 0.96 | Very large correlation |
-| Memory accuracy difference (nap vs. wake) | 10 percentage points | 75% vs. 65% accuracy |
+| Outcome                                      | Effect Size          | Interpretation         |
+| -------------------------------------------- | -------------------- | ---------------------- |
+| Napping on declarative memory (preschoolers) | g = 0.60             | Moderate effect        |
+| Napping on declarative memory (all ages)     | g = 0.35             | Small effect           |
+| Sleep restriction on cognitive processing    | g = -0.38            | Moderate negative      |
+| Sleep restriction on sustained attention     | g = -0.41            | Moderate negative      |
+| Sleep spindle density - memory correlation   | r = 0.65             | Large correlation      |
+| SWS percentage - memory correlation          | r = 0.96             | Very large correlation |
+| Memory accuracy difference (nap vs. wake)    | 10 percentage points | 75% vs. 65% accuracy   |
 
 For context, a Hedges' g of 0.60 for preschool napping on declarative memory represents a meaningful educational effect—roughly equivalent to the child moving from the 50th to the 73rd percentile on memory tasks. The 10 percentage point accuracy difference between nap and wake conditions translates to approximately one additional item remembered on a 10-item test.
 
