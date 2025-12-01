@@ -50,7 +50,18 @@ This skill focuses on standalone episodes. Series episodes follow the same workf
 
 ### 1. Setup Phase
 
-**Create a todo list** to track progress through the workflow.
+**Create a todo list** to track progress through the workflow:
+
+```
+Use TodoWrite to create initial todos:
+- Setup episode structure and files (status: in_progress)
+- Synthesize research into report.md (status: pending)
+- Generate cover art (status: pending)
+- Obtain audio from NotebookLM (status: pending)
+- Process audio (transcribe, chapters) (status: pending)
+- Create publishing metadata (status: pending)
+- Update feed.xml and commit (status: pending)
+```
 
 **Ask the user:**
 1. **Is this part of a series?**
@@ -228,6 +239,12 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 1. Paste research results into `research-results.md` as you gather them from ChatGPT, Perplexity, etc.
 2. Let me know when research is complete and I'll synthesize everything into report.md"
 
+**Update todos:**
+```
+Mark "Setup episode structure and files" as completed.
+Mark "Synthesize research into report.md" as in_progress.
+```
+
 ---
 
 **When user provides research:**
@@ -256,6 +273,13 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
    - List which files to upload to NotebookLM
    - User can then proceed directly to audio generation
 
+**Update todos:**
+```
+Mark "Synthesize research into report.md" as completed.
+Mark "Generate cover art" as in_progress.
+Mark "Obtain audio from NotebookLM" as in_progress (user's parallel task).
+```
+
 5. **Generate cover art while user works on audio** - Don't wait for audio to complete:
    - Invoke the cover art generation subagent
    - This can be done in parallel while NotebookLM generates audio
@@ -279,6 +303,11 @@ Follow the podcast-cover-art skill to:
 2. Apply podcast branding (logo, text, border)
 3. Log to prompts.md
 4. Report back when complete with file path and size
+```
+
+**When cover art subagent completes, update todos:**
+```
+Mark "Generate cover art" as completed.
 ```
 
 ### 4. AI Audio Generation Phase
@@ -356,6 +385,12 @@ Closing: Summarize 2-3 key takeaways, close with "Find full research and sources
 
 **User returns with the generated audio file from NotebookLM** - Now proceed to audio processing.
 
+**Update todos:**
+```
+Mark "Obtain audio from NotebookLM" as completed.
+Mark "Process audio (transcribe, chapters)" as in_progress.
+```
+
 ### 5. Audio File Processing Phase
 
 **When user provides audio file, invoke the audio processing subagent.**
@@ -381,6 +416,12 @@ CRITICAL: Report back the file metadata when complete:
 - Duration: MM:SS format
 - File size: bytes
 This metadata is needed for the publishing phase.
+```
+
+**When audio processing subagent completes, update todos:**
+```
+Mark "Process audio (transcribe, chapters)" as completed.
+Mark "Create publishing metadata" as in_progress.
 ```
 
 ### 6. Publishing Phase
@@ -457,6 +498,12 @@ Add a new `<item>` block to feed.xml, copying all content from publish.md:
 
 See existing episodes in feed.xml for XML structure reference.
 
+**Update todos:**
+```
+Mark "Create publishing metadata" as completed.
+Mark "Update feed.xml and commit" as in_progress.
+```
+
 ### 7. Git Workflow
 
 **Commit and push the episode:**
@@ -508,6 +555,12 @@ See existing episodes in feed.xml for XML structure reference.
    ```
 
 5. GitHub Pages will automatically deploy changes in 2-3 minutes
+
+**Update todos:**
+```
+Mark "Update feed.xml and commit" as completed.
+All episode workflow tasks complete!
+```
 
 ### 8. Verify Publishing
 
@@ -595,26 +648,51 @@ Based on this episode, consider adjusting:
 ## Getting Started
 
 When user wants to create a new episode, start with:
-1. Create a todo list for tracking
+
+1. **Create a todo list** with TodoWrite tool for tracking all phases:
+   - Setup episode structure and files
+   - Synthesize research into report.md
+   - Generate cover art
+   - Obtain audio from NotebookLM
+   - Process audio (transcribe, chapters)
+   - Create publishing metadata
+   - Update feed.xml and commit
+
 2. Ask for episode date, slug, and title
+
 3. **Help craft the research prompt** - work with user to refine their topic into a clear, methodology-focused research prompt
+
 4. **Immediately create all episode files:**
    - Create episode directory
    - Create the 4 core files at top level: prompts.md, research-results.md, sources.md, report.md (empty template)
    - Only create documents/ subdirectory when needed for supporting files
+   - **Update todos:** Mark setup as completed, mark research synthesis as in_progress
+
 5. User conducts research using Claude, Gemini, ChatGPT, Perplexity, Grok, or other tools
    - User can paste interim results into research-results.md
+
 6. Once research is complete, **automatically synthesize into report.md** (don't ask - just do it)
    - Focus on key points, storytelling opportunities, and podcast narrative flow
    - **Then immediately provide the NotebookLM prompt** - save to prompts.md AND output for user to copy
    - List files to upload to NotebookLM
+   - **Update todos:** Mark research synthesis as completed, mark cover art and NotebookLM as in_progress
+
 7. **Immediately invoke cover art subagent** while user works on NotebookLM audio
    - Launch podcast-cover-art agent with episode details
    - This happens in parallel with audio generation
-   - Subagent generates and brands the cover art
+   - **Update todos:** Mark cover art as completed when subagent reports back
+
 8. When user returns with audio file, **invoke audio processing subagent**
+   - **Update todos:** Mark NotebookLM as completed, mark audio processing as in_progress
    - Launch podcast-audio-processing agent with audio file details
    - Subagent handles: convert, transcribe, chapters, embed
    - Subagent reports back metadata (duration, size) for publishing
+   - **Update todos:** Mark audio processing as completed, mark publishing as in_progress
+
 9. Guide through publishing phase (description, keywords, feed.xml, git commit)
-10. Track all prompts in prompts.md as you go (subagents handle their own logging)
+   - **Update todos:** Mark publishing as completed, mark git workflow as in_progress
+
+10. After git commit completes
+    - **Update todos:** Mark git workflow as completed
+
+**Key:** Update TodoWrite at every phase transition to maintain visibility and prevent forgotten steps.
