@@ -257,124 +257,35 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
    - User can then proceed directly to audio generation
 
 5. **Generate cover art while user works on audio** - Don't wait for audio to complete:
-   - Generate AI cover art using the research report
-   - Add podcast branding (logo, text, border)
-   - See Phase 3 (Cover Art Generation) for detailed instructions
+   - Invoke the cover art generation subagent
    - This can be done in parallel while NotebookLM generates audio
 
 ### 3. Cover Art Generation Phase
 
-**Generate cover art while waiting for NotebookLM audio:**
+**Invoke cover art subagent:**
 
-After providing the NotebookLM prompt, immediately generate the cover art. This is a two-step process: first generate the base image with Gemini via OpenRouter, then add podcast branding (logo, text, border).
+After providing the NotebookLM prompt, immediately invoke the cover art generation subagent to work in parallel while the user creates audio in NotebookLM.
 
-**Step 1: Generate base cover art**
+Use the Task tool to launch the `podcast-cover-art` agent:
 
-```bash
-cd ~/src/research/podcast/tools
+```
+Generate podcast cover art for this episode.
 
-# Generate cover art from report.md (recommended)
-python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
+Episode path: podcast/episodes/YYYY-MM-DD-slug
+Episode title: [Full episode title]
+Series name: [Series name if applicable, or "None" for standalone]
+Episode text: [Text for overlay, e.g., "Ep 3 - Sleep & Memory" or just episode title]
 
-# OR use custom prompt
-python generate_cover.py ../episodes/YYYY-MM-DD-slug --prompt "Your custom image prompt"
-
-# Optional: specify aspect ratio (default: 1:1)
-python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto --aspect-ratio "1:1"
+Generate the cover art using the podcast-cover-art skill.
 ```
 
-**generate_cover.py features:**
-- Uses OpenRouter API with Google Gemini 3 Pro Image model (requires OPENROUTER_API_KEY environment variable)
-- Auto-generates prompts by analyzing report.md content
-- Automatically enforces dark navy/blue color theme throughout the image
-- Automatically blocks unwanted text, icons, logos, and annotations
-- Supports multiple aspect ratios: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 21:9
-- Outputs to `cover.png` in the episode directory
-- Logs all prompts to `prompts.md` for reproducibility
+The subagent will:
+- Generate AI cover art with Gemini via OpenRouter (analyzing report.md)
+- Apply podcast branding (logo, text, border)
+- Log to prompts.md
+- Report back when complete
 
-**Step 2: Add branding to cover art**
-
-```bash
-cd ~/src/research/podcast/tools
-
-# For series episodes (with series and episode text)
-python add_logo_watermark.py ../episodes/series-name/epX-slug/cover.png \
-  --position top-left \
-  --brand "Yudame Research" \
-  --series "Series Name" \
-  --episode "Ep X - Topic" \
-  --border 20 \
-  --border-color "#FFC20E"
-
-# For standalone episodes (no series text)
-python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
-  --position top-left \
-  --brand "Yudame Research" \
-  --episode "Episode Topic" \
-  --border 20 \
-  --border-color "#FFC20E"
-```
-
-**add_logo_watermark.py features:**
-- Adds yellow "A" logo (from `podcast/cover.png`) to specified position
-- Adds text overlays: brand name, series name (optional), episode info
-- Series text uses BIGGER font (6.5% of image width) to be prominent
-- Episode text uses SMALLER font (5% of image width) to handle long topic names
-- Series text is optional - omit `--series` for standalone episodes
-- Adds yellow border (#FFC20E) matching logo color
-- Recommended border width: 20px (15-25px range)
-- Logo positioned top-left with brand text beside it
-- Series/episode text positioned below logo with proper margin
-- Replaces original cover.png with branded version
-
-**Cover art specifications:**
-- Base size: 1024x1024px (or custom aspect ratio)
-- With 20px border: 1064x1064px total (for 1:1)
-- Color scheme: Dark navy/blue dominant, teal/white/silver accents
-- File size: ~500KB PNG format
-- Clean abstract visualization without text from AI
-
-**Log to prompts.md:** Note the prompt used (auto or custom) and branding settings applied.
-
-**First-time setup (if not already done):**
-```bash
-cd ~/src/research/podcast/tools
-pip install requests  # Only dependency needed
-export OPENROUTER_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
-```
-
-**Note:**
-- OpenRouter Gemini 3 Pro Image costs ~$0.30/M input tokens + $2.50/M output tokens
-- Typical image generation: ~$0.05-0.10 per image
-- Cover art appears in podcast apps and directories
-- Each episode can have unique cover art or reuse podcast-level cover
-
-**Regenerating existing cover art:**
-
-If cover art needs to be updated (quality issues, theme mismatch, etc.):
-
-1. **Regenerate with Gemini and apply branding** (same commands as initial generation):
-   ```bash
-   cd ~/src/research/podcast/tools
-   export OPENROUTER_API_KEY="your-key"  # If not already in environment
-   python generate_cover.py ../episodes/YYYY-MM-DD-slug --auto
-   python add_logo_watermark.py ../episodes/YYYY-MM-DD-slug/cover.png \
-     --position top-left \
-     --brand "Yudame Research" \
-     [--series "Series Name"] \
-     --episode "Ep X - Topic" \
-     --border 20 \
-     --border-color "#FFC20E"
-   ```
-
-2. **Update the version parameter in feed.xml** for affected episodes:
-   - Change `cover.png?v=1` to `cover.png?v=2`
-   - Increment for each regeneration: `?v=3`, `?v=4`, etc.
-   - This ensures podcast apps fetch the new images immediately
-
-3. **Commit and push changes:**
-   - Note in commit message which episodes had covers regenerated
-   - Example: "feat: Regenerate cover art for episodes 1, 2, and 4"
+**Note:** This happens in parallel while user is working in NotebookLM, saving time in the workflow.
 
 ### 4. AI Audio Generation Phase
 
@@ -453,74 +364,45 @@ Closing: Summarize 2-3 key takeaways, close with "Find full research and sources
 
 ### 5. Audio File Processing Phase
 
-**When user provides the generated audio file:**
+**Invoke audio processing subagent:**
 
-1. **Check the format** - if it's .m4a, convert to .mp3:
-   ```bash
-   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
-   ffmpeg -i "original-file.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
-   ```
+When the user provides the audio file, invoke the audio processing subagent to handle all technical processing.
 
-2. **Get file metadata:**
-   - File size in bytes: `ls -l file.mp3 | awk '{print $5}'`
-   - Duration is shown in ffmpeg output (format: HH:MM:SS)
+Use the Task tool to launch the `podcast-audio-processing` agent:
 
-3. **Note the metadata** - you'll need:
-   - File size (bytes)
-   - Duration (MM:SS or HH:MM:SS format)
+```
+Process the podcast audio file for this episode.
 
-4. **Generate transcript and chapters with local Whisper + Claude analysis**
+Episode path: podcast/episodes/YYYY-MM-DD-slug
+Audio filename: [filename user provided, e.g., "Original_Audio.m4a"]
+Episode slug: YYYY-MM-DD-slug
 
-   **First-time setup only:**
-   ```bash
-   cd ~/src/research/podcast/tools
+Process the audio using the podcast-audio-processing skill:
+1. Convert to mp3 if needed
+2. Get file metadata (size, duration)
+3. Transcribe with local Whisper (base model)
+4. Analyze transcript and create chapters
+5. Embed chapters into mp3
+6. Log to prompts.md
 
-   # Fix SSL certificates (macOS Python)
-   /Applications/Python\ 3.12/Install\ Certificates.command
+Report back the file metadata (duration, size) when complete.
+```
 
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
+The subagent will:
+- Convert audio format if needed (m4a → mp3)
+- Get file metadata (duration, size in bytes)
+- Generate transcript with local Whisper
+- Analyze transcript and create 10-15 chapter markers
+- Create chapter files (FFmpeg and Podcasting 2.0 formats)
+- Embed chapters into mp3
+- Log everything to prompts.md
+- Report back with metadata needed for publishing
 
-   **Transcription workflow:**
-
-   a. Run local Whisper transcription (no API key needed):
-   ```bash
-   cd ~/src/research/podcast/tools
-   python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
-   ```
-
-   **Whisper model options:**
-   - `tiny`: Fastest (~1-2 min for 30 min audio), basic accuracy
-   - `base`: **[recommended]** Fast (~5-10 min), good accuracy
-   - `small`: Slower (~15-20 min), better accuracy
-
-   b. Once transcription completes, analyze the transcript to identify major topic transitions and create 10-15 chapter markers
-
-   c. Create chapter files in the episode directory:
-      - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg metadata format
-      - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
-
-   **Log to prompts.md:** Note the number of chapters created.
-
-   d. Embed chapters into the mp3 file:
-   ```bash
-   cd ~/src/research/podcast/episodes/YYYY-MM-DD-slug
-   ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -codec copy YYYY-MM-DD-slug_with_chapters.mp3 -y
-   mv YYYY-MM-DD-slug_with_chapters.mp3 YYYY-MM-DD-slug.mp3
-   ```
-
-   **Chapter creation guidelines:**
-   - Aim for 10-15 chapters for a 30-40 minute episode
-   - Each chapter should be 2-4 minutes long
-   - Chapter titles should be descriptive and capture the key topic/story
-   - Include subtitles or key concepts after the main title when helpful
-   - Analyze the full transcript to identify natural topic transitions
-
-   **Note:**
-   - Transcription runs 100% locally (free, private, no API)
-   - The transcript JSON file can be large (300-400KB) - read in sections if needed
-   - Chapters will appear in podcast apps that support them (Overcast, Pocket Casts, Apple Podcasts)
+**Files created:**
+- `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters (~30MB)
+- `YYYY-MM-DD-slug_transcript.json` - Full transcript (~400KB)
+- `YYYY-MM-DD-slug_chapters.txt` - FFmpeg chapter format (~2KB)
+- `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format (~1KB)
 
 ### 6. Publishing Phase
 
@@ -747,10 +629,13 @@ When user wants to create a new episode, start with:
    - Focus on key points, storytelling opportunities, and podcast narrative flow
    - **Then immediately provide the NotebookLM prompt** - save to prompts.md AND output for user to copy
    - List files to upload to NotebookLM
-7. **Immediately generate cover art** while user works on NotebookLM audio
-   - Generate base image with Gemini via OpenRouter
-   - Add podcast branding (logo, text, border)
+7. **Immediately invoke cover art subagent** while user works on NotebookLM audio
+   - Launch podcast-cover-art agent with episode details
    - This happens in parallel with audio generation
-8. When user returns with audio file, process it (convert, transcribe, chapters)
+   - Subagent generates and brands the cover art
+8. When user returns with audio file, **invoke audio processing subagent**
+   - Launch podcast-audio-processing agent with audio file details
+   - Subagent handles: convert, transcribe, chapters, embed
+   - Subagent reports back metadata (duration, size) for publishing
 9. Guide through publishing phase (description, keywords, feed.xml, git commit)
-10. Track all prompts in prompts.md as you go
+10. Track all prompts in prompts.md as you go (subagents handle their own logging)
