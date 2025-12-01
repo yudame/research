@@ -262,30 +262,17 @@ Add the actual research prompt to the Research Phase section in `prompts.md`.
 
 ### 3. Cover Art Generation Phase
 
-**Invoke cover art subagent:**
+**Immediately invoke the cover art subagent** to work in parallel while user creates audio in NotebookLM.
 
-After providing the NotebookLM prompt, immediately invoke the cover art generation subagent to work in parallel while the user creates audio in NotebookLM.
+**Subagent:** `podcast-cover-art`
 
-Use the Task tool to launch the `podcast-cover-art` agent:
+**Required info:**
+- Episode path
+- Episode title
+- Series name (if applicable)
+- Episode text for overlay
 
-```
-Generate podcast cover art for this episode.
-
-Episode path: podcast/episodes/YYYY-MM-DD-slug
-Episode title: [Full episode title]
-Series name: [Series name if applicable, or "None" for standalone]
-Episode text: [Text for overlay, e.g., "Ep 3 - Sleep & Memory" or just episode title]
-
-Generate the cover art using the podcast-cover-art skill.
-```
-
-The subagent will:
-- Generate AI cover art with Gemini via OpenRouter (analyzing report.md)
-- Apply podcast branding (logo, text, border)
-- Log to prompts.md
-- Report back when complete
-
-**Note:** This happens in parallel while user is working in NotebookLM, saving time in the workflow.
+**What it does:** Generates AI cover art, applies branding, logs to prompts.md
 
 ### 4. AI Audio Generation Phase
 
@@ -364,45 +351,18 @@ Closing: Summarize 2-3 key takeaways, close with "Find full research and sources
 
 ### 5. Audio File Processing Phase
 
-**Invoke audio processing subagent:**
+**When user provides audio file, invoke the audio processing subagent.**
 
-When the user provides the audio file, invoke the audio processing subagent to handle all technical processing.
+**Subagent:** `podcast-audio-processing`
 
-Use the Task tool to launch the `podcast-audio-processing` agent:
+**Required info:**
+- Episode path
+- Audio filename (what user provided)
+- Episode slug
 
-```
-Process the podcast audio file for this episode.
+**What it does:** Converts to mp3, transcribes with Whisper, creates chapters, embeds metadata, logs to prompts.md
 
-Episode path: podcast/episodes/YYYY-MM-DD-slug
-Audio filename: [filename user provided, e.g., "Original_Audio.m4a"]
-Episode slug: YYYY-MM-DD-slug
-
-Process the audio using the podcast-audio-processing skill:
-1. Convert to mp3 if needed
-2. Get file metadata (size, duration)
-3. Transcribe with local Whisper (base model)
-4. Analyze transcript and create chapters
-5. Embed chapters into mp3
-6. Log to prompts.md
-
-Report back the file metadata (duration, size) when complete.
-```
-
-The subagent will:
-- Convert audio format if needed (m4a → mp3)
-- Get file metadata (duration, size in bytes)
-- Generate transcript with local Whisper
-- Analyze transcript and create 10-15 chapter markers
-- Create chapter files (FFmpeg and Podcasting 2.0 formats)
-- Embed chapters into mp3
-- Log everything to prompts.md
-- Report back with metadata needed for publishing
-
-**Files created:**
-- `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters (~30MB)
-- `YYYY-MM-DD-slug_transcript.json` - Full transcript (~400KB)
-- `YYYY-MM-DD-slug_chapters.txt` - FFmpeg chapter format (~2KB)
-- `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format (~1KB)
+**Critical:** Subagent will report back duration and file size - you need this for publishing phase.
 
 ### 6. Publishing Phase
 
