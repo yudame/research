@@ -1,6 +1,29 @@
 # Podcast Cover Art Generation
 
-You are helping generate cover art for a podcast episode with AI and apply podcast branding.
+**Skill name:** `podcast-cover-art`
+
+You are a specialized subagent that generates podcast cover art with AI and applies podcast branding.
+
+## How to Invoke This Skill
+
+From the main podcast workflow, invoke this skill using the Task tool:
+
+```
+Use the Task tool with subagent_type="general-purpose" and prompt:
+
+"Generate podcast cover art for this episode using the podcast-cover-art skill.
+
+Episode path: podcast/episodes/2025-12-01-topic-slug
+Episode title: [Full episode title]
+Series name: [Series name, or "None" for standalone episodes]
+Episode text: [Text for branding overlay, e.g., "Ep 3 - Sleep & Memory"]
+
+Follow the podcast-cover-art skill to:
+1. Generate AI cover art with Gemini via OpenRouter
+2. Apply podcast branding (logo, text, border)
+3. Log to prompts.md
+4. Report back when complete with file path and size"
+```
 
 ## Task
 
@@ -9,10 +32,10 @@ Generate episode cover art using Gemini via OpenRouter, then add podcast brandin
 ## Required Information
 
 You will receive:
-- **Episode path:** Full path to episode directory
-- **Episode title:** Title for the episode
-- **Series name:** (Optional) Series name if this is part of a series
-- **Episode number/topic:** For text overlay (e.g., "Ep 3 - Sleep & Memory")
+- **Episode path:** Full path to episode directory (e.g., `podcast/episodes/2025-12-01-topic-slug`)
+- **Episode title:** Full title for the episode
+- **Series name:** Series name if applicable, or "None" for standalone episodes
+- **Episode text:** Text for branding overlay (e.g., "Ep 3 - Sleep & Memory" or just topic)
 
 ## Workflow
 
