@@ -1,7 +1,27 @@
-# Episode 5: Sustaining Excellence
+# Prompts Used for Episode: Kindergarten, from First Principles: Ep. 5, Sustaining Excellence
 
-## Enhanced Research Prompt
+This document tracks all prompts used during the creation of this episode for reproducibility and learning.
 
+---
+
+## Setup Phase
+
+**Episode Details:**
+- Series: Kindergarten, from First Principles
+- Episode: 5 of 6
+- Title: Sustaining Excellence
+- Slug: ep5-sustaining-excellence
+
+---
+
+## Research Phase
+
+### Research Prompt
+
+**Tool Used:** [e.g., Claude, Gemini, ChatGPT, Perplexity, Grok, etc.]
+
+**Prompt:**
+```
 Research teacher and caregiver wellbeing in early childhood education, particularly in intensive low-ratio or one-on-one settings (including homeschooling, micro-schools, and highly individualized care).
 
 **Context:** This is for understanding the sustainability of high-quality early childhood education that requires intensive adult engagement. Focus on evidence that can inform both system design and individual practitioner support.
@@ -31,12 +51,10 @@ Research teacher and caregiver wellbeing in early childhood education, particula
 - Cite specific studies, researchers, and sources throughout
 
 **Output:** Comprehensive research report with extensive citations and source links that can inform both individual practice and system design for sustainable excellence in early childhood education.
+```
+
+**Date:** 2025-12-04
 
 ---
 
-## Episode Details
-
-- **Series:** Kindergarten, from First Principles
-- **Episode:** 5 of 6
-- **Title:** Sustaining Excellence
-- **Slug:** sustaining-excellence
+<!-- Additional prompts will be added below as we progress through the workflow -->
