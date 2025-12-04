@@ -1,0 +1,72 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=148900
+title=Introduction: The Sustainability Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=148900
+END=308900
+title=The Burnout Crisis: Scope and Impact
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=308900
+END=421400
+title=Four Unique Stressors in ECE
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=421400
+END=529400
+title=Emotional Labor: Surface Acting vs Deep Acting
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=529400
+END=681400
+title=The Ratio Threshold Model: When Lower Isn't Better
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=681400
+END=774900
+title=The Homeschooling Paradox: Flexibility vs Rigidity
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=774900
+END=858400
+title=Early Career Vulnerability: The First Three Years
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=858400
+END=1003300
+title=Interventions: Mindfulness and Human Support
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1003300
+END=1126800
+title=Organizational Climate and the JDR Model
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1126800
+END=1246300
+title=Recovery as a Trainable Skill: Detachment and Restoration
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1246300
+END=1385400
+title=Communities of Practice: The Virtual Staff Room
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1385400
+END=1459370
+title=Conclusion: Research Gaps and Strategic Takeaways
