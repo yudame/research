@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: Fidelity Over Philosophy"
+    },
+    {
+      "startTime": 123,
+      "title": "Montessori Evidence: Effect Sizes and Randomized Trials"
+    },
+    {
+      "startTime": 480,
+      "title": "The Fidelity Catastrophe: Why 95% of Montessori Schools Fail"
+    },
+    {
+      "startTime": 703,
+      "title": "Perry Preschool: The $7-12 Return on Investment"
+    },
+    {
+      "startTime": 961,
+      "title": "Tools of the Mind: A Replication Failure"
+    },
+    {
+      "startTime": 1200,
+      "title": "Reggio Emilia: Beautiful Philosophy, Mixed Evidence"
+    },
+    {
+      "startTime": 1440,
+      "title": "RIE and Infant Care: Freedom of Movement"
+    },
+    {
+      "startTime": 1680,
+      "title": "Waldorf Education: Delayed Academics and Public Health"
+    },
+    {
+      "startTime": 1920,
+      "title": "Environmental Design: The Cost of Visual Clutter"
+    },
+    {
+      "startTime": 2160,
+      "title": "Physical Design: Light, Air, and Noise"
+    },
+    {
+      "startTime": 2280,
+      "title": "Toys and Materials: Less is More"
+    },
+    {
+      "startTime": 2400,
+      "title": "Implementation Quality: Teacher Interactions Trump Curriculum"
+    },
+    {
+      "startTime": 2520,
+      "title": "Synthesis: ECE as Infrastructure Investment"
+    }
+  ]
+}

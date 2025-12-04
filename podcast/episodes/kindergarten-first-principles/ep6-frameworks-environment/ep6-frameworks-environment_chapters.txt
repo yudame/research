@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=123000
+title=Introduction: Fidelity Over Philosophy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=123000
+END=480000
+title=Montessori Evidence: Effect Sizes and Randomized Trials
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=480000
+END=703000
+title=The Fidelity Catastrophe: Why 95% of Montessori Schools Fail
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=703000
+END=961000
+title=Perry Preschool: The $7-12 Return on Investment
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=961000
+END=1200000
+title=Tools of the Mind: A Replication Failure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1440000
+title=Reggio Emilia: Beautiful Philosophy, Mixed Evidence
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1440000
+END=1680000
+title=RIE and Infant Care: Freedom of Movement
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1920000
+title=Waldorf Education: Delayed Academics and Public Health
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2160000
+title=Environmental Design: The Cost of Visual Clutter
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2160000
+END=2280000
+title=Physical Design: Light, Air, and Noise
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2400000
+title=Toys and Materials: Less is More
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2520000
+title=Implementation Quality: Teacher Interactions Trump Curriculum
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2520000
+END=2645930
+title=Synthesis: ECE as Infrastructure Investment
