@@ -1,0 +1,26 @@
+[project]
+name = "podcast-tools"
+version = "0.1.0"
+description = "Podcast episode processing tools for transcription, chapters, and cover art"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.75.0",
+    "openai>=2.9.0",
+    "openai-whisper>=20250625",
+    "pillow>=12.0.0",
+    "pytest>=9.0.1",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.15.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--cov=.",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]

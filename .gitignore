@@ -21,3 +21,15 @@ transcripts/
 
 # Podcast source files (keep only converted mp3s)
 *.m4a
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
