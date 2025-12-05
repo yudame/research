@@ -4,7 +4,7 @@
 Kindergarten, from First Principles: Ep. 6, Frameworks and the Prepared Environment
 
 ## Publication Date
-Thu, 05 Dec 2024 12:00:00 GMT
+Thu, 05 Dec 2025 12:00:00 GMT
 
 ## Audio
 - **Duration:** 44:05
