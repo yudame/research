@@ -6,24 +6,22 @@
     <title>Cardiovascular Health Series - Yudame Research</title>
     <style>
         :root {
-            --navy: #0a1628;
-            --navy-light: #1a2d4a;
-            --yellow: #d4a00a;
-            --teal: #0d9488;
-            --white: #ffffff;
-            --gray: #64748b;
-            --gray-light: #f1f5f9;
-            --text: #1e293b;
+            --accent: #f5d563;
+            --text: #0a0a0a;
+            --text-secondary: #666666;
+            --bg: #ffffff;
+            --bg-alt: #fafafa;
+            --border: #e5e5e5;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--text);
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background: var(--white);
+            background: var(--bg);
         }
 
         .header {
@@ -40,87 +38,108 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             margin: 0;
-            font-weight: 600;
-            color: var(--navy);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--text);
         }
 
         .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
         .breadcrumb a {
-            color: var(--gray);
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .breadcrumb a:hover {
-            color: var(--teal);
+            color: var(--text);
+            border-bottom-color: var(--accent);
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             margin-top: 2rem;
             margin-bottom: 1rem;
-            font-weight: 600;
-            color: var(--navy);
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            color: var(--text);
         }
 
         p {
             margin-bottom: 1rem;
-            color: var(--gray);
+            color: var(--text-secondary);
+            font-size: 1.125rem;
         }
 
         .tagline {
-            font-size: 1.1rem;
-            color: var(--navy-light);
+            font-size: 1.125rem;
+            color: var(--text-secondary);
             margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         .subscribe-section {
-            background: var(--gray-light);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--navy);
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .subscribe-section:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .subscribe-section p {
             margin: 0;
             color: var(--text);
+            font-size: 1rem;
         }
 
         a {
-            color: var(--navy);
+            color: var(--text);
             text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            transition: all 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            color: var(--teal);
+            color: var(--text);
+            border-bottom-color: var(--text);
         }
 
         .spotify-button {
             display: inline-block;
-            padding: 0.6rem 1.2rem;
+            padding: 0.75rem 1.5rem;
             background: #1DB954;
-            color: var(--white);
-            border-radius: 24px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            color: var(--bg);
+            border: 1px solid #1DB954;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: none;
         }
 
         .spotify-button:hover {
             background: #1ed760;
-            color: var(--white);
-            text-decoration: none;
+            color: var(--bg);
+            border-color: #1ed760;
+            transform: translateX(4px);
         }
 
         .episode-list {
@@ -130,63 +149,77 @@
         }
 
         .episode {
-            background: var(--gray-light);
-            border-radius: 8px;
-            padding: 1.25rem;
-            border-left: 4px solid var(--teal);
+            background: var(--bg);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .episode:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .episode-header {
             display: flex;
             align-items: baseline;
             gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             flex-wrap: wrap;
         }
 
         .episode-number {
-            font-size: 0.8rem;
-            color: var(--teal);
-            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
         }
 
         .episode-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--navy);
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: var(--text);
+            letter-spacing: -0.01em;
         }
 
         .episode-links-inline {
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             margin-left: auto;
         }
 
         .episode-links-inline a {
-            color: var(--teal);
-            margin-left: 0.75rem;
+            margin-left: 1rem;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .episode-links-inline a:hover {
+            border-bottom-color: var(--accent);
         }
 
         .episode-summary {
-            font-size: 0.95rem;
-            color: var(--text);
+            font-size: 1rem;
+            color: var(--text-secondary);
             margin-bottom: 0.75rem;
+            line-height: 1.6;
         }
 
         .episode-details {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .episode-details summary {
-            font-size: 0.85rem;
-            color: var(--teal);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             cursor: pointer;
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         .episode-details summary:hover {
-            text-decoration: underline;
+            color: var(--text);
         }
 
         .episode-details[open] summary {
@@ -194,40 +227,58 @@
         }
 
         .episode-full-description {
-            font-size: 0.9rem;
-            color: var(--gray);
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
             line-height: 1.6;
-            padding-left: 1rem;
-            border-left: 2px solid var(--gray-light);
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent);
         }
 
         audio {
             width: 100%;
             height: 40px;
-            border-radius: 4px;
         }
 
         .back-link {
             display: inline-block;
             margin-top: 2rem;
-            padding: 0.5rem 1rem;
-            background: var(--gray-light);
-            border-radius: 4px;
-            color: var(--gray);
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            border-bottom: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .back-link:hover {
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
         }
 
         footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-light);
-            color: var(--gray);
-            font-size: 0.9rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text);
+            border-bottom-color: var(--accent);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -328,7 +379,15 @@
     <a href="../../../" class="back-link">Back to Yudame Research</a>
 
     <footer>
-        <p>Yudame Research - Evidence-based deep dives</p>
+        <div class="footer-links">
+            <a href="https://yuda.me">Home</a>
+            <a href="https://ai.yuda.me">AI</a>
+            <a href="https://research.yuda.me">Research</a>
+        </div>
+        <p>© <span id="year"></span> Yudame</p>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
