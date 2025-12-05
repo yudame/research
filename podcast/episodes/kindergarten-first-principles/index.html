@@ -6,24 +6,22 @@
     <title>Kindergarten, from First Principles - Yudame Research</title>
     <style>
         :root {
-            --navy: #0a1628;
-            --navy-light: #1a2d4a;
-            --yellow: #d4a00a;
-            --teal: #0d9488;
-            --white: #ffffff;
-            --gray: #64748b;
-            --gray-light: #f1f5f9;
-            --text: #1e293b;
+            --accent: #f5d563;
+            --text: #0a0a0a;
+            --text-secondary: #666666;
+            --bg: #ffffff;
+            --bg-alt: #fafafa;
+            --border: #e5e5e5;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--text);
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background: var(--white);
+            background: var(--bg);
         }
 
         .header {
@@ -40,97 +38,117 @@
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             margin: 0;
-            font-weight: 600;
-            color: var(--navy);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--text);
         }
 
         .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
         .breadcrumb a {
-            color: var(--gray);
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .breadcrumb a:hover {
-            color: var(--teal);
+            color: var(--text);
+            border-bottom-color: var(--accent);
         }
 
         h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: var(--navy);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            color: var(--text);
         }
 
         p {
-            margin-bottom: 1rem;
-            color: var(--gray);
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
         }
 
         .tagline {
-            font-size: 1.1rem;
-            color: var(--navy-light);
-            margin-bottom: 2rem;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
         }
 
         .subscribe-section {
-            background: var(--gray-light);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--navy);
-            margin-bottom: 2rem;
+            background: var(--bg-alt);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .subscribe-section:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .subscribe-section p {
             margin: 0;
             color: var(--text);
+            font-size: 1rem;
         }
 
         a {
-            color: var(--navy);
+            color: var(--text);
             text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            transition: all 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            color: var(--teal);
+            color: var(--text);
+            border-bottom-color: var(--text);
         }
 
         .spotify-button {
             display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background: #1DB954;
-            color: var(--white);
-            border-radius: 24px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--text);
+            color: var(--bg);
+            border: 1px solid var(--text);
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: none;
         }
 
         .spotify-button:hover {
-            background: #1ed760;
-            color: var(--white);
-            text-decoration: none;
+            background: var(--accent);
+            color: var(--text);
+            border-color: var(--accent);
+            transform: translateX(4px);
         }
 
         .complete-badge {
             display: inline-block;
-            background: var(--teal);
-            color: var(--white);
+            background: var(--accent);
+            color: var(--text);
             padding: 0.25rem 0.75rem;
-            border-radius: 12px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-left: 0.5rem;
@@ -139,63 +157,73 @@
         .episode-list {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .episode {
-            background: var(--gray-light);
-            border-radius: 8px;
-            padding: 1.25rem;
-            border-left: 4px solid var(--teal);
+            background: var(--bg);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .episode:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .episode-header {
             display: flex;
             align-items: baseline;
             gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             flex-wrap: wrap;
         }
 
         .episode-number {
-            font-size: 0.8rem;
-            color: var(--teal);
-            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
         }
 
         .episode-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--navy);
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: var(--text);
+            letter-spacing: -0.01em;
         }
 
         .episode-duration {
-            font-size: 0.85rem;
-            color: var(--gray);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             margin-left: auto;
+            font-family: "SF Mono", "Monaco", "Cascadia Code", monospace;
         }
 
         .episode-summary {
-            font-size: 0.95rem;
-            color: var(--text);
+            font-size: 1rem;
+            color: var(--text-secondary);
             margin-bottom: 0.75rem;
+            line-height: 1.6;
         }
 
         .episode-details {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .episode-details summary {
-            font-size: 0.85rem;
-            color: var(--teal);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             cursor: pointer;
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         .episode-details summary:hover {
-            text-decoration: underline;
+            color: var(--text);
         }
 
         .episode-details[open] summary {
@@ -203,50 +231,73 @@
         }
 
         .episode-full-description {
-            font-size: 0.9rem;
-            color: var(--gray);
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
             line-height: 1.6;
-            padding-left: 1rem;
-            border-left: 2px solid var(--gray-light);
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent);
         }
 
         .episode-links {
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
         }
 
         .episode-links a {
-            margin-right: 1rem;
-            color: var(--teal);
+            margin-right: 1.5rem;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .episode-links a:hover {
+            border-bottom-color: var(--accent);
         }
 
         audio {
             width: 100%;
             height: 40px;
-            border-radius: 4px;
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 2rem;
-            padding: 0.5rem 1rem;
-            background: var(--gray-light);
-            border-radius: 4px;
-            color: var(--gray);
+            margin-top: 3rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            border-bottom: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .back-link:hover {
-            background: var(--navy);
-            color: var(--white);
-            text-decoration: none;
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
         }
 
         footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-light);
-            color: var(--gray);
-            font-size: 0.9rem;
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text);
+            border-bottom-color: var(--accent);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -275,7 +326,7 @@
             </div>
             <div class="episode-summary">What science says matters most at ages 4-6: executive function, self-regulation, and why process skills trump content.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">What developmental science identifies as the highest-leverage variables for children ages 4-6. Reveals the shocking Duncan study finding that early math skills—not social-emotional competence—are the strongest predictor of later academic success, examines how executive function acts as a cognitive amplifier across 25 lifespan outcomes, and exposes the implementation paradox where Tools of the Mind produced effect sizes ranging from 0.0 to 0.8 based purely on teacher fidelity.</div>
             </details>
             <div class="episode-links">
@@ -294,7 +345,7 @@
             </div>
             <div class="episode-summary">The neuroscience of play and why it may be the primary engine of development, not mere enrichment.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">The neuroscience of play is remarkably strong—precise mechanisms show how play shapes brain architecture through BDNF upregulation and synaptic pruning. Yet behavioral evidence reveals modest effect sizes (g ≈ 0.3-0.4) and limited transfer across domains. This episode examines the paradox: strong neurobiological foundations meet surprisingly modest measurable gains. We explore guided play as the optimal approach (outperforming both free play and direct instruction), the deprivation-enrichment asymmetry, the minimum effective dose (35+ minutes), and why at-risk children benefit most.</div>
             </details>
             <div class="episode-links">
@@ -313,7 +364,7 @@
             </div>
             <div class="episode-summary">How pre-nap learning windows and sleep-dependent memory consolidation should shape daily schedules.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">Missing a single nap causes irreversible memory loss in habitual nappers—overnight sleep cannot compensate. Rebecca Spencer's landmark research reveals why the hippocampal "desk" fills up faster in young children, requiring strategic timing of declarative content before naps and procedural skills after. Sleep deprivation symptoms mimic ADHD, making sleep quality the primary upstream intervention for classroom behavior and retention.</div>
             </details>
             <div class="episode-links">
@@ -332,7 +383,7 @@
             </div>
             <div class="episode-summary">Optimal group sizes, peer dynamics, and how intentional social friction builds essential skills.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">The kindergarten classroom is a social laboratory where children develop competencies through peer interaction that adults cannot replicate. This episode explores the unique value of symmetrical peer relationships, why conflict is developmental fuel when properly scaffolded, and the evidence-based design principles for optimal social-emotional learning environments. We examine effect sizes from major meta-analyses (d = 0.35-0.69), the ratio question (why 7.5:1 matters), the SEL paradox (large effects vs. fade-out concerns), and how individual differences (temperament, ADHD, autism, attachment) require differentiated support.</div>
             </details>
             <div class="episode-links">
@@ -351,7 +402,7 @@
             </div>
             <div class="episode-summary">Teacher wellbeing in intensive low-ratio settings: burnout, emotional labor, and support structures.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">The intimacy paradox of early childhood education: while close relationships create developmental magic for children, they threaten the sustainability of those providing it. Research reveals 45-72% burnout rates across settings, with professional isolation emerging as the dominant risk in intensive care. Evidence shows the first three years as the critical vulnerability window, with compensation as the strongest retention predictor—yet organizational climate and collegial support remain the most potent modifiable factors. This episode examines the ratio threshold effect (7.5:1), the homeschooling paradox (flexibility protects, rigidity depletes), and why Communities of Practice function as the "silver bullet" for isolated practitioners.</div>
             </details>
             <div class="episode-links">
@@ -370,7 +421,7 @@
             </div>
             <div class="episode-summary">Montessori, Reggio, Waldorf, and RIE compared—what elements are actually supported by research.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">The final episode examines what research actually reveals about Montessori, Reggio Emilia, Waldorf, and other educational frameworks—from the Perry Preschool's $12:1 return on investment to the shocking finding that only 5% of "Montessori" schools meet rigorous standards. Explores environmental design research showing classroom layout explains 16% of learning variation, why 90 toys is worse than 4, and how implementation fidelity matters more than philosophical labels.</div>
             </details>
             <div class="episode-links">
@@ -385,7 +436,15 @@
     <a href="../../../" class="back-link">Back to Yudame Research</a>
 
     <footer>
-        <p>Yudame Research - Evidence-based deep dives</p>
+        <div class="footer-links">
+            <a href="https://yuda.me">Home</a>
+            <a href="https://ai.yuda.me">AI</a>
+            <a href="https://research.yuda.me">Research</a>
+        </div>
+        <p>© <span id="year"></span> Yudame</p>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
