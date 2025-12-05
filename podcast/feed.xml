@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Thu, 05 Dec 2025 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2025 19:30:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -181,23 +181,26 @@
       <research:series>Solomon Islands Telecom Launch</research:series>
     </item>
 
-    <!-- Episode 6: Stablecoin Compliance Asia -->
+    <!-- Episode 6: Stablecoin Build & Launch Series - Episode 2 -->
     <item>
-      <title>Stablecoin Compliance: Navigating GENIUS Act and MiCA from Asia</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/cover.png?v=1"/>
-      <description>An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access. Full research report: https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md</description>
-      <content:encoded><![CDATA[<p>An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md">https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/394/text">US GENIUS Act (S.394)</a></li><li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica">EU MiCA Regulation</a></li><li><a href="https://www.hkma.gov.hk/eng/news-and-media/insight/2025/06/20250623/">Hong Kong Stablecoin Ordinance</a></li><li><a href="https://www.yalejreg.com/nc/how-the-genius-act-regulates-foreign-issuersand-how-it-compares-to-europe-and-the-uk-by-benedikt-bartylla/">Yale Journal on GENIUS Foreign Issuers</a></li></ul>]]></content:encoded>
+      <title>Stablecoin Build &amp; Launch: Ep. 2, Legal &amp; Regulatory Compliance</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/cover.png?v=1"/>
+      <description>Episode 2 of an 8-part series on building and launching stablecoins. An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access. Full research report: https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/report.md</description>
+      <content:encoded><![CDATA[<p>Episode 2 of an 8-part series on building and launching stablecoins. An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access.</p><p><strong>Series context:</strong> This is Episode 2 of 8 in the Stablecoin Build & Launch Series, covering the end-to-end journey from market context through post-launch operations.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/report.md">https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/394/text">US GENIUS Act (S.394)</a></li><li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica">EU MiCA Regulation</a></li><li><a href="https://www.hkma.gov.hk/eng/news-and-media/insight/2025/06/20250623/">Hong Kong Stablecoin Ordinance</a></li><li><a href="https://www.yalejreg.com/nc/how-the-genius-act-regulates-foreign-issuersand-how-it-compares-to-europe-and-the-uk-by-benedikt-bartylla/">Yale Journal on GENIUS Foreign Issuers</a></li></ul>]]></content:encoded>
       <author>valor@yuda.me (Valor Engels)</author>
       <pubDate>Wed, 26 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/2025-11-26-stablecoin-compliance-asia.mp3"
                  length="33102921"
                  type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/2025-11-26-stablecoin-compliance-asia.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/stablecoin-series/episode-2-legal-compliance/2025-11-26-stablecoin-compliance-asia.mp3</guid>
       <itunes:author>Valor Engels</itunes:author>
       <itunes:duration>34:28</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>4</itunes:season>
+      <itunes:episode>2</itunes:episode>
       <itunes:keywords>GENIUS Act, MiCA, stablecoin regulation, compliance, EMT, ART, PPSI, Tether, Circle, USDC, USDT, OCC, EMI, reserves, licensing, Asia, Hong Kong, Singapore, extraterritorial, kill switch, OFAC</itunes:keywords>
+      <research:series>Stablecoin Build &amp; Launch</research:series>
     </item>
 
     <!-- Episode 5: Cardiovascular Health Series - Episode 4 -->
@@ -288,23 +291,26 @@
       <research:series>Cardiovascular Health</research:series>
     </item>
 
-    <!-- Episode 1: Stablecoin History -->
+    <!-- Episode 1: Stablecoin Build & Launch Series - Episode 1 -->
     <item>
-      <title>Stablecoin Market: Strategies and Pitfalls</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/cover.png?v=2"/>
-      <description>A comprehensive analysis of stablecoin evolution from 2017-2025 (full report: https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/report.md), covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</description>
-      <content:encoded><![CDATA[<p>A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/report.md">https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1582">US GENIUS Act</a></li><li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica">EU MiCA Regulation</a></li><li><a href="https://www.fsb.org/2023/07/high-level-recommendations-for-the-regulation-supervision-and-oversight-of-global-stablecoin-arrangements-final-report/">FSB Stablecoin Recommendations</a></li><li><a href="https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24">Terra Collapse Analysis</a></li></ul>]]></content:encoded>
+      <title>Stablecoin Build &amp; Launch: Ep. 1, Market Evolution (2017-2025)</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/cover.png?v=2"/>
+      <description>Episode 1 of an 8-part series on building and launching stablecoins. A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market. Full research report: https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/report.md</description>
+      <content:encoded><![CDATA[<p>Episode 1 of an 8-part series on building and launching stablecoins. A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.</p><p><strong>Series context:</strong> This is Episode 1 of 8 in the Stablecoin Build & Launch Series, covering the end-to-end journey from market context through post-launch operations.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/report.md">https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1582">US GENIUS Act</a></li><li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica">EU MiCA Regulation</a></li><li><a href="https://www.fsb.org/2023/07/high-level-recommendations-for-the-regulation-supervision-and-oversight-of-global-stablecoin-arrangements-final-report/">FSB Stablecoin Recommendations</a></li><li><a href="https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24">Terra Collapse Analysis</a></li></ul>]]></content:encoded>
       <author>valor@yuda.me (Valor Engels)</author>
       <pubDate>Tue, 19 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/2025-11-19-stablecoin-history.mp3"
                  length="31387616"
                  type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/2025-11-19-stablecoin-history.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/stablecoin-series/episode-1-market-evolution/2025-11-19-stablecoin-history.mp3</guid>
       <itunes:author>Valor Engels</itunes:author>
       <itunes:duration>32:41</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>4</itunes:season>
+      <itunes:episode>1</itunes:episode>
       <itunes:keywords>stablecoins, cryptocurrency, regulation, GENIUS Act, Terra UST, USDC, Tether, blockchain, DeFi, financial regulation</itunes:keywords>
+      <research:series>Stablecoin Build &amp; Launch</research:series>
     </item>
 
   </channel>
