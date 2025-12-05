@@ -428,10 +428,11 @@ Mark "Create publishing metadata" as in_progress.
 
 **Generate episode description, keywords, and source links:**
 
-a. **Create compelling 1-2 sentence description:**
+a. **Create compelling 1-2 sentence description (plain text):**
    - Based on the research report and transcript
    - Highlight key topics, major stories/events covered, and main takeaways
    - Focus on what makes this episode valuable and what listeners will learn
+   - Keep this version plain text for the `<description>` tag
    - Include link to full research report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
 b. **Generate episode-specific keywords (5-10 keywords):**
@@ -441,12 +442,12 @@ b. **Generate episode-specific keywords (5-10 keywords):**
    - Examples: "VO2 max", "HRV", "stablecoins", "Terra Luna", "GENIUS Act", "sleep quality"
    - Format as comma-separated list for iTunes keywords field
 
-c. **Add validated source links:**
+c. **Add validated source links (3-5 sources):**
    - Search for and validate 3-5 key official sources mentioned in the episode
    - Prioritize: official legislation/regulation, academic analysis, primary sources
    - Use WebSearch to find official URLs
    - Verify links are accessible with WebFetch when possible
-   - Add "Key Sources:" section with validated links
+   - These will be formatted as clickable HTML links in `<content:encoded>`
 
    Example sources to validate:
    - Official legislation (congress.gov, official government sites)
@@ -467,18 +468,23 @@ Create `publish.md` in the episode directory with this template:
 ## Publication Date
 [Day, DD Mon YYYY HH:MM:SS GMT - RFC 2822 format]
 
+## Series Info (if applicable)
+- **Series Name:** [Series Name]
+- **Season Number:** [N]
+- **Episode Number:** [N]
+
 ## Audio
-- **Duration:** [MM:SS]
+- **Duration:** [HH:MM:SS or MM:SS]
 - **File Size:** [bytes]
 - **Format:** audio/mpeg
 
-## Description
+## Description (Plain Text)
 [1-2 sentence compelling description covering key topics and takeaways.]
 
-Full Report: https://research.yuda.me/podcast/episodes/[path]/report.md
-Sources: https://research.yuda.me/podcast/episodes/[path]/sources.md
+Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
 
-## Key Sources
+## Key Sources (for HTML show notes)
+- [Source Name]: [URL]
 - [Source Name]: [URL]
 - [Source Name]: [URL]
 - [Source Name]: [URL]
@@ -488,15 +494,61 @@ Sources: https://research.yuda.me/podcast/episodes/[path]/sources.md
 [keyword1, keyword2, keyword3, specific-term, specific-concept]
 ```
 
-**Update feed.xml using content from publish.md:**
+**Update feed.xml using Yudame RSS standards:**
 
-Add a new `<item>` block to feed.xml, copying all content from publish.md:
-- Title, description, keywords from publish.md
-- Audio metadata (duration, file size) from publish.md
-- Cover image URL with version parameter (`cover.png?v=1`)
-- Use RFC 2822 date format for pubDate (e.g., "Tue, 19 Nov 2025 12:00:00 GMT")
+Add a new `<item>` block to feed.xml following the specification in `docs/RSS-specification.md`:
 
-See existing episodes in feed.xml for XML structure reference.
+**Required elements for ALL episodes:**
+- `<title>` - Episode title
+- `<description>` - Plain text description (from publish.md)
+- `<content:encoded>` - HTML-formatted show notes with clickable source links (CDATA wrapped)
+- `<author>valor@yuda.me (Valor Engels)</author>`
+- `<pubDate>` - RFC 2822 format
+- `<enclosure>` - url, length (bytes), type="audio/mpeg"
+- `<guid>` - Episode audio file URL
+- `<itunes:author>Valor Engels</itunes:author>`
+- `<itunes:duration>` - HH:MM:SS format
+- `<itunes:explicit>no</itunes:explicit>`
+- `<itunes:episodeType>full</itunes:episodeType>` (or trailer/bonus)
+- `<itunes:keywords>` - From publish.md
+- `<itunes:image>` - Episode cover art with version param
+
+**Additional for SERIES episodes:**
+- `<itunes:season>N</itunes:season>`
+- `<itunes:episode>N</itunes:episode>`
+- `<research:series>Series Name</research:series>`
+
+**Format content:encoded with HTML:**
+```xml
+<content:encoded><![CDATA[
+  <p>[Description paragraph]</p>
+  <p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/path/report.md">report.md</a></p>
+  <p><strong>Key Sources:</strong></p>
+  <ul>
+    <li><a href="url">Source Name</a></li>
+    <li><a href="url">Source Name</a></li>
+  </ul>
+]]></content:encoded>
+```
+
+**Invoke feed validation subagent:**
+
+After updating feed.xml, use the Task tool to validate against standards:
+
+```
+Validate the podcast feed against RSS specification standards using the podcast-feed-validator skill.
+
+Feed path: podcast/feed.xml
+Specification path: docs/RSS-specification.md
+
+Follow the podcast-feed-validator skill to:
+1. Read the RSS specification quality checklist (Section 8)
+2. Validate the new episode entry against all requirements
+3. Check for: required tags, proper formatting, series metadata (if applicable), content:encoded HTML structure
+4. Verify file sizes and durations match actual files
+5. Report any missing or incorrect elements
+6. Confirm feed is valid XML
+```
 
 **Update todos:**
 ```
