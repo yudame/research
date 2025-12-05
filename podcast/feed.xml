@@ -24,7 +24,7 @@
     <itunes:category text="Science"/>
     <itunes:category text="Education"/>
     <itunes:category text="Technology"/>
-    <itunes:image href="https://research.yuda.me/podcast/cover.png"/>
+    <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
 
     <!-- Episode 13: Kindergarten from First Principles - Episode 6 -->
@@ -159,23 +159,26 @@
       <research:series>Kindergarten, from First Principles</research:series>
     </item>
 
-    <!-- Episode 7: Solomon Islands Financial Infrastructure -->
+    <!-- Episode 7: Solomon Islands Telecom Launch Series - Episode 1 -->
     <item>
-      <title>Financial Infrastructure in the Solomon Islands: From Cash to Crypto</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/cover.png"/>
-      <description>Exploratory due diligence into the financial and payment infrastructure of the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years. This episode examines the practical realities facing a potential telecom market entrant: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system. Full research report: https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/report.md</description>
-      <content:encoded><![CDATA[<p>Exploratory due diligence into the financial and payment infrastructure of the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years. This episode examines the practical realities facing a potential telecom market entrant: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/report.md">https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.cbsi.com.sb/financial-inclusion/">Central Bank of Solomon Islands Financial Inclusion</a></li><li><a href="https://www.worldbank.org/en/publication/globalfindex">World Bank Findex Database</a></li><li><a href="https://www.imf.org/en/Countries/SLB">IMF Solomon Islands Assessment</a></li><li><a href="https://www.pfip.org/">Pacific Financial Inclusion Programme</a></li></ul>]]></content:encoded>
+      <title>Solomon Islands Telecom Launch: Ep. 1, Financial Infrastructure</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/cover.png"/>
+      <description>The foundation episode of a 6-part series exploring partnership-enabled market entry for a new telecommunications provider in the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years—proving massive latent demand for financial services. This episode examines why the 75% unbanked, 70% mobile ownership gap defines the strategic opportunity for integrated telecom + fintech services. Explores the practical realities: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md</description>
+      <content:encoded><![CDATA[<p>The foundation episode of a 6-part series exploring partnership-enabled market entry for a new telecommunications provider in the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years—proving massive latent demand for financial services. This episode examines why the 75% unbanked, 70% mobile ownership gap defines the strategic opportunity for integrated telecom + fintech services.</p><p>Explores the practical realities: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system.</p><p><strong>Series context:</strong> This is Episode 1 of 6 in the Solomon Islands Telecom Launch Series, examining how to launch a third mobile network operator with strategic partnerships from SATSOL (infrastructure) and IumiCash (mobile money).</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md">https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.cbsi.com.sb/financial-inclusion/">Central Bank of Solomon Islands Financial Inclusion</a></li><li><a href="https://www.worldbank.org/en/publication/globalfindex">World Bank Findex Database</a></li><li><a href="https://www.imf.org/en/Countries/SLB">IMF Solomon Islands Assessment</a></li><li><a href="https://www.pfip.org/">Pacific Financial Inclusion Programme</a></li></ul>]]></content:encoded>
       <author>valor@yuda.me (Valor Engels)</author>
       <pubDate>Fri, 28 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/2025-11-28-solomon-islands-finance.mp3"
+      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3"
                  length="29204808"
                  type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/2025-11-28-solomon-islands-finance/2025-11-28-solomon-islands-finance.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3</guid>
       <itunes:author>Valor Engels</itunes:author>
       <itunes:duration>30:25</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:keywords>Solomon Islands, mobile money, M-SELEN, financial inclusion, remittances, CBSI, Pacific Islands, telecom, USSD, agent network, cash economy, Bokolo Cash, CBDC, utility payments, market entry</itunes:keywords>
+      <itunes:season>3</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:keywords>Solomon Islands, mobile money, M-SELEN, financial inclusion, remittances, CBSI, Pacific Islands, telecom, USSD, agent network, cash economy, Bokolo Cash, CBDC, utility payments, market entry, IumiCash, SATSOL, Starlink</itunes:keywords>
+      <research:series>Solomon Islands Telecom Launch</research:series>
     </item>
 
     <!-- Episode 6: Stablecoin Compliance Asia -->

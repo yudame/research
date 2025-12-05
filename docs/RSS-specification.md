@@ -223,24 +223,27 @@ podcast/episodes/series-name/epN-topic-slug/
 ## 7. Image Specifications
 
 ### Channel Cover Art
-- **File:** `podcast/cover.png`
+- **File:** `podcast/yudame-research-podcast.jpg`
 - **Minimum:** 1400×1400 px (Apple Podcasts requirement)
 - **Recommended:** 3000×3000 px
-- **Format:** PNG or JPEG, RGB color space
+- **Format:** JPEG or PNG, RGB color space
 - **Aspect Ratio:** 1:1 (square)
+- **Current:** 1024×1024 px (below minimum, acceptable but not optimal)
 
 **Brand Guidelines:**
 - Primary accent: Yellow (#f5d563) - Yudame brand color
-- Background: White or warm gray (#fafafa)
-- Typography: Inter font family (if text overlay used)
+- Background: Blue/gold gradient with design elements
+- Typography: Inter font family, bold for "YUDAME RESEARCH"
 - Style: Minimalist, contemporary, sophisticated modernism
-- Current: Using Yudame logo; needs high-resolution version
+- Logo: Yellow triangular "A" mark
+- Includes: Waveforms, microphone icon, circuit patterns
+- URL: research.yuda.me displayed at bottom
 
 ### Episode Cover Art
 - **Location:** Episode directory (`cover.png`)
 - **Size:** Same as channel art (1400×1400 minimum)
 - **Branding:** Apply consistent podcast branding overlay
-  - Yudame logo placement (suggested: top-left or center)
+  - Yudame logo watermark (from `podcast/yudame-logo.png`)
   - Series/episode text (if applicable)
   - Maintain yellow accent color (#f5d563)
   - Clean, readable typography
@@ -249,7 +252,8 @@ podcast/episodes/series-name/epN-topic-slug/
 ### Image URLs
 - Use versioning parameter for cache busting: `cover.png?v=1`
 - Increment version if image is replaced
-- Full URL format: `https://research.yuda.me/podcast/cover.png`
+- Channel art URL: `https://research.yuda.me/podcast/yudame-research-podcast.jpg`
+- Episode art URL format: `https://research.yuda.me/podcast/episodes/[path]/cover.png?v=1`
 
 ---
 
