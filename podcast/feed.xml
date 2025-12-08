@@ -27,6 +27,28 @@
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 14: Solomon Islands Telecom Series - Episode 2 -->
+    <item>
+      <title>Solomon Islands Telecom: Ep. 2, Breaking the Duopoly</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/cover.png?v=1"/>
+      <description>Entering the Solomon Islands duopoly market where data costs 77x more than Fiji. This episode examines competitive dynamics between Our Telekom (government-controlled, 60% share) and Bmobile-Vodafone (40% share), regulatory barriers under TCSI framework, and lessons from Digicel's 2,400% growth disruption in PNG. Explores how SATSOL infrastructure partnerships and IumiCash mobile money integration create differentiation for a third operator entering a market with no number portability and massive rural coverage gaps. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md</description>
+      <content:encoded><![CDATA[<p>Entering the Solomon Islands duopoly market where data costs 77x more than Fiji. This episode examines competitive dynamics between Our Telekom (government-controlled, 60% share) and Bmobile-Vodafone (40% share), regulatory barriers under TCSI framework, and lessons from Digicel's 2,400% growth disruption in PNG. Explores how SATSOL infrastructure partnerships and IumiCash mobile money integration create differentiation for a third operator entering a market with no number portability and massive rural coverage gaps.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.tcsi.org.sb/">TCSI - Telecommunications Commission Solomon Islands</a></li><li><a href="http://www.paclii.org/sb/legis/consol_act/ta2009214.pdf">Telecommunications Act 2009 (Full Text)</a></li><li><a href="https://devpolicy.org/ten-years-papua-new-guinea-conversation-digicel-20170731/">DevPolicy - Ten Years in Papua New Guinea: In Conversation with Digicel</a></li><li><a href="https://www.cbsi.com.sb/press-release-no-3-25-cbsi-grants-money-transfer-service-license-to-iumicash-ltd/">CBSI - IumiCash Money Transfer Service License</a></li><li><a href="https://nsc.anu.edu.au/sites/default/files/2024-06/QTN_Telecom_Amanda%20Watson%20and%20Ioana%20Chan%20Mow_Telecommunications%20in%20the%20Pacific%20Islands%20region_NSC_0.pdf">ANU - Telecommunications in the Pacific Islands Region</a></li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sun, 08 Dec 2025 19:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3"
+                 length="36020074"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>37:31</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>2</itunes:episode>
+      <itunes:keywords>Solomon Islands, telecommunications, duopoly, market entry, Our Telekom, Bmobile-Vodafone, TCSI, Digicel PNG, SATSOL, IumiCash, mobile money, number portability, infrastructure sharing, Pacific telecom, regulatory framework</itunes:keywords>
+      <research:series>Solomon Islands Telecom Series</research:series>
+    </item>
+
     <!-- Episode 13: Kindergarten from First Principles - Episode 6 -->
     <item>
       <title>Kindergarten, from First Principles: Ep. 6, Frameworks and the Prepared Environment</title>

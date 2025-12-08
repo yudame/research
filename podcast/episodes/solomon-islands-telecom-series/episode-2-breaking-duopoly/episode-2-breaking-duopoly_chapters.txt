@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=149000
+title=Introduction: The 77x Price Gap Crisis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=149000
+END=329000
+title=Understanding the Duopoly Structure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=329000
+END=545000
+title=Regulatory Capture and SINPF Ownership
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=545000
+END=778000
+title=Licensing Requirements and Infrastructure Sharing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=778000
+END=960000
+title=The MNP Problem: No Number Portability
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1183000
+title=DigiCell PNG: The Gold Standard Disruption
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1183000
+END=1320000
+title=Lessons from Fiji and Vanuatu
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1320000
+END=1541000
+title=The Partnership Stack: Satsal and Starlink
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1541000
+END=1754000
+title=Fintech Integration: UmeCash and Mobile Money
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1754000
+END=1950000
+title=Network Rollout Strategy and Phase Plan
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1950000
+END=2118000
+title=Financial Model: $100-160M Capital Requirement
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2118000
+END=2248000
+title=Incumbent Response and Competitive Defense
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2248000
+END=2251130
+title=Operational Risks and Geopolitical Context
