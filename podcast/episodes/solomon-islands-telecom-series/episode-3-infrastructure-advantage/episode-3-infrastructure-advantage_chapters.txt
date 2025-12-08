@@ -1,0 +1,84 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=120000
+title=Introduction: The Connectivity Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120000
+END=300000
+title=CapEx vs OpEx: Understanding the Economics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=300000
+END=480000
+title=The Historical Benchmark: $850M in PNG
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=480000
+END=660000
+title=Solomon Islands Cost Premium: 35% More Expensive
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=840000
+title=SINBIP: Government's $66M Infrastructure Investment
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=840000
+END=1020000
+title=The Land Dispute Bottleneck
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1020000
+END=1200000
+title=Backhaul Economics: The False Binary
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1380000
+title=LEO Satellites Break the Trade-off
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1380000
+END=1560000
+title=KDDI Japan: 1200 Towers on Starlink
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1740000
+title=Hybrid Architecture: Fiber, Microwave, and LEO
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=1920000
+title=700 MHz Spectrum: The Coverage Multiplier
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2040000
+title=Tonga Disaster: 38 Days Without Connectivity
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2100000
+title=Market Analysis: Duopoly and Partnership Strategy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=2125340
+title=NPV Analysis: The Blueprint for Success

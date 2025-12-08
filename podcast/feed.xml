@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Thu, 05 Dec 2025 19:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2025 22:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -26,6 +26,28 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 15: Solomon Islands Telecom Series - Episode 3 -->
+    <item>
+      <title>Solomon Islands Telecom Series: Ep. 3, Infrastructure Without Capital</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/cover.png?v=1"/>
+      <description>How do you launch a mobile network across 1,000+ islands without financial bankruptcy? Episode 3 examines infrastructure economics and the convergence strategy slashing initial capital requirements by 50-80%—from $100M+ greenfield to $15-30M partnership models. Topics: SINBIP's 161 government-funded towers, Starlink backhaul economics (KDDI's 1,200-tower validation), hybrid architecture strategies, Tonga's 38-day cable outage, 700 MHz coverage multiplier, and 5-year NPV analysis proving partnership models are 3x more attractive than build-from-scratch approaches. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md</description>
+      <content:encoded><![CDATA[<p>How do you launch a mobile network across 1,000+ islands without financial bankruptcy? Episode 3 examines infrastructure economics and the convergence strategy slashing initial capital requirements by 50-80%—from $100M+ greenfield to $15-30M partnership models. Topics: SINBIP's 161 government-funded towers, Starlink backhaul economics (KDDI's 1,200-tower validation), hybrid architecture strategies, Tonga's 38-day cable outage, 700 MHz coverage multiplier, and 5-year NPV analysis proving partnership models are 3x more attractive than build-from-scratch approaches.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://solomons.gov.sb/solomon-tower-limited-delivered-14-mobile-tower-sites-under-the-solomon-islands-national-broadband-infrastructure-project-sinbip/">SINBIP government announcement</a> - 161 tower sites funded by CNY 448.9M, STL infrastructure sharing model</li><li><a href="https://news.kddi.com/kddi/corporate/english/newsrelease/2022/12/01/6415.html">KDDI Japan Starlink deployment</a> - 1,200 towers using Starlink backhaul, performance comparable to fiber</li><li><a href="https://news.berkeley.edu/2024/05/09/submarine-communications-cables/">Tonga volcanic eruption cable damage</a> - 80km section destroyed, 38-day international outage, 18-month domestic restoration</li><li><a href="https://documents1.worldbank.org/curated/en/099121724111526960/pdf/P1785971617dfc0361b79b10ed943988d67.pdf">World Bank resilience guide 2024</a> - 4:1 ROI on resilience investment in disaster-prone regions</li><li><a href="https://www.ifc.org/content/dam/ifc/doc/mgrt/emcompass-note-79-digital-infrastructure-sharing.pdf">IFC Digital Infrastructure Sharing</a> - Infrastructure partnerships reduce CAPEX by up to 40%</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sun, 08 Dec 2024 22:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3"
+                 length="34006967"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>35:25</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>3</itunes:episode>
+      <itunes:keywords>SINBIP, Solomon Tower Limited, Starlink backhaul, LEO satellites, infrastructure sharing, CAPEX reduction, CapEx vs OpEx, 700 MHz spectrum, hybrid backhaul architecture, KDDI Japan, Tonga volcanic eruption, submarine cable resilience, Open RAN, cloud-native core, archipelago deployment, TCSI, Solomon Islands telecom</itunes:keywords>
+      <research:series>Solomon Islands Telecom Launch Series</research:series>
+    </item>
 
     <!-- Episode 14: Solomon Islands Telecom Series - Episode 2 -->
     <item>

@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Connectivity Paradox"
+    },
+    {
+      "startTime": 120,
+      "title": "CapEx vs OpEx: Understanding the Economics"
+    },
+    {
+      "startTime": 300,
+      "title": "The Historical Benchmark: $850M in PNG"
+    },
+    {
+      "startTime": 480,
+      "title": "Solomon Islands Cost Premium: 35% More Expensive"
+    },
+    {
+      "startTime": 660,
+      "title": "SINBIP: Government's $66M Infrastructure Investment"
+    },
+    {
+      "startTime": 840,
+      "title": "The Land Dispute Bottleneck"
+    },
+    {
+      "startTime": 1020,
+      "title": "Backhaul Economics: The False Binary"
+    },
+    {
+      "startTime": 1200,
+      "title": "LEO Satellites Break the Trade-off"
+    },
+    {
+      "startTime": 1380,
+      "title": "KDDI Japan: 1200 Towers on Starlink"
+    },
+    {
+      "startTime": 1560,
+      "title": "Hybrid Architecture: Fiber, Microwave, and LEO"
+    },
+    {
+      "startTime": 1740,
+      "title": "700 MHz Spectrum: The Coverage Multiplier"
+    },
+    {
+      "startTime": 1920,
+      "title": "Tonga Disaster: 38 Days Without Connectivity"
+    },
+    {
+      "startTime": 2040,
+      "title": "Market Analysis: Duopoly and Partnership Strategy"
+    },
+    {
+      "startTime": 2100,
+      "title": "NPV Analysis: The Blueprint for Success"
+    }
+  ]
+}
