@@ -54,7 +54,14 @@ Use TodoWrite to create initial todos:
    - **For series:** "Series Name: Ep. X, Topic" (e.g., "Cardiovascular Health: Ep. 1, Lifestyle Foundations")
    - **For standalone:** Descriptive title (e.g., "Stablecoin Market: Strategies and Pitfalls")
 
-**Create the appropriate directory structure:**
+**Check for existing episode directory:**
+
+If the episode directory already exists, check for a `research-prompt.md` file. If present:
+- Read it to understand the episode context and research objectives
+- Use it to inform the deep research prompts you'll create
+- DO NOT copy it as the deep research prompts - you'll create new ones in prompts.md
+
+**Create the appropriate directory structure (if needed):**
 
 **For series episodes:**
 ```bash
@@ -74,6 +81,8 @@ mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug
 
 This document tracks all prompts used during the creation of this episode for reproducibility and learning.
 
+**Note:** If a `research-prompt.md` exists in this directory, it contains the seed research ideas and objectives. The prompts below are the actual copy-paste-ready prompts used with deep research tools.
+
 ---
 
 ## Setup Phase
@@ -92,6 +101,11 @@ This document tracks all prompts used during the creation of this episode for re
 - **Grok:** Real-Time & Regional Sources
 - **ChatGPT Deep Research:** Industry & Technical Sources
 - **Gemini Deep Research:** Strategic & Policy Sources (when applicable)
+- **Claude Deep Research:** Comprehensive Synthesis (optional 5th tool)
+
+### Deep Research Prompts (Copy-Paste Ready)
+
+**IMPORTANT:** These prompts use single newlines only to prevent accidental partial submissions when pasting into Chrome-based tools.
 
 ---
 
@@ -139,6 +153,22 @@ This file contains raw research outputs from multiple tools for cross-validation
 **Focus:** Regulatory frameworks, policy analysis, strategic frameworks
 
 <!-- Paste Gemini results here -->
+
+---
+
+## Research from Claude Deep Research (Comprehensive Synthesis)
+
+**Date:** YYYY-MM-DD
+**Focus:** Multi-dimensional analysis across academic, industry, policy, and recent sources
+**Duration:** ~10-20 minutes, 500+ sources accessed
+
+### Main Research Output
+
+<!-- Paste main research output here (from first Copy) -->
+
+### Top Sources
+
+<!-- Paste top sources list here (from second Copy after "list the top sources") -->
 
 ---
 
@@ -239,6 +269,7 @@ For: Claude Opus 4.5 Final Synthesis
 - Grok (Real-Time & Regional)
 - ChatGPT Deep Research (Industry & Technical)
 - Gemini Deep Research (Strategic & Policy) [if used]
+- Claude Deep Research (Comprehensive Synthesis) [if used]
 
 ## Verified Sources by Tier
 
@@ -273,31 +304,27 @@ Mark "Conduct parallel deep research" as in_progress.
 
 **Goal:** Comprehensive, verified, organized source material with breadth of coverage.
 
+**Note on seed research prompts:** If a `research-prompt.md` file exists in the episode directory, treat it as context and input material - but do NOT use it directly as the deep research prompts. You must create NEW, distinct prompts optimized for each tool following the guidelines below.
+
 **Help user craft differentiated research prompts for each tool:**
 
 These prompts are intentionally concise - trust each tool to search broadly and use its natural strengths.
+
+**IMPORTANT FORMATTING:** Remove all double newlines from prompts before saving to prompts.md. Single newlines only. This prevents accidental partial submissions when copy-pasting into Chrome-based tools.
 
 #### **Perplexity - Academic & Official Sources**
 
 ```
 Research [TOPIC].
-
-Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official
-government/regulatory sources.
-
-Provide comprehensive findings with full citations, sample sizes, methodological
-details, and source URLs.
+Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
+Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
 ```
 
 **Example for "Solomon Islands Telecom Market":**
 ```
 Research Solomon Islands telecommunications market structure and competitive dynamics.
-
-Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official
-government/regulatory sources.
-
-Provide comprehensive findings with full citations, sample sizes, methodological
-details, and source URLs.
+Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
+Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
 ```
 
 ---
@@ -306,20 +333,14 @@ details, and source URLs.
 
 ```
 Research [TOPIC].
-
-Focus on recent developments (last 12 months), regional Pacific news sources,
-local perspectives, and relevant discussions on X/Twitter from industry experts.
-
+Focus on recent developments (last 12 months), regional Pacific news sources, local perspectives, and relevant discussions on X/Twitter from industry experts.
 Provide findings with source links, publication dates, and credibility indicators.
 ```
 
 **Example for "Solomon Islands Telecom Market":**
 ```
 Research Solomon Islands telecommunications market structure and competitive dynamics.
-
-Focus on recent developments (last 12 months), regional Pacific news sources,
-local perspectives, and relevant discussions on X/Twitter from industry experts.
-
+Focus on recent developments (last 12 months), regional Pacific news sources, local perspectives, and relevant discussions on X/Twitter from industry experts.
 Provide findings with source links, publication dates, and credibility indicators.
 ```
 
@@ -329,23 +350,15 @@ Provide findings with source links, publication dates, and credibility indicator
 
 ```
 Research [TOPIC].
-
-Focus on industry analyst reports, market research, technical documentation,
-case studies, and financial/business analysis.
-
-Provide comprehensive findings with citations, data sources, and comparative analysis
-where relevant.
+Focus on industry analyst reports, market research, technical documentation, case studies, and financial/business analysis.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
 ```
 
 **Example for "Solomon Islands Telecom Market":**
 ```
 Research Solomon Islands telecommunications market structure and competitive dynamics.
-
-Focus on industry analyst reports, market research, technical documentation,
-case studies, and financial/business analysis.
-
-Provide comprehensive findings with citations, data sources, and comparative analysis
-where relevant.
+Focus on industry analyst reports, market research, technical documentation, case studies, and financial/business analysis.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
 ```
 
 ---
@@ -354,20 +367,14 @@ where relevant.
 
 ```
 Research [TOPIC].
-
-Focus on regulatory frameworks, legislation, government policy documents,
-strategic plans, and comparative policy analysis.
-
+Focus on regulatory frameworks, legislation, government policy documents, strategic plans, and comparative policy analysis.
 Provide findings with official source citations, effective dates, and policy context.
 ```
 
 **Example for "Solomon Islands Telecom Market":**
 ```
 Research Solomon Islands telecommunications market structure and competitive dynamics.
-
-Focus on regulatory frameworks, legislation, government policy documents,
-strategic plans, and comparative policy analysis.
-
+Focus on regulatory frameworks, legislation, government policy documents, strategic plans, and comparative policy analysis.
 Provide findings with official source citations, effective dates, and policy context.
 ```
 
@@ -377,28 +384,22 @@ Provide findings with official source citations, effective dates, and policy con
 
 ```
 Research [TOPIC].
-
-Conduct comprehensive research across academic, industry, policy, and recent
-sources to provide multi-dimensional analysis.
-
-Prioritize authoritative sources, distinguish correlation from causation, note
-methodological limitations, and cite extensively.
+Conduct comprehensive research across academic, industry, policy, and recent sources to provide multi-dimensional analysis.
+Prioritize authoritative sources, distinguish correlation from causation, note methodological limitations, and cite extensively.
 ```
 
 **Example for "Solomon Islands Telecom Market":**
 ```
 Research Solomon Islands telecommunications market structure and competitive dynamics.
-
-Conduct comprehensive research across academic, industry, policy, and recent
-sources to provide multi-dimensional analysis.
-
-Prioritize authoritative sources, distinguish correlation from causation, note
-methodological limitations, and cite extensively.
+Conduct comprehensive research across academic, industry, policy, and recent sources to provide multi-dimensional analysis.
+Prioritize authoritative sources, distinguish correlation from causation, note methodological limitations, and cite extensively.
 ```
 
 **Save all prompts to prompts.md and inform user:**
 
-"I've created 4-5 concise research prompts optimized for each tool's strengths.
+"I've created 4-5 concise research prompts specifically optimized for each deep research tool's strengths.
+
+**IMPORTANT:** These are distinct, copy-paste-ready prompts (3 lines each, single newlines only) - NOT the seed research-prompt.md if one exists. The prompts below are formatted to prevent accidental partial submissions when pasting into Chrome.
 
 **Run these in parallel:**
 - **Perplexity** → Academic studies, meta-analyses, official sources
@@ -407,9 +408,170 @@ methodological limitations, and cite extensively.
 - **Gemini Deep Research** → Regulatory frameworks, policy analysis (if applicable)
 - **Claude Research** → Comprehensive synthesis (optional 5th source)
 
-Each prompt is 3-4 lines - they trust the tool to search broadly and organize findings naturally.
+---
 
-**Copy the prompts from `prompts.md` and run them now.** When all research completes, paste each tool's full output into the corresponding section of `research-results.md`, then let me know and I'll begin cross-validation."
+**I'll now attempt to automate submission using Chrome DevTools.** For each tool, I'll:
+1. Navigate to the new chat page
+2. Enable deep research mode (if applicable)
+3. Submit the prompt
+
+**Special handling for Claude Research:**
+- Fully automated with 20-minute polling
+- Automatically copies main output + sources list
+- You'll paste both outputs into research-results.md when ready
+
+**For other tools:**
+- If automation fails, manually copy prompts from `prompts.md`
+- When research completes, paste outputs into corresponding sections of `research-results.md`
+
+When all research is complete and pasted into `research-results.md`, let me know and I'll begin cross-validation."
+
+---
+
+### Chrome Automation for Each Tool
+
+**For each research tool, attempt automation in this order:**
+
+#### 1. **Perplexity API (sonar-deep-research)**
+
+**Use the `perplexity-deep-research` skill for API-based automation:**
+
+```
+Invoke the perplexity-deep-research skill with the Perplexity prompt from prompts.md.
+
+The skill will:
+1. Verify PERPLEXITY_API_KEY exists in .env file
+2. Create Python script for API call
+3. Submit to sonar-deep-research model with reasoning_effort=high
+4. Wait 30-120 seconds for completion
+5. Extract and format research report with citations
+6. Output marked research ready to paste into research-results.md
+
+Expected time: 30-120 seconds (much faster than browser-based tools)
+```
+
+**Fallback:** If API automation fails, inform user to manually:
+- Go to https://www.perplexity.ai/
+- Enable Pro Search
+- Paste prompt from prompts.md
+- Copy output to research-results.md
+
+**Note:** API requires PERPLEXITY_API_KEY in .env. Get key at https://www.perplexity.ai/settings/api
+
+---
+
+#### 2. **Grok (https://x.com/i/grok)**
+```
+1. List Chrome pages to check if Grok is already open
+2. If not open, navigate to: https://x.com/i/grok
+3. Take snapshot to identify UI elements
+4. Look for deep research mode toggle (if available) and enable it
+5. Find the main textarea/input element
+6. Fill with the Grok prompt from prompts.md
+7. Submit the prompt
+8. Inform user that Grok research is running
+9. Open in a new tab/page if multiple tools need to run in parallel
+```
+
+**Fallback:** If automation fails, inform user to manually:
+- Go to https://x.com/i/grok
+- Enable any deep research features
+- Paste prompt from prompts.md
+
+---
+
+#### 3. **ChatGPT Deep Research (https://chatgpt.com/)**
+```
+1. List Chrome pages to check if ChatGPT is already open
+2. If not open, navigate to: https://chatgpt.com/
+3. Take snapshot to identify UI elements
+4. Look for model selector and select a model with deep research capabilities
+5. Look for "Deep Research" mode toggle and enable it
+6. Find the main textarea/input element
+7. Fill with the ChatGPT prompt from prompts.md
+8. Submit the prompt
+9. Inform user that ChatGPT research is running
+10. Open in a new tab/page if multiple tools need to run in parallel
+```
+
+**Fallback:** If automation fails, inform user to manually:
+- Go to https://chatgpt.com/
+- Select model with Deep Research capability
+- Enable Deep Research mode
+- Paste prompt from prompts.md
+
+---
+
+#### 4. **Gemini Deep Research (https://gemini.google.com/)**
+
+**Use the `gemini-deep-research` skill to automate this:**
+
+```
+Invoke the gemini-deep-research skill with the Gemini prompt from prompts.md.
+
+The skill will:
+1. Select or navigate to Gemini page
+2. Switch to Fast mode (required for Deep Research)
+3. Enable Deep Research from Tools menu
+4. Fill and submit the prompt
+5. Wait for research plan generation
+6. Click "Start research" to begin
+7. Confirm research is running
+
+If automation succeeds: Inform user "Gemini Deep Research running, 3-5 minutes"
+If automation fails: Provide manual fallback instructions from the skill
+```
+
+**Fallback (if skill automation fails):**
+- Go to https://gemini.google.com/
+- Ensure "Fast" mode (not "Thinking")
+- Tools → Deep Research
+- Paste prompt from prompts.md
+- Review plan → Click "Start research"
+
+---
+
+#### 5. **Claude Research (https://claude.ai/new)** (Optional)
+
+**Use the `claude-deep-research` skill to automate this:**
+
+```
+Invoke the claude-deep-research skill with the Claude prompt from prompts.md.
+
+The skill will:
+1. Navigate to or select Claude.ai page
+2. Enable Research mode from tools menu
+3. Fill and submit the research prompt
+4. Wait 20 minutes before first completion check
+5. Poll every 2 minutes if needed (max 5 attempts = 10 more minutes)
+6. Copy main research output when complete
+7. Submit followup prompt: "list the top sources"
+8. Wait 1 minute for sources response
+9. Copy sources list
+10. Inform user both outputs are ready to paste into research-results.md
+
+Expected time: 10-20 minutes (20 min wait + up to 10 min polling)
+```
+
+**Fallback (if skill automation fails):**
+- Go to https://claude.ai/new
+- Enable Research mode from tools menu
+- Paste prompt from prompts.md
+- Wait for research to complete (10-20 minutes, 500+ sources)
+- Click Copy button for main output
+- Send followup: "list the top sources"
+- Click Copy button for sources
+- Paste both into research-results.md
+
+---
+
+**After attempting automation for all tools:**
+- Inform user which tools were successfully automated
+- For Gemini: Use the `gemini-deep-research` skill for complete automation including the two-step confirmation process
+- For Claude: Fully automated - waits 20 min, then polls every 2 min if needed, automatically copies main output + sources
+- Provide manual instructions for any failed automations
+- Remind user to paste completed research into research-results.md when done
+- Note: Gemini takes 3-5 minutes; Claude takes 10-20 minutes (20 min wait + polling up to 10 more min)
 
 **Update todos:**
 ```
@@ -945,10 +1107,12 @@ All episode workflow tasks complete!
 ✅ **Contradictions surfaced** - Conflicting sources explicitly noted
 
 ### **Improved Workflow:**
+✅ **Chrome automation** - Automated submission to research tools (Perplexity, Grok, ChatGPT, Gemini, Claude)
 ✅ **Parallel research** - Multiple tools run simultaneously
 ✅ **Reduced redundancy** - Each tool has differentiated focus
 ✅ **Faster synthesis** - Organized briefing easier to work with than 3-5 raw narratives
 ✅ **Quality gates** - Validation step before narrative creation
+✅ **Single-newline prompts** - Prevents accidental partial submissions in Chrome
 
 ### **Better Documentation:**
 ✅ **All prompts tracked** - Complete reproducibility
@@ -959,13 +1123,16 @@ All episode workflow tasks complete!
 ## Role Division
 
 **User handles:**
-- Running parallel research in 4 tools (Perplexity, Grok, ChatGPT Deep Research, Gemini Deep Research)
 - Running Opus 4.5 synthesis
 - NotebookLM audio generation
+- Manual research submission if Chrome automation fails
 
 **You handle:**
 - File organization and directory setup
-- Creating differentiated research prompts
+- Reading seed research-prompt.md if present
+- Creating differentiated research prompts (3 lines, single newlines)
+- **Attempting Chrome automation** to submit prompts to Perplexity, Grok, ChatGPT, Gemini, Claude
+- **Claude automation includes:** Wait 20 min, poll every 2 min if needed, copy main output + sources automatically
 - Cross-validation matrix creation
 - Master research briefing compilation
 - Providing Opus 4.5 synthesis prompt
@@ -984,19 +1151,22 @@ When user wants to create a new episode with V2 workflow:
 
 1. **Create todo list** with TodoWrite tool
 2. Ask for episode date, slug, and title
-3. **Create all episode files** including the new research-briefing.md
-4. **Provide differentiated research prompts** for parallel execution
-5. User runs research in 4 tools simultaneously
-6. User pastes results into research-results.md
-7. **Create cross-validation matrix** when research is complete
-8. **Compile master research briefing** organized by topic
-9. **Provide Opus 4.5 prompt** for narrative synthesis
-10. User runs Opus 4.5 and saves output as report.md
-11. **Launch cover art subagent** in parallel with NotebookLM
-12. **Provide NotebookLM prompt** for audio generation
-13. User generates audio in NotebookLM
-14. **Invoke audio processing subagent** when user returns with audio
-15. Guide through publishing phase
-16. Git commit and push
+3. **Check for existing research-prompt.md** (seed document) and read if present
+4. **Create all episode files** including the new research-briefing.md
+5. **Create differentiated deep research prompts** (3 lines each, single newlines) for parallel execution - distinct from any seed research-prompt.md
+6. **Attempt Chrome automation** to submit prompts to each research tool (Perplexity, Grok, ChatGPT, Gemini, Claude)
+7. **Claude automation:** Wait 20 min, poll every 2 min if needed, automatically copy main output + sources
+8. User manually submits prompts if automation fails for any tools (except Claude)
+9. User pastes results into research-results.md when research completes (Claude outputs already copied)
+10. **Create cross-validation matrix** when research is complete
+11. **Compile master research briefing** organized by topic
+12. **Provide Opus 4.5 prompt** for narrative synthesis
+13. User runs Opus 4.5 and saves output as report.md
+14. **Launch cover art subagent** in parallel with NotebookLM
+15. **Provide NotebookLM prompt** for audio generation
+16. User generates audio in NotebookLM
+17. **Invoke audio processing subagent** when user returns with audio
+18. Guide through publishing phase
+19. Git commit and push
 
 **Key:** Update TodoWrite at every phase transition. The V2 workflow has more steps but produces higher quality, better verified research.
