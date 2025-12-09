@@ -481,24 +481,34 @@ Expected time: 30-120 seconds (much faster than browser-based tools)
 ---
 
 #### 3. **ChatGPT Deep Research (https://chatgpt.com/)**
+
+**Use the `chatgpt-deep-research` skill to automate this:**
+
 ```
-1. List Chrome pages to check if ChatGPT is already open
-2. If not open, navigate to: https://chatgpt.com/
-3. Take snapshot to identify UI elements
-4. Look for model selector and select a model with deep research capabilities
-5. Look for "Deep Research" mode toggle and enable it
-6. Find the main textarea/input element
-7. Fill with the ChatGPT prompt from prompts.md
-8. Submit the prompt
-9. Inform user that ChatGPT research is running
-10. Open in a new tab/page if multiple tools need to run in parallel
+Invoke the chatgpt-deep-research skill with the ChatGPT prompt from prompts.md.
+
+The skill will:
+1. Navigate to or select ChatGPT page
+2. Ensure Research mode is enabled
+3. Fill and submit the research prompt
+4. Handle potential clarifying questions (may require manual user response)
+5. Wait 5 minutes before first completion check
+6. Poll every 2 minutes if needed (max 5 attempts = 10 more minutes)
+7. Copy research output when complete
+8. Inform user output is ready to paste into research-results.md
+
+Expected time: 5-10 minutes (5 min wait + up to 10 min polling)
+Note: May require manual intervention if ChatGPT asks clarifying questions
 ```
 
-**Fallback:** If automation fails, inform user to manually:
+**Fallback (if skill automation fails):**
 - Go to https://chatgpt.com/
-- Select model with Deep Research capability
-- Enable Deep Research mode
+- Select research-capable model (o1, o1-mini, or Research)
+- Ensure Research mode is enabled
 - Paste prompt from prompts.md
+- Answer any clarifying questions
+- Wait 5-10 minutes for completion
+- Copy research output to research-results.md
 
 ---
 
