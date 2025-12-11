@@ -36,7 +36,7 @@ Use TodoWrite to create initial todos:
 - Conduct parallel deep research (status: pending)
 - Cross-validate research findings (status: pending)
 - Create master research briefing (status: pending)
-- Synthesize report with Opus 4.5 (status: pending)
+- Synthesize narrative report (status: pending)
 - Generate cover art (status: pending)
 - Obtain audio from NotebookLM (status: pending)
 - Process audio (transcribe, chapters) (status: pending)
@@ -706,90 +706,41 @@ Mark "Synthesize report with Opus 4.5" as in_progress.
 
 ---
 
-### 5. Opus 4.5 Synthesis Phase
+### 5. Report Synthesis Phase
 
-**USER ACTION REQUIRED:** The user must now use Claude Opus 4.5 (via claude.com or API) to create the final report.
+**Invoke the podcast-synthesis-writer agent to create report.md:**
 
-**Provide the user with this prompt for Opus 4.5:**
+Use the Task tool with subagent_type='podcast-synthesis-writer':
 
 ```
-NARRATIVE SYNTHESIS: [Episode Title]
+Transform the research materials into a narrative podcast report.
 
-Create a comprehensive research report for a podcast episode based on the verified
-research briefing below.
+Episode directory: podcast/episodes/YYYY-MM-DD-slug/
+Episode title: [Episode Title]
 
-[Paste the complete research-briefing.md here]
+The podcast-synthesis-writer agent will:
+1. Read research-briefing.md and research-results.md
+2. Transform organized research into engaging narrative report
+3. Apply evidence standards and podcast storytelling principles
+4. Create report.md with proper citations and source hierarchy
+5. Verify all quality requirements are met
 
-**Your role:** Transform this organized research material into an engaging, podcast-ready
-narrative report.
-
-**Requirements:**
-
-1. **Narrative Structure:**
-   - Lead with the most compelling/surprising elements
-   - Create clear section headers that flow naturally
-   - Build arguments from evidence, not opinions
-   - Use specific examples, case studies, and real-world events
-   - Highlight contrasts and comparisons that illustrate key points
-
-2. **Evidence Standards:**
-   - Every factual claim must reference a specific source from the briefing
-   - When citing statistics, note sample size and study type
-   - Distinguish correlation from causation explicitly
-   - Note research quality (meta-analysis > RCT > observational)
-   - When only one source exists, state: "According to [Source], though this wasn't
-     corroborated across other sources..."
-   - When sources conflict, present both views and explain possible reasons
-
-3. **Storytelling for Podcast:**
-   - Include human elements: decisions made, reasoning, outcomes
-   - Make numbers meaningful through context and comparisons
-   - Use concrete examples from the research (never fabricate)
-   - Translate findings to practical implications
-   - Note areas of uncertainty and scientific debate
-
-4. **Accessibility:**
-   - Define technical terms on first use
-   - Explain mechanisms, not just outcomes
-   - Use analogies when helpful (but only evidence-based ones)
-   - Keep sentences clear and conversational
-
-**Deliverable Format:**
-- Markdown document with clear section headers
-- Inline citations throughout
-- Comparison tables where useful
-- Key takeaways or implications sections
-- "Sources" section at end with full citations organized by tier
-
-**DO NOT:**
-- Make claims without source citations
-- Ignore contradictory findings
-- Add speculative content beyond the research
-- Use academic jargon without explanation
-- Create examples not grounded in the research
-
-**DO:**
-- Explain what findings mean and why they matter
-- Connect individual findings to broader patterns
-- Acknowledge limitations and gaps
-- Make the research come alive through storytelling
-- Maintain scientific rigor while being engaging
+Required files must exist:
+- research-briefing.md (master briefing with verified findings)
+- research-results.md (raw research outputs for additional context)
 ```
 
-**Add this prompt to prompts.md under "Opus 4.5 Synthesis Phase"**
-
-**Inform user:**
-"I've created the master research briefing in `research-briefing.md`. Please use Claude Opus 4.5 to synthesize this into the final report:
-
-1. Go to claude.com or use the API with model `claude-opus-4.5-20251101`
-2. Copy the Opus 4.5 prompt from `prompts.md` (just added)
-3. Paste the complete `research-briefing.md` content where indicated
-4. Save Opus 4.5's output as `report.md` in the episode directory
-5. Return here when complete and I'll proceed with cover art and NotebookLM"
+**The agent handles all synthesis requirements:**
+- Narrative architecture and storytelling
+- Evidence standards and citation format
+- Podcast-optimized writing
+- Accessibility without oversimplification
+- Source organization and verification
+- Quality checklist validation
 
 **Update todos:**
 ```
-Mark "Synthesize report with Opus 4.5" as completed when user provides report.
+Mark "Synthesize narrative report" as completed when agent finishes.
 Mark "Generate cover art" as in_progress.
 Mark "Obtain audio from NotebookLM" as in_progress (user's parallel task).
 ```
@@ -1133,7 +1084,6 @@ All episode workflow tasks complete!
 ## Role Division
 
 **User handles:**
-- Running Opus 4.5 synthesis
 - NotebookLM audio generation
 - Manual research submission if Chrome automation fails
 
@@ -1145,7 +1095,7 @@ All episode workflow tasks complete!
 - **Claude automation includes:** Wait 20 min, poll every 2 min if needed, copy main output + sources automatically
 - Cross-validation matrix creation
 - Master research briefing compilation
-- Providing Opus 4.5 synthesis prompt
+- **Invoking podcast-synthesis-writer agent** to create report.md from research materials
 - Audio conversion (ffmpeg)
 - Cover art generation (Gemini via OpenRouter) and branding
 - Transcription (local Whisper)
@@ -1170,13 +1120,12 @@ When user wants to create a new episode with V2 workflow:
 9. User pastes results into research-results.md when research completes (Claude outputs already copied)
 10. **Create cross-validation matrix** when research is complete
 11. **Compile master research briefing** organized by topic
-12. **Provide Opus 4.5 prompt** for narrative synthesis
-13. User runs Opus 4.5 and saves output as report.md
-14. **Launch cover art subagent** in parallel with NotebookLM
-15. **Provide NotebookLM prompt** for audio generation
-16. User generates audio in NotebookLM
-17. **Invoke audio processing subagent** when user returns with audio
-18. Guide through publishing phase
-19. Git commit and push
+12. **Invoke podcast-synthesis-writer agent** to transform research into narrative report.md
+13. **Launch cover art subagent** in parallel with NotebookLM
+14. **Provide NotebookLM prompt** for audio generation
+15. User generates audio in NotebookLM
+16. **Invoke audio processing subagent** when user returns with audio
+17. Guide through publishing phase
+18. Git commit and push
 
 **Key:** Update TodoWrite at every phase transition. The V2 workflow has more steps but produces higher quality, better verified research.
