@@ -65,6 +65,63 @@ This is Episode 1 of a 4-part series on active recovery. The focus is on foundat
 
 ---
 
+## Deep Research Phase
+
+### Tool Configuration
+- **Perplexity:** Academic & Official Sources (API-based via sonar-deep-research)
+- **Grok:** Real-Time & Regional Sources
+- **ChatGPT Deep Research:** Industry & Technical Sources
+- **Gemini Deep Research:** Strategic & Policy Sources (not applicable for health/fitness)
+- **Claude Deep Research:** Comprehensive Synthesis (optional 5th tool)
+
+### Deep Research Prompts (Copy-Paste Ready)
+
+**IMPORTANT:** These prompts use single newlines only to prevent accidental partial submissions when pasting into Chrome-based tools.
+
+---
+
+#### Perplexity - Academic & Official Sources
+
+```
+Research foundational principles and essential methods of active recovery for fit 40-year-old males with established exercise routines.
+Focus on peer-reviewed studies, meta-analyses, systematic reviews on active vs passive recovery effects, compression therapy efficacy, post-workout nutrition timing, circadian alignment, and injury prevention.
+Provide comprehensive findings with full citations, sample sizes, effect sizes, methodological details, and source URLs.
+```
+
+---
+
+#### Grok - Real-Time & Regional Sources
+
+```
+Research foundational principles and essential methods of active recovery for fit 40-year-old males with established exercise routines.
+Focus on recent developments (last 12 months) in recovery science, practitioner perspectives from sports scientists and trainers, and relevant discussions on X/Twitter from exercise physiology experts.
+Provide findings with source links, publication dates, and credibility indicators.
+```
+
+---
+
+#### ChatGPT Deep Research - Industry & Technical Sources
+
+```
+Research foundational principles and essential methods of active recovery for fit 40-year-old males with established exercise routines.
+Focus on industry research on recovery modalities, sports performance data, case studies from elite athletes, technical analysis of compression garments, and nutrition timing protocols.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
+```
+
+---
+
+#### Claude Research - Comprehensive Synthesis (Optional)
+
+```
+Research foundational principles and essential methods of active recovery for fit 40-year-old males with established exercise routines, focusing on active vs passive recovery effects (lactate clearance, DOMS, performance), compression therapy efficacy, post-workout nutrition timing, circadian alignment, and injury prevention.
+Conduct comprehensive research across academic, industry, and recent sources to provide multi-dimensional analysis.
+Prioritize authoritative sources, distinguish correlation from causation, report effect sizes, note methodological limitations, and cite extensively.
+```
+
+**Date Deep Research Prompts Created:** 2025-12-10
+
+---
+
 ## Audio Generation Phase
 
 ### NotebookLM Audio Overview Prompt
