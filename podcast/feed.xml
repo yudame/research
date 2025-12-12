@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sun, 08 Dec 2025 22:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -26,6 +26,28 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 16: Solomon Islands Telecom Series - Episode 4 -->
+    <item>
+      <title>Solomon Islands Telecom Series: Ep. 4, Mobile Money Strategy</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/cover.png"/>
+      <description>In Kenya, mobile money lifted 194,000 households out of poverty. In the Philippines, GCash doubled financial inclusion in four years. Yet in the Solomon Islands, these proven formulas face an uncomfortable reality: the market may be too small to work. This episode examines the "viability paradox" - how M-SELEN and IumiCash compete in a market requiring 50x current transaction volumes to break even, why 8,700+ seasonal workers pay $2.8-5M annually in excess remittance fees, and what mobile money success looks like when conventional economics don't apply. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md</description>
+      <content:encoded><![CDATA[<p>In Kenya, mobile money lifted 194,000 households out of poverty. In the Philippines, GCash doubled financial inclusion in four years. Yet in the Solomon Islands, these proven formulas face an uncomfortable reality: the market may be too small to work. This episode examines the "viability paradox" - how M-SELEN and IumiCash compete in a market requiring 50x current transaction volumes to break even, why 8,700+ seasonal workers pay $2.8-5M annually in excess remittance fees, and what mobile money success looks like when conventional economics don't apply.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/gsma-state-of-industry-report-on-mobile-money-2024/">GSMA State of the Industry Report 2024-2025</a> - Supply-side survey of 119 MMPs from 67 countries</li><li><a href="https://www.worldbank.org/en/publication/globalfindex">World Bank Global Findex 2025</a> - Nationally representative surveys in 125+ countries</li><li><a href="https://www.cbsi.com.sb/">CBSI Payment Systems Act 2022</a> - Legal framework for mobile money regulation</li><li><a href="https://www.science.org/doi/10.1126/science.aah5309">Jack & Suri (2016) M-Pesa Kenya Panel Study</a> - Longitudinal data on mobile money welfare effects</li><li><a href="https://www.uncdf.org/pacific">UNCDF Pacific Mobile Money Analysis</a> - Pacific Islands market viability research</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3"
+                 length="38318634"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>39:54</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>4</itunes:episode>
+      <itunes:keywords>mobile money, financial inclusion, M-SELEN, IumiCash, Solomon Islands, CBSI, agent networks, remittances, PALM scheme, M-Pesa, GCash, fintech regulation, Pacific Islands, viability paradox, transaction economics</itunes:keywords>
+      <research:series>Solomon Islands Telecom Series</research:series>
+    </item>
 
     <!-- Episode 15: Solomon Islands Telecom Series - Episode 3 -->
     <item>

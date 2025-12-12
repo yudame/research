@@ -1,0 +1,72 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction: The Viability Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=360000
+title=The 50X Gap: Global Benchmarks vs Reality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=360000
+END=600000
+title=The Remittance Prize: $56M Opportunity
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=600000
+END=780000
+title=M-Sellon Strategy: Telco-Led Integration
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=780000
+END=960000
+title=Yumi Cash: Price Disruption & Rural Innovation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1200000
+title=Agent Network Economics: The Brutal Math
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1440000
+title=Viability Thresholds: Transaction Requirements
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1440000
+END=1680000
+title=Liquidity Crisis: Float Management Solutions
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1920000
+title=Shared Infrastructure: Uganda's ABC Model
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2160000
+title=CBSI Regulation: Hybrid Cautious Innovation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2160000
+END=2340000
+title=Global Lessons: M-Pesa, G-Cash, Jazz Cash
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2340000
+END=2394830
+title=Conclusion: Redefining Success
