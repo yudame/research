@@ -5,103 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Episode 1 Transcript - Active Recovery</title>
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #0a0a0a;
-            --text-secondary: #666666;
-            --border: #e5e5e5;
-            --accent: #f5d563;
-        }
         body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: var(--text);
-            background: var(--bg);
-            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 1rem;
             margin: 0;
-        }
-        .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
         }
         .back-link {
             display: inline-block;
-            margin-bottom: 2rem;
-            padding: 0.75rem 1.5rem;
-            background: #fafafa;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            color: #666;
             text-decoration: none;
-            transition: all 0.3s;
+            font-size: 0.9rem;
         }
         .back-link:hover {
-            background: var(--text);
-            color: var(--bg);
-            border-color: var(--text);
+            color: #000;
         }
         h1 {
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 1rem;
-        }
-        .segment {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #fafafa;
-            border-left: 3px solid var(--border);
-            transition: all 0.3s;
-        }
-        .segment:hover {
-            border-left-color: var(--accent);
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        .timestamp {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            font-family: 'Monaco', 'Courier New', monospace;
-        }
-        .text {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 0 0 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
         }
         .metadata {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #fafafa;
-            border: 1px solid var(--border);
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: #f8f8f8;
+            border-left: 3px solid #ddd;
         }
-        .metadata-grid {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 0.5rem 1rem;
+        .segment {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
         }
-        .metadata-label {
-            font-weight: 500;
-            color: var(--text);
+        .timestamp {
+            display: inline-block;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #999;
+            min-width: 90px;
+            margin-right: 0.5rem;
+        }
+        .text {
+            display: inline;
         }
         .loading {
             text-align: center;
-            padding: 3rem;
-            color: var(--text-secondary);
+            padding: 2rem;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Active Recovery Series</a>
-        <h1>Episode 1: Foundations of Active Recovery - Transcript</h1>
-        <div id="content" class="loading">Loading transcript...</div>
-    </div>
+    <a href="../index.html" class="back-link">← Back to Active Recovery Series</a>
+    <h1>Episode 1: Foundations of Active Recovery - Transcript</h1>
+    <div id="content" class="loading">Loading transcript...</div>
 
     <script>
         function formatTime(seconds) {
@@ -121,33 +85,32 @@
 
                     // Display metadata
                     let html = '<div class="metadata">';
-                    html += '<div class="metadata-grid">';
-                    html += `<span class="metadata-label">Duration:</span><span>${formatTime(data.duration)}</span>`;
-                    html += `<span class="metadata-label">Language:</span><span>${data.language}</span>`;
-                    html += `<span class="metadata-label">Segments:</span><span>${data.segments.length}</span>`;
-                    html += '</div></div>';
+                    html += `Duration: ${formatTime(data.duration)} | `;
+                    html += `Language: ${data.language} | `;
+                    html += `Segments: ${data.segments.length}`;
+                    html += '</div>';
 
-                    // Display segments
+                    // Display segments - compact format
                     data.segments.forEach((segment, index) => {
                         html += '<div class="segment">';
-                        html += `<div class="timestamp">[${formatTime(segment.start)} - ${formatTime(segment.end)}]</div>`;
-                        html += `<div class="text">${segment.text.trim()}</div>`;
+                        html += `<span class="timestamp">${formatTime(segment.start)}</span>`;
+                        html += `<span class="text">${segment.text.trim()}</span>`;
                         html += '</div>';
                     });
 
                     container.innerHTML = html;
                 } catch (error) {
                     document.getElementById('content').innerHTML =
-                        '<div class="segment"><p>Error parsing transcript: ' + error.message + '</p></div>';
+                        '<p>Error parsing transcript: ' + error.message + '</p>';
                 }
             } else {
                 document.getElementById('content').innerHTML =
-                    '<div class="segment"><p>Error loading transcript (status: ' + xhr.status + ')</p></div>';
+                    '<p>Error loading transcript (status: ' + xhr.status + ')</p>';
             }
         };
         xhr.onerror = function() {
             document.getElementById('content').innerHTML =
-                '<div class="segment"><p>Error loading transcript. If viewing locally, try opening via: <code>python3 -m http.server 8000</code> and navigate to <code>http://localhost:8000</code></p></div>';
+                '<p>Error loading transcript. If viewing locally, try: <code>python3 -m http.server 8000</code></p>';
         };
         xhr.send();
     </script>
