@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=120000
+title=Introduction: The Break-Even Challenge
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120000
+END=420000
+title=The Brutal Economics: 48-63% Market Share Required
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=720000
+title=Capital Requirements and Cost Structure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=720000
+END=1020000
+title=Infrastructure Transformation: Coral Sea Cable
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1020000
+END=1260000
+title=The Starlink Game Changer
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1500000
+title=SINBIP: 161 Public Towers and Access Challenges
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1680000
+title=Regulatory Framework and Licensing Pathways
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1980000
+title=The Spectrum Battleground: Low-Band vs High-Band
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1980000
+END=2220000
+title=Competitive Analysis: Our Telekom and B-Mobile
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2220000
+END=2460000
+title=Dual-SIM Strategy: Overcoming Number Portability Barrier
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2460000
+END=2700000
+title=Partnership Leverage: SATSOL and IumiCash
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2700000
+END=2940000
+title=Pacific Case Studies: DigiCell Success and Limitations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2940000
+END=3174160
+title=Timeline, Uncertainties, and Strategic Implications
