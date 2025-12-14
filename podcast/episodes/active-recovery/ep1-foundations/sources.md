@@ -1,11 +1,8 @@
-# Sources for Active Recovery: Ep. 1, Foundations
+# Sources for Active Recovery: Ep. 1, Foundations of Active Recovery
 
 ## Research Tools Used
-- Perplexity (Academic & Official)
-- Grok (Real-Time & Regional)
-- ChatGPT Deep Research (Industry & Technical)
-- Gemini Deep Research (Strategic & Policy) [if used]
-- Claude Deep Research (Comprehensive Synthesis) [if used]
+- Perplexity (Academic & Official) - Phase 1
+- [Other tools will be listed as used in Phase 3]
 
 ## Verified Sources by Tier
 
@@ -21,6 +18,6 @@
 ---
 
 ## Notes
-- Research compiled: TBD
+- Research compiled: 2025-12-12
 - Sources cross-validated across multiple tools
 - Conflicting sources noted in research-briefing.md

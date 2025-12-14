@@ -28,6 +28,8 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 
 ### 1. Setup Phase
 
+**IMPORTANT: Always use today's actual date (2025-12-12 or current date) for all timestamps. Never use placeholder dates like "YYYY-MM-DD" in created files.**
+
 **Create a todo list** to track progress through the workflow:
 
 ```
@@ -44,13 +46,17 @@ Use TodoWrite to create initial todos:
 - Update feed.xml and commit (status: pending)
 ```
 
-**Ask the user:**
-1. **Is this part of a series?**
-   - If YES: Ask for series name and episode number
-   - If NO: Create standalone episode
-2. What date should we use? (YYYY-MM-DD format) - Offer today's date or custom
-3. What's the episode topic/slug? (e.g., "lifestyle", "vo2-max", "supplementation")
-4. What's the episode title?
+**Determine episode details:**
+
+Use today's date (YYYY-MM-DD format) unless user specifies otherwise.
+
+**Only ask the user if missing or unclear:**
+1. **Series information** (if not provided or unclear from context)
+   - Series name and episode number for series episodes
+   - Or confirm it's a standalone episode
+2. **Episode slug** (if not provided or easily inferred from topic)
+   - e.g., "lifestyle", "vo2-max", "supplementation"
+3. **Episode title** (if not provided)
    - **For series:** "Series Name: Ep. X, Topic" (e.g., "Cardiovascular Health: Ep. 1, Lifestyle Foundations")
    - **For standalone:** Descriptive title (e.g., "Stablecoin Market: Strategies and Pitfalls")
 
@@ -75,6 +81,8 @@ mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug
 
 **Create all episode files:**
 
+**IMPORTANT:** Replace all `YYYY-MM-DD` placeholders with today's actual date in ISO format (e.g., 2025-12-12). Never use placeholder dates in created files.
+
 **prompts.md:**
 ```markdown
 # Prompts Used for Episode: [Episode Title]
@@ -88,7 +96,7 @@ This document tracks all prompts used during the creation of this episode for re
 ## Setup Phase
 
 **Episode Details:**
-- Date: YYYY-MM-DD
+- Date: [Today's date in YYYY-MM-DD format]
 - Slug: topic-slug
 - Title: [Episode Title]
 
@@ -122,7 +130,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Research from Perplexity (Academic & Official Sources)
 
-**Date:** YYYY-MM-DD
+**Date:** [Today's date in YYYY-MM-DD format]
 **Focus:** Peer-reviewed studies, meta-analyses, official statistics
 
 <!-- Paste Perplexity results here -->
@@ -131,7 +139,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Research from Grok (Real-Time & Regional Sources)
 
-**Date:** YYYY-MM-DD
+**Date:** [Today's date in YYYY-MM-DD format]
 **Focus:** Recent developments, industry news, practitioner perspectives
 
 <!-- Paste Grok results here -->
@@ -140,7 +148,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Research from ChatGPT Deep Research (Industry & Technical)
 
-**Date:** YYYY-MM-DD
+**Date:** [Today's date in YYYY-MM-DD format]
 **Focus:** Industry reports, technical documentation, case studies
 
 <!-- Paste ChatGPT results here -->
@@ -149,7 +157,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Research from Gemini Deep Research (Strategic & Policy)
 
-**Date:** YYYY-MM-DD
+**Date:** [Today's date in YYYY-MM-DD format]
 **Focus:** Regulatory frameworks, policy analysis, strategic frameworks
 
 <!-- Paste Gemini results here -->
@@ -158,7 +166,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Research from Claude Deep Research (Comprehensive Synthesis)
 
-**Date:** YYYY-MM-DD
+**Date:** [Today's date in YYYY-MM-DD format]
 **Focus:** Multi-dimensional analysis across academic, industry, policy, and recent sources
 **Duration:** ~10-20 minutes, 500+ sources accessed
 
@@ -174,7 +182,7 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ## Notes
 
-- Research conducted: YYYY-MM-DD
+- Research conducted: [Today's date in YYYY-MM-DD format]
 - Tools used: [List tools actually used]
 - All outputs saved for cross-validation and verification
 ```
@@ -183,8 +191,8 @@ This file contains raw research outputs from multiple tools for cross-validation
 ```markdown
 # Master Research Briefing: [Episode Title]
 
-Date: [Date]
-For: Claude Opus 4.5 Final Synthesis
+Date: [Today's date in YYYY-MM-DD format]
+For: podcast-synthesis-writer agent
 
 ---
 
@@ -285,7 +293,7 @@ For: Claude Opus 4.5 Final Synthesis
 ---
 
 ## Notes
-- Research compiled: YYYY-MM-DD
+- Research compiled: [Today's date in YYYY-MM-DD format]
 - Sources cross-validated across multiple tools
 - Conflicting sources noted in research-briefing.md
 ```
@@ -298,141 +306,320 @@ Mark "Conduct parallel deep research" as in_progress.
 
 ---
 
-### 2. Parallel Deep Research Phase
+### 2. Sequential Deep Research Phase
 
-**CRITICAL PRINCIPLE:** Research tools gather and organize source material. They DO NOT write the final narrative. Claude Opus 4.5 creates the actual report.
+**CRITICAL PRINCIPLE:** Research tools gather and organize source material. They DO NOT write the final narrative. The podcast-synthesis-writer agent creates the actual report.
 
-**Goal:** Comprehensive, verified, organized source material with breadth of coverage.
+**Goal:** Build research progressively - start with academic foundation, identify questions, then gather targeted perspectives.
 
-**Note on seed research prompts:** If a `research-prompt.md` file exists in the episode directory, treat it as context and input material - but do NOT use it directly as the deep research prompts. You must create NEW, distinct prompts optimized for each tool following the guidelines below.
+**Sequential Workflow:**
+1. **Phase 1:** Perplexity academic research (comprehensive foundation)
+2. **Phase 2:** Analyze results and identify questions to investigate
+3. **Phase 3:** Targeted followup research with other tools based on Phase 2 questions
 
-**Help user craft differentiated research prompts for each tool:**
+**Note on seed research prompts:** If a `research-prompt.md` file exists in the episode directory, treat it as context and input material - but do NOT use it directly as the deep research prompts. You must create NEW, distinct prompts optimized for the sequential workflow below.
 
-These prompts are intentionally concise - trust each tool to search broadly and use its natural strengths.
+#### **Phase 1: Perplexity - Academic Foundation**
 
-**IMPORTANT FORMATTING:** Remove all double newlines from prompts before saving to prompts.md. Single newlines only. This prevents accidental partial submissions when copy-pasting into Chrome-based tools.
-
-#### **Perplexity - Academic & Official Sources**
+Create a comprehensive academic research prompt with full methodology:
 
 ```
 Research [TOPIC].
-Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
-Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
+
+**Research methodology:**
+- Prioritize peer-reviewed studies, meta-analyses, systematic reviews, and authoritative sources
+- Distinguish between correlation and causation in findings
+- Report effect sizes and practical significance, not just statistical significance
+- Note the study populations and whether findings generalize to relevant demographics
+- Compare individual studies against meta-analyses and systematic reviews
+- Identify preliminary research vs. well-replicated findings
+- Note funding sources and potential conflicts of interest when relevant
+- Include contradictory findings and areas of scientific uncertainty
+- Cite specific studies, researchers, and sources throughout
+- Provide full source URLs for all citations
+
+**Output:** Comprehensive research report with extensive citations, sample sizes, methodological details, and source links.
 ```
 
-**Example for "Solomon Islands Telecom Market":**
+**Example for "early childhood educator burnout interventions":**
 ```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
-Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
+Research early childhood educator burnout interventions and their effectiveness.
+
+**Research methodology:**
+- Prioritize peer-reviewed studies, meta-analyses, systematic reviews, and authoritative sources
+- Distinguish between correlation and causation in findings
+- Report effect sizes and practical significance, not just statistical significance
+- Note the study populations and whether findings generalize to relevant demographics
+- Compare individual studies against meta-analyses and systematic reviews
+- Identify preliminary research vs. well-replicated findings
+- Note funding sources and potential conflicts of interest when relevant
+- Include contradictory findings and areas of scientific uncertainty
+- Cite specific studies, researchers, and sources throughout
+- Provide full source URLs for all citations
+
+**Output:** Comprehensive research report with extensive citations, sample sizes, methodological details, and source links.
 ```
 
 ---
 
-#### **Grok - Real-Time & Regional Sources**
+#### **Phase 2: Question Discovery & Gap Analysis**
 
+**After Perplexity research completes, analyze the results to identify questions we should investigate.**
+
+**Goal:** Think creatively about what questions we should be asking - don't assume we know the right questions or their answers.
+
+**Create a structured analysis in prompts.md:**
+
+```markdown
+## Phase 2: Question Discovery
+
+**After analyzing Perplexity's academic research, here are the questions we should investigate:**
+
+### What subtopics and themes emerged?
+- [List the major subtopics found in the research]
+- [Note which got extensive coverage vs. brief mentions]
+
+### What gaps exist in the academic literature?
+- [What hasn't been studied?]
+- [What populations or contexts are missing?]
+- [What time periods lack coverage?]
+
+### What recent developments aren't covered?
+- [What's happened in the last 12 months that academic research hasn't caught up with?]
+- [What emerging trends or events need investigation?]
+
+### What contradictions or uncertainties need more sources?
+- [Where did sources disagree?]
+- [What areas showed high uncertainty?]
+- [What requires additional perspectives to understand?]
+
+### What industry/implementation questions arose?
+- [How is this actually implemented in practice?]
+- [What do case studies and real-world examples show?]
+- [What are the business/economic considerations?]
+
+### What policy/regulatory angles need investigation?
+- [What regulations or policies apply?]
+- [How do different jurisdictions approach this?]
+- [What's the strategic/policy context?]
+
+### What practitioner perspectives are missing?
+- [What would people actually doing this work say?]
+- [What regional or local perspectives matter?]
+- [What's being discussed in professional communities?]
 ```
-Research [TOPIC].
-Focus on recent developments (last 12 months), regional Pacific news sources, local perspectives, and relevant discussions on X/Twitter from industry experts.
+
+**Use this analysis to create targeted, specific prompts for Phase 3 tools.**
+
+---
+
+#### **Phase 3: Targeted Followup Research**
+
+Based on Phase 2 question discovery, create specific prompts for each tool.
+
+**Grok - Recent Developments & Practitioner Perspectives**
+
+Template:
+```
+Research [TOPIC], focusing on these specific questions:
+
+**Recent Developments (last 12 months):**
+- [Specific question from Phase 2 about recent developments]
+- [Specific question about emerging trends]
+
+**Practitioner Perspectives:**
+- [Specific question about implementation]
+- [Specific question about professional community discussions]
+
+**Regional/Local Context:**
+- [Specific question about local perspectives if relevant]
+
+Focus on: Recent news, industry discussions on X/Twitter, practitioner insights, regional sources.
 Provide findings with source links, publication dates, and credibility indicators.
 ```
 
-**Example for "Solomon Islands Telecom Market":**
+**Example based on "early childhood educator burnout" Phase 2 analysis:**
 ```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Focus on recent developments (last 12 months), regional Pacific news sources, local perspectives, and relevant discussions on X/Twitter from industry experts.
+Research early childhood educator burnout, focusing on these specific questions:
+
+**Recent Developments (last 12 months):**
+- What new policies or programs have been implemented to address educator burnout?
+- How has post-pandemic burnout evolved - are we seeing recovery or worsening?
+
+**Practitioner Perspectives:**
+- What are early childhood educators saying about burnout on professional X/Twitter communities?
+- What coping strategies are practitioners actually using vs. what research recommends?
+
+**Regional Variations:**
+- Are there geographic differences in burnout rates or support programs?
+
+Focus on: Recent news, industry discussions on X/Twitter, practitioner insights, regional sources.
 Provide findings with source links, publication dates, and credibility indicators.
 ```
 
 ---
 
-#### **ChatGPT Deep Research - Industry & Technical Sources**
+**ChatGPT Deep Research - Industry & Case Studies**
 
+Template:
 ```
-Research [TOPIC].
-Focus on industry analyst reports, market research, technical documentation, case studies, and financial/business analysis.
+Research [TOPIC], focusing on these specific questions:
+
+**Industry Analysis:**
+- [Specific question from Phase 2 about market dynamics]
+- [Specific question about business models or economics]
+
+**Case Studies & Implementation:**
+- [Specific question about real-world implementations]
+- [Specific question about what worked/didn't work in practice]
+
+**Technical Details:**
+- [Specific question about technical implementation if relevant]
+- [Specific question about comparative analysis]
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis.
 Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
 ```
 
-**Example for "Solomon Islands Telecom Market":**
+**Example based on "early childhood educator burnout" Phase 2 analysis:**
 ```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Focus on industry analyst reports, market research, technical documentation, case studies, and financial/business analysis.
+Research early childhood educator burnout, focusing on these specific questions:
+
+**Industry Analysis:**
+- What are the economic costs of educator turnover in early childhood education?
+- What business models or organizational structures correlate with lower burnout?
+
+**Case Studies & Implementation:**
+- What specific burnout intervention programs have been implemented and evaluated?
+- What does the data show about effectiveness of different intervention types (workload reduction vs. wellness programs vs. compensation)?
+
+**Comparative Analysis:**
+- How do burnout rates and interventions differ between private vs. public early childhood settings?
+- What can we learn from other helping professions (nursing, social work) that reduced burnout?
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis.
 Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
 ```
 
 ---
 
-#### **Gemini Deep Research - Strategic & Policy Sources** (only for business/policy topics)
+**Gemini Deep Research - Policy & Strategic Context** (use for business/policy topics)
 
+Template:
 ```
-Research [TOPIC].
-Focus on regulatory frameworks, legislation, government policy documents, strategic plans, and comparative policy analysis.
+Research [TOPIC], focusing on these specific questions:
+
+**Regulatory & Policy Frameworks:**
+- [Specific question from Phase 2 about regulations]
+- [Specific question about policy approaches]
+
+**Comparative Policy Analysis:**
+- [Specific question about how different jurisdictions handle this]
+- [Specific question about policy effectiveness]
+
+**Strategic Context:**
+- [Specific question about strategic considerations]
+- [Specific question about policy debates or reforms]
+
+Focus on: Regulatory frameworks, legislation, government policy documents, strategic plans, comparative policy analysis.
 Provide findings with official source citations, effective dates, and policy context.
 ```
 
-**Example for "Solomon Islands Telecom Market":**
+**Example based on "early childhood educator burnout" Phase 2 analysis:**
 ```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Focus on regulatory frameworks, legislation, government policy documents, strategic plans, and comparative policy analysis.
+Research early childhood educator burnout, focusing on these specific questions:
+
+**Regulatory & Policy Frameworks:**
+- What regulations exist around educator-to-child ratios and how do they impact workload?
+- What policies have governments implemented specifically to address educator burnout?
+
+**Comparative Policy Analysis:**
+- How do different countries approach educator compensation, working conditions, and support?
+- What can we learn from jurisdictions that successfully reduced burnout rates?
+
+**Strategic Context:**
+- What policy debates are ongoing about early childhood workforce sustainability?
+- What systemic reforms are being proposed or tested?
+
+Focus on: Regulatory frameworks, legislation, government policy documents, strategic plans, comparative policy analysis.
 Provide findings with official source citations, effective dates, and policy context.
 ```
 
 ---
 
-#### **Claude Research - Comprehensive Synthesis** (optional 5th tool)
+**Claude Research - Comprehensive Synthesis** (optional 5th tool - use if Phase 2 reveals need for additional synthesis)
 
+Template:
 ```
-Research [TOPIC].
-Conduct comprehensive research across academic, industry, policy, and recent sources to provide multi-dimensional analysis.
-Prioritize authoritative sources, distinguish correlation from causation, note methodological limitations, and cite extensively.
+Research [TOPIC], focusing on these specific questions:
+
+[List 3-5 specific questions from Phase 2 that require multi-dimensional analysis across academic, industry, policy, and recent sources]
+
+**Research methodology:**
+- Conduct comprehensive research across academic, industry, policy, and recent sources
+- Prioritize authoritative sources and distinguish correlation from causation
+- Note methodological limitations and conflicts of interest
+- Include contradictory findings and areas of uncertainty
+- Cite specific studies, reports, and sources extensively with URLs
 ```
 
-**Example for "Solomon Islands Telecom Market":**
+**Example based on "early childhood educator burnout" Phase 2 analysis:**
 ```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Conduct comprehensive research across academic, industry, policy, and recent sources to provide multi-dimensional analysis.
-Prioritize authoritative sources, distinguish correlation from causation, note methodological limitations, and cite extensively.
+Research early childhood educator burnout, focusing on these specific questions:
+
+- What is the relationship between educator burnout and child outcomes (development, safety, learning)?
+- How do systemic factors (compensation, ratios, administrative burden) interact to create burnout?
+- What does the evidence show about the long-term sustainability of the early childhood workforce?
+
+**Research methodology:**
+- Conduct comprehensive research across academic, industry, policy, and recent sources
+- Prioritize authoritative sources and distinguish correlation from causation
+- Note methodological limitations and conflicts of interest
+- Include contradictory findings and areas of uncertainty
+- Cite specific studies, reports, and sources extensively with URLs
 ```
 
-**Save all prompts to prompts.md and inform user:**
+**Save Phase 1 Perplexity prompt to prompts.md and inform user:**
 
-"I've created 4-5 concise research prompts specifically optimized for each deep research tool's strengths.
+"I've created the Phase 1 Perplexity academic research prompt with comprehensive methodology.
 
-**IMPORTANT:** These are distinct, copy-paste-ready prompts (3 lines each, single newlines only) - NOT the seed research-prompt.md if one exists. The prompts below are formatted to prevent accidental partial submissions when pasting into Chrome.
+**Sequential Research Workflow:**
 
-**Run these in parallel:**
-- **Perplexity** → Academic studies, meta-analyses, official sources
-- **Grok** → Recent news, regional sources, X/Twitter insights
-- **ChatGPT Deep Research** → Industry reports, technical docs, case studies
-- **Gemini Deep Research** → Regulatory frameworks, policy analysis (if applicable)
-- **Claude Research** → Comprehensive synthesis (optional 5th source)
+**Phase 1: Academic Foundation (Start Here)**
+- Run Perplexity first with the comprehensive academic prompt
+- This builds the foundation from peer-reviewed research
+- When complete, paste results into research-results.md
+
+**Phase 2: Question Discovery (After Perplexity)**
+- I'll analyze Perplexity's results
+- Identify what questions we should be asking
+- Discover gaps, contradictions, recent developments, implementation questions
+- Create Phase 2 analysis in prompts.md
+- Generate targeted Phase 3 prompts based on these questions
+
+**Phase 3: Targeted Followup (Based on Phase 2)**
+- Run Grok, ChatGPT, Gemini, and/or Claude with specific questions from Phase 2
+- Each tool focuses on questions that match its strengths
+- Much more targeted and valuable than parallel generic research
 
 ---
 
-**I'll now attempt to automate submission using Chrome DevTools.** For each tool, I'll:
-1. Navigate to the new chat page
-2. Enable deep research mode (if applicable)
-3. Submit the prompt
+**I'll now attempt to automate Phase 1 Perplexity submission using the Perplexity API.**
 
-**Special handling for Claude Research:**
-- Fully automated with 20-minute polling
-- Automatically copies main output + sources list
-- You'll paste both outputs into research-results.md when ready
+**Using the `perplexity-deep-research` skill:**
+- API-based automation with sonar-deep-research model
+- Expected time: 30-120 seconds
+- Automatically formatted output ready to paste into research-results.md
 
-**For other tools:**
-- If automation fails, manually copy prompts from `prompts.md`
-- When research completes, paste outputs into corresponding sections of `research-results.md`
+**Fallback:** If API automation fails, manually run at https://www.perplexity.ai/ with Pro Search enabled.
 
-When all research is complete and pasted into `research-results.md`, let me know and I'll begin cross-validation."
+**After Phase 1 completes:** Let me know and I'll begin Phase 2 question discovery analysis."
 
 ---
 
-### Chrome Automation for Each Tool
+### Phase 1 Automation: Perplexity Academic Research
 
-**For each research tool, attempt automation in this order:**
-
-#### 1. **Perplexity API (sonar-deep-research)**
+#### **Perplexity API (sonar-deep-research)**
 
 **Use the `perplexity-deep-research` skill for API-based automation:**
 
@@ -458,163 +645,62 @@ Expected time: 30-120 seconds (much faster than browser-based tools)
 
 **Note:** API requires PERPLEXITY_API_KEY in .env. Get key at https://www.perplexity.ai/settings/api
 
----
-
-#### 2. **Grok (https://x.com/i/grok)**
+**Update todos:**
 ```
-1. List Chrome pages to check if Grok is already open
-2. If not open, navigate to: https://x.com/i/grok
-3. Take snapshot to identify UI elements
-4. Look for deep research mode toggle (if available) and enable it
-5. Find the main textarea/input element
-6. Fill with the Grok prompt from prompts.md
-7. Submit the prompt
-8. Inform user that Grok research is running
-9. Open in a new tab/page if multiple tools need to run in parallel
+Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
 ```
-
-**Fallback:** If automation fails, inform user to manually:
-- Go to https://x.com/i/grok
-- Enable any deep research features
-- Paste prompt from prompts.md
 
 ---
 
-#### 3. **ChatGPT Deep Research (https://chatgpt.com/)**
+### Phase 2: Question Discovery Analysis
 
-**Use the `chatgpt-deep-research` skill to automate this:**
+**When user provides Perplexity results (Phase 1 complete):**
 
-```
-Invoke the chatgpt-deep-research skill with the ChatGPT prompt from prompts.md.
+1. **Read and analyze Perplexity research from research-results.md**
+2. **Create Phase 2 analysis in prompts.md** using the question discovery framework:
+   - What subtopics and themes emerged?
+   - What gaps exist in the academic literature?
+   - What recent developments aren't covered?
+   - What contradictions or uncertainties need more sources?
+   - What industry/implementation questions arose?
+   - What policy/regulatory angles need investigation?
+   - What practitioner perspectives are missing?
 
-The skill will:
-1. Navigate to or select ChatGPT page
-2. Ensure Research mode is enabled
-3. Fill and submit the research prompt
-4. Handle potential clarifying questions (may require manual user response)
-5. Wait 5 minutes before first completion check
-6. Poll every 2 minutes if needed (max 5 attempts = 10 more minutes)
-7. Copy research output when complete
-8. Inform user output is ready to paste into research-results.md
+3. **Generate targeted Phase 3 prompts** for the appropriate tools based on the questions:
+   - **Grok** - If we need recent developments, practitioner perspectives, regional insights
+   - **ChatGPT** - If we need industry analysis, case studies, implementation details
+   - **Gemini** - If we need policy analysis, regulatory frameworks, comparative analysis
+   - **Claude** - If we need comprehensive multi-dimensional synthesis
 
-Expected time: 5-10 minutes (5 min wait + up to 10 min polling)
-Note: May require manual intervention if ChatGPT asks clarifying questions
-```
+4. **Save all Phase 3 prompts to prompts.md** with the specific questions from Phase 2
 
-**Fallback (if skill automation fails):**
-- Go to https://chatgpt.com/
-- Select research-capable model (o1, o1-mini, or Research)
-- Ensure Research mode is enabled
-- Paste prompt from prompts.md
-- Answer any clarifying questions
-- Wait 5-10 minutes for completion
-- Copy research output to research-results.md
-
----
-
-#### 4. **Gemini Deep Research API** (Preferred) or Browser
-
-**PRIMARY METHOD: Use the `gemini-deep-research-api` skill (API-based, no browser needed):**
-
-```
-Invoke the gemini-deep-research-api skill with the Gemini prompt from prompts.md.
-
-The skill will:
-1. Read GOOGLE_AI_API_KEY from .env file
-2. Submit research request to Gemini Deep Research API
-3. Poll for completion every 2 minutes
-4. Return full research report with citations when complete
-
-Expected time: 3-10 minutes
-No browser required - fully automated via API
-```
-
-**Run using the Python script:**
-```bash
-cd podcast/tools
-python gemini_deep_research.py "Research prompt here"
-# Or from file:
-python gemini_deep_research.py --file ../episodes/YYYY-MM-DD-slug/prompts.md --output research.md
-```
-
-**API Key Setup (one-time):**
-1. Get API key at https://aistudio.google.com/apikey
-2. Add to .env: `GOOGLE_AI_API_KEY=your-key-here`
-
-**FALLBACK: Use browser-based `gemini-deep-research` skill if API fails:**
-
-```
-Invoke the gemini-deep-research skill with the Gemini prompt from prompts.md.
-
-The skill will:
-1. Select or navigate to Gemini page
-2. Switch to Fast mode (required for Deep Research)
-3. Enable Deep Research from Tools menu
-4. Fill and submit the prompt
-5. Wait for research plan generation
-6. Click "Start research" to begin
-7. Confirm research is running
-
-If automation succeeds: Inform user "Gemini Deep Research running, 3-5 minutes"
-If automation fails: Provide manual fallback instructions from the skill
-```
-
-**Manual fallback (if both fail):**
-- Go to https://gemini.google.com/
-- Ensure "Fast" mode (not "Thinking")
-- Tools → Deep Research
-- Paste prompt from prompts.md
-- Review plan → Click "Start research"
-
----
-
-#### 5. **Claude Research (https://claude.ai/new)** (Optional)
-
-**Use the `claude-deep-research` skill to automate this:**
-
-```
-Invoke the claude-deep-research skill with the Claude prompt from prompts.md.
-
-The skill will:
-1. Navigate to or select Claude.ai page
-2. Enable Research mode from tools menu
-3. Fill and submit the research prompt
-4. Wait 20 minutes before first completion check
-5. Poll every 2 minutes if needed (max 5 attempts = 10 more minutes)
-6. Copy main research output when complete
-7. Submit followup prompt: "list the top sources"
-8. Wait 1 minute for sources response
-9. Copy sources list
-10. Inform user both outputs are ready to paste into research-results.md
-
-Expected time: 10-20 minutes (20 min wait + up to 10 min polling)
-```
-
-**Fallback (if skill automation fails):**
-- Go to https://claude.ai/new
-- Enable Research mode from tools menu
-- Paste prompt from prompts.md
-- Wait for research to complete (10-20 minutes, 500+ sources)
-- Click Copy button for main output
-- Send followup: "list the top sources"
-- Click Copy button for sources
-- Paste both into research-results.md
-
----
-
-**After attempting automation for all tools:**
-- Inform user which tools were successfully automated
-- For Perplexity: API-based - fast and reliable (30-120s)
-- For Gemini: Prefer API (`gemini-deep-research-api`) - no browser needed, 3-10 min
-- For Gemini (fallback): Browser-based `gemini-deep-research` skill if API unavailable
-- For Claude: Browser automation - waits 20 min, then polls every 2 min if needed, automatically copies main output + sources
-- Provide manual instructions for any failed automations
-- Remind user to paste completed research into research-results.md when done
-- Note: Perplexity API takes 30-120s; Gemini API takes 3-10 min; Claude takes 10-20 minutes
+5. **Inform user which tools to run and attempt automation**
 
 **Update todos:**
 ```
-Mark "Conduct parallel deep research" as completed when user provides results.
+Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete, Phase 3 ready).
+```
+
+---
+
+### Phase 3 Automation: Targeted Followup Research
+
+**After Phase 2 question discovery, attempt to automate Phase 3 research tools as needed:**
+
+**Available automation skills:**
+- `chatgpt-deep-research` - Automates ChatGPT with 5-10 min wait + polling
+- `gemini-deep-research` - Automates Gemini with 3-5 min execution
+- `claude-deep-research` - Automates Claude with 10-20 min wait + polling
+
+**For Grok:** Manual submission (no automation skill yet)
+- Go to https://x.com/i/grok
+- Paste Phase 3 Grok prompt from prompts.md
+
+**Fallback for all tools:** Manual submission with prompts from prompts.md
+
+**Update todos:**
+```
+Mark "Conduct parallel deep research" as completed when all Phase 3 results are collected.
 Mark "Cross-validate research findings" as in_progress.
 ```
 
@@ -1054,9 +1140,9 @@ Mark "Update feed.xml and commit" as in_progress.
    feat: Add episode on [topic]
 
    - Add episode "[title]" covering [key topics]
-   - Conduct parallel deep research across 4 tools with cross-validation
+   - Conduct sequential deep research: Perplexity academic foundation → question discovery → targeted followup with [tools used]
    - Create master research briefing organized by topic
-   - Synthesize final narrative report with Claude Opus 4.5
+   - Synthesize final narrative report with podcast-synthesis-writer agent
    - Generate AI cover art with Gemini via OpenRouter and apply podcast branding
    - Generate full transcript using local Whisper (base model)
    - Create [N] chapter markers covering key topics
@@ -1080,37 +1166,6 @@ Mark "Update feed.xml and commit" as completed.
 All episode workflow tasks complete!
 ```
 
----
-
-## Key Improvements in V2
-
-### **Enhanced Research Quality:**
-✅ **Multi-source verification** - Facts verified across 4 different tools
-✅ **Source diversity** - Academic, real-time, industry, and strategic perspectives
-✅ **Cross-validation matrix** - Explicit fact-checking before synthesis
-✅ **Evidence hierarchy** - Clear tiers of source quality
-
-### **Better Organization:**
-✅ **Topic-based briefing** - Organized by subject, not by which tool found it
-✅ **Separation of concerns** - Research gathering vs narrative creation
-✅ **Opus 4.5 synthesis** - Dedicated narrative creation phase with specialized model
-✅ **Contradictions surfaced** - Conflicting sources explicitly noted
-
-### **Improved Workflow:**
-✅ **API-first automation** - Perplexity and Gemini use direct APIs (no browser needed)
-✅ **Chrome automation fallback** - Browser automation for tools without API access
-✅ **Parallel research** - Multiple tools run simultaneously
-✅ **Reduced redundancy** - Each tool has differentiated focus
-✅ **Faster synthesis** - Organized briefing easier to work with than 3-5 raw narratives
-✅ **Quality gates** - Validation step before narrative creation
-✅ **Single-newline prompts** - Prevents accidental partial submissions in Chrome
-
-### **Better Documentation:**
-✅ **All prompts tracked** - Complete reproducibility
-✅ **Research provenance** - Clear record of what each tool contributed
-✅ **Verification record** - Cross-validation matrix preserved
-✅ **Source quality notes** - Methodological limitations documented
-
 ## Role Division
 
 **User handles:**
@@ -1120,44 +1175,47 @@ All episode workflow tasks complete!
 **You handle:**
 - File organization and directory setup
 - Reading seed research-prompt.md if present
-- Creating differentiated research prompts (3 lines, single newlines)
-- **API automation** for Perplexity and Gemini (no browser needed)
-- **Chrome automation fallback** for Grok, ChatGPT, Gemini (browser), Claude
-- **Claude automation includes:** Wait 20 min, poll every 2 min if needed, copy main output + sources automatically
-- Cross-validation matrix creation
-- Master research briefing compilation
-- **Invoking podcast-synthesis-writer agent** to create report.md from research materials
-- Audio conversion (ffmpeg)
-- Cover art generation (Gemini via OpenRouter) and branding
-- Transcription (local Whisper)
-- Chapter generation from transcript analysis
-- Description, keywords, source validation for publish.md
-- feed.xml updates
-- Git workflow and commits
-- Logging all prompts used throughout
+- **Phase 1:** Creating comprehensive Perplexity academic research prompt
+- **Phase 2:** Attempting Perplexity API automation (30-120 seconds)
+- **Phase 3:** Analyzing Perplexity results and conducting question discovery
+- **Phase 4:** Generating targeted Phase 3 prompts based on discovered questions
+- **Phase 5:** Attempting automation for ChatGPT, Gemini, Claude as needed
+- **Phase 6:** Cross-validation matrix creation across all research sources
+- **Phase 7:** Master research briefing compilation organized by topic
+- **Phase 8:** **Invoking podcast-synthesis-writer agent** to create report.md from research materials
+- **Phase 9:** Audio conversion (ffmpeg)
+- **Phase 10:** Cover art generation (Gemini via OpenRouter) and branding
+- **Phase 11:** Transcription (local Whisper)
+- **Phase 12:** Chapter generation from transcript analysis
+- **Phase 13:** Description, keywords, source validation for publish.md
+- **Phase 14:** feed.xml updates
+- **Phase 15:** Git workflow and commits
+
 
 ## Getting Started
 
 When user wants to create a new episode with V2 workflow:
 
 1. **Create todo list** with TodoWrite tool
-2. Ask for episode date, slug, and title
+2. **Determine episode details** (use today's date; only ask about series/slug/title if not provided)
 3. **Check for existing research-prompt.md** (seed document) and read if present
-4. **Create all episode files** including the new research-briefing.md
-5. **Create differentiated deep research prompts** (3 lines each, single newlines) for parallel execution - distinct from any seed research-prompt.md
-6. **Run API-based research** for Perplexity and Gemini (use `podcast/tools/gemini_deep_research.py` script)
-7. **Attempt Chrome automation** for Grok, ChatGPT, and Claude
-8. **Claude automation:** Wait 20 min, poll every 2 min if needed, automatically copy main output + sources
-9. User manually submits prompts if automation fails for any tools
-10. User pastes results into research-results.md when research completes
-11. **Create cross-validation matrix** when research is complete
-12. **Compile master research briefing** organized by topic
-13. **Invoke podcast-synthesis-writer agent** to transform research into narrative report.md
-14. **Launch cover art subagent** in parallel with NotebookLM
-15. **Provide NotebookLM prompt** for audio generation
-16. User generates audio in NotebookLM
-17. **Invoke audio processing subagent** when user returns with audio
-18. Guide through publishing phase
-19. Git commit and push
+4. **Create all episode files** including research-briefing.md
+5. **Phase 1:** Creating comprehensive Perplexity academic research prompt
+6. **Phase 2:** Attempting Perplexity API automation (30-120 seconds)
+7. User pastes Perplexity results into research-results.md when complete
+8. **Phase 3:** Analyzing Perplexity results and conducting question discovery
+9. **Phase 4:** Generating targeted Phase 3 prompts based on discovered questions
+10. **Phase 5:** Attempting automation for ChatGPT, Gemini, Claude as needed
+11. User collects all Phase 3 research into research-results.md
+12. **Phase 6:** Cross-validation matrix creation across all research sources
+13. **Phase 7:** Master research briefing compilation organized by topic
+14. **Phase 8:** Invoking podcast-synthesis-writer agent to create report.md from research materials
+15. **Phase 9:** Audio conversion (ffmpeg)
+16. **Phase 10:** Cover art generation (Gemini via OpenRouter) and branding
+17. **Phase 11:** Transcription (local Whisper)
+18. **Phase 12:** Chapter generation from transcript analysis
+19. **Phase 13:** Description, keywords, source validation for publish.md
+20. **Phase 14:** feed.xml updates
+21. **Phase 15:** Git workflow and commits
 
-**Key:** Update TodoWrite at every phase transition. The V2 workflow has more steps but produces higher quality, better verified research.
+**Key:** Update TodoWrite at every phase transition. The V2 sequential workflow builds research progressively: academic foundation → question discovery → targeted followup, producing higher quality, better verified, non-redundant research.
