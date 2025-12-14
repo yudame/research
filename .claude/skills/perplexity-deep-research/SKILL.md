@@ -483,7 +483,7 @@ rm /tmp/perplexity_research.py
 
 ## Notes
 
-- API is significantly faster than Gemini's browser-based Deep Research (30-120s vs 3-5 minutes)
+- API is significantly faster than Gemini Deep Research API (30-120s vs 3-10 minutes)
 - Requires paid API access (no free tier for sonar-deep-research model)
 - Returns markdown-formatted text ideal for direct pasting into research-results.md
 - Citations are inline with superscript numbers [1][2][3]

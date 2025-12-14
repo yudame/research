@@ -17,7 +17,8 @@ Requirements:
     - pip install gpt-researcher langchain-openai
 
 Configuration Options:
-    - OpenAI: FAST_LLM=openai:gpt-4o, SMART_LLM=openai:gpt-4o
+    - OpenAI (default): FAST_LLM=openai:gpt-5.2, SMART_LLM=openai:gpt-5.2
+    - OpenAI Alternatives: gpt-5.2-pro (harder thinking), gpt-5-mini (cost-optimized), o1 (legacy reasoning)
     - Anthropic: FAST_LLM=anthropic:claude-opus-4, SMART_LLM=anthropic:claude-opus-4
     - OpenRouter: Use any model via openrouter/ prefix
 
@@ -123,7 +124,7 @@ def configure_model(model_spec: str) -> tuple[str, str]:
 
 async def run_research(
     prompt: str,
-    model_spec: str = "openai:gpt-4o",
+    model_spec: str = "openai:gpt-5.2",
     report_type: str = "research_report",
     verbose: bool = True,
     use_detailed_report: bool = False,
@@ -298,8 +299,8 @@ Environment:
 
     parser.add_argument(
         '--model', '-m',
-        default='openai:gpt-4o',
-        help='Model specification (default: openai:gpt-4o). Examples: anthropic:claude-opus-4, xai:grok-beta, openrouter/anthropic/claude-opus-4.5'
+        default='openai:gpt-5.2',
+        help='Model specification (default: openai:gpt-5.2). Examples: openai:gpt-5.2-pro, openai:gpt-5-mini, anthropic:claude-opus-4, openrouter/anthropic/claude-opus-4.5'
     )
 
     parser.add_argument(
