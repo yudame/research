@@ -105,11 +105,13 @@ This document tracks all prompts used during the creation of this episode for re
 ## Deep Research Phase
 
 ### Tool Configuration
-- **Perplexity:** Academic & Official Sources
-- **Grok:** Real-Time & Regional Sources
-- **ChatGPT Deep Research:** Industry & Technical Sources
-- **Gemini Deep Research:** Strategic & Policy Sources (when applicable)
-- **Claude Deep Research:** Comprehensive Synthesis (optional 5th tool)
+- **Perplexity:** Academic & Official Sources (Phase 1 - always used)
+- **Grok:** Real-Time & Regional Sources (Phase 3 - typically used)
+- **ChatGPT Deep Research:** Industry & Technical Sources (Phase 3 - typically used)
+- **Gemini Deep Research:** Strategic & Policy Sources (Phase 3 - typically used)
+- **Claude Deep Research:** Comprehensive Synthesis (Phase 3 - use when complex questions need multi-dimensional analysis)
+
+**Default approach:** Use all Phase 3 tools (Grok, ChatGPT, Gemini, Claude) unless a tool's focus area is clearly not relevant to the topic. Omitting a tool should be rare.
 
 ### Deep Research Prompts (Copy-Paste Ready)
 
@@ -417,6 +419,8 @@ Research early childhood educator burnout interventions and their effectiveness.
 
 Based on Phase 2 question discovery, create specific prompts for each tool.
 
+**Important:** Default to using all four Phase 3 tools (Grok, ChatGPT, Gemini, Claude). Each tool provides a unique perspective that strengthens the research. Only omit a tool if its focus area is genuinely not applicable to the topic - this should be rare.
+
 **Grok - Recent Developments & Practitioner Perspectives**
 
 Template:
@@ -503,7 +507,7 @@ Provide comprehensive findings with citations, data sources, and comparative ana
 
 ---
 
-**Gemini Deep Research - Policy & Strategic Context** (use for business/policy topics)
+**Gemini Deep Research - Policy & Strategic Context**
 
 Template:
 ```
@@ -547,7 +551,7 @@ Provide findings with official source citations, effective dates, and policy con
 
 ---
 
-**Claude Research - Comprehensive Synthesis** (optional 5th tool - use if Phase 2 reveals need for additional synthesis)
+**Claude Research - Comprehensive Synthesis**
 
 Template:
 ```
@@ -666,11 +670,17 @@ Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
    - What policy/regulatory angles need investigation?
    - What practitioner perspectives are missing?
 
-3. **Generate targeted Phase 3 prompts** for the appropriate tools based on the questions:
-   - **Grok** - If we need recent developments, practitioner perspectives, regional insights
-   - **ChatGPT** - If we need industry analysis, case studies, implementation details
-   - **Gemini** - If we need policy analysis, regulatory frameworks, comparative analysis
-   - **Claude** - If we need comprehensive multi-dimensional synthesis
+3. **Generate targeted Phase 3 prompts** for each tool based on the questions discovered:
+   - **Grok** - Recent developments (last 12 months), practitioner perspectives, regional insights, real-time discussions
+   - **ChatGPT** - Industry analysis, case studies, implementation details, technical documentation, market dynamics
+   - **Gemini** - Policy analysis, regulatory frameworks, comparative policy analysis, strategic context, official documents
+   - **Claude** - Complex questions requiring multi-dimensional synthesis across academic, industry, policy, and recent sources
+
+   **Default:** Create prompts for all four tools unless a tool's focus area is clearly not relevant to the episode topic. For example:
+   - Skip Gemini only if there are truly no policy/regulatory/strategic angles worth exploring
+   - Skip Claude only if Grok/ChatGPT/Gemini will fully cover all Phase 2 questions without need for synthesis
+
+   **In practice:** Most topics benefit from all four perspectives. Omitting a tool should be the exception, not the rule.
 
 4. **Save all Phase 3 prompts to prompts.md** with the specific questions from Phase 2
 
