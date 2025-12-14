@@ -512,9 +512,36 @@ Note: May require manual intervention if ChatGPT asks clarifying questions
 
 ---
 
-#### 4. **Gemini Deep Research (https://gemini.google.com/)**
+#### 4. **Gemini Deep Research API** (Preferred) or Browser
 
-**Use the `gemini-deep-research` skill to automate this:**
+**PRIMARY METHOD: Use the `gemini-deep-research-api` skill (API-based, no browser needed):**
+
+```
+Invoke the gemini-deep-research-api skill with the Gemini prompt from prompts.md.
+
+The skill will:
+1. Read GOOGLE_AI_API_KEY from .env file
+2. Submit research request to Gemini Deep Research API
+3. Poll for completion every 2 minutes
+4. Return full research report with citations when complete
+
+Expected time: 3-10 minutes
+No browser required - fully automated via API
+```
+
+**Run using the Python script:**
+```bash
+cd podcast/tools
+python gemini_deep_research.py "Research prompt here"
+# Or from file:
+python gemini_deep_research.py --file ../episodes/YYYY-MM-DD-slug/prompts.md --output research.md
+```
+
+**API Key Setup (one-time):**
+1. Get API key at https://aistudio.google.com/apikey
+2. Add to .env: `GOOGLE_AI_API_KEY=your-key-here`
+
+**FALLBACK: Use browser-based `gemini-deep-research` skill if API fails:**
 
 ```
 Invoke the gemini-deep-research skill with the Gemini prompt from prompts.md.
@@ -532,7 +559,7 @@ If automation succeeds: Inform user "Gemini Deep Research running, 3-5 minutes"
 If automation fails: Provide manual fallback instructions from the skill
 ```
 
-**Fallback (if skill automation fails):**
+**Manual fallback (if both fail):**
 - Go to https://gemini.google.com/
 - Ensure "Fast" mode (not "Thinking")
 - Tools → Deep Research
@@ -577,11 +604,13 @@ Expected time: 10-20 minutes (20 min wait + up to 10 min polling)
 
 **After attempting automation for all tools:**
 - Inform user which tools were successfully automated
-- For Gemini: Use the `gemini-deep-research` skill for complete automation including the two-step confirmation process
-- For Claude: Fully automated - waits 20 min, then polls every 2 min if needed, automatically copies main output + sources
+- For Perplexity: API-based - fast and reliable (30-120s)
+- For Gemini: Prefer API (`gemini-deep-research-api`) - no browser needed, 3-10 min
+- For Gemini (fallback): Browser-based `gemini-deep-research` skill if API unavailable
+- For Claude: Browser automation - waits 20 min, then polls every 2 min if needed, automatically copies main output + sources
 - Provide manual instructions for any failed automations
 - Remind user to paste completed research into research-results.md when done
-- Note: Gemini takes 3-5 minutes; Claude takes 10-20 minutes (20 min wait + polling up to 10 more min)
+- Note: Perplexity API takes 30-120s; Gemini API takes 3-10 min; Claude takes 10-20 minutes
 
 **Update todos:**
 ```
@@ -1068,7 +1097,8 @@ All episode workflow tasks complete!
 ✅ **Contradictions surfaced** - Conflicting sources explicitly noted
 
 ### **Improved Workflow:**
-✅ **Chrome automation** - Automated submission to research tools (Perplexity, Grok, ChatGPT, Gemini, Claude)
+✅ **API-first automation** - Perplexity and Gemini use direct APIs (no browser needed)
+✅ **Chrome automation fallback** - Browser automation for tools without API access
 ✅ **Parallel research** - Multiple tools run simultaneously
 ✅ **Reduced redundancy** - Each tool has differentiated focus
 ✅ **Faster synthesis** - Organized briefing easier to work with than 3-5 raw narratives
@@ -1091,7 +1121,8 @@ All episode workflow tasks complete!
 - File organization and directory setup
 - Reading seed research-prompt.md if present
 - Creating differentiated research prompts (3 lines, single newlines)
-- **Attempting Chrome automation** to submit prompts to Perplexity, Grok, ChatGPT, Gemini, Claude
+- **API automation** for Perplexity and Gemini (no browser needed)
+- **Chrome automation fallback** for Grok, ChatGPT, Gemini (browser), Claude
 - **Claude automation includes:** Wait 20 min, poll every 2 min if needed, copy main output + sources automatically
 - Cross-validation matrix creation
 - Master research briefing compilation
@@ -1114,18 +1145,19 @@ When user wants to create a new episode with V2 workflow:
 3. **Check for existing research-prompt.md** (seed document) and read if present
 4. **Create all episode files** including the new research-briefing.md
 5. **Create differentiated deep research prompts** (3 lines each, single newlines) for parallel execution - distinct from any seed research-prompt.md
-6. **Attempt Chrome automation** to submit prompts to each research tool (Perplexity, Grok, ChatGPT, Gemini, Claude)
-7. **Claude automation:** Wait 20 min, poll every 2 min if needed, automatically copy main output + sources
-8. User manually submits prompts if automation fails for any tools (except Claude)
-9. User pastes results into research-results.md when research completes (Claude outputs already copied)
-10. **Create cross-validation matrix** when research is complete
-11. **Compile master research briefing** organized by topic
-12. **Invoke podcast-synthesis-writer agent** to transform research into narrative report.md
-13. **Launch cover art subagent** in parallel with NotebookLM
-14. **Provide NotebookLM prompt** for audio generation
-15. User generates audio in NotebookLM
-16. **Invoke audio processing subagent** when user returns with audio
-17. Guide through publishing phase
-18. Git commit and push
+6. **Run API-based research** for Perplexity and Gemini (use `podcast/tools/gemini_deep_research.py` script)
+7. **Attempt Chrome automation** for Grok, ChatGPT, and Claude
+8. **Claude automation:** Wait 20 min, poll every 2 min if needed, automatically copy main output + sources
+9. User manually submits prompts if automation fails for any tools
+10. User pastes results into research-results.md when research completes
+11. **Create cross-validation matrix** when research is complete
+12. **Compile master research briefing** organized by topic
+13. **Invoke podcast-synthesis-writer agent** to transform research into narrative report.md
+14. **Launch cover art subagent** in parallel with NotebookLM
+15. **Provide NotebookLM prompt** for audio generation
+16. User generates audio in NotebookLM
+17. **Invoke audio processing subagent** when user returns with audio
+18. Guide through publishing phase
+19. Git commit and push
 
 **Key:** Update TodoWrite at every phase transition. The V2 workflow has more steps but produces higher quality, better verified research.
