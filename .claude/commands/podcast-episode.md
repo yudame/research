@@ -1,8 +1,8 @@
-Help me create a new podcast episode following the V2 workflow in `.claude/skills/new-podcast-episode-v2.md`.
+Help me create a new podcast episode following the workflow in `.claude/skills/new-podcast-episode.md`.
 
 **Episode topic:** {{cmd_args}}
 
-Follow the complete V2 workflow which includes:
+Follow the complete workflow which includes:
 1. Setup episode structure and files
 2. Create differentiated deep research prompts for parallel execution across 4-5 tools (Perplexity, Grok, ChatGPT, Gemini, Claude)
 3. Attempt Chrome automation to submit prompts to each research tool
