@@ -625,23 +625,27 @@ Research early childhood educator burnout, focusing on these specific questions:
 
 #### **Perplexity API (sonar-deep-research)**
 
-**Use the `perplexity-deep-research` skill for API-based automation:**
+**Invoke the perplexity-deep-research skill via Task tool:**
 
 ```
-Invoke the perplexity-deep-research skill with the Perplexity prompt from prompts.md.
+Use the Task tool with subagent_type='general-purpose':
 
-The skill will:
-1. Verify PERPLEXITY_API_KEY exists in .env file
+"Automate Perplexity Deep Research API for Phase 1 academic research.
+
+Read and follow the instructions in .claude/skills/perplexity-deep-research/SKILL.md:
+1. Check for PERPLEXITY_API_KEY in .env file
 2. Create Python script for API call
 3. Submit to sonar-deep-research model with reasoning_effort=high
 4. Wait 30-120 seconds for completion
 5. Extract and format research report with citations
 6. Output marked research ready to paste into research-results.md
 
-Expected time: 30-120 seconds (much faster than browser-based tools)
+Research prompt: [insert Perplexity prompt from prompts.md]"
 ```
 
-**Fallback:** If API automation fails, inform user to manually:
+**Expected time:** 30-120 seconds (much faster than browser-based tools)
+
+**Fallback if skill unavailable or API fails:**
 - Go to https://www.perplexity.ai/
 - Enable Pro Search
 - Paste prompt from prompts.md
@@ -695,14 +699,32 @@ Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete,
 
 ### Phase 3 Automation: Targeted Followup Research
 
-**After Phase 2 question discovery, attempt to automate Phase 3 research tools as needed:**
+**After Phase 2 question discovery, invoke research skills as needed:**
 
-**Available automation skills:**
-- `chatgpt-deep-research` - Automates ChatGPT with 5-10 min wait + polling
-- `gemini-deep-research` - Automates Gemini with 3-5 min execution
-- `claude-deep-research` - Automates Claude with 10-20 min wait + polling
+**Available automation skills (invoke via Task tool):**
+- `chatgpt-deep-research` - Chrome DevTools automation, 5-10 min wait + polling
+- `gemini-deep-research` - Chrome DevTools automation, 3-5 min execution
+- `claude-deep-research` - Chrome DevTools automation, 10-20 min wait + polling
+- `gpt-researcher` - Multi-agent local research, 6-20 min, 100+ sources (alternative to all above)
 
-**For Grok:** Manual submission (no automation skill yet)
+**How to invoke:**
+```
+Use the Task tool with subagent_type='general-purpose':
+
+"Automate [ChatGPT/Gemini/Claude] Deep Research for Phase 3 research.
+
+Read and follow the instructions in .claude/skills/[skill-name]/SKILL.md to:
+1. Execute automation (Chrome DevTools or local API)
+2. Wait for research completion
+3. Extract and format results
+4. Present output ready for research-results.md
+
+Research prompt: [insert Phase 3 prompt from prompts.md]"
+```
+
+This offloads the automation work to a subagent, keeping the main context clean.
+
+**For Grok:** Manual submission (no automation available yet)
 - Go to https://x.com/i/grok
 - Paste Phase 3 Grok prompt from prompts.md
 
