@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sat, 14 Dec 2024 20:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2025 00:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -26,6 +26,29 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 18: Active Recovery Series - Episode 1 -->
+    <item>
+      <title>Active Recovery: Ep. 1, Foundations of Active Recovery</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/cover.png"/>
+      <description>Discover why the active recovery "paradox" challenges gym wisdom: studies show active recovery clears lactate faster and feels easier during workouts, yet produces identical long-term fitness gains as passive rest. This deep dive reveals what actually changes for trained 40+ athletes (hint: it's not protein requirements), why a $20 foam roller delivers 80% of the benefits of expensive tech, and the three evidence-based principles that separate marginal gains from foundational recovery. Full research report: https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/report.md</description>
+      <content:encoded><![CDATA[<p>Discover why the active recovery "paradox" challenges gym wisdom: studies show active recovery clears lactate faster and feels easier during workouts, yet produces identical long-term fitness gains as passive rest. This deep dive reveals what actually changes for trained 40+ athletes (hint: it's not protein requirements), why a $20 foam roller delivers 80% of the benefits of expensive tech, and the three evidence-based principles that separate marginal gains from foundational recovery.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://sportsmedicine-open.springeropen.com/">Sports Medicine - Open (2024)</a> - Systematic review: Active vs passive recovery effects on training adaptations</li><li><a href="https://www.frontiersin.org/journals/nutrition">Frontiers in Nutrition (2024)</a> - Muscle protein synthesis: Extended 24-hour anabolic window research</li><li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8566396/">PMC8566396 (Nutrients 2025)</a> - Scoping review: Master athletes (35+) protein requirements and anabolic resistance</li><li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11098991/">PMC11098991 (Umbrella Review)</a> - Recovery strategies for endurance athletes: 22 studies, 1,100+ participants</li><li><a href="https://jyx.jyu.fi/">University of Jyväskylä (2025)</a> - Doctoral dissertation: Infrared sauna effects on athletic recovery</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sat, 14 Dec 2025 00:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations.mp3"
+                 length="42281723"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>44:02</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>2</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:keywords>active recovery, master athletes, recovery protocols, 40 plus fitness, lactate clearance, protein timing, anabolic window, sleep optimization, HRV monitoring, compression therapy, cryotherapy, sauna protocols</itunes:keywords>
+      <research:series>Active Recovery Series</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 17: Solomon Islands Telecom Series - Episode 5 -->
     <item>

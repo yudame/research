@@ -171,3 +171,94 @@ Focus on: Industry reports, market analysis, case studies, product reviews, comp
 Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
 
 ---
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenRouter - google/gemini-3-pro-image-preview
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Foundations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: Here is a counterintuitive finding that challenges common gym wisdom: when researchers examined whether active recovery or passive rest produces better long-term training adaptations, they found that 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Enhanced Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Foundations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: Here is a counterintuitive finding that challenges common gym wisdom: when researchers examined whether active recovery or passive rest produces better long-term training adaptations, they found that 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+IMPORTANT VISUAL REQUIREMENTS:
+- The ENTIRE canvas from edge to edge must be deep navy blue and dark blue tones - no borders, frames, or light backgrounds
+- Dark blue fills the complete image area - not just a section or inner frame
+- Use bright teal, white, and silver only as accent colors on top of the dark blue theme
+- Pure abstract visualization only
+- Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
+- Clean visual design without any typography or graphic elements
+
+COMPOSITION:
+- Visual interest and detail should be concentrated in the LOWER 2/3 of the image
+- Keep the TOP 1/3 relatively simple and uncluttered for text overlay placement
+- Main graphic elements should flow from center to bottom
+- Avoid placing busy patterns or focal points in the upper third
+```
+
+**Aspect Ratio:** 1:1
+
+**Output:** cover.png
+
+**Date:** 2025-12-14
+
+---
+
+## Cover Art Generation Phase
+
+**Date:** 2025-12-14
+
+**Tool Used:** Gemini 3 Pro Image via OpenRouter
+
+**Generation Method:** --auto (analyzed report.md content)
+
+**Auto-Generated Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Foundations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: Counterintuitive finding that challenges common gym wisdom - active recovery vs passive rest for long-term training adaptations
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Branding Applied:**
+- Position: top-left
+- Brand: Yudame Research
+- Series: Active Recovery
+- Episode: Ep. 1 - Foundations
+- Border: 20px, #FFC20E (yellow)
+
+**File Details:**
+- Location: cover.png
+- Size: 1024x1024px base (1064x1064px with border)
+- File size: 1.0MB PNG
+- Color scheme: Dark navy/blue dominant with yellow accents
+

@@ -1,0 +1,72 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=320000
+title=Introduction: The Master Athlete Challenge
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=320000
+END=660000
+title=The Two Non-Negotiables: Sleep and Nutrition
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=900000
+title=Sleep Architecture: Why 40+ Athletes Need Better Sleep
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=900000
+END=1140000
+title=Protein Timing: Beyond the Anabolic Window
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1500000
+title=Active Recovery Mechanism: The Lactate Clearing Effect
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1740000
+title=The Active Recovery Paradox: Acute vs Long-Term Benefits
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=2040000
+title=Master Athlete Reality: What Changes After 40
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2280000
+title=Professional Recovery: The Multi-Million Dollar Approach
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2430000
+title=Compression and Cryotherapy: Cost vs Benefit
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2430000
+END=2520000
+title=Heat Therapy and Sauna Protocols
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2520000
+END=2580000
+title=HRV Monitoring and Wearable Accuracy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2580000
+END=2642000
+title=Summary: Three Core Principles for Master Athletes
