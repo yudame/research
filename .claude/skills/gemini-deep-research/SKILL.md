@@ -1,347 +1,402 @@
 ---
 name: gemini-deep-research
-description: Automate Gemini Deep Research using Chrome DevTools. Use for Phase 3 policy analysis, regulatory frameworks, and strategic context research. Handles browser automation, 3-5 min execution, and result extraction. Returns policy-focused research ready to paste into research-results.md.
+description: Automate Gemini Deep Research using the official API. Use for Phase 3 policy analysis, regulatory frameworks, and strategic context research. Handles API submission, polling (3-10 min), and result extraction. Returns policy-focused research ready to paste into research-results.md.
 ---
 
-# Gemini Deep Research Automation
+# Gemini Deep Research API Automation
 
-This skill automates the submission of research prompts to Gemini's Deep Research feature using Chrome DevTools.
+This skill automates research using Google's Gemini Deep Research API - no browser automation required.
 
 ## Overview
 
-Gemini Deep Research is a tool that performs comprehensive web research by:
-1. Analyzing your prompt
-2. Creating a multi-step research plan (8-10 research steps)
-3. Searching multiple sources across the web
-4. Synthesizing findings into a comprehensive report with citations
+The Gemini Deep Research API provides programmatic access to Google's multi-step research agent:
+1. Autonomously plans research strategy
+2. Executes web searches across multiple sources
+3. Synthesizes findings into a comprehensive report with citations
+4. Runs asynchronously with status polling
 
-**Time:** Research typically takes 3-5 minutes to complete.
+**Time:** Research typically takes 3-10 minutes depending on complexity (max 60 minutes).
 
 **Output:** Comprehensive research report with inline citations and source links.
 
+**Focus Areas:**
+- Regulatory frameworks and telecommunications legislation
+- Government policy documents and strategic plans
+- Market structure analysis
+- Comparative policy analysis across jurisdictions
+- Stakeholder position papers
+
 ## Prerequisites
 
-- Chrome must be running with remote debugging enabled.
-- User must be logged into Google Gemini (https://gemini.google.com/)
-- Gemini Advanced subscription required (Deep Research is a paid feature)
+- Google AI API key in `.env` file
+- Python 3.x with required dependencies installed
+- API key from: https://aistudio.google.com/apikey
 
-## Key Constraints
+## API Key Setup
 
-**CRITICAL:** Deep Research mode is incompatible with "Thinking" mode.
-- You MUST be in "Fast" mode to use Deep Research
-- If "Thinking" mode is active, switch to "Fast" first
+**Check if API key exists:**
+
+```bash
+grep GOOGLE_AI_API_KEY .env
+```
+
+If not found, add to `.env` file:
+
+```bash
+# In .env file
+GOOGLE_AI_API_KEY=your-api-key-here
+```
+
+**Getting an API key:**
+1. Go to https://aistudio.google.com/apikey
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy the key and add to `.env` file
 
 ## Complete Automation Workflow
 
-### Step 1: List and Select Gemini Page
+### Step 1: Verify API Key
 
-Check if Gemini is already open, or navigate to it:
+Use Bash to check if the API key is configured:
 
-```
-1. Use list_pages to see available Chrome pages
-2. If Gemini is open (https://gemini.google.com/app*), select that page
-3. If not open, use navigate_page or new_page to open https://gemini.google.com/
+```bash
+grep GOOGLE_AI_API_KEY .env
 ```
 
-**Expected page URL patterns:**
-- New chat: `https://gemini.google.com/app?...`
-- Existing chat: `https://gemini.google.com/app/[chat-id]?...`
+If not found, inform user to set up API key at https://aistudio.google.com/apikey
 
-### Step 2: Take Snapshot to Identify Current State
+### Step 2: Prepare Research Prompt
 
-```
-Take snapshot to identify:
-- Current mode (Fast vs Thinking)
-- Location of UI elements (textarea, Tools button, mode selector)
-```
+The research prompt should be saved in the episode's `prompts.md` file under the Gemini Deep Research section.
 
-**Key elements to look for:**
-- Mode selector button (shows "Fast" or "Thinking")
-- "Tools" button
-- Main textarea with "Enter a prompt here"
-
-### Step 3: Ensure Fast Mode is Active
-
-```
-1. Look for the mode selector button (shows current mode)
-2. If it shows "Thinking", click to expand menu
-3. Select "Fast" from the menu
-4. Verify mode switched to "Fast"
-```
-
-**Why this matters:** Deep Research is only available in Fast mode, not Thinking mode.
-
-### Step 4: Enable Deep Research
-
-```
-1. Click the "Tools" button to open tools menu
-2. Look for "Deep Research" button in the menu
-3. Click "Deep Research" to enable it
-4. Verify Deep Research is active (button changes to "Deselect Deep Research")
-```
-
-**Other tools in menu (ignore these):**
-- Create images
-- Canvas
-- Guided Learning
-
-### Step 5: Fill and Submit the Research Prompt
-
-```
-1. Find the main textarea element (usually "Enter a prompt here")
-2. Use fill() to enter the research prompt
-3. Prompt is auto-submitted when filled (no separate submit button needed initially)
-```
-
-**Prompt format:** Should be 3 lines with single newlines (no double newlines):
+**Prompt format (3 lines, single newlines):**
 ```
 Research [TOPIC].
-Focus on [SPECIFIC FOCUS AREA].
-Provide [OUTPUT REQUIREMENTS].
+Focus on regulatory frameworks, legislation, government policy documents, strategic plans, and comparative policy analysis.
+Provide findings with official source citations, effective dates, and policy context.
 ```
 
-### Step 6: Wait for Research Plan Generation
+### Step 3: Run Research via Python Script
 
-**CRITICAL STEP:** Gemini generates a research plan before starting research.
+Execute the Python script using Bash:
 
-```
-1. Use wait_for() to wait for "Start research" text to appear
-2. Set timeout to 10000ms (10 seconds)
-3. Gemini will show:
-   - Research plan title
-   - 8-10 numbered research steps
-   - "Start research" button
-   - "Edit the research plan" button (optional)
+```bash
+cd /Users/valorengels/src/research/podcast/tools
+python gemini_deep_research.py --file ../episodes/[episode-dir]/prompts.md --output ../episodes/[episode-dir]/gemini-results.md
 ```
 
-**What Gemini shows:**
-- "Here's the plan I've put together. Let me know if you need any changes before I start researching."
-- Research plan with detailed steps
-- Estimated time: "Ready in a few mins"
+Or with inline prompt:
 
-### Step 7: Confirm and Start Research
-
-```
-1. Find the "Start research" button in the snapshot
-2. Click it to begin the actual research process
-3. Look for "Stop response" button to confirm research is running
+```bash
+python gemini_deep_research.py "Research prompt here"
 ```
 
-**After clicking:** Research begins immediately and runs for 3-5 minutes.
+**Available options:**
+- `--file FILEPATH` - Read prompt from file
+- `--output FILEPATH` - Write results to file
+- `--stream` - Use streaming mode for real-time output
+- `--poll-interval SECONDS` - Seconds between status checks (default: 120)
+- `--max-wait MINUTES` - Maximum wait time (default: 60)
+- `--quiet` - Minimal output (just the result)
 
-### Step 8: Inform User
+### Step 4: Monitor Progress
 
+The script will:
+1. Submit research request to Gemini API
+2. Display interaction ID and estimated time
+3. Poll every 2 minutes for status updates
+4. Show progress: "in_progress", "completed", or "failed"
+
+**Expected output:**
 ```
-Inform user:
-- "Gemini Deep Research is now running"
-- "Research topic: [topic]"
-- "Estimated time: 3-5 minutes"
-- "You can continue with other research tools in parallel"
-- "When complete, copy the full research output from Gemini and paste into research-results.md"
+==============================================================
+GEMINI DEEP RESEARCH API
+==============================================================
+
+Prompt: Research Solomon Islands telecommunications...
+
+Submitting research request...
+
+Research started successfully!
+Interaction ID: abc123xyz
+Status: in_progress
+Estimated time: 3-10 minutes (max 60 minutes)
+Polling every 120 seconds...
+--------------------------------------------------------------
+
+[10:30:15] Status check #1 (elapsed: 120s)
+Status: in_progress
+Research in progress. Waiting 120s...
+
+[10:32:15] Status check #2 (elapsed: 240s)
+Status: completed
+
+==============================================================
+RESEARCH COMPLETE (took 240s)
+==============================================================
 ```
+
+### Step 5: Extract and Save Results
+
+If `--output` was specified, results are automatically saved to the file.
+
+Otherwise, the script prints results to stdout and you should:
+1. Copy the research output
+2. Paste into the episode's `research-results.md` under the Gemini section
+
+**Recommended workflow:**
+```bash
+# Run with output file
+python gemini_deep_research.py \
+  --file ../episodes/episode-dir/prompts.md \
+  --output ../episodes/episode-dir/gemini-results.md
+
+# Append to research-results.md
+cat ../episodes/episode-dir/gemini-results.md >> ../episodes/episode-dir/research-results.md
+```
+
+## API Details
+
+**Base URL:** `https://generativelanguage.googleapis.com/v1beta/interactions`
+
+**Agent Model:** `deep-research-pro-preview-12-2025`
+
+**Request Format:**
+```json
+{
+  "input": "Research prompt here",
+  "agent": "deep-research-pro-preview-12-2025",
+  "background": true,
+  "store": true
+}
+```
+
+**Response Format:**
+```json
+{
+  "id": "interaction-id",
+  "status": "in_progress" | "completed" | "failed",
+  "outputs": [
+    {
+      "type": "text",
+      "text": "Research report content..."
+    }
+  ]
+}
+```
+
+**Default Capabilities (enabled automatically):**
+- `google_search` - Web search across Google
+- `url_context` - Fetches and analyzes webpage content
+
+## Streaming Mode (Optional)
+
+For real-time progress updates, use `--stream` flag:
+
+```bash
+python gemini_deep_research.py --stream "Research prompt here"
+```
+
+**Streaming behavior:**
+- Shows research output as it's generated
+- Displays thinking summaries: `[Thinking: analyzing sources...]`
+- No polling required - continuous connection
+- Same total time as background mode
+
+**When to use streaming:**
+- Interactive debugging
+- Watching progress in real-time
+- Long research queries where you want to see incremental progress
 
 ## Error Handling
 
-### If Gemini page not found:
-```
-- Navigate to https://gemini.google.com/
-- Wait for page load
-- Verify user is logged in
-```
+### API Key Errors
 
-### If Deep Research button not visible:
-```
-- User may not have Gemini Advanced subscription
-- Inform user: "Deep Research requires Gemini Advanced subscription"
-- Provide fallback: Manual submission or skip Gemini research
-```
+**Error:** `ERROR: GOOGLE_AI_API_KEY not found`
 
-### If mode is stuck in Thinking:
-```
-- Click mode selector
-- Look for "Fast" menu item
-- Click "Fast"
-- Retry Tools → Deep Research
-```
+**Solution:**
+1. Check `.env` file exists in repository root
+2. Verify API key is set: `grep GOOGLE_AI_API_KEY .env`
+3. Get API key from https://aistudio.google.com/apikey
+4. Add to `.env`: `GOOGLE_AI_API_KEY=your-key-here`
 
-### If "Start research" doesn't appear:
-```
-- Gemini may still be generating the plan
-- Wait additional 5 seconds
-- Check for error messages in the UI
-- Fallback: Inform user to manually click "Start research"
-```
+### API Request Failures
 
-## Example Complete Automation Sequence
+**Error:** `ERROR: API returned status 401`
 
-```markdown
-1. list_pages → Find Gemini at index 1
-2. select_page(1) → Switch to Gemini
-3. take_snapshot → See current state
-4. click(mode_selector_uid) → Open mode menu
-5. click(fast_option_uid) → Switch to Fast mode
-6. take_snapshot → Verify Fast mode active
-7. click(tools_button_uid) → Open Tools menu
-8. click(deep_research_uid) → Enable Deep Research
-9. take_snapshot → Verify Deep Research active
-10. fill(textarea_uid, prompt) → Enter research prompt
-11. wait_for("Start research", 10000) → Wait for plan
-12. take_snapshot → Find "Start research" button
-13. click(start_research_uid) → Begin research
-14. take_snapshot → Verify "Stop response" visible
-15. Inform user research is running
-```
+**Solution:**
+- API key is invalid or expired
+- Verify key at https://aistudio.google.com/apikey
+- Regenerate key if needed
 
-## UI Element Patterns
+**Error:** `ERROR: API returned status 429`
 
-Based on successful automation, here are the typical UID patterns:
+**Solution:**
+- Rate limit exceeded
+- Wait 60 seconds and retry
+- Check if multiple requests are running
+- Monitor usage at https://aistudio.google.com/
 
-**Mode selector (Fast/Thinking):**
-- Button with expandable menu
-- Text shows current mode
-- Menu has two options: "Fast" and "Thinking with 3 Pro"
+**Error:** `ERROR: Failed to submit request: Connection timeout`
 
-**Tools button:**
-- Simple button labeled "Tools"
-- Opens menu with 4 options
+**Solution:**
+- Check internet connection
+- Verify API endpoint is accessible
+- Try with longer timeout (script retries 3x automatically)
 
-**Deep Research button:**
-- Appears in Tools menu
-- Changes to "Deselect Deep Research" when active
+### Research Failures
 
-**Textarea:**
-- Multiline textbox
-- Placeholder: "Enter a prompt here"
-- Usually focused by default
+**Error:** `ERROR: Research failed: Unknown error`
 
-**Start research button:**
-- Appears after research plan generation
-- Text: "Start research"
-- Alternative option: "Edit the research plan"
+**Solution:**
+- Check error details in output
+- May be due to: prompt issues, source access problems, timeout
+- Retry with simplified prompt
+- Try different research tool if persistent
 
-## Common Issues and Solutions
+**Error:** `ERROR: Research timed out after 60 minutes`
 
-### Issue: Prompt submits but nothing happens
-**Solution:** Deep Research may not be enabled. Check for "Deselect Deep Research" button.
+**Solution:**
+- Research was too complex
+- Simplify the prompt or break into smaller tasks
+- Increase max-wait time: `--max-wait 90`
+- Use alternative tool (Claude, ChatGPT, Perplexity)
 
-### Issue: "Start research" button doesn't appear
-**Solution:** Research plan may still be generating. Wait longer or check for errors.
+### No Output Found
 
-### Issue: Can't find Deep Research in Tools menu
-**Solution:** User needs Gemini Advanced subscription. This is a paid feature.
+**Error:** `WARNING: Research completed but no text output found`
 
-### Issue: Automation works but research fails
-**Solution:** Gemini may have hit rate limits or the prompt may be too complex. Try again or simplify prompt.
-
-## Best Practices
-
-1. **Always verify mode:** Check Fast mode is active before enabling Deep Research
-2. **Use wait_for():** Don't assume immediate responses - research plan takes 3-5 seconds to generate
-3. **Take snapshots frequently:** UI state changes rapidly - snapshot after each action
-4. **Single newlines only:** Use single newlines in prompts to prevent accidental partial submissions
-5. **Parallel execution:** Launch Gemini research in one tab, then move to other tools in separate tabs
-6. **Error reporting:** If automation fails at any step, provide clear fallback instructions for manual submission
+**Solution:**
+- Check API response structure (may have changed)
+- Review full response JSON (script shows it on verbose mode)
+- File bug report with API response details
 
 ## Integration with Podcast Workflow
 
 When called from the podcast episode workflow:
 
 **Input needed:**
-- Research prompt (3-line format, single newlines)
-- Episode context (optional, for better error messages)
+- Research prompt from `prompts.md` (Gemini section)
+- Episode directory path
 
 **Expected output:**
-- Success: "Gemini Deep Research running, estimated 3-5 minutes"
-- Failure: Clear error message + fallback manual instructions
+- Success: Full research report with citations saved to file
+- Failure: Error message with troubleshooting steps
 
-**Fallback instructions if automation fails:**
-```
-Manual steps:
-1. Go to https://gemini.google.com/
-2. Ensure "Fast" mode is selected (not "Thinking")
-3. Click "Tools" button
-4. Click "Deep Research"
-5. Paste the prompt from prompts.md
-6. Review the research plan
-7. Click "Start research"
-8. Wait 3-5 minutes for completion
-9. Copy the full output to research-results.md
-```
+**Workflow integration example:**
 
-## Collecting the Completed Research Report
+```bash
+# Phase 3: Research Execution - Gemini Deep Research
+EPISODE_DIR="podcast/episodes/2024-12-14-topic-slug"
 
-Once Deep Research completes (3-5 minutes), you need to copy the full report.
+# Run Gemini research
+cd podcast/tools
+python gemini_deep_research.py \
+  --file "../${EPISODE_DIR}/prompts.md" \
+  --output "../${EPISODE_DIR}/research-results-gemini.md" \
+  --poll-interval 120 \
+  --max-wait 60
 
-### Step 9: Navigate to Completed Research and Copy Report
-
-**Finding the report:**
-```
-1. Research completion is indicated by "I've completed your research" message
-2. Look for "Export menu" button on the right side panel
-3. The export menu may already be open/expanded
+# Check if successful
+if [ $? -eq 0 ]; then
+  echo "Gemini research complete"
+  # Append to main research results
+  cat "../${EPISODE_DIR}/research-results-gemini.md" >> "../${EPISODE_DIR}/research-results.md"
+else
+  echo "Gemini research failed - check error messages"
+fi
 ```
 
-**Copying the report:**
+## Why API-Based Automation
+
+This skill uses the official Gemini Deep Research API for maximum reliability:
+
+- **Stable:** No UI changes breaking selectors
+- **Simple:** Just API key configuration needed
+- **Scriptable:** Fully automated, no browser required
+- **Portable:** Works in any environment with Python and internet
+- **Official:** Direct API access to Google's research agent
+- **Maintainable:** API contracts are stable and documented
+
+## Best Practices
+
+1. **Always verify API key** before running research
+2. **Use background mode** (default) for research
+3. **Set reasonable poll intervals** (2 minutes is good balance)
+4. **Save output to file** using `--output` flag
+5. **Handle errors gracefully** - check exit code before continuing
+6. **Monitor API usage** to control costs
+7. **Use specific prompts** - vague prompts waste API calls
+8. **Test with simple prompts** before complex research
+
+## Example Commands
+
+**Basic research:**
+```bash
+python gemini_deep_research.py "Research quantum computing applications"
 ```
-1. If Export menu is not open, click the "Export menu" button
-2. Take snapshot to find menu options
-3. Look for three options in the menu:
-   - "Share report" (may be disabled)
-   - "Export to Docs"
-   - "Copy"
-4. Click "Copy" to copy entire report to clipboard
-5. Look for "Copied to clipboard" confirmation message
+
+**From file with output:**
+```bash
+python gemini_deep_research.py \
+  --file research-prompt.txt \
+  --output results.md
 ```
 
-**What gets copied:**
-- Complete research report with full narrative
-- All inline citations and source links
-- Section headings and structure
-- Research findings organized by topic
-- Full source list at the end
-
-**After copying:**
-```
-Inform user:
-- "Gemini Deep Research report copied to clipboard"
-- "The complete report with citations is ready to paste into research-results.md"
-- "Report includes: [brief summary of sections]"
-- "You can now paste it into the Gemini Deep Research section of research-results.md"
+**Streaming with custom timing:**
+```bash
+python gemini_deep_research.py \
+  --stream \
+  "Research climate change policy in Pacific nations"
 ```
 
-### Alternative: Export to Google Docs
+**Quiet mode (just results):**
+```bash
+python gemini_deep_research.py \
+  --quiet \
+  --file prompt.txt \
+  --output results.md
+```
 
-If user prefers, they can click "Export to Docs" instead of "Copy":
-- Creates a new Google Doc with the full report
-- Preserves formatting and links
-- Useful for sharing or further editing
-- Note: This is manual user action, not automated
+**Custom polling:**
+```bash
+python gemini_deep_research.py \
+  --file prompt.txt \
+  --poll-interval 60 \
+  --max-wait 90 \
+  --output results.md
+```
 
-## Complete Workflow Summary
+## Script Location
 
-**Full automation sequence (Steps 1-9):**
-1. Select/navigate to Gemini page
-2. Take snapshot to identify UI state
-3. Switch to Fast mode (if needed)
-4. Open Tools menu
-5. Enable Deep Research
-6. Fill research prompt
-7. Wait for research plan (10 seconds)
-8. Click "Start research"
-9. **Wait 3-5 minutes for completion**
-10. Navigate to completed research page (if needed)
-11. Open Export menu
-12. Click "Copy" to copy report to clipboard
-13. Confirm copy success
-14. Inform user report is ready to paste
+**Path:** `/Users/valorengels/src/research/podcast/tools/gemini_deep_research.py`
+
+**Usage:**
+```
+python gemini_deep_research.py [OPTIONS] [PROMPT]
+
+Options:
+  --file, -f PATH       Read prompt from file
+  --output, -o PATH     Write output to file
+  --stream, -s          Use streaming mode
+  --poll-interval N     Seconds between checks (default: 120)
+  --max-wait N          Max wait in minutes (default: 60)
+  --quiet, -q           Minimal output
+
+Examples:
+  python gemini_deep_research.py "Your prompt here"
+  python gemini_deep_research.py --file prompt.txt
+  python gemini_deep_research.py --file prompt.txt --output results.md
+  python gemini_deep_research.py --stream "Your prompt"
+```
 
 ## Notes
 
-- Deep Research is more comprehensive than regular Gemini chat
-- Research plans are customizable (user can click "Edit the research plan" before starting)
-- Sources are cited inline with clickable links
-- Output includes "Research Websites", "Analyze Results", "Create Report" sections
-- Estimated completion time is shown but may vary (typically 3-5 minutes)
-- Research can be stopped mid-process with "Stop response" button
-- **Export menu is the key to collecting the final report** - look for it on the right side panel
-- Copied report is plain text with markdown formatting, perfect for pasting into research-results.md
+- This API is in **preview** (as of December 2025) - schema may change
+- Model name: `deep-research-pro-preview-12-2025`
+- `background: true` and `store: true` are required together
+- Web search enabled by default
+- Maximum research duration: 60 minutes
+- Citations included inline in the output
+- Perfect for automated workflows - no browser required
+- Check pricing at: https://ai.google.dev/pricing

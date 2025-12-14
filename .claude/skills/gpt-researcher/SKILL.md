@@ -1,11 +1,11 @@
 ---
 name: gpt-researcher
-description: Run GPT-Researcher multi-agent deep research framework locally. Alternative to Perplexity/ChatGPT/Claude Deep Research. Researches 100+ sources in parallel, provides comprehensive citations, benchmarks competitively. Use for Phase 1 academic foundation or Phase 3 comprehensive synthesis. Supports multiple LLM providers (OpenAI, Anthropic, xAI, OpenRouter). Takes 6-20 min depending on report type.
+description: Run GPT-Researcher multi-agent deep research framework locally using OpenAI GPT-5.2. Replaces ChatGPT Deep Research with local control. Researches 100+ sources in parallel, provides comprehensive citations. Use for Phase 3 industry/technical research or comprehensive synthesis. Takes 6-20 min depending on report type. Supports multiple LLM providers.
 ---
 
 # GPT-Researcher Skill
 
-Use this skill to run GPT-Researcher's multi-agent deep research framework locally.
+Use this skill to run GPT-Researcher's multi-agent deep research framework locally with OpenAI's GPT-5.2 model.
 
 ## What is GPT-Researcher?
 
@@ -14,7 +14,16 @@ GPT-Researcher is an autonomous multi-agent research framework that:
 - **Researches 100+ sources** across the web
 - Provides **comprehensive citations** and source validation
 - Benchmarks **competitively with ChatGPT Deep Research and Claude Research**
-- Supports **multiple LLM providers** (OpenAI, Anthropic, xAI, OpenRouter)
+- Runs **locally** with full control over configuration
+
+**Default Model:** OpenAI GPT-5.2 (latest flagship model, 2025)
+
+**GPT-5.2 Highlights:**
+- Best general-purpose model for complex reasoning and agentic tasks
+- Improved instruction following and accuracy over GPT-5.1
+- Enhanced code generation and tool calling
+- Better context management and token efficiency
+- Knowledge cutoff: August 2025
 
 **Carnegie Mellon Benchmark (DeepResearchGym, May 2025):**
 GPT-Researcher **outperformed** Perplexity, OpenAI Deep Research, and other tools on:
@@ -26,9 +35,16 @@ GPT-Researcher **outperformed** Perplexity, OpenAI Deep Research, and other tool
 
 Use GPT-Researcher for deep research tasks in the podcast episode workflow:
 
-1. **Phase 1: Academic Foundation** (alternative to Perplexity API)
-2. **Phase 3: Comprehensive Synthesis** (alternative to ChatGPT/Claude Deep Research)
+1. **Phase 3: Industry & Technical Research** (replaces ChatGPT Deep Research browser automation)
+2. **Phase 3: Comprehensive Synthesis** (alternative to Claude Deep Research)
 3. **Any multi-dimensional research** requiring parallel information gathering
+
+**Advantages over browser automation:**
+- No Chrome/browser required
+- Fully scriptable and reproducible
+- Choose any LLM provider (OpenAI, Anthropic, etc.)
+- Run in background or CI/CD pipelines
+- Complete control over configuration
 
 ## Configuration
 
@@ -36,20 +52,24 @@ API keys are auto-discovered from `.env` files in:
 - `/Users/valorengels/src/research/.env` (root)
 - `/Users/valorengels/src/research/podcast/tools/.env` (tools)
 
-**Available providers:**
-- **OpenAI**: `OPENAI_API_KEY` (GPT-4, GPT-4o, etc.)
-- **Anthropic**: `ANTHROPIC_API_KEY` (Claude Opus, Sonnet)
-- **OpenRouter**: `OPENROUTER_API_KEY` (unified access to 400+ models including Claude, GPT-4, Grok)
-- **xAI**: `XAI_API_KEY` (Grok models)
+**Required for default:**
+- **OPENAI_API_KEY** - For GPT-5.2, GPT-5.2-Pro, etc.
+
+**Optional providers:**
+- **OPENROUTER_API_KEY** - Unified access to 400+ models
+- **ANTHROPIC_API_KEY** - Claude Opus, Sonnet
+- **XAI_API_KEY** - Grok models
 
 ## Usage
 
-### Basic Usage
+### Basic Usage (GPT-5.2)
 
 ```bash
 cd /Users/valorengels/src/research/podcast/tools
 python gpt_researcher_run.py "Your research prompt here"
 ```
+
+This uses **GPT-5.2** by default - OpenAI's latest and most capable general-purpose model.
 
 ### Read Prompt from File
 
@@ -58,26 +78,26 @@ cd /Users/valorengels/src/research/podcast/tools
 python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt
 ```
 
-### Specify Model Provider
-
-```bash
-# Use OpenAI GPT-4o (default)
-python gpt_researcher_run.py "prompt" --model openai:gpt-4o
-
-# Use Anthropic Claude Opus 4
-python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
-
-# Use xAI Grok
-python gpt_researcher_run.py "prompt" --model xai:grok-beta
-
-# Use OpenRouter for Claude Opus 4.5
-python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
-```
-
 ### Save to File
 
 ```bash
 python gpt_researcher_run.py "prompt" --output results.md
+```
+
+### Specify Different Model
+
+```bash
+# Use GPT-5.2-Pro for harder thinking (more compute)
+python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro
+
+# Use GPT-5-Mini for cost-optimized research
+python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini
+
+# Use Anthropic Claude Opus 4
+python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
+
+# Use OpenRouter for any model
+python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
 ```
 
 ### Report Types
@@ -95,52 +115,52 @@ python gpt_researcher_run.py "prompt" --report-type quick_report
 
 ## Integration with Podcast Workflow
 
-### Phase 1: Academic Foundation (Alternative to Perplexity)
+### Phase 3: Industry & Technical Research
 
-**Use Case:** Quick academic research with GPT-4 or Claude Opus
+**Replaces:** ChatGPT Deep Research browser automation
+
+**Use Case:** Industry reports, technical documentation, case studies
 
 ```bash
 cd podcast/tools
-python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase1_prompt.txt \
-    --model openai:gpt-4o \
-    --report-type quick_report \
-    --output ../episodes/YYYY-MM-DD-slug/research-results-gptr.md
+python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
+    --model openai:gpt-5.2 \
+    --report-type research_report \
+    --output ../episodes/YYYY-MM-DD-slug/research-results-industry.md
 ```
 
-**Expected time:** 3-5 minutes
-**Output:** Quick academic overview with 30-50 sources
+**Expected time:** 6-10 minutes
+**Output:** Research report with 50-100+ sources, industry and technical focus
 
-### Phase 3: Comprehensive Synthesis (Alternative to ChatGPT/Claude Deep Research)
+### Phase 3: Comprehensive Synthesis
 
 **Use Case:** Deep multi-dimensional research with comprehensive synthesis
 
 ```bash
 cd podcast/tools
 python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
-    --model anthropic:claude-opus-4 \
+    --model openai:gpt-5.2 \
     --report-type detailed_report \
-    --output ../episodes/YYYY-MM-DD-slug/research-results-gptr-detailed.md
+    --output ../episodes/YYYY-MM-DD-slug/research-results-comprehensive.md
 ```
 
 **Expected time:** 10-20 minutes
 **Output:** Comprehensive report with 100+ sources, multi-agent synthesis
 
-### Using OpenRouter for Multi-Provider Access
+### Using GPT-5.2-Pro for Complex Problems
 
-**Use Case:** Single API key for all providers
+For particularly challenging research that requires deeper thinking:
 
 ```bash
-# Claude Opus 4.5 via OpenRouter
-python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
-
-# GPT-4o via OpenRouter
-python gpt_researcher_run.py "prompt" --model openrouter/openai/gpt-4o
-
-# Grok via OpenRouter
-python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
+cd podcast/tools
+python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt \
+    --model openai:gpt-5.2-pro \
+    --report-type detailed_report \
+    --output ../episodes/YYYY-MM-DD-slug/research-results-pro.md
 ```
 
-**Advantage:** Only need `OPENROUTER_API_KEY` instead of multiple API keys
+**Expected time:** 15-25 minutes
+**Output:** Highest quality research with extended reasoning
 
 ## Output Format
 
@@ -156,7 +176,7 @@ Example output structure:
 
 **Date:** 2025-12-14 14:30
 
-**Model:** anthropic:claude-opus-4
+**Model:** openai:gpt-5.2
 
 **Prompt:** Research early childhood educator burnout interventions
 
@@ -175,64 +195,42 @@ Example output structure:
 [List of 100+ sources with URLs]
 ```
 
-## Implementation Steps (from Claude Code)
+## Why GPT-5.2 for Research?
 
-When invoking this skill from Claude Code:
+OpenAI's GPT-5.2 is their latest flagship model optimized for:
+- **Complex reasoning** - Multi-step analysis and synthesis
+- **Research tasks** - Information gathering and validation
+- **Agentic workflows** - Tool calling and context management
+- **Accuracy** - Improved instruction following and token efficiency
+- **Code generation** - Especially front-end UI creation
+- **Multimodality** - Enhanced vision capabilities
 
-1. **Create the research prompt** based on episode topic
-2. **Write prompt to temporary file** (or pass directly)
-3. **Invoke the script** with appropriate model and report type
-4. **Wait for completion** (6-20 minutes depending on report type)
-5. **Read the output** and format for `research-results.md`
+This makes it ideal for deep research compared to previous models.
 
-Example:
-```python
-# In Claude Code tool call
-cd podcast/tools
-python gpt_researcher_run.py \
-    "Research [TOPIC] with comprehensive methodology..." \
-    --model anthropic:claude-opus-4 \
-    --report-type detailed_report \
-    --output /tmp/gptr_results.md
-```
+**Model comparison:**
+- **gpt-5.2:** Best for complex reasoning and comprehensive research
+- **gpt-5.2-pro:** Best for hardest problems requiring extended thinking
+- **gpt-5-mini:** Best for cost-optimized research
+- **claude-opus-4:** Best for synthesis and writing quality
 
-## Troubleshooting
+## Comparison: GPT-Researcher vs ChatGPT Deep Research
 
-### Error: "No API keys found"
-- Check `.env` files exist in root or `podcast/tools/`
-- Ensure at least one API key is set: `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, etc.
-- Verify `.env` format: `KEY=value` (no spaces around `=`)
+| Feature | GPT-Researcher (Local) | ChatGPT Deep Research (Browser) |
+|---------|------------------------|--------------------------------|
+| **Model** | GPT-5.2 (latest) | ChatGPT (whatever's enabled) |
+| **Control** | Full local control | Browser automation |
+| **Setup** | API key only | Chrome + auth + browser automation |
+| **Reliability** | High (API) | Medium (UI changes) |
+| **Sources analyzed** | 100+ | 25-50 |
+| **Processing time** | 6-20 min | 5-10 min |
+| **Cost** | Pay-per-use (~$0.27-2) | $200/mo subscription |
+| **Headless** | Yes | No (needs browser) |
+| **Maintenance** | Low | High (UI changes) |
+| **Benchmark** | CMU winner | Commercial |
 
-### Error: "gpt-researcher not installed"
-- Run: `cd podcast/tools && source .venv/bin/activate && pip install gpt-researcher`
+**Decision:** GPT-Researcher with GPT-5.2 replaces ChatGPT Deep Research browser automation.
 
-### Research times out or fails
-- Try `--report-type quick_report` for faster results
-- Check API key has sufficient credits
-- Use `--quiet` flag and check for specific error messages
-
-### Model not found
-- For OpenRouter models, use format: `openrouter/provider/model`
-- Check model names at https://openrouter.ai/models
-- For native providers, use format: `provider:model`
-
-## Comparison: GPT-Researcher vs. Dedicated Tools
-
-| Feature | GPT-Researcher | ChatGPT Deep Research | Claude Research |
-|---------|----------------|----------------------|-----------------|
-| **Multi-agent architecture** | ✅ | ✅ | ✅ |
-| **Citation quality** | ⭐️ Best (CMU benchmark) | ⭐️ High | ⭐️ High |
-| **Report quality** | ⭐️ Best (CMU benchmark) | ⭐️ High | ⭐️ High |
-| **Sources analyzed** | 100+ | 25-50 | 260-427 |
-| **Processing time** | 6-20 min | 10-20 min | 6-10 min |
-| **Cost** | $0.27-2/search | $200/mo | $125/mo |
-| **Local control** | ✅ | ❌ | ❌ |
-| **Multi-provider** | ✅ | ❌ | ❌ |
-| **Benchmark performance** | ⭐️ CMU winner | ⭐️ 26.6% HLE | ⭐️ 90.2% vs single-agent |
-
-**Conclusion:** GPT-Researcher is the only open source tool that benchmarks competitively with commercial deep research features, especially when using top-tier models (GPT-4o, Claude Opus 4).
-
-## Advanced Configuration
+## Advanced Usage
 
 ### Environment Variables
 
@@ -245,28 +243,128 @@ ANTHROPIC_API_KEY=sk-ant-...
 OPENROUTER_API_KEY=sk-or-...
 XAI_API_KEY=...
 
-# Optional: Model selection (override with --model flag)
-FAST_LLM=openai:gpt-4o          # Quick tasks
-SMART_LLM=anthropic:claude-opus-4  # Deep analysis
-STRATEGIC_LLM=anthropic:claude-opus-4  # Planning
+# Optional: Override via --model flag
+FAST_LLM=openai:gpt-5.2          # Quick tasks
+SMART_LLM=openai:gpt-5.2         # Deep analysis
+STRATEGIC_LLM=openai:gpt-5.2     # Planning
 
 # Optional: Search provider
-SEARCH_PROVIDER=tavily  # Default
+RETRIEVER=tavily  # Default (best quality)
+# or: duckduckgo (free fallback)
 ```
 
-### Custom Configurations
+### Custom Model Selection
 
-The wrapper script automatically configures:
-- Model selection via `--model` flag
-- Report type via `--report-type` flag
-- Output formatting for podcast workflow
+```bash
+# Latest OpenAI GPT-5 family (2025)
+python gpt_researcher_run.py "prompt" --model openai:gpt-5.2          # Best for research
+python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro      # Harder thinking
+python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini       # Cost-optimized
+python gpt_researcher_run.py "prompt" --model openai:gpt-5-nano       # High-throughput
 
-No manual configuration needed!
+# Legacy OpenAI models
+python gpt_researcher_run.py "prompt" --model openai:o1               # Legacy reasoning
+python gpt_researcher_run.py "prompt" --model openai:gpt-4o           # Legacy multimodal
+
+# Anthropic Claude
+python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
+python gpt_researcher_run.py "prompt" --model anthropic:claude-sonnet-4
+
+# Via OpenRouter (single API key for all)
+python gpt_researcher_run.py "prompt" --model openrouter/openai/gpt-5.2
+python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
+python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
+```
+
+## Troubleshooting
+
+### Error: "No API keys found"
+- Check `.env` files exist in root or `podcast/tools/`
+- Ensure `OPENAI_API_KEY` is set for default GPT-5.2 model
+- Verify `.env` format: `KEY=value` (no spaces around `=`)
+
+### Error: "gpt-researcher not installed"
+- Run: `cd podcast/tools && pip install gpt-researcher langchain-openai`
+
+### Research times out or fails
+- Try `--report-type quick_report` for faster results
+- Check API key has sufficient credits
+- Verify OpenAI API key is valid
+- Use `--model openai:gpt-5-mini` for faster/cheaper alternative
+
+### Model not found
+- For OpenRouter models, use format: `openrouter/provider/model`
+- Check model names at https://openrouter.ai/models
+- For native providers, use format: `provider:model`
+
+### GPT-5.2 model errors
+- Ensure you have access to GPT-5.2 in your OpenAI account
+- Fallback to `--model openai:gpt-5-mini` if GPT-5.2 unavailable
+- Check OpenAI API status page
+
+## Example Commands
+
+**Basic research with GPT-5.2:**
+```bash
+python gpt_researcher_run.py "Research quantum computing applications in healthcare"
+```
+
+**From file with output:**
+```bash
+python gpt_researcher_run.py \
+  --file research-prompt.txt \
+  --output results.md
+```
+
+**Industry research (typical Phase 3):**
+```bash
+python gpt_researcher_run.py \
+  --file ../episodes/episode-dir/prompt.txt \
+  --model openai:gpt-5.2 \
+  --report-type research_report \
+  --output ../episodes/episode-dir/research-industry.md
+```
+
+**Hardest problems with GPT-5.2-Pro:**
+```bash
+python gpt_researcher_run.py \
+  --file prompt.txt \
+  --model openai:gpt-5.2-pro \
+  --report-type detailed_report \
+  --output results-pro.md
+```
+
+**Cost-optimized with GPT-5-Mini:**
+```bash
+python gpt_researcher_run.py \
+  --file prompt.txt \
+  --model openai:gpt-5-mini \
+  --report-type quick_report \
+  --output results-mini.md
+```
+
+**Comprehensive with Claude:**
+```bash
+python gpt_researcher_run.py \
+  --file prompt.txt \
+  --model anthropic:claude-opus-4 \
+  --report-type detailed_report \
+  --output results-comprehensive.md
+```
 
 ## Notes
 
-- **Processing time:** Budget 10-20 minutes for detailed reports
-- **Parallel execution:** Can run multiple research sessions if needed
+- **Default model:** OpenAI GPT-5.2 (latest flagship, 2025)
+- **Processing time:** Budget 6-20 minutes for comprehensive research
 - **API costs:** Typically $0.27-2 per research session (varies by model and sources)
 - **Quality:** Competitive with ChatGPT Deep Research on benchmarks
 - **Local execution:** Runs on your machine, full control over configuration
+- **No browser required:** Pure API-based, works in any environment
+- **Replaces:** ChatGPT Deep Research browser automation (deprecated)
+- **Knowledge cutoff:** GPT-5.2 has August 2025 cutoff (most current)
+
+## Further Reading
+
+- [OpenAI GPT-5.2 Documentation](https://platform.openai.com/docs/guides/latest-model)
+- [GPT-Researcher Framework](https://docs.gptr.dev/)
+- [Carnegie Mellon Benchmark Results](https://github.com/assafelovic/gpt-researcher)

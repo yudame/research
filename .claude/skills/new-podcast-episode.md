@@ -107,11 +107,11 @@ This document tracks all prompts used during the creation of this episode for re
 ### Tool Configuration
 - **Perplexity:** Academic & Official Sources (Phase 1 - always used)
 - **Grok:** Real-Time & Regional Sources (Phase 3 - typically used)
-- **ChatGPT Deep Research:** Industry & Technical Sources (Phase 3 - typically used)
+- **GPT-Researcher:** Industry & Technical Sources (Phase 3 - typically used, uses OpenAI GPT-5.2)
 - **Gemini Deep Research:** Strategic & Policy Sources (Phase 3 - typically used)
 - **Claude Deep Research:** Comprehensive Synthesis (Phase 3 - use when complex questions need multi-dimensional analysis)
 
-**Default approach:** Use all Phase 3 tools (Grok, ChatGPT, Gemini, Claude) unless a tool's focus area is clearly not relevant to the topic. Omitting a tool should be rare.
+**Default approach:** Use all Phase 3 tools (Grok, GPT-Researcher, Gemini, Claude) unless a tool's focus area is clearly not relevant to the topic. Omitting a tool should be rare.
 
 ### Deep Research Prompts (Copy-Paste Ready)
 
@@ -148,9 +148,10 @@ This file contains raw research outputs from multiple tools for cross-validation
 
 ---
 
-## Research from ChatGPT Deep Research (Industry & Technical)
+## Research from GPT-Researcher (Industry & Technical)
 
 **Date:** [Today's date in YYYY-MM-DD format]
+**Model:** OpenAI GPT-5.2
 **Focus:** Industry reports, technical documentation, case studies
 
 <!-- Paste ChatGPT results here -->
@@ -277,7 +278,7 @@ For: podcast-synthesis-writer agent
 ## Research Tools Used
 - Perplexity (Academic & Official)
 - Grok (Real-Time & Regional)
-- ChatGPT Deep Research (Industry & Technical)
+- GPT-Researcher (Industry & Technical - OpenAI GPT-5.2)
 - Gemini Deep Research (Strategic & Policy) [if used]
 - Claude Deep Research (Comprehensive Synthesis) [if used]
 
@@ -463,7 +464,7 @@ Provide findings with source links, publication dates, and credibility indicator
 
 ---
 
-**ChatGPT Deep Research - Industry & Case Studies**
+**GPT-Researcher - Industry & Case Studies**
 
 Template:
 ```
@@ -702,10 +703,10 @@ Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete,
 **After Phase 2 question discovery, invoke research skills as needed:**
 
 **Available automation skills (invoke via Task tool):**
-- `chatgpt-deep-research` - Chrome DevTools automation, 5-10 min wait + polling
-- `gemini-deep-research` - Chrome DevTools automation, 3-5 min execution
+- `gpt-researcher` - Local multi-agent research with OpenAI GPT-5.2, 6-20 min, 100+ sources, no browser required
+- `gemini-deep-research` - Official API automation, 3-10 min polling, no browser required
 - `claude-deep-research` - Chrome DevTools automation, 10-20 min wait + polling
-- `gpt-researcher` - Multi-agent local research, 6-20 min, 100+ sources (alternative to all above)
+- `perplexity-deep-research` - Official API automation, 30-120s, academic focus
 
 **How to invoke:**
 ```
@@ -714,7 +715,7 @@ Use the Task tool with subagent_type='general-purpose':
 "Automate [ChatGPT/Gemini/Claude] Deep Research for Phase 3 research.
 
 Read and follow the instructions in .claude/skills/[skill-name]/SKILL.md to:
-1. Execute automation (Chrome DevTools or local API)
+1. Execute automation (Chrome DevTools, API, or local tool)
 2. Wait for research completion
 3. Extract and format results
 4. Present output ready for research-results.md

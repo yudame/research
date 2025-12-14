@@ -2,8 +2,13 @@
 
 **Version:** 1.0
 **Date:** 2025-12-08
-**Status:** Draft
+**Status:** Draft (Historical - see implementation notes)
 **Owner:** Valor Engels
+
+**IMPLEMENTATION NOTE (2025-12-14):**
+- **Gemini Deep Research** has been implemented using the official API, not browser automation. See `.claude/skills/gemini-deep-research/SKILL.md`.
+- **ChatGPT Deep Research** has been replaced with GPT-Researcher (local multi-agent framework with OpenAI o1). See `.claude/skills/gpt-researcher/SKILL.md`.
+- This PRD describes the original browser automation plan for all platforms (historical reference only).
 
 ---
 
