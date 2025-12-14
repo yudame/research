@@ -348,3 +348,32 @@ Once a series is planned with `research-prompt.md` files in each episode folder:
 3. Run the command to start the standard episode workflow
 4. The episode will be created within the series directory structure
 5. Update the series `index.html` to mark the episode as available
+
+## Reviewing and Finalizing Completed Series
+
+After all episodes in a series have been published, you can review and polish the series at any time:
+
+**When to review a series:**
+- All episodes are published and live
+- Want to ensure series index page is perfect
+- Need to verify all episode links are working (report.html, transcript.html)
+- Want to add final touches or improvements to the series presentation
+- User requests to update or review a series
+
+**Review checklist:**
+1. Verify all episodes are marked as `available` in index.html
+2. Confirm all episode durations are correct (not "Coming soon")
+3. Check that all report.html and transcript.html links work
+4. Ensure episode summaries and descriptions are compelling
+5. Verify audio players are properly configured
+6. Confirm back navigation links work correctly
+7. Review overall visual presentation and consistency
+8. Check that series description/tagline is accurate
+
+**To initiate a series review:**
+```
+Review the [series-name] series at @podcast/episodes/[series-name]/
+Update the index.html to ensure it's polished and all episodes are properly listed.
+```
+
+The series can be updated and improved at any time after completion.
