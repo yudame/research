@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 1 Transcript - Active Recovery</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #0a0a0a;
+            --text-secondary: #666666;
+            --border: #e5e5e5;
+            --accent: #f5d563;
+        }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: #fafafa;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+        }
+        .segment {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-left: 3px solid var(--border);
+            transition: all 0.3s;
+        }
+        .segment:hover {
+            border-left-color: var(--accent);
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .timestamp {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+        .metadata {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #fafafa;
+            border: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1rem;
+        }
+        .metadata-label {
+            font-weight: 500;
+            color: var(--text);
+        }
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Active Recovery Series</a>
+        <h1>Episode 1: Foundations of Active Recovery - Transcript</h1>
+        <div id="content" class="loading">Loading transcript...</div>
+    </div>
+
+    <script>
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Try XMLHttpRequest for better local file support
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ep1-foundations_transcript.json', true);
+        xhr.onload = function() {
+            if (xhr.status === 200 || xhr.status === 0) { // 0 for local files
+                try {
+                    const data = JSON.parse(xhr.responseText);
+                    const container = document.getElementById('content');
+
+                    // Display metadata
+                    let html = '<div class="metadata">';
+                    html += '<div class="metadata-grid">';
+                    html += `<span class="metadata-label">Duration:</span><span>${formatTime(data.duration)}</span>`;
+                    html += `<span class="metadata-label">Language:</span><span>${data.language}</span>`;
+                    html += `<span class="metadata-label">Segments:</span><span>${data.segments.length}</span>`;
+                    html += '</div></div>';
+
+                    // Display segments
+                    data.segments.forEach((segment, index) => {
+                        html += '<div class="segment">';
+                        html += `<div class="timestamp">[${formatTime(segment.start)} - ${formatTime(segment.end)}]</div>`;
+                        html += `<div class="text">${segment.text.trim()}</div>`;
+                        html += '</div>';
+                    });
+
+                    container.innerHTML = html;
+                } catch (error) {
+                    document.getElementById('content').innerHTML =
+                        '<div class="segment"><p>Error parsing transcript: ' + error.message + '</p></div>';
+                }
+            } else {
+                document.getElementById('content').innerHTML =
+                    '<div class="segment"><p>Error loading transcript (status: ' + xhr.status + ')</p></div>';
+            }
+        };
+        xhr.onerror = function() {
+            document.getElementById('content').innerHTML =
+                '<div class="segment"><p>Error loading transcript. If viewing locally, try opening via: <code>python3 -m http.server 8000</code> and navigate to <code>http://localhost:8000</code></p></div>';
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
