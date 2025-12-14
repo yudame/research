@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+#!/usr/bin/env python3
 """
 GPT-Researcher - Multi-Agent Deep Research Framework
 
@@ -6,15 +6,16 @@ This script uses GPT-Researcher's multi-agent architecture to conduct
 comprehensive research with parallel information gathering and synthesis.
 
 Usage:
-    python gpt_researcher_run.py "Your research prompt here"
-    python gpt_researcher_run.py --file prompt.txt
-    python gpt_researcher_run.py --file prompt.txt --output results.md
-    python gpt_researcher_run.py "prompt" --model openai:gpt-4o
-    python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
+    uv run python gpt_researcher_run.py "Your research prompt here"
+    uv run python gpt_researcher_run.py --file prompt.txt
+    uv run python gpt_researcher_run.py --file prompt.txt --output results.md
+    uv run python gpt_researcher_run.py "prompt" --model openai:gpt-4o
+    uv run python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
 
 Requirements:
     - API keys in .env file (OPENAI_API_KEY, OPENROUTER_API_KEY, etc.)
-    - pip install gpt-researcher langchain-openai
+    - uv (package manager): curl -LsSf https://astral.sh/uv/install.sh | sh
+    - Dependencies auto-installed via: uv pip install gpt-researcher langchain-openai
 
 Configuration Options:
     - OpenAI (default): FAST_LLM=openai:gpt-5.2, SMART_LLM=openai:gpt-5.2
@@ -151,7 +152,8 @@ async def run_research(
             DetailedReport = None
     except ImportError:
         print("ERROR: gpt-researcher not installed")
-        print("Install with: pip install gpt-researcher")
+        print("Install with: uv pip install gpt-researcher langchain-openai")
+        print("Or ensure you're running with: uv run python gpt_researcher_run.py")
         return None
 
     # Check for API keys

@@ -46,6 +46,19 @@ Use GPT-Researcher for deep research tasks in the podcast episode workflow:
 - Run in background or CI/CD pipelines
 - Complete control over configuration
 
+## Installation
+
+This skill requires `uv`, a fast Python package manager:
+
+```bash
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install dependencies
+cd /Users/valorengels/src/research/podcast/tools
+uv pip install gpt-researcher langchain-openai python-dotenv
+```
+
 ## Configuration
 
 API keys are auto-discovered from `.env` files in:
@@ -66,7 +79,7 @@ API keys are auto-discovered from `.env` files in:
 
 ```bash
 cd /Users/valorengels/src/research/podcast/tools
-python gpt_researcher_run.py "Your research prompt here"
+uv run python gpt_researcher_run.py "Your research prompt here"
 ```
 
 This uses **GPT-5.2** by default - OpenAI's latest and most capable general-purpose model.
@@ -75,42 +88,42 @@ This uses **GPT-5.2** by default - OpenAI's latest and most capable general-purp
 
 ```bash
 cd /Users/valorengels/src/research/podcast/tools
-python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt
+uv run python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt
 ```
 
 ### Save to File
 
 ```bash
-python gpt_researcher_run.py "prompt" --output results.md
+uv run python gpt_researcher_run.py "prompt" --output results.md
 ```
 
 ### Specify Different Model
 
 ```bash
 # Use GPT-5.2-Pro for harder thinking (more compute)
-python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro
 
 # Use GPT-5-Mini for cost-optimized research
-python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini
 
 # Use Anthropic Claude Opus 4
-python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
+uv run python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
 
 # Use OpenRouter for any model
-python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
+uv run python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
 ```
 
 ### Report Types
 
 ```bash
 # Standard research report (default, 6-10 min)
-python gpt_researcher_run.py "prompt" --report-type research_report
+uv run python gpt_researcher_run.py "prompt" --report-type research_report
 
 # Detailed comprehensive report (10-20 min)
-python gpt_researcher_run.py "prompt" --report-type detailed_report
+uv run python gpt_researcher_run.py "prompt" --report-type detailed_report
 
 # Quick report (3-5 min, fewer sources)
-python gpt_researcher_run.py "prompt" --report-type quick_report
+uv run python gpt_researcher_run.py "prompt" --report-type quick_report
 ```
 
 ## Integration with Podcast Workflow
@@ -123,7 +136,7 @@ python gpt_researcher_run.py "prompt" --report-type quick_report
 
 ```bash
 cd podcast/tools
-python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
+uv run python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
     --model openai:gpt-5.2 \
     --report-type research_report \
     --output ../episodes/YYYY-MM-DD-slug/research-results-industry.md
@@ -138,7 +151,7 @@ python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.tx
 
 ```bash
 cd podcast/tools
-python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
+uv run python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/phase3_prompt.txt \
     --model openai:gpt-5.2 \
     --report-type detailed_report \
     --output ../episodes/YYYY-MM-DD-slug/research-results-comprehensive.md
@@ -153,7 +166,7 @@ For particularly challenging research that requires deeper thinking:
 
 ```bash
 cd podcast/tools
-python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt \
+uv run python gpt_researcher_run.py --file ../episodes/YYYY-MM-DD-slug/prompt.txt \
     --model openai:gpt-5.2-pro \
     --report-type detailed_report \
     --output ../episodes/YYYY-MM-DD-slug/research-results-pro.md
@@ -257,23 +270,23 @@ RETRIEVER=tavily  # Default (best quality)
 
 ```bash
 # Latest OpenAI GPT-5 family (2025)
-python gpt_researcher_run.py "prompt" --model openai:gpt-5.2          # Best for research
-python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro      # Harder thinking
-python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini       # Cost-optimized
-python gpt_researcher_run.py "prompt" --model openai:gpt-5-nano       # High-throughput
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5.2          # Best for research
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5.2-pro      # Harder thinking
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5-mini       # Cost-optimized
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-5-nano       # High-throughput
 
 # Legacy OpenAI models
-python gpt_researcher_run.py "prompt" --model openai:o1               # Legacy reasoning
-python gpt_researcher_run.py "prompt" --model openai:gpt-4o           # Legacy multimodal
+uv run python gpt_researcher_run.py "prompt" --model openai:o1               # Legacy reasoning
+uv run python gpt_researcher_run.py "prompt" --model openai:gpt-4o           # Legacy multimodal
 
 # Anthropic Claude
-python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
-python gpt_researcher_run.py "prompt" --model anthropic:claude-sonnet-4
+uv run python gpt_researcher_run.py "prompt" --model anthropic:claude-opus-4
+uv run python gpt_researcher_run.py "prompt" --model anthropic:claude-sonnet-4
 
 # Via OpenRouter (single API key for all)
-python gpt_researcher_run.py "prompt" --model openrouter/openai/gpt-5.2
-python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
-python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
+uv run python gpt_researcher_run.py "prompt" --model openrouter/openai/gpt-5.2
+uv run python gpt_researcher_run.py "prompt" --model openrouter/anthropic/claude-opus-4.5
+uv run python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
 ```
 
 ## Troubleshooting
@@ -284,7 +297,8 @@ python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
 - Verify `.env` format: `KEY=value` (no spaces around `=`)
 
 ### Error: "gpt-researcher not installed"
-- Run: `cd podcast/tools && pip install gpt-researcher langchain-openai`
+- Run: `cd podcast/tools && uv pip install gpt-researcher langchain-openai python-dotenv`
+- Or ensure you're using: `uv run python gpt_researcher_run.py` (auto-installs dependencies)
 
 ### Research times out or fails
 - Try `--report-type quick_report` for faster results
@@ -306,19 +320,19 @@ python gpt_researcher_run.py "prompt" --model openrouter/x-ai/grok-4
 
 **Basic research with GPT-5.2:**
 ```bash
-python gpt_researcher_run.py "Research quantum computing applications in healthcare"
+uv run python gpt_researcher_run.py "Research quantum computing applications in healthcare"
 ```
 
 **From file with output:**
 ```bash
-python gpt_researcher_run.py \
+uv run python gpt_researcher_run.py \
   --file research-prompt.txt \
   --output results.md
 ```
 
 **Industry research (typical Phase 3):**
 ```bash
-python gpt_researcher_run.py \
+uv run python gpt_researcher_run.py \
   --file ../episodes/episode-dir/prompt.txt \
   --model openai:gpt-5.2 \
   --report-type research_report \
@@ -327,7 +341,7 @@ python gpt_researcher_run.py \
 
 **Hardest problems with GPT-5.2-Pro:**
 ```bash
-python gpt_researcher_run.py \
+uv run python gpt_researcher_run.py \
   --file prompt.txt \
   --model openai:gpt-5.2-pro \
   --report-type detailed_report \
@@ -336,7 +350,7 @@ python gpt_researcher_run.py \
 
 **Cost-optimized with GPT-5-Mini:**
 ```bash
-python gpt_researcher_run.py \
+uv run python gpt_researcher_run.py \
   --file prompt.txt \
   --model openai:gpt-5-mini \
   --report-type quick_report \
@@ -345,7 +359,7 @@ python gpt_researcher_run.py \
 
 **Comprehensive with Claude:**
 ```bash
-python gpt_researcher_run.py \
+uv run python gpt_researcher_run.py \
   --file prompt.txt \
   --model anthropic:claude-opus-4 \
   --report-type detailed_report \
