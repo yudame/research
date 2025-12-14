@@ -80,3 +80,74 @@ Prioritize official regulatory sources, peer-reviewed market analysis, industry 
 ```
 
 ---
+
+## Opus 4.5 Synthesis Phase
+
+**Model:** Claude Opus 4.5 (claude-opus-4-5-20251101)
+**Input:** Complete research-briefing.md content
+**Output:** Final narrative report (report.md)
+
+### Synthesis Prompt for Opus 4.5
+
+```
+NARRATIVE SYNTHESIS: Solomon Islands Telecom Series: Ep. 5, Launch Execution - From Spectrum to SIM Cards
+
+Create a comprehensive research report for a podcast episode based on the verified research briefing below.
+
+[Paste the complete research-briefing.md here]
+
+**Your role:** Transform this organized research material into an engaging, podcast-ready narrative report.
+
+**Requirements:**
+
+1. **Narrative Structure:**
+   - Lead with the most compelling/surprising elements
+   - Create clear section headers that flow naturally
+   - Build arguments from evidence, not opinions
+   - Use specific examples, case studies, and real-world events
+   - Highlight contrasts and comparisons that illustrate key points
+
+2. **Evidence Standards:**
+   - Every factual claim must reference a specific source from the briefing
+   - When citing statistics, note sample size and study type
+   - Distinguish correlation from causation explicitly
+   - Note research quality (meta-analysis > RCT > observational)
+   - When only one source exists, state: "According to [Source], though this wasn't corroborated across other sources..."
+   - When sources conflict, present both views and explain possible reasons
+
+3. **Storytelling for Podcast:**
+   - Include human elements: decisions made, reasoning, outcomes
+   - Make numbers meaningful through context and comparisons
+   - Use concrete examples from the research (never fabricate)
+   - Translate findings to practical implications
+   - Note areas of uncertainty and scientific debate
+
+4. **Accessibility:**
+   - Define technical terms on first use
+   - Explain mechanisms, not just outcomes
+   - Use analogies when helpful (but only evidence-based ones)
+   - Keep sentences clear and conversational
+
+**Deliverable Format:**
+- Markdown document with clear section headers
+- Inline citations throughout
+- Comparison tables where useful
+- Key takeaways or implications sections
+- "Sources" section at end with full citations organized by tier
+
+**DO NOT:**
+- Make claims without source citations
+- Ignore contradictory findings
+- Add speculative content beyond the research
+- Use academic jargon without explanation
+- Create examples not grounded in the research
+
+**DO:**
+- Explain what findings mean and why they matter
+- Connect individual findings to broader patterns
+- Acknowledge limitations and gaps
+- Make the research come alive through storytelling
+- Maintain scientific rigor while being engaging
+```
+
+---

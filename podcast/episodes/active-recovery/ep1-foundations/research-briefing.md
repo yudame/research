@@ -1,17 +1,32 @@
-# Master Research Briefing: Active Recovery: Ep. 1, Foundations
+# Master Research Briefing: Active Recovery: Ep. 1, Foundations of Active Recovery
 
-Date: TBD
-For: Claude Opus 4.5 Final Synthesis
+Date: 2025-12-12
+For: podcast-synthesis-writer agent
 
 ---
 
 ## VERIFIED KEY FINDINGS
 
-### [Subtopic 1 - Active vs Passive Recovery]
-**Main finding:** [One sentence summary]
+<!-- Will be populated after cross-validation phase -->
+
+### Active vs Passive Recovery
+**Main finding:** [To be populated from research]
 
 **Evidence:**
 - [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
+
+**Contradictions/Nuances:**
+- [If sources disagree, note here]
+
+**Source quality notes:**
+- [Methodological limitations to be aware of]
+
+---
+
+### Compression Therapy
+**Main finding:** [To be populated from research]
+
+**Evidence:**
 - [Stat/Finding] — Source: [Citation] — Quality: [Study type] — N=[sample]
 
 **Contradictions/Nuances:**
@@ -22,11 +37,11 @@ For: Claude Opus 4.5 Final Synthesis
 
 ---
 
-### [Subtopic 2 - Compression Therapy]
-**Main finding:** [One sentence summary]
+### Post-Workout Nutrition
+**Main finding:** [To be populated from research]
 
 **Evidence:**
-- [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
+- [Stat/Finding] — Source: [Citation] — Quality: [Study type] — N=[sample]
 
 **Contradictions/Nuances:**
 - [If sources disagree, note here]
@@ -36,11 +51,11 @@ For: Claude Opus 4.5 Final Synthesis
 
 ---
 
-### [Subtopic 3 - Post-Workout Nutrition]
-**Main finding:** [One sentence summary]
+### Circadian Alignment & Timing
+**Main finding:** [To be populated from research]
 
 **Evidence:**
-- [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
+- [Stat/Finding] — Source: [Citation] — Quality: [Study type] — N=[sample]
 
 **Contradictions/Nuances:**
 - [If sources disagree, note here]
@@ -50,25 +65,11 @@ For: Claude Opus 4.5 Final Synthesis
 
 ---
 
-### [Subtopic 4 - Timing and Circadian Alignment]
-**Main finding:** [One sentence summary]
+### Injury Prevention & Overtraining
+**Main finding:** [To be populated from research]
 
 **Evidence:**
-- [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
-
-**Contradictions/Nuances:**
-- [If sources disagree, note here]
-
-**Source quality notes:**
-- [Methodological limitations to be aware of]
-
----
-
-### [Subtopic 5 - Injury Prevention]
-**Main finding:** [One sentence summary]
-
-**Evidence:**
-- [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
+- [Stat/Finding] — Source: [Citation] — Quality: [Study type] — N=[sample]
 
 **Contradictions/Nuances:**
 - [If sources disagree, note here]
@@ -100,12 +101,12 @@ For: Claude Opus 4.5 Final Synthesis
 ---
 
 ## COMPARISON TABLES
-[Tables comparing different recovery modalities and their effectiveness]
+[Tables comparing different recovery modalities, protocols, or timing strategies]
 
 ---
 
 ## TIMELINE OF DEVELOPMENTS
-[Chronological key developments in active recovery research]
+[Chronological key events for topics with recent changes, if applicable]
 
 ---
 

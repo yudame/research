@@ -16,7 +16,7 @@ Gemini Deep Research is a tool that performs comprehensive web research by:
 
 ## Prerequisites
 
-- Chrome must be running with remote debugging enabled
+- Chrome must be running with remote debugging enabled.
 - User must be logged into Google Gemini (https://gemini.google.com/)
 - Gemini Advanced subscription required (Deep Research is a paid feature)
 
