@@ -2,3 +2,6 @@ openai-whisper
 anthropic
 openai
 pillow
+gpt-researcher
+langchain-openai
+ddgs
