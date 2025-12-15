@@ -253,12 +253,9 @@ def main():
             with open(log_file, 'a') as f:
                 f.write(msg + '\n')
 
-    # Determine output path
+    # Determine output path - always save cover to episode directory
     output_filename = args.output or "cover.png"
-    if args.log_dir:
-        output_path = log_dir / output_filename
-    else:
-        output_path = episode_dir / output_filename
+    output_path = episode_dir / output_filename
 
     # Get or generate prompt
     if args.auto:
