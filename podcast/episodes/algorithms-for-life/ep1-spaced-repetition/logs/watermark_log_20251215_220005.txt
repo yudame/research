@@ -1,0 +1,2 @@
+Error: Cover image not found: ../episodes/algorithms-for-life/ep1-spaced-repetition/cover.png
+Watermarking failed

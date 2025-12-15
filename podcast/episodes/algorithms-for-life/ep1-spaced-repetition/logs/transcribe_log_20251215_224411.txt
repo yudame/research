@@ -1,0 +1,8 @@
+Starting transcription: ep1-spaced-repetition.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/algorithms-for-life/ep1-spaced-repetition/ep1-spaced-repetition.mp3...
+
+✓ Transcript saved to: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/ep1-spaced-repetition_transcript.json
+✓ Log saved to: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/transcribe_log_20251215_224411.txt
+✓ Transcript length: 7549 words
