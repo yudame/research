@@ -1,0 +1,25 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep1 Spaced Repetition":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: You can watch a fruit fly develop a seven-day memory instead of a three-day memory just by inserting fifteen-minute rest periods between training trials. You can measure the molecular switch that make
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep1 Spaced Repetition":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitabl...
+✓ Cover art saved to: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/cover.png
+✓ Metadata saved to: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/cover_generation_metadata_20251215_215949.json
+
+✓ Done! Cover art ready at: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/cover.png
+✓ Log saved to: ../episodes/algorithms-for-life/ep1-spaced-repetition/logs/cover_generation_log_20251215_215922.txt

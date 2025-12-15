@@ -27,6 +27,29 @@
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 22: Algorithms for Life - Episode 1 -->
+    <item>
+      <title>Algorithms for Life: Ep. 1, Spaced Repetition - The Algorithm That Optimizes How We Remember</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/cover.png"/>
+      <description>Spaced repetition produces 74% better retention than cramming (meta-analysis: 317 experiments, 839 assessments), with molecular mechanisms (CREB, MAPK) explaining exactly why spacing is biologically mandatory. Yet 99.9% of users fail: only 0.1% of Duolingo users complete a course, and education apps have the lowest retention rate (1.76%) of any mobile category. The paradox reveals fundamental conflicts between learning science and business models—engagement metrics demand daily sessions while optimal learning requires strategic difficulty. Modern algorithms like FSRS predict forgetting with impressive precision, but prediction accuracy ≠ learning outcomes. The real failure isn't the math; it's the recognition-production gap (flashcard mastery doesn't create conversational fluency), review burden exponential growth, and the 140-year adoption failure despite robust evidence. Successful learners treat SRS as 10-30% of study time within holistic systems emphasizing comprehensible input and production practice. Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/report.md</description>
+      <content:encoded><![CDATA[<p>Spaced repetition produces 74% better retention than cramming (meta-analysis: 317 experiments, 839 assessments), with molecular mechanisms (CREB, MAPK) explaining exactly why spacing is biologically mandatory. Yet 99.9% of users fail: only 0.1% of Duolingo users complete a course, and education apps have the lowest retention rate (1.76%) of any mobile category. The paradox reveals fundamental conflicts between learning science and business models—engagement metrics demand daily sessions while optimal learning requires strategic difficulty. Modern algorithms like FSRS predict forgetting with impressive precision, but prediction accuracy ≠ learning outcomes. The real failure isn't the math; it's the recognition-production gap (flashcard mastery doesn't create conversational fluency), review burden exponential growth, and the 140-year adoption failure despite robust evidence. Successful learners treat SRS as 10-30% of study time within holistic systems emphasizing comprehensible input and production practice.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://doi.org/10.1037/0033-2909.134.2.223">Cepeda et al. (2008) Meta-analysis: Spacing Effects in Memory</a> - 317 experiments, 839 assessments: spaced practice produces 74% better retention than massed practice across all intervals</li><li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730891/">CREB and MAPK molecular mechanisms</a> - Fruit fly studies demonstrate CREB as molecular switch; 15-minute spacing intervals produce 7+ day memory vs 3-day massed training</li><li><a href="https://doi.org/10.1111/lang.12503">Kim & Webb (2022) Vocabulary Learning Meta-analysis</a> - 48 experiments (N=3,411): spaced practice effect sizes g=1.04-2.34, but majority focus on paired-associate (flashcard) format</li><li><a href="https://www.taylorfrancis.com/chapters/edit/10.4324/9781003052449">Duolingo Effectiveness Systematic Review (2021)</a> - Mixed/negatively skewed picture; design prioritizes engagement over learning effectiveness; 8 years in, "very little conclusive evidence"</li><li><a href="https://doi.org/10.1037/0033-2909.100.1.78">Dempster (1988): The Spacing Effect - A Case Study in Failure to Apply Research</a> - 140 years of robust evidence ignored by formal education; Soviet textbooks showed better distributed presentation than American</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sun, 15 Dec 2025 23:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/ep1-spaced-repetition.mp3"
+                 length="41899934"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/ep1-spaced-repetition.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>43:38</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>3</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:keywords>spaced repetition, SRS, Anki, Duolingo, memory consolidation, CREB, MAPK, hippocampal cortical transfer, SM-2, FSRS, algorithmic scheduling, forgetting curve, recognition production gap, language learning, flashcards, cramming, desirable difficulty, metacognition, business models, engagement metrics, dropout rates, polyglot strategies, comprehensible input, sentence mining, dual coding, AI flashcard generation, 140 year adoption failure</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep1-spaced-repetition/ep1-spaced-repetition_chapters.json" type="application/json+chapters"/>
+    </item>
+
     <!-- Episode 21: Active Recovery Series - Episode 3 -->
     <item>
       <title>Active Recovery: Ep. 3, Emerging Edges</title>

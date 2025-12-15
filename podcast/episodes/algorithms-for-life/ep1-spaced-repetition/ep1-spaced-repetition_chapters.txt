@@ -1,0 +1,66 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction: The 99.9% Failure Paradox
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=420000
+title=Molecular Switches: CREB and the Biology of Memory
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=600000
+title=MAPK: The 45-Minute Temporal Window
+[CHAPTER]
+TIMEBASE=1/1000
+START=600000
+END=780000
+title=Hippocampal-Cortical Transfer: The Long-Term Archive
+[CHAPTER]
+TIMEBASE=1/1000
+START=780000
+END=900000
+title=Algorithm History: From SM-0 to SM-2
+[CHAPTER]
+TIMEBASE=1/1000
+START=900000
+END=1080000
+title=FSRS: Modern Machine Learning Scheduling
+[CHAPTER]
+TIMEBASE=1/1000
+START=1080000
+END=1260000
+title=Prediction vs. Learning: The Critical Gap
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1500000
+title=Anki vs. Duolingo: Two Opposing Philosophies
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1740000
+title=Business Models: Engagement vs. Learning
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=1980000
+title=The 140-Year Adoption Failure
+[CHAPTER]
+TIMEBASE=1/1000
+START=1980000
+END=2220000
+title=Recognition-Production Gap: Why Users Can't Speak
+[CHAPTER]
+TIMEBASE=1/1000
+START=2220000
+END=2460000
+title=Polyglot Integration: SRS as Supplement
+[CHAPTER]
+TIMEBASE=1/1000
+START=2460000
+END=2618600
+title=Key Takeaways: Trust Desirable Difficulty

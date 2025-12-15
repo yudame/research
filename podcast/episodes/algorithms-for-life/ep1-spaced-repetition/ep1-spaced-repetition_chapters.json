@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The 99.9% Failure Paradox"
+    },
+    {
+      "startTime": 180,
+      "title": "Molecular Switches: CREB and the Biology of Memory"
+    },
+    {
+      "startTime": 420,
+      "title": "MAPK: The 45-Minute Temporal Window"
+    },
+    {
+      "startTime": 600,
+      "title": "Hippocampal-Cortical Transfer: The Long-Term Archive"
+    },
+    {
+      "startTime": 780,
+      "title": "Algorithm History: From SM-0 to SM-2"
+    },
+    {
+      "startTime": 900,
+      "title": "FSRS: Modern Machine Learning Scheduling"
+    },
+    {
+      "startTime": 1080,
+      "title": "Prediction vs. Learning: The Critical Gap"
+    },
+    {
+      "startTime": 1260,
+      "title": "Anki vs. Duolingo: Two Opposing Philosophies"
+    },
+    {
+      "startTime": 1500,
+      "title": "Business Models: Engagement vs. Learning"
+    },
+    {
+      "startTime": 1740,
+      "title": "The 140-Year Adoption Failure"
+    },
+    {
+      "startTime": 1980,
+      "title": "Recognition-Production Gap: Why Users Can't Speak"
+    },
+    {
+      "startTime": 2220,
+      "title": "Polyglot Integration: SRS as Supplement"
+    },
+    {
+      "startTime": 2460,
+      "title": "Key Takeaways: Trust Desirable Difficulty"
+    }
+  ]
+}
