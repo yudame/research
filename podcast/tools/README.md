@@ -99,21 +99,55 @@ uv run python gpt_researcher_run.py --file prompt.txt --output results.md
 Local Whisper transcription (no API key needed):
 
 ```bash
+# Basic usage
 python transcribe_only.py podcast.mp3 --model base
+
+# With organized output and logging
+python transcribe_only.py podcast.mp3 --model base --log-dir logs/ --quiet
+
+# Custom output path
+python transcribe_only.py podcast.mp3 --output custom_transcript.json
 ```
+
+**Options:**
+- `--model {tiny,base,small,medium}` - Whisper model (default: base)
+- `--use-api` - Use OpenAI API instead of local model (requires OPENAI_API_KEY)
+- `--output, -o PATH` - Output file path (default: auto-generated)
+- `--log-dir DIR` - Directory for output and log files
+- `--quiet, -q` - Minimal output (suppress progress messages)
 
 **Models:**
 - `tiny` - Fastest (~1-2 min), basic accuracy
 - `base` - **Recommended** (~5-10 min), good accuracy
 - `small` - Slower (~15-20 min), better accuracy
+- `medium` - Slowest (~30-40 min), best accuracy
 
 ### Chapter Generation (`generate_chapters.py`)
 
-Generate podcast chapters from transcript:
+Generate podcast chapters from audio or existing transcript:
 
 ```bash
-python generate_chapters.py transcript.json
+# From audio file (transcribes automatically)
+python generate_chapters.py podcast.mp3
+
+# From existing transcript (faster, avoids re-transcription)
+python generate_chapters.py podcast.mp3 --transcript podcast_transcript.json
+
+# With organized output and logging
+python generate_chapters.py podcast.mp3 --log-dir logs/ --quiet
+
+# Custom Claude model
+python generate_chapters.py podcast.mp3 --claude-model claude-opus-4-20250514
 ```
+
+**Options:**
+- `--transcript PATH` - Use existing transcript JSON (avoids re-transcription)
+- `--model {tiny,base,small,medium}` - Whisper model for transcription (default: base)
+- `--claude-model MODEL` - Claude model for chapter generation (default: claude-sonnet-4-20250514)
+- `--chunk-duration N` - Target chunk duration in seconds (default: 120)
+- `--log-dir DIR` - Directory for chapter files and logs
+- `--output, -o PATH` - Output base path for chapter files
+- `--quiet, -q` - Minimal output
 
 Requires `ANTHROPIC_API_KEY` in `.env`.
 
@@ -124,8 +158,27 @@ Requires `ANTHROPIC_API_KEY` in `.env`.
 AI-generated cover art with branding:
 
 ```bash
-python generate_cover.py --episode-dir ../episodes/2024-12-14-topic
+# Auto-generate from report.md
+python generate_cover.py ../episodes/2024-12-14-topic --auto
+
+# Custom prompt
+python generate_cover.py ../episodes/2024-12-14-topic --prompt "Abstract visualization of..."
+
+# With organized output and logging
+python generate_cover.py ../episodes/2024-12-14-topic --auto --log-dir logs/ --quiet
+
+# Custom model and aspect ratio
+python generate_cover.py episode-dir --auto --model google/gemini-3-pro-image-preview --aspect-ratio 16:9
 ```
+
+**Options:**
+- `--auto` - Auto-generate prompt from report.md
+- `--prompt TEXT` - Custom image generation prompt
+- `--model MODEL` - Model to use (default: google/gemini-3-pro-image-preview)
+- `--aspect-ratio RATIO` - Image aspect ratio (default: 1:1)
+- `--output FILENAME` - Output filename (default: cover.png)
+- `--log-dir DIR` - Directory for output and log files
+- `--quiet, -q` - Minimal output
 
 Requires `OPENROUTER_API_KEY` in `.env`.
 
@@ -134,8 +187,31 @@ Requires `OPENROUTER_API_KEY` in `.env`.
 Add logo and branding to images:
 
 ```bash
-python add_logo_watermark.py input.png output.png
+# Basic usage
+python add_logo_watermark.py cover.png --series "Series Name" --episode "Ep 3 - Topic"
+
+# With organized logging
+python add_logo_watermark.py cover.png --series "Series" --episode "Ep 3" --log-dir logs/ --quiet
+
+# Custom logo and positioning
+python add_logo_watermark.py cover.png --logo custom_logo.png --position top-left --size 0.15
+
+# With border
+python add_logo_watermark.py cover.png --border 20 --border-color "#FFC20E"
 ```
+
+**Options:**
+- `--logo PATH` - Path to logo (default: ../cover.png)
+- `--position POS` - Logo position: bottom-right, bottom-left, top-right, top-left, center (default: bottom-right)
+- `--opacity N` - Logo opacity 0.0-1.0 (default: 1.0)
+- `--size N` - Logo size ratio 0.1-0.3 (default: 0.12)
+- `--brand TEXT` - Podcast brand name (default: "Yudame Research")
+- `--series TEXT` - Series name text
+- `--episode TEXT` - Episode text
+- `--border N` - Border width in pixels (default: 0)
+- `--border-color HEX` - Border color (default: #FFC20E)
+- `--log-dir DIR` - Directory for log files
+- `--quiet, -q` - Minimal output
 
 ## Tool Comparison
 
@@ -170,6 +246,8 @@ uv run python gpt_researcher_run.py \
 ```
 
 ### Audio Processing Pipeline
+
+**Basic workflow:**
 ```bash
 cd podcast/episodes/episode-dir
 
@@ -180,13 +258,36 @@ ffmpeg -i original.m4a -codec:a libmp3lame -b:a 128k episode.mp3
 cd ../../tools
 python transcribe_only.py ../episodes/episode-dir/episode.mp3 --model base
 
-# 3. Generate chapters
-python generate_chapters.py ../episodes/episode-dir/episode_transcript.json
+# 3. Generate chapters (using existing transcript)
+python generate_chapters.py ../episodes/episode-dir/episode.mp3 \
+  --transcript ../episodes/episode-dir/episode_transcript.json
 
 # 4. Embed chapters
 cd ../episodes/episode-dir
 ffmpeg -i episode.mp3 -i episode_chapters.txt -map_metadata 1 -codec copy temp.mp3
 mv temp.mp3 episode.mp3
+```
+
+**With organized logging:**
+```bash
+cd podcast/tools
+
+# Create logs directory
+mkdir -p ../episodes/episode-dir/logs
+
+# Transcribe with logging
+python transcribe_only.py ../episodes/episode-dir/episode.mp3 \
+  --model base \
+  --log-dir ../episodes/episode-dir/logs \
+  --quiet
+
+# Generate chapters from existing transcript with logging
+python generate_chapters.py ../episodes/episode-dir/episode.mp3 \
+  --transcript ../episodes/episode-dir/episode_transcript.json \
+  --log-dir ../episodes/episode-dir/logs \
+  --quiet
+
+# All logs and output files are now in ../episodes/episode-dir/logs/
 ```
 
 ## Environment Setup

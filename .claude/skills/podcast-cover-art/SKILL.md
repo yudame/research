@@ -51,14 +51,27 @@ Run the cover art generation script:
 ```bash
 cd ~/src/research/podcast/tools
 
-# Generate cover art from report.md (recommended - auto-analyzes content)
+# Basic usage - auto-generate from report.md
 python generate_cover.py ../episodes/EPISODE_PATH --auto
 
-# OR use custom prompt if user provides one
-python generate_cover.py ../episodes/EPISODE_PATH --prompt "Custom prompt here"
+# With organized logging (recommended for production)
+mkdir -p ../episodes/EPISODE_PATH/logs
+python generate_cover.py ../episodes/EPISODE_PATH --auto \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
 
-# Optional: specify aspect ratio (default: 1:1)
-python generate_cover.py ../episodes/EPISODE_PATH --auto --aspect-ratio "1:1"
+# With custom prompt
+python generate_cover.py ../episodes/EPISODE_PATH \
+  --prompt "Custom prompt here" \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
+
+# With custom model and aspect ratio
+python generate_cover.py ../episodes/EPISODE_PATH --auto \
+  --model google/gemini-3-pro-image-preview \
+  --aspect-ratio "1:1" \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
 ```
 
 **generate_cover.py features:**
@@ -68,6 +81,9 @@ python generate_cover.py ../episodes/EPISODE_PATH --auto --aspect-ratio "1:1"
 - Automatically blocks unwanted text, icons, logos, and annotations
 - Supports multiple aspect ratios: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 21:9
 - Outputs to `cover.png` in the episode directory
+- With `--log-dir`: Also saves metadata JSON and timestamped log file
+- `--quiet`: Suppresses progress messages
+- `--model`: Customize image generation model (default: google/gemini-3-pro-image-preview)
 - Logs all prompts to `prompts.md` for reproducibility
 
 ### Step 2: Add Podcast Branding
@@ -77,7 +93,7 @@ Apply branding overlay to the generated cover:
 ```bash
 cd ~/src/research/podcast/tools
 
-# For series episodes (with series and episode text)
+# Basic usage - for series episodes
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --position top-left \
   --brand "Yudame Research" \
@@ -86,13 +102,26 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --border 20 \
   --border-color "#FFC20E"
 
+# With organized logging (recommended for production)
+python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
+  --position top-left \
+  --brand "Yudame Research" \
+  --series "SERIES_NAME" \
+  --episode "EPISODE_TEXT" \
+  --border 20 \
+  --border-color "#FFC20E" \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
+
 # For standalone episodes (no series text)
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --position top-left \
   --brand "Yudame Research" \
   --episode "EPISODE_TEXT" \
   --border 20 \
-  --border-color "#FFC20E"
+  --border-color "#FFC20E" \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
 ```
 
 **add_logo_watermark.py features:**
@@ -105,6 +134,8 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
 - Recommended border width: 20px (15-25px range)
 - Logo positioned top-left with brand text beside it
 - Series/episode text positioned below logo with proper margin
+- With `--log-dir`: Saves metadata JSON and timestamped log file
+- `--quiet`: Suppresses progress messages
 - Replaces original cover.png with branded version
 
 ### Step 3: Log to prompts.md

@@ -82,17 +82,30 @@ Run Whisper transcription locally (no API key needed):
 
 ```bash
 cd ~/src/research/podcast/tools
+
+# Basic transcription
 python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 --model base
+
+# OR with organized logging (recommended for production)
+mkdir -p ../episodes/EPISODE_PATH/logs
+python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 \
+  --model base \
+  --log-dir ../episodes/EPISODE_PATH/logs \
+  --quiet
 ```
 
 **Whisper model options:**
 - `tiny`: Fastest (~1-2 min for 30 min audio), basic accuracy
 - `base`: **[recommended]** Fast (~5-10 min), good accuracy
 - `small`: Slower (~15-20 min), better accuracy
+- `medium`: Slowest (~30-40 min), best accuracy
 
 **Default to `base` model unless user specifies otherwise.**
 
-This creates: `EPISODE_SLUG_transcript.json` in the episode directory
+**Output:**
+- Creates: `EPISODE_SLUG_transcript.json` in the episode directory
+- With `--log-dir`: Also creates timestamped log file in logs/ directory
+- `--quiet`: Suppresses progress messages (useful in automated workflows)
 
 **Output format:**
 - JSON file with full transcript

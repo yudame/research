@@ -5,10 +5,11 @@ Generate podcast episode cover art using AI image generation.
 Usage:
     python generate_cover.py <episode_dir> --prompt "Your image prompt"
     python generate_cover.py <episode_dir> --auto  # Auto-generate from report.md
+    python generate_cover.py <episode_dir> --auto --quiet --log-dir logs/
 
 Requirements:
-    - OpenRouter API key in environment variable OPENROUTER_API_KEY
-    - requests package: pip install requests
+    - OpenRouter API key in environment variable OPENROUTER_API_KEY (can be in .env)
+    - pip install requests python-dotenv
 """
 
 import os
@@ -16,6 +17,13 @@ import sys
 import argparse
 import base64
 from pathlib import Path
+from datetime import datetime
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 try:
     import requests
@@ -25,7 +33,7 @@ except ImportError:
 
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL_ID = "google/gemini-3-pro-image-preview"
+DEFAULT_MODEL = "google/gemini-3-pro-image-preview"
 
 
 def read_report(episode_dir):
@@ -60,20 +68,33 @@ No text in the image - pure visual design."""
     return prompt
 
 
-def generate_image(prompt, output_path, aspect_ratio="1:1"):
+def generate_image(prompt, output_path, model_id=DEFAULT_MODEL, aspect_ratio="1:1", verbose=True, log_file=None):
     """
     Generate image using OpenRouter API with Gemini.
 
     Args:
         prompt: Image generation prompt
         output_path: Where to save the image
+        model_id: Model to use for generation
         aspect_ratio: Image aspect ratio (1:1, 16:9, 9:16, etc.)
+        verbose: Print progress messages
+        log_file: Optional log file path
+
+    Returns:
+        Tuple of (output_path, enhanced_prompt) or (None, None) on error
     """
+    def log(msg):
+        if verbose:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
+
     api_key = os.getenv("OPENROUTER_API_KEY")
     if not api_key:
-        print("Error: OPENROUTER_API_KEY environment variable not set")
-        print("Set it with: export OPENROUTER_API_KEY='your-api-key'")
-        sys.exit(1)
+        log("Error: OPENROUTER_API_KEY environment variable not set")
+        log("Set it in .env file or environment: export OPENROUTER_API_KEY='your-api-key'")
+        return None, None
 
     # Append explicit instructions to avoid text/icons and ensure consistent dark theme
     enhanced_prompt = f"""{prompt}
@@ -92,9 +113,9 @@ COMPOSITION:
 - Main graphic elements should flow from center to bottom
 - Avoid placing busy patterns or focal points in the upper third"""
 
-    print(f"Generating image with {MODEL_ID}...")
-    print(f"Aspect ratio: {aspect_ratio}")
-    print(f"Enhanced prompt: {enhanced_prompt[:150]}...")
+    log(f"Generating image with {model_id}...")
+    log(f"Aspect ratio: {aspect_ratio}")
+    log(f"Enhanced prompt: {enhanced_prompt[:150]}...")
 
     try:
         response = requests.post(
@@ -106,7 +127,7 @@ COMPOSITION:
                 "X-Title": "Yudame Research Podcast Cover Generator"
             },
             json={
-                "model": MODEL_ID,
+                "model": model_id,
                 "modalities": ["text", "image"],
                 "n": 1,
                 "image_config": {
@@ -132,8 +153,8 @@ COMPOSITION:
             raw_images = message.get("images", [])
 
             if not raw_images:
-                print("Error: No images returned from API")
-                sys.exit(1)
+                log("Error: No images returned from API")
+                return None, None
 
             # Get first image
             img = raw_images[0]
@@ -145,8 +166,8 @@ COMPOSITION:
                 image_url = img
 
             if not image_url:
-                print("Error: Could not extract image URL from response")
-                sys.exit(1)
+                log("Error: Could not extract image URL from response")
+                return None, None
 
             # Save the image
             if image_url.startswith("data:"):
@@ -155,33 +176,33 @@ COMPOSITION:
                     header, b64_data = image_url.split(",", 1)
                     image_data = base64.b64decode(b64_data)
                     Path(output_path).write_bytes(image_data)
-                    print(f"✓ Cover art saved to: {output_path}")
+                    log(f"✓ Cover art saved to: {output_path}")
                 except Exception as e:
-                    print(f"Error saving image: {e}")
-                    sys.exit(1)
+                    log(f"Error saving image: {e}")
+                    return None, None
             else:
                 # URL to download (shouldn't happen with Gemini but handle it)
                 import urllib.request
-                print(f"Downloading from URL...")
+                log(f"Downloading from URL...")
                 urllib.request.urlretrieve(image_url, output_path)
-                print(f"✓ Cover art saved to: {output_path}")
+                log(f"✓ Cover art saved to: {output_path}")
 
             return output_path, enhanced_prompt
 
-        print("Error: No valid response from API")
-        sys.exit(1)
+        log("Error: No valid response from API")
+        return None, None
 
     except requests.exceptions.Timeout:
-        print("Error: Request timed out. Please try again.")
-        sys.exit(1)
+        log("Error: Request timed out. Please try again.")
+        return None, None
     except requests.exceptions.RequestException as e:
-        print(f"Error: API request failed: {str(e)}")
+        log(f"Error: API request failed: {str(e)}")
         if hasattr(e.response, 'text'):
-            print(f"Response: {e.response.text}")
-        sys.exit(1)
+            log(f"Response: {e.response.text}")
+        return None, None
     except Exception as e:
-        print(f"Error: An unexpected error occurred: {str(e)}")
-        sys.exit(1)
+        log(f"Error: An unexpected error occurred: {str(e)}")
+        return None, None
 
 
 def main():
@@ -191,57 +212,127 @@ def main():
     parser.add_argument("--auto", action="store_true", help="Auto-generate prompt from report.md")
     parser.add_argument("--aspect-ratio", default="1:1", help="Image aspect ratio (default: 1:1)")
     parser.add_argument("--output", help="Output filename (default: cover.png)")
+    parser.add_argument(
+        "--model",
+        default=DEFAULT_MODEL,
+        help=f"Model to use for image generation (default: {DEFAULT_MODEL})"
+    )
+    parser.add_argument(
+        "--log-dir",
+        help="Directory for output and log files (default: episode directory)"
+    )
+    parser.add_argument(
+        "--quiet", "-q",
+        action="store_true",
+        help="Minimal output (suppress progress messages)"
+    )
 
     args = parser.parse_args()
 
     episode_dir = Path(args.episode_dir)
     if not episode_dir.exists():
-        print(f"Error: Episode directory not found: {episode_dir}")
-        sys.exit(1)
+        if not args.quiet:
+            print(f"Error: Episode directory not found: {episode_dir}")
+        return 1
+
+    # Set up log directory
+    log_dir = Path(args.log_dir) if args.log_dir else episode_dir
+    if args.log_dir and not log_dir.exists():
+        log_dir.mkdir(parents=True, exist_ok=True)
+
+    # Set up log file
+    log_file = None
+    if args.log_dir:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        log_file = str(log_dir / f"cover_generation_log_{timestamp}.txt")
+
+    def log(msg):
+        if not args.quiet:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
 
     # Determine output path
     output_filename = args.output or "cover.png"
-    output_path = episode_dir / output_filename
+    if args.log_dir:
+        output_path = log_dir / output_filename
+    else:
+        output_path = episode_dir / output_filename
 
     # Get or generate prompt
     if args.auto:
-        print("Auto-generating prompt from report.md...")
+        log("Auto-generating prompt from report.md...")
         report = read_report(episode_dir)
         if not report:
-            print(f"Error: report.md not found in {episode_dir}")
-            sys.exit(1)
+            log(f"Error: report.md not found in {episode_dir}")
+            return 1
 
         # Try to extract title from directory name
         episode_title = episode_dir.name.replace('-', ' ').title()
         prompt = generate_prompt_from_report(report, episode_title)
-        print(f"\nGenerated prompt:\n{prompt}\n")
+        log(f"\nGenerated prompt:\n{prompt}\n")
     elif args.prompt:
         prompt = args.prompt
     else:
-        print("Error: Must provide either --prompt or --auto")
-        sys.exit(1)
+        log("Error: Must provide either --prompt or --auto")
+        return 1
 
     # Generate image
-    image_path, enhanced_prompt = generate_image(prompt, output_path, args.aspect_ratio)
+    image_path, enhanced_prompt = generate_image(
+        prompt,
+        output_path,
+        model_id=args.model,
+        aspect_ratio=args.aspect_ratio,
+        verbose=not args.quiet,
+        log_file=log_file
+    )
 
-    # Save prompt to prompts.md if it exists
+    if not image_path:
+        log("Image generation failed")
+        return 1
+
+    # Save metadata to log file
+    if log_file:
+        import json
+        metadata_file = Path(log_file).parent / f"cover_generation_metadata_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(metadata_file, 'w') as f:
+            json.dump({
+                'prompt': prompt,
+                'enhanced_prompt': enhanced_prompt,
+                'model': args.model,
+                'aspect_ratio': args.aspect_ratio,
+                'output_filename': output_filename,
+                'timestamp': datetime.now().isoformat()
+            }, f, indent=2)
+        log(f"✓ Metadata saved to: {metadata_file}")
+
+    # Also save prompt to prompts.md if it exists (for backwards compatibility)
     prompts_file = episode_dir / "prompts.md"
     if prompts_file.exists():
         with open(prompts_file, 'a') as f:
             f.write(f"\n\n## Cover Art Generation\n\n")
-            f.write(f"**Tool Used:** OpenRouter - {MODEL_ID}\n\n")
+            f.write(f"**Tool Used:** OpenRouter - {args.model}\n\n")
             f.write(f"**Original Prompt:**\n```\n{prompt}\n```\n\n")
             f.write(f"**Enhanced Prompt:**\n```\n{enhanced_prompt}\n```\n\n")
             f.write(f"**Aspect Ratio:** {args.aspect_ratio}\n\n")
             f.write(f"**Output:** {output_filename}\n\n")
-            f.write(f"**Date:** {os.popen('date +%Y-%m-%d').read().strip()}\n")
-        print(f"✓ Prompt logged to prompts.md")
+            f.write(f"**Date:** {datetime.now().strftime('%Y-%m-%d')}\n")
+        log(f"✓ Prompt logged to prompts.md")
 
-    print(f"\nDone! Cover art ready at: {image_path}")
-    print(f"\nNext step: Add branding with add_logo_watermark.py")
-    print(f"\nTo use in feed.xml, add this line to the episode <item>:")
-    print(f'  <itunes:image href="https://research.yuda.me/podcast/episodes/{episode_dir.name}/{output_filename}?v=1"/>')
+    log(f"\n✓ Done! Cover art ready at: {image_path}")
+
+    if log_file:
+        log(f"✓ Log saved to: {log_file}")
+
+    # Print next steps (only if not quiet)
+    if not args.quiet:
+        log(f"\nNext step: Add branding with add_logo_watermark.py")
+        log(f"\nTo use in feed.xml, add this line to the episode <item>:")
+        log(f'  <itunes:image href="https://research.yuda.me/podcast/episodes/{episode_dir.name}/{output_filename}?v=1"/>')
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
