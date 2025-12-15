@@ -1,0 +1,72 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=240000
+title=Introduction: The 59-Point Coverage-Usage Gap
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=240000
+END=480000
+title=The Ecosystem Framework: Five Co-Equal Barriers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=480000
+END=660000
+title=Barrier One: Affordability and the 30% Income Burden
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=840000
+title=Barrier Two: Infrastructure - The $170/Month Data Cost
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=840000
+END=1020000
+title=Barriers Three & Four: Digital Literacy and Content
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1020000
+END=1200000
+title=Barrier Five: Gender Inequality as Multiplier
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1500000
+title=China's Subsidy Experiment: Week 11 Failure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1800000
+title=Pay-As-You-Go Financing: The M-KOPA Model
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1800000
+END=2100000
+title=The Circular Dependency: Mobile Money Lock
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=2400000
+title=Regulatory Lock-In: Absence of Number Portability
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2700000
+title=Policy Choice: Vanuatu's 98% vs Solomon Islands' 42%
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2700000
+END=2809000
+title=Stepping Stones & Strategic Lessons

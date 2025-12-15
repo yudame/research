@@ -1,0 +1,23 @@
+Research smartphone device provisioning and financing models in emerging markets, focusing on these specific questions:
+
+**Industry Analysis & Business Models:**
+- What are the actual business models, unit economics, and success rates of PAYGO and BNPL device financing programs in unbanked emerging markets?
+- What are the default rates, risk models, and profitability for telcos financing smartphones to unbanked customers?
+- How do operators handle device lock-in, repossession, and credit assessment without traditional banking infrastructure?
+
+**Case Studies & Implementation:**
+- Which telcos are running successful device financing programs in markets similar to Solomon Islands (island nations, high unbanked rates, low smartphone penetration)?
+- What specific programs exist in African markets (M-Pesa ecosystem, Safaricom, Vodacom), Asian markets, and any Pacific examples?
+- What are the supply chain and distribution strategies for getting devices to remote island communities? Partnership models? Costs?
+
+**Technical & Operational Details:**
+- What device brands and models work best at sub-$100 price points for emerging markets? Chinese brands (Tecno, Infinix), refurbished devices, feature brands?
+- How do operators handle after-sales support, repair, warranty, and replacement in island contexts with difficult logistics?
+- What role do mobile money platforms play in device financing repayment? Integration between services?
+
+**Comparative Analysis:**
+- How does the China 2025 subsidy program's failure (5% YoY decline by week 11) inform subsidy viability in small island markets?
+- What's the relationship between feature phone-based mobile money (USSD like M-SELEN) and smartphone-based services (apps like IumiCash) in driving device upgrades?
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis, operator earnings calls.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.

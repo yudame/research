@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sat, 14 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2025 08:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -26,6 +26,29 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 19: Solomon Islands Telecom Series - Episode 6 -->
+    <item>
+      <title>Solomon Islands Telecom Series: Ep. 6, The Smartphone Frontier</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/cover.png"/>
+      <description>Across the Pacific, 86% of the population lives within range of mobile broadband—yet only 27% actually use it. This 59-percentage-point coverage-usage gap reveals the digital divide is no longer about building towers but about addressing five co-equal barriers: affordability (devices cost 30% of monthly income), infrastructure quality (data costs 38% of income), digital literacy (42% lack basic skills), content gaps, and gender inequality. China's 2025 subsidy experiment provides the cautionary evidence: 48 million participants and $20 billion in sales, followed by a 5% year-over-year decline by week 11. Meanwhile, PAYGO financing—proven successful with M-KOPA's 4.8 million customers—remains blocked in Solomon Islands by non-existent mobile money infrastructure (13,400 accounts, 10-15% active). The Vanuatu contrast is stark: aggressive device subsidies achieved 98% coverage versus Solomon Islands' conservative 42%. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/report.md</description>
+      <content:encoded><![CDATA[<p>Across the Pacific, 86% of the population lives within range of mobile broadband—yet only 27% actually use it. This 59-percentage-point coverage-usage gap reveals the digital divide is no longer about building towers but about addressing five co-equal barriers: affordability (devices cost 30% of monthly income), infrastructure quality (data costs 38% of income), digital literacy (42% lack basic skills), content gaps, and gender inequality. China's 2025 subsidy experiment provides the cautionary evidence: 48 million participants and $20 billion in sales, followed by a 5% year-over-year decline by week 11. Meanwhile, PAYGO financing—proven successful with M-KOPA's 4.8 million customers—remains blocked in Solomon Islands by non-existent mobile money infrastructure (13,400 accounts, 10-15% active). The Vanuatu contrast is stark: aggressive device subsidies achieved 98% coverage versus Solomon Islands' conservative 42%.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/blog/the-mobile-gender-gap-report-2024/">GSMA Mobile Gender Gap Report 2024</a> - 25% smartphone gender gap in Sub-Saharan Africa; 265M fewer women use mobile internet</li><li><a href="https://www.worldbank.org/en/news/press-release/2025/07/16/mobile-phone-technology-powers-saving-surge-in-developing-economies">World Bank 2025: Mobile Phone Technology & Saving Surge</a> - PAYGO financing assessment for low-income populations</li><li><a href="https://cbsi.com.sb/">Central Bank of Solomon Islands - NFIS3 (2021-2025)</a> - 400,000 active financial accounts target, 50% women mandate</li><li><a href="https://english.www.gov.cn/news/202501/16/content_WS678843dfc6d0868f4e8eed98.html">China State Council: Equipment Upgrade & Trade-In Program</a> - 15% subsidies, 48M participants, week 11 failure analysis</li><li><a href="https://datareportal.com/reports/digital-2025-solomon-islands">DataReportal 2025: Digital Solomon Islands</a> - 42% smartphone penetration, 352,000 internet users</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sun, 15 Dec 2025 08:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3"
+                 length="35359483"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>36:49</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>6</itunes:episode>
+      <itunes:keywords>smartphone adoption, digital divide, Pacific Islands, PAYGO financing, mobile money, device subsidies, China subsidy experiment, gender digital gap, mobile number portability, M-KOPA, Vanuatu, Solomon Islands, coverage-usage gap, digital literacy, NFIS3, financial inclusion, USSD, M-Pesa, Starlink, infrastructure paradox</itunes:keywords>
+      <research:series>Solomon Islands Telecom Series</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 18: Active Recovery Series - Episode 1 -->
     <item>

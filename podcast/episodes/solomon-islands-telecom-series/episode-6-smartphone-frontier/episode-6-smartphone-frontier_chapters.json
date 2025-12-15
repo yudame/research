@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The 59-Point Coverage-Usage Gap"
+    },
+    {
+      "startTime": 240,
+      "title": "The Ecosystem Framework: Five Co-Equal Barriers"
+    },
+    {
+      "startTime": 480,
+      "title": "Barrier One: Affordability and the 30% Income Burden"
+    },
+    {
+      "startTime": 660,
+      "title": "Barrier Two: Infrastructure - The $170/Month Data Cost"
+    },
+    {
+      "startTime": 840,
+      "title": "Barriers Three & Four: Digital Literacy and Content"
+    },
+    {
+      "startTime": 1020,
+      "title": "Barrier Five: Gender Inequality as Multiplier"
+    },
+    {
+      "startTime": 1200,
+      "title": "China's Subsidy Experiment: Week 11 Failure"
+    },
+    {
+      "startTime": 1500,
+      "title": "Pay-As-You-Go Financing: The M-KOPA Model"
+    },
+    {
+      "startTime": 1800,
+      "title": "The Circular Dependency: Mobile Money Lock"
+    },
+    {
+      "startTime": 2100,
+      "title": "Regulatory Lock-In: Absence of Number Portability"
+    },
+    {
+      "startTime": 2400,
+      "title": "Policy Choice: Vanuatu's 98% vs Solomon Islands' 42%"
+    },
+    {
+      "startTime": 2700,
+      "title": "Stepping Stones & Strategic Lessons"
+    }
+  ]
+}

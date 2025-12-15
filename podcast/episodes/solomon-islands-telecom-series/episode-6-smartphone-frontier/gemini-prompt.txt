@@ -1,0 +1,25 @@
+Research smartphone access policy and regulatory frameworks in Pacific island nations and similar emerging markets, focusing on these specific questions:
+
+**Regulatory & Policy Frameworks:**
+- What are Solomon Islands' national digital inclusion strategies, ICT policies, and official targets regarding smartphone or internet access?
+- Does Solomon Islands have Universal Service Obligations (USO) that could fund device access programs? How are USO funds currently allocated?
+- What import duties, taxes, and tariffs apply to smartphone imports in Solomon Islands? Could reductions improve affordability?
+- What consumer protection regulations exist around device financing, credit, repossession in markets with limited financial infrastructure?
+
+**Comparative Policy Analysis:**
+- What policies have Pacific island nations (PNG, Fiji, Vanuanu, Samoa) implemented to improve device affordability and access?
+- Are there regional approaches through Pacific Islands Forum, Pacific Community (SPC), or regional telecom organizations?
+- What can Solomon Islands learn from successful device access policies in other small island developing states (SIDS) globally?
+
+**Strategic Context:**
+- How does lack of number portability (Episode 2 context) interact with device financing to create platform lock-in? Could regulators address this?
+- What is the Solomon Islands government's budget capacity and political will for device subsidy programs?
+- How do development partners (World Bank, ADB, GSMA) recommend Pacific nations approach device access as infrastructure challenge vs. market solution?
+
+**Regulatory Considerations:**
+- What regulations govern mobile network operators offering credit or financing in Solomon Islands?
+- Are there financial inclusion mandates or targets that smartphone access affects?
+- How do gender equality commitments intersect with the 25% smartphone gender gap in policy frameworks?
+
+Focus on: Regulatory frameworks, legislation, government policy documents, strategic plans, comparative policy analysis, development organization recommendations.
+Provide findings with official source citations, effective dates, and policy context.
