@@ -15,7 +15,12 @@
             }
 
             body {
-                font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
                 line-height: 1.6;
                 color: var(--text);
                 max-width: 800px;
@@ -140,9 +145,9 @@
             .spotify-button {
                 display: inline-block;
                 padding: 0.75rem 1.5rem;
-                background: #1DB954;
+                background: #1db954;
                 color: var(--bg);
-                border: 1px solid #1DB954;
+                border: 1px solid #1db954;
                 border-radius: 0;
                 font-weight: 400;
                 font-size: 0.875rem;
@@ -242,7 +247,11 @@
     </head>
     <body>
         <div class="header">
-            <img src="podcast/yudame-logo.png" alt="Yudame Research" class="logo" />
+            <img
+                src="podcast/yudame-logo.png"
+                alt="Yudame Research"
+                class="logo"
+            />
             <h1>Yudame Research</h1>
         </div>
         <p class="tagline">
@@ -311,9 +320,12 @@
                 href="podcast/episodes/kindergarten-first-principles/"
                 class="series-card"
             >
-                <div class="series-title">Kindergarten, from First Principles</div>
+                <div class="series-title">
+                    Kindergarten, from First Principles
+                </div>
                 <div class="series-meta">
-                    6 episodes · Early childhood education, developmental science, play, sleep, frameworks
+                    6 episodes · Early childhood education, developmental
+                    science, play, sleep, frameworks
                 </div>
             </a>
             <a
@@ -325,22 +337,11 @@
                     4 episodes · VO2 max, HRV, lifestyle, supplementation
                 </div>
             </a>
-            <a
-                href="podcast/episodes/solomon-islands-telecom-series/"
-                class="series-card"
-            >
-                <div class="series-title">Solomon Islands Telecom Launch</div>
-                <div class="series-meta">
-                    5 episodes (in progress) · Partnership-enabled market entry, infrastructure, mobile money, Pacific telecommunications
-                </div>
-            </a>
-            <a
-                href="podcast/episodes/active-recovery/"
-                class="series-card"
-            >
+            <a href="podcast/episodes/active-recovery/" class="series-card">
                 <div class="series-title">Active Recovery</div>
                 <div class="series-meta">
-                    4-part series (1 published) · Recovery optimization, athlete performance, evidence-based training
+                    4-part series (1 published) · Recovery optimization, athlete
+                    performance, evidence-based training
                 </div>
             </a>
         </div>
@@ -354,7 +355,8 @@
             <p>© <span id="year"></span> Yudame</p>
         </footer>
         <script>
-            document.getElementById('year').textContent = new Date().getFullYear();
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
         </script>
     </body>
 </html>
