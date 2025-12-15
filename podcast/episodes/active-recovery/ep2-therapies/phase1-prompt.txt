@@ -1,0 +1,15 @@
+Research temperature-based therapies (sauna, heat therapy, cold water immersion, contrast therapy), stretching protocols (static, dynamic, PNF), and manual therapies (massage, myofascial release) for exercise recovery in adults with established fitness routines.
+
+**Research methodology:**
+- Prioritize peer-reviewed studies, meta-analyses, systematic reviews, and authoritative sources
+- Distinguish between correlation and causation in findings
+- Report effect sizes and practical significance, not just statistical significance
+- Note the study populations and whether findings generalize to fit adults aged 35-50
+- Compare individual studies against meta-analyses and systematic reviews
+- Identify preliminary research vs. well-replicated findings
+- Note funding sources and potential conflicts of interest when relevant
+- Include contradictory findings and areas of scientific uncertainty
+- Cite specific studies, researchers, and sources throughout
+- Provide full source URLs for all citations
+
+**Output:** Comprehensive research report with extensive citations, sample sizes, methodological details, and source links.

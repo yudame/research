@@ -713,6 +713,204 @@ Instead of manually constructing feed.xml entry:
 
 ---
 
+### 11. Episode Directory File Organization
+
+**Problem:** Episode directories end up cluttered with 18+ files mixing final outputs, research materials, process logs, and temporary files
+
+**Current state (Episode 1 analysis):**
+```
+ep1-foundations/
+├── [18 files in root directory, 122MB total]
+├── 81MB .m4a file (should be gitignored but was committed)
+├── Research files mixed with final outputs
+├── HTML files with unclear origin
+└── Temporary files (chapters.txt) not cleaned up
+```
+
+**Solution:** Organize files into purpose-based subdirectories
+
+**Implementation:**
+
+Create subdirectory structure during Phase 1 setup:
+```bash
+# Phase 1: Setup
+mkdir -p podcast/episodes/YYYY-MM-DD-slug/{research,logs,tmp}
+```
+
+**File organization rules:**
+
+| File Type | Location | Committed | Purpose |
+|-----------|----------|-----------|---------|
+| **FINAL/PUBLISHED** (root) | | | |
+| `*.mp3` | Root | ✅ Yes | Final audio - linked in feed.xml |
+| `*_chapters.json` | Root | ✅ Yes | Podcasting 2.0 metadata - linked in feed.xml |
+| `cover.png` | Root | ✅ Yes | Episode artwork - linked in feed.xml |
+| `report.md` | Root | ✅ Yes | Narrative report - linked in description |
+| `report.html` | Root | ✅ Yes | HTML report - linked from series index.html |
+| `transcript.html` | Root | ✅ Yes | HTML transcript - linked from series index.html |
+| `sources.md` | Root | ✅ Yes | Source documentation - reference material |
+| **RESEARCH FILES** (research/) - **Phase-prefixed for chronological sorting** | | | |
+| `p1-brief.md` | research/ | ✅ Yes | Research brief (topic/question) - Phase 1 |
+| `p2-perplexity.md` | research/ | ✅ Yes | Perplexity research output - Phase 2 |
+| `p2-grok.md` | research/ | ✅ Yes | Grok research output - Phase 2 |
+| `p2-chatgpt.md` | research/ | ✅ Yes | ChatGPT research output - Phase 2 |
+| `p2-gemini.md` | research/ | ✅ Yes | Gemini research output - Phase 2 |
+| `p2-claude.md` | research/ | ✅ Yes | Claude research output - Phase 2 (optional) |
+| `p2-manual.md` | research/ | ✅ Yes | Manual research, user sources - Phase 2 |
+| `p3-briefing.md` | research/ | ✅ Yes | Cross-validated synthesis for Opus - Phase 3 |
+| `p3-validation.md` | research/ | ⚠️ Optional | Cross-validation matrix - Phase 3 |
+| `documents/*.pdf` | research/documents/ | ✅ Yes | Source PDFs, papers |
+| **PROCESS LOGS** (logs/) | | | |
+| `prompts.md` | logs/ | ✅ Yes | All prompts used in workflow |
+| `metadata.md` | logs/ | ✅ Yes | Publishing metadata scratch |
+| **TEMPORARY FILES** (tmp/) | | | |
+| `*_transcript.json` | tmp/ | ⚠️ Optional | Full Whisper output (449KB) |
+| `*_chapters.txt` | tmp/ | ❌ No | FFmpeg temp file - delete after embed |
+| **NEVER COMMIT** | | | |
+| `*.m4a` | - | ❌ No | Source audio - already in .gitignore |
+
+**Naming rationale:**
+- **Phase prefixes (p1, p2, p3):** Ensures files sort chronologically in directory listing
+- **No "research-" prefix:** Redundant when files are in `/research` directory
+- **p1-brief.md:** "Brief" (not "prompt") - prompt is reserved for tool prompts
+- **Individual tool files:** Each research tool saves to separate file (no race conditions)
+- **Eliminate research-results.md:** Redundant - go directly from individual files to p3-briefing.md
+
+**Phase-specific file placement:**
+
+```markdown
+### Phase 1: Setup
+**Create directory structure and initial brief:**
+```bash
+mkdir -p research/documents logs tmp
+# User provides or we create: research/p1-brief.md
+```
+
+### Phase 2: Research
+**Save each tool output to individual file:**
+```bash
+# Perplexity → research/p2-perplexity.md
+# Grok → research/p2-grok.md
+# ChatGPT → research/p2-chatgpt.md
+# Gemini → research/p2-gemini.md
+# Manual sources → research/p2-manual.md
+# PDFs/papers → research/documents/
+```
+
+**Benefits:**
+- ✅ No race conditions (each tool writes to own file)
+- ✅ Can run tools in parallel safely
+- ✅ Easy to retry individual tool without re-running all
+- ✅ Files sort chronologically: p2-chatgpt, p2-gemini, p2-grok, p2-perplexity
+
+### Phase 3: Validation & Synthesis
+**Read all p2-*.md files and create synthesis:**
+```bash
+# Read: research/p2-*.md (all Phase 2 outputs)
+# Create: research/p3-briefing.md (cross-validated synthesis for Opus)
+# Optional: research/p3-validation.md (validation matrix)
+```
+
+### Phase 7: Audio Processing
+**Handle temporary files:**
+```bash
+# After creating chapters.txt and embedding into mp3:
+rm YYYY-MM-DD-slug_chapters.txt  # Delete temp file
+
+# Optionally move large transcript to tmp/:
+mv YYYY-MM-DD-slug_transcript.json tmp/
+```
+
+### Phase 8: Publishing
+**Create HTML files in root (for series index):**
+```bash
+# These ARE needed - linked from series index.html
+# report.html → root (created from report.md)
+# transcript.html → root (created from transcript.json)
+```
+```
+
+**Benefits:**
+- Root directory: 7 files (down from 18) - only final outputs
+- Clear separation of concerns
+- 37MB total (down from 122MB after removing .m4a)
+- Easy to find files by purpose
+- Git-friendly structure
+
+**Verification after cleanup:**
+```bash
+# Expected root structure
+ls -lh podcast/episodes/YYYY-MM-DD-slug/
+# Should show: mp3, chapters.json, cover.png, report.md, report.html, transcript.html, sources.md
+# Plus: research/, logs/, tmp/ subdirectories
+
+# Verify .m4a not committed
+git ls-files | grep ".m4a"
+# Should return nothing
+```
+
+**HTML file creation (MISSING FROM WORKFLOW):**
+
+Currently `report.html` and `transcript.html` are expected (linked from series `index.html`) but not documented in workflow.
+
+Add to Phase 8 or create new phase:
+```markdown
+### Phase 8.5: Create HTML Outputs (for Series Only)
+
+**If episode is part of a series:**
+
+1. Generate report.html from report.md:
+   ```bash
+   # Use markdown converter (e.g., pandoc, or custom script)
+   pandoc report.md -o report.html --standalone --css=../../style.css
+   ```
+
+2. Generate transcript.html from transcript.json:
+   ```bash
+   # Parse JSON and create readable HTML
+   python tools/transcript-to-html.py tmp/YYYY-MM-DD-slug_transcript.json report.html
+   ```
+
+3. Verify HTML files:
+   ```bash
+   ls -lh report.html transcript.html
+   # Should exist and be small (2-5KB)
+   ```
+
+**If standalone episode:**
+Skip this phase - HTML files only needed for series index pages
+```
+
+**Critical .m4a handling:**
+
+Add reminder to Phase 7 (Audio Processing):
+```markdown
+### Phase 7: Audio Processing
+
+**⚠️ IMPORTANT: Source audio files**
+
+The .m4a file you provide is already .gitignored (see .gitignore line 23).
+
+**DO NOT:**
+- Use `git add -f` to force-add .m4a files
+- Manually add .m4a to git staging
+
+**VERIFY .m4a not staged:**
+```bash
+git status | grep ".m4a"
+# Should return nothing
+```
+
+**If .m4a was accidentally committed:**
+```bash
+# Remove from git but keep local file
+git rm --cached YYYY-MM-DD-slug.m4a
+git commit -m "Remove .m4a source file (should be gitignored)"
+```
+```
+
+---
+
 ## Future Enhancements
 
 **Nice-to-have improvements for consideration:**
@@ -770,13 +968,109 @@ Instead of manually constructing feed.xml entry:
 
 ## Change Log
 
-**2024-12-15:**
+**2024-12-15 (Initial):**
 - Initial documentation of improvement ideas
 - Triggered by missing git push in Episode 6 workflow
 - Documented 10 specific improvement categories
 - Created implementation priority and testing plan
 
+**2024-12-15 (Update 1 - File Organization):**
+- Added improvement #11: Episode Directory File Organization
+- Analyzed Episode 1 file structure (18 files, 122MB)
+- Discovered HTML files (report.html, transcript.html) are intentional for series index pages
+- Identified missing workflow documentation for HTML generation
+- Confirmed .m4a already in .gitignore (line 23) but still being committed
+- Proposed research/, logs/, tmp/ subdirectory structure
+- Created comprehensive file organization table with placement rules
+- Identified Phase 8.5 gap: HTML creation not documented
+- Added .m4a verification steps to prevent accidental commits
+
+**Key findings:**
+- Root directory should have only 7 final files (vs current 18)
+- 81MB .m4a file should never be committed (already gitignored)
+- HTML files ARE needed for series but workflow doesn't create them
+- chapters.txt is temporary and should be deleted after embed
+- transcript.json (449KB) could be moved to tmp/ or gitignored
+
+**2024-12-15 (Update 2 - File Naming Convention):**
+- Refined research file naming to use phase prefixes: p1, p2, p3
+- Removed redundant "research-" prefix (files are in /research directory)
+- Chose "p1-brief.md" over "p1-prompt.md" (reserve "prompt" for tool prompts)
+- Individual tool outputs: p2-perplexity.md, p2-grok.md, p2-chatgpt.md, p2-gemini.md, p2-manual.md
+- Synthesis output: p3-briefing.md (cross-validated synthesis for Opus)
+- Eliminated research-results.md as redundant (go directly from individual files to briefing)
+- Files now sort chronologically when listing directory (ls research/)
+
+**Naming rationale:**
+- Phase prefixes ensure chronological sorting
+- "Brief" describes research topic/question without implying tool-specific prompt
+- Individual tool files prevent race conditions and enable parallel execution
+- Clear workflow progression: p1 (brief) → p2 (research) → p3 (synthesis)
+
+**Files requiring updates:**
+
+**1. `.claude/skills/podcast-series.md`**
+
+Current structure shown (lines 20-37):
+```
+podcast/episodes/
+├── series-name/
+│   ├── ep1-topic-slug/
+│   │   ├── prompts.md
+│   │   ├── research-results.md
+│   │   ├── sources.md
+│   │   ├── report.md
+│   │   ├── publish.md
+│   │   ├── documents/
+│   │   ├── cover.png
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
+│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_chapters.txt
+│   │   └── YYYY-MM-DD-series-name-episode-1-topic_chapters.json
+```
+
+**Should be updated to:**
+```
+podcast/episodes/
+├── series-name/
+│   ├── ep1-topic-slug/
+│   │   ├── research/                    # Research files organized by phase
+│   │   │   ├── p1-brief.md
+│   │   │   ├── p2-perplexity.md
+│   │   │   ├── p2-grok.md
+│   │   │   ├── p2-chatgpt.md
+│   │   │   ├── p2-gemini.md
+│   │   │   ├── p2-manual.md
+│   │   │   ├── p3-briefing.md
+│   │   │   └── documents/
+│   │   ├── logs/                        # Process logs
+│   │   │   ├── prompts.md
+│   │   │   └── metadata.md
+│   │   ├── tmp/                         # Temporary files (optional)
+│   │   │   └── *_transcript.json
+│   │   ├── cover.png
+│   │   ├── report.md
+│   │   ├── report.html                  # For series index page
+│   │   ├── transcript.html              # For series index page
+│   │   ├── sources.md
+│   │   ├── YYYY-MM-DD-series-ep1-topic.mp3
+│   │   └── YYYY-MM-DD-series-ep1-topic_chapters.json
+```
+
+**2. `.claude/skills/new-podcast-episode.md`**
+- Update Phase 1 to create research/, logs/, tmp/ subdirectories
+- Update Phase 2 to save outputs to research/p2-[tool].md
+- Update Phase 3 to create research/p3-briefing.md from p2-*.md files
+- Update Phase 7 to delete chapters.txt after embedding
+- Update Phase 10 to use new file structure in git add
+
+**3. Episode creation templates**
+- Update any template files or examples to use new naming convention
+
 **Next:**
+- Update `.claude/skills/podcast-series.md` with new directory structure
+- Update `.claude/skills/new-podcast-episode.md` with phase-prefixed naming
 - Implement Phase 1 improvements (critical safety)
-- Test with Episode 7 creation
+- Create tools for HTML generation (report.md → report.html, transcript.json → transcript.html)
+- Test file organization structure with Episode 7
 - Gather feedback and iterate
