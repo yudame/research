@@ -1,0 +1,8 @@
+Starting transcription: 2025-12-15-emerging-edges.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/active-recovery/ep3-emerging/2025-12-15-emerging-edges.mp3...
+
+✓ Transcript saved to: ../episodes/active-recovery/ep3-emerging/logs/2025-12-15-emerging-edges_transcript.json
+✓ Log saved to: ../episodes/active-recovery/ep3-emerging/logs/transcribe_log_20251215_212255.txt
+✓ Transcript length: 4864 words
