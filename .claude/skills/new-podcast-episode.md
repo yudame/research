@@ -1469,21 +1469,33 @@ Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
 
 🚨 **CRITICAL: Validate feed.xml**
 
-**Invoke feed validation subagent:**
+**Invoke feed validation subagent via Task tool:**
 
 ```
-Validate the podcast feed against RSS specification standards using the podcast-feed-validator skill.
+Use the Task tool with subagent_type='general-purpose':
+
+"Validate the podcast feed against RSS specification standards using the podcast-feed-validator skill.
 
 Feed path: podcast/feed.xml
 Specification path: docs/RSS-specification.md
+Episode to validate: Most recent episode only
 
 Follow the podcast-feed-validator skill to:
-1. Read the RSS specification quality checklist (Section 8)
-2. Validate the new episode entry against all requirements
-3. Check for: required tags, proper formatting, series metadata (if applicable), content:encoded HTML structure
-4. Verify file sizes and durations match actual files
-5. Report any missing or incorrect elements
-6. Confirm feed is valid XML
+1. Read docs/RSS-specification.md (Sections 1, 2, 3, and 8)
+2. Read podcast/feed.xml and identify the most recent episode
+3. Validate channel-level metadata (Section 1 requirements)
+4. Validate episode metadata (Section 2 & 3 requirements)
+5. Verify file metadata accuracy (actual file size and duration match feed)
+6. Check XML structure validity
+7. Perform content quality checks (report links, source URLs, HTML formatting)
+8. Provide validation report with specific issues and fixes needed
+
+Return comprehensive validation report showing:
+- ✅ Passed checks
+- ❌ Failed checks with specific fixes
+- ⚠️ Warnings for optional elements
+
+If validation fails, DO NOT proceed to Phase 12 until issues are fixed."
 ```
 
 **VERIFY FEED.XML UPDATE:**
@@ -1513,7 +1525,9 @@ git diff podcast/feed.xml | head -50
 ✓ feed.xml updated with new `<item>` entry
 ✓ `<lastBuildDate>` updated in feed.xml channel metadata
 ✓ All metadata accurate (duration matches file, size matches file, pubDate is RFC 2822)
-✓ Feed validation passes (valid XML, all required tags present)
+✓ 🚨 **Feed validator reports VALID or VALID WITH WARNINGS** (not INVALID)
+✓ All ❌ failed checks from validator have been fixed
+✓ File metadata verification passed (size and duration match actual files)
 
 **⚠️ DO NOT PROCEED TO PHASE 12 UNTIL ALL EXIT CRITERIA MET**
 
