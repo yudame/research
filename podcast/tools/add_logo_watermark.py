@@ -7,6 +7,7 @@ Usage:
         --series "Series Name" \
         --episode "Ep 3 - Topic" \
         [--logo path/to/logo.png]
+    python add_logo_watermark.py cover.png --series "Series" --quiet --log-dir logs/
 
 Requirements:
     pip install pillow
@@ -15,6 +16,13 @@ Requirements:
 import sys
 import argparse
 from pathlib import Path
+from datetime import datetime
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 try:
     from PIL import Image, ImageDraw, ImageFont
@@ -24,7 +32,8 @@ except ImportError:
 
 
 def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_ratio=0.12,
-                  brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#FFC20E'):
+                  brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#FFC20E',
+                  verbose=True, log_file=None):
     """
     Add logo watermark and text overlays to cover image.
 
@@ -39,20 +48,32 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_
         episode_text: Episode info text (e.g., "Ep 3 - HRV")
         border_width: Width of border in pixels (0 = no border)
         border_color: Hex color for border (default: yellow from logo)
+        verbose: Print progress messages
+        log_file: Optional log file path
+
+    Returns:
+        Path to watermarked image or None on error
     """
+    def log(msg):
+        if verbose:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
+
     cover_path = Path(cover_path)
     logo_path = Path(logo_path)
 
     if not cover_path.exists():
-        print(f"Error: Cover image not found: {cover_path}")
-        sys.exit(1)
+        log(f"Error: Cover image not found: {cover_path}")
+        return None
 
     if not logo_path.exists():
-        print(f"Error: Logo not found: {logo_path}")
-        sys.exit(1)
+        log(f"Error: Logo not found: {logo_path}")
+        return None
 
-    print(f"Loading cover: {cover_path}")
-    print(f"Loading logo: {logo_path}")
+    log(f"Loading cover: {cover_path}")
+    log(f"Loading logo: {logo_path}")
 
     # Load images
     cover = Image.open(cover_path).convert('RGBA')
@@ -105,12 +126,12 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_
     output_path = cover_path.parent / f"{cover_path.stem}_watermarked{cover_path.suffix}"
     watermarked.convert('RGB').save(output_path, 'PNG', quality=95)
 
-    print(f"✓ Watermarked cover saved to: {output_path}")
+    log(f"✓ Watermarked cover saved to: {output_path}")
 
     # Replace original
     cover_path.unlink()
     output_path.rename(cover_path)
-    print(f"✓ Original replaced: {cover_path}")
+    log(f"✓ Original replaced: {cover_path}")
 
     return cover_path
 
@@ -246,6 +267,15 @@ def main():
                        help="Border width in pixels (default: 0 = no border, recommended: 15-25)")
     parser.add_argument("--border-color", default="#FFC20E",
                        help="Border color in hex (default: #FFC20E = yellow)")
+    parser.add_argument(
+        "--log-dir",
+        help="Directory for log files (default: same as cover image)"
+    )
+    parser.add_argument(
+        "--quiet", "-q",
+        action="store_true",
+        help="Minimal output (suppress progress messages)"
+    )
 
     args = parser.parse_args()
 
@@ -254,7 +284,26 @@ def main():
         script_dir = Path(__file__).parent
         args.logo = script_dir.parent / "cover.png"
 
-    add_watermark(
+    # Set up log directory
+    cover_path = Path(args.cover)
+    log_dir = Path(args.log_dir) if args.log_dir else cover_path.parent
+    if args.log_dir and not log_dir.exists():
+        log_dir.mkdir(parents=True, exist_ok=True)
+
+    # Set up log file
+    log_file = None
+    if args.log_dir:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        log_file = str(log_dir / f"watermark_log_{timestamp}.txt")
+
+    def log(msg):
+        if not args.quiet:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
+
+    result = add_watermark(
         args.cover,
         args.logo,
         position=args.position,
@@ -264,11 +313,42 @@ def main():
         series_text=args.series,
         episode_text=args.episode,
         border_width=args.border,
-        border_color=args.border_color
+        border_color=args.border_color,
+        verbose=not args.quiet,
+        log_file=log_file
     )
 
-    print("\nDone! Logo and text overlays applied.")
+    if not result:
+        log("Watermarking failed")
+        return 1
+
+    # Save metadata to log file
+    if log_file:
+        import json
+        metadata_file = Path(log_file).parent / f"watermark_metadata_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(metadata_file, 'w') as f:
+            json.dump({
+                'cover_image': str(cover_path),
+                'logo': str(args.logo),
+                'position': args.position,
+                'opacity': args.opacity,
+                'size_ratio': args.size,
+                'brand_text': args.brand,
+                'series_text': args.series,
+                'episode_text': args.episode,
+                'border_width': args.border,
+                'border_color': args.border_color,
+                'timestamp': datetime.now().isoformat()
+            }, f, indent=2)
+        log(f"✓ Metadata saved to: {metadata_file}")
+
+    log("\n✓ Done! Logo and text overlays applied.")
+
+    if log_file:
+        log(f"✓ Log saved to: {log_file}")
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -4,13 +4,13 @@
 
 | Tool | Type | Status | Tests | Issues |
 |------|------|--------|-------|--------|
-| `perplexity_deep_research.py` | Research | ✅ Updated | ✅ 15/20 pass | None |
-| `gemini_deep_research.py` | Research | ✅ Updated | ✅ 15/20 pass | None |
-| `gpt_researcher_run.py` | Research | ✅ Updated | ✅ 10/20 pass | None |
-| `transcribe_only.py` | Audio | ⚠️ Needs work | ❌ No tests | See below |
-| `generate_chapters.py` | Audio | ⚠️ Needs work | ✅ Has tests | See below |
-| `generate_cover.py` | Visual | ⚠️ Needs work | ❌ No tests | See below |
-| `add_logo_watermark.py` | Visual | ⚠️ Needs work | ✅ Has tests | See below |
+| `perplexity_deep_research.py` | Research | ✅ Standardized | ✅ 15/20 pass | None |
+| `gemini_deep_research.py` | Research | ✅ Standardized | ✅ 15/20 pass | None |
+| `gpt_researcher_run.py` | Research | ✅ Standardized | ✅ 10/20 pass | None |
+| `transcribe_only.py` | Audio | ✅ Standardized | ❌ No tests | None |
+| `generate_chapters.py` | Audio | ✅ Standardized | ✅ Has tests | None |
+| `generate_cover.py` | Visual | ✅ Standardized | ❌ No tests | None |
+| `add_logo_watermark.py` | Visual | ✅ Standardized | ✅ Has tests | None |
 | `main.py` | Entry | ⚠️ Placeholder | N/A | Empty file |
 
 ## Consistency Issues
