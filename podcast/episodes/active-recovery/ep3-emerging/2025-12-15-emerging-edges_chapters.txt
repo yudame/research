@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=143000
+title=Introduction: The Biomarker Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=143000
+END=297000
+title=Industry Funding and Regulatory Loopholes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=297000
+END=485000
+title=Cryotherapy and Hyperbaric Oxygen Therapy Economics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=485000
+END=602000
+title=Biomarkers vs Performance: The Disconnect
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=602000
+END=775000
+title=NMES and Pneumatic Compression Devices
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=775000
+END=935000
+title=The Adaptation Interference Hypothesis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=935000
+END=1105000
+title=Sleep: The Master Recovery Intervention
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1105000
+END=1248000
+title=Protein Timing and Masters Athletes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1248000
+END=1383000
+title=Strategic Cold Water Immersion Protocols
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1383000
+END=1540000
+title=Supplements: Tart Cherry, Curcumin, and Timing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1540000
+END=1645000
+title=Micronutrient Optimization: Test Before Supplementing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1645000
+END=1730000
+title=Carbohydrate Precision Timing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1730000
+END=1773890
+title=Recovery Periodization and Individual Response Variability

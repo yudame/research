@@ -67,3 +67,41 @@ COMPOSITION:
 **Date:** 2025-12-15
 
 ---
+
+## Audio Processing Phase
+
+**Audio File:** Stop_Undoing_Your_Gains_With_Bad_Recovery.m4a
+**Converted to:** 2025-12-15-emerging-edges.mp3
+**Duration:** 29:33
+**File Size:** 28,383,326 bytes (~28.4 MB)
+
+**Transcription:**
+- Tool: Local Whisper (openai-whisper)
+- Model: base
+- Processing Time: ~5 minutes
+- Output: 2025-12-15-emerging-edges_transcript.json (~333KB)
+- Date: 2025-12-15
+
+**Chapters:**
+- Count: 13 chapters
+- Created by analyzing transcript for natural topic transitions
+- Chapter topics:
+  1. Introduction: The Biomarker Paradox (0:00-2:23)
+  2. Industry Funding and Regulatory Loopholes (2:23-4:57)
+  3. Cryotherapy and Hyperbaric Oxygen Therapy Economics (4:57-8:05)
+  4. Biomarkers vs Performance: The Disconnect (8:05-10:02)
+  5. NMES and Pneumatic Compression Devices (10:02-12:55)
+  6. The Adaptation Interference Hypothesis (12:55-15:35)
+  7. Sleep: The Master Recovery Intervention (15:35-18:25)
+  8. Protein Timing and Masters Athletes (18:25-20:48)
+  9. Strategic Cold Water Immersion Protocols (20:48-23:03)
+  10. Supplements: Tart Cherry, Curcumin, and Timing (23:03-25:40)
+  11. Micronutrient Optimization: Test Before Supplementing (25:40-27:25)
+  12. Carbohydrate Precision Timing (27:25-28:50)
+  13. Recovery Periodization and Individual Response Variability (28:50-29:33)
+- Formats: FFmpeg metadata (.txt) and Podcasting 2.0 (.json)
+- Embedded into mp3 file successfully
+
+**Date:** 2025-12-15
+
+---
