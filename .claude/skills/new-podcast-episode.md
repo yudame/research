@@ -1,34 +1,81 @@
 # New Podcast Episode Workflow
 
+## Quick Reference: Episode Workflow Progress
+
+**Track your progress through each phase. The workflow is complete when all phases are checked off.**
+
+- [ ] **Phase 1: Setup** → Episode directory and initial files created
+- [ ] **Phase 2: Research - Academic Foundation** → Perplexity research complete (30-120s)
+- [ ] **Phase 3: Research - Question Discovery** → Phase 2 analysis complete, targeted prompts ready
+- [ ] **Phase 4: Research - Targeted Followup** → Grok, GPT-Researcher, Gemini, Claude research complete
+- [ ] **Phase 5: Cross-Validation** → Sources verified, contradictions identified
+- [ ] **Phase 6: Master Briefing** → research/p3-briefing.md created with organized findings
+- [ ] **Phase 7: Synthesis** → report.md created by podcast-synthesis-writer
+- [ ] **Phase 8: Cover Art** → cover.png generated and branded
+- [ ] **Phase 9: Audio from User** → NotebookLM audio file provided
+- [ ] **Phase 10: Audio Processing** → mp3 converted, transcribed, chaptered, embedded
+- [ ] **Phase 11: Publishing** → feed.xml updated with episode metadata
+- [ ] **Phase 12: Commit & Push** → Changes committed and pushed to GitHub
+
+**Verification:** After Phase 12, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
+
+---
+
 You are helping create a new podcast episode following a structured research and production workflow with sequential deep research and multi-source verification.
 
 ## Episode Directory Structure
 
-Each episode follows a flat organization with core markdown files at the top level:
+Each episode follows an organized structure with files grouped by purpose:
+
 ```
 podcast/episodes/YYYY-MM-DD-topic-slug/
-├── prompts.md              # All prompts used during episode creation
-├── research-results.md     # Raw research outputs from multiple tools
-├── research-briefing.md    # Master briefing for Opus 4.5 (organized by topic)
-├── sources.md              # Organized list of source links
-├── report.md               # Final research report/show notes (created by Opus 4.5)
-├── publish.md              # RSS feed content (title, description, keywords, sources)
-├── documents/              # Supporting files (PDFs, articles) - only if needed
-├── review-notes.md         # Episode review for continuous improvement (optional)
-├── cover.png               # Episode cover art with branding (~500KB)
+├── research/                           # Research files organized by phase
+│   ├── p1-brief.md                    # Research brief (topic/questions)
+│   ├── p2-perplexity.md               # Perplexity academic research
+│   ├── p2-grok.md                     # Grok real-time/regional research
+│   ├── p2-chatgpt.md                  # GPT-Researcher industry/technical
+│   ├── p2-gemini.md                   # Gemini policy/strategic research
+│   ├── p2-manual.md                   # Manual research, user sources
+│   ├── p3-briefing.md                 # Cross-validated synthesis for synthesis agent
+│   └── documents/                     # PDFs, papers, supporting files
+├── logs/                               # Process logs
+│   ├── prompts.md                     # All prompts used during creation
+│   └── metadata.md                    # Publishing metadata scratch
+├── tmp/                                # Temporary files (optional to commit)
+│   └── *_transcript.json              # Full Whisper output (large file)
+├── cover.png                           # Episode cover art with branding (~500KB)
+├── report.md                           # Final narrative report from synthesis agent
+├── report.html                         # HTML report (series only - for index page)
+├── transcript.html                     # HTML transcript (series only - for index page)
+├── sources.md                          # Source documentation
 ├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters (~30MB)
-├── YYYY-MM-DD-topic-slug_transcript.json  # Full Whisper transcript (~400KB)
-├── YYYY-MM-DD-topic-slug_chapters.txt     # FFmpeg chapter format (~2KB)
-└── YYYY-MM-DD-topic-slug_chapters.json    # Podcasting 2.0 format (~1KB)
+└── YYYY-MM-DD-topic-slug_chapters.json # Podcasting 2.0 chapter metadata
 ```
 
-**Key change from V1:** Added `research-briefing.md` as intermediate step between raw research and final report.
+**Key organizational principles:**
+- **Research files use phase prefixes** (p1, p2, p3) for chronological sorting
+- **Each research tool saves to its own file** (prevents race conditions, enables parallel execution)
+- **Root directory contains only final outputs** (published files linked in feed.xml)
+- **Logs separated from research** (prompts.md moved to logs/)
+- **Temporary files isolated** (tmp/ for large transcripts, can be optionally committed)
+
+**File naming rationale:**
+- **p1-brief.md** - "Brief" describes research topic/question (not "prompt" which is tool-specific)
+- **p2-[tool].md** - Individual tool outputs enable parallel execution without conflicts
+- **p3-briefing.md** - Cross-validated synthesis ready for narrative creation
+- **No redundant prefixes** - Files in research/ don't need "research-" prefix
 
 ## Complete Workflow
 
-### 1. Setup Phase
+═══════════════════════════════════════════════════════════════
+                    PHASE 1: SETUP
+═══════════════════════════════════════════════════════════════
 
-**IMPORTANT: Always use today's actual date (2025-12-12 or current date) for all timestamps. Never use placeholder dates like "YYYY-MM-DD" in created files.**
+**ENTRY REQUIREMENTS:**
+✓ User has provided episode topic or research question
+✓ Episode details known or easily inferred (date, slug, title, series info if applicable)
+
+**IMPORTANT: Always use today's actual date (2025-12-15 or current date) for all timestamps. Never use placeholder dates like "YYYY-MM-DD" in created files.**
 
 **Create a todo list** to track progress through the workflow:
 
@@ -65,25 +112,25 @@ Use today's date (YYYY-MM-DD format) unless user specifies otherwise.
 If the episode directory already exists, check for a `research-prompt.md` file. If present:
 - Read it to understand the episode context and research objectives
 - Use it to inform the deep research prompts you'll create
-- DO NOT copy it as the deep research prompts - you'll create new ones in prompts.md
+- DO NOT copy it as the deep research prompts - you'll create new ones in logs/prompts.md
 
 **Create the appropriate directory structure (if needed):**
 
 **For series episodes:**
 ```bash
-mkdir -p ~/src/research/podcast/episodes/series-name/epX-topic-slug
+mkdir -p ~/src/research/podcast/episodes/series-name/epX-topic-slug/{research/documents,logs,tmp}
 ```
 
 **For standalone episodes:**
 ```bash
-mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug
+mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug/{research/documents,logs,tmp}
 ```
 
 **Create all episode files:**
 
-**IMPORTANT:** Replace all `YYYY-MM-DD` placeholders with today's actual date in ISO format (e.g., 2025-12-12). Never use placeholder dates in created files.
+**IMPORTANT:** Replace all `YYYY-MM-DD` placeholders with today's actual date in ISO format (e.g., 2025-12-15). Never use placeholder dates in created files.
 
-**prompts.md:**
+**logs/prompts.md:**
 ```markdown
 # Prompts Used for Episode: [Episode Title]
 
@@ -122,75 +169,82 @@ This document tracks all prompts used during the creation of this episode for re
 <!-- Research prompts will be added as they are used -->
 ```
 
-**research-results.md:**
+**research/p1-brief.md:**
 ```markdown
-# Research Results for [Episode Title]
-
-This file contains raw research outputs from multiple tools for cross-validation.
-
----
-
-## Research from Perplexity (Academic & Official Sources)
+# Research Brief: [Episode Title]
 
 **Date:** [Today's date in YYYY-MM-DD format]
-**Focus:** Peer-reviewed studies, meta-analyses, official statistics
-
-<!-- Paste Perplexity results here -->
+**Episode:** [Episode Title]
 
 ---
 
-## Research from Grok (Real-Time & Regional Sources)
+## Research Topic
 
-**Date:** [Today's date in YYYY-MM-DD format]
-**Focus:** Recent developments, industry news, practitioner perspectives
+[High-level description of what this episode will research]
 
-<!-- Paste Grok results here -->
+## Key Questions
 
----
+- [Question 1]
+- [Question 2]
+- [Question 3]
 
-## Research from GPT-Researcher (Industry & Technical)
+## Context
 
-**Date:** [Today's date in YYYY-MM-DD format]
-**Model:** OpenAI GPT-5.2
-**Focus:** Industry reports, technical documentation, case studies
-
-<!-- Paste ChatGPT results here -->
+[Any relevant context or background for the research]
 
 ---
 
-## Research from Gemini Deep Research (Strategic & Policy)
-
-**Date:** [Today's date in YYYY-MM-DD format]
-**Focus:** Regulatory frameworks, policy analysis, strategic frameworks
-
-<!-- Paste Gemini results here -->
-
----
-
-## Research from Claude Deep Research (Comprehensive Synthesis)
-
-**Date:** [Today's date in YYYY-MM-DD format]
-**Focus:** Multi-dimensional analysis across academic, industry, policy, and recent sources
-**Duration:** ~10-20 minutes, 500+ sources accessed
-
-### Main Research Output
-
-<!-- Paste main research output here (from first Copy) -->
-
-### Top Sources
-
-<!-- Paste top sources list here (from second Copy after "list the top sources") -->
-
----
-
-## Notes
-
-- Research conducted: [Today's date in YYYY-MM-DD format]
-- Tools used: [List tools actually used]
-- All outputs saved for cross-validation and verification
+**Next Steps:**
+1. Create Phase 1 academic research prompt for Perplexity
+2. Run Perplexity research → save to research/p2-perplexity.md
+3. Analyze results for question discovery
+4. Create targeted Phase 3 prompts for other tools
 ```
 
-**research-briefing.md (template):**
+**research/p2-perplexity.md (template - created after Phase 1 research):**
+```markdown
+# Perplexity Research: [Episode Title]
+
+**Date:** [Today's date in YYYY-MM-DD format]
+**Focus:** Academic & Official Sources
+**Duration:** 30-120 seconds
+
+---
+
+## Research Output
+
+[Paste Perplexity results here]
+
+---
+
+## Sources
+
+[List key sources cited in the research]
+```
+
+**research/p2-grok.md, p2-chatgpt.md, p2-gemini.md (created as needed for Phase 3 tools)**
+
+Each follows the same pattern:
+```markdown
+# [Tool Name] Research: [Episode Title]
+
+**Date:** [Today's date in YYYY-MM-DD format]
+**Focus:** [Tool's focus area]
+
+---
+
+## Research Output
+
+[Paste results here]
+
+---
+
+## Sources
+
+[List key sources]
+```
+
+**research/p3-briefing.md (template - created after cross-validation):**
 ```markdown
 # Master Research Briefing: [Episode Title]
 
@@ -301,13 +355,56 @@ For: podcast-synthesis-writer agent
 - Conflicting sources noted in research-briefing.md
 ```
 
+**VERIFY SETUP COMPLETE - File State Check:**
+
+```bash
+# Verify directory structure created
+ls -la podcast/episodes/YYYY-MM-DD-slug/
+
+# Expected: research/, logs/, tmp/ subdirectories present
+```
+
+**Expected directory structure:**
+```
+podcast/episodes/YYYY-MM-DD-slug/
+├── research/
+│   └── documents/
+├── logs/
+│   ├── prompts.md (exists, ~500 bytes)
+│   └── [p1-brief.md will be created if user provides research prompt]
+├── tmp/
+└── sources.md (exists, ~300 bytes)
+```
+
+**File State - AFTER Phase 1:**
+- ✅ Directory structure created (research/, logs/, tmp/)
+- ✅ logs/prompts.md exists with episode details
+- ✅ sources.md template created
+- ✅ research/p1-brief.md created if user provided research context
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ Episode directory created with correct naming
+✓ Subdirectories created: research/, research/documents/, logs/, tmp/
+✓ logs/prompts.md exists with episode details logged
+✓ sources.md template exists
+✓ Today's actual date used (not placeholder YYYY-MM-DD)
+✓ All file templates use correct paths (research/, logs/)
+
 **Update todos:**
 ```
 Mark "Setup episode structure and files" as completed.
 Mark "Conduct parallel deep research" as in_progress.
 ```
 
+═══════════════════════════════════════════════════════════════
+
 ---
+
+═══════════════════════════════════════════════════════════════
+                    PHASE 2-4: RESEARCH
+═══════════════════════════════════════════════════════════════
 
 ### 2. Sequential Deep Research Phase
 
@@ -849,14 +946,22 @@ Mark "Create master research briefing" as in_progress.
 **Update todos:**
 ```
 Mark "Create master research briefing" as completed.
-Mark "Synthesize report with Opus 4.5" as in_progress.
+Mark "Synthesize narrative report" as in_progress.
 ```
 
 ---
 
-### 5. Report Synthesis Phase
+═══════════════════════════════════════════════════════════════
+                    PHASE 7: SYNTHESIS
+═══════════════════════════════════════════════════════════════
 
-**Invoke the podcast-synthesis-writer agent to create report.md:**
+**ENTRY REQUIREMENTS:**
+✓ research/p3-briefing.md created with organized findings (Phase 6)
+✓ All research/p2-*.md files present
+✓ Sources cross-validated and verified
+✓ Ready for narrative creation
+
+**WORK TO DO:** Invoke the podcast-synthesis-writer agent to create report.md:
 
 Use the Task tool with subagent_type='podcast-synthesis-writer':
 
@@ -867,15 +972,15 @@ Episode directory: podcast/episodes/YYYY-MM-DD-slug/
 Episode title: [Episode Title]
 
 The podcast-synthesis-writer agent will:
-1. Read research-briefing.md and research-results.md
+1. Read research/p3-briefing.md and individual research/p2-*.md files
 2. Transform organized research into engaging narrative report
 3. Apply evidence standards and podcast storytelling principles
 4. Create report.md with proper citations and source hierarchy
 5. Verify all quality requirements are met
 
 Required files must exist:
-- research-briefing.md (master briefing with verified findings)
-- research-results.md (raw research outputs for additional context)
+- research/p3-briefing.md (master briefing with verified findings)
+- research/p2-*.md files (individual tool outputs for additional context)
 ```
 
 **The agent handles all synthesis requirements:**
@@ -886,18 +991,48 @@ Required files must exist:
 - Source organization and verification
 - Quality checklist validation
 
+**VERIFY SYNTHESIS COMPLETE:**
+
+```bash
+# Check report.md exists and has content
+ls -lh podcast/episodes/YYYY-MM-DD-slug/report.md
+wc -w podcast/episodes/YYYY-MM-DD-slug/report.md
+```
+
+**Expected output:**
+- ✅ report.md exists
+- ✅ File size: 15-25KB
+- ✅ Word count: 5,000-8,000 words (typical for 30-40 min episode)
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ report.md created in episode root directory
+✓ File size 15-25KB (~5,000-8,000 words)
+✓ Narrative structure (not bullet points)
+✓ All claims have source citations
+✓ Citations link to verified sources from research/p3-briefing.md
+
 **Update todos:**
 ```
-Mark "Synthesize narrative report" as completed when agent finishes.
+Mark "Synthesize narrative report" as completed.
 Mark "Generate cover art" as in_progress.
 Mark "Obtain audio from NotebookLM" as in_progress (user's parallel task).
 ```
 
+═══════════════════════════════════════════════════════════════
+
 ---
 
-### 6. Cover Art Generation Phase
+═══════════════════════════════════════════════════════════════
+                    PHASE 8: COVER ART
+═══════════════════════════════════════════════════════════════
 
-**When user provides report.md from Opus 4.5, immediately invoke cover art subagent:**
+**ENTRY REQUIREMENTS:**
+✓ report.md created (Phase 7)
+✓ Ready to generate cover art based on episode content
+
+**WORK TO DO:** Immediately invoke cover art subagent:
 
 Use the Task tool to invoke the `podcast-cover-art` skill:
 
@@ -912,26 +1047,58 @@ Episode text: [Text for branding overlay, e.g., "Ep 3 - Sleep & Memory"]
 Follow the podcast-cover-art skill to:
 1. Generate AI cover art with Gemini via OpenRouter
 2. Apply podcast branding (logo, text, border)
-3. Log to prompts.md
+3. Log to logs/prompts.md
 4. Report back when complete with file path and size
 ```
 
-**Update todos when complete:**
+**VERIFY COVER ART COMPLETE:**
+
+```bash
+ls -lh podcast/episodes/YYYY-MM-DD-slug/cover.png
+```
+
+**Expected output:**
+- ✅ cover.png exists
+- ✅ File size: ~400-600KB
+- ✅ Dimensions: 3000x3000px (podcast standard)
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ cover.png created in episode root directory
+✓ File size appropriate (~400-600KB)
+✓ Branding applied (logo, series/episode text, yellow border)
+✓ Image dimensions: 3000x3000px
+✓ Logged to logs/prompts.md
+
+**Update todos:**
 ```
 Mark "Generate cover art" as completed.
 ```
 
+═══════════════════════════════════════════════════════════════
+
 ---
+
+═══════════════════════════════════════════════════════════════
+                    PHASE 9: AUDIO FROM USER (NotebookLM)
+═══════════════════════════════════════════════════════════════
+
+**ENTRY REQUIREMENTS:**
+✓ report.md created (Phase 7)
+✓ research/p3-briefing.md available
+✓ All research/p2-*.md files available
+✓ Cover art generation launched (Phase 8) - can run in parallel
 
 ### 7. NotebookLM Audio Generation Phase
 
 **Provide NotebookLM prompt immediately after cover art is launched:**
 
 **Files to upload to NotebookLM:**
-1. `report.md` (Opus 4.5's narrative synthesis)
-2. `research-briefing.md` (organized source material)
-3. `research-results.md` (raw research for additional context)
-4. Any PDFs or documents in `documents/` folder
+1. `report.md` (narrative synthesis from podcast-synthesis-writer)
+2. `research/p3-briefing.md` (organized source material)
+3. `research/p2-*.md` files (individual tool research outputs for additional context)
+4. Any PDFs or documents in `research/documents/` folder
 
 **NotebookLM Prompt (Standard Template - DO NOT customize):**
 
@@ -985,7 +1152,7 @@ When presenting research: Focus on what numbers mean, use comparisons ("like los
 Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
 ```
 
-**Add to prompts.md under "NotebookLM Audio Generation Phase"**
+**Add to logs/prompts.md under "NotebookLM Audio Generation Phase"**
 
 **Settings:**
 - Format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
@@ -995,12 +1162,12 @@ Closing: Summarize 2-3 key takeaways, close with "Find full research and sources
 "Ready for NotebookLM audio generation:
 
 1. Upload these files to NotebookLM:
-   - report.md (Opus narrative)
-   - research-briefing.md (organized sources)
-   - research-results.md (raw research)
-   - Any documents/ files if present
+   - report.md (narrative report)
+   - research/p3-briefing.md (organized sources)
+   - research/p2-*.md files (individual tool research)
+   - Any research/documents/ files if present
 
-2. Use 'Audio Overview' feature with the prompt saved in prompts.md (just added)
+2. Use 'Audio Overview' feature with the prompt saved in logs/prompts.md (just added)
 
 3. Select format: Deep Dive, Length: Long
 
@@ -1016,9 +1183,18 @@ Mark "Process audio (transcribe, chapters)" as in_progress.
 
 ---
 
-### 8. Audio Processing Phase
+═══════════════════════════════════════════════════════════════
+                    PHASE 10: AUDIO PROCESSING
+═══════════════════════════════════════════════════════════════
 
-**When user provides audio file, invoke audio processing subagent:**
+**ENTRY REQUIREMENTS:**
+✓ User has provided audio file from NotebookLM (Phase 9)
+✓ Audio file is in episode directory (.m4a or .mp3)
+✓ report.md and transcript will be used for chapter generation
+
+**WORK TO DO:** Process audio file through conversion, transcription, and chapter embedding
+
+**Invoke audio processing subagent:**
 
 Use the Task tool to invoke the `podcast-audio-processing` skill:
 
@@ -1032,10 +1208,10 @@ Episode slug: YYYY-MM-DD-slug
 Follow the podcast-audio-processing skill to:
 1. Convert to mp3 if needed (m4a → mp3)
 2. Get file metadata (size in bytes, duration)
-3. Transcribe with local Whisper (base model)
+3. Transcribe with local Whisper (base model) → save to tmp/
 4. Analyze transcript and create 10-15 chapter markers
 5. Embed chapters into mp3
-6. Log to prompts.md
+6. Log to logs/prompts.md
 
 CRITICAL: Report back the file metadata when complete:
 - Duration: MM:SS format
@@ -1043,17 +1219,79 @@ CRITICAL: Report back the file metadata when complete:
 This metadata is needed for the publishing phase.
 ```
 
-**Update todos when complete:**
+**VERIFY AUDIO PROCESSING SUCCEEDED:**
+
+After skill completes, check:
+
+```bash
+# 1. Verify mp3 exists with correct name
+ls -lh podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3
+
+# 2. Check file size and duration
+ffmpeg -i YYYY-MM-DD-slug.mp3 2>&1 | grep -E "Duration|bitrate"
+
+# 3. Verify transcript exists in tmp/
+ls -lh podcast/episodes/YYYY-MM-DD-slug/tmp/*_transcript.json
+
+# 4. Verify chapters JSON exists
+ls -lh podcast/episodes/YYYY-MM-DD-slug/*_chapters.json
+
+# 5. Verify chapters are embedded in mp3
+ffmpeg -i YYYY-MM-DD-slug.mp3 -f ffmetadata - 2>/dev/null | grep CHAPTER
+```
+
+**Expected outputs:**
+- ✅ mp3 file: ~30-40MB for 30-40 min episode (128kbps)
+- ✅ Duration shown: HH:MM:SS or MM:SS format
+- ✅ Transcript JSON: ~300-500KB
+- ✅ Chapters JSON: ~1-2KB
+- ✅ Chapters embedded: Shows CHAPTER00, CHAPTER01, etc.
+
+**⚠️ Common issues:**
+
+| Issue | Diagnosis | Solution |
+|-------|-----------|----------|
+| Conversion failed | Check ffmpeg installed | `brew install ffmpeg` |
+| Transcription slow | Normal for base model | Wait 5-10 min for 30-40 min audio |
+| No chapters found | Check transcript exists | Verify tmp/*_transcript.json present |
+| Chapters not embedded | FFmpeg metadata error | Re-run embed command manually |
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ Final mp3 file exists with correct naming (YYYY-MM-DD-slug.mp3)
+✓ File size known (exact bytes)
+✓ Duration known (MM:SS or HH:MM:SS format)
+✓ Transcript saved to tmp/*_transcript.json
+✓ Chapters JSON created (*_chapters.json)
+✓ Chapters embedded in mp3 (verified with ffmpeg)
+✓ Chapter count: 10-15 chapters for 30-40 min episode
+✓ All steps logged to logs/prompts.md
+
+**⚠️ DO NOT PROCEED TO PHASE 11 UNTIL FILE METADATA IS CONFIRMED**
+
+**Update todos:**
 ```
 Mark "Process audio (transcribe, chapters)" as completed.
 Mark "Create publishing metadata" as in_progress.
 ```
 
+═══════════════════════════════════════════════════════════════
+
 ---
 
-### 9. Publishing Phase
+═══════════════════════════════════════════════════════════════
+                    PHASE 11: PUBLISHING
+═══════════════════════════════════════════════════════════════
 
-**Generate episode description, keywords, and source links:**
+**ENTRY REQUIREMENTS:**
+✓ Audio processing complete (Phase 10)
+✓ Duration known (MM:SS format)
+✓ File size known (exact bytes)
+✓ Transcript exists (tmp/*_transcript.json)
+✓ report.md and research/p3-briefing.md available
+
+**WORK TO DO:** Generate episode description, keywords, and source links:
 
 a. **Create compelling 1-2 sentence description (plain text):**
    - Based on report.md and transcript
@@ -1069,15 +1307,15 @@ b. **Generate episode-specific keywords (5-10 keywords):**
    - Format as comma-separated list for iTunes keywords field
 
 c. **Add validated source links (3-5 sources):**
-   - Use sources from research-briefing.md (Tier 1 and Tier 2 prioritized)
+   - Use sources from research/p3-briefing.md (Tier 1 and Tier 2 prioritized)
    - Verify links are still accessible with WebFetch when possible
    - Prioritize: official legislation/regulation, academic analysis, primary sources
    - These will be formatted as clickable HTML links in `<content:encoded>`
 
-**Create publish.md:**
+**Create logs/metadata.md:**
 
 ```markdown
-# Episode Publishing Info
+# Episode Publishing Metadata
 
 ## Title
 [Episode Title]
@@ -1113,6 +1351,8 @@ Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
 
 **Update feed.xml following RSS specification in `docs/RSS-specification.md`**
 
+🚨 **CRITICAL: Validate feed.xml**
+
 **Invoke feed validation subagent:**
 
 ```
@@ -1130,74 +1370,214 @@ Follow the podcast-feed-validator skill to:
 6. Confirm feed is valid XML
 ```
 
+**VERIFY FEED.XML UPDATE:**
+```bash
+git diff podcast/feed.xml | head -50
+```
+
+**Expected output:**
+- New `<item>` entry visible
+- `<lastBuildDate>` updated in channel metadata
+- Duration matches file: MM:SS format
+- File size matches: exact bytes
+- pubDate in RFC 2822 format
+
+**⚠️ Common issues:**
+- Duration mismatch → Re-check with `ffmpeg -i file.mp3 2>&1 | grep Duration`
+- File size wrong → Re-check with `ls -l file.mp3 | awk '{print $5}'`
+- Invalid XML → Check for unclosed tags, improper escaping
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ logs/metadata.md created with all fields
+✓ Episode description written (1-2 sentences + report link)
+✓ Keywords generated (5-10 episode-specific terms)
+✓ Key sources validated (3-5 Tier 1/2 sources with working URLs)
+✓ feed.xml updated with new `<item>` entry
+✓ `<lastBuildDate>` updated in feed.xml channel metadata
+✓ All metadata accurate (duration matches file, size matches file, pubDate is RFC 2822)
+✓ Feed validation passes (valid XML, all required tags present)
+
+**⚠️ DO NOT PROCEED TO PHASE 12 UNTIL ALL EXIT CRITERIA MET**
+
 **Update todos:**
 ```
 Mark "Create publishing metadata" as completed.
 Mark "Update feed.xml and commit" as in_progress.
 ```
 
+═══════════════════════════════════════════════════════════════
+
 ---
 
-### 10. Git Workflow
+═══════════════════════════════════════════════════════════════
+                    PHASE 12: COMMIT & PUSH
+═══════════════════════════════════════════════════════════════
 
-**Commit and push the episode:**
+**ENTRY REQUIREMENTS:**
+✓ feed.xml updated with episode metadata
+✓ All episode files present in episode directory
+✓ Publishing metadata complete (logs/metadata.md)
 
-1. Check status and review changes:
-   ```bash
-   git status
-   git diff feed.xml
-   ```
+**CRITICAL:** This phase publishes your episode. Without completing BOTH commit AND push, the episode stays local and never goes live.
 
-2. Add all episode files and updated feed:
-   ```bash
-   git add podcast/feed.xml podcast/episodes/YYYY-MM-DD-slug/
-   ```
+---
 
-   **Files to include:**
-   - `prompts.md` - All prompts used during creation
-   - `research-results.md` - Raw research outputs from all tools
-   - `research-briefing.md` - Master briefing for Opus (organized by topic)
-   - `sources.md` - Source links organized by tier
-   - `report.md` - Final narrative report from Opus 4.5
-   - `publish.md` - RSS feed content
-   - `cover.png` - Episode cover art with branding
-   - `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
-   - `YYYY-MM-DD-slug_transcript.json` - Full transcript
-   - `YYYY-MM-DD-slug_chapters.txt` - FFmpeg chapter format
-   - `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
-   - Updated `feed.xml`
+### Step 1: Review Changes
 
-3. Commit with descriptive message using heredoc:
-   ```bash
-   git commit -m "$(cat <<'EOF'
-   feat: Add episode on [topic]
+```bash
+git status
+git diff feed.xml
+```
 
-   - Add episode "[title]" covering [key topics]
-   - Conduct sequential deep research: Perplexity academic foundation → question discovery → targeted followup with [tools used]
-   - Create master research briefing organized by topic
-   - Synthesize final narrative report with podcast-synthesis-writer agent
-   - Generate AI cover art with Gemini via OpenRouter and apply podcast branding
-   - Generate full transcript using local Whisper (base model)
-   - Create [N] chapter markers covering key topics
-   - Embed chapters into mp3 for podcast app support
-   - Update feed.xml with episode metadata
-   - Episode duration: MM:SS, covers [key highlights]
-   EOF
-   )"
-   ```
+**VERIFY:**
+- All episode files show as untracked or modified
+- feed.xml shows new `<item>` entry
+- No unexpected changes to other files
 
-4. Push to GitHub:
-   ```bash
-   git push
-   ```
+---
 
-5. GitHub Pages will automatically deploy changes in 2-3 minutes
+### Step 2: Stage All Files
+
+```bash
+git add podcast/feed.xml podcast/episodes/YYYY-MM-DD-slug/
+```
+
+**Files being added:**
+- `research/p1-brief.md` - Research brief
+- `research/p2-*.md` - Individual tool research outputs
+- `research/p3-briefing.md` - Master briefing (organized by topic)
+- `research/documents/` - Any PDFs or supporting files (if present)
+- `logs/prompts.md` - All prompts used during creation
+- `logs/metadata.md` - Publishing metadata
+- `tmp/*_transcript.json` - Full Whisper transcript (optional - large file)
+- `sources.md` - Source links organized by tier
+- `report.md` - Final narrative report from synthesis agent
+- `report.html` - HTML report (series only)
+- `transcript.html` - HTML transcript (series only)
+- `cover.png` - Episode cover art with branding
+- `YYYY-MM-DD-slug.mp3` - Final audio with embedded chapters
+- `YYYY-MM-DD-slug_chapters.json` - Podcasting 2.0 format
+- Updated `feed.xml`
+
+**Note:** .m4a source files are gitignored automatically (see .gitignore line 23)
+
+**VERIFY FILES STAGED:**
+```bash
+git status
+```
+
+**Expected output:** All episode files should show in "Changes to be committed" (green)
+
+---
+
+### Step 3: Commit Changes
+
+```bash
+git commit -m "$(cat <<'EOF'
+feat: Add episode on [topic]
+
+- Add episode "[title]" covering [key topics]
+- Conduct sequential deep research: Perplexity academic foundation → question discovery → targeted followup with [tools used]
+- Create master research briefing organized by topic
+- Synthesize final narrative report with podcast-synthesis-writer agent
+- Generate AI cover art with Gemini via OpenRouter and apply podcast branding
+- Generate full transcript using local Whisper (base model)
+- Create [N] chapter markers covering key topics
+- Embed chapters into mp3 for podcast app support
+- Update feed.xml with episode metadata
+- Episode duration: MM:SS, covers [key highlights]
+EOF
+)"
+```
+
+**VERIFY COMMIT SUCCEEDED:**
+```bash
+git log -1 --oneline
+git status
+```
+
+**Expected output:**
+- `git log` shows your commit message
+- `git status` shows "nothing to commit, working tree clean"
+
+**❌ If commit fails:** Check error message. Common issues:
+- "nothing to commit" → Files weren't staged, run `git add` again
+- Hook failures → Fix issues and retry commit
+
+---
+
+### Step 4: 🚨 **CRITICAL - Push to GitHub** 🚨
+
+```bash
+git push
+```
+
+**⚠️ WHY THIS MATTERS:**
+Without push, the episode stays on your local machine and **NEVER goes live** on GitHub Pages. The workflow is NOT complete until this step succeeds.
+
+**VERIFY PUSH SUCCEEDED:**
+```bash
+git log -1 --oneline
+git ls-remote origin main | grep main
+```
+
+**Expected output:**
+- Both commands show the SAME commit hash
+- Example: `a1b2c3d feat: Add episode on topic`
+
+**✅ If hashes match:** Push succeeded
+**❌ If hashes don't match:** Push failed, run `git push` again
+
+**Common push failures:**
+
+| Error | Solution |
+|-------|----------|
+| "Updates were rejected (non-fast-forward)" | `git pull --rebase origin main` then `git push` |
+| "Permission denied" | Check GitHub authentication |
+| "Could not resolve host" | Check internet connection |
+
+---
+
+### Step 5: ✅ **FINAL VERIFICATION - Episode is Live**
+
+Wait 2-3 minutes for GitHub Pages deployment, then verify:
+
+```bash
+curl -s https://research.yuda.me/podcast/feed.xml | grep -A 5 "YYYY-MM-DD-slug"
+```
+
+**Expected output:** Should return the episode title and enclosure URL
+
+**Alternative verification:** Visit https://research.yuda.me/podcast/feed.xml in browser and search for episode title
+
+**✅ Episode is live when:**
+- feed.xml shows new episode
+- Episode appears in podcast players (may take 30-60 min for refresh)
+
+**❌ If not found after 5 minutes:**
+- Check GitHub Actions: https://github.com/[user]/research/actions
+- Look for failed workflows
+- Check Pages settings: Settings → Pages → Source should be "main" branch
+
+---
+
+**EXIT CRITERIA (all must be true to complete workflow):**
+✓ Commit created successfully
+✓ Push completed successfully
+✓ Commit hash matches on local and remote
+✓ feed.xml updated on live site (after 2-3 min)
+✓ Episode appears in feed.xml
 
 **Update todos:**
 ```
 Mark "Update feed.xml and commit" as completed.
-All episode workflow tasks complete!
+Mark "Commit & Push" as completed.
+ALL EPISODE WORKFLOW TASKS COMPLETE! ✅
 ```
+
+═══════════════════════════════════════════════════════════════
 
 ## Role Division
 

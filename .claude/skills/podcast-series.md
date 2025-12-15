@@ -20,16 +20,25 @@ This skill covers planning and organizing multi-episode podcast series. For crea
 podcast/episodes/
 ├── series-name/                    # Series subdirectory
 │   ├── ep1-topic-slug/
-│   │   ├── prompts.md
-│   │   ├── research-results.md
-│   │   ├── sources.md
-│   │   ├── report.md
-│   │   ├── publish.md
-│   │   ├── documents/              # Only if needed
+│   │   ├── research/              # Research files organized by phase
+│   │   │   ├── p1-brief.md
+│   │   │   ├── p2-perplexity.md
+│   │   │   ├── p2-grok.md
+│   │   │   ├── p2-chatgpt.md
+│   │   │   ├── p2-gemini.md
+│   │   │   ├── p3-briefing.md
+│   │   │   └── documents/          # PDFs, papers
+│   │   ├── logs/                   # Process logs
+│   │   │   ├── prompts.md
+│   │   │   └── metadata.md
+│   │   ├── tmp/                    # Temporary files (optional)
+│   │   │   └── *_transcript.json
 │   │   ├── cover.png
+│   │   ├── report.md
+│   │   ├── report.html             # For series index page
+│   │   ├── transcript.html         # For series index page
+│   │   ├── sources.md
 │   │   ├── YYYY-MM-DD-series-name-episode-1-topic.mp3
-│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_transcript.json
-│   │   ├── YYYY-MM-DD-series-name-episode-1-topic_chapters.txt
 │   │   └── YYYY-MM-DD-series-name-episode-1-topic_chapters.json
 │   ├── ep2-topic-slug/
 │   ├── ep3-topic-slug/
