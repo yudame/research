@@ -1,36 +1,48 @@
 ---
 name: perplexity-deep-research
-description: Automate Perplexity Deep Research API calls using sonar-deep-research model. Use for Phase 1 academic research in podcast episodes. Handles API key verification, Python script creation, execution (30-120s), and result formatting with citations. Returns research ready to paste into research-results.md.
+description: Automate Perplexity Deep Research API calls using sonar-deep-research model. Use for Phase 1 academic research in podcast episodes. Handles API key verification, script execution (30-120s), and result formatting with citations. Returns research ready to paste into research-results.md.
 ---
 
 # Perplexity Deep Research API Automation
 
-This skill automates the submission of research prompts to Perplexity's Deep Research API (`sonar-deep-research` model).
+This skill automates research using Perplexity's Deep Research API - simple, fast API calls with no browser automation.
 
 ## Overview
 
-Perplexity Deep Research is an API-based research tool that:
-1. Conducts comprehensive web research
-2. Synthesizes findings from multiple authoritative sources
-3. Returns structured research reports with citations
-4. Focuses on academic studies, peer-reviewed papers, and official sources
+The Perplexity Deep Research API provides programmatic access to comprehensive research:
+1. Conducts multi-step research process
+2. Searches across academic databases, official sources, peer-reviewed journals
+3. Synthesizes findings with proper citations
+4. Returns structured markdown-formatted reports
 
-**Time:** Research typically takes 30-120 seconds to complete (much faster than Gemini's 3-5 minutes).
+**Time:** Research typically takes 30-120 seconds (fastest of all deep research tools).
 
-**Output:** JSON response containing the research report with inline citations.
+**Output:** Comprehensive research report with inline citations and source links.
+
+**Focus Areas:**
+- Academic studies and peer-reviewed papers
+- Meta-analyses and systematic reviews
+- Official government/regulatory sources
+- Authoritative industry reports
 
 ## Prerequisites
 
-- Perplexity API key stored in `.env` file
-- Python 3.x with `requests` library installed
+- Perplexity API key in `.env` file
+- Python 3.x with `requests` and `python-dotenv` installed
 - API key from: https://www.perplexity.ai/settings/api
 
 ## API Key Setup
 
-**Location:** API key should be stored in `.env` file in the repository root.
+**Check if API key exists:**
 
 ```bash
-# In /Users/valorengels/src/research/.env
+grep PERPLEXITY_API_KEY .env
+```
+
+If not found, add to `.env` file:
+
+```bash
+# In .env file
 PERPLEXITY_API_KEY=pplx-your-api-key-here
 ```
 
@@ -40,312 +52,194 @@ PERPLEXITY_API_KEY=pplx-your-api-key-here
 3. Generate a new API key
 4. Copy the key and add to `.env` file
 
-**Verify .env file exists:**
-```bash
-ls -la /Users/valorengels/src/research/.env
-```
-
-If it doesn't exist, create it:
-```bash
-echo "PERPLEXITY_API_KEY=your-key-here" >> /Users/valorengels/src/research/.env
-```
-
-## API Model Information
-
-**Model:** `sonar-deep-research`
-
-**Capabilities:**
-- Conducts multi-step research process
-- Searches across academic databases, official sources, peer-reviewed journals
-- Synthesizes findings with proper citations
-- Returns structured markdown-formatted reports
-- Includes source URLs for verification
-
-**Reasoning Effort Parameter:**
-- Controls computational effort for research depth
-- Options: `low`, `medium`, `high`
-- **Recommended:** `high` for podcast research (most comprehensive)
-- Higher effort = better quality + longer processing time
-- Default is `medium` if not specified
-
-**Documentation:**
-- Model: https://docs.perplexity.ai/getting-started/models/models/sonar-deep-research
-- Reasoning Effort: https://docs.perplexity.ai/getting-started/models/models/sonar-deep-research#reasoning-effort
-
 ## Complete Automation Workflow
 
-### Step 1: Read API Key from Environment
+### Step 1: Verify API Key
+
+Use Bash to check if the API key is configured:
 
 ```bash
-# Check if .env file exists
-cat /Users/valorengels/src/research/.env | grep PERPLEXITY_API_KEY
+grep PERPLEXITY_API_KEY .env
 ```
 
-**If key not found:**
-- Inform user: "PERPLEXITY_API_KEY not found in .env file"
-- Provide setup instructions
-- Cannot proceed without API key
+If not found, inform user to set up API key at https://www.perplexity.ai/settings/api
 
-### Step 2: Create Python Script for API Call
+### Step 2: Prepare Research Prompt
 
-Create a temporary Python script to make the API request:
+The research prompt should be saved in the episode's `prompts.md` file under the Perplexity Deep Research section.
 
-```python
-import requests
-import os
-import json
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv('/Users/valorengels/src/research/.env')
-
-# Get API key
-api_key = os.getenv('PERPLEXITY_API_KEY')
-
-if not api_key:
-    print("ERROR: PERPLEXITY_API_KEY not found in .env file")
-    exit(1)
-
-# API endpoint
-url = "https://api.perplexity.ai/chat/completions"
-
-# Prepare payload with research prompt
-payload = {
-    "model": "sonar-deep-research",
-    "messages": [
-        {
-            "role": "user",
-            "content": """RESEARCH_PROMPT_HERE"""
-        }
-    ],
-    "reasoning_effort": "high"  # Options: low, medium, high
-}
-
-# Headers with authentication
-headers = {
-    "Authorization": f"Bearer {api_key}",
-    "Content-Type": "application/json"
-}
-
-# Make API request
-print("Submitting research request to Perplexity API...")
-response = requests.post(url, json=payload, headers=headers)
-
-# Check response status
-if response.status_code == 200:
-    result = response.json()
-    print("\n=== PERPLEXITY DEEP RESEARCH RESULT ===\n")
-    print(result['choices'][0]['message']['content'])
-    print("\n=== END OF RESULT ===\n")
-else:
-    print(f"ERROR: API request failed with status {response.status_code}")
-    print(response.text)
-    exit(1)
+**Prompt format (3 lines, single newlines):**
+```
+Research [TOPIC].
+Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
+Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
 ```
 
-### Step 3: Write Script to Temporary File
+### Step 3: Run Research via Python Script
+
+Execute the Python script using Bash:
 
 ```bash
-# Create temp script
-cat > /tmp/perplexity_research.py << 'EOF'
-[Insert Python script from Step 2]
-EOF
+cd /Users/valorengels/src/research/podcast/tools
+python perplexity_deep_research.py --file ../episodes/[episode-dir]/prompts.md --output ../episodes/[episode-dir]/perplexity-results.md
 ```
 
-**Replace placeholder:** Substitute `RESEARCH_PROMPT_HERE` with the actual research prompt from prompts.md.
-
-### Step 4: Install Required Python Package
-
-Check if `requests` and `python-dotenv` are installed:
+Or with inline prompt:
 
 ```bash
-python3 -c "import requests, dotenv" 2>/dev/null || pip3 install requests python-dotenv
+python perplexity_deep_research.py "Research prompt here"
 ```
 
-### Step 5: Execute the API Request
+**Available options:**
+- `--file FILEPATH` - Read prompt from file
+- `--output FILEPATH` - Write results to file
+- `--reasoning-effort LEVEL` - Effort level: low, medium, high (default: high)
+- `--quiet` - Minimal output (just the result)
 
-```bash
-cd /Users/valorengels/src/research
-python3 /tmp/perplexity_research.py
-```
+### Step 4: Monitor Progress
+
+The script will:
+1. Validate API key
+2. Submit research request to Perplexity API
+3. Wait for completion (30-120 seconds)
+4. Display results with word count and token usage
 
 **Expected output:**
 ```
-Submitting research request to Perplexity API...
+==============================================================
+PERPLEXITY DEEP RESEARCH API
+==============================================================
 
-=== PERPLEXITY DEEP RESEARCH RESULT ===
+Prompt: Research Solomon Islands telecommunications...
 
-[Full research report with citations]
+Configuration:
+  Model: sonar-deep-research
+  Reasoning Effort: high
 
-=== END OF RESULT ===
+Submitting research request...
+Expected time: 30-120 seconds
+--------------------------------------------------------------
+
+API Usage:
+  Input tokens: 234
+  Output tokens: 5678
+  Total tokens: 5912
+
+==============================================================
+RESEARCH COMPLETE
+Length: ~4500 words
+==============================================================
 ```
 
-### Step 6: Parse and Save the Response
+### Step 5: Extract and Save Results
 
-The API returns JSON with this structure:
+If `--output` was specified, results are automatically saved to the file.
+
+Otherwise, the script prints results to stdout and you should:
+1. Copy the research output
+2. Paste into the episode's `research-results.md` under the Perplexity section
+
+**Recommended workflow:**
+```bash
+# Run with output file
+python perplexity_deep_research.py \
+  --file ../episodes/episode-dir/prompts.md \
+  --output ../episodes/episode-dir/perplexity-results.md
+
+# Append to research-results.md
+cat ../episodes/episode-dir/perplexity-results.md >> ../episodes/episode-dir/research-results.md
+```
+
+## API Details
+
+**Base URL:** `https://api.perplexity.ai/chat/completions`
+
+**Model:** `sonar-deep-research`
+
+**Request Format:**
+```json
+{
+  "model": "sonar-deep-research",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Research prompt here"
+    }
+  ],
+  "reasoning_effort": "high"
+}
+```
+
+**Response Format:**
 ```json
 {
   "id": "request-id",
   "model": "sonar-deep-research",
   "choices": [
     {
-      "index": 0,
       "message": {
         "role": "assistant",
-        "content": "# Research Report Title\n\nFull research content with citations..."
+        "content": "Research report content with citations..."
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 123,
-    "completion_tokens": 456,
-    "total_tokens": 579
+    "prompt_tokens": 234,
+    "completion_tokens": 5678,
+    "total_tokens": 5912
   }
 }
 ```
-
-**Extract the content:**
-```python
-content = result['choices'][0]['message']['content']
-```
-
-### Step 7: Inform User
-
-```
-Inform user:
-- "Perplexity Deep Research completed successfully"
-- "Research report is [X] tokens / [Y] words"
-- "Output contains comprehensive research with inline citations"
-- "Copy the research output between the markers and paste into research-results.md"
-```
-
-## Alternative: Direct Bash Execution with curl
-
-For simpler execution without Python script:
-
-```bash
-# Read API key from .env
-source /Users/valorengels/src/research/.env
-
-# Make API call with curl
-curl -X POST "https://api.perplexity.ai/chat/completions" \
-  -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
-  -H "Content-Type: "application/json" \
-  -d '{
-    "model": "sonar-deep-research",
-    "messages": [
-      {
-        "role": "user",
-        "content": "RESEARCH_PROMPT_HERE"
-      }
-    ],
-    "reasoning_effort": "high"
-  }' | python3 -m json.tool
-```
-
-**Note:** This requires proper escaping of the research prompt content, especially quotes and newlines.
 
 ## Error Handling
 
 ### API Key Errors
 
-**Error:** `401 Unauthorized`
-```
+**Error:** `ERROR: PERPLEXITY_API_KEY not found`
+
+**Solution:**
+1. Check `.env` file exists in repository root
+2. Verify API key is set: `grep PERPLEXITY_API_KEY .env`
+3. Get API key from https://www.perplexity.ai/settings/api
+4. Add to `.env`: `PERPLEXITY_API_KEY=pplx-your-key-here`
+
+### API Request Failures
+
+**Error:** `ERROR: Authentication failed (401 Unauthorized)`
+
+**Solution:**
 - API key is invalid or expired
-- Check .env file has correct key
 - Verify key at https://www.perplexity.ai/settings/api
 - Regenerate key if needed
-```
 
-**Error:** `PERPLEXITY_API_KEY not found`
-```
-- .env file doesn't exist or doesn't contain key
-- Run setup instructions from Prerequisites section
-- Verify file permissions: chmod 600 .env
-```
+**Error:** `ERROR: Rate limit exceeded (429 Too Many Requests)`
 
-### API Request Errors
-
-**Error:** `429 Too Many Requests`
-```
-- Rate limit exceeded
+**Solution:**
 - Wait 60 seconds and retry
-- Check API usage limits in Perplexity dashboard
-```
+- Check usage at https://www.perplexity.ai/settings/api
+- Upgrade plan if needed
 
-**Error:** `500 Internal Server Error`
-```
-- Perplexity API is experiencing issues
-- Retry after 30 seconds
+**Error:** `ERROR: Request timed out after 180 seconds`
+
+**Solution:**
+- Research query too complex
+- Simplify the prompt or break into smaller tasks
+- Use `--reasoning-effort medium` instead of `high`
+
+**Error:** `ERROR: Perplexity API server error (500)`
+
+**Solution:**
+- Service experiencing issues
+- Wait 30 seconds and retry
 - Check Perplexity status page
-- Fallback: Manual research or use different tool
-```
-
-**Error:** `Request timeout`
-```
-- Research is taking longer than expected
-- Deep research can take 1-2 minutes for complex topics
-- Increase timeout if needed
-- Consider simplifying the prompt
-```
+- Use alternative tool if persistent
 
 ### Python Errors
 
 **Error:** `ModuleNotFoundError: No module named 'requests'`
+
 ```bash
 pip3 install requests python-dotenv
-```
-
-**Error:** `ModuleNotFoundError: No module named 'dotenv'`
-```bash
-pip3 install python-dotenv
-```
-
-## Prompt Format Guidelines
-
-For best results with Perplexity Deep Research:
-
-**Structure:**
-```
-Research [TOPIC].
-Focus on [SPECIFIC FOCUS AREA].
-Provide [OUTPUT REQUIREMENTS].
-```
-
-**Example - Academic Focus:**
-```
-Research Solomon Islands telecommunications market structure and competitive dynamics.
-Focus on peer-reviewed studies, meta-analyses, systematic reviews, and official government/regulatory sources.
-Provide comprehensive findings with full citations, sample sizes, methodological details, and source URLs.
-```
-
-**Important:**
-- Keep prompts under 2000 characters for optimal performance
-- Use single newlines (not double) to prevent formatting issues
-- Be specific about desired source types
-- Request citations explicitly
-- Specify output format needs (e.g., "with full citations", "with source URLs")
-
-## Output Format
-
-Perplexity Deep Research returns:
-
-**Content structure:**
-- Markdown-formatted research report
-- Section headings (# ## ###)
-- Inline citations with superscript numbers [1]
-- Source list at the end with URLs
-- Organized by topic/subtopic
-
-**Citation format:**
-```
-Finding statement with citation[1].
-Another finding with multiple sources[2][3].
-
-## Sources
-[1] Source Title - URL
-[2] Source Title - URL
-[3] Source Title - URL
 ```
 
 ## Integration with Podcast Workflow
@@ -353,142 +247,143 @@ Another finding with multiple sources[2][3].
 When called from the podcast episode workflow:
 
 **Input needed:**
-- Research prompt (3-line format from prompts.md)
-- Episode context (optional, for logging)
+- Research prompt from `prompts.md` (Perplexity section)
+- Episode directory path
 
 **Expected output:**
-- Success: Research report with citations saved to variable
-- Failure: Clear error message + fallback instructions
+- Success: Full research report with citations saved to file
+- Failure: Error message with troubleshooting steps
 
-**After successful API call:**
+**Workflow integration example:**
+
+```bash
+# Phase 1: Research Execution - Perplexity Deep Research
+EPISODE_DIR="podcast/episodes/2024-12-14-topic-slug"
+
+# Run Perplexity research
+cd podcast/tools
+python perplexity_deep_research.py \
+  --file "../${EPISODE_DIR}/prompts.md" \
+  --output "../${EPISODE_DIR}/research-results-perplexity.md" \
+  --reasoning-effort high
+
+# Check if successful
+if [ $? -eq 0 ]; then
+  echo "Perplexity research complete"
+  # Append to main research results
+  cat "../${EPISODE_DIR}/research-results-perplexity.md" >> "../${EPISODE_DIR}/research-results.md"
+else
+  echo "Perplexity research failed - check error messages"
+fi
 ```
-1. Extract content from JSON response
-2. Format output with clear markers
-3. Inform user to copy and paste into research-results.md
-4. Provide token/word count summary
-5. Confirm all citations are included
+
+## Why API-Based Automation
+
+This skill uses the official Perplexity Deep Research API for maximum reliability:
+
+- **Fast:** 30-120 seconds (fastest deep research option)
+- **Stable:** No UI changes breaking automation
+- **Simple:** Just API key configuration needed
+- **Scriptable:** Fully automated, no browser required
+- **Portable:** Works in any environment with Python and internet
+- **Official:** Direct API access to Perplexity's research agent
+- **Maintainable:** API contracts are stable and documented
+
+## Best Practices
+
+1. **Always verify API key** before running research
+2. **Use high reasoning effort** for podcast research (default)
+3. **Save output to file** using `--output` flag
+4. **Handle errors gracefully** - check exit code before continuing
+5. **Monitor API usage** to control costs
+6. **Use specific prompts** - vague prompts waste API calls
+7. **Request citations explicitly** in prompts
+8. **Test with simple prompts** before complex research
+
+## Example Commands
+
+**Basic research:**
+```bash
+python perplexity_deep_research.py "Research quantum computing applications"
 ```
 
-**Fallback instructions if API fails:**
-```
-Manual alternative:
-1. Go to https://www.perplexity.ai/
-2. Enable "Pro Search" mode
-3. Paste the prompt from prompts.md
-4. Wait for results (30-120 seconds)
-5. Copy the full research output
-6. Paste into research-results.md under Perplexity section
+**From file with output:**
+```bash
+python perplexity_deep_research.py \
+  --file research-prompt.txt \
+  --output results.md
 ```
 
-## Comparison: API vs Web Interface
+**Medium effort (faster, less comprehensive):**
+```bash
+python perplexity_deep_research.py \
+  --reasoning-effort medium \
+  "Research climate change policy in Pacific nations"
+```
 
-**API Advantages:**
-- Fully automated (no browser required)
-- Faster execution (30-120 seconds)
-- Scriptable and repeatable
-- No UI interaction needed
-- Works in headless environments
+**Quiet mode (just results):**
+```bash
+python perplexity_deep_research.py \
+  --quiet \
+  --file prompt.txt \
+  --output results.md
+```
 
-**API Limitations:**
-- Requires paid API access
-- Limited to text output (no UI features)
-- Cannot view research plan before execution
-- Less control over research depth
+## Script Location
 
-**Web Interface Advantages:**
-- Free tier available
-- Can review and edit queries
-- Access to UI features (share, export)
-- Can see research progress
+**Path:** `/Users/valorengels/src/research/podcast/tools/perplexity_deep_research.py`
 
-**Recommendation:** Use API for automation in workflows, use Web UI for exploratory research or when API key is unavailable.
+**Usage:**
+```
+python perplexity_deep_research.py [OPTIONS] [PROMPT]
+
+Options:
+  --file, -f PATH           Read prompt from file
+  --output, -o PATH         Write output to file
+  --reasoning-effort LEVEL  Effort: low, medium, high (default: high)
+  --quiet, -q               Minimal output
+
+Examples:
+  python perplexity_deep_research.py "Your prompt here"
+  python perplexity_deep_research.py --file prompt.txt
+  python perplexity_deep_research.py --file prompt.txt --output results.md
+```
+
+## Comparison to Other Tools
+
+| Feature | Perplexity | Gemini | GPT-Researcher |
+|---------|-----------|--------|----------------|
+| Speed | 30-120s | 3-10 min | 6-20 min |
+| Cost | $$$ | $$ | $ (varies) |
+| Academic Focus | ✓✓✓ | ✓ | ✓✓ |
+| Policy/Regulatory | ✓ | ✓✓✓ | ✓✓ |
+| Citations | Inline | Inline | Comprehensive |
+| API-Based | ✓ | ✓ | ✓ |
+
+**Recommendation:** Use Perplexity for Phase 1 academic research when speed and scholarly sources are priorities.
 
 ## API Cost Considerations
 
 **Pricing:** Check current pricing at https://www.perplexity.ai/settings/api
 
-**Typical costs (as of 2025):**
-- Deep Research requests are more expensive than regular queries
+**Typical costs:**
+- Deep Research requests use significant tokens (5000-15000 output tokens)
 - Cost varies by input/output tokens
 - Monitor usage in Perplexity dashboard
 
 **Cost optimization:**
 - Keep prompts concise but specific
+- Use `--reasoning-effort medium` for less critical research
 - Avoid redundant requests
 - Cache results for reuse
-- Set up usage alerts in Perplexity dashboard
-
-## Best Practices
-
-1. **Always verify .env file exists** before attempting API calls
-2. **Test API key** with a simple request before running full research
-3. **Log API responses** for debugging and verification
-4. **Handle rate limits gracefully** with retry logic
-5. **Escape special characters** in prompts (quotes, newlines)
-6. **Set reasonable timeouts** (120-180 seconds for deep research)
-7. **Parse JSON carefully** - check for 'choices' array existence
-8. **Preserve citations** - don't strip formatting when processing output
-9. **Monitor API usage** to avoid surprise costs
-
-## Complete Example Workflow
-
-```bash
-# 1. Verify API key exists
-if [ -f .env ]; then
-    source .env
-    if [ -z "$PERPLEXITY_API_KEY" ]; then
-        echo "ERROR: PERPLEXITY_API_KEY not found in .env"
-        exit 1
-    fi
-else
-    echo "ERROR: .env file not found"
-    exit 1
-fi
-
-# 2. Create research script
-cat > /tmp/perplexity_research.py << 'EOF'
-import requests
-import os
-from dotenv import load_dotenv
-
-load_dotenv('/Users/valorengels/src/research/.env')
-
-url = "https://api.perplexity.ai/chat/completions"
-payload = {
-    "model": "sonar-deep-research",
-    "messages": [{"role": "user", "content": "PROMPT_HERE"}],
-    "reasoning_effort": "high"
-}
-headers = {
-    "Authorization": f"Bearer {os.getenv('PERPLEXITY_API_KEY')}",
-    "Content-Type": "application/json"
-}
-
-response = requests.post(url, json=payload, headers=headers, timeout=180)
-result = response.json()
-
-if response.status_code == 200:
-    print(result['choices'][0]['message']['content'])
-else:
-    print(f"ERROR: {response.status_code} - {result}")
-EOF
-
-# 3. Replace PROMPT_HERE with actual prompt (properly escaped)
-# 4. Run the script
-python3 /tmp/perplexity_research.py
-
-# 5. Clean up
-rm /tmp/perplexity_research.py
-```
 
 ## Notes
 
-- API is significantly faster than Gemini Deep Research API (30-120s vs 3-10 minutes)
-- Requires paid API access (no free tier for sonar-deep-research model)
-- Returns markdown-formatted text ideal for direct pasting into research-results.md
+- Fastest deep research option (30-120s vs 3-20 min for alternatives)
+- Requires paid API access
+- Returns markdown-formatted text ideal for direct pasting
 - Citations are inline with superscript numbers [1][2][3]
 - Full source list provided at end with URLs
-- Can handle complex, multi-faceted research queries
 - Focuses on academic and authoritative sources
 - No browser automation required - pure API call
 - Perfect for automated workflows and CI/CD pipelines

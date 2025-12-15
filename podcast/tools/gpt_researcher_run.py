@@ -129,7 +129,8 @@ async def run_research(
     report_type: str = "research_report",
     verbose: bool = True,
     use_detailed_report: bool = False,
-    config_path: str | None = None
+    config_path: str | None = None,
+    log_file: str | None = None
 ) -> str | None:
     """
     Run GPT-Researcher with specified configuration.
@@ -185,31 +186,39 @@ async def run_research(
             # Fallback to DuckDuckGo (free but lower quality)
             os.environ['RETRIEVER'] = 'duckduckgo'
 
-    if verbose:
-        print("=" * 60)
-        print("GPT-RESEARCHER - MULTI-AGENT DEEP RESEARCH")
-        print("=" * 60)
-        print(f"\nPrompt: {prompt[:200]}..." if len(prompt) > 200 else f"\nPrompt: {prompt}")
-        print(f"\nConfiguration:")
-        print(f"  Fast LLM: {fast_llm}")
-        print(f"  Smart LLM: {smart_llm}")
-        print(f"  Report Type: {report_type}")
-        print(f"  Search Provider: {os.environ.get('RETRIEVER', 'duckduckgo')}")
-        print(f"\nStarting multi-agent research...")
-        print(f"Expected time: 6-20 minutes")
-        print("-" * 60)
+    # Helper to log to both stdout and file
+    def log(msg):
+        if verbose:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
+
+    if verbose or log_file:
+        log("=" * 60)
+        log("GPT-RESEARCHER - MULTI-AGENT DEEP RESEARCH")
+        log("=" * 60)
+        log(f"\nPrompt: {prompt[:200]}..." if len(prompt) > 200 else f"\nPrompt: {prompt}")
+        log(f"\nConfiguration:")
+        log(f"  Fast LLM: {fast_llm}")
+        log(f"  Smart LLM: {smart_llm}")
+        log(f"  Report Type: {report_type}")
+        log(f"  Search Provider: {os.environ.get('RETRIEVER', 'duckduckgo')}")
+        log(f"\nStarting multi-agent research...")
+        log(f"Expected time: 6-20 minutes")
+        log("-" * 60)
 
     try:
         # Use DetailedReport for STORM-based hierarchical research if requested
         if use_detailed_report:
             if DetailedReport is None:
-                if verbose:
-                    print("\nWARNING: DetailedReport not available in gpt-researcher 0.14.5")
-                    print("Falling back to standard GPTResearcher with enhanced config\n")
+                if verbose or log_file:
+                    log("\nWARNING: DetailedReport not available in gpt-researcher 0.14.5")
+                    log("Falling back to standard GPTResearcher with enhanced config\n")
                 use_detailed_report = False
             else:
-                if verbose:
-                    print("\n[Using DetailedReport - STORM Methodology]")
+                if verbose or log_file:
+                    log("\n[Using DetailedReport - STORM Methodology]")
 
                 researcher = DetailedReport(
                     query=prompt,
@@ -221,9 +230,9 @@ async def run_research(
                     verbose=verbose
                 )
 
-                if verbose:
-                    print("\n[Phase 1] Breaking down topic into subtopics...")
-                    print("[Phase 2] Researching each subtopic in depth...")
+                if verbose or log_file:
+                    log("\n[Phase 1] Breaking down topic into subtopics...")
+                    log("[Phase 2] Researching each subtopic in depth...")
 
                 report_text = await researcher.run()
 
@@ -237,20 +246,20 @@ async def run_research(
             )
 
             # Conduct research
-            if verbose:
-                print("\n[Phase 1] Planning research strategy...")
+            if verbose or log_file:
+                log("\n[Phase 1] Planning research strategy...")
 
             report = await researcher.conduct_research()
 
-            if verbose:
-                print("\n[Phase 2] Synthesizing findings...")
+            if verbose or log_file:
+                log("\n[Phase 2] Synthesizing findings...")
 
             report_text = await researcher.write_report()
 
-        if verbose:
-            print(f"\n{'=' * 60}")
-            print("RESEARCH COMPLETE")
-            print(f"{'=' * 60}\n")
+        if verbose or log_file:
+            log(f"\n{'=' * 60}")
+            log("RESEARCH COMPLETE")
+            log(f"{'=' * 60}\n")
 
         return report_text
 
@@ -329,6 +338,23 @@ Environment:
         help='Minimal output (just the result)'
     )
 
+    parser.add_argument(
+        '--auto-save',
+        action='store_true',
+        help='Automatically save output and logs with timestamp (default: True unless --output specified)'
+    )
+
+    parser.add_argument(
+        '--no-auto-save',
+        action='store_true',
+        help='Disable automatic file saving'
+    )
+
+    parser.add_argument(
+        '--log-dir',
+        help='Directory for output and log files (default: current directory)'
+    )
+
     args = parser.parse_args()
 
     # Get prompt from arguments or file
@@ -349,6 +375,35 @@ Environment:
         print("ERROR: Empty prompt")
         sys.exit(1)
 
+    # Determine if auto-save should be enabled
+    auto_save = not args.no_auto_save and (args.auto_save or not args.output)
+
+    # Set up log directory
+    log_dir = args.log_dir or '.'
+    if log_dir != '.' and not Path(log_dir).exists():
+        Path(log_dir).mkdir(parents=True, exist_ok=True)
+
+    # Set up auto-save file paths
+    output_file = args.output
+    log_file = None
+
+    if auto_save and not args.output:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_file = str(Path(log_dir) / f"gpt_researcher_output_{timestamp}.md")
+        log_file = str(Path(log_dir) / f"gpt_researcher_log_{timestamp}.txt")
+        print(f"Auto-save enabled:")
+        print(f"  Output: {output_file}")
+        print(f"  Log: {log_file}")
+        print()
+    elif auto_save and args.output:
+        # If user specified output file, also create log file
+        output_path = Path(args.output)
+        output_file = str(output_path)
+        log_file = str(output_path.parent / (output_path.stem + '_log.txt'))
+        print(f"Saving output to: {output_file}")
+        print(f"Saving log to: {log_file}")
+        print()
+
     # Determine config file path
     config_path = args.config
     if not config_path:
@@ -364,20 +419,23 @@ Environment:
         report_type=args.report_type,
         verbose=not args.quiet,
         use_detailed_report=args.detailed,
-        config_path=config_path
+        config_path=config_path,
+        log_file=log_file
     ))
 
     if result:
         # Output to file or stdout
-        if args.output:
-            with open(args.output, 'w') as f:
+        if output_file:
+            with open(output_file, 'w') as f:
                 f.write(f"# GPT-Researcher Results\n\n")
                 f.write(f"**Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
                 f.write(f"**Model:** {args.model}\n\n")
                 f.write(f"**Prompt:** {prompt}\n\n")
                 f.write("---\n\n")
                 f.write(result)
-            print(f"\nResults saved to: {args.output}")
+            print(f"\nResults saved to: {output_file}")
+            if log_file:
+                print(f"Log saved to: {log_file}")
         else:
             if not args.quiet:
                 print("\n" + "=" * 60)
