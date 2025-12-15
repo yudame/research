@@ -156,7 +156,8 @@ def run_gemini_research(
     prompt: str,
     poll_interval: int = 120,
     max_attempts: int = 30,
-    verbose: bool = True
+    verbose: bool = True,
+    log_file: str | None = None
 ) -> str | None:
     """
     Submit a research request and wait for completion.
@@ -178,12 +179,20 @@ def run_gemini_research(
         print("Get your API key at: https://aistudio.google.com/apikey")
         return None
 
-    if verbose:
-        print("=" * 60)
-        print("GEMINI DEEP RESEARCH API")
-        print("=" * 60)
-        print(f"\nPrompt: {prompt[:200]}..." if len(prompt) > 200 else f"\nPrompt: {prompt}")
-        print(f"\nSubmitting research request...")
+    # Helper to log to both stdout and file
+    def log(msg):
+        if verbose:
+            print(msg)
+        if log_file:
+            with open(log_file, 'a') as f:
+                f.write(msg + '\n')
+
+    if verbose or log_file:
+        log("=" * 60)
+        log("GEMINI DEEP RESEARCH API")
+        log("=" * 60)
+        log(f"\nPrompt: {prompt[:200]}..." if len(prompt) > 200 else f"\nPrompt: {prompt}")
+        log(f"\nSubmitting research request...")
 
     # Submit the research request
     result = submit_research(api_key, prompt)
@@ -199,21 +208,21 @@ def run_gemini_research(
             print(json.dumps(result, indent=2))
         return None
 
-    if verbose:
-        print(f"\nResearch started successfully!")
-        print(f"Interaction ID: {interaction_id}")
-        print(f"Status: {result.get('status', 'unknown')}")
-        print(f"\nEstimated time: 3-10 minutes (max 60 minutes)")
-        print(f"Polling every {poll_interval} seconds...")
-        print("-" * 60)
+    if verbose or log_file:
+        log(f"\nResearch started successfully!")
+        log(f"Interaction ID: {interaction_id}")
+        log(f"Status: {result.get('status', 'unknown')}")
+        log(f"\nEstimated time: 3-10 minutes (max 60 minutes)")
+        log(f"Polling every {poll_interval} seconds...")
+        log("-" * 60)
 
     # Poll for completion
     start_time = time.time()
 
     for attempt in range(max_attempts):
-        if verbose:
+        if verbose or log_file:
             elapsed = int(time.time() - start_time)
-            print(f"\n[{time.strftime('%H:%M:%S')}] Status check #{attempt + 1} (elapsed: {elapsed}s)")
+            log(f"\n[{time.strftime('%H:%M:%S')}] Status check #{attempt + 1} (elapsed: {elapsed}s)")
 
         status_result = check_status(api_key, interaction_id)
 
@@ -225,18 +234,18 @@ def run_gemini_research(
 
         status = status_result.get("status")
 
-        if verbose:
-            print(f"Status: {status}")
+        if verbose or log_file:
+            log(f"Status: {status}")
 
         if status == "completed":
             research_text = extract_output(status_result)
 
             if research_text:
                 elapsed = int(time.time() - start_time)
-                if verbose:
-                    print(f"\n{'=' * 60}")
-                    print(f"RESEARCH COMPLETE (took {elapsed}s)")
-                    print(f"{'=' * 60}\n")
+                if verbose or log_file:
+                    log(f"\n{'=' * 60}")
+                    log(f"RESEARCH COMPLETE (took {elapsed}s)")
+                    log(f"{'=' * 60}\n")
                 return research_text
             else:
                 print("WARNING: Research completed but no text output found")
@@ -252,8 +261,8 @@ def run_gemini_research(
         else:
             # in_progress - wait and retry
             if attempt < max_attempts - 1:
-                if verbose:
-                    print(f"Research in progress. Waiting {poll_interval}s...")
+                if verbose or log_file:
+                    log(f"Research in progress. Waiting {poll_interval}s...")
                 time.sleep(poll_interval)
 
     elapsed = int(time.time() - start_time)
@@ -419,6 +428,23 @@ Environment:
         help='Minimal output (just the result)'
     )
 
+    parser.add_argument(
+        '--auto-save',
+        action='store_true',
+        help='Automatically save output and logs with timestamp (default: True unless --output specified)'
+    )
+
+    parser.add_argument(
+        '--no-auto-save',
+        action='store_true',
+        help='Disable automatic file saving'
+    )
+
+    parser.add_argument(
+        '--log-dir',
+        help='Directory for output and log files (default: current directory)'
+    )
+
     args = parser.parse_args()
 
     # Get prompt from arguments or file
@@ -439,6 +465,35 @@ Environment:
         print("ERROR: Empty prompt")
         sys.exit(1)
 
+    # Determine if auto-save should be enabled
+    auto_save = not args.no_auto_save and (args.auto_save or not args.output)
+
+    # Set up log directory
+    log_dir = args.log_dir or '.'
+    if log_dir != '.' and not Path(log_dir).exists():
+        Path(log_dir).mkdir(parents=True, exist_ok=True)
+
+    # Set up auto-save file paths
+    output_file = args.output
+    log_file = None
+
+    if auto_save and not args.output:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_file = str(Path(log_dir) / f"gemini_output_{timestamp}.md")
+        log_file = str(Path(log_dir) / f"gemini_log_{timestamp}.txt")
+        print(f"Auto-save enabled:")
+        print(f"  Output: {output_file}")
+        print(f"  Log: {log_file}")
+        print()
+    elif auto_save and args.output:
+        # If user specified output file, also create log file
+        output_path = Path(args.output)
+        output_file = str(output_path)
+        log_file = str(output_path.parent / (output_path.stem + '_log.txt'))
+        print(f"Saving output to: {output_file}")
+        print(f"Saving log to: {log_file}")
+        print()
+
     # Run the research
     if args.stream:
         result = run_streaming_research(prompt)
@@ -448,19 +503,22 @@ Environment:
             prompt,
             poll_interval=args.poll_interval,
             max_attempts=max_attempts,
-            verbose=not args.quiet
+            verbose=not args.quiet,
+            log_file=log_file
         )
 
     if result:
         # Output to file or stdout
-        if args.output:
-            with open(args.output, 'w') as f:
+        if output_file:
+            with open(output_file, 'w') as f:
                 f.write(f"# Gemini Deep Research Results\n\n")
                 f.write(f"**Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
                 f.write(f"**Prompt:** {prompt}\n\n")
                 f.write("---\n\n")
                 f.write(result)
-            print(f"\nResults saved to: {args.output}")
+            print(f"\nResults saved to: {output_file}")
+            if log_file:
+                print(f"Log saved to: {log_file}")
         else:
             if not args.quiet:
                 print("\n" + "=" * 60)
