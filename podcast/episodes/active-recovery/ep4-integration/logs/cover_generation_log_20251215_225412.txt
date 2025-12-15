@@ -1,0 +1,25 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep4 Integration":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Concept: The $800 compression boots sit unused in the closet. The cryotherapy membership goes unvisited. Meanwhile, the athlete who simply sleeps eight hours and eats adequate protein after training continues 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep4 Integration":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for ...
+✓ Cover art saved to: ../episodes/active-recovery/ep4-integration/logs/cover.png
+✓ Metadata saved to: ../episodes/active-recovery/ep4-integration/logs/cover_generation_metadata_20251215_225439.json
+
+✓ Done! Cover art ready at: ../episodes/active-recovery/ep4-integration/logs/cover.png
+✓ Log saved to: ../episodes/active-recovery/ep4-integration/logs/cover_generation_log_20251215_225412.txt

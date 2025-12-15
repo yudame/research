@@ -1,0 +1,8 @@
+Loading cover: ../episodes/active-recovery/ep4-integration/cover.png
+Loading logo: /Users/valorengels/src/research/podcast/yudame-logo.png
+✓ Watermarked cover saved to: ../episodes/active-recovery/ep4-integration/cover_watermarked.png
+✓ Original replaced: ../episodes/active-recovery/ep4-integration/cover.png
+✓ Metadata saved to: ../episodes/active-recovery/ep4-integration/logs/watermark_metadata_20251215_225535.json
+
+✓ Done! Logo and text overlays applied.
+✓ Log saved to: ../episodes/active-recovery/ep4-integration/logs/watermark_log_20251215_225535.txt
