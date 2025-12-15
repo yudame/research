@@ -59,15 +59,20 @@ def run_perplexity_research(
     prompt: str,
     reasoning_effort: str = "high",
     verbose: bool = True,
-    log_file: str | None = None
+    log_file: str | None = None,
+    timeout: int = 600,
+    max_retries: int = 3
 ) -> str | None:
     """
-    Submit a research request to Perplexity Deep Research API.
+    Submit a research request to Perplexity Deep Research API with retry logic.
 
     Args:
         prompt: Research prompt/query
         reasoning_effort: Computational effort level (low, medium, high)
         verbose: Whether to print progress messages
+        log_file: Optional file to log progress to
+        timeout: Request timeout in seconds (default: 600 = 10 minutes)
+        max_retries: Maximum number of retry attempts (default: 3)
 
     Returns:
         Research report text or None if failed
@@ -96,8 +101,9 @@ def run_perplexity_research(
         log(f"\nConfiguration:")
         log(f"  Model: sonar-deep-research")
         log(f"  Reasoning Effort: {reasoning_effort}")
+        log(f"  Timeout: {timeout} seconds ({timeout//60} minutes)")
         log(f"\nSubmitting research request...")
-        log(f"Expected time: 30-120 seconds")
+        log(f"Expected time: 30-120 seconds (but can take up to {timeout//60} minutes)")
         log("-" * 60)
 
     # API endpoint
@@ -121,22 +127,52 @@ def run_perplexity_research(
         "Content-Type": "application/json"
     }
 
-    try:
-        # Make API request with 180 second timeout
-        response = requests.post(
-            url,
-            json=payload,
-            headers=headers,
-            timeout=180
-        )
-    except requests.exceptions.Timeout:
-        log("ERROR: Request timed out after 180 seconds")
-        log("The research query may be too complex. Try:")
-        log("  - Simplifying the prompt")
-        log("  - Using reasoning_effort='medium' instead of 'high'")
-        return None
-    except requests.exceptions.RequestException as e:
-        log(f"ERROR: Request failed: {e}")
+    # Retry logic with exponential backoff
+    retry_delay = 5  # seconds
+
+    for attempt in range(max_retries):
+        try:
+            if attempt > 0:
+                log(f"\nRetry attempt {attempt + 1}/{max_retries}...")
+                log(f"Waiting {retry_delay} seconds before retry...")
+                import time
+                time.sleep(retry_delay)
+                retry_delay *= 2  # Exponential backoff
+
+            # Make API request with configurable timeout
+            response = requests.post(
+                url,
+                json=payload,
+                headers=headers,
+                timeout=timeout
+            )
+
+            # If we got a response, break out of retry loop
+            break
+
+        except requests.exceptions.Timeout:
+            log(f"WARNING: Request timed out after {timeout} seconds (attempt {attempt + 1}/{max_retries})")
+            if attempt < max_retries - 1:
+                log("Retrying with longer wait time...")
+                continue
+            else:
+                log("\nERROR: All retry attempts exhausted")
+                log("The research query may be too complex. Try:")
+                log("  - Simplifying the prompt")
+                log("  - Using --reasoning-effort medium instead of high")
+                log("  - Increasing timeout with --timeout option")
+                return None
+
+        except requests.exceptions.RequestException as e:
+            log(f"ERROR: Request failed (attempt {attempt + 1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                continue
+            else:
+                log("\nERROR: All retry attempts failed")
+                return None
+    else:
+        # This executes if we exhausted all retries without breaking
+        log("ERROR: Request failed after all retry attempts")
         return None
 
     # Check response status
@@ -264,6 +300,20 @@ Environment:
         help='Directory for output and log files (default: current directory)'
     )
 
+    parser.add_argument(
+        '--timeout', '-t',
+        type=int,
+        default=600,
+        help='Request timeout in seconds (default: 600 = 10 minutes)'
+    )
+
+    parser.add_argument(
+        '--max-retries',
+        type=int,
+        default=3,
+        help='Maximum number of retry attempts on failure (default: 3)'
+    )
+
     args = parser.parse_args()
 
     # Get prompt from arguments or file
@@ -318,7 +368,9 @@ Environment:
         prompt,
         reasoning_effort=args.reasoning_effort,
         verbose=not args.quiet,
-        log_file=log_file
+        log_file=log_file,
+        timeout=args.timeout,
+        max_retries=args.max_retries
     )
 
     if result:

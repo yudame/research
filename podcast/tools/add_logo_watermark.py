@@ -251,7 +251,7 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
 def main():
     parser = argparse.ArgumentParser(description="Add logo watermark to episode cover art")
     parser.add_argument("cover", help="Path to cover image")
-    parser.add_argument("--logo", help="Path to logo (default: ../cover.png)")
+    parser.add_argument("--logo", help="Path to logo (default: ../yudame-logo.png)")
     parser.add_argument("--position", default="bottom-right",
                        choices=['bottom-right', 'bottom-left', 'top-right', 'top-left', 'center'],
                        help="Logo position (default: bottom-right)")
@@ -282,7 +282,7 @@ def main():
     # Default logo path
     if not args.logo:
         script_dir = Path(__file__).parent
-        args.logo = script_dir.parent / "cover.png"
+        args.logo = script_dir.parent / "yudame-logo.png"
 
     # Set up log directory
     cover_path = Path(args.cover)

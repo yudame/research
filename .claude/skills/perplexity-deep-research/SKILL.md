@@ -15,9 +15,9 @@ The Perplexity Deep Research API provides programmatic access to comprehensive r
 3. Synthesizes findings with proper citations
 4. Returns structured markdown-formatted reports
 
-**Time:** Research typically takes 30-120 seconds (fastest of all deep research tools).
+**Time:** Research typically takes 30-120 seconds, but can take up to 10 minutes for complex queries. The script now has a 10-minute timeout with automatic retries.
 
-**Output:** Comprehensive research report with inline citations and source links.
+**Output:** Comprehensive research report with inline citations and source links. Results are automatically saved to timestamped files to prevent data loss.
 
 **Focus Areas:**
 - Academic studies and peer-reviewed papers
@@ -94,15 +94,29 @@ python perplexity_deep_research.py "Research prompt here"
 - `--file FILEPATH` - Read prompt from file
 - `--output FILEPATH` - Write results to file
 - `--reasoning-effort LEVEL` - Effort level: low, medium, high (default: high)
+- `--timeout SECONDS` - Request timeout in seconds (default: 600 = 10 minutes)
+- `--max-retries N` - Maximum retry attempts on failure (default: 3)
 - `--quiet` - Minimal output (just the result)
+- `--auto-save` - Automatically save output and logs with timestamp (enabled by default)
+- `--no-auto-save` - Disable automatic file saving
+- `--log-dir DIR` - Directory for output and log files
 
 ### Step 4: Monitor Progress
 
 The script will:
 1. Validate API key
 2. Submit research request to Perplexity API
-3. Wait for completion (30-120 seconds)
-4. Display results with word count and token usage
+3. Wait for completion (30-120 seconds typical, up to 10 minutes maximum)
+4. Automatically retry up to 3 times on timeout or failure
+5. Auto-save results to timestamped files (prevents data loss)
+6. Display results with word count and token usage
+
+**Resilience features:**
+- **10-minute timeout** (increased from 3 minutes) - handles longer research queries
+- **Automatic retries** (3 attempts with exponential backoff) - handles transient failures
+- **Auto-save by default** - results saved to `perplexity_output_TIMESTAMP.md` and `perplexity_log_TIMESTAMP.txt`
+- **Separate log files** - progress and errors logged even if research fails
+- **Configurable timeout** - use `--timeout` to adjust for very complex queries
 
 **Expected output:**
 ```
@@ -133,21 +147,49 @@ Length: ~4500 words
 
 ### Step 5: Extract and Save Results
 
-If `--output` was specified, results are automatically saved to the file.
+**Auto-save is enabled by default** to prevent data loss. Results are saved automatically in two scenarios:
 
-Otherwise, the script prints results to stdout and you should:
-1. Copy the research output
-2. Paste into the episode's `research-results.md` under the Perplexity section
+**1. With `--output` specified:**
+```bash
+python perplexity_deep_research.py \
+  --file ../episodes/episode-dir/prompts.md \
+  --output ../episodes/episode-dir/research/p2-perplexity.md
+```
+
+Files created:
+- `research/p2-perplexity.md` - Research output
+- `research/p2-perplexity_log.txt` - Progress log
+
+**2. Without `--output` (auto-save with timestamp):**
+```bash
+python perplexity_deep_research.py "Research prompt here"
+```
+
+Files created in current directory:
+- `perplexity_output_YYYYMMDD_HHMMSS.md` - Research output
+- `perplexity_log_YYYYMMDD_HHMMSS.txt` - Progress log with errors/warnings
+
+**Why auto-save by default?**
+- **Prevents data loss** if terminal crashes or connection drops
+- **Captures partial results** even if script times out
+- **Logs all errors** for troubleshooting
+- **Timestamped files** make it easy to find latest results
 
 **Recommended workflow:**
 ```bash
-# Run with output file
+# Run with explicit output file for episode structure
 python perplexity_deep_research.py \
-  --file ../episodes/episode-dir/prompts.md \
-  --output ../episodes/episode-dir/perplexity-results.md
+  --file ../episodes/episode-dir/logs/prompts.md \
+  --output ../episodes/episode-dir/research/p2-perplexity.md
 
-# Append to research-results.md
-cat ../episodes/episode-dir/perplexity-results.md >> ../episodes/episode-dir/research-results.md
+# If auto-saved to timestamped file, move it to episode directory
+mv perplexity_output_*.md ../episodes/episode-dir/research/p2-perplexity.md
+```
+
+**Disable auto-save** (not recommended):
+```bash
+python perplexity_deep_research.py --no-auto-save "Research prompt"
+# Results only printed to stdout, no files created
 ```
 
 ## API Details
@@ -219,12 +261,19 @@ cat ../episodes/episode-dir/perplexity-results.md >> ../episodes/episode-dir/res
 - Check usage at https://www.perplexity.ai/settings/api
 - Upgrade plan if needed
 
-**Error:** `ERROR: Request timed out after 180 seconds`
+**Error:** `ERROR: Request timed out after 600 seconds (attempt X/3)`
+
+**What this means:**
+- The script automatically retried the request up to 3 times
+- Each attempt waited longer with exponential backoff
+- The query is taking longer than the 10-minute timeout
 
 **Solution:**
-- Research query too complex
-- Simplify the prompt or break into smaller tasks
-- Use `--reasoning-effort medium` instead of `high`
+- **Check auto-saved files** - Results may have been captured in `perplexity_output_TIMESTAMP.md`
+- **Increase timeout** - Use `--timeout 900` (15 minutes) or `--timeout 1200` (20 minutes)
+- **Reduce complexity** - Use `--reasoning-effort medium` instead of `high`
+- **Simplify prompt** - Break into smaller research questions
+- **Check logs** - Review `perplexity_log_TIMESTAMP.txt` for details
 
 **Error:** `ERROR: Perplexity API server error (500)`
 
@@ -293,12 +342,14 @@ This skill uses the official Perplexity Deep Research API for maximum reliabilit
 
 1. **Always verify API key** before running research
 2. **Use high reasoning effort** for podcast research (default)
-3. **Save output to file** using `--output` flag
-4. **Handle errors gracefully** - check exit code before continuing
-5. **Monitor API usage** to control costs
-6. **Use specific prompts** - vague prompts waste API calls
-7. **Request citations explicitly** in prompts
-8. **Test with simple prompts** before complex research
+3. **Specify output file** using `--output` for organized file structure (auto-save is fallback)
+4. **Let auto-save protect you** - don't disable unless you have a reason
+5. **Check log files** if research fails - may contain partial results or error details
+6. **Increase timeout for complex queries** - use `--timeout 900` or higher if needed
+7. **Monitor API usage** to control costs
+8. **Use specific prompts** - vague prompts waste API calls and may timeout
+9. **Request citations explicitly** in prompts
+10. **Trust the retries** - script will automatically retry up to 3 times on failure
 
 ## Example Commands
 
@@ -341,12 +392,19 @@ Options:
   --file, -f PATH           Read prompt from file
   --output, -o PATH         Write output to file
   --reasoning-effort LEVEL  Effort: low, medium, high (default: high)
+  --timeout, -t SECONDS     Request timeout (default: 600 = 10 min)
+  --max-retries N           Max retry attempts (default: 3)
+  --auto-save               Enable auto-save (default: on)
+  --no-auto-save            Disable auto-save (not recommended)
+  --log-dir DIR             Directory for output/log files
   --quiet, -q               Minimal output
 
 Examples:
   python perplexity_deep_research.py "Your prompt here"
   python perplexity_deep_research.py --file prompt.txt
   python perplexity_deep_research.py --file prompt.txt --output results.md
+  python perplexity_deep_research.py --timeout 900 "Complex research query"
+  python perplexity_deep_research.py --max-retries 5 --file prompt.txt
 ```
 
 ## Comparison to Other Tools

@@ -125,7 +125,7 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
 ```
 
 **add_logo_watermark.py features:**
-- Adds yellow "A" logo (from `podcast/cover.png`) to specified position
+- Adds yellow "A" logo (from `podcast/yudame-logo.png`) to specified position
 - Adds text overlays: brand name, series name (optional), episode info
 - Series text uses BIGGER font (6.5% of image width) to be prominent
 - Episode text uses SMALLER font (5% of image width) to handle long topic names
