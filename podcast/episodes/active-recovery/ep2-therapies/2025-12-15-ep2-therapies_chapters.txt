@@ -1,0 +1,63 @@
+;FFMETADATA1
+title=Active Recovery: Ep. 2, Heat, Cold, Touch, and Stretch
+artist=Yudame Research
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=420000
+title=Introduction: The Recovery Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=660000
+title=The Stretching Paradox: Evidence vs Practice
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=1040000
+title=Cold Water Immersion: The Acute Benefits
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1040000
+END=1260000
+title=CWI Adaptation Blunting: The Long-Term Cost
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1440000
+title=Strategic CWI Decision Framework
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1440000
+END=1680000
+title=Heat Therapy: Traditional vs Infrared Sauna
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1860000
+title=Manual Therapies: Foam Rolling and Massage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=1980000
+title=Individual Variation: Biology vs Noise
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1980000
+END=2040000
+title=Age-Specific Recovery for 40+ Adults
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2065880
+title=Key Takeaways and Closing
