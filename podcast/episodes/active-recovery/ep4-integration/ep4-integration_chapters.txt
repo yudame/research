@@ -1,0 +1,47 @@
+;FFMETADATA1
+title=Active Recovery: Ep. 4, Integration and Personalization
+artist=Valor Engels
+album=Yudame Research Podcast
+date=2025-12-16
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=113000
+title=Introduction: The Recovery Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=113000
+END=576000
+title=Part 1: The Aging Muscle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=576000
+END=826000
+title=Part 2: Sleep and Nutrition Foundations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=826000
+END=1126000
+title=Part 3: Cold Water Immersion Strategy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1126000
+END=1365000
+title=Part 4: Equipment ROI and the Synergy Myth
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1365000
+END=1665000
+title=Part 5: HRV Monitoring and Personalization
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1665000
+END=1912000
+title=Part 6: Implementation and Common Mistakes
