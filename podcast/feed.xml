@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sun, 15 Dec 2025 22:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2025 09:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
@@ -26,6 +26,29 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 23: Active Recovery Series - Episode 4 -->
+    <item>
+      <title>Active Recovery: Ep. 4, Integration and Personalization</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/cover.png"/>
+      <description>The $800 compression boots sit unused in the closet. The cryotherapy membership goes unvisited. Meanwhile, the athlete who simply sleeps eight hours and eats adequate protein after training continues to improve. This is the central paradox of recovery science for athletes over 40: interventions that cost the most often deliver less value than fundamentals that cost almost nothing. For the 40-year-old competitive athlete, anabolic resistance means you need 35-65% more protein (35-40g post-workout vs 20g for younger athletes), growth hormone declines 15-20% per decade, and chronic low-grade inflammation creates a different baseline. But the research is clear: training status matters more than chronological age. The landmark Roberts et al. (2015) study revealed CWI after strength training reduced muscle gains from 15% to 2%—devastating for athletes already facing anabolic resistance. Strategic timing is everything: avoid CWI entirely during hypertrophy phases, use it selectively during maintenance, embrace it during competition. Sleep optimization provides 75% injury risk reduction—unmatched by any technology. Full research report: https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/report.md</description>
+      <content:encoded><![CDATA[<p>The $800 compression boots sit unused in the closet. The cryotherapy membership goes unvisited. Meanwhile, the athlete who simply sleeps eight hours and eats adequate protein after training continues to improve. This is the central paradox of recovery science for athletes over 40: interventions that cost the most often deliver less value than fundamentals that cost almost nothing. For the 40-year-old competitive athlete, anabolic resistance means you need 35-65% more protein (35-40g post-workout vs 20g for younger athletes), growth hormone declines 15-20% per decade, and chronic low-grade inflammation creates a different baseline. But the research is clear: training status matters more than chronological age. The landmark Roberts et al. (2015) study revealed CWI after strength training reduced muscle gains from 15% to 2%—devastating for athletes already facing anabolic resistance. Strategic timing is everything: avoid CWI entirely during hypertrophy phases, use it selectively during maintenance, embrace it during competition. Sleep optimization provides 75% injury risk reduction—unmatched by any technology.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4594298/">Roberts et al. (2015): Cold water immersion attenuates acute anabolic signalling</a> - CWI group gained 2% quadriceps mass vs 15% for control; 26% reduction in myonuclear accretion</li><li><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2021.660291/full">Malta et al. (2021): Mode-dependent effects meta-analysis</a> - CWI harmful for resistance training (SMD -0.60), neutral for endurance (SMD -0.07)</li><li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ejsc.12074">Pinero et al. (2024): Throwing cold water on muscle growth</a> - Resistance training + CWI produces only small-to-negligible hypertrophy (SMD 0.14) vs resistance training alone (SMD 0.36)</li><li><a href="https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2021.714148/full">Dupuy et al. (2018): Evidence hierarchy for recovery modalities</a> - Sleep + nutrition: 75% injury risk reduction, unmatched by any supplementary modality</li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8566396/">Protein Requirements for Master Athletes</a> - 35-40g post-exercise dose required vs 20g for younger athletes; 1.6g/kg daily intake (35% increase)</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Mon, 16 Dec 2025 09:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/ep4-integration.mp3"
+                 length="30608776"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/ep4-integration.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>31:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>2</itunes:season>
+      <itunes:episode>4</itunes:episode>
+      <itunes:keywords>recovery paradox, masters athletes, 40 plus fitness, anabolic resistance, protein requirements, cold water immersion, CWI timing, sleep optimization, growth hormone, HRV monitoring, compression boots, foam rolling, massage guns, equipment ROI, synergy myth, periodization, contrast water therapy, heart rate variability, Oura ring, Whoop, injury prevention, inflammation, recovery hierarchy</itunes:keywords>
+      <research:series>Active Recovery Series</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/active-recovery/ep4-integration/ep4-integration_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 22: Algorithms for Life - Episode 1 -->
     <item>

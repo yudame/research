@@ -1,0 +1,33 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Recovery Paradox"
+    },
+    {
+      "startTime": 113,
+      "title": "Part 1: The Aging Muscle"
+    },
+    {
+      "startTime": 576,
+      "title": "Part 2: Sleep and Nutrition Foundations"
+    },
+    {
+      "startTime": 826,
+      "title": "Part 3: Cold Water Immersion Strategy"
+    },
+    {
+      "startTime": 1126,
+      "title": "Part 4: Equipment ROI and the Synergy Myth"
+    },
+    {
+      "startTime": 1365,
+      "title": "Part 5: HRV Monitoring and Personalization"
+    },
+    {
+      "startTime": 1665,
+      "title": "Part 6: Implementation and Common Mistakes"
+    }
+  ]
+}
