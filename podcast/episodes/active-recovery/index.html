@@ -3,330 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Recovery Series - Yudame Research</title>
+    <title>Active Recovery - Yudame Research</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
+    <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
+
     <style>
-        :root {
-            --accent: #f5d563;
-            --text: #0a0a0a;
-            --text-secondary: #666666;
-            --bg: #ffffff;
-            --bg-alt: #fafafa;
-            --border: #e5e5e5;
-        }
-
         body {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 800px;
+            padding: var(--space-6) var(--space-4);
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
-            background: var(--bg);
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-        }
-
-        h1 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            margin: 0;
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            color: var(--text);
         }
 
         .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-4);
         }
 
         .breadcrumb a {
-            color: var(--text-secondary);
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
+            color: var(--color-gray-600);
+            text-decoration: underline;
+            transition: color var(--transition-base);
         }
 
         .breadcrumb a:hover {
-            color: var(--text);
-            border-bottom-color: var(--accent);
+            color: var(--color-black);
         }
 
-        h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            color: var(--text);
+        .page-header {
+            margin-bottom: var(--space-6);
         }
 
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: 1.125rem;
+        .header-logo-row {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
         }
 
-        .tagline {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        .header-logo-row img {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
         }
 
-        .subscribe-section {
-            background: var(--bg-alt);
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin: 0;
+        }
+
+        .page-tagline {
+            font-family: var(--font-sans);
+            font-size: var(--text-lg);
+            color: var(--color-gray-800);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-4);
+        }
+
+        .subscribe-box {
+            background: var(--color-cream);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: var(--space-3);
             flex-wrap: wrap;
-            gap: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .subscribe-section:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .subscribe-section p {
+        .subscribe-box p {
             margin: 0;
-            color: var(--text);
-            font-size: 1rem;
-        }
-
-        a {
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent);
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--text);
-            border-bottom-color: var(--text);
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            font-weight: var(--weight-medium);
+            color: var(--color-black);
         }
 
         .spotify-button {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 12px 24px;
             background: #1DB954;
-            color: var(--bg);
-            border: 1px solid #1DB954;
-            font-weight: 400;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
+            text-decoration: none;
             text-transform: uppercase;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-bottom: none;
+            letter-spacing: 0.05em;
+            transition: all var(--transition-base);
         }
 
         .spotify-button:hover {
-            background: #1ed760;
-            color: var(--bg);
-            border-color: #1ed760;
-            transform: translateX(4px);
+            background: #1ED760;
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        .coming-soon-badge {
+        .spotify-button:focus {
+            outline: 2px solid var(--color-salmon);
+            outline-offset: 2px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin: 0;
+        }
+
+        .complete-badge {
             display: inline-block;
-            background: var(--accent);
-            color: var(--text);
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.25rem 0.75rem;
-            margin-left: 0.75rem;
+            background-color: var(--color-salmon);
+            color: var(--color-black);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            vertical-align: middle;
-        }
-
-        .episode-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .episode {
-            background: var(--bg);
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--border);
-            opacity: 0.85;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .episode:hover {
-            border-color: var(--accent);
-            border-left-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .episode.available {
-            border-left-color: #2dd4bf;
-            opacity: 1;
-        }
-
-        .episode-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .episode-number {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .episode-title {
-            font-size: 1.125rem;
-            font-weight: 400;
-            color: var(--text);
-            letter-spacing: -0.01em;
-        }
-
-        .episode-duration {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-left: auto;
-        }
-
-        .episode-links-inline {
-            font-size: 0.875rem;
-            margin-left: auto;
-        }
-
-        .episode-links-inline a {
-            margin-left: 1rem;
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .episode-links-inline a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        .episode-summary {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .episode-details {
-            margin-bottom: 1rem;
-        }
-
-        .episode-details summary {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .episode-details summary:hover {
-            color: var(--text);
-        }
-
-        .episode-details[open] summary {
-            margin-bottom: 0.75rem;
-        }
-
-        .episode-full-description {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--accent);
-        }
-
-        audio {
-            width: 100%;
-            height: 40px;
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            border-bottom: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: var(--space-8);
+            padding: 10px 24px;
+            background: transparent;
+            color: var(--color-black);
+            border: 2px solid var(--color-black);
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            font-weight: var(--weight-medium);
+            text-decoration: none;
+            transition: all var(--transition-base);
         }
 
         .back-link:hover {
-            background: var(--text);
-            color: var(--bg);
-            border-color: var(--text);
+            border-color: var(--color-salmon);
+            color: var(--color-black);
         }
 
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            text-align: center;
+        .back-link:focus {
+            outline: 2px solid var(--color-salmon);
+            outline-offset: 2px;
         }
 
-        footer a {
-            color: var(--text-secondary);
-            border-bottom: 1px solid transparent;
-            margin: 0 1rem;
-            transition: all 0.3s ease;
-        }
+        @media (max-width: 768px) {
+            body {
+                padding: var(--space-4) var(--space-3);
+            }
 
-        footer a:hover {
-            color: var(--text);
-            border-bottom-color: var(--accent);
-        }
+            .page-title {
+                font-size: var(--text-xl);
+            }
 
-        .footer-links {
-            margin-bottom: 1rem;
+            .page-tagline {
+                font-size: var(--text-base);
+            }
+
+            .section-title {
+                font-size: var(--text-xl);
+            }
+
+            .subscribe-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .spotify-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
+</style>
 </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../../../" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="../../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+                <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Research</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="mobile-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="../../../#podcast" class="mobile-nav-link is-active">Podcast</a></li>
+            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Research</a></li>
+        </ul>
+    </div>
+
+    <main style="padding-top: var(--space-6);">
 <body>
     <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
 
-    <div class="header">
-        <img src="../../../podcast/yudame-logo.png" alt="Yudame Research" class="logo">
-        <h1>Active Recovery</h1>
+    <div class="page-header">
+        <div class="header-logo-row">
+            <img src="../../../podcast/yudame-logo.png" alt="Yudame Research Logo">
+            <h1 class="page-title">Active Recovery</h1>
+        </div>
+        <p class="page-tagline">A 4-part evidence-based series on optimizing recovery for the fit 40-year-old athlete</p>
     </div>
-    <p class="tagline">A 4-part evidence-based series on optimizing recovery for the fit 40-year-old athlete</p>
 
-    <div class="subscribe-section">
-        <p><strong>Subscribe to the full podcast</strong></p>
+    <div class="subscribe-box">
+        <p>Subscribe to the full podcast</p>
         <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="spotify-button">Listen on Spotify</a>
     </div>
 
-    <h2>Episodes</h2>
+    <div class="section-header">
+        <h2 class="section-title">Episodes</h2>
+        <span class="complete-badge">Complete</span>
+    </div>
 
     <div class="episode-list">
-        <div class="episode available">
+        <div class="episode">
             <div class="episode-header">
                 <span class="episode-number">Ep 1</span>
                 <span class="episode-title">Foundations of Active Recovery</span>
@@ -338,16 +274,16 @@
             </div>
             <div class="episode-summary">Discover why the active recovery "paradox" challenges gym wisdom: studies show active recovery clears lactate faster and feels easier during workouts, yet produces identical long-term fitness gains as passive rest.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">This deep dive reveals what actually changes for trained 40+ athletes (hint: it's not protein requirements), why a $20 foam roller delivers 80% of the benefits of expensive tech, and the three evidence-based principles that separate marginal gains from foundational recovery. Explores the science of active vs. passive recovery, examining what meta-analyses reveal about low-intensity walking, cycling, and swimming at 30-60% max heart rate for lactate clearance and DOMS reduction. Covers compression therapy evidence, post-workout nutrition fundamentals (protein timing and muscle protein synthesis), circadian alignment for recovery scheduling, and injury prevention strategies for consistent trainers.</div>
             </details>
-            <audio controls>
+            <audio controls preload="metadata">
                 <source src="ep1-foundations/ep1-foundations.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
-        <div class="episode available">
+        <div class="episode">
             <div class="episode-header">
                 <span class="episode-number">Ep 2</span>
                 <span class="episode-title">Heat, Cold, and Touch</span>
@@ -359,16 +295,16 @@
             </div>
             <div class="episode-summary">Cold water immersion reduces soreness but blunts muscle growth by 17%. Stretching provides 0.52-point improvement on a 100-point scale. Foam rolling costs $20 and matches $1000+ devices for lactate clearance.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">Explores the central paradox: recovery strategies that make you feel better today may undermine long-term training adaptations. Examines four major modalities—stretching, cold water immersion, heat therapy, and manual therapies—revealing that 89% of athletes use stretching despite Cochrane reviews showing negligible effects. Details the CWI trade-off: 10-15 minutes at 11-15°C reduces soreness but suppresses Type II fiber growth by 17% and strength gains by 19% over 12 weeks. Covers heat shock protein activation through sauna (20-30 minutes at 80-100°C), contrast water therapy protocols, and the evidence that simple foam rolling delivers 80% of benefits of expensive compression devices. Includes strategic timing: when to prioritize recovery over adaptation.</div>
             </details>
-            <audio controls>
+            <audio controls preload="metadata">
                 <source src="ep2-therapies/2025-12-15-ep2-therapies.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
-        <div class="episode available">
+        <div class="episode">
             <div class="episode-header">
                 <span class="episode-number">Ep 3</span>
                 <span class="episode-title">Emerging Edges</span>
@@ -380,16 +316,16 @@
             </div>
             <div class="episode-summary">The $3.1 billion recovery tech industry faces a paradox: interventions that improve biomarkers often fail to enhance actual performance, and industry-sponsored studies are 27% more likely to report favorable results.</div>
             <details class="episode-details">
-                <summary>More</summary>
+                <summary>More details</summary>
                 <div class="episode-full-description">Investigates the uncomfortable truth about recovery technology: expensive devices may actually impair training adaptations. Examines neuromuscular electrical stimulation showing "no benefits for any remaining outcomes" despite perceived recovery improvements. Covers photobiomodulation (red/infrared light) with 11-15% strength loss attenuation that disappears by 48 hours. Details pneumatic compression devices (NormaTec, Therabody) where simple active recovery outperforms $1000+ devices after 15 minutes. Explores the biomarker deception: why suppressing inflammation may short-circuit adaptation. Includes sleep extension as master intervention (effect sizes -0.23 to -1.17), protein timing realities, and periodization principles for when to prioritize recovery over adaptation. Reveals industry funding problems: 50-70% of supplement research is industry-backed, with non-sponsored collagen trials showing no benefit.</div>
             </details>
-            <audio controls>
+            <audio controls preload="metadata">
                 <source src="ep3-emerging/2025-12-15-emerging-edges.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
-        <div class="episode available">
+        <div class="episode">
             <div class="episode-header">
                 <span class="episode-number">Ep 4</span>
                 <span class="episode-title">Integration and Personalization</span>
@@ -399,30 +335,32 @@
                     <a href="ep4-integration/transcript.html">Transcript</a>
                 </span>
             </div>
-            <div class="episode-summary">The $800 compression boots collect dust while simple sleep optimization and protein timing deliver 75% injury risk reduction—this is the priority paradox of recovery science.</div>
+            <div class="episode-summary">Building a personalized recovery framework that fits your training volume, recovery capacity, and competitive goals.</div>
             <details class="episode-details">
-                <summary>More</summary>
-                <div class="episode-full-description">Synthesizes the complete Active Recovery series into evidence-based protocols for the 40+ athlete. Reveals the cold water immersion trade-off: 10-15 minutes post-training reduces soreness but blunts muscle growth by 17% and strength gains by 19%—requiring phase-based timing (avoid during hypertrophy, use during competition). Exposes the synergy myth: stacking recovery modalities rarely multiplies benefits. Details the tier-one foundation (sleep 8-9 hours in pitch-black 16-18°C room + 1.6g protein/kg daily with 35-40g post-workout). Covers HRV monitoring rules (trust 3-7 day trends, not daily scores), end-of-one self-testing frameworks, undulating periodization for 28% faster strength gains, and the equipment ROI hierarchy from $20 foam rollers to $800+ boots. Includes dynamic stretching protocols (33% injury reduction), 60-second static holds for aging tissue, and balance training for 50% ACL injury prevention.</div>
+                <summary>More details</summary>
+                <div class="episode-full-description">The final episode synthesizes evidence into actionable frameworks for the fit 40-year-old athlete. Covers recovery taxonomy (acute vs chronic, passive vs active), timing principles (when to suppress vs enhance inflammation), and strategic periodization aligned with training cycles. Details the 4-tier recovery hierarchy: sleep extension (effect sizes -0.23 to -1.17), proper nutrition (protein timing, carbohydrate replenishment), active recovery protocols (30-60% intensity), and targeted modalities (foam rolling, contrast therapy). Includes personalization based on training volume, recovery markers (HRV, subjective readiness), and competitive phase. Addresses the aging athlete reality: recovery capacity declines 1-2% annually after 40, but training consistency matters more than marginal recovery gains.</div>
             </details>
-            <audio controls>
-                <source src="ep4-integration/ep4-integration.mp3" type="audio/mpeg">
+            <audio controls preload="metadata">
+                <source src="ep4-integration/2025-12-17-integration-personalization.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
     </div>
 
     <a href="../../../" class="back-link">Back to Yudame Research</a>
+    </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="https://yuda.me">Home</a>
-            <a href="https://ai.yuda.me">AI</a>
-            <a href="https://research.yuda.me">Research</a>
-        </div>
-        <p>© <span id="year"></span> Yudame</p>
-    </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('is-active');
+                this.classList.toggle('is-active');
+            });
+        }
     </script>
 </body>
 </html>
