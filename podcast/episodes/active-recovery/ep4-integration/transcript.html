@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode Transcript</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 1rem;
+            margin: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            color: #000;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 0 0 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        .metadata {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: #f8f8f8;
+            border-left: 3px solid #ddd;
+        }
+        .segment {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .timestamp {
+            display: inline-block;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #999;
+            margin-right: 0.5rem;
+        }
+        .text {
+            display: inline;
+        }
+        .loading {
+            padding: 2rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Active Recovery Series</a>
+    <h1>Episode Transcript</h1>
+    <div id="content" class="loading">Loading transcript...</div>
+
+    <script>
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Try XMLHttpRequest for better local file support
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ep4-integration_transcript.json', true);
+        xhr.onload = function() {
+            if (xhr.status === 200 || xhr.status === 0) { // 0 for local files
+                try {
+                    const data = JSON.parse(xhr.responseText);
+                    let html = '<div class="metadata">';
+                    html += '<strong>Full Text:</strong><br>';
+                    html += data.text.substring(0, 200) + '...';
+                    html += '</div>';
+
+                    if (data.segments && data.segments.length > 0) {
+                        html += '<h2>Timestamped Segments</h2>';
+                        data.segments.forEach(segment => {
+                            html += '<div class="segment">';
+                            html += '<span class="timestamp">' + formatTime(segment.start) + '</span>';
+                            html += '<span class="text">' + segment.text.trim() + '</span>';
+                            html += '</div>';
+                        });
+                    }
+
+                    document.getElementById('content').innerHTML = html;
+                } catch (e) {
+                    document.getElementById('content').innerHTML =
+                        '<p>Error parsing transcript JSON: ' + e.message + '</p>';
+                }
+            } else {
+                document.getElementById('content').innerHTML =
+                    '<p>Error loading transcript (status: ' + xhr.status + ')</p>';
+            }
+        };
+        xhr.onerror = function() {
+            document.getElementById('content').innerHTML =
+                '<p>Error loading transcript. If viewing locally, try opening via: <code>python3 -m http.server 8000</code> and navigate to <code>http://localhost:8000</code></p>';
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
