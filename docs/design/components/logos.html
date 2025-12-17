@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Usage - Yudame Research</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="foundation.css">
+
+  <style>
+    body {
+      padding: var(--space-6) var(--space-4);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      margin-bottom: var(--space-6);
+    }
+
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-4xl);
+      font-weight: var(--weight-semibold);
+      color: var(--color-black);
+      margin-bottom: var(--space-2);
+    }
+
+    .page-description {
+      font-family: var(--font-sans);
+      font-size: var(--text-lg);
+      color: var(--color-gray-700);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-4);
+    }
+
+    .logo-example {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .logo-example h3 {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      font-weight: var(--weight-semibold);
+      color: var(--color-black);
+      margin-bottom: var(--space-3);
+    }
+
+    .logo-display {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-3);
+      min-height: 100px;
+    }
+
+    .logo-display.on-cream {
+      background: var(--color-cream);
+    }
+
+    .code-block {
+      background: var(--color-gray-100);
+      border-radius: var(--radius-md);
+      padding: var(--space-3);
+      margin-bottom: var(--space-3);
+      overflow-x: auto;
+    }
+
+    .code-block code {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--color-black);
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    .spec-list {
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      color: var(--color-gray-700);
+      line-height: 1.8;
+      margin: var(--space-2) 0;
+    }
+
+    .spec-list li {
+      margin-bottom: var(--space-1);
+    }
+
+    .spec-list code {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      background: var(--color-salmon-light);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+    }
+
+    .guidelines-section {
+      background: var(--color-cream);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .guidelines-section h3 {
+      font-family: var(--font-sans);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-semibold);
+      color: var(--color-black);
+      margin-bottom: var(--space-2);
+    }
+
+    .guidelines-section ul {
+      line-height: 1.8;
+      margin: 0;
+      padding-left: var(--space-4);
+    }
+
+    .guidelines-section li {
+      margin-bottom: var(--space-1);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1 class="page-title">Logo Usage Guidelines</h1>
+    <p class="page-description">How to use the Yudame Research logo across headers, footers, and other contexts.</p>
+  </div>
+
+  <!-- Header Logo -->
+  <div class="logo-example">
+    <h3>Header Logo (Default)</h3>
+    <div class="logo-display">
+      <a href="#" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+        <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+      </a>
+    </div>
+    <div class="code-block"><code>&lt;a href="/" style="display: flex; align-items: center; gap: 12px;"&gt;
+  &lt;img src="../../podcast/yudame-logo.png" alt="" style="height: 32px;"&gt;
+  &lt;span style="font-family: var(--font-serif); font-size: var(--text-lg);
+               font-weight: var(--weight-semibold);"&gt;Yudame Research&lt;/span&gt;
+&lt;/a&gt;</code></div>
+    <ul class="spec-list">
+      <li><strong>Image height:</strong> <code>32px</code></li>
+      <li><strong>Gap:</strong> <code>12px</code></li>
+      <li><strong>Font:</strong> Playfair Display (serif)</li>
+      <li><strong>Font size:</strong> <code>var(--text-lg)</code> (18px)</li>
+      <li><strong>Font weight:</strong> <code>var(--weight-semibold)</code> (600)</li>
+      <li><strong>Layout:</strong> Flexbox with <code>align-items: center</code></li>
+      <li><strong>No hover effect</strong> on logo or text</li>
+    </ul>
+  </div>
+
+  <!-- Footer Logo -->
+  <div class="logo-example">
+    <h3>Footer Logo (Larger)</h3>
+    <div class="logo-display on-cream">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="../../podcast/yudame-logo.png" alt="" style="height: 40px;">
+        <span style="font-family: var(--font-serif); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+      </div>
+    </div>
+    <div class="code-block"><code>&lt;div style="display: flex; align-items: center; gap: 12px;"&gt;
+  &lt;img src="../../podcast/yudame-logo.png" alt="" style="height: 40px;"&gt;
+  &lt;span style="font-family: var(--font-serif); font-size: var(--text-xl);
+               font-weight: var(--weight-semibold);"&gt;Yudame Research&lt;/span&gt;
+&lt;/div&gt;</code></div>
+    <ul class="spec-list">
+      <li><strong>Image height:</strong> <code>40px</code></li>
+      <li><strong>Gap:</strong> <code>12px</code></li>
+      <li><strong>Font:</strong> Playfair Display (serif)</li>
+      <li><strong>Font size:</strong> <code>var(--text-xl)</code> (20px)</li>
+      <li><strong>Font weight:</strong> <code>var(--weight-semibold)</code> (600)</li>
+      <li><strong>Typical background:</strong> Cream or light gray</li>
+    </ul>
+  </div>
+
+  <!-- Mobile Logo -->
+  <div class="logo-example">
+    <h3>Mobile Header Logo</h3>
+    <div class="logo-display">
+      <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="../../podcast/yudame-logo.png" alt="" style="height: 28px;">
+        <span style="font-family: var(--font-serif); font-size: var(--text-base); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+      </a>
+    </div>
+    <div class="code-block"><code>&lt;a href="/" style="display: flex; align-items: center; gap: 10px;"&gt;
+  &lt;img src="../../podcast/yudame-logo.png" alt="" style="height: 28px;"&gt;
+  &lt;span style="font-family: var(--font-serif); font-size: var(--text-base);
+               font-weight: var(--weight-semibold);"&gt;Yudame Research&lt;/span&gt;
+&lt;/a&gt;</code></div>
+    <ul class="spec-list">
+      <li><strong>Image height:</strong> <code>28px</code></li>
+      <li><strong>Gap:</strong> <code>10px</code></li>
+      <li><strong>Font size:</strong> <code>var(--text-base)</code> (16px)</li>
+      <li><strong>Use at:</strong> Viewport width &lt; 768px</li>
+    </ul>
+  </div>
+
+  <!-- Logo Icon Only -->
+  <div class="logo-example">
+    <h3>Icon Only (Favicon, Social)</h3>
+    <div class="logo-display">
+      <img src="../../podcast/yudame-logo.png" alt="Yudame Research" style="height: 48px;">
+    </div>
+    <div class="code-block"><code>&lt;!-- Favicon --&gt;
+&lt;link rel="icon" type="image/png" href="yudame-logo.png"&gt;
+
+&lt;!-- Social media / App icon --&gt;
+&lt;img src="yudame-logo.png" alt="Yudame Research" style="height: 48px;"&gt;</code></div>
+    <ul class="spec-list">
+      <li><strong>Use for:</strong> Favicons, app icons, social media thumbnails</li>
+      <li><strong>Sizes:</strong> 16px, 32px, 48px, 192px, 512px</li>
+      <li><strong>Always include alt text when used alone</strong></li>
+      <li>Logo only (no text) when space is very limited</li>
+    </ul>
+  </div>
+
+  <!-- General Guidelines -->
+  <div class="guidelines-section">
+    <h3>General Guidelines</h3>
+    <ul>
+      <li><strong>File location:</strong> <code>podcast/yudame-logo.png</code></li>
+      <li><strong>Format:</strong> PNG with transparency</li>
+      <li><strong>Color:</strong> Yellow/gold "A" shape</li>
+      <li><strong>Always pair with "Yudame Research" text</strong> except for favicons/icons</li>
+      <li><strong>Text font:</strong> Always Playfair Display (serif), weight 600</li>
+      <li><strong>No hover effect</strong> on logo and text in navigation</li>
+      <li><strong>Maintain aspect ratio</strong> when scaling</li>
+      <li><strong>Minimum clear space:</strong> 8px around all sides</li>
+      <li><strong>Don't modify or add effects</strong> to the logo image</li>
+    </ul>
+  </div>
+
+  <div style="margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--color-gray-200);">
+    <p style="font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-gray-600); text-align: center;">
+      <a href="index.html" style="color: var(--color-black); text-decoration: underline;">← Back to Components</a>
+    </p>
+  </div>
+</body>
+</html>

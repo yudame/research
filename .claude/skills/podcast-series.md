@@ -2,6 +2,21 @@
 
 This skill covers planning and organizing multi-episode podcast series. For creating individual episodes, see `new-podcast-episode.md`.
 
+## Design System Reference
+
+**All design decisions must follow the locked design specification:**
+- **Primary reference:** `docs/design/DESIGN-SPECIFICATION.md` - Exact measurements and non-negotiable patterns
+- **Component library:** `docs/design/components/` - Production-ready HTML/CSS components
+- **Key principles:**
+  - Colors: Black (#000000) text, Salmon (#E8B4A8) accents only
+  - Typography: Playfair Display (serif headlines), Inter (body), IBM Plex Mono (technical)
+  - Spacing: 8px baseline grid (`--space-1` through `--space-12`)
+  - Transitions: 200ms ease (LOCKED)
+  - No pink/salmon hover on navigation - black underline only
+  - Logo: Yellow "A" icon + "Yudame Research" text inline
+
+When creating or updating series index pages, podcast player components, or any HTML/CSS, reference the component library first.
+
 ## When to Use Series Organization
 
 **Use a series subdirectory when:**
@@ -225,67 +240,74 @@ Each series should have an `index.html` landing page showcasing all episodes wit
 
 ### Creating a Series Index Page
 
-Use the same theme as the main site (`index.html`). Reference existing series pages:
+**IMPORTANT: Use the locked design system components.**
+
+**Required references:**
+1. `docs/design/components/podcast-player.css` - Episode card styling (MUST USE)
+2. `docs/design/components/foundation.css` - Design tokens and base styles (REQUIRED)
+3. `docs/design/components/podcast-player.html` - Reference implementation
+
+**Existing series pages (legacy - may not follow locked specs):**
 - `podcast/episodes/cardiovascular-health/index.html` - Complete series with audio
 - `podcast/episodes/kindergarten-first-principles/index.html` - Upcoming series template
+
+When creating new series pages, use the component library patterns, not legacy implementations.
 
 ### Page Structure
 
-Reference existing implementations for full CSS:
-- `podcast/episodes/cardiovascular-health/index.html` - Complete series with audio
-- `podcast/episodes/kindergarten-first-principles/index.html` - Upcoming series template
+**Use the component library classes from `docs/design/components/`:**
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Use same CSS variables as main index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Series Name] - Yudame Research</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Design System (REQUIRED) -->
+    <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
+    <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
 </head>
 <body>
-    <!-- Breadcrumb -->
-    <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
+    <!-- Use component library classes -->
+    <div class="container">
+        <h1 class="episode-list-header">[Series Name]</h1>
+        <p style="font-family: var(--font-sans); font-size: var(--text-lg); color: var(--color-gray-700); margin-bottom: var(--space-4);">
+            [Series description]
+        </p>
 
-    <!-- Header with logo and series title -->
-    <div class="header">
-        <img src="../../../podcast/cover.png" alt="Yudame Research" class="logo">
-        <h1>[Series Name]</h1>
-    </div>
-    <p class="tagline">[Series description]</p>
-
-    <!-- Spotify link -->
-    <div class="subscribe-section">
-        <p><strong>Subscribe to the full podcast</strong></p>
-        <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="spotify-button">Listen on Spotify</a>
-    </div>
-
-    <h2>Episodes</h2>
-
-    <!-- Episode cards -->
-    <div class="episode-list">
-        <div class="episode available">  <!-- or just "episode" for coming soon -->
-            <div class="episode-header">
-                <span class="episode-number">Ep 1</span>
-                <span class="episode-title">[Title]</span>
-                <span class="episode-duration">[Duration or "Coming soon"]</span>
+        <!-- Episode List (from podcast-player.css) -->
+        <div class="episode-list">
+            <!-- Episode card (see docs/design/components/podcast-player.html for full example) -->
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">[Title]</span>
+                    <span class="episode-duration">[Duration]</span>
+                    <span class="episode-links-inline">
+                        <a href="ep1-slug/report.html">Report</a>
+                        <a href="ep1-slug/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">[1-sentence summary]</div>
+                <details class="episode-details">
+                    <summary>More details</summary>
+                    <div class="episode-full-description">[Full description]</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep1-slug/[audio-file].mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">[1-sentence summary]</div>
-            <details class="episode-details">
-                <summary>More</summary>
-                <div class="episode-full-description">[Full description]</div>
-            </details>
-            <div class="episode-links">
-                <a href="ep1-slug/report.md">Full Report</a>
-                <a href="ep1-slug/sources.md">Sources</a>
-            </div>
-            <audio controls preload="none">
-                <source src="ep1-slug/[audio-file].mp3" type="audio/mpeg">
-            </audio>
+            <!-- More episodes... -->
         </div>
-        <!-- More episodes... -->
     </div>
-
-    <a href="../../../" class="back-link">Back to Yudame Research</a>
 </body>
 </html>
 ```
@@ -330,13 +352,20 @@ Reference existing implementations for full CSS:
 
 ### Styling Conventions
 
-- **Available episodes:** `.episode.available` class, teal left border
-- **Coming soon:** `.episode` class only, gray left border, 0.85 opacity
-- **Episode header:** Flexbox row with number, title, and duration (duration uses `margin-left: auto` to align right)
-- **Episode summary:** 1-sentence description visible by default
-- **Expandable details:** Native HTML `<details>` element with "More" summary text
-- **Audio players:** Use `preload="none"` to keep page lightweight
-- **Coming soon badge:** Yellow background with navy text, shown next to "Episodes" header for upcoming series
+**All styling MUST use the component library (`docs/design/components/`):**
+
+- **Episode cards:** Use `.episode` class from `podcast-player.css`
+- **Episode number badge:** Salmon background (#E8B4A8), black text, rounded pill
+- **Episode title:** Playfair Display serif font
+- **Episode duration:** IBM Plex Mono monospace font
+- **Expandable details:** Native HTML `<details>` with `+` / `−` indicator (styled in `podcast-player.css`)
+- **Links:** Black with salmon hover (from component library)
+- **Audio players:** Use `preload="metadata"` (as per component library example)
+- **Typography:** All text uses design system tokens (`--font-serif`, `--font-sans`, `--font-mono`)
+- **Spacing:** Use CSS custom properties (`--space-1` through `--space-12`)
+- **Colors:** Black (#000000) text, Salmon (#E8B4A8) accents ONLY
+
+**IMPORTANT:** Do not create custom CSS. Use the locked component library styles.
 
 ### Updating When Episodes Are Published
 

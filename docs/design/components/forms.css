@@ -1,0 +1,291 @@
+/**
+ * Form Components
+ * Based on locked design specification
+ */
+
+/* === BASE INPUT STYLES === */
+
+.input,
+.textarea,
+.select {
+  display: block;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  transition: border-color var(--transition-base),
+              padding var(--transition-base);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-gray-600);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border: 2px solid var(--color-salmon);
+  padding: 9px 13px; /* Adjust for thicker border */
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-600);
+  cursor: not-allowed;
+}
+
+/* === TEXTAREA === */
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* === SELECT === */
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* === DASHED INPUT (Newsletter/Upload) === */
+
+.input-dashed,
+.textarea-dashed {
+  border: 2px dashed var(--color-gray-300);
+  padding: 10px 14px;
+}
+
+.input-dashed:focus,
+.textarea-dashed:focus {
+  border: 2px dashed var(--color-salmon);
+  padding: 10px 14px; /* No padding adjustment for dashed */
+}
+
+/* === INPUT STATES === */
+
+.input-error,
+.textarea-error,
+.select-error {
+  border: 2px solid var(--color-salmon-dark);
+  padding: 9px 13px;
+}
+
+.input-error:focus,
+.textarea-error:focus,
+.select-error:focus {
+  border-color: var(--color-salmon-dark);
+}
+
+.input-success,
+.textarea-success,
+.select-success {
+  border-color: var(--color-teal);
+}
+
+/* === FORM GROUPS === */
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+  margin-bottom: var(--space-1);
+}
+
+.form-label-required::after {
+  content: '*';
+  color: var(--color-salmon);
+  margin-left: 4px;
+}
+
+.form-hint {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  margin-top: var(--space-1);
+}
+
+.form-error {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-salmon-dark);
+  margin-top: var(--space-1);
+}
+
+.form-success {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-teal);
+  margin-top: var(--space-1);
+}
+
+/* === CHECKBOX AND RADIO === */
+
+.checkbox,
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-gray-300);
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox input[type="checkbox"] {
+  border-radius: var(--radius-sm);
+}
+
+.radio input[type="radio"] {
+  border-radius: var(--radius-full);
+}
+
+.checkbox input[type="checkbox"]:checked,
+.radio input[type="radio"]:checked {
+  background-color: var(--color-salmon);
+  border-color: var(--color-salmon);
+}
+
+.checkbox input[type="checkbox"]:focus,
+.radio input[type="radio"]:focus {
+  outline: 2px solid var(--color-salmon);
+  outline-offset: 2px;
+}
+
+.checkbox-label,
+.radio-label {
+  font-size: var(--text-base);
+  color: var(--color-black);
+  user-select: none;
+}
+
+/* === INPUT GROUPS === */
+
+.input-group {
+  display: flex;
+  gap: 0;
+}
+
+.input-group .input {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  border-right: none;
+}
+
+.input-group .btn {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  flex-shrink: 0;
+}
+
+.input-group .input:focus {
+  position: relative;
+  z-index: 1;
+}
+
+/* === SEARCH INPUT === */
+
+.input-search {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='5' stroke='%236B6B6B' stroke-width='2'/%3E%3Cpath d='M11 11L14 14' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  padding-left: 44px;
+}
+
+/* === FILE UPLOAD === */
+
+.file-upload {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.file-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px dashed var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-100);
+  padding: var(--space-4);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-base),
+              background-color var(--transition-base);
+}
+
+.file-upload-area:hover {
+  border-color: var(--color-salmon);
+  background-color: var(--color-white);
+}
+
+.file-upload-area.is-dragover {
+  border-color: var(--color-salmon);
+  background-color: var(--color-salmon-light);
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.file-upload-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-2);
+}
+
+.file-upload-text {
+  font-size: var(--text-base);
+  color: var(--color-black);
+  margin-bottom: var(--space-1);
+}
+
+.file-upload-hint {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+/* === MOBILE ADJUSTMENTS === */
+
+@media (max-width: 768px) {
+  .input,
+  .textarea,
+  .select {
+    font-size: var(--text-base); /* Keep at 16px to prevent zoom on iOS */
+    min-height: 48px;
+  }
+}

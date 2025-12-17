@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yudame Research Component Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="foundation.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="navigation.css">
+  <style>
+    .showcase-section {
+      padding: var(--space-8) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .showcase-section:last-of-type {
+      border-bottom: none;
+    }
+    .showcase-grid {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+    .showcase-item {
+      padding: var(--space-4);
+      background: var(--color-gray-100);
+      border-radius: var(--radius-md);
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-cream) 100%);
+      padding: var(--space-12) 0;
+      text-align: center;
+    }
+    code {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--color-salmon-light);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo" style="display: flex; align-items: center; gap: 12px;">
+        <img src="../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+        <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold);">Yudame Research</span>
+      </a>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a href="#" class="nav-link is-active">Components</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Documentation</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Specification</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="mobile-menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Yudame Research Component Library</h1>
+      <p style="font-size: var(--text-lg); color: var(--color-gray-800); max-width: 680px; margin: 0 auto var(--space-4);">
+        Production-ready vanilla HTML/CSS components based on the locked design specification.
+        No frameworks. No dependencies. Just clean, accessible components.
+      </p>
+      <div class="btn-group btn-group-center">
+        <a href="README.md" class="btn btn-primary btn-large">View Documentation</a>
+        <a href="../DESIGN-SPECIFICATION.md" class="btn btn-secondary btn-large">Design Spec</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Buttons -->
+    <section class="showcase-section">
+      <div class="container">
+        <h2>Buttons</h2>
+        <p>Two button styles: Primary (salmon fill) and Secondary (black outline). Always pair primary first.</p>
+
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Button Pair (Locked Pattern)</h4>
+            <div class="btn-group">
+              <button class="btn btn-primary">Explore Research</button>
+              <button class="btn btn-secondary">Browse Podcast</button>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Sizes</h4>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center;">
+              <button class="btn btn-primary btn-large">Large</button>
+              <button class="btn btn-primary">Default</button>
+              <button class="btn btn-primary btn-small">Small</button>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">States</h4>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <button class="btn btn-primary">Default</button>
+              <button class="btn btn-primary" disabled>Disabled</button>
+              <button class="btn btn-secondary">Secondary</button>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: var(--space-3);"><a href="buttons.html">View all button examples →</a></p>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section class="showcase-section">
+      <div class="container">
+        <h2>Form Inputs</h2>
+        <p>Text inputs, textareas, selects, and dashed inputs for upload/newsletter patterns.</p>
+
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Text Input</h4>
+            <div class="form-group">
+              <label class="form-label" for="demo-email">Email Address</label>
+              <input type="email" id="demo-email" class="input" placeholder="you@example.com">
+              <span class="form-hint">We'll never share your email.</span>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Dashed Input (Newsletter)</h4>
+            <input type="email" class="input-dashed" placeholder="Enter your email for updates">
+          </div>
+
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Input Group</h4>
+            <div class="input-group">
+              <input type="email" class="input" placeholder="Enter your email">
+              <button class="btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <h4 style="font-size: var(--text-sm); color: var(--color-gray-600); margin-bottom: var(--space-2); font-family: var(--font-sans);">Select Dropdown</h4>
+            <select class="select">
+              <option>Select an option</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="showcase-section">
+      <div class="container">
+        <h2>Cards</h2>
+        <p>Feature cards, stat cards, content cards, and article previews.</p>
+
+        <h3 style="margin-top: var(--space-6);">Feature Cards (Homepage Pattern)</h3>
+        <div class="feature-cards-section" style="margin: var(--space-4) calc(var(--space-6) * -1); padding: var(--space-6);">
+          <div class="feature-cards-grid">
+            <div class="feature-card">
+              <svg class="feature-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <circle cx="36" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="36" r="3" stroke="currentColor" stroke-width="2"/>
+                <circle cx="36" cy="36" r="3" stroke="currentColor" stroke-width="2"/>
+                <line x1="14" y1="13" x2="22" y2="23" stroke="currentColor" stroke-width="2"/>
+                <line x1="26" y1="23" x2="34" y2="13" stroke="currentColor" stroke-width="2"/>
+                <line x1="22" y1="26" x2="14" y2="34" stroke="currentColor" stroke-width="2"/>
+                <line x1="26" y1="26" x2="34" y2="34" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h3 class="feature-card-title">Evidence-Based Insights</h3>
+              <p class="feature-card-description">
+                Access synthesized findings from leading academic journals without the jargon, ready for classroom application.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <svg class="feature-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 24C8 24 8 16 16 16C16 16 16 8 24 8C24 8 24 16 32 16C32 16 32 24 40 24C40 24 40 32 32 32C32 32 32 40 24 40C24 40 24 32 16 32C16 32 16 24 8 24Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <h3 class="feature-card-title">Engaging Podcast</h3>
+              <p class="feature-card-description">
+                Listen as expert researchers and educators discuss the latest trends and discoveries in early childhood education.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <svg class="feature-card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="16" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 16V12C16 10.8954 16.8954 10 18 10H30C31.1046 10 32 10.8954 32 12V16" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="16" y1="30" x2="28" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <h3 class="feature-card-title">Practical Tools & Resources</h3>
+              <p class="feature-card-description">
+                Download actionable guides, checklists, and materials designed to implement research directly into your practice.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-8);">Stat Cards</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-4);">
+          <div class="stat-card">
+            <div class="stat-card-number">85%</div>
+            <p class="stat-card-label">Average retention with active recovery</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-number">23%</div>
+            <p class="stat-card-label">Improvement vs. passive learning</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-number">15+</div>
+            <p class="stat-card-label">Research studies analyzed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="showcase-section">
+      <div class="container">
+        <h2>Navigation</h2>
+        <p>Header navigation with locked heights: 80px desktop, 64px mobile. Active state shows 2px salmon underline.</p>
+        <p style="color: var(--color-gray-600); font-size: var(--text-sm);">See the header at the top of this page for a live example.</p>
+      </div>
+    </section>
+
+    <!-- Design Tokens -->
+    <section class="showcase-section">
+      <div class="container">
+        <h2>Design Tokens</h2>
+        <p>All components use CSS variables from <code>foundation.css</code>. These values are locked and cannot be changed.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+          <div>
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Colors</h3>
+            <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2);">
+              <div style="width: 40px; height: 40px; background: var(--color-black); border-radius: var(--radius-sm);"></div>
+              <div style="flex: 1;">
+                <div style="font-size: var(--text-sm); font-weight: var(--weight-medium);">Black</div>
+                <code>#000000</code>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2);">
+              <div style="width: 40px; height: 40px; background: var(--color-salmon); border-radius: var(--radius-sm);"></div>
+              <div style="flex: 1;">
+                <div style="font-size: var(--text-sm); font-weight: var(--weight-medium);">Salmon</div>
+                <code>#E8B4A8</code>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--space-2);">
+              <div style="width: 40px; height: 40px; background: var(--color-cream); border-radius: var(--radius-sm); border: 1px solid var(--color-gray-200);"></div>
+              <div style="flex: 1;">
+                <div style="font-size: var(--text-sm); font-weight: var(--weight-medium);">Cream</div>
+                <code>#F5F1E8</code>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Typography</h3>
+            <div style="font-family: var(--font-serif); font-size: var(--text-xl); margin-bottom: var(--space-2);">Playfair Display</div>
+            <div style="font-family: var(--font-sans); font-size: var(--text-base); margin-bottom: var(--space-2);">Inter (Body & UI)</div>
+            <div style="font-family: var(--font-mono); font-size: var(--text-sm);">IBM Plex Mono</div>
+          </div>
+
+          <div>
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Spacing (8px base)</h3>
+            <div style="font-size: var(--text-sm); line-height: 2;">
+              <code>--space-1</code>: 8px<br>
+              <code>--space-2</code>: 16px<br>
+              <code>--space-3</code>: 24px<br>
+              <code>--space-4</code>: 32px<br>
+              <code>--space-6</code>: 48px<br>
+              <code>--space-8</code>: 64px
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentation Links -->
+    <section class="showcase-section" style="background: var(--color-cream); margin: var(--space-8) calc(var(--space-6) * -1) 0; padding: var(--space-8) var(--space-6);">
+      <div class="container">
+        <h2>Documentation</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+          <div class="card">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Component README</h3>
+            <p style="margin-bottom: var(--space-3);">Complete usage guide for all components with code examples.</p>
+            <a href="README.md" class="btn btn-primary">View Documentation</a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Design Specification</h3>
+            <p style="margin-bottom: var(--space-3);">Locked design patterns with exact measurements and rules.</p>
+            <a href="../DESIGN-SPECIFICATION.md" class="btn btn-secondary">View Spec</a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Podcast Player</h3>
+            <p style="margin-bottom: var(--space-3);">Episode cards with audio player, expandable details, and inline links.</p>
+            <a href="podcast-player.html" class="btn btn-secondary">View Demo</a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Button Demos</h3>
+            <p style="margin-bottom: var(--space-3);">All button variations, sizes, and states with code examples.</p>
+            <a href="buttons.html" class="btn btn-secondary">View Demo</a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">Logo Usage</h3>
+            <p style="margin-bottom: var(--space-3);">Guidelines for using the Yudame Research logo across all contexts.</p>
+            <a href="logos.html" class="btn btn-secondary">View Guidelines</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-2);">
+            <img src="../../podcast/yudame-logo.png" alt="" style="height: 40px;">
+            <span style="font-family: var(--font-serif); font-size: var(--text-xl); font-weight: var(--weight-semibold);">Yudame Research</span>
+          </div>
+          <p class="footer-tagline">Research-based early childhood education</p>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="#">Research Archive</a></li>
+            <li><a href="#">Podcast Episodes</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-links">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Yudame Research. All rights reserved.</p>
+        <p class="footer-dedication">Dedicated to advancing early childhood education through research</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.mobile-menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('is-open');
+        menu.classList.toggle('is-open');
+        document.body.style.overflow = menu.classList.contains('is-open') ? 'hidden' : '';
+      });
+    }
+
+    // Header scroll shadow
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 10) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>

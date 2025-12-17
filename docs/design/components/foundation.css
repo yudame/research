@@ -1,0 +1,235 @@
+/**
+ * Yudame Research Design System - Foundation Styles
+ * CSS Variables and base styles
+ * DO NOT modify these values - they are locked from the design specification
+ */
+
+:root {
+  /* === COLORS === */
+  /* Foundation - Use 95% of the time */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-cream: #F5F1E8;
+
+  /* Salmon Accent - Use sparingly for emphasis */
+  --color-salmon: #E8B4A8;
+  --color-salmon-light: #F5D5CC;
+  --color-salmon-medium: #D89B8E;
+  --color-salmon-dark: #C8867A;
+
+  /* Grays - Supporting roles only */
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-300: #D4D4D4;
+  --color-gray-600: #6B6B6B;
+  --color-gray-800: #3A3A3A;
+  --color-off-white: #FAFAF9;
+
+  /* Supporting Accents - Data visualization only */
+  --color-teal: #4A7C8C;
+  --color-yellow: #E8C547;
+  --color-rust: #C8867A;
+
+  /* === TYPOGRAPHY === */
+  /* Font families */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Font sizes - Headlines */
+  --text-5xl: 60px;
+  --text-4xl: 48px;
+  --text-3xl: 36px;
+  --text-2xl: 32px;
+  --text-xl: 24px;
+
+  /* Font sizes - Body */
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  /* Line heights */
+  --leading-none: 1.0;
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.3;
+  --leading-relaxed: 1.5;
+  --leading-loose: 1.6;
+
+  /* Font weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* === SPACING === */
+  /* 8px base scale - ONLY use these values */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* === BORDERS === */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  --border-width: 1px;
+  --border-width-thick: 2px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-scroll: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  /* === TRANSITIONS === */
+  /* LOCKED: All transitions use 200ms ease */
+  --transition-base: 200ms ease;
+
+  /* === BREAKPOINTS === */
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+
+  /* === LAYOUT === */
+  --max-width-content: 1200px;
+  --max-width-article: 680px;
+  --max-width-dashboard: 1400px;
+
+  /* === COMPONENT SPECIFIC === */
+  --header-height-desktop: 80px;
+  --header-height-mobile: 64px;
+  --nav-spacing: 32px;
+  --card-padding-desktop: 32px;
+  --card-padding-mobile: 24px;
+}
+
+/* === BASE STYLES === */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+/* === TYPOGRAPHY BASE === */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-normal);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-normal);
+}
+
+p {
+  margin-bottom: var(--space-3);
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: underline;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-salmon);
+}
+
+a:focus {
+  outline: 2px solid var(--color-salmon);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* === MOBILE TYPOGRAPHY === */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-snug);
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+  }
+}
+
+/* === UTILITY CLASSES === */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
