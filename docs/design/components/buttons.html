@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons - Yudame Research Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="foundation.css">
+  <link rel="stylesheet" href="buttons.css">
+  <style>
+    /* Demo page styles */
+    body {
+      padding: var(--space-8) var(--space-6);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .demo-section {
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    .demo-section:last-child {
+      border-bottom: none;
+    }
+
+    .demo-grid {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .demo-item {
+      padding: var(--space-4);
+      background: var(--color-gray-100);
+      border-radius: var(--radius-md);
+    }
+
+    .demo-item h4 {
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      color: var(--color-gray-600);
+      margin-bottom: var(--space-2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--color-white);
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      color: var(--color-salmon-dark);
+    }
+  </style>
+</head>
+<body>
+  <h1>Button Components</h1>
+  <p>Button components based on the locked design specification. All buttons use the salmon accent color for primary actions and black outline for secondary actions.</p>
+
+  <!-- Primary Buttons -->
+  <section class="demo-section">
+    <h2>Primary Buttons</h2>
+    <p>Salmon fill (#E8B4A8) with black text. Use for primary CTAs.</p>
+
+    <div class="demo-grid">
+      <div class="demo-item">
+        <h4>Default</h4>
+        <button class="btn btn-primary">Explore Research</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Hover (hover over button)</h4>
+        <button class="btn btn-primary">Explore Research</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Disabled</h4>
+        <button class="btn btn-primary" disabled>Explore Research</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>As Link</h4>
+        <a href="#" class="btn btn-primary">Explore Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Buttons -->
+  <section class="demo-section">
+    <h2>Secondary Buttons</h2>
+    <p>Transparent background with 2px black border. Hover state shows salmon border.</p>
+
+    <div class="demo-grid">
+      <div class="demo-item">
+        <h4>Default</h4>
+        <button class="btn btn-secondary">Browse Podcast</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Hover (hover over button)</h4>
+        <button class="btn btn-secondary">Browse Podcast</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Disabled</h4>
+        <button class="btn btn-secondary" disabled>Browse Podcast</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>As Link</h4>
+        <a href="#" class="btn btn-secondary">Browse Podcast</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Button Sizes -->
+  <section class="demo-section">
+    <h2>Button Sizes</h2>
+    <p>Three sizes available: small, default, and large.</p>
+
+    <div class="demo-grid">
+      <div class="demo-item">
+        <h4>Large</h4>
+        <button class="btn btn-primary btn-large">Large Button</button>
+        <button class="btn btn-secondary btn-large">Large Button</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Default</h4>
+        <button class="btn btn-primary">Default Button</button>
+        <button class="btn btn-secondary">Default Button</button>
+      </div>
+
+      <div class="demo-item">
+        <h4>Small</h4>
+        <button class="btn btn-primary btn-small">Small Button</button>
+        <button class="btn btn-secondary btn-small">Small Button</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Button Groups -->
+  <section class="demo-section">
+    <h2>Button Groups</h2>
+    <p>Locked pattern: Primary (salmon) ALWAYS comes first (left on desktop, top on mobile).</p>
+
+    <div class="demo-grid">
+      <div class="demo-item">
+        <h4>Horizontal Group (Desktop)</h4>
+        <div class="btn-group">
+          <button class="btn btn-primary">Explore Research</button>
+          <button class="btn btn-secondary">Browse Podcast</button>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <h4>Vertical Group (Always stacks)</h4>
+        <div class="btn-group-vertical">
+          <button class="btn btn-primary">Explore Research</button>
+          <button class="btn btn-secondary">Browse Podcast</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usage Examples -->
+  <section class="demo-section">
+    <h2>Usage Examples</h2>
+
+    <div class="demo-grid">
+      <div class="demo-item">
+        <h4>Hero CTA</h4>
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary btn-large">Explore Research</a>
+          <a href="#" class="btn btn-secondary btn-large">Browse Podcast</a>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <h4>Newsletter Signup</h4>
+        <div style="display: flex; gap: 0; max-width: 400px;">
+          <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px 16px; border: 2px dashed var(--color-gray-300); border-right: none; border-radius: var(--radius-md) 0 0 var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base);">
+          <button class="btn btn-primary" style="border-radius: 0 var(--radius-md) var(--radius-md) 0;">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <h4>Form Actions</h4>
+        <div class="btn-group">
+          <button class="btn btn-primary">Save Changes</button>
+          <button class="btn btn-secondary">Cancel</button>
+          <button class="btn btn-link">Reset to Default</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples -->
+  <section class="demo-section">
+    <h2>Code Examples</h2>
+
+    <h3>Primary Button</h3>
+    <pre style="background: var(--color-gray-100); padding: var(--space-3); border-radius: var(--radius-md); overflow-x: auto;"><code>&lt;button class="btn btn-primary"&gt;Explore Research&lt;/button&gt;
+&lt;a href="#" class="btn btn-primary"&gt;Explore Research&lt;/a&gt;</code></pre>
+
+    <h3>Secondary Button</h3>
+    <pre style="background: var(--color-gray-100); padding: var(--space-3); border-radius: var(--radius-md); overflow-x: auto;"><code>&lt;button class="btn btn-secondary"&gt;Browse Podcast&lt;/button&gt;</code></pre>
+
+    <h3>Button Group (Locked Pattern)</h3>
+    <pre style="background: var(--color-gray-100); padding: var(--space-3); border-radius: var(--radius-md); overflow-x: auto;"><code>&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn-primary"&gt;Explore Research&lt;/button&gt;
+  &lt;button class="btn btn-secondary"&gt;Browse Podcast&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <!-- Design Rules -->
+  <section class="demo-section">
+    <h2>Design Rules (Locked)</h2>
+    <ul style="line-height: 1.8;">
+      <li><strong>Transition:</strong> All buttons use 200ms ease (ALWAYS)</li>
+      <li><strong>Button Pairing:</strong> Primary (salmon) ALWAYS comes before secondary (outline)</li>
+      <li><strong>Mobile:</strong> Buttons stack vertically and go full width</li>
+      <li><strong>Focus:</strong> 2px salmon outline with 2px offset for keyboard navigation</li>
+      <li><strong>Active:</strong> 1px translateY down on click</li>
+      <li><strong>Disabled:</strong> Gray background/border with 60% opacity</li>
+      <li><strong>Border Accounting:</strong> Secondary buttons use 2px less padding to account for border</li>
+    </ul>
+  </section>
+</body>
+</html>
