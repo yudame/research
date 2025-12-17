@@ -14,6 +14,8 @@ This system provides end-to-end podcast episode creation from research through p
 
 **Live Feed:** `https://research.yuda.me/podcast/feed.xml`
 
+**Subscribe:** See [SUBSCRIBE.md](./SUBSCRIBE.md) for platform-specific instructions
+
 ## Complete Episode Workflow
 
 The podcast creation follows a 12-phase workflow defined in `.claude/skills/new-podcast-episode.md`:
