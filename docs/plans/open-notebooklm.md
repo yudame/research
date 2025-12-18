@@ -720,6 +720,525 @@ podcast/tools/audio_generation/
 
 ---
 
+## Building the Judge with Limited Human Feedback
+
+### The Core Problem
+
+You can provide detailed feedback on 10-20 episodes, not 100s. How do we build a reliable critic from this?
+
+### Strategy: Constitutional + Comparative + Active Learning
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    JUDGE TRAINING STRATEGY                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  LAYER 1: Constitutional Rubric (Zero human examples needed)            │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Explicit rules derived from style guide                          │   │
+│  │ Checkable criteria that don't need subjective judgment           │   │
+│  │ "Does it start with a question?" "Are researchers named?"        │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              │                                          │
+│                              ▼                                          │
+│  LAYER 2: NotebookLM Comparison (Unlimited "free" signal)               │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Generate both versions from same report                          │   │
+│  │ Structural diff: what did each include/exclude?                  │   │
+│  │ Pacing comparison: word count per section                        │   │
+│  │ "Would a human prefer ours or theirs?"                           │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              │                                          │
+│                              ▼                                          │
+│  LAYER 3: Few-Shot Human Examples (10-20 detailed reviews)              │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Your detailed feedback becomes few-shot examples                 │   │
+│  │ Critic sees: script → your comments → final verdict              │   │
+│  │ Learns YOUR taste, not generic "good podcast"                    │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              │                                          │
+│                              ▼                                          │
+│  LAYER 4: Active Sampling (Maximize value of limited feedback)          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Identify uncertain cases (critic score 40-60)                    │   │
+│  │ Surface those for human review                                   │   │
+│  │ Continuously calibrate with minimal effort                       │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Layer 1: Constitutional Rubric (Automated)
+
+These checks need NO human examples—they're derived directly from the style guide:
+
+**Structural Checks (Binary Pass/Fail):**
+```
+□ Opens with a question or problem (not "Today we'll discuss...")
+□ Contains at least 2 specific stories (named people, dates, places)
+□ Acknowledges at least 1 limitation or contradiction
+□ Ends with clear takeaways
+□ All statistics include context (not naked numbers)
+□ Researchers are named, not "studies show"
+□ Word count within 10% of target
+□ No section exceeds 4 minutes without energy shift
+```
+
+**Voice Checks (Pattern Matching):**
+```
+□ Contains self-correction language ("Actually...", "Let me back up...")
+□ Contains thinking-aloud markers ("Here's what's interesting...")
+□ No forbidden phrases ("Today we're going to discuss", "This is SO fascinating")
+□ Expletives, if present, are ≤3 and at high-intensity moments
+□ Technical terms are immediately explained
+```
+
+**These catch 60-70% of issues without any human training.**
+
+### Layer 2: NotebookLM Comparison (Free Signal)
+
+Use NotebookLM as an unlimited comparison baseline:
+
+**Process:**
+```
+Same Report.md
+      │
+      ├──────────────────┬──────────────────┐
+      ▼                  ▼                  │
+   Our Script      NotebookLM Audio         │
+      │                  │                  │
+      │                  ▼                  │
+      │           Transcribe                │
+      │                  │                  │
+      ▼                  ▼                  │
+   Compare Scripts ◄─────┘                  │
+      │                                     │
+      ▼                                     │
+   Structural Analysis                      │
+      │                                     │
+      ▼                                     │
+   Learning Signal                          │
+```
+
+**What to Compare:**
+
+| Dimension | Our Script | NotebookLM | Learning |
+|-----------|------------|------------|----------|
+| Opening approach | Question? Hook? | How do they start? | Adopt better patterns |
+| Information selection | What we included | What they included | Are we missing key points? |
+| Story density | Count stories | Count stories | Calibrate expectations |
+| Pacing | Words per section | Words per section | Match successful rhythms |
+| Transitions | How we move between topics | How they transition | Steal good transitions |
+
+**Automated Preference Signal:**
+
+Without human labeling, we can still learn:
+```python
+# Pseudo-signal: Which script better matches Huberman/Founders patterns?
+huberman_similarity_ours = compare_to_reference(our_script, huberman_corpus)
+huberman_similarity_notebooklm = compare_to_reference(notebooklm_script, huberman_corpus)
+
+# If NotebookLM is closer to our target style, we need to adjust
+if huberman_similarity_notebooklm > huberman_similarity_ours:
+    flag_for_review(our_script, "NotebookLM closer to target style")
+```
+
+### Layer 3: Few-Shot Human Examples (10-20 Reviews)
+
+Your feedback on 10-20 episodes becomes the critic's training data.
+
+**Feedback Collection Format:**
+
+For each reviewed episode, capture:
+```json
+{
+  "episode_id": "ep_001",
+  "report_source": "report.md hash",
+  "script_version": "draft_v2",
+
+  "overall_verdict": "REVISE",
+  "overall_score": 65,
+
+  "section_feedback": [
+    {
+      "section": "hook",
+      "verdict": "GOOD",
+      "comment": "Strong opening question, immediately engaging"
+    },
+    {
+      "section": "story_1",
+      "verdict": "WEAK",
+      "comment": "Too abstract—need specific names and dates",
+      "example_fix": "Instead of 'researchers found', say 'In 2019, Maria Santos at Stanford...'"
+    }
+  ],
+
+  "line_level_feedback": [
+    {
+      "line": 47,
+      "issue": "Fake enthusiasm",
+      "original": "This is really fascinating when you think about it",
+      "suggested": "Cut entirely—let the content speak"
+    }
+  ],
+
+  "what_worked": [
+    "The transition from story 1 to story 2 felt natural",
+    "Good use of 'What does this mean for you?' framing"
+  ],
+
+  "what_to_change": [
+    "Need more specific numbers in the takeaway section",
+    "The exception section felt rushed—expand by 30 seconds"
+  ]
+}
+```
+
+**How 10-20 Examples Become Powerful:**
+
+The critic prompt includes:
+```markdown
+## Your Calibration Examples
+
+Here are 15 scripts I've reviewed with detailed feedback.
+Use these to understand MY standards:
+
+### Example 1: Score 45 (REVISE)
+[Script excerpt]
+My feedback: "The hook was weak because..."
+After revision: [Improved version]
+
+### Example 2: Score 82 (PASS)
+[Script excerpt]
+My feedback: "This worked because..."
+
+### Example 3: Score 58 (REVISE)
+...
+
+When you evaluate new scripts, ask yourself:
+"Would the human who wrote this feedback approve?"
+```
+
+**Why Few-Shot Works Here:**
+
+- Your feedback is *specific* and *actionable*
+- You're not rating "good/bad" but explaining *why*
+- The model learns your taste, not generic standards
+- 15 detailed examples > 100 simple thumbs up/down
+
+### Layer 4: Active Sampling (Maximize Limited Feedback)
+
+Don't review random episodes—review the *uncertain* ones.
+
+**Uncertainty Detection:**
+```
+Critic Score Distribution:
+
+  ┌─────────────────────────────────┐
+  │ 0-30:  Clear FAIL (don't review)│
+  │ 30-45: Probably FAIL            │ ◄── Review some of these
+  │ 45-55: UNCERTAIN                │ ◄── Review ALL of these
+  │ 55-70: Probably PASS            │ ◄── Review some of these
+  │ 70-100: Clear PASS (don't review)│
+  └─────────────────────────────────┘
+```
+
+**Active Learning Loop:**
+```
+Generate 10 scripts
+       │
+       ▼
+Critic scores all 10
+       │
+       ▼
+Sort by uncertainty (closest to 50)
+       │
+       ▼
+Human reviews top 3 uncertain
+       │
+       ▼
+Add to few-shot examples
+       │
+       ▼
+Critic recalibrates
+       │
+       ▼
+Repeat
+```
+
+**Result:** Your ~20 reviews are spent on the *most informative* cases, not wasted on obvious passes/fails.
+
+### Calibration Dashboard
+
+Track critic accuracy over time:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    CRITIC CALIBRATION                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Agreement with Human Reviews (last 20):                        │
+│  ████████████████████░░░░  80% (16/20)                         │
+│                                                                 │
+│  False Positives (Critic PASS, Human REVISE): 2                 │
+│  False Negatives (Critic REVISE, Human PASS): 2                 │
+│                                                                 │
+│  Score Correlation: 0.78                                        │
+│                                                                 │
+│  Drift Alert: None                                              │
+│                                                                 │
+│  Categories Needing Calibration:                                │
+│  - "Voice authenticity" (3 disagreements)                       │
+│  - "Story specificity" (1 disagreement)                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Implementation Roadmap
+
+### Phase 0: Foundation (Before Any Code)
+
+**0.1 Voice Acquisition**
+- [ ] Research ElevenLabs voice library for German/Austrian accents
+- [ ] Evaluate 5-10 candidate voices with test scripts
+- [ ] If none suitable: Find voice actor (Fiverr, Voices.com, direct outreach)
+- [ ] Commission 60-90 minute recording session
+- [ ] Create ElevenLabs Professional Voice Clone
+- [ ] Test clone across emotional range
+- [ ] Build pronunciation dictionary for common research terms
+- **Deliverable:** Working voice that passes "would I listen to this?" test
+
+**0.2 Reference Corpus Collection**
+- [ ] Select 10 best Huberman Lab episodes (varied topics)
+- [ ] Select 10 best Founders Podcast episodes
+- [ ] Transcribe all 20 episodes (Whisper or paid service)
+- [ ] Annotate transcripts:
+  - Mark hooks, transitions, stories, takeaways
+  - Note pacing patterns
+  - Extract signature phrases
+  - Identify emotional beats
+- **Deliverable:** Annotated corpus of 20 excellent episodes
+
+**0.3 Style Guide Finalization**
+- [ ] Expand Yudame voice document with examples
+- [ ] Create "good example / bad example" pairs for each principle
+- [ ] Define all forbidden phrases
+- [ ] Document the arc structure with timestamps
+- **Deliverable:** Comprehensive style guide (this document, expanded)
+
+---
+
+### Phase 1: Script Generation Pipeline
+
+**1.1 Basic Generator**
+- [ ] Create script generation prompt (from style guide)
+- [ ] Define JSON schema for script output
+- [ ] Build generator that takes report.md → script.json
+- [ ] Test on 5 existing reports
+- **Deliverable:** Generator that produces valid script JSON
+
+**1.2 Constitutional Checker**
+- [ ] Implement all binary structural checks
+- [ ] Implement pattern-matching voice checks
+- [ ] Create check report format
+- [ ] Test on generated scripts
+- **Deliverable:** Automated checker that catches obvious issues
+
+**1.3 NotebookLM Comparison Pipeline**
+- [ ] Build workflow: report → NotebookLM → transcribe → compare
+- [ ] Implement structural diff (sections, word counts)
+- [ ] Implement content comparison (what's included/excluded)
+- [ ] Create comparison report format
+- **Deliverable:** Side-by-side analysis of our scripts vs NotebookLM
+
+**1.4 First Human Feedback Round**
+- [ ] Generate scripts for 5 reports
+- [ ] You provide detailed feedback (using feedback format)
+- [ ] Identify patterns in feedback
+- [ ] Adjust generation prompt based on patterns
+- [ ] Regenerate and compare
+- **Deliverable:** 5 annotated examples, improved generator
+
+---
+
+### Phase 2: Critic Agent Development
+
+**2.1 Few-Shot Critic (v1)**
+- [ ] Build critic prompt with rubric
+- [ ] Include 5 human-reviewed examples as few-shot
+- [ ] Test on held-out scripts
+- [ ] Compare critic verdicts to your verdicts
+- **Deliverable:** Critic that agrees with you >60% of time
+
+**2.2 Expand Few-Shot Examples**
+- [ ] Generate 10 more scripts
+- [ ] Critic scores all 10
+- [ ] You review the 5 most uncertain (scores 40-60)
+- [ ] Add to few-shot examples (now 10 total)
+- [ ] Retrain critic
+- **Deliverable:** Critic with 10 examples, >70% agreement
+
+**2.3 Refinement Loop Integration**
+- [ ] Build generate → critique → revise → critique loop
+- [ ] Set max iterations (3)
+- [ ] Implement revision prompting (critic feedback → specific edits)
+- [ ] Test full loop on 5 reports
+- **Deliverable:** End-to-end script refinement pipeline
+
+**2.4 Second Human Feedback Round**
+- [ ] Run full pipeline on 10 new reports
+- [ ] You review 5 uncertain final scripts
+- [ ] Add to examples (now 15 total)
+- [ ] Calibrate and measure agreement
+- **Deliverable:** Critic with 15 examples, >75% agreement
+
+---
+
+### Phase 3: Voice Synthesis Pipeline
+
+**3.1 Basic Synthesis**
+- [ ] ElevenLabs API integration
+- [ ] Parse script.json → synthesis calls
+- [ ] Handle segment-by-segment synthesis
+- [ ] Basic concatenation
+- **Deliverable:** Raw audio from script
+
+**3.2 Emotion Mapping**
+- [ ] Map script emotions to ElevenLabs parameters
+- [ ] Test across emotional range
+- [ ] Tune stability/style per emotion type
+- **Deliverable:** Emotionally varied synthesis
+
+**3.3 Pronunciation Handling**
+- [ ] Build pronunciation dictionary system
+- [ ] Add verification step (transcribe and check)
+- [ ] Implement regeneration for mispronunciations
+- **Deliverable:** Accurate pronunciation of technical terms
+
+**3.4 Special Moments**
+- [ ] Handle expletives (if present)
+- [ ] Handle laugh/reaction cues
+- [ ] Test and tune
+- **Deliverable:** Natural handling of special moments
+
+---
+
+### Phase 4: Audio Production Pipeline
+
+**4.1 Basic Processing**
+- [ ] Implement EQ chain for Germanic voice
+- [ ] Implement compression
+- [ ] Implement de-esser
+- [ ] Test on synthesized audio
+- **Deliverable:** Processed audio that sounds good
+
+**4.2 Pause Engineering**
+- [ ] Implement pause insertion based on script markers
+- [ ] Add breath sounds at appropriate points
+- [ ] Tune timing by context type
+- **Deliverable:** Naturally paced audio
+
+**4.3 Music Integration**
+- [ ] Source/create intro music
+- [ ] Implement intro fade
+- [ ] Implement outro fade
+- **Deliverable:** Complete episode with music
+
+**4.4 Mastering**
+- [ ] Implement loudness normalization (-16 LUFS)
+- [ ] Implement true peak limiting
+- [ ] Implement metadata embedding
+- **Deliverable:** Broadcast-ready final audio
+
+---
+
+### Phase 5: Integration & Calibration
+
+**5.1 End-to-End Pipeline**
+- [ ] Connect all components
+- [ ] Single command: report.md → final.mp3
+- [ ] Error handling and logging
+- **Deliverable:** Working pipeline
+
+**5.2 Quality Calibration**
+- [ ] Run on 10 reports
+- [ ] You listen to all 10 final episodes
+- [ ] Rate each, provide feedback
+- [ ] Identify weak points in pipeline
+- [ ] Iterate on weakest components
+- **Deliverable:** Pipeline producing consistently good episodes
+
+**5.3 A/B Testing vs NotebookLM**
+- [ ] Generate both versions for 5 reports
+- [ ] Blind listen test (you, or small group)
+- [ ] Analyze preferences
+- [ ] Target: preference for our version >60% of time
+- **Deliverable:** Evidence we're competitive with NotebookLM
+
+**5.4 Integration with Podcast Workflow**
+- [ ] Connect to existing episode workflow
+- [ ] Replace NotebookLM step
+- [ ] Update documentation
+- **Deliverable:** Fully integrated system
+
+---
+
+### Phase 6: Continuous Improvement
+
+**6.1 Feedback Loop**
+- [ ] After each published episode, rate it
+- [ ] Periodically add to few-shot examples
+- [ ] Track critic calibration over time
+- [ ] Adjust rubric as taste evolves
+
+**6.2 Voice Evolution**
+- [ ] If needed, re-record voice samples
+- [ ] Expand pronunciation dictionary
+- [ ] Tune emotional parameters based on listening
+
+**6.3 Style Evolution**
+- [ ] Update style guide based on learnings
+- [ ] Add new "good example / bad example" pairs
+- [ ] Evolve the arc structure if needed
+
+---
+
+## Effort Estimation
+
+| Phase | Human Effort | Calendar Time |
+|-------|--------------|---------------|
+| Phase 0: Foundation | 15-20 hours | 2-3 weeks |
+| Phase 1: Script Generation | 5-8 hours | 1-2 weeks |
+| Phase 2: Critic Development | 10-15 hours | 2-3 weeks |
+| Phase 3: Voice Synthesis | 3-5 hours | 1 week |
+| Phase 4: Audio Production | 3-5 hours | 1 week |
+| Phase 5: Integration | 8-12 hours | 2 weeks |
+| **Total** | **45-65 hours** | **10-12 weeks** |
+
+Human effort is primarily:
+- Voice selection/recording session
+- Providing feedback on scripts
+- Listening to outputs
+- Calibration reviews
+
+Most technical implementation can be done by Claude.
+
+---
+
+## Risk Mitigation
+
+| Risk | Mitigation |
+|------|------------|
+| Can't find good German/Austrian voice | Expand to other European accents; consider American with gravitas |
+| Critic doesn't calibrate well | More human examples; simpler rubric; human-in-loop for first N episodes |
+| Scripts feel robotic | More few-shot examples; emphasize story over information; human edit pass |
+| NotebookLM is just better | Hybrid: use NotebookLM for first draft, our voice for synthesis |
+| Pipeline too slow | Parallelize synthesis; cache intermediate steps; accept longer generation time |
+
+---
+
 ## References
 
 ### Style Inspiration
@@ -740,3 +1259,10 @@ podcast/tools/audio_generation/
 - ElevenLabs: https://elevenlabs.io/docs
 - Loudness standards: ITU-R BS.1770-4
 - Podcast specifications: Apple Podcasts requirements
+
+### Machine Learning Approaches
+
+- Constitutional AI (Anthropic) — Rule-based self-evaluation
+- Few-shot learning — Learning from limited examples
+- Active learning — Strategic selection of examples for labeling
+- RLHF concepts — Learning from human preferences
