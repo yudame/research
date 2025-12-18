@@ -7,15 +7,15 @@
   <channel>
     <title>Yudame Research Podcast</title>
     <link>https://research.yuda.me/</link>
-    <description>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</description>
+    <description>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</description>
     <language>en-us</language>
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Mon, 16 Dec 2025 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2025 09:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
-    <itunes:summary>First-principles research on early childhood education, cardiovascular health optimization, financial infrastructure, and emerging technology. Evidence-based analysis synthesizing peer-reviewed studies, meta-analyses, and regulatory frameworks.</itunes:summary>
+    <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
     <itunes:owner>
       <itunes:name>Valor Engels</itunes:name>
       <itunes:email>valor@yuda.me</itunes:email>
@@ -24,7 +24,7 @@
     <itunes:category text="Science"/>
     <itunes:category text="Education"/>
     <itunes:category text="Technology"/>
-    <itunes:image href="https://research.yuda.me/podcast/yudame-research-podcast.jpg"/>
+    <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-18"/>
     <itunes:type>episodic</itunes:type>
 
     <!-- Episode 23: Active Recovery Series - Episode 4 -->
