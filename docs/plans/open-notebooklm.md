@@ -1,78 +1,93 @@
-# Open NotebookLM: Self-Hosted Podcast Audio Generation
+# Open NotebookLM: Single-Host Research Podcast Generation
 
-A plan for replacing Google NotebookLM with a quality-maximized, self-controlled system for generating conversational podcast audio from research reports.
+A system for transforming research reports into compelling single-host podcast monologues with a distinctive voice and uncompromising quality standards.
 
 ## Vision
 
-Create a production pipeline that transforms written research reports into broadcast-quality, two-host conversational podcast audio—exceeding NotebookLM's capabilities through superior voice synthesis, professional audio production, and full creative control.
+Create a pipeline that transforms written research reports into broadcast-quality solo podcast episodes—delivered by a charismatic, intellectually rigorous host voice that becomes synonymous with the Yudame Research brand.
+
+**Key Differentiator:** Single host eliminates the hardest problem (fake dialogue) and allows full focus on what matters: a compelling monologue that honors great ideas.
 
 ---
 
-## Current State (NotebookLM)
+## The Yudame Research Voice
 
-### What NotebookLM Does
+### Brand Identity
 
-1. Accepts document upload (report.md)
-2. Generates conversational script with two AI hosts
-3. Synthesizes natural-sounding speech
-4. Produces ~30-40 minute audio file
-5. Delivers as downloadable M4A
+**Yudame Research is:**
+- **Thoughtful** — Every word earns its place
+- **Detailed** — Depth without drowning
+- **Skeptical** — Questions before conclusions
+- **Patient** — Ideas unfold at their natural pace
+- **Valuable** — Listener's time is respected
+- **Worthy** — Content deserves attention
+- **Fidelity** — Accuracy and clarity above all
 
-### NotebookLM Strengths
+### What Makes Great Monologue
 
-- Natural conversational flow
-- Two distinct voice personalities
-- Appropriate pacing and emphasis
-- Handles complex topics accessibly
-- Includes natural speech patterns (pauses, affirmations)
+- The topic is the host's **genuine obsession**
+- Laughing at ironies and absurdities
+- **Rare expletives** as excited reaction to breakthrough ideas ("This is *bullshit*" when calling out bad research, "Holy shit" at genuine revelations)
+- **Passion to truly get ideas across** — not performing, teaching
+- **Honor great sources** — name researchers, link in show notes
+- Natural self-correction ("Actually, let me back up...")
+- Thinking out loud, not reading
 
-### NotebookLM Limitations
+### What Makes Great Education
 
-- Closed/proprietary system
-- No control over voice selection
-- No script editing before synthesis
-- No customization of conversation style
-- Dependency on Google's continued service
-- No professional audio post-production
-- Limited prosody control
-- No emotional range tuning
-- Fixed host personalities
+1. **Start with a question that raises a problem**
+2. **Lead to a bigger question and bigger problem**
+3. **Tell a story**
+4. **Tell another story**
+5. **Weave them together with a common moral**
+6. **Identify exceptions and contradictions**
+7. **Bite-size takeaways or punchy quotes**
+8. **Imagine the limit case**
+9. **"Paint the picture"** with just the appropriate dose of information
+10. **What, So What, Now What**
+
+### The Voice
+
+- **Accent:** Charismatic Austrian or German speaking English
+- **Delivery:** Enunciation and projection of a popular university professor
+- **Energy:** Intellectually alive, not caffeinated
+- **Presence:** Commands attention without demanding it
 
 ---
 
-## Proposed Architecture
+## Architecture
 
 ### System Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                        OPEN NOTEBOOKLM PIPELINE                                  │
-├───────────────┬───────────────┬───────────────┬───────────────┬─────────────────┤
-│               │               │               │               │                 │
-│    SCRIPT     │    VOICE      │   PROSODY     │    AUDIO      │   MASTERING     │
-│  GENERATION   │  SYNTHESIS    │  ENHANCEMENT  │  PRODUCTION   │   & DELIVERY    │
-│               │               │               │               │                 │
-│ ┌───────────┐ │ ┌───────────┐ │ ┌───────────┐ │ ┌───────────┐ │ ┌─────────────┐ │
-│ │  Claude   │ │ │ ElevenLabs│ │ │  Emotion  │ │ │  iZotope  │ │ │ Broadcast   │ │
-│ │  Opus 4   │ │ │  Turbo v2 │ │ │  Injection│ │ │    RX     │ │ │ Limiter     │ │
-│ │           │ │ │           │ │ │           │ │ │           │ │ │             │ │
-│ └───────────┘ │ └───────────┘ │ └───────────┘ │ └───────────┘ │ └─────────────┘ │
-│       │       │       │       │       │       │       │       │       │         │
-│       ▼       │       ▼       │       ▼       │       ▼       │       ▼         │
-│  script.json  │  raw_audio/   │  enhanced/    │  produced/    │   final.mp3     │
-│               │               │               │               │                 │
-└───────────────┴───────────────┴───────────────┴───────────────┴─────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                           PODCAST GENERATION PIPELINE                                │
+├─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────┤
+│                 │                 │                 │                 │             │
+│     SCRIPT      │     CRITIC      │     VOICE       │     AUDIO       │  MASTERING  │
+│   GENERATION    │    REFINEMENT   │   SYNTHESIS     │   PRODUCTION    │  & DELIVERY │
+│                 │                 │                 │                 │             │
+│  ┌───────────┐  │  ┌───────────┐  │  ┌───────────┐  │  ┌───────────┐  │ ┌─────────┐ │
+│  │  Claude   │  │  │  Trained  │  │  │ ElevenLabs│  │  │  FFmpeg   │  │ │ Loudness│ │
+│  │  Opus 4   │  │  │  Critic   │  │  │  Custom   │  │  │  iZotope  │  │ │ Limiting│ │
+│  │           │  │  │  Agent    │  │  │  Voice    │  │  │           │  │ │         │ │
+│  └───────────┘  │  └───────────┘  │  └───────────┘  │  └───────────┘  │ └─────────┘ │
+│        │        │        │        │        │        │        │        │      │      │
+│        ▼        │        ▼        │        ▼        │        ▼        │      ▼      │
+│   draft.json    │   final.json    │   raw_audio/    │   produced/     │  final.mp3  │
+│                 │                 │                 │                 │             │
+└─────────────────┴─────────────────┴─────────────────┴─────────────────┴─────────────┘
 ```
 
 ### Pipeline Components
 
-| Component | Purpose | Quality Impact |
-|-----------|---------|----------------|
-| Script Generation | Natural dialogue creation | Foundation of engagement |
-| Voice Synthesis | Human-quality speech | Core listening experience |
-| Prosody Enhancement | Emotional authenticity | Listener connection |
-| Audio Production | Professional polish | Broadcast readiness |
-| Mastering & Delivery | Final optimization | Platform compatibility |
+| Component | Purpose | Quality Gate |
+|-----------|---------|--------------|
+| Script Generation | Transform report to monologue | Critic approval |
+| Critic Refinement | Iterative quality improvement | Style guide alignment |
+| Voice Synthesis | Generate spoken audio | Pronunciation accuracy |
+| Audio Production | Professional polish | Technical standards |
+| Mastering | Final optimization | Broadcast compliance |
 
 ---
 
@@ -80,252 +95,365 @@ Create a production pipeline that transforms written research reports into broad
 
 ### Purpose
 
-Transform a written research report into a compelling two-person podcast conversation that exceeds typical AI-generated dialogue.
+Transform a dense research report into a compelling 30-40 minute monologue that sounds like a passionate expert sharing their obsession.
 
 ### Model Selection
 
-**Primary:** Claude Opus 4 (claude-opus-4-20250514)
-- Highest quality reasoning and creativity
-- Superior dialogue naturalness
-- Best handling of complex source material
+**Primary:** Claude Opus 4
+- Highest reasoning for complex source material
+- Best at maintaining voice consistency
+- Superior narrative construction
 
-**Validation:** Claude Sonnet for structural review
-- Check pacing and timing estimates
-- Verify chapter alignment
-- Confirm dialogue balance
+### Script Structure (The Arc)
 
-### Host Personas (Enhanced)
+**Opening Hook (0:00-2:00)**
+```
+Start with THE question. The problem that makes this topic matter.
+Not "Today we're going to talk about X."
+Instead: "Here's something that doesn't make sense..."
+```
 
-**Host A: "The Synthesizer"**
-- Primary narrator with authoritative presence
-- Warm baritone characteristics in writing style
-- Provides structure, context, and depth
-- Uses metaphor and analogy naturally
-- Comfortable with complexity, explains accessibly
-- Occasional dry humor
-- Voice direction: NPR host quality
+**Problem Escalation (2:00-5:00)**
+```
+The question leads to a bigger question.
+"But wait—if that's true, then why..."
+Build tension. Make the listener NEED the answer.
+```
 
-**Host B: "The Explorer"**
-- Intellectually curious co-host
-- Represents informed listener perspective
-- Asks the questions listeners are thinking
-- Provides emotional reactions and enthusiasm
-- Challenges assumptions constructively
-- Creates moments of discovery
-- Voice direction: Science podcast co-host
+**Story One (5:00-12:00)**
+```
+A specific story that illuminates the problem.
+Name names. Give dates. Make it real.
+"In 1987, a researcher named..."
+```
 
-### Script Format (Enhanced)
+**Story Two (12:00-19:00)**
+```
+A contrasting or complementary story.
+Different angle, same underlying truth.
+"Meanwhile, on the other side of the world..."
+```
+
+**The Weave (19:00-26:00)**
+```
+Connect the stories. Reveal the common thread.
+"Here's what both of these tell us..."
+This is where the "aha" lives.
+```
+
+**Exceptions & Contradictions (26:00-30:00)**
+```
+Intellectual honesty. What doesn't fit?
+"Now, I should mention—this isn't the whole story."
+"There's a study from 2019 that complicates this..."
+```
+
+**The Takeaway (30:00-33:00)**
+```
+What, So What, Now What.
+Bite-sized. Quotable. Actionable.
+"If you remember nothing else from this episode..."
+```
+
+**Close (33:00-35:00)**
+```
+Honor sources. Tease future episodes.
+"The papers I drew from are linked in the show notes."
+Leave them thinking.
+```
+
+### Script Format
 
 ```json
 {
   "metadata": {
     "title": "Episode Title",
-    "duration_target_seconds": 2400,
-    "generated_at": "2025-12-18T10:00:00Z",
-    "model": "claude-opus-4-20250514",
-    "version": "2.0"
-  },
-  "voice_direction": {
-    "host_a": {
-      "base_tone": "warm_authoritative",
-      "energy_baseline": 0.6,
-      "formality": 0.7
-    },
-    "host_b": {
-      "base_tone": "curious_engaged",
-      "energy_baseline": 0.7,
-      "formality": 0.5
-    }
+    "target_duration_seconds": 2100,
+    "word_count_target": 5250,
+    "generated_at": "2025-12-18T10:00:00Z"
   },
   "segments": [
     {
       "id": 1,
-      "chapter": "Introduction",
-      "chapter_mood": "intriguing",
-      "exchanges": [
-        {
-          "speaker": "A",
-          "text": "Welcome back to Yudame Research...",
-          "emotion": "warm_welcoming",
-          "intensity": 0.6,
-          "style": {
-            "pace": "moderate",
-            "emphasis_words": ["Yudame", "Research"],
-            "pause_after_seconds": 0.5,
-            "breath_before": true
-          },
-          "ssml_hints": {
-            "prosody_rate": "medium",
-            "prosody_pitch": "medium"
-          }
+      "type": "hook",
+      "duration_target": 120,
+      "content": {
+        "text": "Here's something that kept me up last night...",
+        "delivery": {
+          "energy": 0.7,
+          "pace": "measured_then_accelerating",
+          "emotion": "genuine_puzzlement"
         },
-        {
-          "speaker": "B",
-          "text": "Today we're diving into something that genuinely surprised me when I first read the research...",
-          "emotion": "genuine_excitement",
-          "intensity": 0.75,
-          "style": {
-            "pace": "slightly_accelerating",
-            "emphasis_words": ["genuinely", "surprised"],
-            "lean_forward": true
-          }
+        "notes": {
+          "emphasis_words": ["kept", "night"],
+          "pause_after": 1.5,
+          "laugh_point": null
         }
-      ]
+      }
+    },
+    {
+      "id": 2,
+      "type": "escalation",
+      "content": {
+        "text": "But here's where it gets strange...",
+        "delivery": {
+          "energy": 0.8,
+          "pace": "building",
+          "emotion": "intellectual_excitement"
+        },
+        "notes": {
+          "expletive_candidate": false,
+          "irony_moment": true
+        }
+      }
     }
   ],
-  "production_notes": {
-    "ambient_suggestion": "quiet_studio",
-    "music_cues": [
-      {"time": "intro", "type": "fade_in"},
-      {"time": "outro", "type": "fade_out"}
-    ]
-  }
+  "sources_mentioned": [
+    {
+      "citation": "Smith et al., 2019",
+      "link": "https://...",
+      "mention_timestamps": [423, 891]
+    }
+  ],
+  "key_quotes": [
+    {
+      "quote": "The dose makes the poison",
+      "attribution": "Paracelsus",
+      "timestamp": 1247
+    }
+  ]
 }
 ```
 
-### Conversation Architecture
-
-**Opening (0:00-1:30)**
-- Cold open with hook (surprising fact, provocative question)
-- Brief greeting and topic introduction
-- Promise of what listener will learn
-
-**Development (1:30-25:00)**
-- 3-4 major topic sections
-- Each section: setup → exploration → insight → transition
-- Natural tangents that circle back
-- "Aha moment" design in each section
-
-**Synthesis (25:00-28:00)**
-- Connect themes across sections
-- Unexpected connections
-- "Bigger picture" framing
-
-**Close (28:00-30:00)**
-- Practical takeaways
-- Lingering question for reflection
-- Warm sign-off
-
-### Dialogue Quality Markers
-
-**Natural Speech Patterns:**
-- Incomplete thoughts that get completed
-- Self-corrections ("Well, actually...")
-- Verbal affirmations ("Right", "Exactly", "Hm, interesting")
-- Overlapping sentiment (not audio, but written momentum)
-- Questions that build on previous answers
-
-**Engagement Techniques:**
-- The Setup/Payoff pattern
-- Tension and release through questions
-- Callback references to earlier points
-- The "But wait, there's more" pivot
-- Micro-cliffhangers before transitions
-
-### Script Generation Prompt Framework
+### Generation Prompt Framework
 
 ```markdown
-# Podcast Script Generation - Maximum Quality
+# Yudame Research Podcast Script Generation
 
-## Role
-You are an award-winning podcast scriptwriter creating dialogue for a
-research-focused show that combines the intellectual depth of Radiolab
-with the accessibility of Planet Money.
+## Your Role
+You are writing a script for a solo podcast host who is genuinely obsessed
+with this topic. Not performing enthusiasm—actually passionate. Think of
+the best university lecturer you ever had, the one who made you care about
+something you didn't know you cared about.
 
-## Hosts
-- Host A ("Alex"): The Synthesizer - authoritative, warm, uses great metaphors
-- Host B ("Jordan"): The Explorer - curious, energetic, asks great questions
+## The Voice
+- Austrian/German accent cadence (write for this rhythm)
+- Professor energy: authoritative but accessible
+- Genuine reactions: laughs at ironies, occasionally swears at bad ideas
+- Thinks out loud: "Actually, let me back up..." "Wait, that's not quite right..."
 
 ## Source Material
-[Report content]
+[Research report content]
 
-## Requirements
+## Structure Requirements
 
-### Structural
-- Target: [X] minutes of audio (estimate 150 words/minute of dialogue)
-- Create [N] natural chapter breaks
-- Open with a hook, not a summary
-- Build to insights, don't front-load conclusions
+### The Arc
+1. HOOK: Start with the question/problem that makes this matter
+2. ESCALATE: Lead to a bigger question
+3. STORY 1: Specific narrative that illuminates
+4. STORY 2: Contrasting/complementary narrative
+5. WEAVE: Connect them—this is where insight lives
+6. EXCEPTIONS: What doesn't fit? Intellectual honesty.
+7. TAKEAWAY: What, So What, Now What
+8. CLOSE: Honor sources, leave them thinking
 
-### Dialogue Quality
-- Every exchange must feel like it could only exist in THIS conversation
-- Include moments of genuine discovery
-- Use specific examples over generalities
-- Translate jargon instantly and naturally
-- Statistics need context and human scale
+### Style Requirements
+- Write for SPOKEN delivery, not reading
+- Short sentences when making points
+- Longer sentences when building atmosphere
+- Name researchers and studies specifically
+- Round numbers for speech ("roughly forty percent" not "39.7%")
+- Include natural self-corrections
+- Mark potential laugh/expletive moments (sparingly—maybe 2-3 per episode)
 
-### Emotional Arc
-- Map the emotional journey of the episode
-- Include moments of: curiosity, surprise, concern, hope, resolution
-- Vary energy levels - not everything is exciting
-- Create at least one "mind-blown" moment
+### What to Include
+- At least 2 specific stories with names, dates, places
+- At least 3 "aha moment" candidates
+- At least 1 acknowledged limitation or contradiction
+- 3-5 quotable takeaways
+- All sources cited by name for show notes
 
-### Technical
-- Include SSML hints for emphasis and pacing
-- Note emotional tone for each utterance
-- Mark breath points and natural pauses
-- Identify words requiring specific pronunciation
-
-### Forbidden
-- Robotic transitional phrases ("Moving on to...")
-- Unearned excitement ("This is SO fascinating!")
-- Reading statistics without human context
-- Monologues over 45 seconds
-- Questions with obvious answers
-- Summarizing what was just said
+### What to Avoid
+- "Today we're going to discuss..."
+- "Studies show that..." (say WHICH study)
+- Fake enthusiasm ("This is SO fascinating!")
+- Explaining things the audience already knows
+- Hedging everything into meaninglessness
+- Monologue without variation (no 3-minute flat sections)
 
 ## Output Format
 [JSON schema as defined above]
+
+## Word Count
+Target: ~150 words per minute of audio
+35-minute episode = ~5,250 words
 ```
 
 ---
 
-## Component 2: Voice Synthesis
+## Component 2: Critic Refinement Agent
 
 ### Purpose
 
-Convert script to speech that is indistinguishable from professional voice actors.
+A trained critic agent that reviews generated scripts against quality standards derived from excellent podcasts (Huberman Lab, Founders Podcast).
 
-### Provider: ElevenLabs (Primary)
+### Training Data Sources
 
-**Why ElevenLabs:**
-- Industry-leading naturalness
-- Best-in-class emotional range
-- Professional Studio Voice options
-- Fine-grained control over delivery
-- Turbo v2.5 model for quality + speed
+**Huberman Lab (Andrew Huberman)**
+- Deep scientific rigor
+- Clear explanation of mechanisms
+- Practical takeaways
+- "Protocols" structure
+- Genuine enthusiasm for biology
 
-### Voice Selection Strategy
+**Founders Podcast (David Senra)**
+- Obsessive deep reading
+- Story-driven education
+- Punchy quotes and insights
+- Historical narrative mastery
+- Honoring sources ("I learned this from...")
 
-**Option A: Professional Voice Actors (Highest Quality)**
+### Critic Agent Design
 
-Commission custom voice models:
-1. Hire two professional voice actors for 30-minute recording sessions
-2. Record samples covering full emotional and tonal range
-3. Create Professional Voice Clones via ElevenLabs
-4. Result: Unique, owned voices with broadcast quality
+```markdown
+# Podcast Script Critic Agent
 
-**Recording Session Requirements:**
-- Professional studio environment
-- Range of emotions: neutral, excited, concerned, thoughtful, amused
-- Various energy levels and pacing
-- Technical pronunciation samples
-- Conversational flow samples
+## Your Training
+You have internalized the quality standards of:
+- Huberman Lab: Scientific depth, mechanism clarity, practical protocols
+- Founders Podcast: Obsessive research, story-driven insight, punchy wisdom
 
-**Option B: ElevenLabs Studio Voices**
+## Your Task
+Review the submitted podcast script and provide:
+1. PASS/FAIL overall assessment
+2. Specific issues with line-level citations
+3. Suggested revisions
 
-Use pre-built professional voices:
-- Extensive library of broadcast-quality voices
-- Consistent and reliable
-- No setup time
-- Good emotional range
+## Evaluation Criteria
 
-**Recommended Voices:**
+### Structure (25%)
+- Does it start with a compelling question/problem?
+- Does tension build appropriately?
+- Are stories specific (names, dates, places)?
+- Does the weave deliver genuine insight?
+- Is intellectual honesty present (limitations acknowledged)?
 
-| Host | Voice Characteristics | ElevenLabs Voice Type |
-|------|----------------------|----------------------|
-| A | Warm, authoritative, baritone | "Adam" or custom NPR-style |
-| B | Energetic, curious, slightly higher | "Josh" or custom science-host |
+### Voice Authenticity (25%)
+- Does it sound like genuine passion, not performance?
+- Are there natural moments (self-correction, thinking aloud)?
+- Would the Yudame voice say this? (thoughtful, detailed, skeptical, patient)
+- Are rare expletives/laughs earned, not forced?
+
+### Educational Value (25%)
+- Is the "What, So What, Now What" clear?
+- Are takeaways bite-sized and quotable?
+- Would a listener remember the key points?
+- Is appropriate information density achieved?
+
+### Source Honoring (25%)
+- Are researchers named specifically?
+- Are studies cited, not vaguely referenced?
+- Is the intellectual lineage clear?
+- Would sources be proud to be featured?
+
+## Output Format
+{
+  "verdict": "PASS" | "REVISE",
+  "score": 0-100,
+  "issues": [
+    {
+      "segment_id": 3,
+      "severity": "major" | "minor",
+      "issue": "Description of problem",
+      "suggestion": "How to fix"
+    }
+  ],
+  "strengths": ["What works well"],
+  "revision_priority": ["Most important fixes first"]
+}
+```
+
+### Refinement Loop
+
+```
+Script Draft
+    │
+    ▼
+Critic Review ──────┐
+    │               │
+    │ PASS?         │ REVISE
+    │               │
+    ▼               ▼
+Final Script    Revision with
+                specific fixes
+                    │
+                    └──► Back to Critic
+                         (max 3 iterations)
+```
+
+### Collecting Training Examples
+
+**From Huberman Lab:**
+- Transcribe 10-20 episodes covering different topics
+- Annotate: hooks, mechanism explanations, protocol sections
+- Extract: sentence patterns, transition phrases, emphasis patterns
+
+**From Founders Podcast:**
+- Transcribe 10-20 episodes (especially the best-rated)
+- Annotate: story openings, quote integrations, insight moments
+- Extract: David's signature phrases, pacing patterns, source acknowledgments
+
+**Training the Critic:**
+- Few-shot examples in prompt
+- Reference transcripts for style comparison
+- Explicit rubric with examples of good/bad
+
+---
+
+## Component 3: Voice Synthesis
+
+### The Yudame Voice
+
+**Target Characteristics:**
+- Austrian or German native speaking fluent English
+- University professor presence—commands attention naturally
+- Clear enunciation without being stiff
+- Intellectual warmth
+- Capable of energy range: thoughtful quiet to genuine excitement
+
+### Voice Acquisition Strategy
+
+**Option A: Professional Voice Actor**
+
+Commission a voice actor session:
+1. Find Austrian/German actor with professor-like delivery
+2. 60-90 minute recording session covering:
+   - Full emotional range (curious, excited, skeptical, amused, passionate)
+   - Technical terminology samples
+   - Various energy levels
+   - Natural reactions (laughs, sighs, "hmm")
+3. Create ElevenLabs Professional Voice Clone
+4. Result: Unique, owned brand voice
+
+**Casting Requirements:**
+- Native German/Austrian speaker
+- Excellent English with charming accent (not heavy)
+- Academic or intellectual background preferred
+- Comfortable with scientific/technical vocabulary
+- Natural charisma in delivery
+
+**Option B: ElevenLabs Voice Library**
+
+Evaluate existing voices for:
+- European accent options
+- Intellectual/authoritative tone
+- Emotional range capability
+- Pronunciation clarity
+
+**Candidates to evaluate:**
+- Search for German/Austrian accent voices
+- Test with sample scripts
+- Evaluate across emotional range
 
 ### Synthesis Configuration
 
@@ -333,242 +461,139 @@ Use pre-built professional voices:
 {
   "model_id": "eleven_turbo_v2_5",
   "voice_settings": {
-    "host_a": {
-      "voice_id": "selected_or_cloned_voice_a",
-      "stability": 0.71,
-      "similarity_boost": 0.85,
-      "style": 0.45,
-      "use_speaker_boost": true,
-      "output_format": "mp3_44100_192"
-    },
-    "host_b": {
-      "voice_id": "selected_or_cloned_voice_b",
-      "stability": 0.65,
-      "similarity_boost": 0.82,
-      "style": 0.55,
-      "use_speaker_boost": true,
-      "output_format": "mp3_44100_192"
-    }
+    "voice_id": "yudame_professor_voice",
+    "stability": 0.70,
+    "similarity_boost": 0.80,
+    "style": 0.40,
+    "use_speaker_boost": true,
+    "output_format": "mp3_44100_192"
   },
   "pronunciation_dictionary": {
-    "Yudame": "yoo-DAH-may",
-    "research-specific-terms": "..."
+    "Yudame": "YOO-dah-may",
+    "research_terms": {
+      "meta-analysis": "MEH-ta ah-NAL-ih-sis",
+      "epidemiology": "eh-pih-dee-mee-OL-oh-gee"
+    }
   }
 }
 ```
 
-### Advanced Synthesis Features
+### Emotional Delivery Mapping
 
-**Emotion Injection:**
-ElevenLabs supports emotional styling:
-- Map script emotions to synthesis parameters
-- Adjust style parameter per utterance
-- Use stability variance for natural imperfection
+| Script Emotion | ElevenLabs Parameters |
+|----------------|----------------------|
+| Thoughtful baseline | stability: 0.75, style: 0.35 |
+| Building excitement | stability: 0.65, style: 0.55 |
+| Genuine revelation | stability: 0.60, style: 0.65 |
+| Skeptical/critical | stability: 0.80, style: 0.30 |
+| Amused/ironic | stability: 0.55, style: 0.50 |
+| Passionate emphasis | stability: 0.50, style: 0.70 |
 
-**Pronunciation Control:**
-- Custom pronunciation dictionary for technical terms
-- SSML tags for emphasis and pacing
-- Phonetic overrides for uncommon words
+### Handling Special Moments
 
-**Quality Settings:**
-- Output: 44.1kHz, 192kbps minimum during synthesis
-- Enable speaker boost for presence
-- Use latest model version always
+**Rare Expletives:**
+- Generate separately with slightly lower stability
+- Review for natural delivery
+- Blend seamlessly
 
-### Alternative: Parallel Synthesis for A/B Quality
+**Laughs/Reactions:**
+- Use ElevenLabs' non-verbal sound capabilities
+- Or record separately and blend
+- Keep subtle and genuine
 
-Generate each segment with multiple parameter variations:
-1. Synthesize each line 2-3 times with slight variations
-2. Use AI or human selection to pick best take
-3. Assemble final from best segments
-
----
-
-## Component 3: Prosody Enhancement
-
-### Purpose
-
-Add micro-level authenticity that distinguishes broadcast audio from synthetic speech.
-
-### Breath Insertion
-
-**Natural Breathing:**
-- Insert breath sounds at natural pause points
-- Vary breath intensity based on upcoming phrase energy
-- Use actual recorded breaths (from voice actor sessions or libraries)
-
-**Breath Placement Rules:**
-- Before sentences starting new thoughts
-- After long phrases
-- Before emphasized words
-- At emotional transitions
-
-### Micro-Pause Injection
-
-**Timing Adjustments:**
-| Context | Pause Duration |
-|---------|----------------|
-| Thinking pause ("Well...") | 300-500ms |
-| Emphasis pause (before key word) | 150-250ms |
-| Emotional beat (after revelation) | 400-700ms |
-| Topic transition | 800-1200ms |
-| Breath pause | 200-400ms |
-
-### Filler Sound Library
-
-**Optional Authenticity Markers:**
-- Subtle "um" or "uh" (sparingly, 1-2 per segment)
-- Soft laughs at appropriate moments
-- Affirmative sounds ("Mm-hmm", "Hm")
-- Intake breath sounds
-
-**Implementation:**
-- Build library of filler sounds from voice actors
-- Script indicates insertion points
-- Blend seamlessly with synthesized speech
-
-### Room Tone Matching
-
-**Acoustic Consistency:**
-- Add subtle room ambiance to synthesized audio
-- Match reverb characteristics between hosts
-- Create sense of shared space
+**Technical Terms:**
+- Custom pronunciation dictionary
+- Generate and verify
+- Regenerate mispronunciations
 
 ---
 
 ## Component 4: Audio Production
 
-### Purpose
+### Single-Voice Processing Chain
 
-Transform raw synthesized segments into broadcast-quality mixed audio.
-
-### Professional Audio Processing Chain
-
-**Stage 1: Individual Segment Processing**
-
+**Stage 1: Raw Processing**
 ```
-Raw Segment
+Synthesized Audio
     ↓
 De-noise (if needed)
     ↓
 De-ess (reduce sibilance)
     ↓
-EQ (voice clarity)
+EQ (voice optimization)
     ↓
 Compression (dynamic control)
     ↓
-Processed Segment
+Processed Audio
 ```
 
-**Stage 2: Assembly and Mixing**
+### EQ Profile (Germanic Voice)
 
-```
-All Processed Segments
-    ↓
-Sequencing with timing
-    ↓
-Crossfade transitions
-    ↓
-Stereo positioning
-    ↓
-Room ambiance layer
-    ↓
-Music bed (if applicable)
-    ↓
-Mixed Audio
-```
-
-### EQ Settings (Voice Optimization)
-
-**Host A (Deeper voice):**
 ```
 High-pass: 80 Hz (remove rumble)
-Low-shelf: +1 dB at 200 Hz (warmth)
-Parametric: -2 dB at 400 Hz, Q=1.5 (reduce mud)
-Parametric: +2 dB at 3 kHz, Q=2 (presence)
-High-shelf: +1 dB at 10 kHz (air)
-Low-pass: 16 kHz
-```
-
-**Host B (Higher energy voice):**
-```
-High-pass: 100 Hz
-Parametric: -1 dB at 300 Hz, Q=1.5
-Parametric: +2.5 dB at 4 kHz, Q=2 (clarity)
-High-shelf: +1.5 dB at 12 kHz (brightness)
-De-esser: 5-7 kHz range
+Low-shelf: +1.5 dB at 180 Hz (chest resonance - common in Germanic voices)
+Parametric: -2 dB at 350 Hz, Q=1.5 (reduce potential muddiness)
+Parametric: +2 dB at 2.5 kHz, Q=2.5 (clarity for accented speech)
+Parametric: +1 dB at 5 kHz, Q=2 (presence)
+High-shelf: +0.5 dB at 12 kHz (air)
 Low-pass: 16 kHz
 ```
 
 ### Compression Settings
 
-**Voice Compression:**
 ```
-Threshold: -18 dB
-Ratio: 3:1
-Attack: 10 ms
-Release: 100 ms
+Threshold: -20 dB
+Ratio: 2.5:1
+Attack: 15 ms (preserve transients for enunciation)
+Release: 120 ms
 Knee: Soft
 Makeup gain: As needed
 ```
 
-**Purpose:** Even out dynamics without killing life
+### Pause and Breath Engineering
 
-### Stereo Field Design
+**Natural Pauses:**
+| Context | Duration |
+|---------|----------|
+| End of thought | 400-600ms |
+| Before emphasis | 200-300ms |
+| After revelation | 600-900ms |
+| Section transition | 1000-1500ms |
+| "Let me think..." moment | 500-800ms |
 
-**Spatial Positioning:**
-- Host A: Slight left (10-15% pan)
-- Host B: Slight right (10-15% pan)
-- Ambiance: Stereo wide
-- Music: True stereo
+**Breath Sounds:**
+- Insert subtle breaths before new thoughts
+- Vary intensity with upcoming energy
+- No breath in middle of phrases
 
-**Creates:** Sense of two people in conversation, not alternating monologues
+### Music and Sound
 
-### Transition Design
+**Intro (10-15 seconds):**
+- Sophisticated, European sensibility
+- Not corporate, not overly dramatic
+- Fades under first words
 
-**Speaker Transitions:**
-- 50-100ms micro-overlap for natural conversation feel
-- Or 200-300ms gap for considered responses
-- Crossfade: 30-50ms for seamlessness
+**Outro (10-15 seconds):**
+- Same theme
+- Voice fades, music rises
+- Clean ending
 
-**Chapter Transitions:**
-- 1-2 second pause
-- Optional subtle music swell
-- Room tone fill (not silence)
-
-### Music and Sound Design
-
-**Intro/Outro Music:**
-- Custom composed or licensed broadcast-quality
-- 10-15 seconds intro, fade under dialogue
-- Outro: dialogue fade into music, 10-15 second tail
-
-**Transition Sounds (Optional):**
-- Subtle, branded audio signatures
-- Between major sections only
-- Never interrupt flow
-
-**Ambient Bed:**
-- Extremely subtle studio ambiance
-- Creates presence without distraction
-- -30 to -40 dB relative to voice
+**No transition sounds between sections**
+- Let the words do the work
+- Silence and pacing create structure
 
 ---
 
 ## Component 5: Mastering & Delivery
 
-### Purpose
-
-Final optimization for podcast distribution standards and maximum listening quality.
-
 ### Mastering Chain
 
 ```
-Mixed Audio
+Processed Audio
+    ↓
+Subtle room ambiance (optional)
     ↓
 Multi-band compression (gentle)
-    ↓
-Stereo enhancement (subtle)
     ↓
 Loudness normalization (-16 LUFS)
     ↓
@@ -576,299 +601,142 @@ True peak limiting (-1.5 dB)
     ↓
 Format conversion
     ↓
-Metadata embedding
+Metadata + chapters
     ↓
 Final Delivery
 ```
 
-### Loudness Standards
+### Output Specifications
 
-**Target:** -16 LUFS (podcast standard)
-
-**Parameters:**
-- Integrated loudness: -16 LUFS
-- True peak: -1.5 dB maximum
-- Loudness range: 8-12 LU
-
-### Output Formats
-
-**Primary Delivery:**
-- MP3 320kbps for archival
-- MP3 128kbps for distribution
-- Both at 44.1 kHz stereo
-
-**Quality Archive:**
-- FLAC or WAV at 48kHz/24-bit
-- Preserve for future remastering
-
-### Metadata Embedding
-
-**ID3 Tags:**
-- Title, Artist, Album, Year
-- Episode number
-- Genre: Podcast
-- Cover art (high resolution)
-- Chapter markers (if supported)
+| Property | Value |
+|----------|-------|
+| Format | MP3 |
+| Bitrate | 128 kbps (distribution), 320 kbps (archive) |
+| Sample Rate | 44.1 kHz |
+| Channels | Mono (single voice, saves bandwidth) |
+| Loudness | -16 LUFS |
+| True Peak | -1.5 dB max |
 
 ---
 
-## Advanced Quality Enhancements
+## Quality Assurance
 
-### Multi-Take Selection
+### Automated Checks
 
-**Process:**
-1. Generate each script line 3 times with parameter variations
-2. Score each take for:
-   - Naturalness
-   - Emotional accuracy
-   - Pronunciation clarity
-   - Pacing appropriateness
-3. Select best take per line
-4. Assemble optimal version
-
-**Automation:**
-- Use Claude to evaluate take quality from spectrograms + transcriptions
-- Or human review for critical segments
-
-### Adaptive Pacing
-
-**Dynamic Timing:**
-- Analyze content complexity per segment
-- Slow pacing for complex ideas
-- Faster pacing for familiar concepts
-- Automatic adjustment of pause lengths
-
-### Emotional Continuity
-
-**Cross-Segment Consistency:**
-- Track emotional state across segment boundaries
-- Ensure smooth emotional transitions
-- No jarring tone shifts
-
-### Pronunciation Verification
-
-**Quality Control:**
-- Transcribe all synthesized audio
-- Compare against script
-- Flag and regenerate mispronunciations
-- Special attention to proper nouns, technical terms
-
----
-
-## Quality Assurance Framework
-
-### Automated QA Checks
-
-**Technical:**
-- [ ] Loudness within -17 to -15 LUFS
+- [ ] Duration within 5% of target
+- [ ] Loudness: -17 to -15 LUFS
 - [ ] No true peaks above -1.5 dB
-- [ ] No audio dropouts or glitches
-- [ ] Correct total duration (±5% of target)
-- [ ] All chapters present
+- [ ] No audio dropouts
+- [ ] Transcription matches script >98%
+- [ ] All pronunciation dictionary terms correct
 
-**Content:**
-- [ ] Transcription matches script (>98%)
-- [ ] No mispronounced key terms
-- [ ] Voice consistency throughout
-- [ ] Appropriate pacing (WPM in range)
+### Critic Agent Final Review
+
+After synthesis, critic agent reviews:
+- Does audio delivery match script intent?
+- Are emphasis moments landing?
+- Is pacing appropriate throughout?
+- Any uncanny valley moments?
 
 ### Human QA Checklist
 
-**Listening Review:**
-- [ ] Natural conversation flow
-- [ ] Engaging opening hook
-- [ ] Clear explanation of complex topics
-- [ ] Appropriate emotional moments
-- [ ] Satisfying conclusion
-- [ ] No uncanny valley moments
-- [ ] Would listen to full episode voluntarily
-
-**A/B Comparison:**
-- [ ] Compare against NotebookLM baseline
-- [ ] Compare against professional podcasts
-- [ ] Note areas for improvement
-
-### Quality Metrics
-
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Naturalness score | >4.5/5 | Listener panel |
-| Engagement (completion rate) | >80% | Analytics |
-| Transcription accuracy | >99% | Automated |
-| Technical compliance | 100% | Automated |
-| MOS (Mean Opinion Score) | >4.0 | Standard testing |
-
----
-
-## Technical Architecture
-
-### System Requirements
-
-**Compute:**
-- High-memory instance for audio processing
-- GPU optional (speeds up some processing)
-- Fast storage for audio files
-
-**Software Stack:**
-- Python 3.12+
-- FFmpeg 8.0+ with full codec support
-- iZotope RX (or equivalent) for pro audio processing
-- ElevenLabs API access
-- Claude API access (Opus tier)
-
-### File Structure
-
-```
-podcast/tools/audio_generation/
-├── orchestrator.py              # Main pipeline controller
-├── script/
-│   ├── generator.py             # Claude script generation
-│   ├── validator.py             # Script quality checks
-│   └── templates/
-│       └── generation_prompt.md
-├── synthesis/
-│   ├── elevenlabs_client.py     # TTS API wrapper
-│   ├── multi_take.py            # Multiple take generation
-│   ├── take_selector.py         # Best take selection
-│   └── pronunciation.json       # Custom dictionary
-├── prosody/
-│   ├── breath_inserter.py       # Natural breathing
-│   ├── pause_adjuster.py        # Micro-timing
-│   └── assets/
-│       ├── breaths/             # Breath samples
-│       └── fillers/             # Filler sounds
-├── production/
-│   ├── mixer.py                 # Audio assembly
-│   ├── processor.py             # EQ, compression
-│   ├── spatial.py               # Stereo positioning
-│   └── presets/
-│       ├── host_a_chain.json
-│       └── host_b_chain.json
-├── mastering/
-│   ├── loudness.py              # LUFS normalization
-│   ├── limiter.py               # True peak limiting
-│   └── metadata.py              # ID3 embedding
-├── qa/
-│   ├── automated_checks.py      # Technical QA
-│   ├── transcription_verify.py  # Accuracy check
-│   └── reports/                 # QA reports
-└── voices/
-    ├── host_a/
-    │   ├── config.json
-    │   └── samples/             # Reference audio
-    └── host_b/
-        ├── config.json
-        └── samples/
-```
-
-### API Dependencies
-
-| Service | Purpose | Tier Needed |
-|---------|---------|-------------|
-| ElevenLabs | Voice synthesis | Creator+ (for quality) |
-| Anthropic | Script generation | Standard (Opus access) |
+- [ ] Would I listen to this voluntarily?
+- [ ] Does it sound like a person, not AI?
+- [ ] Are the stories engaging?
+- [ ] Do I remember the key points?
+- [ ] Is the voice distinctive and appealing?
+- [ ] Does it honor the Yudame brand values?
 
 ---
 
 ## Feasibility Assessment
 
-### Proven Components
+### Why Single Host Is Easier
 
-| Component | Feasibility | Evidence |
-|-----------|-------------|----------|
-| Script generation | High | Claude produces excellent dialogue |
-| Voice synthesis | High | ElevenLabs Studio voices are broadcast-ready |
-| Audio production | High | Standard audio engineering, well-understood |
-| Pipeline automation | High | All components have APIs |
+| Challenge | Two Hosts | Single Host |
+|-----------|-----------|-------------|
+| Natural dialogue | Very Hard | N/A |
+| Turn-taking timing | Hard | N/A |
+| Voice consistency | Hard (×2) | Medium (×1) |
+| Emotional authenticity | Hard | Medium |
+| Information density | Constrained by dialogue | Full control |
 
-### Technical Challenges
+### Remaining Challenges
 
 | Challenge | Difficulty | Mitigation |
 |-----------|------------|------------|
-| Emotional consistency across segments | Medium | Careful parameter tuning, multi-take selection |
-| Natural conversation timing | Medium | Extensive pause/breath engineering |
-| Pronunciation of novel terms | Low | Custom pronunciation dictionary |
-| Long-form coherence | Medium | Segment-aware synthesis, state tracking |
+| Monologue engagement | Medium | Strong structure (arc), story-driven |
+| Voice acquisition | Medium | Professional actor or extensive search |
+| Critic calibration | Medium | Training data from Huberman/Founders |
+| Maintaining energy | Medium | Varied pacing, emotion mapping |
 
-### Quality Delta vs NotebookLM
+### Success Probability
 
-**Expected Improvements:**
-- Voice quality: Significantly better (professional vs consumer TTS)
-- Emotional range: Better (explicit emotion control)
-- Production quality: Much better (professional mastering)
-- Customization: Complete control vs none
-
-**Potential Parity Areas:**
-- Conversational naturalness (both strong)
-- Pacing (both can be tuned)
-
-**Risk Areas:**
-- Integration complexity (more components)
-- Edge case handling (less battle-tested)
+With the simplifications made:
+- **Script generation:** High confidence (monologue is tractable)
+- **Critic refinement:** High confidence (clear rubric, training data)
+- **Voice synthesis:** High confidence (single voice, good TTS)
+- **Overall:** **High feasibility** for quality exceeding NotebookLM
 
 ---
 
-## Success Criteria
+## File Structure
 
-### Minimum Viable Quality
-
-Audio that listeners cannot distinguish from human-hosted podcasts in blind testing.
-
-### Target Quality
-
-Audio that exceeds typical human-hosted podcasts in:
-- Consistency of delivery
-- Technical audio quality
-- Pacing optimization
-- Information density
-
-### Stretch Quality
-
-Audio recognized as "unusually good" by podcast industry professionals.
-
----
-
-## Future Quality Enhancements
-
-### Voice Improvements
-
-- Custom fine-tuned voice models trained on hundreds of hours
-- Real-time voice adjustment during synthesis
-- Dialect and accent options
-- Age and energy variation for different content types
-
-### Production Improvements
-
-- AI-driven mixing decisions
-- Automatic music scoring based on content mood
-- Spatial audio (Dolby Atmos) for immersive listening
-- Adaptive loudness for different playback environments
-
-### Content Improvements
-
-- Multiple episode styles (interview, narrative, debate)
-- Guest voice synthesis
-- Multi-language versions from single script
-- Interactive/branching podcast formats
+```
+podcast/tools/audio_generation/
+├── orchestrator.py                 # Main pipeline
+├── script/
+│   ├── generator.py                # Opus script generation
+│   ├── prompts/
+│   │   └── generation_prompt.md    # Master prompt
+│   └── schema.json                 # Script format
+├── critic/
+│   ├── agent.py                    # Critic refinement agent
+│   ├── rubric.md                   # Evaluation criteria
+│   └── training/
+│       ├── huberman_examples/      # Annotated transcripts
+│       └── founders_examples/      # Annotated transcripts
+├── synthesis/
+│   ├── elevenlabs_client.py        # TTS wrapper
+│   ├── pronunciation.json          # Custom dictionary
+│   └── emotion_mapping.json        # Delivery parameters
+├── production/
+│   ├── processor.py                # EQ, compression
+│   ├── pauses.py                   # Pause engineering
+│   └── presets/
+│       └── yudame_voice_chain.json
+├── mastering/
+│   ├── loudness.py                 # LUFS normalization
+│   ├── limiter.py                  # Peak limiting
+│   └── metadata.py                 # ID3 embedding
+├── qa/
+│   ├── automated_checks.py
+│   ├── critic_final_review.py
+│   └── reports/
+└── voice/
+    ├── config.json                 # Voice settings
+    └── samples/                    # Reference recordings
+```
 
 ---
 
 ## References
 
-### Voice Synthesis
+### Style Inspiration
 
-- ElevenLabs Documentation: https://elevenlabs.io/docs
-- Voice cloning best practices: ElevenLabs professional tier resources
-- SSML specification: W3C Speech Synthesis Markup Language
+- **Huberman Lab Podcast** — Scientific depth, mechanism clarity
+- **Founders Podcast (David Senra)** — Obsessive reading, story-driven wisdom
+- **Lex Fridman** — Thoughtful pacing, genuine curiosity
+- **Tim Ferriss** — Question-driven structure
 
-### Audio Production
+### Voice Inspiration
 
-- Podcast audio standards: Apple Podcasts requirements
+- Austrian/German TED speakers
+- Popular European university lecturers
+- Documentary narrators with European accents
+
+### Technical
+
+- ElevenLabs: https://elevenlabs.io/docs
 - Loudness standards: ITU-R BS.1770-4
-- Professional mastering: iZotope RX documentation
-
-### Conversation Design
-
-- Radiolab production methodology
-- This American Life storytelling structure
-- NPR training materials on conversational audio
+- Podcast specifications: Apple Podcasts requirements
