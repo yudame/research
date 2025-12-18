@@ -1,0 +1,116 @@
+/**
+ * Subscribe Component
+ * For podcast series pages
+ * Based on locked design specification
+ */
+
+/* === SUBSCRIBE BOX === */
+
+.subscribe-box {
+  background: var(--color-cream);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.subscribe-box-header {
+  margin: 0 0 var(--space-3) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+}
+
+.subscribe-buttons {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* === APPLE PODCASTS BUTTON === */
+
+.subscribe-apple {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.subscribe-apple:hover {
+  background: #333333;
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.subscribe-apple:focus {
+  outline: 2px solid var(--color-salmon);
+  outline-offset: 2px;
+}
+
+.subscribe-apple:active {
+  transform: translateY(0);
+}
+
+/* Apple Podcasts icon placeholder */
+.subscribe-apple::before {
+  content: "🎧";
+  font-size: 18px;
+}
+
+/* === OTHER APPS LINK === */
+
+.subscribe-other {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.subscribe-other:hover {
+  border-color: var(--color-salmon);
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.subscribe-other:focus {
+  outline: 2px solid var(--color-salmon);
+  outline-offset: 2px;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  .subscribe-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribe-apple,
+  .subscribe-other {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
+    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
 
     <style>
         body {
@@ -73,54 +74,6 @@
             margin-bottom: var(--space-4);
         }
 
-        .subscribe-box {
-            background: var(--color-cream);
-            border: 1px solid var(--color-gray-200);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            margin-bottom: var(--space-6);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: var(--space-3);
-            flex-wrap: wrap;
-        }
-
-        .subscribe-box p {
-            margin: 0;
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            font-weight: var(--weight-medium);
-            color: var(--color-black);
-        }
-
-        .spotify-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #1DB954;
-            color: var(--color-white);
-            border: none;
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--text-sm);
-            font-weight: var(--weight-medium);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all var(--transition-base);
-        }
-
-        .spotify-button:hover {
-            background: #1ED760;
-            color: var(--color-white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .spotify-button:focus {
-            outline: 2px solid var(--color-salmon);
-            outline-offset: 2px;
-        }
 
         .section-header {
             display: flex;
@@ -179,18 +132,8 @@
                 font-size: var(--text-xl);
             }
 
-            .subscribe-box {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .spotify-button {
-                width: 100%;
-                text-align: center;
-            }
         }
     </style>
-</style>
 </head>
 <body>
     <!-- Header -->
@@ -239,8 +182,11 @@
     </div>
 
     <div class="subscribe-box">
-        <p>Subscribe to the full podcast</p>
-        <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="spotify-button">Listen on Spotify</a>
+        <p class="subscribe-box-header">Subscribe to the full podcast</p>
+        <div class="subscribe-buttons">
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
+            <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+        </div>
     </div>
 
     <div class="section-header">
