@@ -245,7 +245,9 @@ Each series should have an `index.html` landing page showcasing all episodes wit
 **Required references:**
 1. `docs/design/components/podcast-player.css` - Episode card styling (MUST USE)
 2. `docs/design/components/foundation.css` - Design tokens and base styles (REQUIRED)
-3. `docs/design/components/podcast-player.html` - Reference implementation
+3. `docs/design/components/subscribe.css` - Subscribe box styling (MUST USE)
+4. `docs/design/components/podcast-player.html` - Reference implementation
+5. `docs/design/components/subscribe.html` - Subscribe component examples
 
 **Existing series pages (legacy - may not follow locked specs):**
 - `podcast/episodes/cardiovascular-health/index.html` - Complete series with audio
@@ -274,6 +276,7 @@ When creating new series pages, use the component library patterns, not legacy i
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
+    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
 </head>
 <body>
     <!-- Use component library classes -->
@@ -282,6 +285,15 @@ When creating new series pages, use the component library patterns, not legacy i
         <p style="font-family: var(--font-sans); font-size: var(--text-lg); color: var(--color-gray-700); margin-bottom: var(--space-4);">
             [Series description]
         </p>
+
+        <!-- Subscribe Box (from subscribe.css) -->
+        <div class="subscribe-box">
+            <p class="subscribe-box-header">Subscribe to the full podcast</p>
+            <div class="subscribe-buttons">
+                <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
+                <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            </div>
+        </div>
 
         <!-- Episode List (from podcast-player.css) -->
         <div class="episode-list">
@@ -354,6 +366,9 @@ When creating new series pages, use the component library patterns, not legacy i
 
 **All styling MUST use the component library (`docs/design/components/`):**
 
+- **Subscribe box:** Use `.subscribe-box` class from `subscribe.css`
+  - Primary CTA: Apple Podcasts (70.8% of listeners)
+  - Secondary link: "Other Apps" to SUBSCRIBE.md
 - **Episode cards:** Use `.episode` class from `podcast-player.css`
 - **Episode number badge:** Salmon background (#E8B4A8), black text, rounded pill
 - **Episode title:** Playfair Display serif font

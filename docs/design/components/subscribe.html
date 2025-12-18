@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Component - Yudame Research</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="foundation.css">
+    <link rel="stylesheet" href="subscribe.css">
+
+    <style>
+        body {
+            padding: var(--space-8);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-6);
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+        }
+
+        .example {
+            margin-bottom: var(--space-8);
+        }
+
+        .code {
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subscribe Component</h1>
+
+    <p style="font-family: var(--font-sans); font-size: var(--text-base); color: var(--color-gray-700); margin-bottom: var(--space-6);">
+        Subscribe box for podcast series pages, prioritizing Apple Podcasts (70.8% of listeners) with link to full subscription options.
+    </p>
+
+    <!-- Example 1: Standard Subscribe Box -->
+    <div class="example">
+        <h2>Standard Subscribe Box</h2>
+
+        <div class="subscribe-box">
+            <p class="subscribe-box-header">Subscribe to the full podcast</p>
+            <div class="subscribe-buttons">
+                <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
+                <a href="../../../podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            </div>
+        </div>
+
+        <div class="code"><pre>&lt;div class="subscribe-box"&gt;
+    &lt;p class="subscribe-box-header"&gt;Subscribe to the full podcast&lt;/p&gt;
+    &lt;div class="subscribe-buttons"&gt;
+        &lt;a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple"&gt;Listen on Apple Podcasts&lt;/a&gt;
+        &lt;a href="../../../podcast/SUBSCRIBE.md" class="subscribe-other"&gt;Other Apps&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+    </div>
+
+    <!-- Example 2: Custom Header Text -->
+    <div class="example">
+        <h2>Custom Header Text</h2>
+
+        <div class="subscribe-box">
+            <p class="subscribe-box-header">Never miss an episode</p>
+            <div class="subscribe-buttons">
+                <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
+                <a href="../../../podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            </div>
+        </div>
+
+        <div class="code"><pre>&lt;div class="subscribe-box"&gt;
+    &lt;p class="subscribe-box-header"&gt;Never miss an episode&lt;/p&gt;
+    &lt;div class="subscribe-buttons"&gt;
+        &lt;a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple"&gt;Listen on Apple Podcasts&lt;/a&gt;
+        &lt;a href="../../../podcast/SUBSCRIBE.md" class="subscribe-other"&gt;Other Apps&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+    </div>
+
+    <!-- Usage Notes -->
+    <div style="margin-top: var(--space-8); padding: var(--space-4); background: var(--color-gray-50); border-radius: var(--radius-md);">
+        <h2 style="margin-top: 0;">Usage Notes</h2>
+        <ul style="font-family: var(--font-sans); font-size: var(--text-base); line-height: var(--leading-loose);">
+            <li><strong>Apple Podcasts priority:</strong> 70.8% of podcast listeners use Apple Podcasts, so it's the primary CTA</li>
+            <li><strong>Other Apps link:</strong> Links to full SUBSCRIBE.md with instructions for all platforms</li>
+            <li><strong>RSS Feed URL:</strong> The feed is at <code>https://research.yuda.me/podcast/feed.xml</code></li>
+            <li><strong>Apple Podcasts URL:</strong> <code>https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179</code></li>
+            <li><strong>Responsive:</strong> Buttons stack vertically on mobile (&lt;768px)</li>
+            <li><strong>Design system:</strong> Uses locked colors (black, salmon, cream) and spacing tokens</li>
+        </ul>
+    </div>
+
+    <!-- Platform Distribution -->
+    <div style="margin-top: var(--space-6); padding: var(--space-4); background: var(--color-cream); border-radius: var(--radius-md);">
+        <h2 style="margin-top: 0;">Platform Distribution</h2>
+        <ul style="font-family: var(--font-mono); font-size: var(--text-sm); line-height: var(--leading-loose);">
+            <li>Apple Podcasts: 70.8%</li>
+            <li>Spotify: 8.9%</li>
+            <li>iHeartRadio: 3.0%</li>
+            <li>Alexa: 2.3%</li>
+            <li>Overcast: 1.6%</li>
+            <li>Stitcher: 1.3%</li>
+            <li>Amazon Music: 1.2%</li>
+            <li>Google Podcasts: 1.2%</li>
+        </ul>
+        <p style="font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-gray-700); margin-top: var(--space-3);">
+            Apple Podcasts dominates, making it the logical primary CTA. All other platforms are accessible via the SUBSCRIBE.md guide.
+        </p>
+    </div>
+</body>
+</html>
