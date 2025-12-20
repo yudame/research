@@ -3,74 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
+    <title>Episode Report - Yudame Research</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../../docs/design/components/navigation.css">
+
     <style>
-        body {
-            background: #ffffff;
-            padding: 0;
-            margin: 0;
-        }
-        .container {
-            max-width: 900px;
+        .article-container {
+            max-width: var(--max-width-article);
             margin: 0 auto;
-            padding: 2rem;
+            padding: var(--space-6);
         }
-        .markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 45px;
-        }
+
         .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
-            background: #f6f8fa;
-            border: 1px solid #d0d7de;
-            color: #24292f;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: all 0.2s;
+            margin-bottom: var(--space-4);
+            transition: color var(--transition-base);
         }
+
         .back-link:hover {
-            background: #24292f;
-            color: #ffffff;
-            border-color: #24292f;
+            color: var(--color-black);
         }
-        @media (max-width: 767px) {
-            .markdown-body {
-                padding: 15px;
+
+        .article-content {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            line-height: var(--leading-loose);
+            color: var(--color-gray-800);
+        }
+
+        .article-content h1 {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-snug);
+        }
+
+        .article-content h2 {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+            padding-bottom: var(--space-1);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-serif);
+            font-size: var(--text-lg);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: var(--space-3);
+            padding-left: var(--space-4);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-1);
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-salmon);
+            padding-left: var(--space-3);
+            margin: var(--space-4) 0;
+            color: var(--color-gray-600);
+            font-style: italic;
+        }
+
+        .article-content code {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            background: var(--color-cream);
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content pre {
+            background: var(--color-cream);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .article-content a {
+            color: var(--color-black);
+            text-decoration: underline;
+        }
+
+        .article-content a:hover {
+            color: var(--color-salmon);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: var(--space-4);
+        }
+
+        .article-content th, .article-content td {
+            border: 1px solid var(--color-gray-200);
+            padding: var(--space-2);
+            text-align: left;
+        }
+
+        .article-content th {
+            background: var(--color-cream);
+            font-weight: var(--weight-medium);
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: var(--space-3);
+            }
+
+            .article-content h1 {
+                font-size: var(--text-2xl);
+            }
+
+            .article-content h2 {
+                font-size: var(--text-lg);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Solomon Islands Telecom Series</a>
-        <article class="markdown-body" id="content">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../../../../" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="../../../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+                <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <a href="../index.html" class="back-link">← Back to Series</a>
+        <article class="article-content" id="content">
             Loading...
         </article>
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        // Try XMLHttpRequest for better local file support
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'report.md', true);
         xhr.onload = function() {
-            if (xhr.status === 200 || xhr.status === 0) { // 0 for local files
+            if (xhr.status === 200 || xhr.status === 0) {
                 document.getElementById('content').innerHTML = marked.parse(xhr.responseText);
             } else {
-                document.getElementById('content').innerHTML =
-                    '<p>Error loading report (status: ' + xhr.status + ')</p>';
+                document.getElementById('content').innerHTML = '<p>Error loading report</p>';
             }
         };
         xhr.onerror = function() {
-            document.getElementById('content').innerHTML =
-                '<p>Error loading report. If viewing locally, try opening via: <code>python3 -m http.server 8000</code> and navigate to <code>http://localhost:8000</code></p>';
+            document.getElementById('content').innerHTML = '<p>Error loading report</p>';
         };
         xhr.send();
     </script>
