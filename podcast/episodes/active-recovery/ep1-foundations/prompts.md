@@ -262,3 +262,57 @@ No text in the image - pure visual design.
 - File size: 1.0MB PNG
 - Color scheme: Dark navy/blue dominant with yellow accents
 
+
+
+## Cover Art Generation
+
+**Tool Used:** OpenRouter - google/gemini-3-pro-image-preview
+
+**Original Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Foundations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: Here is a counterintuitive finding that challenges common gym wisdom: when researchers examined whether active recovery or passive rest produces better long-term training adaptations, they found that 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+```
+
+**Enhanced Prompt:**
+```
+Modern podcast episode cover art for "Ep1 Foundations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: Here is a counterintuitive finding that challenges common gym wisdom: when researchers examined whether active recovery or passive rest produces better long-term training adaptations, they found that 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+IMPORTANT VISUAL REQUIREMENTS:
+- The ENTIRE canvas from edge to edge must be warm cream/off-white (#F5F1E8) - a light, warm background
+- Light cream background fills the complete image area - not just a section or inner frame
+- Use black (#000000) and warm salmon/coral (#E8B4A8) as accent colors on the cream background
+- Color palette should feel warm, sophisticated, and editorial - like a premium research publication
+- Pure abstract visualization only
+- Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
+- Clean visual design without any typography or graphic elements
+
+COMPOSITION:
+- Visual interest and detail should be concentrated in the LOWER 2/3 of the image
+- Keep the TOP 1/3 relatively simple and uncluttered for text overlay placement
+- Main graphic elements should flow from center to bottom
+- Avoid placing busy patterns or focal points in the upper third
+```
+
+**Aspect Ratio:** 1:1
+
+**Output:** cover.png
+
+**Date:** 2025-12-21

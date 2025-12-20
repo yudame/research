@@ -171,24 +171,47 @@ def add_branding(cover_path, series_text=None, episode_text=None,
     episode_font = load_font(playfair_italic_paths, episode_size, fallback_italic_paths + fallback_paths)
 
     # Create drawing context
-    img = cover.convert('RGB')
+    img = cover.convert('RGBA')
     draw = ImageDraw.Draw(img)
 
     # Current Y position for text layout
     current_y = padding
     current_x = padding
 
-    # Draw brand name
+    # Draw logo + brand name (like header)
     brand_text = "Yudame Research"
+    logo_height_target = int(brand_size * 1.1)  # Logo slightly taller than text
+
+    # Load and place logo if available
+    if show_logo and logo_path:
+        logo_file = Path(logo_path)
+        if logo_file.exists():
+            logo_img = Image.open(logo_file).convert('RGBA')
+            # Scale logo to match brand text height
+            logo_aspect = logo_img.width / logo_img.height
+            logo_h = logo_height_target
+            logo_w = int(logo_h * logo_aspect)
+            logo_img = logo_img.resize((logo_w, logo_h), Image.Resampling.LANCZOS)
+
+            # Paste logo
+            img.paste(logo_img, (current_x, current_y), logo_img)
+            current_x += logo_w + int(base_unit * 1.5)  # Gap after logo
+
+    # Draw brand text
+    brand_bbox = draw.textbbox((0, 0), brand_text, font=brand_font)
+    brand_text_height = brand_bbox[3] - brand_bbox[1]
+    # Vertically center text with logo
+    brand_y = current_y + (logo_height_target - brand_text_height) // 2
+
     if use_shadow:
         shadow_offset = max(2, int(base_unit * 0.25))
-        draw.text((current_x + shadow_offset, current_y + shadow_offset),
+        draw.text((current_x + shadow_offset, brand_y + shadow_offset),
                   brand_text, fill=(0, 0, 0, 128), font=brand_font)
-    draw.text((current_x, current_y), brand_text, fill=text_primary, font=brand_font)
+    draw.text((current_x, brand_y), brand_text, fill=text_primary, font=brand_font)
 
     # Move down for series/episode
-    bbox = draw.textbbox((0, 0), brand_text, font=brand_font)
-    current_y += (bbox[3] - bbox[1]) + section_gap
+    current_y += logo_height_target + section_gap
+    current_x = padding  # Reset X
 
     # Draw series name (if provided)
     if series_text:
@@ -207,27 +230,9 @@ def add_branding(cover_path, series_text=None, episode_text=None,
                       episode_text, fill=(0, 0, 0, 80), font=episode_font)
         draw.text((current_x, current_y), episode_text, fill=text_tertiary, font=episode_font)
 
-    # Optionally add small logo
-    if show_logo and logo_path:
-        logo_path = Path(logo_path)
-        if logo_path.exists():
-            logo = Image.open(logo_path).convert('RGBA')
-            # Small logo in bottom right
-            logo_size = int(width * 0.08)  # 8% of width
-            logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
-
-            # Position in bottom right with padding
-            logo_x = width - logo_size - padding
-            logo_y = height - logo_size - padding
-
-            # Paste with transparency
-            img_rgba = img.convert('RGBA')
-            img_rgba.paste(logo, (logo_x, logo_y), logo)
-            img = img_rgba.convert('RGB')
-
     # Save
     output_path = cover_path.parent / f"{cover_path.stem}_branded{cover_path.suffix}"
-    img.save(output_path, 'PNG', quality=95)
+    img.convert('RGB').save(output_path, 'PNG', quality=95)
     log(f"✓ Branded cover saved to: {output_path}")
 
     # Replace original
