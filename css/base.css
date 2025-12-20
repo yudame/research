@@ -1,0 +1,89 @@
+/* Yudame Research - Base Styles
+ * Design System v2.0
+ *
+ * Usage: Include this CSS on all pages for consistent background and foundation
+ */
+
+:root {
+  /* Foundation Colors */
+  --black: #000000;
+  --white: #FFFFFF;
+  --cream: #F5F1E8;
+
+  /* Salmon Accent */
+  --salmon: #E8B4A8;
+  --salmon-light: #F5D5CC;
+  --salmon-dark: #D89B8E;
+
+  /* Grays */
+  --gray-100: #F5F5F5;
+  --gray-200: #E5E5E5;
+  --gray-300: #D4D4D4;
+  --gray-600: #6B6B6B;
+  --gray-800: #3A3A3A;
+
+  /* Supporting Accents - Data visualization only */
+  --teal: #4A7C8C;
+  --yellow: #E8C547;
+  --rust: #C8867A;
+
+  /* Grid */
+  --grid-size: 20px;
+  --grid-color: #E5E5E5;
+}
+
+/* Graph Paper Background */
+.bg-graph-paper,
+body.bg-graph-paper {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Paper Texture Overlay - apply to container with position: relative */
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content sits above texture */
+.paper-texture > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Plain cream background (no grid) */
+.bg-cream {
+  background-color: var(--cream);
+}
+
+/* White background */
+.bg-white {
+  background-color: var(--white);
+}
+
+/* Full page background setup */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.bg-graph-paper {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Add paper texture to body */
+body.bg-graph-paper.paper-texture::before {
+  position: fixed;
+}

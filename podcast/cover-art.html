@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yudame Research Podcast Cover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #333;
+      padding: 40px;
+    }
+
+    .cover {
+      width: 3000px;
+      height: 3000px;
+      background-color: #F5F1E8;
+      background-image:
+        linear-gradient(#E5E5E5 1px, transparent 1px),
+        linear-gradient(90deg, #E5E5E5 1px, transparent 1px);
+      background-size: 60px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Text area - top, overlapping image */
+    .text-side {
+      position: absolute;
+      top: 88px;
+      left: 96px;
+      right: 100px;
+      z-index: 10;
+    }
+
+    /* Logo + Title row */
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .logo {
+      width: 260px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 171px;
+      line-height: 1;
+      color: #000000;
+      letter-spacing: -0.01em;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 171px;
+      font-weight: 600;
+      color: #666666;
+      margin-top: 220px;
+      line-height: 1.3;
+    }
+
+    /* Photo - full width from position */
+    .photo-side {
+      position: absolute;
+      top: 408px;
+      left: 300px;
+      width: 120%;
+      height: 120%;
+    }
+
+    .headshot {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    /* Hide old elements */
+    .content-container,
+    .brand-text,
+    .accent-bar {
+      display: none;
+    }
+
+    /* Preview scale for browser viewing */
+    .preview-wrapper {
+      transform: scale(0.3);
+      transform-origin: center center;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-wrapper">
+    <div class="cover" id="cover">
+      <!-- Left side - Text -->
+      <div class="text-side">
+        <div class="title-row">
+          <img src="yudame-logo.png" alt="" class="logo">
+          <div class="brand-name">Yudame Research</div>
+        </div>
+        <div class="tagline">Be the most<br>prepared person<br>in the room.</div>
+      </div>
+
+      <!-- Right side - Photo -->
+      <div class="photo-side">
+        <img src="valor-headshot.png" alt="Valor Engels" class="headshot">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

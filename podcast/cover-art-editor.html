@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cover Art Editor - Yudame Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* Sidebar Controls */
+    .sidebar {
+      width: 300px;
+      background: #2a2a2a;
+      padding: 20px;
+      overflow-y: auto;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .control-group {
+      margin-bottom: 20px;
+    }
+
+    .control-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .control-group input[type="range"] {
+      width: 100%;
+    }
+
+    .control-group .value {
+      font-size: 11px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+      color: #E8B4A8;
+    }
+
+    button {
+      background: #E8B4A8;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #d9a599;
+    }
+
+    #output {
+      background: #1a1a1a;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 11px;
+      white-space: pre-wrap;
+      margin-top: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #444;
+    }
+
+    /* Main Canvas Area */
+    .main {
+      margin-left: 300px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .canvas-wrapper {
+      position: relative;
+    }
+
+    /* The Cover Canvas (scaled for preview) */
+    .cover {
+      width: 3000px;
+      height: 3000px;
+      background-color: #F5F1E8;
+      background-image:
+        linear-gradient(#E5E5E5 1px, transparent 1px),
+        linear-gradient(90deg, #E5E5E5 1px, transparent 1px);
+      background-size: 60px 60px;
+      position: relative;
+      overflow: hidden;
+      transform: scale(0.25);
+      transform-origin: top left;
+    }
+
+    /* Draggable Elements */
+    .draggable {
+      position: absolute;
+      cursor: move;
+      user-select: none;
+    }
+
+    .draggable:hover {
+      outline: 3px dashed #E8B4A8;
+    }
+
+    .draggable.active {
+      outline: 3px solid #E8B4A8;
+    }
+
+    /* Text Elements */
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .logo {
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1;
+      color: #000000;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .byline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #666666;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-style: italic;
+      color: #000000;
+      line-height: 1.3;
+    }
+
+    .headshot-container {
+      position: absolute;
+    }
+
+    .headshot {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    /* Instructions */
+    .instructions {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 12px;
+      max-width: 250px;
+    }
+
+    .instructions h3 {
+      margin-bottom: 8px;
+      color: #E8B4A8;
+    }
+
+    .instructions ul {
+      padding-left: 15px;
+    }
+
+    .instructions li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Cover Art Editor</h2>
+
+    <div class="section-title">Logo</div>
+    <div class="control-group">
+      <label>Size</label>
+      <input type="range" id="logo-size" min="50" max="400" value="180">
+      <div class="value" id="logo-size-val">180px</div>
+    </div>
+
+    <div class="section-title">Brand Name</div>
+    <div class="control-group">
+      <label>Font Size</label>
+      <input type="range" id="brand-size" min="80" max="350" value="220">
+      <div class="value" id="brand-size-val">220px</div>
+    </div>
+
+    <div class="section-title">Byline</div>
+    <div class="control-group">
+      <label>Font Size</label>
+      <input type="range" id="byline-size" min="30" max="150" value="80">
+      <div class="value" id="byline-size-val">80px</div>
+    </div>
+
+    <div class="section-title">Tagline</div>
+    <div class="control-group">
+      <label>Font Size</label>
+      <input type="range" id="tagline-size" min="30" max="150" value="72">
+      <div class="value" id="tagline-size-val">72px</div>
+    </div>
+
+    <div class="section-title">Headshot</div>
+    <div class="control-group">
+      <label>Width (%)</label>
+      <input type="range" id="headshot-width" min="30" max="100" value="95">
+      <div class="value" id="headshot-width-val">95%</div>
+    </div>
+    <div class="control-group">
+      <label>Height (%)</label>
+      <input type="range" id="headshot-height" min="30" max="100" value="90">
+      <div class="value" id="headshot-height-val">90%</div>
+    </div>
+
+    <button onclick="exportCSS()">Export CSS Values</button>
+    <button onclick="resetPositions()">Reset All</button>
+
+    <div id="output"></div>
+  </div>
+
+  <div class="main">
+    <div class="canvas-wrapper">
+      <div class="cover" id="cover">
+        <!-- Title Row (Logo + Brand Name) -->
+        <div class="draggable" id="title-block" style="top: 100px; left: 100px;">
+          <div class="title-row">
+            <img src="yudame-logo.png" alt="" class="logo" id="logo">
+            <div class="brand-name" id="brand-name">Yudame Research</div>
+          </div>
+        </div>
+
+        <!-- Byline -->
+        <div class="draggable" id="byline-block" style="top: 380px; left: 100px;">
+          <div class="byline" id="byline">by Valor Engels</div>
+        </div>
+
+        <!-- Tagline -->
+        <div class="draggable" id="tagline-block" style="top: 500px; left: 100px;">
+          <div class="tagline" id="tagline">Be the most prepared<br>person in the room.</div>
+        </div>
+
+        <!-- Headshot -->
+        <div class="draggable headshot-container" id="headshot-block" style="bottom: -100px; left: 50%; transform: translateX(-50%); width: 95%; height: 90%;">
+          <img src="valor-headshot.png" alt="Valor Engels" class="headshot" id="headshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h3>Instructions</h3>
+    <ul>
+      <li>Drag elements to reposition</li>
+      <li>Use sliders to resize</li>
+      <li>Click "Export CSS" to get values</li>
+      <li>Copy CSS to cover-art.html</li>
+    </ul>
+  </div>
+
+  <script>
+    // State
+    const state = {
+      titleBlock: { x: 100, y: 100 },
+      bylineBlock: { x: 100, y: 380 },
+      taglineBlock: { x: 100, y: 500 },
+      headshotBlock: { x: 0, y: -100, centered: true },
+      logoSize: 180,
+      brandSize: 220,
+      bylineSize: 80,
+      taglineSize: 72,
+      headshotWidth: 95,
+      headshotHeight: 90
+    };
+
+    // Elements
+    const titleBlock = document.getElementById('title-block');
+    const bylineBlock = document.getElementById('byline-block');
+    const taglineBlock = document.getElementById('tagline-block');
+    const headshotBlock = document.getElementById('headshot-block');
+    const logo = document.getElementById('logo');
+    const brandName = document.getElementById('brand-name');
+    const byline = document.getElementById('byline');
+    const tagline = document.getElementById('tagline');
+
+    // Make elements draggable
+    let activeElement = null;
+    let offsetX, offsetY;
+
+    function makeDraggable(element, stateKey) {
+      element.addEventListener('mousedown', (e) => {
+        activeElement = element;
+        element.classList.add('active');
+
+        const rect = element.getBoundingClientRect();
+        const scale = 0.25;
+        offsetX = (e.clientX - rect.left) / scale;
+        offsetY = (e.clientY - rect.top) / scale;
+
+        e.preventDefault();
+      });
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      if (!activeElement) return;
+
+      const cover = document.getElementById('cover');
+      const coverRect = cover.getBoundingClientRect();
+      const scale = 0.25;
+
+      let newX = (e.clientX - coverRect.left) / scale - offsetX;
+      let newY = (e.clientY - coverRect.top) / scale - offsetY;
+
+      // Clamp to canvas
+      newX = Math.max(0, Math.min(3000 - activeElement.offsetWidth, newX));
+      newY = Math.max(-500, Math.min(3000, newY));
+
+      activeElement.style.left = newX + 'px';
+      activeElement.style.top = newY + 'px';
+      activeElement.style.bottom = 'auto';
+      activeElement.style.transform = 'none';
+
+      // Update state
+      const id = activeElement.id;
+      if (id === 'title-block') {
+        state.titleBlock = { x: newX, y: newY };
+      } else if (id === 'byline-block') {
+        state.bylineBlock = { x: newX, y: newY };
+      } else if (id === 'tagline-block') {
+        state.taglineBlock = { x: newX, y: newY };
+      } else if (id === 'headshot-block') {
+        state.headshotBlock = { x: newX, y: newY, centered: false };
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (activeElement) {
+        activeElement.classList.remove('active');
+        activeElement = null;
+      }
+    });
+
+    // Initialize draggables
+    makeDraggable(titleBlock, 'titleBlock');
+    makeDraggable(bylineBlock, 'bylineBlock');
+    makeDraggable(taglineBlock, 'taglineBlock');
+    makeDraggable(headshotBlock, 'headshotBlock');
+
+    // Slider handlers
+    document.getElementById('logo-size').addEventListener('input', (e) => {
+      state.logoSize = parseInt(e.target.value);
+      logo.style.width = state.logoSize + 'px';
+      document.getElementById('logo-size-val').textContent = state.logoSize + 'px';
+    });
+
+    document.getElementById('brand-size').addEventListener('input', (e) => {
+      state.brandSize = parseInt(e.target.value);
+      brandName.style.fontSize = state.brandSize + 'px';
+      document.getElementById('brand-size-val').textContent = state.brandSize + 'px';
+    });
+
+    document.getElementById('byline-size').addEventListener('input', (e) => {
+      state.bylineSize = parseInt(e.target.value);
+      byline.style.fontSize = state.bylineSize + 'px';
+      document.getElementById('byline-size-val').textContent = state.bylineSize + 'px';
+    });
+
+    document.getElementById('tagline-size').addEventListener('input', (e) => {
+      state.taglineSize = parseInt(e.target.value);
+      tagline.style.fontSize = state.taglineSize + 'px';
+      document.getElementById('tagline-size-val').textContent = state.taglineSize + 'px';
+    });
+
+    document.getElementById('headshot-width').addEventListener('input', (e) => {
+      state.headshotWidth = parseInt(e.target.value);
+      headshotBlock.style.width = state.headshotWidth + '%';
+      document.getElementById('headshot-width-val').textContent = state.headshotWidth + '%';
+    });
+
+    document.getElementById('headshot-height').addEventListener('input', (e) => {
+      state.headshotHeight = parseInt(e.target.value);
+      headshotBlock.style.height = state.headshotHeight + '%';
+      document.getElementById('headshot-height-val').textContent = state.headshotHeight + '%';
+    });
+
+    // Initialize sizes
+    logo.style.width = state.logoSize + 'px';
+    brandName.style.fontSize = state.brandSize + 'px';
+    byline.style.fontSize = state.bylineSize + 'px';
+    tagline.style.fontSize = state.taglineSize + 'px';
+
+    // Export CSS
+    function exportCSS() {
+      const css = `/* Generated CSS Values */
+
+.logo {
+  width: ${state.logoSize}px;
+}
+
+.brand-name {
+  font-size: ${state.brandSize}px;
+}
+
+.byline {
+  font-size: ${state.bylineSize}px;
+}
+
+.tagline {
+  font-size: ${state.taglineSize}px;
+}
+
+/* Positions */
+.title-row-container {
+  top: ${Math.round(state.titleBlock.y)}px;
+  left: ${Math.round(state.titleBlock.x)}px;
+}
+
+.byline-container {
+  top: ${Math.round(state.bylineBlock.y)}px;
+  left: ${Math.round(state.bylineBlock.x)}px;
+}
+
+.tagline-container {
+  top: ${Math.round(state.taglineBlock.y)}px;
+  left: ${Math.round(state.taglineBlock.x)}px;
+}
+
+.headshot-container {
+  ${state.headshotBlock.centered
+    ? `bottom: ${-state.headshotBlock.y}px;
+  left: 50%;
+  transform: translateX(-50%);`
+    : `top: ${Math.round(state.headshotBlock.y)}px;
+  left: ${Math.round(state.headshotBlock.x)}px;`}
+  width: ${state.headshotWidth}%;
+  height: ${state.headshotHeight}%;
+}`;
+
+      document.getElementById('output').textContent = css;
+
+      // Also copy to clipboard
+      navigator.clipboard.writeText(css).then(() => {
+        alert('CSS copied to clipboard!');
+      }).catch(() => {
+        // Clipboard failed, but output is visible
+      });
+    }
+
+    // Reset positions
+    function resetPositions() {
+      state.titleBlock = { x: 100, y: 100 };
+      state.bylineBlock = { x: 100, y: 380 };
+      state.taglineBlock = { x: 100, y: 500 };
+      state.headshotBlock = { x: 0, y: -100, centered: true };
+      state.logoSize = 180;
+      state.brandSize = 220;
+      state.bylineSize = 80;
+      state.taglineSize = 72;
+      state.headshotWidth = 95;
+      state.headshotHeight = 90;
+
+      // Reset elements
+      titleBlock.style.top = '100px';
+      titleBlock.style.left = '100px';
+      bylineBlock.style.top = '380px';
+      bylineBlock.style.left = '100px';
+      taglineBlock.style.top = '500px';
+      taglineBlock.style.left = '100px';
+      headshotBlock.style.top = 'auto';
+      headshotBlock.style.bottom = '-100px';
+      headshotBlock.style.left = '50%';
+      headshotBlock.style.transform = 'translateX(-50%)';
+      headshotBlock.style.width = '95%';
+      headshotBlock.style.height = '90%';
+
+      // Reset sliders
+      document.getElementById('logo-size').value = 180;
+      document.getElementById('brand-size').value = 220;
+      document.getElementById('byline-size').value = 80;
+      document.getElementById('tagline-size').value = 72;
+      document.getElementById('headshot-width').value = 95;
+      document.getElementById('headshot-height').value = 90;
+
+      // Reset displays
+      document.getElementById('logo-size-val').textContent = '180px';
+      document.getElementById('brand-size-val').textContent = '220px';
+      document.getElementById('byline-size-val').textContent = '80px';
+      document.getElementById('tagline-size-val').textContent = '72px';
+      document.getElementById('headshot-width-val').textContent = '95%';
+      document.getElementById('headshot-height-val').textContent = '90%';
+
+      // Reset element styles
+      logo.style.width = '180px';
+      brandName.style.fontSize = '220px';
+      byline.style.fontSize = '80px';
+      tagline.style.fontSize = '72px';
+
+      document.getElementById('output').textContent = '';
+    }
+  </script>
+</body>
+</html>
