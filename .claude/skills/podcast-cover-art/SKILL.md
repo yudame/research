@@ -1,6 +1,6 @@
 ---
 name: podcast-cover-art
-description: Generate podcast cover art with AI and apply branding. Uses Gemini via OpenRouter for image generation, then adds Yudame Research logo, series/episode text, and yellow border. Use after report.md is complete and before audio processing. Requires OPENROUTER_API_KEY.
+description: Generate podcast cover art with AI and apply branding. Uses Gemini via OpenRouter for image generation, then adds Yudame Research logo, series/episode text, and salmon border (#E8B4A8). Use after report.md is complete and before audio processing. Requires OPENROUTER_API_KEY.
 ---
 
 # Podcast Cover Art Generation
@@ -99,8 +99,7 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --brand "Yudame Research" \
   --series "SERIES_NAME" \
   --episode "EPISODE_TEXT" \
-  --border 20 \
-  --border-color "#FFC20E"
+  --border 20
 
 # With organized logging (recommended for production)
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
@@ -109,7 +108,6 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --series "SERIES_NAME" \
   --episode "EPISODE_TEXT" \
   --border 20 \
-  --border-color "#FFC20E" \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 
@@ -119,18 +117,17 @@ python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --brand "Yudame Research" \
   --episode "EPISODE_TEXT" \
   --border 20 \
-  --border-color "#FFC20E" \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 ```
 
 **add_logo_watermark.py features:**
-- Adds yellow "A" logo (from `podcast/yudame-logo.png`) to specified position
-- Adds text overlays: brand name, series name (optional), episode info
-- Series text uses BIGGER font (6.5% of image width) to be prominent
-- Episode text uses SMALLER font (5% of image width) to handle long topic names
+- Adds Yudame logo (from `podcast/yudame-logo.png`) to specified position
+- Adds text overlays: brand name (Playfair Display font), series/episode info (Inter font)
+- Brand text uses serif font matching design spec headlines
+- Series/episode text uses sans-serif font matching design spec body text
 - Series text is optional - omit `--series` for standalone episodes
-- Adds yellow border (#FFC20E) matching logo color
+- Adds salmon border (#E8B4A8) matching brand accent color
 - Recommended border width: 20px (15-25px range)
 - Logo positioned top-left with brand text beside it
 - Series/episode text positioned below logo with proper margin
@@ -156,10 +153,10 @@ Update the episode's `prompts.md` file with the cover art generation details:
 
 **Branding Applied:**
 - Position: top-left
-- Brand: Yudame Research
-- Series: [Series name if applicable]
-- Episode: [Episode text]
-- Border: 20px, #FFC20E
+- Brand: Yudame Research (Playfair Display font)
+- Series: [Series name if applicable] (Inter font)
+- Episode: [Episode text] (Inter font)
+- Border: 20px, #E8B4A8 (salmon)
 
 **Date:** YYYY-MM-DD
 ```
@@ -168,7 +165,9 @@ Update the episode's `prompts.md` file with the cover art generation details:
 
 - Base size: 1024x1024px (or custom aspect ratio)
 - With 20px border: 1064x1064px total (for 1:1)
-- Color scheme: Dark navy/blue dominant, teal/white/silver accents
+- Color scheme: Rich dark backgrounds with salmon (#E8B4A8) and cream (#F5F1E8) accents
+- Border color: Salmon (#E8B4A8) - matches brand accent
+- Typography: Playfair Display (brand), Inter (series/episode)
 - File size: ~500KB PNG format
 - Clean abstract visualization without text from AI
 

@@ -3,152 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardiovascular Health Series - Yudame Research</title>
+    <title>Cardiovascular Health - Yudame Research</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Design System -->
+    <link rel="stylesheet" href="../../../css/base.css">
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
     <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
-    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
-
-    <style>
-        body {
-            padding: var(--space-6) var(--space-4);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-family: var(--font-sans);
-            font-size: var(--text-sm);
-            color: var(--color-gray-600);
-            margin-bottom: var(--space-4);
-        }
-
-        .breadcrumb a {
-            color: var(--color-gray-600);
-            text-decoration: underline;
-            transition: color var(--transition-base);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--color-black);
-        }
-
-        .page-header {
-            margin-bottom: var(--space-6);
-        }
-
-        .header-logo-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-2);
-        }
-
-        .header-logo-row img {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-lg);
-        }
-
-        .page-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-4xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .page-tagline {
-            font-family: var(--font-sans);
-            font-size: var(--text-lg);
-            color: var(--color-gray-800);
-            line-height: var(--leading-loose);
-            margin-bottom: var(--space-4);
-        }
-
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-4);
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-3xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .complete-badge {
-            display: inline-block;
-            background-color: var(--color-salmon);
-            color: var(--color-black);
-            font-family: var(--font-sans);
-            font-size: var(--text-xs);
-            font-weight: var(--weight-medium);
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: var(--space-8);
-            padding: 10px 24px;
-            background: transparent;
-            color: var(--color-black);
-            border: 2px solid var(--color-black);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            font-weight: var(--weight-medium);
-            text-decoration: none;
-            transition: all var(--transition-base);
-        }
-
-        .back-link:hover {
-            border-color: var(--color-salmon);
-            color: var(--color-black);
-        }
-
-        .back-link:focus {
-            outline: 2px solid var(--color-salmon);
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: var(--space-4) var(--space-3);
-            }
-
-            .page-title {
-                font-size: var(--text-xl);
-            }
-
-            .page-tagline {
-                font-size: var(--text-base);
-            }
-
-            .section-title {
-                font-size: var(--text-xl);
-            }
-
-        }
-    </style>
 </head>
-<body>
+<body class="bg-graph-paper-light paper-texture">
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -160,7 +32,7 @@
                 <ul class="nav">
                     <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
-                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Research</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Methodology</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -178,134 +50,162 @@
         <ul class="mobile-nav">
             <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
             <li class="mobile-nav-item"><a href="../../../#podcast" class="mobile-nav-link is-active">Podcast</a></li>
-            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Research</a></li>
+            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Methodology</a></li>
         </ul>
     </div>
 
-    <main style="padding-top: var(--space-6);">
-        <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
-
+    <main class="series-content">
         <div class="page-header">
-        <div class="header-logo-row">
-            <img src="../../../podcast/yudame-logo.png" alt="Yudame Research Logo">
             <h1 class="page-title">Cardiovascular Health</h1>
+            <p class="page-tagline">Evidence-based optimization of heart health, fitness, and longevity.</p>
         </div>
-        <p class="page-tagline">A 4-part evidence-based series on optimizing heart health, fitness, and longevity</p>
-    </div>
 
-    <div class="subscribe-box">
-        <p class="subscribe-box-header">Subscribe to the full podcast</p>
         <div class="subscribe-buttons">
-            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
-            <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
         </div>
-    </div>
 
-    <div class="section-header">
         <h2 class="section-title">Episodes</h2>
-        <span class="complete-badge">Complete</span>
-    </div>
 
-    <div class="episode-list">
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 1</span>
-                <span class="episode-title">Lifestyle Foundations</span>
-                <span class="episode-duration">43:57</span>
-                <span class="episode-links-inline">
-                    <a href="ep1-lifestyle/report.html">Report</a>
-                    <a href="ep1-lifestyle/transcript.html">Transcript</a>
-                </span>
+        <div class="episode-list">
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">Lifestyle Foundations</span>
+                    <span class="episode-duration">43:57</span>
+                    <span class="episode-links-inline">
+                        <a href="ep1-lifestyle/report.html">Report</a>
+                        <a href="ep1-lifestyle/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">How VO2 max and HRV predict longevity better than traditional risk factors, plus the lifestyle framework to optimize both.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Each 1-MET improvement in VO2 max reduces all-cause mortality by 11-17%, while optimal sleep and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">How VO2 max and HRV predict longevity better than traditional risk factors, plus the lifestyle framework to optimize both.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Discover how VO2 max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both. Each 1-MET improvement in VO2 max reduces all-cause mortality by 11-17%, while optimal sleep and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 2</span>
-                <span class="episode-title">VO2 Max</span>
-                <span class="episode-duration">36:13</span>
-                <span class="episode-links-inline">
-                    <a href="ep2-vo2-max/report.html">Report</a>
-                    <a href="ep2-vo2-max/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 2</span>
+                    <span class="episode-title">VO2 Max</span>
+                    <span class="episode-duration">36:13</span>
+                    <span class="episode-links-inline">
+                        <a href="ep2-vo2-max/report.html">Report</a>
+                        <a href="ep2-vo2-max/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Evidence-based strategies to maximize VO2 max through polarized training, optimal intervals, and nutrition.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Deep dive into the strongest predictor of longevity through polarized training (80% easy, 20% brutally hard), optimal interval protocols like the 4x4 method, performance nutrition, and strategic supplementation.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Evidence-based strategies to maximize VO2 max through polarized training, optimal intervals, and nutrition.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols like the 4x4 method, performance nutrition, and strategic supplementation.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep2-vo2-max/2025-11-21-cardiovascular-health-episode-2-vo2-max.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 3</span>
-                <span class="episode-title">Heart Rate Variability</span>
-                <span class="episode-duration">42:46</span>
-                <span class="episode-links-inline">
-                    <a href="ep3-hrv/report.html">Report</a>
-                    <a href="ep3-hrv/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 3</span>
+                    <span class="episode-title">Heart Rate Variability</span>
+                    <span class="episode-duration">42:46</span>
+                    <span class="episode-links-inline">
+                        <a href="ep3-hrv/report.html">Report</a>
+                        <a href="ep3-hrv/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Which HRV metrics matter, how to measure reliably, and which interventions show the largest effect sizes.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">HRV offers a window into autonomic nervous system function and training readiness. Learn which metrics actually matter (RMSSD vs SDNN), how to measure reliably, when a 15% drop signals overtraining, and which interventions show the largest effect sizes.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Which HRV metrics matter, how to measure reliably, and which interventions show the largest effect sizes.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">HRV has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function and training readiness. Learn which metrics actually matter (RMSSD vs SDNN), how to measure reliably, when a 15% drop signals overtraining, and which interventions show the largest effect sizes.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep3-hrv/2025-11-21-cardiovascular-health-episode-3-hrv.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 4</span>
-                <span class="episode-title">Supplementation</span>
-                <span class="episode-duration">37:38</span>
-                <span class="episode-links-inline">
-                    <a href="ep4-supplementation/report.html">Report</a>
-                    <a href="ep4-supplementation/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 4</span>
+                    <span class="episode-title">Supplementation</span>
+                    <span class="episode-duration">37:38</span>
+                    <span class="episode-links-inline">
+                        <a href="ep4-supplementation/report.html">Report</a>
+                        <a href="ep4-supplementation/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">What works, what fails spectacularly, and optimal dosing protocols for cardiovascular supplements.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49%, and why vitamin D and niacin failed despite decades of hype.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">What works, what fails spectacularly, and optimal dosing protocols for cardiovascular supplements.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Evidence-based guide to cardiovascular supplements and medications: what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49%, and why vitamin D and niacin failed despite decades of hype.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
         </div>
-    </div>
-
-        <a href="../../../" class="back-link">Back to Yudame Research</a>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">Yudame<br>Research</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Research</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../kindergarten-first-principles/">Kindergarten Series</a></li>
+                        <li><a href="../../active-recovery/">Active Recovery</a></li>
+                        <li><a href="../../algorithms-for-life/">Algorithms for Life</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Podcast</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                        <li><a href="../../../podcast/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://yuda.me">Home</a></li>
+                        <li><a href="https://ai.yuda.me">AI</a></li>
+                        <li><a href="https://research.yuda.me">Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="year"></span> Yudame</p>
+                <p class="footer-dedication">We do the research. You get the edge.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('is-active');
                 this.classList.toggle('is-active');
             });
         }
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

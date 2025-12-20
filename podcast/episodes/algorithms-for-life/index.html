@@ -10,132 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Design System -->
+    <link rel="stylesheet" href="../../../css/base.css">
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
     <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
-    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
 
-    <style>
-        body {
-            padding: var(--space-6) var(--space-4);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-family: var(--font-sans);
-            font-size: var(--text-sm);
-            color: var(--color-gray-600);
-            margin-bottom: var(--space-4);
-        }
-
-        .breadcrumb a {
-            color: var(--color-gray-600);
-            text-decoration: underline;
-            transition: color var(--transition-base);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--color-black);
-        }
-
-        .page-header {
-            margin-bottom: var(--space-6);
-        }
-
-        .header-logo-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-2);
-        }
-
-        .header-logo-row img {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-lg);
-        }
-
-        .page-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-4xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .page-tagline {
-            font-family: var(--font-sans);
-            font-size: var(--text-lg);
-            color: var(--color-gray-800);
-            line-height: var(--leading-loose);
-            margin-bottom: var(--space-4);
-        }
-
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-4);
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-3xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: var(--space-8);
-            padding: 10px 24px;
-            background: transparent;
-            color: var(--color-black);
-            border: 2px solid var(--color-black);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            font-weight: var(--weight-medium);
-            text-decoration: none;
-            transition: all var(--transition-base);
-        }
-
-        .back-link:hover {
-            border-color: var(--color-salmon);
-            color: var(--color-black);
-        }
-
-        .back-link:focus {
-            outline: 2px solid var(--color-salmon);
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: var(--space-4) var(--space-3);
-            }
-
-            .page-title {
-                font-size: var(--text-xl);
-            }
-
-            .page-tagline {
-                font-size: var(--text-base);
-            }
-
-            .section-title {
-                font-size: var(--text-xl);
-            }
-
-        }
-    </style>
+    <!-- Page styles now in css/base.css -->
 </head>
-<body>
+<body class="bg-graph-paper-light paper-texture">
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -147,7 +34,7 @@
                 <ul class="nav">
                     <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
-                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Research</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Methodology</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -165,59 +52,91 @@
         <ul class="mobile-nav">
             <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
             <li class="mobile-nav-item"><a href="../../../#podcast" class="mobile-nav-link is-active">Podcast</a></li>
-            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Research</a></li>
+            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Methodology</a></li>
         </ul>
     </div>
 
-    <main style="padding-top: var(--space-6);">
-<body>
-    <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
-
-    <div class="page-header">
-        <div class="header-logo-row">
-            <img src="../../../podcast/yudame-logo.png" alt="Yudame Research Logo">
+    <main class="series-content">
+        <div class="page-header">
             <h1 class="page-title">Algorithms for Life</h1>
+            <p class="page-tagline">Systematic approaches to human optimization through behavioral science and evidence-based practice.</p>
         </div>
-        <p class="page-tagline">Exploring systematic approaches to human optimization through the lens of algorithms, behavioral science, and evidence-based practice</p>
-    </div>
 
-    <div class="subscribe-box">
-        <p class="subscribe-box-header">Subscribe to the full podcast</p>
         <div class="subscribe-buttons">
-            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
-            <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
         </div>
-    </div>
 
-    <div class="section-header">
         <h2 class="section-title">Episodes</h2>
-    </div>
 
-    <div class="episode-list">
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 1</span>
-                <span class="episode-title">Spaced Repetition - The Algorithm That Optimizes How We Remember</span>
-                <span class="episode-duration">43:38</span>
-                <span class="episode-links-inline">
-                    <a href="ep1-spaced-repetition/report.html">Report</a>
-                    <a href="ep1-spaced-repetition/transcript.html">Transcript</a>
-                </span>
+        <div class="episode-list">
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">Spaced Repetition</span>
+                    <span class="episode-duration">43:38</span>
+                    <span class="episode-links-inline">
+                        <a href="ep1-spaced-repetition/report.html">Report</a>
+                        <a href="ep1-spaced-repetition/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Despite 140 years of research showing 74% better retention than cramming, only 0.1% of Duolingo's 500 million users complete a course. Why does a technique with molecular proof collapse when it meets real behavior?</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Explores the molecular biology of memory: CREB protein as the switch determining temporary vs. lasting memory, fruit fly experiments showing 7-day vs. 3-day retention from identical training with different spacing. Covers the algorithmic evolution from Wozniak's 1985 SM-0 to modern FSRS with 21 trainable parameters. Details the Cepeda meta-analysis of 839 assessments. Investigates why learners with 20,000+ reviewed cards struggle with basic conversation. Reveals that sophisticated algorithms produce only ~3% better outcomes than fixed intervals.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep1-spaced-repetition/ep1-spaced-repetition.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Despite 140 years of research showing 74% better retention than cramming, only 0.1% of Duolingo's 500 million users complete a course. The paradox: a technique with molecular mechanisms and laboratory proof that collapses when it meets real behavior.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Explores the molecular biology: CREB protein as the switch determining temporary vs. lasting memory, fruit fly experiments showing 7-day vs. 3-day retention from identical training with different spacing. Covers the algorithmic evolution from Wozniak's 1985 SM-0 to modern FSRS with 21 trainable parameters optimized via machine learning. Details the Cepeda meta-analysis of 839 assessments showing optimal intervals are proportional to retention goals (20-40% for one-week, 5-10% for one-year). Investigates the recognition-production chasm: why learners with 20,000+ reviewed cards struggle with basic conversation. Examines context-dependent memory research showing 40% performance drops when retrieval context differs from learning context. Reveals that sophisticated algorithms produce only ~3% better outcomes than fixed intervals, suggesting the algorithm is not the bottleneck. Includes integration strategies with comprehensible input and deliberate output practice.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep1-spaced-repetition/ep1-spaced-repetition.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
         </div>
-    </div>
-
-    <a href="../../../" class="back-link">Back to Yudame Research</a>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">Yudame<br>Research</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Research</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../kindergarten-first-principles/">Kindergarten Series</a></li>
+                        <li><a href="../../cardiovascular-health/">Cardiovascular Health</a></li>
+                        <li><a href="../../active-recovery/">Active Recovery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Podcast</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                        <li><a href="../../../podcast/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://yuda.me">Home</a></li>
+                        <li><a href="https://ai.yuda.me">AI</a></li>
+                        <li><a href="https://research.yuda.me">Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="year"></span> Yudame</p>
+                <p class="footer-dedication">We do the research. You get the edge.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
@@ -230,6 +149,9 @@
                 this.classList.toggle('is-active');
             });
         }
+
+        // Update year
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

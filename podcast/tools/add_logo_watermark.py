@@ -32,7 +32,7 @@ except ImportError:
 
 
 def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_ratio=0.12,
-                  brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#FFC20E',
+                  brand_text=None, series_text=None, episode_text=None, border_width=0, border_color='#E8B4A8',
                   verbose=True, log_file=None):
     """
     Add logo watermark and text overlays to cover image.
@@ -136,7 +136,7 @@ def add_watermark(cover_path, logo_path, position='top-left', opacity=1.0, size_
     return cover_path
 
 
-def add_border(image, border_width, border_color='#FFC20E'):
+def add_border(image, border_width, border_color='#E8B4A8'):
     """
     Add a solid color border around the image.
 
@@ -182,23 +182,70 @@ def add_text_overlays(image, brand_text=None, series_text=None, episode_text=Non
     width, height = img.size
     padding = int(width * 0.05)
 
-    # Try to load nice fonts, fall back to default
-    # Note: series_font and episode_font use same size to prevent overflow
-    try:
-        # Try common macOS system fonts
-        brand_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.055))
-        series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))  # Same as episode
-        episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", int(width * 0.05))
-    except:
+    # Font specifications from design spec:
+    # - Brand text: Playfair Display (serif, weight 600)
+    # - Series/Episode text: Inter (sans-serif, weight 400/500)
+    # Font sizes as percentage of image width
+    brand_size = int(width * 0.055)
+    text_size = int(width * 0.05)
+
+    # Try to load design spec fonts, with fallbacks
+    brand_font = None
+    series_font = None
+    episode_font = None
+
+    # Playfair Display for brand (serif headline font)
+    playfair_paths = [
+        "/System/Library/Fonts/Supplemental/PlayfairDisplay-SemiBold.ttf",
+        "/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
+        "~/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
+        "/System/Library/Fonts/Supplemental/PlayfairDisplay-Bold.ttf",
+        "/Library/Fonts/PlayfairDisplay-Bold.ttf",
+    ]
+    for font_path in playfair_paths:
         try:
-            brand_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.055))
-            series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
-            episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", int(width * 0.05))
+            brand_font = ImageFont.truetype(Path(font_path).expanduser(), brand_size)
+            break
         except:
-            # Fallback to default
-            brand_font = ImageFont.load_default()
-            series_font = ImageFont.load_default()
-            episode_font = ImageFont.load_default()
+            continue
+
+    # Inter for series/episode text (sans-serif UI font)
+    inter_paths = [
+        "/System/Library/Fonts/Supplemental/Inter-Medium.ttf",
+        "/Library/Fonts/Inter-Medium.ttf",
+        "~/Library/Fonts/Inter-Medium.ttf",
+        "/System/Library/Fonts/Supplemental/Inter-Regular.ttf",
+        "/Library/Fonts/Inter-Regular.ttf",
+    ]
+    for font_path in inter_paths:
+        try:
+            series_font = ImageFont.truetype(Path(font_path).expanduser(), text_size)
+            episode_font = ImageFont.truetype(Path(font_path).expanduser(), text_size)
+            break
+        except:
+            continue
+
+    # Fallback to system fonts if design spec fonts not available
+    if not brand_font:
+        try:
+            brand_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", brand_size)
+        except:
+            try:
+                brand_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", brand_size)
+            except:
+                brand_font = ImageFont.load_default()
+
+    if not series_font or not episode_font:
+        try:
+            series_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", text_size)
+            episode_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", text_size)
+        except:
+            try:
+                series_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", text_size)
+                episode_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", text_size)
+            except:
+                series_font = ImageFont.load_default()
+                episode_font = ImageFont.load_default()
 
     # Start position based on logo location
     if logo_position == 'top-left':
@@ -265,8 +312,8 @@ def main():
     parser.add_argument("--episode", help="Episode text (e.g., 'Ep 3 - HRV')")
     parser.add_argument("--border", type=int, default=0,
                        help="Border width in pixels (default: 0 = no border, recommended: 15-25)")
-    parser.add_argument("--border-color", default="#FFC20E",
-                       help="Border color in hex (default: #FFC20E = yellow)")
+    parser.add_argument("--border-color", default="#E8B4A8",
+                       help="Border color in hex (default: #E8B4A8 = salmon)")
     parser.add_argument(
         "--log-dir",
         help="Directory for log files (default: same as cover image)"
