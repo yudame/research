@@ -85,7 +85,7 @@ Gap: 48px between columns
 Column 1 (Brand):
   Logo: "Yudame Research" stacked
   Font: Playfair Display, 24px, weight 600
-  Tagline below: "Research-based early childhood education"
+  Tagline below: "Be the most prepared person in the room."
   Tagline font: Inter, 12px, color #6B6B6B
 
 Columns 2-4 (Navigation):

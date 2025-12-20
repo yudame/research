@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yudame Research - Evidence-Based Early Childhood Education</title>
+    <title>Yudame Research - Be the most prepared person in the room</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,86 @@
         /* Page-specific styles */
         .hero {
             background: linear-gradient(135deg, var(--color-white) 0%, var(--color-cream) 100%);
-            padding: var(--space-12) 0;
-            text-align: center;
+            padding: var(--space-8) 0 0;
+            overflow: hidden;
+        }
+
+        .hero-layout {
+            display: flex;
+            align-items: flex-end;
+            gap: var(--space-4);
+        }
+
+        .hero-tagline {
+            flex: 0 0 auto;
+            padding-bottom: var(--space-3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-byline {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+            padding-top: var(--space-6);
+            margin-bottom: -20px;
+        }
+
+        .hero-headshot {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-self: flex-end;
+            margin-bottom: -60px;
+        }
+
+        .hero-tagline h1 {
+            font-size: var(--text-5xl);
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .hero-headshot img {
+            width: 420px;
+            height: auto;
+            display: block;
+            clip-path: inset(0 0 60px 0);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-headshot img {
+                width: 340px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding-bottom: 0;
+            }
+
+            .hero-layout {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-tagline {
+                padding-bottom: var(--space-4);
+            }
+
+            .hero-tagline h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .hero-byline {
+                display: none;
+            }
+
+            .hero-headshot {
+                display: none;
+            }
         }
 
         .section {
@@ -246,12 +324,14 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Yudame Research</h1>
-            <p style="font-size: var(--text-lg); color: var(--color-gray-800); max-width: 680px; margin: 0 auto var(--space-4);">
-                Research-based early childhood education. Every claim verified across multiple intelligence sources to find contradictions.
-            </p>
-            <div class="btn-group btn-group-center">
-                <a href="#featured-series" class="btn btn-primary btn-large">Explore Series</a>
+            <div class="hero-layout">
+                <div class="hero-tagline">
+                    <h1>Be the most<br>prepared person<br>in the room.</h1>
+                    <p class="hero-byline">with Valor Engels</p>
+                </div>
+                <div class="hero-headshot">
+                    <img src="podcast/valor-headshot-4x.png" alt="Valor Engels">
+                </div>
             </div>
         </div>
     </section>
@@ -289,26 +369,52 @@
         </div>
     </section>
 
-    <!-- Featured Series Section -->
-    <section id="featured-series" class="section">
+    <!-- Health Section -->
+    <section id="health" class="section">
         <div class="container">
-            <h2 class="section-title">Featured Series</h2>
+            <h2 class="section-title">Health</h2>
             <div class="series-grid">
-                <a href="podcast/episodes/kindergarten-first-principles/" class="series-card">
-                    <div class="series-card-title">Kindergarten, from First Principles</div>
-                    <div class="series-card-meta">6 episodes · Early childhood education, developmental science, play, sleep, frameworks</div>
-                </a>
                 <a href="podcast/episodes/cardiovascular-health/" class="series-card">
                     <div class="series-card-title">Cardiovascular Health</div>
                     <div class="series-card-meta">4 episodes · VO2 max, HRV, lifestyle, supplementation</div>
                 </a>
                 <a href="podcast/episodes/active-recovery/" class="series-card">
                     <div class="series-card-title">Active Recovery</div>
-                    <div class="series-card-meta">4-part series (3 published) · Recovery optimization, athlete performance, evidence-based training</div>
+                    <div class="series-card-meta">4 episodes · Recovery optimization, athlete performance, evidence-based training</div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="series-grid">
+                <a href="podcast/episodes/kindergarten-first-principles/" class="series-card">
+                    <div class="series-card-title">Kindergarten, from First Principles</div>
+                    <div class="series-card-meta">6 episodes · Early childhood education, developmental science, play, sleep, frameworks</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business" class="section">
+        <div class="container">
+            <h2 class="section-title">Business</h2>
+            <div class="series-grid">
                 <a href="podcast/episodes/algorithms-for-life/" class="series-card">
                     <div class="series-card-title">Algorithms for Life</div>
                     <div class="series-card-meta">1 episode · Spaced repetition, behavioral science, systematic optimization</div>
+                </a>
+                <a href="podcast/episodes/stablecoin-series/" class="series-card">
+                    <div class="series-card-title">Stablecoin Series</div>
+                    <div class="series-card-meta">2 episodes · Market evolution, legal compliance, token economics</div>
+                </a>
+                <a href="podcast/episodes/solomon-islands-telecom-series/" class="series-card">
+                    <div class="series-card-title">Solomon Islands Telecom</div>
+                    <div class="series-card-meta">6 episodes · Market entry, infrastructure, mobile money, regulatory strategy</div>
                 </a>
             </div>
         </div>
@@ -320,7 +426,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">Yudame<br>Research</div>
-                    <div class="footer-tagline">Research-based early childhood education</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
                 </div>
                 <div class="footer-column">
                     <h3 class="footer-heading">Research</h3>

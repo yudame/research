@@ -65,6 +65,12 @@ Located in `reference images/`:
 
 ## Design System Summary
 
+**Brand Identity:**
+- **Tagline:** "Be the most prepared person in the room."
+- **Podcast Host:** Valor Engels
+- **Cover Art:** `podcast/podcast-cover.png`
+- **Host Headshot:** `podcast/valor-headshot-4x.png`
+
 **Visual Identity:**
 - Minimal black on white/cream foundation
 - Muted salmon pink (#E8B4A8) accent color (never for body text)
