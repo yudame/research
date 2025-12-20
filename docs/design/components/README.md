@@ -401,7 +401,7 @@ toggle.addEventListener('click', () => {
       <div class="footer-column">
         <div class="footer-logo">Yudame Research</div>
         <p class="footer-tagline">
-          Research-based early childhood education
+          Be the most prepared person in the room.
         </p>
       </div>
 

@@ -10,6 +10,26 @@ Yudame Research bridges rigorous academic research with human-centered design. T
 
 ---
 
+## Brand Identity
+
+### Tagline
+**Be the most prepared person in the room.**
+
+This tagline honors our brand values: thoughtful, detailed, skeptical, patient, valuable, worthy, and fidelity to accuracy. The customer becomes the hero—they become the most prepared. We're the guide, not the protagonist.
+
+See `docs/design/TAGLINE.md` for full rationale.
+
+### Podcast Host
+**Valor Engels** — Host and primary voice of Yudame Research.
+
+Headshot asset: `podcast/valor-headshot-4x.png` (transparent background, suitable for hero sections with larger-than-life cropping)
+
+### Visual Assets
+- **Podcast Cover Art:** `podcast/podcast-cover.png` — Features Yudame branding with yellow border and host headshot
+- **Logo:** `podcast/yudame-logo.png` — Yellow "A" icon + "Yudame Research" text
+
+---
+
 ## Foundation: Color & Typography
 
 ### Color Palette
