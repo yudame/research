@@ -54,12 +54,12 @@ def generate_prompt_from_report(report_text, episode_title):
     summary = ' '.join(lines[:3])[:500]
 
     # Create focused prompt with design spec colors
-    # Primary: Black (#000000), Salmon accent (#E8B4A8), Cream (#F5F1E8)
+    # Primary: Cream (#F5F1E8) background, Black (#000000), Salmon accent (#E8B4A8)
     prompt = f"""Modern podcast episode cover art for "{episode_title}":
 
 Style: Clean, professional, abstract visualization
 Layout: Bold visual elements suitable for square format
-Color palette: Rich dark backgrounds (deep charcoal or navy) with warm salmon/coral (#E8B4A8) and cream (#F5F1E8) accents
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
 Concept: {summary[:200]}
 
 Design as square format (1024x1024px) with space for text overlay.
@@ -98,14 +98,14 @@ def generate_image(prompt, output_path, model_id=DEFAULT_MODEL, aspect_ratio="1:
         return None, None
 
     # Append explicit instructions to avoid text/icons and ensure consistent brand colors
-    # Design spec colors: Black (#000000), Salmon (#E8B4A8), Cream (#F5F1E8)
+    # Design spec colors: Cream (#F5F1E8) background, Black (#000000), Salmon (#E8B4A8) accents
     enhanced_prompt = f"""{prompt}
 
 IMPORTANT VISUAL REQUIREMENTS:
-- The ENTIRE canvas from edge to edge must use rich dark tones (deep charcoal, navy, or black) - no borders, frames, or light backgrounds
-- Dark background fills the complete image area - not just a section or inner frame
-- Use warm salmon/coral (#E8B4A8) and cream (#F5F1E8) as accent colors on the dark background
-- Color palette should feel warm and sophisticated, not cold or clinical
+- The ENTIRE canvas from edge to edge must be warm cream/off-white (#F5F1E8) - a light, warm background
+- Light cream background fills the complete image area - not just a section or inner frame
+- Use black (#000000) and warm salmon/coral (#E8B4A8) as accent colors on the cream background
+- Color palette should feel warm, sophisticated, and editorial - like a premium research publication
 - Pure abstract visualization only
 - Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
 - Clean visual design without any typography or graphic elements
