@@ -10,145 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Design System -->
+    <link rel="stylesheet" href="../../../css/base.css">
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
     <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
-    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
-
-    <style>
-        body {
-            padding: var(--space-6) var(--space-4);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-family: var(--font-sans);
-            font-size: var(--text-sm);
-            color: var(--color-gray-600);
-            margin-bottom: var(--space-4);
-        }
-
-        .breadcrumb a {
-            color: var(--color-gray-600);
-            text-decoration: underline;
-            transition: color var(--transition-base);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--color-black);
-        }
-
-        .page-header {
-            margin-bottom: var(--space-6);
-        }
-
-        .header-logo-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-2);
-        }
-
-        .header-logo-row img {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-lg);
-        }
-
-        .page-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-4xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .page-tagline {
-            font-family: var(--font-sans);
-            font-size: var(--text-lg);
-            color: var(--color-gray-800);
-            line-height: var(--leading-loose);
-            margin-bottom: var(--space-4);
-        }
-
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-4);
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-3xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .complete-badge {
-            display: inline-block;
-            background-color: var(--color-salmon);
-            color: var(--color-black);
-            font-family: var(--font-sans);
-            font-size: var(--text-xs);
-            font-weight: var(--weight-medium);
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: var(--space-8);
-            padding: 10px 24px;
-            background: transparent;
-            color: var(--color-black);
-            border: 2px solid var(--color-black);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            font-weight: var(--weight-medium);
-            text-decoration: none;
-            transition: all var(--transition-base);
-        }
-
-        .back-link:hover {
-            border-color: var(--color-salmon);
-            color: var(--color-black);
-        }
-
-        .back-link:focus {
-            outline: 2px solid var(--color-salmon);
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: var(--space-4) var(--space-3);
-            }
-
-            .page-title {
-                font-size: var(--text-xl);
-            }
-
-            .page-tagline {
-                font-size: var(--text-base);
-            }
-
-            .section-title {
-                font-size: var(--text-xl);
-            }
-
-        }
-    </style>
 </head>
-<body>
+<body class="bg-graph-paper-light paper-texture">
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -160,7 +32,7 @@
                 <ul class="nav">
                     <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
-                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Research</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Methodology</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -178,177 +50,202 @@
         <ul class="mobile-nav">
             <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
             <li class="mobile-nav-item"><a href="../../../#podcast" class="mobile-nav-link is-active">Podcast</a></li>
-            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Research</a></li>
+            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Methodology</a></li>
         </ul>
     </div>
 
-    <main style="padding-top: var(--space-6);">
-<body>
-    <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
-
-    <div class="page-header">
-        <div class="header-logo-row">
-            <img src="../../../podcast/yudame-logo.png" alt="Yudame Research Logo">
+    <main class="series-content">
+        <div class="page-header">
             <h1 class="page-title">Kindergarten, from First Principles</h1>
+            <p class="page-tagline">Evidence-based early childhood education design for ages 4-6.</p>
         </div>
-        <p class="page-tagline">A 6-part evidence-based series on designing optimal early childhood education for ages 4-6</p>
-    </div>
 
-    <div class="subscribe-box">
-        <p class="subscribe-box-header">Subscribe to the full podcast</p>
         <div class="subscribe-buttons">
-            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
-            <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
         </div>
-    </div>
 
-    <div class="section-header">
         <h2 class="section-title">Episodes</h2>
-        <span class="complete-badge">Complete</span>
-    </div>
 
-    <div class="episode-list">
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 1</span>
-                <span class="episode-title">The Developmental Imperative</span>
-                <span class="episode-duration">43:31</span>
-                <span class="episode-links-inline">
-                    <a href="ep1-developmental-imperative/report.html">Report</a>
-                    <a href="ep1-developmental-imperative/transcript.html">Transcript</a>
-                </span>
+        <div class="episode-list">
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">The Developmental Imperative</span>
+                    <span class="episode-duration">43:31</span>
+                    <span class="episode-links-inline">
+                        <a href="ep1-developmental-imperative/report.html">Report</a>
+                        <a href="ep1-developmental-imperative/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">What science says matters most at ages 4-6: executive function, self-regulation, and why process skills trump content.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">The shocking Duncan study finding that early math skills—not social-emotional competence—are the strongest predictor of later academic success. How executive function acts as a cognitive amplifier across 25 lifespan outcomes, and the implementation paradox where Tools of the Mind produced effect sizes ranging from 0.0 to 0.8 based purely on teacher fidelity.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep1-developmental-imperative/2025-11-28-developmental-imperative.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">What science says matters most at ages 4-6: executive function, self-regulation, and why process skills trump content.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">What developmental science identifies as the highest-leverage variables for children ages 4-6. Reveals the shocking Duncan study finding that early math skills—not social-emotional competence—are the strongest predictor of later academic success, examines how executive function acts as a cognitive amplifier across 25 lifespan outcomes, and exposes the implementation paradox where Tools of the Mind produced effect sizes ranging from 0.0 to 0.8 based purely on teacher fidelity.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep1-developmental-imperative/2025-11-28-developmental-imperative.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 2</span>
-                <span class="episode-title">Play as Pedagogy</span>
-                <span class="episode-duration">41:03</span>
-                <span class="episode-links-inline">
-                    <a href="ep2-play-pedagogy/report.html">Report</a>
-                    <a href="ep2-play-pedagogy/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 2</span>
+                    <span class="episode-title">Play as Pedagogy</span>
+                    <span class="episode-duration">41:03</span>
+                    <span class="episode-links-inline">
+                        <a href="ep2-play-pedagogy/report.html">Report</a>
+                        <a href="ep2-play-pedagogy/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">The neuroscience of play and why it may be the primary engine of development, not mere enrichment.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Strong neurobiological foundations meet surprisingly modest measurable gains (g ≈ 0.3-0.4). Guided play as the optimal approach outperforming both free play and direct instruction, the deprivation-enrichment asymmetry, the minimum effective dose (35+ minutes), and why at-risk children benefit most.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep2-play-pedagogy/ep2-play-pedagogy.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">The neuroscience of play and why it may be the primary engine of development, not mere enrichment.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">The neuroscience of play is remarkably strong—precise mechanisms show how play shapes brain architecture through BDNF upregulation and synaptic pruning. Yet behavioral evidence reveals modest effect sizes (g ≈ 0.3-0.4) and limited transfer across domains. This episode examines the paradox: strong neurobiological foundations meet surprisingly modest measurable gains. We explore guided play as the optimal approach (outperforming both free play and direct instruction), the deprivation-enrichment asymmetry, the minimum effective dose (35+ minutes), and why at-risk children benefit most.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep2-play-pedagogy/ep2-play-pedagogy.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 3</span>
-                <span class="episode-title">Sleep, Memory, and the Daily Blueprint</span>
-                <span class="episode-duration">33:59</span>
-                <span class="episode-links-inline">
-                    <a href="ep3-sleep-memory-scheduling/report.html">Report</a>
-                    <a href="ep3-sleep-memory-scheduling/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 3</span>
+                    <span class="episode-title">Sleep, Memory, and the Daily Blueprint</span>
+                    <span class="episode-duration">33:59</span>
+                    <span class="episode-links-inline">
+                        <a href="ep3-sleep-memory-scheduling/report.html">Report</a>
+                        <a href="ep3-sleep-memory-scheduling/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">How pre-nap learning windows and sleep-dependent memory consolidation should shape daily schedules.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Missing a single nap causes irreversible memory loss in habitual nappers—overnight sleep cannot compensate. Rebecca Spencer's research reveals why the hippocampal "desk" fills up faster in young children, requiring strategic timing of declarative content before naps and procedural skills after.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep3-sleep-memory-scheduling/ep3-sleep-memory-scheduling.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">How pre-nap learning windows and sleep-dependent memory consolidation should shape daily schedules.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Missing a single nap causes irreversible memory loss in habitual nappers—overnight sleep cannot compensate. Rebecca Spencer's landmark research reveals why the hippocampal "desk" fills up faster in young children, requiring strategic timing of declarative content before naps and procedural skills after. Sleep deprivation symptoms mimic ADHD, making sleep quality the primary upstream intervention for classroom behavior and retention.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep3-sleep-memory-scheduling/ep3-sleep-memory-scheduling.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 4</span>
-                <span class="episode-title">The Social Laboratory</span>
-                <span class="episode-duration">38:10</span>
-                <span class="episode-links-inline">
-                    <a href="ep4-social-laboratory/report.html">Report</a>
-                    <a href="ep4-social-laboratory/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 4</span>
+                    <span class="episode-title">The Social Laboratory</span>
+                    <span class="episode-duration">38:10</span>
+                    <span class="episode-links-inline">
+                        <a href="ep4-social-laboratory/report.html">Report</a>
+                        <a href="ep4-social-laboratory/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Optimal group sizes, peer dynamics, and how intentional social friction builds essential skills.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">The unique value of symmetrical peer relationships, why conflict is developmental fuel when properly scaffolded, effect sizes from major meta-analyses (d = 0.35-0.69), the ratio question (why 7.5:1 matters), the SEL paradox, and how individual differences require differentiated support.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep4-social-laboratory/ep4-social-laboratory.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Optimal group sizes, peer dynamics, and how intentional social friction builds essential skills.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">The kindergarten classroom is a social laboratory where children develop competencies through peer interaction that adults cannot replicate. This episode explores the unique value of symmetrical peer relationships, why conflict is developmental fuel when properly scaffolded, and the evidence-based design principles for optimal social-emotional learning environments. We examine effect sizes from major meta-analyses (d = 0.35-0.69), the ratio question (why 7.5:1 matters), the SEL paradox (large effects vs. fade-out concerns), and how individual differences (temperament, ADHD, autism, attachment) require differentiated support.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep4-social-laboratory/ep4-social-laboratory.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 5</span>
-                <span class="episode-title">Sustaining Excellence</span>
-                <span class="episode-duration">24:19</span>
-                <span class="episode-links-inline">
-                    <a href="ep5-sustaining-excellence/report.html">Report</a>
-                    <a href="ep5-sustaining-excellence/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 5</span>
+                    <span class="episode-title">Sustaining Excellence</span>
+                    <span class="episode-duration">24:19</span>
+                    <span class="episode-links-inline">
+                        <a href="ep5-sustaining-excellence/report.html">Report</a>
+                        <a href="ep5-sustaining-excellence/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Teacher wellbeing in intensive low-ratio settings: burnout, emotional labor, and support structures.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">The intimacy paradox: close relationships create developmental magic for children but threaten sustainability. Research reveals 45-72% burnout rates, compensation as the strongest retention predictor, and Communities of Practice as the "silver bullet" for isolated practitioners.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep5-sustaining-excellence/ep5-sustaining-excellence.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Teacher wellbeing in intensive low-ratio settings: burnout, emotional labor, and support structures.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">The intimacy paradox of early childhood education: while close relationships create developmental magic for children, they threaten the sustainability of those providing it. Research reveals 45-72% burnout rates across settings, with professional isolation emerging as the dominant risk in intensive care. Evidence shows the first three years as the critical vulnerability window, with compensation as the strongest retention predictor—yet organizational climate and collegial support remain the most potent modifiable factors. This episode examines the ratio threshold effect (7.5:1), the homeschooling paradox (flexibility protects, rigidity depletes), and why Communities of Practice function as the "silver bullet" for isolated practitioners.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep5-sustaining-excellence/ep5-sustaining-excellence.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 6</span>
-                <span class="episode-title">Frameworks and the Prepared Environment</span>
-                <span class="episode-duration">44:05</span>
-                <span class="episode-links-inline">
-                    <a href="ep6-frameworks-environment/report.html">Report</a>
-                    <a href="ep6-frameworks-environment/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 6</span>
+                    <span class="episode-title">Frameworks and the Prepared Environment</span>
+                    <span class="episode-duration">44:05</span>
+                    <span class="episode-links-inline">
+                        <a href="ep6-frameworks-environment/report.html">Report</a>
+                        <a href="ep6-frameworks-environment/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Montessori, HighScope, and Reggio Emilia—comparative effectiveness and the search for universal principles.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Adherence to the curriculum matters more than which one you choose. The implementation fidelity effect, 40-70 year longitudinal data, the prepared environment paradox (structured freedom outperforms both rigid instruction and pure free play), and universal principles across frameworks.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="ep6-frameworks-environment/ep6-frameworks-environment.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Montessori, HighScope, and Reggio Emilia—comparative effectiveness and the search for universal principles.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Three major curricula dominate evidence-based early childhood education: Montessori, HighScope, and Reggio Emilia. But the literature reveals a surprising pattern—adherence to the curriculum matters more than which one you choose. This episode examines the implementation fidelity effect (the largest predictor of outcomes), the 40-70 year longitudinal data showing sustained gains in executive function and creativity, the prepared environment paradox (structured freedom outperforms both rigid instruction and pure free play), and the teacher autonomy trade-off. We extract universal principles across frameworks: child-directed learning with adult scaffolding, mixed-age groupings, hands-on materials, and uninterrupted work periods.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="ep6-frameworks-environment/ep6-frameworks-environment.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
         </div>
-    </div>
-
-    <a href="../../../" class="back-link">Back to Yudame Research</a>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">Yudame<br>Research</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Research</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../cardiovascular-health/">Cardiovascular Health</a></li>
+                        <li><a href="../../active-recovery/">Active Recovery</a></li>
+                        <li><a href="../../algorithms-for-life/">Algorithms for Life</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Podcast</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                        <li><a href="../../../podcast/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://yuda.me">Home</a></li>
+                        <li><a href="https://ai.yuda.me">AI</a></li>
+                        <li><a href="https://research.yuda.me">Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="year"></span> Yudame</p>
+                <p class="footer-dedication">We do the research. You get the edge.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('is-active');
                 this.classList.toggle('is-active');
             });
         }
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

@@ -243,15 +243,19 @@ Each series should have an `index.html` landing page showcasing all episodes wit
 **IMPORTANT: Use the locked design system components.**
 
 **Required references:**
-1. `docs/design/components/podcast-player.css` - Episode card styling (MUST USE)
-2. `docs/design/components/foundation.css` - Design tokens and base styles (REQUIRED)
-3. `docs/design/components/subscribe.css` - Subscribe box styling (MUST USE)
-4. `docs/design/components/podcast-player.html` - Reference implementation
-5. `docs/design/components/subscribe.html` - Subscribe component examples
+1. `css/base.css` - Background patterns, series page layout, subscribe buttons (REQUIRED)
+2. `docs/design/components/foundation.css` - Design tokens and base styles
+3. `docs/design/components/navigation.css` - Header and nav styles
+4. `docs/design/components/podcast-player.css` - Episode card styling
+5. `docs/design/components/buttons.css` - Button base styles
+6. Font Awesome CDN - Icons for subscribe buttons
 
-**Existing series pages (legacy - may not follow locked specs):**
-- `podcast/episodes/cardiovascular-health/index.html` - Complete series with audio
-- `podcast/episodes/kindergarten-first-principles/index.html` - Upcoming series template
+**Reference implementation:**
+- `podcast/episodes/algorithms-for-life/index.html` - Current template (use this as reference)
+
+**Legacy series pages (may need updating):**
+- `podcast/episodes/cardiovascular-health/index.html`
+- `podcast/episodes/kindergarten-first-principles/index.html`
 
 When creating new series pages, use the component library patterns, not legacy implementations.
 
@@ -272,30 +276,56 @@ When creating new series pages, use the component library patterns, not legacy i
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Design System (REQUIRED) -->
+    <link rel="stylesheet" href="../../../css/base.css">
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
-    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
-</head>
-<body>
-    <!-- Use component library classes -->
-    <div class="container">
-        <h1 class="episode-list-header">[Series Name]</h1>
-        <p style="font-family: var(--font-sans); font-size: var(--text-lg); color: var(--color-gray-700); margin-bottom: var(--space-4);">
-            [Series description]
-        </p>
 
-        <!-- Subscribe Box (from subscribe.css) -->
-        <div class="subscribe-box">
-            <p class="subscribe-box-header">Subscribe to the full podcast</p>
-            <div class="subscribe-buttons">
-                <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
-                <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
-            </div>
+    <!-- Series page styles are in css/base.css -->
+</head>
+<body class="bg-graph-paper-light paper-texture">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../../../" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="../../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+                <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Methodology</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="series-content">
+        <div class="page-header">
+            <h1 class="page-title">[Series Name]</h1>
+            <p class="page-tagline">[Series description]</p>
         </div>
 
-        <!-- Episode List (from podcast-player.css) -->
+        <div class="subscribe-buttons">
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
+        </div>
+
+        <h2 class="section-title">Episodes</h2>
+
         <div class="episode-list">
             <!-- Episode card (see docs/design/components/podcast-player.html for full example) -->
             <div class="episode">
@@ -366,9 +396,10 @@ When creating new series pages, use the component library patterns, not legacy i
 
 **All styling MUST use the component library (`docs/design/components/`):**
 
-- **Subscribe box:** Use `.subscribe-box` class from `subscribe.css`
-  - Primary CTA: Apple Podcasts (70.8% of listeners)
-  - Secondary link: "Other Apps" to SUBSCRIBE.md
+- **Subscribe buttons:** Three inline buttons (Apple Podcasts purple, Spotify green, Other gray)
+  - Apple Podcasts: `background: #9333ea`
+  - Spotify: `background: #1db954`
+  - Other: `background: var(--color-gray-600)` → links to `podcast/subscribe.html`
 - **Episode cards:** Use `.episode` class from `podcast-player.css`
 - **Episode number badge:** Salmon background (#E8B4A8), black text, rounded pill
 - **Episode title:** Playfair Display serif font

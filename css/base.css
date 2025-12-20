@@ -32,6 +32,12 @@
   --grid-color: #E5E5E5;
 }
 
+/* Subtle gradient background (matches homepage hero) */
+.bg-gradient,
+body.bg-gradient {
+  background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+}
+
 /* Graph Paper Background */
 .bg-graph-paper,
 body.bg-graph-paper {
@@ -40,6 +46,16 @@ body.bg-graph-paper {
     linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Graph Paper on Gradient */
+.bg-graph-paper-light,
+body.bg-graph-paper-light {
+  background:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+  background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), 100% 100%;
 }
 
 /* Paper Texture Overlay - apply to container with position: relative */
@@ -78,12 +94,109 @@ html, body {
   padding: 0;
 }
 
-body.bg-graph-paper {
+body.bg-graph-paper,
+body.bg-graph-paper-light {
   min-height: 100vh;
   position: relative;
 }
 
 /* Add paper texture to body */
-body.bg-graph-paper.paper-texture::before {
+body.bg-graph-paper.paper-texture::before,
+body.bg-graph-paper-light.paper-texture::before {
   position: fixed;
+}
+
+/* ================================
+   Series Page Styles
+   ================================ */
+
+.series-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px; /* var(--space-6) var(--space-4) */
+}
+
+.page-header {
+  margin-bottom: 48px; /* var(--space-6) */
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 8px 0;
+}
+
+.page-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: var(--gray-800);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 24px 0;
+}
+
+/* Subscribe Buttons */
+.subscribe-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.podcast-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.podcast-button:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  filter: brightness(1.1);
+}
+
+.podcast-button:focus {
+  outline: 2px solid var(--salmon);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .series-content {
+    padding: 24px 16px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .page-tagline {
+    font-size: 1rem;
+  }
+
+  .subscribe-buttons {
+    flex-direction: column;
+  }
+
+  .podcast-button {
+    justify-content: center;
+  }
 }

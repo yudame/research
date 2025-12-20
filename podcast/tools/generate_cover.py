@@ -53,12 +53,13 @@ def generate_prompt_from_report(report_text, episode_title):
     lines = [l.strip() for l in report_text.split('\n') if l.strip() and not l.startswith('#')]
     summary = ' '.join(lines[:3])[:500]
 
-    # Create focused prompt
+    # Create focused prompt with design spec colors
+    # Primary: Black (#000000), Salmon accent (#E8B4A8), Cream (#F5F1E8)
     prompt = f"""Modern podcast episode cover art for "{episode_title}":
 
 Style: Clean, professional, abstract visualization
 Layout: Bold visual elements suitable for square format
-Color palette: Deep navy blues and dark blues as the dominant theme throughout
+Color palette: Rich dark backgrounds (deep charcoal or navy) with warm salmon/coral (#E8B4A8) and cream (#F5F1E8) accents
 Concept: {summary[:200]}
 
 Design as square format (1024x1024px) with space for text overlay.
@@ -96,13 +97,15 @@ def generate_image(prompt, output_path, model_id=DEFAULT_MODEL, aspect_ratio="1:
         log("Set it in .env file or environment: export OPENROUTER_API_KEY='your-api-key'")
         return None, None
 
-    # Append explicit instructions to avoid text/icons and ensure consistent dark theme
+    # Append explicit instructions to avoid text/icons and ensure consistent brand colors
+    # Design spec colors: Black (#000000), Salmon (#E8B4A8), Cream (#F5F1E8)
     enhanced_prompt = f"""{prompt}
 
 IMPORTANT VISUAL REQUIREMENTS:
-- The ENTIRE canvas from edge to edge must be deep navy blue and dark blue tones - no borders, frames, or light backgrounds
-- Dark blue fills the complete image area - not just a section or inner frame
-- Use bright teal, white, and silver only as accent colors on top of the dark blue theme
+- The ENTIRE canvas from edge to edge must use rich dark tones (deep charcoal, navy, or black) - no borders, frames, or light backgrounds
+- Dark background fills the complete image area - not just a section or inner frame
+- Use warm salmon/coral (#E8B4A8) and cream (#F5F1E8) as accent colors on the dark background
+- Color palette should feel warm and sophisticated, not cold or clinical
 - Pure abstract visualization only
 - Absolutely no text, no numbers, no labels, no annotations, no icons, no logos, no symbols, no letterforms of any kind
 - Clean visual design without any typography or graphic elements

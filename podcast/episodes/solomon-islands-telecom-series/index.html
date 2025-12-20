@@ -3,139 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solomon Islands Telecom Launch - Yudame Research</title>
+    <title>Solomon Islands Telecom - Yudame Research</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Design System -->
+    <link rel="stylesheet" href="../../../css/base.css">
     <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
     <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
     <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
     <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
-    <link rel="stylesheet" href="../../../docs/design/components/subscribe.css">
-
-    <style>
-        body {
-            padding: var(--space-6) var(--space-4);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-family: var(--font-sans);
-            font-size: var(--text-sm);
-            color: var(--color-gray-600);
-            margin-bottom: var(--space-4);
-        }
-
-        .breadcrumb a {
-            color: var(--color-gray-600);
-            text-decoration: underline;
-            transition: color var(--transition-base);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--color-black);
-        }
-
-        .page-header {
-            margin-bottom: var(--space-6);
-        }
-
-        .header-logo-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-2);
-        }
-
-        .header-logo-row img {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-lg);
-        }
-
-        .page-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-4xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .page-tagline {
-            font-family: var(--font-sans);
-            font-size: var(--text-lg);
-            color: var(--color-gray-800);
-            line-height: var(--leading-loose);
-            margin-bottom: var(--space-4);
-        }
-
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-4);
-        }
-
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: var(--text-3xl);
-            font-weight: var(--weight-semibold);
-            color: var(--color-black);
-            margin: 0;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: var(--space-8);
-            padding: 10px 24px;
-            background: transparent;
-            color: var(--color-black);
-            border: 2px solid var(--color-black);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            font-weight: var(--weight-medium);
-            text-decoration: none;
-            transition: all var(--transition-base);
-        }
-
-        .back-link:hover {
-            border-color: var(--color-salmon);
-            color: var(--color-black);
-        }
-
-        .back-link:focus {
-            outline: 2px solid var(--color-salmon);
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: var(--space-4) var(--space-3);
-            }
-
-            .page-title {
-                font-size: var(--text-xl);
-            }
-
-            .page-tagline {
-                font-size: var(--text-base);
-            }
-
-            .section-title {
-                font-size: var(--text-xl);
-            }
-
-        }
-    </style>
 </head>
-<body>
+<body class="bg-graph-paper-light paper-texture">
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -147,7 +32,7 @@
                 <ul class="nav">
                     <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="../../../#podcast" class="nav-link is-active">Podcast</a></li>
-                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Research</a></li>
+                    <li class="nav-item"><a href="../../../#methodology" class="nav-link">Methodology</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -165,176 +50,202 @@
         <ul class="mobile-nav">
             <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
             <li class="mobile-nav-item"><a href="../../../#podcast" class="mobile-nav-link is-active">Podcast</a></li>
-            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Research</a></li>
+            <li class="mobile-nav-item"><a href="../../../#methodology" class="mobile-nav-link">Methodology</a></li>
         </ul>
     </div>
 
-    <main style="padding-top: var(--space-6);">
-<body>
-    <p class="breadcrumb"><a href="../../../">Yudame Research</a> / Podcast Series</p>
-
-    <div class="page-header">
-        <div class="header-logo-row">
-            <img src="../../../podcast/yudame-logo.png" alt="Yudame Research Logo">
-            <h1 class="page-title">Solomon Islands Telecom Launch</h1>
+    <main class="series-content">
+        <div class="page-header">
+            <h1 class="page-title">Solomon Islands Telecom</h1>
+            <p class="page-tagline">Strategic partnership-enabled market entry in Pacific telecommunications.</p>
         </div>
-        <p class="page-tagline">A 6-part series exploring strategic partnership-enabled market entry in Pacific telecommunications</p>
-    </div>
 
-    <div class="subscribe-box">
-        <p class="subscribe-box-header">Subscribe to the full podcast</p>
         <div class="subscribe-buttons">
-            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="subscribe-apple">Listen on Apple Podcasts</a>
-            <a href="https://research.yuda.me/podcast/SUBSCRIBE.md" class="subscribe-other">Other Apps</a>
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
         </div>
-    </div>
 
-    <div class="section-header">
         <h2 class="section-title">Episodes</h2>
-    </div>
 
-    <div class="episode-list">
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 1</span>
-                <span class="episode-title">Financial Infrastructure</span>
-                <span class="episode-duration">30:25</span>
-                <span class="episode-links-inline">
-                    <a href="episode-1-financial-infrastructure/report.html">Report</a>
-                    <a href="episode-1-financial-infrastructure/transcript.html">Transcript</a>
-                </span>
+        <div class="episode-list">
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">Financial Infrastructure</span>
+                    <span class="episode-duration">30:25</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-1-financial-infrastructure/report.html">Report</a>
+                        <a href="episode-1-financial-infrastructure/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">The financial ecosystem and payment infrastructure landscape in the Solomon Islands.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">The 80% cash economy, M-SELEN's 350,000-user explosion in 2 years, banking infrastructure limitations (15 branches, 59 ATMs, 72%+ concentrated in Honiara), and the financial inclusion opportunity (75% unbanked, 70% have mobile phones).</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">The financial ecosystem and payment infrastructure landscape in the Solomon Islands.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Explores the 80% cash economy, M-SELEN's 350,000-user explosion in 2 years, banking infrastructure limitations (15 branches, 59 ATMs, 72%+ concentrated in Honiara), mobile money competitors, utility payments as gateway use case, remittance flows, CBSI regulatory framework, and the Bokolo Cash CBDC pilot. Establishes the financial inclusion opportunity (75% unbanked, 70% have mobile phones) and why telecom + payments integration matters for launching a new provider with mobile money from day one.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 2</span>
-                <span class="episode-title">Breaking the Duopoly</span>
-                <span class="episode-duration">37:31</span>
-                <span class="episode-links-inline">
-                    <a href="episode-2-breaking-duopoly/report.html">Report</a>
-                    <a href="episode-2-breaking-duopoly/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 2</span>
+                    <span class="episode-title">Breaking the Duopoly</span>
+                    <span class="episode-duration">37:31</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-2-breaking-duopoly/report.html">Report</a>
+                        <a href="episode-2-breaking-duopoly/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Market entry strategy and competitive positioning for a third mobile network operator.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">How the Our Telekom vs Bmobile-Vodafone duopoly shaped the market, lessons from Digicel's 2,400% subscription growth in PNG, and positioning strategy (price vs service quality vs coverage).</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Market entry strategy and competitive positioning for a third mobile network operator.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Analyzes how the Our Telekom vs Bmobile-Vodafone duopoly shaped the market, regulatory barriers and opportunities under TCSI framework, lessons from Digicel's 2,400% subscription growth in PNG, how absence of number portability affects switching behavior, customer pain points with incumbents, positioning strategy (price vs service quality vs coverage), government ownership dynamics of Our Telekom, and how SATSOL infrastructure + IumiCash integration create differentiation from launch.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 3</span>
-                <span class="episode-title">Infrastructure Advantage</span>
-                <span class="episode-duration">35:25</span>
-                <span class="episode-links-inline">
-                    <a href="episode-3-infrastructure-advantage/report.html">Report</a>
-                    <a href="episode-3-infrastructure-advantage/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 3</span>
+                    <span class="episode-title">Infrastructure Advantage</span>
+                    <span class="episode-duration">35:25</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-3-infrastructure-advantage/report.html">Report</a>
+                        <a href="episode-3-infrastructure-advantage/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Leveraging SATSOL's fiber/Starlink infrastructure to solve the 1,000-island challenge.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">How partnerships change economics vs build-from-scratch, Starlink satellite backhaul vs traditional submarine cable solutions, and network resilience in disaster-prone regions.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Leveraging SATSOL's fiber/Starlink infrastructure to solve the 1,000-island challenge.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Examines infrastructure investment typically required for archipelago networks, how partnerships change economics vs build-from-scratch, Starlink satellite backhaul vs traditional submarine cable solutions, SATSOL's fiber network role in urban coverage, tower deployment strategy across 85% rural population with SINBIP integration, technical architecture balancing fiber/Starlink/cellular, network resilience in disaster-prone regions, spectrum and tower siting regulatory requirements, and SATSOL's ISO certifications supporting reliable backhaul.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 4</span>
-                <span class="episode-title">Mobile Money Integration</span>
-                <span class="episode-duration">39:54</span>
-                <span class="episode-links-inline">
-                    <a href="episode-4-mobile-money/report.html">Report</a>
-                    <a href="episode-4-mobile-money/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 4</span>
+                    <span class="episode-title">Mobile Money Integration</span>
+                    <span class="episode-duration">39:54</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-4-mobile-money/report.html">Report</a>
+                        <a href="episode-4-mobile-money/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Launching with integrated mobile money capabilities that incumbents took years to build.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Competitive advantages of integrated mobile money from launch, IumiCash's Money Transfer Service license enabling international remittances, and use cases driving adoption.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-4-mobile-money/episode-4-mobile-money.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Launching with integrated mobile money capabilities that incumbents took years to build.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Analyzes M-SELEN's 350,000-user achievement in two years and demand signals, competitive advantages of integrated mobile money from launch, IumiCash's Money Transfer Service license enabling international remittances, CBSI regulatory framework for telecom-affiliated payments, business relationship structuring (revenue sharing, customer data, agent networks), use cases driving adoption, pricing for bundled services, agent network infrastructure vs M-SELEN's 3,000+ agents, competing against Our Telekom's vertical integration, and smartphone penetration implications (IumiCash smartphone-only vs M-SELEN USSD).</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-4-mobile-money/episode-4-mobile-money.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 5</span>
-                <span class="episode-title">Launch Execution</span>
-                <span class="episode-duration">32:54</span>
-                <span class="episode-links-inline">
-                    <a href="episode-5-launch-execution/report.html">Report</a>
-                    <a href="episode-5-launch-execution/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 5</span>
+                    <span class="episode-title">Launch Execution</span>
+                    <span class="episode-duration">32:54</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-5-launch-execution/report.html">Report</a>
+                        <a href="episode-5-launch-execution/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">End-to-end go-to-market execution from spectrum allocation to first customer activation.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">TCSI licenses and spectrum allocations required, initial network coverage strategy, SIM card distribution across dispersed islands, pricing strategy to break duopoly, and brand positioning.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-5-launch-execution/episode-5-launch-execution.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">End-to-end go-to-market execution from spectrum allocation to first customer activation.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Covers TCSI licenses and spectrum allocations required for third MNO, initial network coverage strategy (which islands first and why), typical timeline from approval to commercial launch in Pacific markets, SIM card distribution across dispersed islands, pricing strategy to break duopoly (promotional/family/data/bundled), early adopter acquisition without number portability, customer segment targeting, handset strategy balancing 4G capability and affordability, leveraging SATSOL's enterprise relationships and IumiCash's merchant network, customer support infrastructure across islands, and brand positioning communication.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-5-launch-execution/episode-5-launch-execution.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
-        <div class="episode">
-            <div class="episode-header">
-                <span class="episode-number">Ep 6</span>
-                <span class="episode-title">The Smartphone Frontier</span>
-                <span class="episode-duration">36:49</span>
-                <span class="episode-links-inline">
-                    <a href="episode-6-smartphone-frontier/report.html">Report</a>
-                    <a href="episode-6-smartphone-frontier/transcript.html">Transcript</a>
-                </span>
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 6</span>
+                    <span class="episode-title">The Smartphone Frontier</span>
+                    <span class="episode-duration">36:49</span>
+                    <span class="episode-links-inline">
+                        <a href="episode-6-smartphone-frontier/report.html">Report</a>
+                        <a href="episode-6-smartphone-frontier/transcript.html">Transcript</a>
+                    </span>
+                </div>
+                <div class="episode-summary">Serving first-time smartphone users with device provisioning strategies as market expansion tool.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">The 59-percentage-point gap between network coverage (86%) and mobile internet usage (27%). Five interlocking barriers: device affordability, infrastructure quality, digital literacy, content availability, and gender inequality. Device financing models and Vanuatu's "Play or Pay" policy showing how regulation can drive inclusion.</div>
+                </details>
+                <audio controls preload="metadata">
+                    <source src="episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <div class="episode-summary">Serving first-time smartphone users with device provisioning strategies as market expansion tool.</div>
-            <details class="episode-details">
-                <summary>More details</summary>
-                <div class="episode-full-description">Explores the 59-percentage-point gap between network coverage (86%) and mobile internet usage (27%) across the Pacific. Examines five interlocking barriers: device affordability (phones cost 30% of monthly income for poorest segments), infrastructure quality (data costs 38% of income), digital literacy (42% lack basic skills), content/language availability, and gender inequality (women 25% less likely to own smartphones). Analyzes device financing models (PAYGO, BNPL), China's subsidy experiment results, the lock-in problem with missing number portability, mobile money-smartphone interdependence, Starlink's connectivity transformation, and Vanuatu's "Play or Pay" policy contrast showing how coordinated regulation can drive inclusion beyond market forces alone.</div>
-            </details>
-            <audio controls preload="metadata">
-                <source src="episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
         </div>
-    </div>
-
-    <a href="../../../" class="back-link">Back to Yudame Research</a>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">Yudame<br>Research</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Research</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../kindergarten-first-principles/">Kindergarten Series</a></li>
+                        <li><a href="../../cardiovascular-health/">Cardiovascular Health</a></li>
+                        <li><a href="../../active-recovery/">Active Recovery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Podcast</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                        <li><a href="../../../podcast/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://yuda.me">Home</a></li>
+                        <li><a href="https://ai.yuda.me">AI</a></li>
+                        <li><a href="https://research.yuda.me">Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="year"></span> Yudame</p>
+                <p class="footer-dedication">We do the research. You get the edge.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
-
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('is-active');
                 this.classList.toggle('is-active');
             });
         }
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
