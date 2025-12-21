@@ -327,25 +327,28 @@ When creating new series pages, use the component library patterns, not legacy i
         <h2 class="section-title">Episodes</h2>
 
         <div class="episode-list">
-            <!-- Episode card (see docs/design/components/podcast-player.html for full example) -->
+            <!-- Episode card with cover image -->
             <div class="episode">
-                <div class="episode-header">
-                    <span class="episode-number">Ep 1</span>
-                    <span class="episode-title">[Title]</span>
-                    <span class="episode-duration">[Duration]</span>
-                    <span class="episode-links-inline">
-                        <a href="ep1-slug/report.html">Report</a>
-                        <a href="ep1-slug/transcript.html">Transcript</a>
-                    </span>
+                <div class="episode-top">
+                    <div class="episode-cover">
+                        <img src="ep1-slug/cover.png" alt="Episode 1 cover art">
+                    </div>
+                    <div class="episode-content">
+                        <div class="episode-header">
+                            <span class="episode-number">Ep 1</span>
+                            <span class="episode-title">[Title]</span>
+                            <a href="ep1-slug/report.html" class="btn btn-primary btn-small">Full Report</a>
+                        </div>
+                        <audio controls preload="metadata">
+                            <source src="ep1-slug/[audio-file].mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </div>
                 <div class="episode-summary">[1-sentence summary]</div>
                 <details class="episode-details">
-                    <summary>More details</summary>
+                    <summary>More</summary>
                     <div class="episode-full-description">[Full description]</div>
                 </details>
-                <audio controls preload="metadata">
-                    <source src="ep1-slug/[audio-file].mp3" type="audio/mpeg">
-                </audio>
             </div>
             <!-- More episodes... -->
         </div>
@@ -354,41 +357,46 @@ When creating new series pages, use the component library patterns, not legacy i
 </html>
 ```
 
-### Episode Card States
+### Episode Card Structure
 
-**Available episode:**
+**Standard episode card:**
 ```html
-<div class="episode available">
-    <!-- teal left border, full opacity -->
-    <div class="episode-header">
-        <span class="episode-number">Ep 1</span>
-        <span class="episode-title">Topic</span>
-        <span class="episode-duration">36:13</span>
+<div class="episode">
+    <div class="episode-top">
+        <div class="episode-cover">
+            <img src="ep1-slug/cover.png" alt="Episode 1 cover art">
+        </div>
+        <div class="episode-content">
+            <div class="episode-header">
+                <span class="episode-number">Ep 1</span>
+                <span class="episode-title">Topic</span>
+                <a href="ep1-slug/report.html" class="btn btn-primary btn-small">Full Report</a>
+            </div>
+            <audio controls preload="metadata">
+                <source src="ep1-slug/audio-file.mp3" type="audio/mpeg">
+            </audio>
+        </div>
     </div>
     <div class="episode-summary">Short description.</div>
     <details class="episode-details">
         <summary>More</summary>
         <div class="episode-full-description">Full description.</div>
     </details>
-    <!-- Include links and audio player -->
 </div>
 ```
 
-**Coming soon episode:**
+**Coming soon episode (no cover, no audio):**
 ```html
 <div class="episode">
-    <!-- gray left border, slight opacity reduction (0.85) -->
     <div class="episode-header">
         <span class="episode-number">Ep 1</span>
         <span class="episode-title">Topic</span>
-        <span class="episode-duration">Coming soon</span>
     </div>
     <div class="episode-summary">Short description.</div>
     <details class="episode-details">
         <summary>More</summary>
         <div class="episode-full-description">Full description.</div>
     </details>
-    <!-- Omit links and audio player -->
 </div>
 ```
 
@@ -401,12 +409,15 @@ When creating new series pages, use the component library patterns, not legacy i
   - Spotify: `background: #1db954`
   - Other: `background: var(--color-gray-600)` → links to `podcast/subscribe.html`
 - **Episode cards:** Use `.episode` class from `podcast-player.css`
+  - `.episode-top` wraps cover + content side by side
+  - `.episode-cover` contains 120x120px cover image
+  - `.episode-content` contains header + audio player
+  - Summary and details are full-width below
 - **Episode number badge:** Salmon background (#E8B4A8), black text, rounded pill
 - **Episode title:** Playfair Display serif font
-- **Episode duration:** IBM Plex Mono monospace font
+- **Full Report button:** `.btn .btn-primary .btn-small` - salmon background, links to report.html
 - **Expandable details:** Native HTML `<details>` with `+` / `−` indicator (styled in `podcast-player.css`)
-- **Links:** Black with salmon hover (from component library)
-- **Audio players:** Use `preload="metadata"` (as per component library example)
+- **Audio players:** Use `preload="metadata"`, positioned below header in episode-content
 - **Typography:** All text uses design system tokens (`--font-serif`, `--font-sans`, `--font-mono`)
 - **Spacing:** Use CSS custom properties (`--space-1` through `--space-12`)
 - **Colors:** Black (#000000) text, Salmon (#E8B4A8) accents ONLY

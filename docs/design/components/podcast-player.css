@@ -19,6 +19,34 @@
   box-shadow: var(--shadow-md);
 }
 
+/* === EPISODE TOP (cover + content side by side) === */
+
+.episode-top {
+  display: flex;
+  gap: var(--space-4);
+}
+
+/* === EPISODE COVER === */
+
+.episode-cover {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.episode-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.episode-content {
+  flex: 1;
+  min-width: 0;
+}
+
 /* === EPISODE HEADER === */
 
 .episode-header {
@@ -83,13 +111,14 @@
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
   color: var(--color-gray-700);
-  margin-bottom: var(--space-3);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 /* === EPISODE DETAILS (EXPANDABLE) === */
 
 .episode-details {
-  margin-bottom: var(--space-3);
+  margin-bottom: 0;
 }
 
 .episode-details summary {
@@ -99,7 +128,7 @@
   color: var(--color-black);
   cursor: pointer;
   list-style: none;
-  padding: var(--space-1) 0;
+  padding: 0;
   transition: color var(--transition-base);
   user-select: none;
 }
@@ -142,6 +171,7 @@
   height: 48px;
   border-radius: var(--radius-md);
   outline: none;
+  margin-top: var(--space-2);
 }
 
 .episode audio:focus {
@@ -181,6 +211,16 @@
 @media (max-width: 768px) {
   .episode {
     padding: var(--card-padding-mobile);
+  }
+
+  .episode-top {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .episode-cover {
+    width: 80px;
+    height: 80px;
   }
 
   .episode-header {
