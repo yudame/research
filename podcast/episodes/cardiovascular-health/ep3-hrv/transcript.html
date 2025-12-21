@@ -98,23 +98,11 @@
     </main>
 
     <script>
-        // Find the transcript JSON file
-        fetch('.')
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const links = Array.from(doc.querySelectorAll('a'));
-                const transcriptFile = links
-                    .map(a => a.href.split('/').pop())
-                    .find(name => name.endsWith('_transcript.json'));
-
-                if (transcriptFile) {
-                    return fetch(transcriptFile);
-                }
-                throw new Error('No transcript file found');
+        fetch('2025-11-21-cardiovascular-health-episode-3-hrv_transcript.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Not found');
+                return response.json();
             })
-            .then(response => response.json())
             .then(data => {
                 const content = document.getElementById('content');
                 if (data.text) {
@@ -128,7 +116,8 @@
                 }
             })
             .catch(err => {
-                document.getElementById('content').innerHTML = '<p>Error loading transcript</p>';
+                document.getElementById('content').innerHTML = '<p>Error loading transcript.</p>';
+                console.error(err);
             });
     </script>
 </body>
