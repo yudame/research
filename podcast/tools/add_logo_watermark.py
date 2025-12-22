@@ -81,6 +81,90 @@ def load_font(font_paths, size, fallback_paths=None):
     return ImageFont.load_default()
 
 
+# Font paths used by branding
+PLAYFAIR_SEMIBOLD_PATHS = [
+    "~/Library/Fonts/playfair-display-v40-latin-600.ttf",
+    "/Library/Fonts/playfair-display-v40-latin-600.ttf",
+    "~/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
+    "/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
+]
+PLAYFAIR_ITALIC_PATHS = [
+    "~/Library/Fonts/playfair-display-v40-latin-italic.ttf",
+    "/Library/Fonts/playfair-display-v40-latin-italic.ttf",
+    "~/Library/Fonts/PlayfairDisplay-Italic.ttf",
+    "/Library/Fonts/PlayfairDisplay-Italic.ttf",
+]
+
+
+def check_fonts():
+    """
+    Check if required Playfair Display fonts are installed.
+    Returns True if all fonts are available, False otherwise.
+    """
+    print("Checking required fonts...\n")
+
+    results = []
+
+    # Check Playfair Display SemiBold (600)
+    semibold_found = False
+    for path in PLAYFAIR_SEMIBOLD_PATHS:
+        try:
+            font = ImageFont.truetype(Path(path).expanduser(), 48)
+            name = font.getname()
+            print(f"✓ Playfair Display SemiBold")
+            print(f"  Path: {path}")
+            print(f"  Font: {name[0]} {name[1]}")
+            semibold_found = True
+            break
+        except:
+            continue
+
+    if not semibold_found:
+        print("✗ Playfair Display SemiBold - NOT FOUND")
+        print("  Searched paths:")
+        for path in PLAYFAIR_SEMIBOLD_PATHS:
+            print(f"    - {path}")
+    results.append(("Playfair Display SemiBold", semibold_found))
+
+    print()
+
+    # Check Playfair Display Italic
+    italic_found = False
+    for path in PLAYFAIR_ITALIC_PATHS:
+        try:
+            font = ImageFont.truetype(Path(path).expanduser(), 48)
+            name = font.getname()
+            print(f"✓ Playfair Display Italic")
+            print(f"  Path: {path}")
+            print(f"  Font: {name[0]} {name[1]}")
+            italic_found = True
+            break
+        except:
+            continue
+
+    if not italic_found:
+        print("✗ Playfair Display Italic - NOT FOUND")
+        print("  Searched paths:")
+        for path in PLAYFAIR_ITALIC_PATHS:
+            print(f"    - {path}")
+    results.append(("Playfair Display Italic", italic_found))
+
+    print()
+
+    # Summary
+    all_found = all(r[1] for r in results)
+    if all_found:
+        print("✓ All required fonts are installed!")
+    else:
+        print("✗ Some fonts are missing. Install with:")
+        print()
+        print("  mkdir -p ~/Library/Fonts && cd ~/Library/Fonts")
+        print('  curl -L -o playfair.zip "https://gwfh.mranftl.com/api/fonts/playfair-display?download=zip&subsets=latin&variants=600,italic"')
+        print("  unzip -o playfair.zip")
+
+    return all_found
+
+
 def add_branding(cover_path, series_text=None, episode_text=None,
                  show_logo=True, logo_path=None, verbose=True, log_file=None):
     """
@@ -128,35 +212,20 @@ def add_branding(cover_path, series_text=None, episode_text=None,
         text_tertiary = (180, 180, 180)
         use_shadow = True
 
-    # Typography sizing (based on design spec, scaled to image)
-    # For 1024px image: brand ~48px, series ~36px, episode ~32px
-    brand_size = int(width * 0.047)    # ~48px at 1024
-    series_size = int(width * 0.038)   # ~39px at 1024
-    episode_size = int(width * 0.032)  # ~33px at 1024
+    # Typography sizing (matching website header proportions)
+    # Logo is larger, text sized independently
+    logo_size = int(width * 0.064)     # ~66px at 1024 - 1.6x larger
+    brand_size = int(width * 0.04)     # ~41px at 1024 - keep text size as is
+    series_size = int(brand_size * 0.9)
+    episode_size = int(brand_size * 0.8)
 
     # Spacing (8px base from design spec, scaled)
     base_unit = width / 128  # 8px at 1024
-    padding = int(base_unit * 6)  # 48px at 1024
-    line_gap = int(base_unit * 1.5)  # 12px at 1024
-    section_gap = int(base_unit * 2)  # 16px at 1024
+    padding = int(base_unit * 5)  # 40px at 1024
+    line_gap = int(base_unit * 1)  # 8px at 1024
+    section_gap = int(base_unit * 1.5)  # 12px at 1024
 
-    # Load fonts
-    # Brand: Playfair Display SemiBold (like header/main cover)
-    playfair_semibold_paths = [
-        "/System/Library/Fonts/Supplemental/PlayfairDisplay-SemiBold.ttf",
-        "/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
-        "~/Library/Fonts/PlayfairDisplay-SemiBold.ttf",
-        "/System/Library/Fonts/Supplemental/PlayfairDisplay-Bold.ttf",
-        "/Library/Fonts/PlayfairDisplay-Bold.ttf",
-    ]
-    # Series/Episode: Playfair Display Italic (like tagline on main cover)
-    playfair_italic_paths = [
-        "/System/Library/Fonts/Supplemental/PlayfairDisplay-Italic.ttf",
-        "/Library/Fonts/PlayfairDisplay-Italic.ttf",
-        "~/Library/Fonts/PlayfairDisplay-Italic.ttf",
-        "/System/Library/Fonts/Supplemental/PlayfairDisplay-MediumItalic.ttf",
-        "/Library/Fonts/PlayfairDisplay-MediumItalic.ttf",
-    ]
+    # Load fonts (using module-level constants)
     fallback_paths = [
         "/System/Library/Fonts/Helvetica.ttc",
         "/System/Library/Fonts/Supplemental/Arial.ttf",
@@ -166,9 +235,9 @@ def add_branding(cover_path, series_text=None, episode_text=None,
         "/System/Library/Fonts/Times.ttc",
     ]
 
-    brand_font = load_font(playfair_semibold_paths, brand_size, fallback_paths)
-    series_font = load_font(playfair_italic_paths, series_size, fallback_italic_paths + fallback_paths)
-    episode_font = load_font(playfair_italic_paths, episode_size, fallback_italic_paths + fallback_paths)
+    brand_font = load_font(PLAYFAIR_SEMIBOLD_PATHS, brand_size, fallback_paths)
+    series_font = load_font(PLAYFAIR_ITALIC_PATHS, series_size, fallback_italic_paths + fallback_paths)
+    episode_font = load_font(PLAYFAIR_ITALIC_PATHS, episode_size, fallback_italic_paths + fallback_paths)
 
     # Create drawing context
     img = cover.convert('RGBA')
@@ -180,7 +249,7 @@ def add_branding(cover_path, series_text=None, episode_text=None,
 
     # Draw logo + brand name (like header)
     brand_text = "Yudame Research"
-    logo_height_target = int(brand_size * 1.1)  # Logo slightly taller than text
+    logo_height_target = logo_size  # Logo is the anchor, text sized relative to it
 
     # Load and place logo if available
     if show_logo and logo_path:
@@ -197,11 +266,13 @@ def add_branding(cover_path, series_text=None, episode_text=None,
             img.paste(logo_img, (current_x, current_y), logo_img)
             current_x += logo_w + int(base_unit * 1.5)  # Gap after logo
 
-    # Draw brand text
+    # Draw brand text - vertically centered with logo
     brand_bbox = draw.textbbox((0, 0), brand_text, font=brand_font)
     brand_text_height = brand_bbox[3] - brand_bbox[1]
-    # Vertically center text with logo
-    brand_y = current_y + (logo_height_target - brand_text_height) // 2
+    # Center text with logo, accounting for font metrics (top of bbox is offset from origin)
+    logo_center_y = current_y + logo_height_target // 2
+    text_center_offset = brand_text_height // 2 + brand_bbox[1]  # Account for bbox top offset
+    brand_y = logo_center_y - text_center_offset
 
     if use_shadow:
         shadow_offset = max(2, int(base_unit * 0.25))
@@ -251,17 +322,29 @@ def main():
 Examples:
     python add_logo_watermark.py cover.png --series "Algorithms for Life" --episode "Spaced Repetition"
     python add_logo_watermark.py cover.png --episode "Standalone Episode" --no-logo
+    python add_logo_watermark.py --check-fonts
         """
     )
-    parser.add_argument("cover", help="Path to cover image")
+    parser.add_argument("cover", nargs="?", help="Path to cover image")
     parser.add_argument("--series", help="Series name (e.g., 'Algorithms for Life')")
     parser.add_argument("--episode", help="Episode title (e.g., 'Spaced Repetition')")
     parser.add_argument("--logo", help="Path to logo (default: ../yudame-logo.png)")
     parser.add_argument("--no-logo", action="store_true", help="Don't add logo")
     parser.add_argument("--log-dir", help="Directory for log files")
     parser.add_argument("--quiet", "-q", action="store_true", help="Minimal output")
+    parser.add_argument("--check-fonts", action="store_true", help="Check if required fonts are installed")
 
     args = parser.parse_args()
+
+    # Handle --check-fonts
+    if args.check_fonts:
+        success = check_fonts()
+        return 0 if success else 1
+
+    # Require cover path for branding operations
+    if not args.cover:
+        parser.error("cover path is required (or use --check-fonts)")
+        return 1
 
     # Default logo path
     if not args.logo and not args.no_logo:
