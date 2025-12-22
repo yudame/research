@@ -1,6 +1,6 @@
 ---
 name: podcast-cover-art
-description: Generate podcast cover art with AI and apply branding. Uses Gemini via OpenRouter for image generation, then adds Yudame Research logo, series/episode text, and salmon border (#E8B4A8). Use after report.md is complete and before audio processing. Requires OPENROUTER_API_KEY.
+description: Generate podcast cover art with AI and apply branding. Uses Gemini via OpenRouter for image generation with light cream backgrounds, then adds Yudame Research logo and series/episode text using Playfair Display typography. Use after report.md is complete and before audio processing. Requires OPENROUTER_API_KEY.
 ---
 
 # Podcast Cover Art Generation
@@ -77,7 +77,7 @@ python generate_cover.py ../episodes/EPISODE_PATH --auto \
 **generate_cover.py features:**
 - Uses OpenRouter API with Google Gemini 3 Pro Image model (requires OPENROUTER_API_KEY environment variable)
 - Auto-generates prompts by analyzing report.md content
-- Automatically enforces dark navy/blue color theme throughout the image
+- Automatically enforces light cream (#F5F1E8) background with salmon (#E8B4A8) and black accents
 - Automatically blocks unwanted text, icons, logos, and annotations
 - Supports multiple aspect ratios: 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 21:9
 - Outputs to `cover.png` in the episode directory
@@ -95,42 +95,31 @@ cd ~/src/research/podcast/tools
 
 # Basic usage - for series episodes
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
-  --position top-left \
-  --brand "Yudame Research" \
   --series "SERIES_NAME" \
-  --episode "EPISODE_TEXT" \
-  --border 20
+  --episode "EPISODE_TEXT"
 
 # With organized logging (recommended for production)
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
-  --position top-left \
-  --brand "Yudame Research" \
   --series "SERIES_NAME" \
   --episode "EPISODE_TEXT" \
-  --border 20 \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 
 # For standalone episodes (no series text)
 python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
-  --position top-left \
-  --brand "Yudame Research" \
   --episode "EPISODE_TEXT" \
-  --border 20 \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 ```
 
 **add_logo_watermark.py features:**
-- Adds Yudame logo (from `podcast/yudame-logo.png`) to specified position
-- Adds text overlays: brand name (Playfair Display font), series/episode info (Inter font)
-- Brand text uses serif font matching design spec headlines
-- Series/episode text uses sans-serif font matching design spec body text
+- Auto-detects background brightness (light/dark) and adjusts text color accordingly
+- Adds Yudame logo (from `podcast/yudame-logo.png`) inline with brand name
+- Logo and "Yudame Research" vertically centered, matching website header style
+- Typography: Playfair Display SemiBold (brand), Playfair Display Italic (series/episode)
 - Series text is optional - omit `--series` for standalone episodes
-- Adds salmon border (#E8B4A8) matching brand accent color
-- Recommended border width: 20px (15-25px range)
 - Logo positioned top-left with brand text beside it
-- Series/episode text positioned below logo with proper margin
+- Series/episode text positioned below with proper spacing
 - With `--log-dir`: Saves metadata JSON and timestamped log file
 - `--quiet`: Suppresses progress messages
 - Replaces original cover.png with branded version
@@ -152,11 +141,10 @@ Update the episode's `prompts.md` file with the cover art generation details:
 ```
 
 **Branding Applied:**
-- Position: top-left
-- Brand: Yudame Research (Playfair Display font)
-- Series: [Series name if applicable] (Inter font)
-- Episode: [Episode text] (Inter font)
-- Border: 20px, #E8B4A8 (salmon)
+- Logo: Yudame logo (top-left, vertically centered with brand text)
+- Brand: Yudame Research (Playfair Display SemiBold)
+- Series: [Series name if applicable] (Playfair Display Italic)
+- Episode: [Episode text] (Playfair Display Italic)
 
 **Date:** YYYY-MM-DD
 ```
@@ -164,12 +152,29 @@ Update the episode's `prompts.md` file with the cover art generation details:
 ## Cover Art Specifications
 
 - Base size: 1024x1024px (or custom aspect ratio)
-- With 20px border: 1064x1064px total (for 1:1)
-- Color scheme: Rich dark backgrounds with salmon (#E8B4A8) and cream (#F5F1E8) accents
-- Border color: Salmon (#E8B4A8) - matches brand accent
-- Typography: Playfair Display (brand), Inter (series/episode)
-- File size: ~500KB PNG format
+- Color scheme: Light cream (#F5F1E8) background with salmon (#E8B4A8) and black (#000000) accents
+- Typography: Playfair Display SemiBold (brand), Playfair Display Italic (series/episode)
+- Text color: Auto-detected based on background brightness (black on light, white on dark)
+- File size: ~500KB-1MB PNG format
 - Clean abstract visualization without text from AI
+
+## Font Check
+
+Before applying branding, verify required fonts are installed:
+
+```bash
+cd ~/src/research/podcast/tools
+python add_logo_watermark.py --check-fonts
+```
+
+Expected output:
+```
+✓ Playfair Display SemiBold
+✓ Playfair Display Italic
+✓ All required fonts are installed!
+```
+
+If fonts are missing, the script will show installation instructions.
 
 ## First-Time Setup (if needed)
 
@@ -177,8 +182,19 @@ If the user hasn't set up cover art generation tools yet:
 
 ```bash
 cd ~/src/research/podcast/tools
-pip install requests  # Only dependency needed
+pip install requests pillow  # Required dependencies
+
+# Set API key
 export OPENROUTER_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
+
+# Install Playfair Display fonts (required for branding)
+mkdir -p ~/Library/Fonts && cd ~/Library/Fonts
+curl -L -o playfair.zip "https://gwfh.mranftl.com/api/fonts/playfair-display?download=zip&subsets=latin&variants=600,italic"
+unzip -o playfair.zip
+
+# Verify fonts installed correctly
+cd ~/src/research/podcast/tools
+python add_logo_watermark.py --check-fonts
 ```
 
 ## Cost Information
