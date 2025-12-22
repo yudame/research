@@ -33,3 +33,9 @@ __pycache__/
 htmlcov/
 coverage.xml
 *.cover
+
+# Voice cloning output (large audio files)
+output/
+
+# Source video files
+*.mp4

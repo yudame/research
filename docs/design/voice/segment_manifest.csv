@@ -1,0 +1,24 @@
+clip_id,filename,source,start_time,end_time,duration,has_music,emotion,notes
+1,clip_001_60min_01m29s-01m41s.wav,60min,89.2,101.2,12.0,False,matter-of-fact,"Selling shoes for fish - direct, practical tone"
+2,clip_002_60min_01m43s-01m49s.wav,60min,103.1,109.5,6.400000000000006,False,confident,"The loot is the film - declarative, conviction"
+3,clip_003_60min_02m57s-03m12s.wav,60min,177.5,192.1,14.599999999999994,False,emphatic,Nature is utterly indifferent - signature philosophical statement
+4,clip_004_60min_04m43s-04m51s.wav,60min,283.0,291.5,8.5,False,contemplative,"Fantasy of elephants, dream - poetic, wistful tone"
+5,clip_005_60min_05m07s-05m32s.wav,60min,307.4,332.8,25.400000000000034,False,emotional,"Childhood poverty story - deeply personal, varied pacing"
+6,clip_006_60min_05m54s-06m03s.wav,60min,354.0,363.2,9.199999999999989,False,wry,Stealing the camera - self-aware humor
+7,clip_007_60min_06m10s-06m25s.wav,60min,370.5,385.2,14.699999999999989,False,energized,Good criminal energy - rising intensity
+8,clip_008_60min_07m22s-07m39s.wav,60min,442.1,459.5,17.399999999999977,False,defiant,"Not a miniature boat - conviction, artistic integrity"
+9,clip_009_60min_08m14s-08m26s.wav,60min,494.1,506.4,12.299999999999955,False,intense,Nature hits back - philosophical weight
+10,clip_010_60min_08m27s-08m48s.wav,60min,507.3,528.0,20.69999999999999,False,contemplative,"Trees in misery, birds screech in pain - dark poetry"
+11,clip_011_60min_09m04s-09m17s.wav,60min,544.1,557.1,13.0,False,measured,Containing Kinski's madness - deliberate pacing
+12,clip_012_60min_09m52s-09m58s.wav,60min,592.9,598.6,5.7000000000000455,False,wry,Helped Kinski write insults - dry humor
+13,clip_013_60min_10m14s-10m34s.wav,60min,614.5,634.1,19.600000000000023,False,confident,Clinically sane - ironic conviction
+14,clip_014_60min_10m56s-11m09s.wav,60min,656.2,669.3,13.099999999999909,False,assured,Writing will outlive films - confident declaration
+15,clip_015_60min_12m16s-12m45s.wav,60min,736.2,765.0,28.799999999999955,False,energized,"Film school for rogues - varied pacing, passionate advice"
+16,clip_016_60min_12m59s-13m11s.wav,60min,779.4,791.1,11.700000000000045,False,matter-of-fact,"Lockpicking and bolt cutters - practical, grounded"
+17,clip_017_plastic_bag_00m46s-00m53s.wav,plastic_bag,46.7,53.0,6.299999999999997,True,contemplative,Pacific Vortex paradise - opening tone
+18,clip_018_plastic_bag_00m54s-01m06s.wav,plastic_bag,54.6,66.2,11.600000000000001,True,wry-direct,"Shut up and enjoy the sunset - defiant, characteristic"
+19,clip_019_plastic_bag_05m44s-05m55s.wav,plastic_bag,344.1,355.0,10.899999999999977,True,matter-of-fact,"Darkness, world decomposed - dark but measured"
+20,clip_020_plastic_bag_05m58s-06m04s.wav,plastic_bag,358.1,364.9,6.7999999999999545,True,determined,"I remained, I was strong - conviction"
+21,clip_021_plastic_bag_15m11s-15m28s.wav,plastic_bag,911.9,928.3,16.399999999999977,True,varied,"Made it to the Vortex, circles - pacing variety"
+22,clip_022_plastic_bag_16m01s-16m09s.wav,plastic_bag,961.5,969.8,8.299999999999955,True,philosophical,Did my maker exist - existential questioning
+23,clip_023_plastic_bag_16m12s-16m25s.wav,plastic_bag,972.4,985.5,13.100000000000023,True,wistful-resolved,"Hope to meet her, wish I could die - emotional climax"
