@@ -1,6 +1,6 @@
 # Cardiovascular Health Series
 
-A 4-part evidence-based podcast series exploring the science of heart health, fitness optimization, and longevity through the lens of research methodology and critical analysis.
+A 6-part evidence-based podcast series exploring the science of heart health, fitness optimization, and longevity through the lens of research methodology and critical analysis.
 
 ## Series Overview
 
@@ -19,6 +19,12 @@ Explores HRV as a window into autonomic nervous system function and training rea
 
 **Episode 4: Supplementation**
 Evidence-based analysis of cardiovascular supplements and medications: what works, what fails spectacularly, and optimal dosing protocols. Examines why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49%, and why vitamin D and niacin failed despite decades of hype.
+
+**Episode 5: Diet** *(Coming Soon)*
+Deep dive into dietary factors beyond the Mediterranean/DASH overview. Examines the saturated fat controversy (how RCT findings differ from observational data), ultra-processed foods as an independent risk factor, the dose-response relationship of added sugar, and the emerging research on microplastics and nanoplastics found in cardiovascular tissue.
+
+**Episode 6: Beyond Lifestyle Basics** *(Coming Soon)*
+Non-traditional lifestyle factors affecting cardiovascular health, excluding exercise, sleep, diet, and supplementation. Explores the evidence for meditation and NSDR, breathing exercises, social connection and isolation, sauna/heat therapy, cold exposure, nature exposure, purpose and spirituality, and chronic stress as cardiovascular risk factors.
 
 ## Research Methodology
 
@@ -60,7 +66,11 @@ cardiovascular-health/
 │   └── [same structure]
 ├── ep3-hrv/
 │   └── [same structure]
-└── ep4-supplementation/
+├── ep4-supplementation/
+│   └── [same structure]
+├── ep5-diet/
+│   └── [same structure]
+└── ep6-lifestyle-beyond/
     └── [same structure]
 ```
 
@@ -93,6 +103,14 @@ cardiovascular-health/
 - **Chapters**: 10 segments
 - **Report**: 3.5 KB (condensed evidence summary)
 - **Key Topics**: Omega-3 dosing and risks, CoQ10 mechanisms, vitamin D null results, niacin failures, evidence hierarchies
+
+### Episode 5: Diet *(Coming Soon)*
+- **Status**: Research prompt prepared
+- **Key Topics**: Saturated fat controversy, ultra-processed foods, added sugar dose-response, microplastics/nanoplastics, dietary cholesterol, food sources vs nutrients
+
+### Episode 6: Beyond Lifestyle Basics *(Coming Soon)*
+- **Status**: Research prompt prepared
+- **Key Topics**: Meditation/mindfulness/NSDR, breathing exercises, social isolation/loneliness, sauna/heat therapy, cold exposure, nature exposure, purpose/spirituality, chronic stress
 
 ## Listening Options
 
