@@ -1,0 +1,21 @@
+Research practical implementation of non-traditional cardiovascular interventions, focusing on these specific questions:
+
+**Protocol Specifics:**
+- What are the recommended breathing exercise protocols for blood pressure reduction (rate, duration, frequency)?
+- What sauna parameters are associated with cardiovascular benefits (temperature, duration, frequency)?
+- What meditation program durations and frequencies show cardiovascular effects?
+- How much green space exposure (minutes/week, proximity) is needed for measurable benefits?
+
+**Implementation & Adherence:**
+- Which meditation apps or programs have published clinical evidence?
+- What are real-world adherence rates to mind-body interventions?
+- How are cardiac rehabilitation programs integrating these non-traditional factors?
+- What barriers do patients report for adopting breathing, meditation, or nature exposure practices?
+
+**Cost-Effectiveness:**
+- Economic analyses comparing mind-body interventions to pharmacological approaches
+- Healthcare system implementation costs and savings data
+- Workplace wellness ROI for stress reduction programs
+
+Focus on: Industry reports, implementation studies, cardiac rehab guidelines, health economics analyses, program evaluations.
+Provide findings with citations, sample sizes, and specific protocol details where available.

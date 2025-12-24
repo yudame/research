@@ -1,0 +1,24 @@
+Research non-traditional lifestyle factors affecting cardiovascular health in middle-aged adults, excluding exercise, sleep, diet, and supplementation.
+
+Key areas to investigate:
+- Meditation, mindfulness, and NSDR (non-sleep deep rest) effects on cardiovascular outcomes
+- Breathing exercises and their effects on blood pressure, HRV, and long-term cardiovascular health
+- Social isolation and loneliness: cardiovascular impact and effective interventions
+- Sauna/heat therapy and cold exposure for cardiovascular health
+- Nature exposure (green/blue space) effects on cardiovascular markers
+- Purpose, meaning, and spirituality as cardiovascular factors
+- Occupational/chronic stress compared to traditional cardiovascular risk factors
+
+Research methodology:
+- Prioritize peer-reviewed studies, meta-analyses, systematic reviews, and authoritative sources
+- Distinguish between correlation and causation in findings
+- Report effect sizes and practical significance, not just statistical significance
+- Note the study populations and whether findings generalize to healthy middle-aged men
+- Compare individual studies against meta-analyses and systematic reviews
+- Identify preliminary research vs. well-replicated findings
+- Note funding sources and potential conflicts of interest when relevant
+- Include contradictory findings and areas of scientific uncertainty
+- Cite specific studies, researchers, and sources throughout
+- Provide full source URLs for all citations
+
+Output: Comprehensive research report with extensive citations, sample sizes, methodological details, and source links.

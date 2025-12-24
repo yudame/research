@@ -1,0 +1,90 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=52000
+title=Introduction: Beyond the Basics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=52000
+END=166000
+title=The Finnish Sauna Phenomenon
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=166000
+END=360000
+title=How Heat Protects the Heart
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=360000
+END=540000
+title=The Generalizability Question
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=540000
+END=780000
+title=Practical Sauna Protocols
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=780000
+END=960000
+title=Social Connection as Risk Factor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1140000
+title=Men at Higher Risk from Isolation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1320000
+title=How Loneliness Damages the Heart
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1320000
+END=1500000
+title=Slow Breathing: Zero-Cost Intervention
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1680000
+title=The Baroreflex Mechanism
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1860000
+title=Device-Guided Breathing: A Cautionary Tale
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=2040000
+title=Purpose in Life: The Male-Specific Factor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2220000
+title=Nature Exposure: The 120-Minute Threshold
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2220000
+END=2400000
+title=Cold Exposure: Hype vs Evidence
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2601000
+title=Key Takeaways and Priorities
