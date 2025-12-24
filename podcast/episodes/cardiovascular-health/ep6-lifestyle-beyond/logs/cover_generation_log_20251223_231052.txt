@@ -1,0 +1,25 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep6 Lifestyle Beyond":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: In Finland, where saunas outnumber cars and nearly every home has one, researchers stumbled onto something extraordinary. Following 2,315 middle-aged men for over two decades, they discovered that tho
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep6 Lifestyle Beyond":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable...
+✓ Cover art saved to: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/cover.png
+✓ Metadata saved to: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/logs/cover_generation_metadata_20251223_231115.json
+
+✓ Done! Cover art ready at: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/cover.png
+✓ Log saved to: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/logs/cover_generation_log_20251223_231052.txt

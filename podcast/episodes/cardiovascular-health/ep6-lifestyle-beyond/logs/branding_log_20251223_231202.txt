@@ -1,0 +1,4 @@
+Loading cover: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/cover.png
+Background brightness: 238 (light)
+✓ Branded cover saved to: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/cover_branded.png
+✓ Original replaced: ../episodes/cardiovascular-health/ep6-lifestyle-beyond/cover.png
