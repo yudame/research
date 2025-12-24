@@ -1,0 +1,45 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction"
+    },
+    {
+      "startTime": 148,
+      "title": "The Saturated Fat Paradox"
+    },
+    {
+      "startTime": 580,
+      "title": "Ultra-Processed Foods"
+    },
+    {
+      "startTime": 1070,
+      "title": "Added Sugar & Cardiovascular Risk"
+    },
+    {
+      "startTime": 1260,
+      "title": "Microplastics: An Emerging Threat"
+    },
+    {
+      "startTime": 1560,
+      "title": "The Food Matrix Effect"
+    },
+    {
+      "startTime": 1800,
+      "title": "Mediterranean & Plant-Based Patterns"
+    },
+    {
+      "startTime": 2160,
+      "title": "Tracking the Right Biomarkers"
+    },
+    {
+      "startTime": 2400,
+      "title": "Protein Sources & Cooking Methods"
+    },
+    {
+      "startTime": 2580,
+      "title": "Key Takeaways"
+    }
+  ]
+}
