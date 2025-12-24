@@ -1,0 +1,63 @@
+;FFMETADATA1
+title=The Diet-Heart Puzzle: What Science Actually Says
+artist=Yudame Research
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=148000
+title=Introduction
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=148000
+END=580000
+title=The Saturated Fat Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=580000
+END=1070000
+title=Ultra-Processed Foods
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1070000
+END=1260000
+title=Added Sugar & Cardiovascular Risk
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1560000
+title=Microplastics: An Emerging Threat
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1800000
+title=The Food Matrix Effect
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1800000
+END=2160000
+title=Mediterranean & Plant-Based Patterns
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2160000
+END=2400000
+title=Tracking the Right Biomarkers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2580000
+title=Protein Sources & Cooking Methods
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2580000
+END=2704000
+title=Key Takeaways
