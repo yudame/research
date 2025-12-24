@@ -5,3 +5,8 @@ pillow
 gpt-researcher
 langchain-openai
 ddgs
+google-genai
+pydub
+numpy
+scipy
+python-dotenv

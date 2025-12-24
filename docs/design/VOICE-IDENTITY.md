@@ -166,29 +166,88 @@ Every episode should leave listeners more informed and more prepared.
 
 ## Technical Implementation
 
-### ElevenLabs Settings
+### Voice Engine: Gemini 2.5 Native Audio
+
+**Model:** `gemini-2.5-flash-native-audio`
+
+**Built-in Voice:** Alnilam (HD)
+
+Alnilam is a prebuilt Gemini voice that naturally embodies the qualities we need:
+- Warm, authoritative baritone
+- Clear articulation with natural prosody
+- Capable of emotional range and vocal variation
+
+### Generation Parameters
+
+| Parameter | Value | Purpose |
+|-----------|-------|---------|
+| Temperature | 1.2 - 1.4 | Higher values enable natural vocal variability |
+| Output Format | 16-bit PCM @ 24kHz | Maximum fidelity for post-processing |
+| Safety Settings | BLOCK_NONE | Prevents tone clamping on complex topics |
+
+### Achieving the Austrian Academic Cadence
+
+Since we cannot directly control accent, we influence vocal delivery through **text construction**:
+
+**Multisyllabic Precision:** Structure sentences with:
+- Em-dashes for side-thoughts
+- Complex but clear sentence structures
+- Crisp, definitive endings
+
+**Example transformation:**
 ```
-Voice ID: 6tDus6SihmxbevHKu8Rj
-
-Prompt: A charismatic professor in his early 40s with a sleight Austrian accent. He has an authentically enthusiastic voice! He speaks with engaged pace - like a brilliant young academic who finds ideas genuinely exciting. Articulate and precise, with crisp enunciation. Confident and leading the listener to hang on to every word. Sounds exciting.
-
-Speed: 1.10
-Stability: 0.50
-Similarity: 0.75
+Before: "The results were really surprising."
+After:  "The results were—and I must be precise here—genuinely staggering."
 ```
 
-### Text Preprocessing
-- Convert numerals to words for natural delivery
-- Add punctuation for pacing (em-dashes, ellipses sparingly)
-- Break long sentences at natural pause points
-- Mark emphasis with caps or SSML if supported
+### Breathing & Pacing Markers
+
+Natural speech requires pauses. Insert these markers in the script:
+
+| Marker | Effect | Duration |
+|--------|--------|----------|
+| `...` | Short breath/pause | ~0.3s |
+| `[pause]` | Medium pause | ~0.8s |
+| Double paragraph | Long pause with breath | ~1.2s |
+
+**Example:**
+```
+"The data tells a different story...
+
+[pause]
+
+One that challenges everything we thought we understood."
+```
+
+### Affective Triggers
+
+Direct the model's emotional delivery with system instructions:
+
+```
+When transitioning to surprising findings, adopt a 'Discovery' tone—
+slightly breathless and inquisitive.
+
+When delivering conclusions, shift to 'Gravitas'—slower, deeper,
+more emphatic.
+```
+
+**Vocal Cue Library:**
+
+| Cue | Description | Usage |
+|-----|-------------|-------|
+| Discovery | Breathless, inquisitive | New findings, surprises |
+| Gravitas | Slower, deeper | Important conclusions |
+| Skeptical | Higher pitch, questioning | Challenging assumptions |
+| Confident | Steady, declarative | Established facts |
+| Reflective | Softer, contemplative | Philosophical implications |
 
 ### Quality Checks
-- [ ] Accent consistent throughout
-- [ ] Pacing feels natural, not robotic
+
+- [ ] Natural breathing pauses present (not continuous speech)
+- [ ] Emotional variation matches content
+- [ ] No robotic/flat sections longer than 10 seconds
 - [ ] Key terms clearly enunciated
-- [ ] Emotional tone matches content
-- [ ] No unnatural word stress
+- [ ] Pacing feels conversational, not read
 
 ---
 
@@ -208,3 +267,4 @@ Listeners should feel smarter and more prepared after every episode.
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2024-12-22 | Initial voice identity |
+| 2.0 | 2025-12-23 | Switched to Gemini 2.5 Native Audio with Alnilam voice |
