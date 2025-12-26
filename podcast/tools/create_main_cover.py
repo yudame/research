@@ -86,7 +86,7 @@ def create_cover():
     # X: position so right edge aligns with canvas right, with overflow
     # Y: push down so white background at bottom overflows off canvas
     hs_x = CANVAS_SIZE - int(new_w * 0.92)  # Show 92% of width (moved more left)
-    hs_y = int(CANVAS_SIZE * 0.02)  # Push down to hide white background at bottom
+    hs_y = int(CANVAS_SIZE * 0.05)  # Push down a bit more
 
     print(f"  Position: ({hs_x}, {hs_y})")
     canvas.paste(headshot_scaled, (hs_x, hs_y), headshot_scaled)
@@ -94,11 +94,11 @@ def create_cover():
     # Load logo
     print(f"Loading logo: {LOGO_PATH}")
     logo = Image.open(LOGO_PATH).convert('RGBA')
-    logo_size = int(CANVAS_SIZE * 0.07)  # 7% of canvas
+    logo_size = int(CANVAS_SIZE * 0.09)  # 9% of canvas
     logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
 
     # Position logo at top left
-    padding = int(CANVAS_SIZE * 0.05)  # 5% padding
+    padding = int(CANVAS_SIZE * 0.04)  # 4% padding
     logo_x = padding
     logo_y = padding
     canvas.paste(logo, (logo_x, logo_y), logo)
@@ -107,9 +107,9 @@ def create_cover():
     draw = ImageDraw.Draw(canvas)
 
     # Load fonts
-    brand_font_size = int(CANVAS_SIZE * 0.045)  # Brand name
-    tagline_font_size = int(CANVAS_SIZE * 0.05)  # Tagline (larger, italics)
-    name_font_size = int(CANVAS_SIZE * 0.04)  # Author name
+    brand_font_size = int(CANVAS_SIZE * 0.055)  # Brand name
+    tagline_font_size = int(CANVAS_SIZE * 0.06)  # Tagline (larger, italics)
+    name_font_size = int(CANVAS_SIZE * 0.05)  # Author name
 
     brand_font = load_font(PLAYFAIR_SEMIBOLD_PATHS, brand_font_size)
     tagline_font = load_font(PLAYFAIR_ITALIC_PATHS, tagline_font_size)
@@ -127,13 +127,13 @@ def create_cover():
 
     # Tagline - below logo, multi-line
     tagline_lines = ["Be the most", "prepared person", "in the room."]
-    tagline_y = logo_y + logo_size + int(CANVAS_SIZE * 0.08)
+    tagline_y = logo_y + logo_size + int(CANVAS_SIZE * 0.06)
     line_spacing = int(tagline_font_size * 1.2)
 
     for line in tagline_lines:
-        draw.text((padding, tagline_y), line, fill=BLACK, font=tagline_font)
+        draw.text((logo_x, tagline_y), line, fill=BLACK, font=tagline_font)
         tagline_y += line_spacing
-    print(f"  Tagline positioned")
+    print(f"  Tagline positioned (aligned with logo at x={logo_x})")
 
     # Author name - halfway between tagline bottom and canvas bottom
     name_text = "Valor\nEngels"
@@ -141,7 +141,7 @@ def create_cover():
     tagline_bottom = tagline_y  # This is where tagline ended
     # Position name halfway between tagline bottom and canvas bottom
     name_y = tagline_bottom + (CANVAS_SIZE - tagline_bottom) // 2 - int(CANVAS_SIZE * 0.04)
-    draw.text((padding, name_y), name_text, fill=BLACK, font=name_font)
+    draw.text((logo_x, name_y), name_text, fill=BLACK, font=name_font)
     print(f"  Name at bottom left")
 
     # Save
