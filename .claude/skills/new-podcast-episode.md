@@ -12,13 +12,12 @@
 - [ ] **Phase 6: Master Briefing** → research/p3-briefing.md created with organized findings
 - [ ] **Phase 7: Synthesis** → report.md created by podcast-synthesis-writer
 - [ ] **Phase 8: Episode Planning** → content_plan.md created by podcast-episode-planner
-- [ ] **Phase 9: Cover Art** → cover.png generated and branded
-- [ ] **Phase 10: Audio Generation** → NotebookLM Enterprise API
-- [ ] **Phase 11: Audio Processing** → Transcription and chapters
-- [ ] **Phase 12: Publishing** → feed.xml updated with episode metadata
-- [ ] **Phase 13: Commit & Push** → Changes committed and pushed to GitHub
+- [ ] **Phase 9: Audio Generation** → NotebookLM (API or manual)
+- [ ] **Phase 10: Audio Processing** → Transcription and chapters
+- [ ] **Phase 11: Publishing** → Cover art, metadata, feed.xml updated
+- [ ] **Phase 12: Commit & Push** → Changes committed and pushed to GitHub
 
-**Verification:** After Phase 13, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
+**Verification:** After Phase 12, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
 
 ---
 
@@ -835,37 +834,38 @@ Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
 
    **In practice:** Most topics benefit from all perspectives. Use all 4 tools unless you have a specific reason not to.
 
-4. **Display all Phase 3 prompts to the user, then save to logs/prompts.md**
+4. **Display MANUAL prompts FIRST so user can start while automation runs**
 
-   **IMPORTANT:** Show the user each prompt in the conversation so they can review what will be researched. Format like this:
+   **IMPORTANT:** Show manual prompts before launching automated tools. This allows the user to submit Claude/Grok research in parallel with GPT-Researcher/Gemini automation.
 
    ```
-   📋 PHASE 3 RESEARCH PROMPTS (All 4 tools)
+   ═══════════════════════════════════════════════════════════════
+   📋 MANUAL RESEARCH PROMPTS - Submit these now while automation runs
+   ═══════════════════════════════════════════════════════════════
 
-   **GPT-RESEARCHER PROMPT (Automated - 6-20 min):**
-   ```
-   [Full GPT-Researcher prompt here]
-   ```
-
-   **GEMINI PROMPT (Automated - 3-10 min):**
-   ```
-   [Full Gemini prompt here]
-   ```
-
-   **CLAUDE PROMPT (Manual - User will paste from claude.ai):**
+   **CLAUDE PROMPT (paste at https://claude.ai):**
    ```
    [Full Claude prompt here]
    ```
 
-   **GROK PROMPT (Manual - User will paste from x.com/i/grok):**
+   **GROK PROMPT (paste at https://x.com/i/grok):**
    ```
    [Full Grok prompt here]
    ```
 
-   These prompts will now be saved to logs/prompts.md and used for Phase 3 research.
+   ⏳ Submit these now - automation will run in parallel below.
+
+   ═══════════════════════════════════════════════════════════════
+   🤖 AUTOMATED RESEARCH - Launching now
+   ═══════════════════════════════════════════════════════════════
+
+   **GPT-RESEARCHER (6-20 min):** [Brief description of focus]
+   **GEMINI (3-10 min):** [Brief description of focus]
+
+   Launching automated research agents...
    ```
 
-   After displaying the prompts, save them to logs/prompts.md with the Phase 2 analysis
+   After displaying prompts, save all to logs/prompts.md
 
 5. **Create empty research files for Phase 3 results:**
 
@@ -920,7 +920,7 @@ cat > p2-grok.md << 'EOF'
 EOF
 ```
 
-6. **Inform user which tools to run and attempt automation**
+6. **Launch automated research (user should already be submitting manual prompts)**
 
 **Update todos:**
 ```
@@ -931,35 +931,38 @@ Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete,
 
 ### Phase 3 Automation: Targeted Followup Research
 
-**After Phase 2 question discovery, invoke research skills as needed:**
+**Execution order:**
+1. Manual prompts (Claude, Grok) already displayed above - user submits while automation runs
+2. Launch GPT-Researcher and Gemini in parallel (automated)
+3. All 4 tools complete roughly together
 
-**Available automation skills (invoke via Task tool):**
-- `gpt-researcher` - Local multi-agent research with OpenAI GPT-5.2, 6-20 min, 100+ sources, no browser required
-- `gemini-deep-research` - Official API automation, 3-10 min polling, no browser required
-- `perplexity-deep-research` - Official API automation, 30-120s, academic focus
+**Launch automated tools via Task tool:**
 
-**How to invoke:**
 ```
 Use the Task tool with subagent_type='general-purpose':
 
-"Automate [ChatGPT/Gemini] Deep Research for Phase 3 research.
-
-Read and follow the instructions in .claude/skills/[skill-name]/SKILL.md to:
-1. Execute automation (API or local tool)
-2. Wait for research completion
-3. Extract and format results
-4. Save to research/p2-[tool].md
-
-Research prompt: [insert Phase 3 prompt from prompts.md]"
+"Run GPT-Researcher for Phase 3 industry/technical research.
+Episode: [episode path]
+Prompt: [GPT-Researcher prompt from prompts.md]
+Save to: research/p2-chatgpt.md"
 ```
 
-This offloads the automation work to a subagent, keeping the main context clean.
+```
+Use the Task tool with subagent_type='general-purpose':
 
-**For Grok:** Manual submission (no automation available yet)
-- Go to https://x.com/i/grok
-- Paste Phase 3 Grok prompt from prompts.md
+"Run Gemini Deep Research for Phase 3 policy/regulatory research.
+Episode: [episode path]
+Prompt: [Gemini prompt from prompts.md]
+Save to: research/p2-gemini.md"
+```
 
-**Fallback for all tools:** Manual submission with prompts from prompts.md
+**Expected timeline:**
+- User submits Claude/Grok while reading this (~1-2 min)
+- GPT-Researcher runs (6-20 min)
+- Gemini runs (3-10 min)
+- All research completes roughly together
+
+**Fallback for automation failures:** Use prompts from logs/prompts.md manually
 
 **Update todos:**
 ```
@@ -1237,71 +1240,14 @@ Mark "Generate cover art" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 9: COVER ART
+                    PHASE 9: AUDIO GENERATION
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
 ✓ report.md created (Phase 7)
 ✓ content_plan.md created (Phase 8)
-✓ Ready to generate cover art based on episode content
-
-**WORK TO DO:** Immediately invoke cover art subagent:
-
-Use the Task tool to invoke the `podcast-cover-art` skill:
-
-```
-Generate podcast cover art for this episode using the podcast-cover-art skill.
-
-Episode path: podcast/episodes/YYYY-MM-DD-slug
-Episode title: [Full episode title]
-Series name: [Series name, or "None" for standalone episodes]
-Episode text: [Text for branding overlay, e.g., "Ep 3 - Sleep & Memory"]
-
-Follow the podcast-cover-art skill to:
-1. Generate AI cover art with Gemini via OpenRouter
-2. Apply podcast branding (logo, text, border)
-3. Log to logs/prompts.md
-4. Report back when complete with file path and size
-```
-
-**VERIFY COVER ART COMPLETE:**
-
-```bash
-ls -lh podcast/episodes/YYYY-MM-DD-slug/cover.png
-```
-
-**Expected output:**
-- ✅ cover.png exists
-- ✅ File size: ~400-600KB
-- ✅ Dimensions: 3000x3000px (podcast standard)
-
----
-
-**EXIT CRITERIA (all must be true to proceed):**
-✓ cover.png created in episode root directory
-✓ File size appropriate (~400-600KB)
-✓ Branding applied (logo, series/episode text, yellow border)
-✓ Image dimensions: 3000x3000px
-✓ Logged to logs/prompts.md
-
-**Update todos:**
-```
-Mark "Generate cover art" as completed.
-```
-
-═══════════════════════════════════════════════════════════════
-
----
-
-═══════════════════════════════════════════════════════════════
-                    PHASE 10: AUDIO GENERATION
-═══════════════════════════════════════════════════════════════
-
-**ENTRY REQUIREMENTS:**
-✓ report.md created (Phase 7)
 ✓ research/p3-briefing.md exists
 ✓ sources.md exists
-✓ Cover art generation launched (Phase 9) - can run in parallel
 
 **Primary Method: NotebookLM Enterprise API**
 
@@ -1413,11 +1359,11 @@ Mark "Process audio (chapters)" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 11: AUDIO PROCESSING
+                    PHASE 10: AUDIO PROCESSING
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
-✓ Audio generated (Phase 10) via NotebookLM API
+✓ Audio generated (Phase 9) via NotebookLM API or manual
 ✓ Audio file is in episode directory (.mp3)
 
 ---
@@ -1544,15 +1490,29 @@ Mark "Create publishing metadata" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 12: PUBLISHING
+                    PHASE 11: PUBLISHING
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
-✓ Audio processing complete (Phase 11)
+✓ Audio processing complete (Phase 10)
 ✓ Duration known (MM:SS format)
 ✓ File size known (exact bytes)
 ✓ Transcript exists (transcript.txt)
 ✓ report.md and research/p3-briefing.md available
+
+---
+
+### Generate Cover Art (runs in parallel with metadata)
+
+```bash
+cd ~/src/research/podcast/tools
+python cover_art.py ../episodes/YYYY-MM-DD-slug/
+```
+
+This auto-detects title/series and generates + brands cover art in one step.
+Can run in background while creating metadata.
+
+---
 
 **WORK TO DO:** Generate episode description, keywords, and source links:
 
@@ -1660,7 +1620,7 @@ Return comprehensive validation report showing:
 - ❌ Failed checks with specific fixes
 - ⚠️ Warnings for optional elements
 
-If validation fails, DO NOT proceed to Phase 12 until issues are fixed."
+If validation fails, DO NOT proceed to Phase 11 until issues are fixed."
 ```
 
 **VERIFY FEED.XML UPDATE:**
@@ -1683,6 +1643,7 @@ git diff podcast/feed.xml | head -50
 ---
 
 **EXIT CRITERIA (all must be true to proceed):**
+✓ cover.png exists and branded (~1MB)
 ✓ logs/metadata.md created with all fields
 ✓ Episode description written (1-2 sentences + report link)
 ✓ Keywords generated (5-10 episode-specific terms)
@@ -1707,11 +1668,12 @@ Mark "Update feed.xml and commit" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 13: COMMIT & PUSH
+                    PHASE 12: COMMIT & PUSH
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
-✓ feed.xml updated with episode metadata
+✓ feed.xml updated with episode metadata (Phase 11)
+✓ cover.png generated and branded (Phase 11)
 ✓ All episode files present in episode directory
 ✓ Publishing metadata complete (logs/metadata.md)
 
@@ -1890,11 +1852,10 @@ ALL EPISODE WORKFLOW TASKS COMPLETE! ✅
 - **Phase 6:** Master research briefing compilation (research/p3-briefing.md)
 - **Phase 7:** **Invoking podcast-synthesis-writer agent** to create report.md
 - **Phase 8:** **Invoking podcast-episode-planner** to create content_plan.md
-- **Phase 9:** Cover art generation (Gemini via OpenRouter) and branding
-- **Phase 10:** Audio generation via NotebookLM Enterprise API
-- **Phase 11:** Transcription (Whisper), chapter creation and embedding
-- **Phase 12:** Description, keywords, source validation, feed.xml update
-- **Phase 13:** Git commit and push (publishes episode)
+- **Phase 9:** Audio generation via NotebookLM (API or manual)
+- **Phase 10:** Transcription (Whisper), chapter creation and embedding
+- **Phase 11:** Cover art, metadata, feed.xml update, validation
+- **Phase 12:** Git commit and push (publishes episode)
 
 **Audio Generation:**
 - **Primary:** NotebookLM Enterprise API (`.claude/skills/notebooklm-enterprise-api/`) - Two-host conversational format, automated via Discovery Engine API
@@ -1916,10 +1877,9 @@ When user wants to create a new episode:
 9. **Phase 6:** Compile master briefing (research/p3-briefing.md organized by topic)
 10. **Phase 7:** Invoke podcast-synthesis-writer agent to create report.md
 11. **Phase 8:** Invoke podcast-episode-planner to create content_plan.md
-12. **Phase 9:** Generate cover art (Gemini via OpenRouter) and apply branding
-13. **Phase 10:** Generate audio via NotebookLM Enterprise API (~5-15 min)
-14. **Phase 11:** Transcribe with Whisper, create chapters, and embed in mp3
-15. **Phase 12:** Create metadata, update feed.xml, validate with podcast-feed-validator
-16. **Phase 13:** Git commit and push to publish (EPISODE LIVE)
+12. **Phase 9:** Generate audio via NotebookLM (API or manual, ~10-15 min)
+13. **Phase 10:** Transcribe with Whisper, create chapters, and embed in mp3
+14. **Phase 11:** Generate cover art, create metadata, update feed.xml, validate
+15. **Phase 12:** Git commit and push to publish (EPISODE LIVE)
 
 **Key:** Update TodoWrite at every phase transition. The sequential workflow builds research progressively: academic foundation → question discovery → targeted followup, producing higher quality, better verified, non-redundant research.

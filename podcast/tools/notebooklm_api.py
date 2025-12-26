@@ -253,6 +253,75 @@ def delete_notebook(notebook_id: str) -> None:
     api_request("DELETE", endpoint)
 
 
+def test_api_access() -> tuple[bool, str]:
+    """
+    Quick test of API access before starting heavy operations.
+    Returns (success, error_message).
+    """
+    import urllib.request
+    import urllib.error
+
+    try:
+        token = get_access_token()
+        url = f"{get_base_url()}/notebooks"
+
+        request = urllib.request.Request(
+            url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+            },
+            method="GET"
+        )
+
+        # Quick timeout - if API isn't accessible, fail fast
+        with urllib.request.urlopen(request, timeout=10) as response:
+            # 200 OK means we have access
+            return True, ""
+
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            return False, "API access denied (403). NotebookLM Enterprise subscription required."
+        elif e.code == 401:
+            return False, "Authentication failed (401). Run: gcloud auth login"
+        elif e.code == 404:
+            return False, "API endpoint not found (404). Discovery Engine API may not be enabled."
+        else:
+            error_body = e.read().decode()
+            return False, f"API error {e.code}: {error_body}"
+    except urllib.error.URLError as e:
+        return False, f"Network error: {e.reason}"
+    except subprocess.CalledProcessError as e:
+        return False, f"gcloud auth failed: {e}"
+    except Exception as e:
+        return False, f"Unexpected error: {e}"
+
+
+def print_manual_fallback(episode_dir: Path) -> None:
+    """Print manual NotebookLM instructions when API is unavailable."""
+    print(f"""
+{'='*60}
+API UNAVAILABLE - USE MANUAL WORKFLOW
+{'='*60}
+
+NotebookLM Enterprise API requires a paid subscription.
+
+Generate the manual prompt with:
+
+  cd {Path(__file__).parent}
+  python notebooklm_prompt.py {episode_dir} --copy
+
+This will:
+- Verify all 5 source files are ready
+- Generate the NotebookLM prompt with correct title/series
+- Copy to clipboard (--copy flag)
+
+Then paste into NotebookLM at: https://notebooklm.google.com/
+
+{'='*60}
+""")
+
+
 def generate_episode_focus(episode_title: str, series_name: str = "") -> str:
     """Generate the episodeFocus prompt for NotebookLM audio generation."""
     series_intro = f" from our {series_name} series" if series_name else ""
@@ -360,6 +429,15 @@ def main():
     print(f"Directory: {episode_dir}")
     print(f"Sources: {len(source_files)} files")
     print(f"{'='*60}\n")
+
+    # Quick API access test before starting heavy operations
+    print("Testing API access...")
+    api_ok, api_error = test_api_access()
+    if not api_ok:
+        print(f"\n❌ API Access Failed: {api_error}")
+        print_manual_fallback(episode_dir)
+        sys.exit(2)  # Exit code 2 = API unavailable, use manual fallback
+    print("✓ API access confirmed\n")
 
     notebook_id = None
     try:
