@@ -46,28 +46,28 @@ You will receive:
 
 ### Step 1: Generate Base Cover Art with AI
 
-Run the cover art generation script:
+Run the cover art generation script using `uv run` (automatically manages dependencies):
 
 ```bash
 cd ~/src/research/podcast/tools
 
 # Basic usage - auto-generate from report.md
-python generate_cover.py ../episodes/EPISODE_PATH --auto
+uv run python generate_cover.py ../episodes/EPISODE_PATH --auto
 
 # With organized logging (recommended for production)
 mkdir -p ../episodes/EPISODE_PATH/logs
-python generate_cover.py ../episodes/EPISODE_PATH --auto \
+uv run python generate_cover.py ../episodes/EPISODE_PATH --auto \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 
 # With custom prompt
-python generate_cover.py ../episodes/EPISODE_PATH \
+uv run python generate_cover.py ../episodes/EPISODE_PATH \
   --prompt "Custom prompt here" \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 
 # With custom model and aspect ratio
-python generate_cover.py ../episodes/EPISODE_PATH --auto \
+uv run python generate_cover.py ../episodes/EPISODE_PATH --auto \
   --model google/gemini-3-pro-image-preview \
   --aspect-ratio "1:1" \
   --log-dir ../episodes/EPISODE_PATH/logs \
@@ -88,25 +88,25 @@ python generate_cover.py ../episodes/EPISODE_PATH --auto \
 
 ### Step 2: Add Podcast Branding
 
-Apply branding overlay to the generated cover:
+Apply branding overlay to the generated cover using `uv run`:
 
 ```bash
 cd ~/src/research/podcast/tools
 
 # Basic usage - for series episodes
-python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
+uv run python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --series "SERIES_NAME" \
   --episode "EPISODE_TEXT"
 
 # With organized logging (recommended for production)
-python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
+uv run python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --series "SERIES_NAME" \
   --episode "EPISODE_TEXT" \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
 
 # For standalone episodes (no series text)
-python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
+uv run python add_logo_watermark.py ../episodes/EPISODE_PATH/cover.png \
   --episode "EPISODE_TEXT" \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
@@ -164,7 +164,7 @@ Before applying branding, verify required fonts are installed:
 
 ```bash
 cd ~/src/research/podcast/tools
-python add_logo_watermark.py --check-fonts
+uv run python add_logo_watermark.py --check-fonts
 ```
 
 Expected output:
@@ -182,7 +182,10 @@ If the user hasn't set up cover art generation tools yet:
 
 ```bash
 cd ~/src/research/podcast/tools
-pip install requests pillow  # Required dependencies
+
+# Dependencies are managed via pyproject.toml - uv run auto-installs them
+# Just verify uv is available:
+uv --version
 
 # API keys are stored in /Users/valorengels/.env (auto-loaded via ~/.zshenv)
 # Verify OPENROUTER_API_KEY is set:
@@ -195,7 +198,7 @@ unzip -o playfair.zip
 
 # Verify fonts installed correctly
 cd ~/src/research/podcast/tools
-python add_logo_watermark.py --check-fonts
+uv run python add_logo_watermark.py --check-fonts
 ```
 
 ## Cost Information
