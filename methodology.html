@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Our Methodology - Yudame Research</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+
+        <!-- Design System -->
+        <link rel="stylesheet" href="docs/design/components/foundation.css" />
+        <link rel="stylesheet" href="docs/design/components/navigation.css" />
+        <link rel="stylesheet" href="docs/design/components/buttons.css" />
+
+        <style>
+            .hero-methodology {
+                background: linear-gradient(135deg, var(--color-white) 0%, var(--color-cream) 100%);
+                padding: var(--space-8) 0 var(--space-6);
+            }
+
+            .hero-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-6);
+                align-items: start;
+            }
+
+            @media (max-width: 900px) {
+                .hero-grid {
+                    grid-template-columns: 1fr;
+                    gap: var(--space-4);
+                }
+            }
+
+            .hero-methodology h1 {
+                font-size: var(--text-4xl);
+                line-height: 1.1;
+                margin-bottom: var(--space-2);
+            }
+
+            .hero-text p {
+                font-family: var(--font-sans);
+                font-size: var(--text-base);
+                color: var(--color-gray-600);
+                line-height: var(--leading-loose);
+                margin-bottom: var(--space-2);
+            }
+
+            /* Evidence Checklist */
+            .evidence-checklist {
+                background: var(--color-white);
+                border: 1px solid var(--color-gray-200);
+                border-radius: var(--radius-lg);
+                padding: var(--space-3);
+            }
+
+            .evidence-checklist h3 {
+                font-family: var(--font-serif);
+                font-size: var(--text-lg);
+                font-weight: var(--weight-semibold);
+                margin-bottom: var(--space-2);
+                color: var(--color-black);
+            }
+
+            .checklist {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .checklist li {
+                display: flex;
+                align-items: flex-start;
+                gap: var(--space-1);
+                padding: 6px 0;
+                font-family: var(--font-sans);
+                font-size: var(--text-sm);
+                color: var(--color-gray-800);
+                line-height: var(--leading-relaxed);
+            }
+
+            .checklist li i {
+                color: var(--color-salmon);
+                margin-top: 3px;
+                flex-shrink: 0;
+            }
+
+            .section {
+                padding: var(--space-6) 0;
+            }
+
+            .section-alt {
+                background-color: var(--color-cream);
+            }
+
+            .section-title {
+                font-family: var(--font-serif);
+                font-size: var(--text-2xl);
+                font-weight: var(--weight-semibold);
+                color: var(--color-black);
+                margin-bottom: var(--space-2);
+            }
+
+            .section-intro {
+                font-family: var(--font-sans);
+                font-size: var(--text-base);
+                color: var(--color-gray-600);
+                margin-bottom: var(--space-3);
+            }
+
+            .container h3 {
+                font-family: var(--font-serif);
+                font-size: var(--text-lg);
+                font-weight: var(--weight-semibold);
+                margin-top: var(--space-3);
+                margin-bottom: var(--space-1);
+            }
+
+            .container > p {
+                font-family: var(--font-sans);
+                font-size: var(--text-base);
+                color: var(--color-gray-800);
+                line-height: var(--leading-relaxed);
+                margin-bottom: var(--space-2);
+            }
+
+            /* Pipeline Diagram */
+            .pipeline-diagram {
+                background: var(--color-white);
+                border: 1px solid var(--color-gray-200);
+                border-radius: var(--radius-lg);
+                padding: var(--space-3);
+                margin: var(--space-3) 0;
+                overflow-x: auto;
+            }
+
+            .pipeline {
+                display: flex;
+                align-items: stretch;
+                gap: 6px;
+                min-width: 660px;
+            }
+
+            .pipeline-stage {
+                flex: 1;
+                background: var(--color-cream);
+                border-radius: var(--radius-md);
+                padding: var(--space-2);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .pipeline-stage.highlight {
+                background: linear-gradient(135deg, var(--color-salmon-light) 0%, var(--color-white) 100%);
+                border: 2px solid var(--color-salmon);
+            }
+
+            .pipeline-stage-label {
+                font-family: var(--font-mono);
+                font-size: 9px;
+                color: var(--color-gray-600);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 2px;
+            }
+
+            .pipeline-stage-title {
+                font-family: var(--font-serif);
+                font-size: var(--text-sm);
+                font-weight: var(--weight-semibold);
+                color: var(--color-black);
+            }
+
+            .pipeline-arrow {
+                display: flex;
+                align-items: center;
+                color: var(--color-salmon);
+                font-size: var(--text-sm);
+                flex-shrink: 0;
+            }
+
+            /* Synthesis Diagram */
+            .synthesis-diagram {
+                background: var(--color-white);
+                border: 1px solid var(--color-gray-200);
+                border-radius: var(--radius-lg);
+                padding: var(--space-3);
+                margin: var(--space-3) 0;
+            }
+
+            .synthesis-flow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--space-3);
+                flex-wrap: wrap;
+            }
+
+            .source-group {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .source-item {
+                display: flex;
+                align-items: center;
+                gap: var(--space-1);
+                background: var(--color-cream);
+                padding: 6px 10px;
+                border-radius: var(--radius-md);
+                font-family: var(--font-sans);
+                font-size: var(--text-xs);
+            }
+
+            .source-item i {
+                width: 16px;
+                text-align: center;
+            }
+
+            .source-item.academic i { color: #4A7C8C; }
+            .source-item.realtime i { color: var(--color-black); }
+            .source-item.industry i { color: #10a37f; }
+            .source-item.policy i { color: #4285f4; }
+
+            .synthesis-arrow {
+                font-size: var(--text-xl);
+                color: var(--color-gray-300);
+            }
+
+            .synthesis-output {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .synthesis-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: var(--text-lg);
+                color: var(--color-white);
+                background: linear-gradient(135deg, var(--color-salmon) 0%, var(--color-salmon-dark) 100%);
+                box-shadow: var(--shadow-sm);
+            }
+
+            .synthesis-label {
+                font-family: var(--font-serif);
+                font-size: var(--text-xs);
+                font-weight: var(--weight-semibold);
+                text-align: center;
+            }
+
+            .diagram-footnote {
+                font-family: var(--font-mono);
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
+                text-align: center;
+                margin-top: var(--space-2);
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 768px) {
+                .hero-methodology h1 {
+                    font-size: var(--text-2xl);
+                }
+
+                .section-title {
+                    font-size: var(--text-xl);
+                }
+
+                .synthesis-flow {
+                    flex-direction: column;
+                }
+
+                .synthesis-arrow {
+                    transform: rotate(90deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="/" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <img src="podcast/yudame-logo.png" alt="" style="height: 32px" />
+                    <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+                </a>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/#podcast" class="nav-link">Podcast</a></li>
+                        <li class="nav-item"><a href="/methodology.html" class="nav-link is-active">Methodology</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="mobile-menu-icon"><span></span><span></span><span></span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav">
+                <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="/#podcast" class="mobile-nav-link">Podcast</a></li>
+                <li class="mobile-nav-item"><a href="/methodology.html" class="mobile-nav-link is-active">Methodology</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero with Evidence Standards -->
+        <section class="hero-methodology">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <h1>Our Methodology</h1>
+                        <p>
+                            We deliver evidence with full nuance, honest uncertainty, and practical implications—in a format you can absorb during your commute.
+                        </p>
+                        <p>
+                            Every episode answers one question clearly enough that you could teach it to someone else.
+                        </p>
+                    </div>
+
+                    <div class="evidence-checklist">
+                        <h3>Evidence Standards</h3>
+                        <ul class="checklist">
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Every claim sourced</strong> — study, sample size, methodology</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Correlation vs. causation</strong> — we never blur that line</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Contradictions shown</strong> — both sides when studies disagree</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Uncertainty stated</strong> — weak evidence labeled as such</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Specific parameters</strong> — "90-120 min after waking" not "in the morning"</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Natural citations</strong> — "A 2023 Nature meta-analysis found..."</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span><strong>Fact-checkable</strong> — verify against our sources</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production Pipeline -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Production Pipeline</h2>
+                <p class="section-intro">
+                    Research flows through multiple stages before becoming audio. We don't write until claims are verified across independent sources.
+                </p>
+
+                <div class="pipeline-diagram">
+                    <div class="pipeline">
+                        <div class="pipeline-stage">
+                            <div class="pipeline-stage-label">1-2</div>
+                            <div class="pipeline-stage-title">Foundation</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="pipeline-stage-label">3-4</div>
+                            <div class="pipeline-stage-title">Question Discovery</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="pipeline-stage-label">5-6</div>
+                            <div class="pipeline-stage-title">Cross-Validation</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        <div class="pipeline-stage highlight">
+                            <div class="pipeline-stage-label">7</div>
+                            <div class="pipeline-stage-title">Synthesis</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="pipeline-stage-label">8-13</div>
+                            <div class="pipeline-stage-title">Production</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-Source Synthesis -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Multi-Source Synthesis</h2>
+                <p class="section-intro">
+                    Every topic researched through multiple lenses, then cross-validated. Academic literature has blind spots—we fill them.
+                </p>
+
+                <div class="synthesis-diagram">
+                    <div class="synthesis-flow">
+                        <div class="source-group">
+                            <div class="source-item academic"><i class="fa-solid fa-graduation-cap"></i> <span>Academic</span></div>
+                            <div class="source-item realtime"><i class="fa-solid fa-bolt"></i> <span>Real-Time</span></div>
+                            <div class="source-item industry"><i class="fa-solid fa-industry"></i> <span>Industry</span></div>
+                            <div class="source-item policy"><i class="fa-solid fa-landmark"></i> <span>Policy</span></div>
+                        </div>
+
+                        <div class="synthesis-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                        <div class="synthesis-output">
+                            <div class="synthesis-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <span class="synthesis-label">Cross-Validated</span>
+                        </div>
+
+                        <div class="synthesis-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                        <div class="synthesis-output">
+                            <div class="synthesis-icon" style="background: linear-gradient(135deg, #4A7C8C 0%, #3a6570 100%);"><i class="fa-solid fa-book-open"></i></div>
+                            <span class="synthesis-label">Narrative</span>
+                        </div>
+                    </div>
+                    <p class="diagram-footnote">Powered by Perplexity, Grok, GPT-Researcher, Gemini, NotebookLM, OpenAI, Claude</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Episode Structure -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Episode Structure</h2>
+
+                <h3>Foundation: The "Why"</h3>
+                <p>Key concepts, methodology, and terms explained with clear analogies. Technical terms always spelled out on first use (e.g., "polyunsaturated fatty acids, or PUFA").</p>
+
+                <h3>Evidence: The "What"</h3>
+                <p>Key studies cited with institution, year, and sample size. Conflicting evidence addressed directly—not hidden.</p>
+
+                <h3>Application: The "How"</h3>
+                <p>Protocols with exact parameters: timing, frequency, dosage. No vague advice—only actionable specifics.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <div class="footer-logo">Yudame<br />Research</div>
+                        <div class="footer-tagline">Be the most prepared person in the room.</div>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Research</h3>
+                        <ul class="footer-links">
+                            <li><a href="podcast/episodes/kindergarten-first-principles/">Kindergarten Series</a></li>
+                            <li><a href="podcast/episodes/cardiovascular-health/">Cardiovascular Health</a></li>
+                            <li><a href="podcast/episodes/active-recovery/">Active Recovery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Podcast</h3>
+                        <ul class="footer-links">
+                            <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                            <li><a href="podcast/feed.xml">RSS Feed</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Connect</h3>
+                        <ul class="footer-links">
+                            <li><a href="https://yuda.me">Home</a></li>
+                            <li><a href="https://ai.yuda.me">AI</a></li>
+                            <li><a href="https://research.yuda.me">Research</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; <span id="year"></span> Yudame</p>
+                    <p class="footer-dedication">We do the research. You get the edge.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+            const mobileMenu = document.querySelector(".mobile-menu");
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener("click", function () {
+                    mobileMenu.classList.toggle("is-active");
+                    this.classList.toggle("is-active");
+                });
+            }
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>
