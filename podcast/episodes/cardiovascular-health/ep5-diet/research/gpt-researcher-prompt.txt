@@ -1,0 +1,19 @@
+Research diet and cardiovascular health for 40-year-old men, focusing on these specific questions:
+
+**Industry Analysis:**
+- What are the cost implications of Mediterranean diet adoption? What makes it expensive or affordable?
+- How is the food industry responding to ultra-processed food concerns? What reformulation efforts exist?
+- What time-efficient meal preparation strategies exist for busy professionals seeking whole-food diets?
+
+**Case Studies & Implementation:**
+- What specific UPF reduction interventions have been implemented and evaluated in workplaces or communities?
+- What does real-world data show about adherence to dietary interventions for cardiovascular health?
+- Which dietary tracking or coaching programs have demonstrated cardiovascular benefits in RCTs?
+
+**Technical Details:**
+- What biomarkers beyond LDL cholesterol best predict cardiovascular risk response to dietary changes?
+- How do different cooking methods (grilling, steaming, etc.) affect cardiovascular health outcomes?
+- What is the comparative analysis of protein sources (plant vs animal) for cardiovascular markers?
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
