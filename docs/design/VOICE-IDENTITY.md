@@ -164,186 +164,11 @@ Every episode should leave listeners more informed and more prepared.
 
 ---
 
-## Technical Implementation
-
-### Voice Engine: Gemini 2.5 Native Audio
-
-**Model:** `gemini-2.5-flash-native-audio`
-
-**Built-in Voice:** Alnilam (HD)
-
-Alnilam is a prebuilt Gemini voice that naturally embodies the qualities we need:
-- Warm, authoritative baritone
-- Clear articulation with natural prosody
-- Capable of emotional range and vocal variation
-
-### Generation Parameters
-
-| Parameter | Value | Purpose |
-|-----------|-------|---------|
-| Temperature | 1.2 - 1.4 | Higher values enable natural vocal variability |
-| Output Format | 16-bit PCM @ 24kHz | Maximum fidelity for post-processing |
-| Safety Settings | BLOCK_NONE | Prevents tone clamping on complex topics |
-
-### Achieving the Austrian Academic Cadence
-
-Since we cannot directly control accent, we influence vocal delivery through **text construction**:
-
-**Multisyllabic Precision:** Structure sentences with:
-- Em-dashes for side-thoughts
-- Complex but clear sentence structures
-- Crisp, definitive endings
-
-**Example transformation:**
-```
-Before: "The results were really surprising."
-After:  "The results were—and I must be precise here—genuinely staggering."
-```
-
-### Breathing & Pacing Markers
-
-Natural speech requires pauses. Insert these markers in the script:
-
-| Marker | Effect | Duration |
-|--------|--------|----------|
-| `...` | Short breath/pause | ~0.3s |
-| `[pause]` | Medium pause | ~0.8s |
-| Double paragraph | Long pause with breath | ~1.2s |
-
-**Example:**
-```
-"The data tells a different story...
-
-[pause]
-
-One that challenges everything we thought we understood."
-```
-
-### Affective Triggers
-
-Direct the model's emotional delivery with system instructions:
-
-```
-When transitioning to surprising findings, adopt a 'Discovery' tone—
-slightly breathless and inquisitive.
-
-When delivering conclusions, shift to 'Gravitas'—slower, deeper,
-more emphatic.
-```
-
-**Vocal Cue Library:**
-
-| Cue | Description | Usage |
-|-----|-------------|-------|
-| Discovery | Breathless, inquisitive | New findings, surprises |
-| Gravitas | Slower, deeper | Important conclusions |
-| Skeptical | Higher pitch, questioning | Challenging assumptions |
-| Confident | Steady, declarative | Established facts |
-| Reflective | Softer, contemplative | Philosophical implications |
-
-### Quality Checks
-
-- [ ] Natural breathing pauses present (not continuous speech)
-- [ ] Emotional variation matches content
-- [ ] No robotic/flat sections longer than 10 seconds
-- [ ] Key terms clearly enunciated
-- [ ] Pacing feels conversational, not read
-
----
-
-## TTS Directive Mappings
-
-When generating `script.md` for Gemini TTS, use these inline directives to implement the voice identity:
-
-### Directive Syntax
-
-```markdown
-[VOICE: warm, authoritative]
-[PACE: measured]
-[PAUSE: 0.8s]
-[EMPHASIS: strong]
-```
-
-### Context → Directive Mapping
-
-| Voice Context | TTS Directive |
-|---------------|---------------|
-| Introducing a topic | `[VOICE: curious, inviting]` |
-| Explaining methodology | `[VOICE: precise, matter-of-fact]` |
-| Revealing key findings | `[VOICE: energized, emphatic]` |
-| Challenging assumptions | `[VOICE: direct, confident]` |
-| Synthesizing conclusions | `[VOICE: thoughtful, assured]` |
-| Call to action | `[VOICE: warm, encouraging]` |
-
-### Vocal Cue → Directive Mapping
-
-| Vocal Cue | TTS Directive |
-|-----------|---------------|
-| Discovery | `[VOICE: curious, slightly breathless]` `[PACE: building energy]` |
-| Gravitas | `[VOICE: emphatic]` `[PACE: slower, deliberate]` |
-| Skeptical | `[VOICE: skeptical, questioning]` |
-| Confident | `[VOICE: confident, steady]` |
-| Reflective | `[VOICE: reflective, softer]` `[PACE: measured]` |
-
-### Pause Guidelines
-
-| Pause Type | Directive | Usage |
-|------------|-----------|-------|
-| Breath pause | `[PAUSE: 0.3s]` | Between sentences within a paragraph |
-| Emphasis pause | `[PAUSE: 0.5s]` | Before important statements |
-| Section beat | `[PAUSE: 0.8s]` | After key insights, before transitions |
-| Major transition | `[PAUSE: 1.2s]` | Between major topics |
-| Section break | `[PAUSE: 2.0s]` | Between Foundation/Evidence/Application |
-
-### Characteristic Patterns as Directives
-
-**Opening a topic:**
-```markdown
-[VOICE: curious, inviting]
-[PACE: measured]
-Now, this is where it becomes fascinating...
-[PAUSE: 0.5s]
-```
-
-**Building an argument:**
-```markdown
-[VOICE: precise, building confidence]
-You see, the evidence suggests...
-[PAUSE: 0.3s]
-Let us be precise about this.
-```
-
-**Delivering insights:**
-```markdown
-[VOICE: emphatic]
-[PACE: slower, deliberate]
-And this is consequential.
-[PAUSE: 0.8s]
-Once you see it, you cannot unsee it.
-```
-
-**Transitions:**
-```markdown
-[PAUSE: 1.2s]
-[VOICE: shifting energy]
-But here is where it gets interesting.
-```
-
-**Conclusions:**
-```markdown
-[VOICE: warm, encouraging]
-[PACE: measured]
-So here is the takeaway.
-[PAUSE: 0.5s]
-The evidence is compelling, the mechanism is clear, and the applications are practical.
-```
-
----
-
 ## Brand Alignment
 
 **Podcast:** Yudame Research
 **Tagline:** "Be the most prepared person in the room"
+**Produced by:** Valor Engels
 
 This voice embodies the mission: synthesizing complex research into clear, actionable insights — delivered with the authority of expertise and the warmth of genuine intellectual curiosity.
 
@@ -351,10 +176,17 @@ Listeners should feel smarter and more prepared after every episode.
 
 ---
 
-## Version History
+## Implementation
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | 2024-12-22 | Initial voice identity |
-| 2.0 | 2025-12-23 | Switched to Gemini 2.5 Native Audio with Alnilam voice |
-| 3.0 | 2025-12-24 | Added TTS directive mappings for script.md generation |
+This voice identity is implemented through NotebookLM's two-host format. The `content_plan.md` created by the `podcast-episode-planner` skill provides structural guidance that shapes how NotebookLM delivers the content.
+
+Key guidance for NotebookLM:
+- Use the characteristic patterns listed above
+- Follow the emotional range table for context-appropriate tone
+- Maintain the vocabulary preferences
+- Avoid the listed anti-patterns
+
+---
+
+*Version 4.0 — December 2025*
+*NotebookLM-only workflow*

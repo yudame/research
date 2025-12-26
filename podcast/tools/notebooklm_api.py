@@ -27,8 +27,8 @@ from pathlib import Path
 from typing import Optional
 
 # Configuration
-ENDPOINT_PREFIX = "us"  # us, eu, or global
-LOCATION = "us"  # Must match ENDPOINT_PREFIX
+ENDPOINT_PREFIX = "global"  # us, eu, or global
+LOCATION = "global"  # Must match ENDPOINT_PREFIX
 API_VERSION = "v1alpha"
 
 

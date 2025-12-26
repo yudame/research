@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Our Methodology - Yudame Research</title>
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="podcast/yudame-logo.png">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +23,7 @@
         />
 
         <!-- Design System -->
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="docs/design/components/foundation.css" />
         <link rel="stylesheet" href="docs/design/components/navigation.css" />
         <link rel="stylesheet" href="docs/design/components/buttons.css" />
@@ -101,8 +105,12 @@
                 padding: var(--space-6) 0;
             }
 
-            .section-alt {
-                background-color: var(--color-cream);
+            .section-grid {
+                background:
+                    linear-gradient(var(--grid-color) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+                    linear-gradient(135deg, var(--color-white) 0%, var(--color-cream) 100%);
+                background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), 100% 100%;
             }
 
             .section-title {
@@ -308,8 +316,8 @@
                 <nav>
                     <ul class="nav">
                         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="/#podcast" class="nav-link">Podcast</a></li>
                         <li class="nav-item"><a href="/methodology.html" class="nav-link is-active">Methodology</a></li>
+                        <li class="nav-item"><a href="/podcast/subscribe.html" class="nav-link">Podcast</a></li>
                     </ul>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -322,8 +330,8 @@
         <div class="mobile-menu">
             <ul class="mobile-nav">
                 <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
-                <li class="mobile-nav-item"><a href="/#podcast" class="mobile-nav-link">Podcast</a></li>
                 <li class="mobile-nav-item"><a href="/methodology.html" class="mobile-nav-link is-active">Methodology</a></li>
+                <li class="mobile-nav-item"><a href="/podcast/subscribe.html" class="mobile-nav-link">Podcast</a></li>
             </ul>
         </div>
 
@@ -358,7 +366,7 @@
         </section>
 
         <!-- Production Pipeline -->
-        <section class="section section-alt">
+        <section class="section">
             <div class="container">
                 <h2 class="section-title">Production Pipeline</h2>
                 <p class="section-intro">
@@ -397,7 +405,7 @@
         </section>
 
         <!-- Multi-Source Synthesis -->
-        <section class="section">
+        <section class="section section-grid">
             <div class="container">
                 <h2 class="section-title">Multi-Source Synthesis</h2>
                 <p class="section-intro">
@@ -406,6 +414,13 @@
 
                 <div class="synthesis-diagram">
                     <div class="synthesis-flow">
+                        <div class="synthesis-output">
+                            <div class="synthesis-icon" style="background: linear-gradient(135deg, #4A7C8C 0%, #3a6570 100%);"><i class="fa-solid fa-file-lines"></i></div>
+                            <span class="synthesis-label">Proposal</span>
+                        </div>
+
+                        <div class="synthesis-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
                         <div class="source-group">
                             <div class="source-item academic"><i class="fa-solid fa-graduation-cap"></i> <span>Academic</span></div>
                             <div class="source-item realtime"><i class="fa-solid fa-bolt"></i> <span>Real-Time</span></div>
@@ -433,7 +448,7 @@
         </section>
 
         <!-- Episode Structure -->
-        <section class="section section-alt">
+        <section class="section">
             <div class="container">
                 <h2 class="section-title">Episode Structure</h2>
 

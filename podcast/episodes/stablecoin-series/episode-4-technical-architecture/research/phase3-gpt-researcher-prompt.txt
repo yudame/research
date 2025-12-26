@@ -1,0 +1,19 @@
+Research stablecoin smart contract security and deployment practices, focusing on these specific questions:
+
+**Industry Analysis:**
+- What are the actual costs of comprehensive security programs (audits, bug bounties, formal verification, monitoring)?
+- How do different audit firms (Trail of Bits, OpenZeppelin, CertiK, Halborn) compare in methodology and track record?
+- What percentage of audited stablecoins/DeFi protocols have still been exploited?
+
+**Case Studies & Implementation:**
+- How did Circle implement USDC security across 15+ blockchains? What went right/wrong?
+- What can we learn from MakerDAO/DAI's security evolution over 5+ years?
+- What multi-chain deployment strategies minimize bridge risk?
+
+**Technical Details:**
+- What testing methodologies (unit tests, fuzzing, testnets, mainnet canaries) are standard practice in 2025?
+- How do emergency response and incident recovery typically work for major stablecoins?
+- What specific security tools and libraries are most widely used (OpenZeppelin, Foundry, Slither)?
+
+Focus on: Industry analyst reports, audit firm publications, case studies, GitHub repositories, security postmortems.
+Provide comprehensive findings with citations, data sources, and comparative analysis.

@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Yudame Research - Be the most prepared person in the room</title>
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="podcast/yudame-logo.png">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +23,7 @@
         />
 
         <!-- Design System -->
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="docs/design/components/foundation.css" />
         <link rel="stylesheet" href="docs/design/components/navigation.css" />
         <link rel="stylesheet" href="docs/design/components/buttons.css" />
@@ -118,8 +122,23 @@
                 padding: var(--space-8) 0;
             }
 
-            .section-alt {
-                background-color: var(--color-cream);
+            .section-grid {
+                background:
+                    linear-gradient(var(--grid-color) 1px, transparent 1px),
+                    linear-gradient(
+                        90deg,
+                        var(--grid-color) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        135deg,
+                        var(--color-white) 0%,
+                        var(--color-cream) 100%
+                    );
+                background-size:
+                    var(--grid-size) var(--grid-size),
+                    var(--grid-size) var(--grid-size),
+                    100% 100%;
             }
 
             .section-title {
@@ -170,41 +189,133 @@
                 position: relative;
             }
 
-            .methodology-list li::before {
-                content: "→";
-                position: absolute;
-                left: 0;
-                color: var(--color-salmon);
-                font-weight: var(--weight-semibold);
+            /* Synthesis Diagram */
+            .synthesis-diagram {
+                background: var(--color-white);
+                border: 1px solid var(--color-gray-200);
+                border-radius: var(--radius-lg);
+                padding: var(--space-3);
+                margin: var(--space-4) 0;
             }
 
-            .methodology-list strong {
+            .synthesis-flow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--space-3);
+                flex-wrap: wrap;
+            }
+
+            .source-group {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .source-item {
+                display: flex;
+                align-items: center;
+                gap: var(--space-1);
+                background: var(--color-cream);
+                padding: 6px 10px;
+                border-radius: var(--radius-md);
+                font-family: var(--font-sans);
+                font-size: var(--text-xs);
+            }
+
+            .source-item i {
+                width: 16px;
+                text-align: center;
+            }
+
+            .source-item.academic i {
+                color: #4a7c8c;
+            }
+            .source-item.realtime i {
                 color: var(--color-black);
-                font-weight: var(--weight-medium);
+            }
+            .source-item.industry i {
+                color: #10a37f;
+            }
+            .source-item.policy i {
+                color: #4285f4;
+            }
+
+            .synthesis-arrow {
+                font-size: var(--text-xl);
+                color: var(--color-gray-300);
+            }
+
+            .synthesis-output {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .synthesis-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: var(--text-lg);
+                color: var(--color-white);
+                background: linear-gradient(
+                    135deg,
+                    var(--color-salmon) 0%,
+                    var(--color-salmon-dark) 100%
+                );
+                box-shadow: var(--shadow-sm);
+            }
+
+            .synthesis-label {
+                font-family: var(--font-serif);
+                font-size: var(--text-xs);
+                font-weight: var(--weight-semibold);
+                text-align: center;
+            }
+
+            @media (max-width: 768px) {
+                .synthesis-flow {
+                    flex-direction: column;
+                }
+
+                .synthesis-arrow {
+                    transform: rotate(90deg);
+                }
             }
 
             .series-grid {
                 display: grid;
-                grid-template-columns: 1fr;
-                gap: var(--space-3);
-                margin-top: var(--space-4);
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-2);
+                margin-top: var(--space-3);
+            }
+
+            @media (max-width: 600px) {
+                .series-grid {
+                    grid-template-columns: 1fr;
+                }
             }
 
             .series-card {
-                display: block;
+                display: flex;
+                align-items: baseline;
+                gap: var(--space-2);
                 background: var(--color-white);
                 border: 1px solid var(--color-gray-200);
-                border-radius: var(--radius-lg);
-                padding: var(--space-4);
+                border-radius: var(--radius-md);
+                padding: var(--space-2) var(--space-3);
                 text-decoration: none;
                 transition: all var(--transition-base);
-                border-left: 4px solid var(--color-salmon);
+                border-left: 3px solid var(--color-salmon);
             }
 
             .series-card:hover {
                 border-color: var(--color-salmon);
-                box-shadow: var(--shadow-md);
-                transform: translateY(-2px);
+                box-shadow: var(--shadow-sm);
             }
 
             .series-card:focus {
@@ -214,17 +325,16 @@
 
             .series-card-title {
                 font-family: var(--font-serif);
-                font-size: var(--text-xl);
+                font-size: var(--text-base);
                 font-weight: var(--weight-semibold);
                 color: var(--color-black);
-                margin-bottom: var(--space-1);
+                white-space: nowrap;
             }
 
             .series-card-meta {
                 font-family: var(--font-sans);
-                font-size: var(--text-sm);
-                color: var(--color-gray-600);
-                line-height: var(--leading-relaxed);
+                font-size: var(--text-xs);
+                color: var(--color-gray-500);
             }
 
             .podcast-button {
@@ -322,11 +432,13 @@
                             <a href="/" class="nav-link is-active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#podcast" class="nav-link">Podcast</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="methodology.html" class="nav-link"
                                 >Methodology</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="podcast/subscribe.html" class="nav-link"
+                                >Podcast</a
                             >
                         </li>
                     </ul>
@@ -348,11 +460,13 @@
                     <a href="/" class="mobile-nav-link is-active">Home</a>
                 </li>
                 <li class="mobile-nav-item">
-                    <a href="#podcast" class="mobile-nav-link">Podcast</a>
-                </li>
-                <li class="mobile-nav-item">
                     <a href="methodology.html" class="mobile-nav-link"
                         >Methodology</a
+                    >
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="podcast/subscribe.html" class="mobile-nav-link"
+                        >Podcast</a
                     >
                 </li>
             </ul>
@@ -389,13 +503,16 @@
                     the latest and act with confidence.
                 </p>
 
-                <div class="feed-box" style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <div
+                    class="feed-box"
+                    style="display: flex; gap: var(--space-2); flex-wrap: wrap"
+                >
                     <a
                         href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179"
                         class="podcast-button"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style="background: #9333ea;"
+                        style="background: #9333ea"
                         ><i class="fa-solid fa-podcast"></i> Apple Podcasts</a
                     >
                     <a
@@ -403,13 +520,13 @@
                         class="podcast-button"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style="background: #1db954;"
+                        style="background: #1db954"
                         ><i class="fa-brands fa-spotify"></i> Spotify</a
                     >
                     <a
                         href="podcast/subscribe.html"
                         class="podcast-button"
-                        style="background: var(--color-gray-600);"
+                        style="background: var(--color-gray-600)"
                         ><i class="fa-solid fa-rss"></i> Other</a
                     >
                 </div>
@@ -417,37 +534,102 @@
         </section>
 
         <!-- Research Methodology Section -->
-        <section id="methodology" class="section section-alt">
+        <section id="methodology" class="section section-grid">
             <div class="container">
-                <h2 class="section-title">Why This Works</h2>
+                <h2 class="section-title">The Edge</h2>
+
+                <div class="synthesis-diagram">
+                    <div class="synthesis-flow">
+                        <div class="synthesis-output">
+                            <div
+                                class="synthesis-icon"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #4a7c8c 0%,
+                                        #3a6570 100%
+                                    );
+                                "
+                            >
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <span class="synthesis-label">Proposal</span>
+                        </div>
+
+                        <div class="synthesis-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+
+                        <div class="source-group">
+                            <div class="source-item academic">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>Academic</span>
+                            </div>
+                            <div class="source-item realtime">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>Real-Time</span>
+                            </div>
+                            <div class="source-item industry">
+                                <i class="fa-solid fa-industry"></i>
+                                <span>Industry</span>
+                            </div>
+                            <div class="source-item policy">
+                                <i class="fa-solid fa-landmark"></i>
+                                <span>Policy</span>
+                            </div>
+                        </div>
+
+                        <div class="synthesis-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+
+                        <div class="synthesis-output">
+                            <div class="synthesis-icon">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <span class="synthesis-label">Cross-Validated</span>
+                        </div>
+
+                        <div class="synthesis-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+
+                        <div class="synthesis-output">
+                            <div
+                                class="synthesis-icon"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #4a7c8c 0%,
+                                        #3a6570 100%
+                                    );
+                                "
+                            >
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <span class="synthesis-label">Narrative</span>
+                        </div>
+                    </div>
+                </div>
+
                 <p class="section-description">
-                    Every claim is defensible because we did the work:
+                    Every claim sourced. Contradictions shown. Uncertainty
+                    stated. 40+ hours of research per episode—cross-validated
+                    across multiple sources before a word is written.
                 </p>
-                <ul class="methodology-list">
-                    <li>
-                        <strong>Primary sources:</strong> Peer-reviewed studies,
-                        meta-analyses, official documents—not blog posts
-                    </li>
-                    <li>
-                        <strong>Effect sizes:</strong> Real-world impact, not
-                        just statistical significance
-                    </li>
-                    <li>
-                        <strong>Honest uncertainty:</strong> When the evidence
-                        is weak or contradictory, we say so
-                    </li>
-                    <li>
-                        <strong>Complete provenance:</strong> Every claim traces
-                        back to a citable source
-                    </li>
-                    <li>
-                        <strong>Conflicts disclosed:</strong> You know about
-                        funding sources and potential biases
-                    </li>
-                </ul>
-                <p style="margin-top: var(--space-3);">
-                    <a href="methodology.html" style="display: inline-flex; align-items: center; gap: 8px; font-weight: var(--weight-medium);">
-                        See our full methodology <i class="fa-solid fa-arrow-right"></i>
+
+                <p>
+                    <a
+                        href="methodology.html"
+                        style="
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            font-weight: var(--weight-medium);
+                        "
+                    >
+                        See our full methodology
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </p>
             </div>
@@ -458,48 +640,26 @@
             <div class="container">
                 <h2 class="section-title">Health</h2>
                 <div class="series-grid">
-                    <a
-                        href="podcast/episodes/cardiovascular-health/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">
-                            Cardiovascular Health
-                        </div>
-                        <div class="series-card-meta">
-                            4 episodes · VO2 max, HRV, lifestyle,
-                            supplementation
-                        </div>
+                    <a href="podcast/episodes/cardiovascular-health/" class="series-card">
+                        <span class="series-card-title">Cardiovascular Health</span>
+                        <span class="series-card-meta">6 episodes</span>
                     </a>
-                    <a
-                        href="podcast/episodes/active-recovery/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">Active Recovery</div>
-                        <div class="series-card-meta">
-                            4 episodes · Recovery optimization, athlete
-                            performance, evidence-based training
-                        </div>
+                    <a href="podcast/episodes/active-recovery/" class="series-card">
+                        <span class="series-card-title">Active Recovery</span>
+                        <span class="series-card-meta">4 episodes</span>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section section-alt">
+        <section id="education" class="section section-grid">
             <div class="container">
                 <h2 class="section-title">Education</h2>
                 <div class="series-grid">
-                    <a
-                        href="podcast/episodes/kindergarten-first-principles/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">
-                            Kindergarten, from First Principles
-                        </div>
-                        <div class="series-card-meta">
-                            6 episodes · Early childhood education,
-                            developmental science, play, sleep, frameworks
-                        </div>
+                    <a href="podcast/episodes/kindergarten-first-principles/" class="series-card">
+                        <span class="series-card-title">Kindergarten, from First Principles</span>
+                        <span class="series-card-meta">6 episodes</span>
                     </a>
                 </div>
             </div>
@@ -510,37 +670,17 @@
             <div class="container">
                 <h2 class="section-title">Business</h2>
                 <div class="series-grid">
-                    <a
-                        href="podcast/episodes/algorithms-for-life/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">Algorithms for Life</div>
-                        <div class="series-card-meta">
-                            1 episode · Spaced repetition, behavioral science,
-                            systematic optimization
-                        </div>
+                    <a href="podcast/episodes/algorithms-for-life/" class="series-card">
+                        <span class="series-card-title">Algorithms for Life</span>
+                        <span class="series-card-meta">1 episode</span>
                     </a>
-                    <a
-                        href="podcast/episodes/stablecoin-series/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">Stablecoin Series</div>
-                        <div class="series-card-meta">
-                            2 episodes · Market evolution, legal compliance,
-                            token economics
-                        </div>
+                    <a href="podcast/episodes/stablecoin-series/" class="series-card">
+                        <span class="series-card-title">Stablecoin Series</span>
+                        <span class="series-card-meta">2 episodes</span>
                     </a>
-                    <a
-                        href="podcast/episodes/solomon-islands-telecom-series/"
-                        class="series-card"
-                    >
-                        <div class="series-card-title">
-                            Solomon Islands Telecom
-                        </div>
-                        <div class="series-card-meta">
-                            6 episodes · Market entry, infrastructure, mobile
-                            money, regulatory strategy
-                        </div>
+                    <a href="podcast/episodes/solomon-islands-telecom-series/" class="series-card">
+                        <span class="series-card-title">Solomon Islands Telecom</span>
+                        <span class="series-card-meta">6 episodes</span>
                     </a>
                 </div>
             </div>

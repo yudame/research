@@ -1,0 +1,19 @@
+Research stablecoin token economics and market evolution 2024-2025, focusing on these specific questions:
+
+**Industry Analysis:**
+- What market share shifts have occurred among major stablecoins (USDT, USDC, DAI, PYUSD, others) in 2024-2025?
+- How are stablecoin issuers (Circle, Tether, Paxos) adapting their revenue models to regulatory requirements?
+- What is the current state of institutional stablecoin adoption and integration with traditional finance?
+
+**Case Studies & Implementation:**
+- How has Ethena's USDe performed under various market conditions and what are its design vulnerabilities?
+- What specific technical innovations (crvUSD liquidation mechanisms, Frax v2 hybrid design) have emerged?
+- Case studies of successful stablecoin payment integrations (Stripe, PayPal, Visa partnerships)
+
+**Technical Details:**
+- How do modern liquidation mechanisms compare (Stability Pools vs. auctions vs. Ethena's delta-neutral)?
+- What oracle improvements have been implemented post-Iron Finance to prevent manipulation?
+- How are new stablecoins addressing the capital efficiency vs. stability tradeoff?
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis.
+Provide comprehensive findings with citations, data sources, and comparative analysis where relevant.
