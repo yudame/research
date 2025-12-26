@@ -8,6 +8,18 @@ dependencies = [
     "openai>=2.9.0",
     "openai-whisper>=20250625",
     "pillow>=12.0.0",
+    "requests>=2.32.0",
+    "python-dotenv>=1.0.0",
+    "gpt-researcher>=0.12.0",
+    "langchain-openai>=0.3.0",
+    "google-genai>=0.5.0",
+    "pydub>=0.25.1",
+    "numpy>=2.0.0",
+    "scipy>=1.14.0",
+]
+
+[dependency-groups]
+dev = [
     "pytest>=9.0.1",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
