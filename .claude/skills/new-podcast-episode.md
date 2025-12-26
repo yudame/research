@@ -115,23 +115,38 @@ If the episode directory already exists, check for a `research-prompt.md` file. 
 - Use it to inform the deep research prompts you'll create
 - DO NOT copy it as the deep research prompts - you'll create new ones in logs/prompts.md
 
-**Create the appropriate directory structure (if needed):**
+**Create the episode directory and files using setup_episode.py:**
 
-**For series episodes:**
 ```bash
-mkdir -p ~/src/research/podcast/episodes/series-name/epX-topic-slug/{research/documents,logs,tmp}
+cd ~/src/research/podcast/tools
+
+# For standalone episodes (uses today's date automatically)
+uv run python setup_episode.py --slug "topic-slug" --title "Episode Title"
+
+# For series episodes
+uv run python setup_episode.py --slug "topic-slug" --title "Series: Ep. X, Topic" \
+  --series "series-name" --episode-num X
+
+# With research context pre-filled
+uv run python setup_episode.py --slug "topic-slug" --title "Episode Title" \
+  --context "Research focus and key questions"
 ```
 
-**For standalone episodes:**
-```bash
-mkdir -p ~/src/research/podcast/episodes/YYYY-MM-DD-topic-slug/{research/documents,logs,tmp}
+**What setup_episode.py creates:**
+```
+podcast/episodes/{path}/
+├── research/
+│   ├── documents/
+│   └── p1-brief.md      # Research brief with date/title
+├── logs/
+│   └── prompts.md       # Prompt tracking with date/title
+├── tmp/
+└── sources.md           # Source template
 ```
 
-**Create all episode files:**
+The script automatically uses today's date and fills in all templates.
 
-**IMPORTANT:** Replace all `YYYY-MM-DD` placeholders with today's actual date in ISO format (e.g., 2025-12-15). Never use placeholder dates in created files.
-
-**logs/prompts.md:**
+**logs/prompts.md (created by script):**
 ```markdown
 # Prompts Used for Episode: [Episode Title]
 
@@ -1309,7 +1324,7 @@ ls -lh research/p1-brief.md report.md research/p3-briefing.md sources.md content
 **Run the API script:**
 ```bash
 cd podcast/tools
-python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Name" --cleanup
+uv run python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Name" --cleanup
 ```
 
 **Arguments:**
@@ -1554,7 +1569,25 @@ Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
 [keyword1, keyword2, keyword3, specific-term, specific-concept]
 ```
 
-**Update feed.xml following RSS specification in `docs/RSS-specification.md`**
+**Update feed.xml using update_feed.py:**
+
+```bash
+cd ~/src/research/podcast/tools
+
+# Preview changes (dry-run)
+uv run python update_feed.py ../episodes/EPISODE_PATH/ --dry-run
+
+# Apply changes
+uv run python update_feed.py ../episodes/EPISODE_PATH/
+```
+
+**What update_feed.py does:**
+1. Reads logs/metadata.md for title, description, keywords, sources
+2. Auto-detects audio file, cover.png, chapters JSON
+3. Gets duration/size from file if not in metadata
+4. Generates complete `<item>` XML with plain text + HTML content
+5. Inserts into feed.xml at correct position
+6. Updates `<lastBuildDate>`
 
 🚨 **CRITICAL: Validate feed.xml**
 

@@ -81,12 +81,12 @@ Run Whisper transcription locally (no API key needed):
 ```bash
 cd ~/src/research/podcast/tools
 
-# Basic transcription
-python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 --model base
+# Basic transcription (uv run auto-manages dependencies)
+uv run python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 --model base
 
 # OR with organized logging (recommended for production)
 mkdir -p ../episodes/EPISODE_PATH/logs
-python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 \
+uv run python transcribe_only.py ../episodes/EPISODE_PATH/EPISODE_SLUG.mp3 \
   --model base \
   --log-dir ../episodes/EPISODE_PATH/logs \
   --quiet
