@@ -464,7 +464,7 @@ def combine_transcripts(transcripts: list[str], output_path: Path, log_func=prin
 # Main Pipeline
 # =============================================================================
 
-async def generate_episode_context_rich(episode_dir: str, verbose: bool = True):
+async def generate_episode_context_rich(episode_dir: str, verbose: bool = True, include_extra_research: bool = False):
     """Generate a podcast episode using NotebookLM-style context-rich approach.
 
     Loads 4 critical input files as rich context:
@@ -473,7 +473,10 @@ async def generate_episode_context_rich(episode_dir: str, verbose: bool = True):
     - research/p1-brief.md (Phase 1 academic briefing)
     - research/p3-briefing.md (Phase 3 policy/industry research)
 
-    Plus any additional research files in research/*.md
+    Args:
+        episode_dir: Path to episode directory
+        verbose: Print progress messages
+        include_extra_research: If True, also load individual p2-*.md files (increases context size)
     """
     import_dependencies()
 
