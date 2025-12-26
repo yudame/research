@@ -1,0 +1,4 @@
+Loading cover: ../episodes/stablecoin-series/episode-5-reserve-management/cover.png
+Background brightness: 239 (light)
+✓ Branded cover saved to: ../episodes/stablecoin-series/episode-5-reserve-management/cover_branded.png
+✓ Original replaced: ../episodes/stablecoin-series/episode-5-reserve-management/cover.png
