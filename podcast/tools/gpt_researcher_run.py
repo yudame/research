@@ -157,16 +157,64 @@ async def run_research(
         print("Or ensure you're running with: uv run python gpt_researcher_run.py")
         return None
 
-    # Check for API keys
+    # Check for API keys - STRICT: require both OpenAI and Tavily
     keys = get_api_keys()
 
-    if not any(keys.values()):
+    # Determine required LLM key based on model
+    if model_spec.startswith('openai:') or model_spec == 'openai':
+        if not keys.get('openai'):
+            print("=" * 60)
+            print("ERROR: OPENAI_API_KEY not found")
+            print("=" * 60)
+            print(f"\nGPT-Researcher requires OpenAI API key for model: {model_spec}")
+            print("\nFix: Add to ~/.env:")
+            print("  OPENAI_API_KEY=sk-...")
+            print("\nGet key at: https://platform.openai.com/api-keys")
+            print("=" * 60)
+            return None
+    elif model_spec.startswith('anthropic:'):
+        if not keys.get('anthropic'):
+            print("=" * 60)
+            print("ERROR: ANTHROPIC_API_KEY not found")
+            print("=" * 60)
+            print(f"\nGPT-Researcher requires Anthropic API key for model: {model_spec}")
+            print("\nFix: Add to ~/.env:")
+            print("  ANTHROPIC_API_KEY=sk-ant-...")
+            print("=" * 60)
+            return None
+    elif model_spec.startswith('openrouter'):
+        if not keys.get('openrouter'):
+            print("=" * 60)
+            print("ERROR: OPENROUTER_API_KEY not found")
+            print("=" * 60)
+            print(f"\nGPT-Researcher requires OpenRouter API key for model: {model_spec}")
+            print("\nFix: Add to ~/.env:")
+            print("  OPENROUTER_API_KEY=sk-or-...")
+            print("\nGet key at: https://openrouter.ai/keys")
+            print("=" * 60)
+            return None
+    elif not any(keys.values()):
+        print("=" * 60)
         print("ERROR: No API keys found")
-        print("Set one of these in your .env file:")
-        print("  - OPENAI_API_KEY")
-        print("  - ANTHROPIC_API_KEY")
-        print("  - OPENROUTER_API_KEY")
-        print("  - XAI_API_KEY")
+        print("=" * 60)
+        print("\nSet at least one in ~/.env:")
+        print("  OPENAI_API_KEY=sk-...")
+        print("  ANTHROPIC_API_KEY=sk-ant-...")
+        print("  OPENROUTER_API_KEY=sk-or-...")
+        print("=" * 60)
+        return None
+
+    # STRICT: Require Tavily API key - no silent fallback to DuckDuckGo
+    if not keys.get('tavily') and not os.getenv('TAVILY_API_KEY'):
+        print("=" * 60)
+        print("ERROR: TAVILY_API_KEY not found")
+        print("=" * 60)
+        print("\nGPT-Researcher requires Tavily for quality web research.")
+        print("DuckDuckGo fallback is DISABLED to ensure research quality.")
+        print("\nFix: Add to ~/.env:")
+        print("  TAVILY_API_KEY=tvly-...")
+        print("\nGet FREE key at: https://tavily.com/")
+        print("=" * 60)
         return None
 
     # Configure model
@@ -177,14 +225,8 @@ async def run_research(
     os.environ['SMART_LLM'] = smart_llm
     os.environ['STRATEGIC_LLM'] = smart_llm
 
-    # Configure search provider priority: Tavily > DuckDuckGo
-    if 'RETRIEVER' not in os.environ:
-        # Check if Tavily API key exists (best quality)
-        if keys.get('tavily') or os.getenv('TAVILY_API_KEY'):
-            os.environ['RETRIEVER'] = 'tavily'
-        else:
-            # Fallback to DuckDuckGo (free but lower quality)
-            os.environ['RETRIEVER'] = 'duckduckgo'
+    # Use Tavily (already validated above)
+    os.environ['RETRIEVER'] = 'tavily'
 
     # Helper to log to both stdout and file
     def log(msg):
