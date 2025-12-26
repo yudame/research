@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Thu, 26 Dec 2025 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Dec 2025 01:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -24,8 +24,54 @@
     <itunes:category text="Science"/>
     <itunes:category text="Education"/>
     <itunes:category text="Technology"/>
-    <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-21b"/>
+    <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 27: Stablecoin Series - Episode 3 -->
+    <item>
+      <title>Stablecoin Series: Ep. 3, Token Economic Design &amp; Stabilization Mechanisms</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/cover.png?v=2025-12-26"/>
+      <description>In May 2022, forty-five billion dollars vanished in seventy-two hours. Terra's UST collapse demonstrated that algorithmic elegance cannot substitute for actual reserves. MIT researchers confirmed sophisticated investors exited first with smaller losses while retail "bought the dip"—blockchain transparency did not level the playing field. This final episode in our stablecoin series examines the engineering question at the heart of digital money: How do you build a digital dollar that does not die? We trace the four-tier collateral hierarchy (from Tether's $113B Treasury fortress to Terra's fatal circular design), the concentrated arbitrage networks where six traders control USDT redemptions, and four forensic failure analyses: Terra ($45B), Iron Finance (oracle lag), SVB/USDC (PSM contagion), and Ethena's October 2025 stress test. The regulatory convergence in GENIUS Act and MiCA effectively prohibits algorithmic designs—the $60B in collapsed value produced today's standards. Full research report: https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/report.md</description>
+      <content:encoded><![CDATA[<p>In May 2022, forty-five billion dollars vanished in seventy-two hours. Terra's UST collapse demonstrated that algorithmic elegance cannot substitute for actual reserves. MIT researchers Liu, Makarov, and Schoar confirmed the run was not single-entity manipulation but "growing concerns about sustainability"—LUNA hyperinflated from 1 billion to 6.5 trillion tokens in three days. Sophisticated investors exited first with smaller losses while retail participants who "bought the dip" absorbed catastrophic damage. Blockchain transparency did not level the playing field.</p><p>This final episode in our stablecoin series examines the engineering question at the heart of digital money: <strong>How do you build a digital dollar that does not die?</strong> We trace the four-tier collateral hierarchy that has emerged from the wreckage: fiat-backed fortresses (USDT, USDC commanding 93% market share), crypto-overcollateralized (DAI), hybrid delta-neutral (Ethena), and the 100% failure rate of algorithmic designs.</p><p><strong>Four forensic failure analyses:</strong></p><ul><li><strong>Terra/UST ($42-45B)</strong>: Death spiral mechanics, 6,500x LUNA hyperinflation</li><li><strong>Iron Finance</strong>: 10-minute TWAP oracle couldn't track TITAN's collapse from $64 to $0.00000006</li><li><strong>USDC/SVB</strong>: 8% reserve exposure triggered $0.87 de-peg; PSM transmitted contagion to DAI</li><li><strong>Ethena USDe (Oct 2025)</strong>: $8.3B redemptions, market cap $14.8B→$6B, maintained issuer par</li></ul><p><strong>Revenue model sustainability:</strong> Anchor's 19.5% APY required $6M daily subsidies (Ponzi structure) vs. MakerDAO's $243M revenue from $4.6B in Treasuries (10x increase from 2022). The GENIUS Act and MiCA now prohibit algorithmic designs—the $60B in collapsed value produced today's regulatory standards.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4308348">MIT: Anatomy of a Run - The Terra Luna Crash</a> - Liu, Makarov, Schoar forensic blockchain analysis</li><li><a href="https://www.bis.org/publ/work1164.htm">BIS Working Paper 1164</a> - Algorithmic stablecoins are "inherently fragile"</li><li><a href="https://www.federalreserve.gov/econres/feds/in-the-shadow-of-bank-runs.htm">Federal Reserve FEDS Notes</a> - SVB failure impact on stablecoins</li><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/1582">GENIUS Act S.1582</a> - 1:1 backing, T-bills ≤93 days, algorithmic prohibition</li><li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1114">MiCA Regulation</a> - EU framework; Tether delisted, Circle achieved EMI license</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Fri, 27 Dec 2025 01:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/episode-3-token-economics.mp3"
+                 length="39128182"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/episode-3-token-economics.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>40:45</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>5</itunes:season>
+      <itunes:episode>3</itunes:episode>
+      <itunes:keywords>stablecoin economics, token design, death spiral, Terra UST collapse, LUNA hyperinflation, collateralization models, fiat-backed, crypto-collateralized, algorithmic stablecoin, delta-neutral hedging, funding rate, over-collateralization, peg stability module, PSM, arbitrage concentration, Tether USDT, Circle USDC, MakerDAO DAI, Ethena USDe, Iron Finance, SVB crisis, GENIUS Act, MiCA regulation, reserve quality, Treasury bills, Anchor Protocol, sustainable yield, governance speed, MIT research</itunes:keywords>
+      <research:series>Stablecoin Series</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-3-token-economics/episode-3-token-economics_chapters.json" type="application/json+chapters"/>
+    </item>
+
+    <!-- Episode 26: Stablecoin Series - Episode 4 -->
+    <item>
+      <title>Stablecoin Series: Ep. 4, Technical Architecture &amp; Smart Contract Security</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/cover.png?v=2025-12-26"/>
+      <description>The Nomad Bridge was drained of $190 million in August 2022—not by sophisticated hackers, but by hundreds of copycats who simply copied a transaction and changed the recipient address. The vulnerability had been flagged in a security audit. The fix introduced the actual exploit. This "decentralized crowd-looting" exemplifies the paradox at the heart of stablecoin security: the industry spends hundreds of millions on audits, yet the largest academic study (8,195 audit reports from 117 firms) found "little evidence that audits reduce future security breaches." Meanwhile, cross-chain bridges have hemorrhaged $2.8 billion—40% of all value stolen in Web3. Access control flaws alone caused $953 million in 2024 losses, while Ronin's $625M hack went undetected for six days. This episode examines why operational discipline—not code complexity—determines security, and introduces a five-dimension framework for evaluating stablecoin safety. Full research report: https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/report.md</description>
+      <content:encoded><![CDATA[<p>The Nomad Bridge was drained of $190 million in August 2022—not by sophisticated hackers, but by hundreds of copycats who simply copied a transaction and changed the recipient address. The vulnerability had been flagged in a security audit. The fix introduced the actual exploit. This "decentralized crowd-looting" exemplifies the paradox at the heart of stablecoin security: the industry spends hundreds of millions on audits, yet the largest academic study (Landsman et al. 2025, analyzing 8,195 audit reports from 117 firms) found "little evidence that audits reduce future security breaches."</p><p>Meanwhile, cross-chain bridges have hemorrhaged <strong>$2.8 billion</strong>—40% of all value ever stolen in Web3. The OWASP Smart Contract Top 10 reveals access control flaws alone caused <strong>$953 million in 2024 losses</strong>. Ronin Bridge lost $625M after a spearphishing attack compromised four of nine multisig keys—and the breach went undetected for six days. Wormhole lost $320M to a deprecated function that should never have been in production.</p><p>This episode examines why <strong>operational discipline—not code complexity—determines security</strong>. We compare Circle's high-transparency model (SOC 2 Type 2, weekly reserve disclosures with CUSIPs) against Tether's 44-minute freeze delay that allowed $78M in illicit funds to move. We explain how Circle's CCTP eliminates bridge honeypots through burn-and-mint architecture, and introduce a <strong>five-dimension evaluation framework</strong> for assessing stablecoin security.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5198563">Landsman et al. (2025): Auditing Smart Contracts</a> - 8,195 audit reports, 1,575 protocols: "little evidence audits reduce breaches"</li><li><a href="https://owasp.org/www-project-smart-contract-top-10/">OWASP Smart Contract Top 10 (2025)</a> - 149 incidents, $1.42B losses; access control: 67% of damages</li><li><a href="https://www.congress.gov/bill/119th-congress/senate-bill/123">GENIUS Act (S.123)</a> - US stablecoin regulation mandating freeze/seize capabilities</li><li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1114">MiCA Regulation</a> - EU framework requiring 30% bank deposits, redemption guarantees</li><li><a href="https://developers.circle.com/stablecoins/cctp">Circle CCTP Documentation</a> - $126B+ volume across 17 chains via native burn-and-mint</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Thu, 26 Dec 2025 21:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/2025-12-26-episode-4-technical-architecture.mp3"
+                 length="29106077"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/2025-12-26-episode-4-technical-architecture.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>30:19</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>5</itunes:season>
+      <itunes:episode>4</itunes:episode>
+      <itunes:keywords>stablecoin security, smart contract audit, Nomad bridge hack, Ronin hack, Wormhole exploit, blockchain trilemma, access control vulnerabilities, OWASP Top 10, multisig, MPC, HSM, CCTP, burn and mint, lock and mint, bridge exploits, GENIUS Act, MiCA regulation, Circle USDC, Tether USDT, reserve transparency, formal verification, DeFi security, Web3 hacks, Landsman audit study</itunes:keywords>
+      <research:series>Stablecoin Series</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-4-technical-architecture/2025-12-26-episode-4-technical-architecture_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 25: Cardiovascular Health Series - Episode 6 -->
     <item>

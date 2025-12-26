@@ -1,0 +1,4 @@
+Loading cover: ../episodes/stablecoin-series/episode-3-token-economics/cover.png
+Background brightness: 237 (light)
+✓ Branded cover saved to: ../episodes/stablecoin-series/episode-3-token-economics/cover_branded.png
+✓ Original replaced: ../episodes/stablecoin-series/episode-3-token-economics/cover.png

@@ -201,3 +201,21 @@ Research stablecoin token economics and stabilization mechanisms, focusing on th
 Focus on: Recent news, industry discussions on X/Twitter, practitioner insights, real-time market commentary.
 Provide findings with source links, publication dates, and credibility indicators.
 ```
+
+---
+
+## Cover Art Generation Phase
+
+**Tool Used:** Gemini 3 Pro Image via OpenRouter
+
+**Generation Method:** --auto from report.md
+
+**Branding Applied:**
+- Logo: Yudame logo (top-left, vertically centered with brand text)
+- Brand: Yudame Research (Playfair Display SemiBold)
+- Series: Stablecoin Series (Playfair Display Italic)
+- Episode: Ep 3 - Token Economics (Playfair Display Italic)
+
+**Output:** cover.png (1.2MB, 1024x1024)
+
+**Date:** 2025-12-26

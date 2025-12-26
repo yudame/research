@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The $45B Terra Collapse"
+    },
+    {
+      "startTime": 148.8,
+      "title": "Essential Terms: Death Spirals, PSMs, and Delta-Neutral Hedging"
+    },
+    {
+      "startTime": 325.6,
+      "title": "Section 1: The Foundation of Stablecoin Stability"
+    },
+    {
+      "startTime": 406,
+      "title": "The Four Tiers of Collateral Quality"
+    },
+    {
+      "startTime": 577.3,
+      "title": "Tether's Reserve Evolution: Commercial Paper to T-Bills"
+    },
+    {
+      "startTime": 709.9,
+      "title": "USDC, SVB, and the Arbitrage Oligopoly"
+    },
+    {
+      "startTime": 956.4,
+      "title": "Section 2: Terra/UST - The Ultimate Death Spiral"
+    },
+    {
+      "startTime": 1136.4,
+      "title": "Iron Finance: Oracle Lag and the 75% Floor"
+    },
+    {
+      "startTime": 1276.4,
+      "title": "SVB Crisis: PSM Contagion and 48-Hour Governance Delay"
+    },
+    {
+      "startTime": 1459.3,
+      "title": "Ethena USDe: Delta-Neutral Stress Test"
+    },
+    {
+      "startTime": 1610.5,
+      "title": "Anchor vs MakerDAO: Ponzi Yields vs Treasury Revenue"
+    },
+    {
+      "startTime": 1808.2,
+      "title": "Section 3: Design Principles and Regulatory Response"
+    },
+    {
+      "startTime": 2432.4,
+      "title": "Closing: Find Research at research.yuda.me"
+    }
+  ]
+}
