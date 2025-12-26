@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=148800
+title=Introduction: The $45B Terra Collapse
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=148800
+END=325600
+title=Essential Terms: Death Spirals, PSMs, and Delta-Neutral Hedging
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=325600
+END=406000
+title=Section 1: The Foundation of Stablecoin Stability
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=406000
+END=577300
+title=The Four Tiers of Collateral Quality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=577300
+END=709900
+title=Tether's Reserve Evolution: Commercial Paper to T-Bills
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=709900
+END=956400
+title=USDC, SVB, and the Arbitrage Oligopoly
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=956400
+END=1136400
+title=Section 2: Terra/UST - The Ultimate Death Spiral
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1136400
+END=1276400
+title=Iron Finance: Oracle Lag and the 75% Floor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1276400
+END=1459300
+title=SVB Crisis: PSM Contagion and 48-Hour Governance Delay
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1459300
+END=1610500
+title=Ethena USDe: Delta-Neutral Stress Test
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1610500
+END=1808200
+title=Anchor vs MakerDAO: Ponzi Yields vs Treasury Revenue
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1808200
+END=2432400
+title=Section 3: Design Principles and Regulatory Response
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2432400
+END=2445000
+title=Closing: Find Research at research.yuda.me

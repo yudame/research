@@ -1,0 +1,25 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Episode 3 Token Economics":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: In May 2022, forty-five billion dollars vanished in seventy-two hours. Not from a bank robbery or market crash in the traditional sense, but from the collapse of a digital currency that had promised u
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Episode 3 Token Economics":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements sui...
+✓ Cover art saved to: ../episodes/stablecoin-series/episode-3-token-economics/cover.png
+✓ Metadata saved to: ../episodes/stablecoin-series/episode-3-token-economics/logs/cover_generation_metadata_20251226_150525.json
+
+✓ Done! Cover art ready at: ../episodes/stablecoin-series/episode-3-token-economics/cover.png
+✓ Log saved to: ../episodes/stablecoin-series/episode-3-token-economics/logs/cover_generation_log_20251226_150505.txt
