@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-5-reserve-management/cover.png
+Background brightness: 235 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-5-reserve-management/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-5-reserve-management/cover.png

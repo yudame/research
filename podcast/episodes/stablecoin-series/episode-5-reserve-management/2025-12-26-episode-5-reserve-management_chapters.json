@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Architecture of Stablecoin Trust"
+    },
+    {
+      "startTime": 55,
+      "title": "The SVB Crisis: $3.3 Billion Frozen"
+    },
+    {
+      "startTime": 180,
+      "title": "The Disclosure Paradox and Federal Backstop"
+    },
+    {
+      "startTime": 315,
+      "title": "Operational Vulnerabilities: 24/7 Markets vs Weekend Banking"
+    },
+    {
+      "startTime": 450,
+      "title": "DeFi Contagion: DAI and the Peg Stability Module"
+    },
+    {
+      "startTime": 570,
+      "title": "Key Terms: Attestation vs Audit, Bankruptcy Remoteness"
+    },
+    {
+      "startTime": 720,
+      "title": "Proof of Reserves and MPC Explained"
+    },
+    {
+      "startTime": 870,
+      "title": "US GENIUS Act: The 93-Day Treasury Rule"
+    },
+    {
+      "startTime": 1020,
+      "title": "EU MiCA: The 30% Bank Deposit Mandate"
+    },
+    {
+      "startTime": 1200,
+      "title": "Singapore MAS: Local Nexus Requirements"
+    },
+    {
+      "startTime": 1350,
+      "title": "Tether Exits Europe, Coinbase Ends Rewards"
+    },
+    {
+      "startTime": 1500,
+      "title": "The Administrative Insolvency Paradox"
+    },
+    {
+      "startTime": 1680,
+      "title": "AICPA 2025 Criteria: New Attestation Standards"
+    },
+    {
+      "startTime": 1860,
+      "title": "Closing: Finding Full Research at Yudame"
+    }
+  ]
+}

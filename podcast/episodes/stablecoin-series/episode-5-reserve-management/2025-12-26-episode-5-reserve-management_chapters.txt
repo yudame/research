@@ -1,0 +1,87 @@
+;FFMETADATA1
+title=Stablecoin Series - Ep. 5: Reserve Management & Custody Infrastructure
+artist=Yudame Research
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=55000
+title=Introduction: The Architecture of Stablecoin Trust
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=55000
+END=180000
+title=The SVB Crisis: $3.3 Billion Frozen
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=315000
+title=The Disclosure Paradox and Federal Backstop
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=315000
+END=450000
+title=Operational Vulnerabilities: 24/7 Markets vs Weekend Banking
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=450000
+END=570000
+title=DeFi Contagion: DAI and the Peg Stability Module
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=570000
+END=720000
+title=Key Terms: Attestation vs Audit, Bankruptcy Remoteness
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=720000
+END=870000
+title=Proof of Reserves and MPC Explained
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=870000
+END=1020000
+title=US GENIUS Act: The 93-Day Treasury Rule
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1020000
+END=1200000
+title=EU MiCA: The 30% Bank Deposit Mandate
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1350000
+title=Singapore MAS: Local Nexus Requirements
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1350000
+END=1500000
+title=Tether Exits Europe, Coinbase Ends Rewards
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1680000
+title=The Administrative Insolvency Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1860000
+title=AICPA 2025 Criteria: New Attestation Standards
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=1993400
+title=Closing: Finding Full Research at Yudame
