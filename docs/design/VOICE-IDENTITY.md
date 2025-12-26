@@ -251,6 +251,95 @@ more emphatic.
 
 ---
 
+## TTS Directive Mappings
+
+When generating `script.md` for Gemini TTS, use these inline directives to implement the voice identity:
+
+### Directive Syntax
+
+```markdown
+[VOICE: warm, authoritative]
+[PACE: measured]
+[PAUSE: 0.8s]
+[EMPHASIS: strong]
+```
+
+### Context → Directive Mapping
+
+| Voice Context | TTS Directive |
+|---------------|---------------|
+| Introducing a topic | `[VOICE: curious, inviting]` |
+| Explaining methodology | `[VOICE: precise, matter-of-fact]` |
+| Revealing key findings | `[VOICE: energized, emphatic]` |
+| Challenging assumptions | `[VOICE: direct, confident]` |
+| Synthesizing conclusions | `[VOICE: thoughtful, assured]` |
+| Call to action | `[VOICE: warm, encouraging]` |
+
+### Vocal Cue → Directive Mapping
+
+| Vocal Cue | TTS Directive |
+|-----------|---------------|
+| Discovery | `[VOICE: curious, slightly breathless]` `[PACE: building energy]` |
+| Gravitas | `[VOICE: emphatic]` `[PACE: slower, deliberate]` |
+| Skeptical | `[VOICE: skeptical, questioning]` |
+| Confident | `[VOICE: confident, steady]` |
+| Reflective | `[VOICE: reflective, softer]` `[PACE: measured]` |
+
+### Pause Guidelines
+
+| Pause Type | Directive | Usage |
+|------------|-----------|-------|
+| Breath pause | `[PAUSE: 0.3s]` | Between sentences within a paragraph |
+| Emphasis pause | `[PAUSE: 0.5s]` | Before important statements |
+| Section beat | `[PAUSE: 0.8s]` | After key insights, before transitions |
+| Major transition | `[PAUSE: 1.2s]` | Between major topics |
+| Section break | `[PAUSE: 2.0s]` | Between Foundation/Evidence/Application |
+
+### Characteristic Patterns as Directives
+
+**Opening a topic:**
+```markdown
+[VOICE: curious, inviting]
+[PACE: measured]
+Now, this is where it becomes fascinating...
+[PAUSE: 0.5s]
+```
+
+**Building an argument:**
+```markdown
+[VOICE: precise, building confidence]
+You see, the evidence suggests...
+[PAUSE: 0.3s]
+Let us be precise about this.
+```
+
+**Delivering insights:**
+```markdown
+[VOICE: emphatic]
+[PACE: slower, deliberate]
+And this is consequential.
+[PAUSE: 0.8s]
+Once you see it, you cannot unsee it.
+```
+
+**Transitions:**
+```markdown
+[PAUSE: 1.2s]
+[VOICE: shifting energy]
+But here is where it gets interesting.
+```
+
+**Conclusions:**
+```markdown
+[VOICE: warm, encouraging]
+[PACE: measured]
+So here is the takeaway.
+[PAUSE: 0.5s]
+The evidence is compelling, the mechanism is clear, and the applications are practical.
+```
+
+---
+
 ## Brand Alignment
 
 **Podcast:** Yudame Research
@@ -268,3 +357,4 @@ Listeners should feel smarter and more prepared after every episode.
 |---------|------|---------|
 | 1.0 | 2024-12-22 | Initial voice identity |
 | 2.0 | 2025-12-23 | Switched to Gemini 2.5 Native Audio with Alnilam voice |
+| 3.0 | 2025-12-24 | Added TTS directive mappings for script.md generation |
