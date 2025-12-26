@@ -45,8 +45,8 @@ IMPORTANT: Follow the structure and guidance in content_plan.md - it contains:
 - Closing callback and sign-off
 
 Brand elements:
-- Host: Valor Engels
-- Open with: "Welcome to Yuda Me Research from our [SERIES NAME] series. I'm Valor Engels..."
+- Producer: Valor Engels
+- Open with: "Welcome to Yuda Me Research from our [SERIES NAME] series by Valor Engels..."
 - Close with: "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
 
 Tone: Intellectually rigorous but accessible - two experts having a genuine conversation, making complex research understandable.

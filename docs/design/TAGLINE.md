@@ -24,7 +24,7 @@ Our product delivers the same thing without the $500k engagement.
 
 ### 3. The labor replacement
 
-Rigorous, source-verified research with proper pedagogical structure: 20-40 hours per episode. At professional rates, $700-6,000 in labor value — before accounting for the cost of being wrong.
+Rigorous, source-verified research with proper pedagogical structure: **40+ hours per episode**. At professional rates, $2,800-6,000+ in labor value — before accounting for the cost of being wrong.
 
 ---
 
