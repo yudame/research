@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Nomad Paradox"
+    },
+    {
+      "startTime": 208,
+      "title": "Key Terms: Bridges and Finality"
+    },
+    {
+      "startTime": 286,
+      "title": "The Blockchain Trilemma"
+    },
+    {
+      "startTime": 414,
+      "title": "Layer 2 Solutions and Trade-offs"
+    },
+    {
+      "startTime": 548,
+      "title": "Access Control: The $953M Problem"
+    },
+    {
+      "startTime": 687,
+      "title": "Bridge Hacks: Ronin and Wormhole"
+    },
+    {
+      "startTime": 830,
+      "title": "Nomad and Multichain Failures"
+    },
+    {
+      "startTime": 958,
+      "title": "The Audit Effectiveness Debate"
+    },
+    {
+      "startTime": 1140,
+      "title": "Circle vs Tether: Security Comparison"
+    },
+    {
+      "startTime": 1290,
+      "title": "CCTP: The Bridge Solution"
+    },
+    {
+      "startTime": 1420,
+      "title": "Defense in Depth: Beyond Audits"
+    },
+    {
+      "startTime": 1540,
+      "title": "Regulatory Mandates: GENIUS Act and MiCA"
+    },
+    {
+      "startTime": 1660,
+      "title": "Five-Dimension Evaluation Framework"
+    }
+  ]
+}

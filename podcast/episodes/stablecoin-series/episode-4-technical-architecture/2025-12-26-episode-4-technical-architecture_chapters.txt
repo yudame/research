@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=208000
+title=Introduction: The Nomad Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=208000
+END=286000
+title=Key Terms: Bridges and Finality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=286000
+END=414000
+title=The Blockchain Trilemma
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=414000
+END=548000
+title=Layer 2 Solutions and Trade-offs
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=548000
+END=687000
+title=Access Control: The $953M Problem
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=687000
+END=830000
+title=Bridge Hacks: Ronin and Wormhole
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=830000
+END=958000
+title=Nomad and Multichain Failures
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=958000
+END=1140000
+title=The Audit Effectiveness Debate
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1290000
+title=Circle vs Tether: Security Comparison
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1290000
+END=1420000
+title=CCTP: The Bridge Solution
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1420000
+END=1540000
+title=Defense in Depth: Beyond Audits
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1540000
+END=1660000
+title=Regulatory Mandates: GENIUS Act and MiCA
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1660000
+END=1819000
+title=Five-Dimension Evaluation Framework

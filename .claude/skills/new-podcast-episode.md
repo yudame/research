@@ -1352,10 +1352,53 @@ uv run python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Na
 
 If API is unavailable, use the manual workflow:
 
-- **NotebookLM (manual):** `.claude/skills/notebooklm-audio/SKILL.md`
-  - Go to https://notebooklm.google.com/
-  - Upload source files manually
-  - Use episodeFocus prompt from skill documentation
+1. **Go to** https://notebooklm.google.com/
+2. **Create new notebook**
+3. **Upload 5 source files:**
+   - `research/p1-brief.md`
+   - `report.md`
+   - `research/p3-briefing.md`
+   - `sources.md`
+   - `content_plan.md`
+
+4. **Use the STANDARD TEMPLATE below** (replace `[EPISODE TITLE]` and `[SERIES NAME]` only):
+
+```
+Create a two-host podcast episode on: [EPISODE TITLE] from our [SERIES NAME] series
+
+IMPORTANT: Follow the structure and guidance in content_plan.md - it contains:
+- The opening hook to use
+- Key terms to define (with pronunciations)
+- Studies to emphasize
+- Three-section narrative arc (Foundation → Evidence → Application)
+- Closing callback and sign-off
+
+Brand elements:
+- Producer: Valor Engels
+- Open with: "Welcome to Yuda Me Research from our [SERIES NAME] series by Valor Engels..."
+- Close with: "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
+
+Tone: Intellectually rigorous but accessible - two experts having a genuine conversation, making complex research understandable.
+
+Style guidelines:
+- Spell out acronyms on first use: "High-Intensity Interval Training, or HIIT"
+- Define technical terms before building on them
+- Use specific numbers with context (sample sizes, effect sizes, percentages)
+- Distinguish correlation from causation
+- Make statistics meaningful through comparisons
+- Include human elements when the research contains them
+
+Avoid:
+- Undefined jargon
+- Fabricated examples (use only what's in the source material)
+- Over-hedging that obscures findings
+- Repeating context unnecessarily
+```
+
+5. **Settings:** Format: Deep Dive, Length: Long
+6. **Generate and download audio**
+
+**⚠️ CRITICAL: Do NOT customize the prompt with episode-specific content arcs, story prescriptions, or topic details. The content_plan.md file contains all the episode-specific guidance that NotebookLM needs. The prompt above is a quality/style template only.**
 
 After manual generation, process the audio with `podcast-audio-processing` skill for transcription.
 
