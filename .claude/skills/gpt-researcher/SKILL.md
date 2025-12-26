@@ -61,9 +61,7 @@ uv pip install gpt-researcher langchain-openai python-dotenv
 
 ## Configuration
 
-API keys are auto-discovered from `.env` files in:
-- `/Users/valorengels/src/research/.env` (root)
-- `/Users/valorengels/src/research/podcast/tools/.env` (tools)
+API keys are stored in `/Users/valorengels/.env` and auto-loaded via `~/.zshenv` for all shells.
 
 **Required for default:**
 - **OPENAI_API_KEY** - For GPT-5.2, GPT-5.2-Pro, etc.

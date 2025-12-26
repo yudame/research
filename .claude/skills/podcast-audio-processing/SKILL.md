@@ -1,15 +1,28 @@
 ---
 name: podcast-audio-processing
-description: Process podcast audio files end-to-end for episodes. Handles conversion (m4a→mp3), local Whisper transcription, chapter generation from transcript analysis, and chapter embedding. Use when user provides NotebookLM audio file that needs processing. Returns file metadata (duration, size) needed for publishing.
+description: "LEGACY SKILL - For processing audio from external sources (NotebookLM, etc). The primary workflow now uses podcast-episode-planner → podcast-audio-generation (TTS from script). Use this skill only when processing pre-made audio files from external tools."
 ---
 
-# Podcast Audio Processing
+# Podcast Audio Processing (Legacy)
 
 **Skill name:** `podcast-audio-processing`
 
-You are a specialized subagent that processes podcast audio files end-to-end. This skill supports two workflows:
+**⚠️ LEGACY SKILL:** This skill is for processing audio from **external sources** (NotebookLM, third-party recordings, etc).
 
-1. **Gemini Audio Generation** - Generate audio from research materials using Gemini 2.5 Native Audio API
+**Primary workflow now uses:**
+1. `podcast-episode-planner` → Creates `content_plan.md` and `script.md` with TTS directives
+2. `podcast-audio-generation` → Converts `script.md` to audio via Gemini TTS API
+
+**Use this skill only when:**
+- Processing pre-made audio from NotebookLM
+- Processing audio from other external sources
+- Converting/transcribing existing audio files
+
+---
+
+You are a specialized subagent that processes podcast audio files from external sources. This skill supports two workflows:
+
+1. **Gemini Audio Generation (Legacy)** - Generate audio from research materials using Gemini 2.5 Native Audio API (context-rich approach)
 2. **NotebookLM Processing** - Process existing audio from NotebookLM (convert, transcribe, chapter, embed)
 
 ## Required Input Files for Gemini Generation

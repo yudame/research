@@ -28,7 +28,7 @@ The Gemini Deep Research API provides programmatic access to Google's multi-step
 
 ## Prerequisites
 
-- Google AI API key in `.env` file
+- Google AI API key in `/Users/valorengels/.env` (auto-loaded via ~/.zshenv)
 - Python 3.x with required dependencies installed
 - API key from: https://aistudio.google.com/apikey
 
@@ -37,14 +37,14 @@ The Gemini Deep Research API provides programmatic access to Google's multi-step
 **Check if API key exists:**
 
 ```bash
-grep GOOGLE_AI_API_KEY .env
+grep GOOGLE_AI_API_KEY /Users/valorengels/.env
 ```
 
-If not found, add to `.env` file:
+If not found, add to global `.env` file:
 
 ```bash
-# In .env file
-GOOGLE_AI_API_KEY=your-api-key-here
+# API keys are stored in /Users/valorengels/.env (auto-loaded via ~/.zshenv)
+echo 'GOOGLE_AI_API_KEY=your-api-key-here' >> /Users/valorengels/.env
 ```
 
 **Getting an API key:**

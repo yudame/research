@@ -184,8 +184,9 @@ If the user hasn't set up cover art generation tools yet:
 cd ~/src/research/podcast/tools
 pip install requests pillow  # Required dependencies
 
-# Set API key
-export OPENROUTER_API_KEY='your-api-key'  # Add to ~/.zshrc or ~/.bashrc
+# API keys are stored in /Users/valorengels/.env (auto-loaded via ~/.zshenv)
+# Verify OPENROUTER_API_KEY is set:
+grep OPENROUTER_API_KEY /Users/valorengels/.env
 
 # Install Playfair Display fonts (required for branding)
 mkdir -p ~/Library/Fonts && cd ~/Library/Fonts

@@ -27,7 +27,7 @@ The Perplexity Deep Research API provides programmatic access to comprehensive r
 
 ## Prerequisites
 
-- Perplexity API key in `.env` file
+- Perplexity API key in `/Users/valorengels/.env` (auto-loaded via ~/.zshenv)
 - Python 3.x with `requests` and `python-dotenv` installed
 - API key from: https://www.perplexity.ai/settings/api
 
@@ -36,14 +36,14 @@ The Perplexity Deep Research API provides programmatic access to comprehensive r
 **Check if API key exists:**
 
 ```bash
-grep PERPLEXITY_API_KEY .env
+grep PERPLEXITY_API_KEY /Users/valorengels/.env
 ```
 
-If not found, add to `.env` file:
+If not found, add to global `.env` file:
 
 ```bash
-# In .env file
-PERPLEXITY_API_KEY=pplx-your-api-key-here
+# API keys are stored in /Users/valorengels/.env (auto-loaded via ~/.zshenv)
+echo 'PERPLEXITY_API_KEY=pplx-your-api-key-here' >> /Users/valorengels/.env
 ```
 
 **Getting an API key:**

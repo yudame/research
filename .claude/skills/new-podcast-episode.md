@@ -11,13 +11,14 @@
 - [ ] **Phase 5: Cross-Validation** → Sources verified, contradictions identified
 - [ ] **Phase 6: Master Briefing** → research/p3-briefing.md created with organized findings
 - [ ] **Phase 7: Synthesis** → report.md created by podcast-synthesis-writer
-- [ ] **Phase 8: Cover Art** → cover.png generated and branded
-- [ ] **Phase 9: Audio Generation** → Gemini (automated) OR NotebookLM (manual)
-- [ ] **Phase 10: Audio Processing** → Chapters created and embedded (transcription done in Phase 9 for Gemini)
-- [ ] **Phase 11: Publishing** → feed.xml updated with episode metadata
-- [ ] **Phase 12: Commit & Push** → Changes committed and pushed to GitHub
+- [ ] **Phase 8: Episode Planning** → content_plan.md created by podcast-episode-planner
+- [ ] **Phase 9: Cover Art** → cover.png generated and branded
+- [ ] **Phase 10: Audio Generation** → NotebookLM Enterprise API
+- [ ] **Phase 11: Audio Processing** → Transcription and chapters
+- [ ] **Phase 12: Publishing** → feed.xml updated with episode metadata
+- [ ] **Phase 13: Commit & Push** → Changes committed and pushed to GitHub
 
-**Verification:** After Phase 12, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
+**Verification:** After Phase 13, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
 
 ---
 
@@ -45,11 +46,11 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 │   └── *_transcript.json              # Full Whisper output (large file)
 ├── cover.png                           # Episode cover art with branding (~500KB)
 ├── report.md                           # Final narrative report from synthesis agent
-├── report.html                         # HTML report (series only - for index page)
-├── transcript.html                     # HTML transcript (series only - for index page)
+├── content_plan.md                     # Episode structure guide for NotebookLM
 ├── sources.md                          # Source documentation
 ├── YYYY-MM-DD-topic-slug.mp3          # Final audio file with chapters (~30MB)
-└── YYYY-MM-DD-topic-slug_chapters.json # Podcasting 2.0 chapter metadata
+├── YYYY-MM-DD-topic-slug_chapters.json # Podcasting 2.0 chapter metadata
+└── transcript.txt                      # Plain text transcript from Whisper
 ```
 
 **Key organizational principles:**
@@ -82,15 +83,15 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 ```
 Use TodoWrite to create initial todos:
 - Setup episode structure and files (status: in_progress)
-- Conduct parallel deep research (status: pending)
+- Conduct deep research (Perplexity, then targeted followup) (status: pending)
 - Cross-validate research findings (status: pending)
 - Create master research briefing (status: pending)
 - Synthesize narrative report (status: pending)
+- Create episode content plan (status: pending)
 - Generate cover art (status: pending)
-- Generate audio (Gemini or NotebookLM) (status: pending)
-- Process audio (chapters, embed) (status: pending)
-- Create publishing metadata (status: pending)
-- Update feed.xml and commit (status: pending)
+- Generate audio via NotebookLM API (status: pending)
+- Process audio (transcribe, chapters, embed) (status: pending)
+- Update feed.xml and publish (status: pending)
 ```
 
 **Determine episode details:**
@@ -364,7 +365,7 @@ For: podcast-synthesis-writer agent
 ## Notes
 - Research compiled: [Today's date in YYYY-MM-DD format]
 - Sources cross-validated across multiple tools
-- Conflicting sources noted in research-briefing.md
+- Conflicting sources noted in research/p3-briefing.md
 ```
 
 **VERIFY SETUP COMPLETE - File State Check:**
@@ -415,10 +416,19 @@ Mark "Conduct parallel deep research" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 2-4: RESEARCH
+                    PHASES 2-6: RESEARCH & BRIEFING
 ═══════════════════════════════════════════════════════════════
 
-### 2. Sequential Deep Research Phase
+This section covers:
+- **Phase 2:** Academic Foundation (Perplexity)
+- **Phase 3:** Question Discovery
+- **Phase 4:** Targeted Followup Research
+- **Phase 5:** Cross-Validation
+- **Phase 6:** Master Briefing Creation
+
+---
+
+### Sequential Deep Research Phase
 
 **CRITICAL PRINCIPLE:** Research tools gather and organize source material. They DO NOT write the final narrative. The podcast-synthesis-writer agent creates the actual report.
 
@@ -712,7 +722,7 @@ This prompt will now be saved to logs/prompts.md and used for Phase 1 research.
 **Phase 1: Academic Foundation (Start Here)**
 - Run Perplexity first with the comprehensive academic prompt
 - This builds the foundation from peer-reviewed research
-- When complete, paste results into research-results.md
+- When complete, paste results into research/p2-perplexity.md
 
 **Phase 2: Question Discovery (After Perplexity)**
 - I'll analyze Perplexity's results
@@ -733,7 +743,7 @@ This prompt will now be saved to logs/prompts.md and used for Phase 1 research.
 **Using the `perplexity-deep-research` skill:**
 - API-based automation with sonar-deep-research model
 - Expected time: 30-120 seconds
-- Automatically formatted output ready to paste into research-results.md
+- Automatically formatted output ready to paste into research/p2-perplexity.md
 
 **Fallback:** If API automation fails, manually run at https://www.perplexity.ai/ with Pro Search enabled.
 
@@ -758,7 +768,7 @@ Read and follow the instructions in .claude/skills/perplexity-deep-research/SKIL
 3. Submit to sonar-deep-research model with reasoning_effort=high
 4. Wait 30-120 seconds for completion
 5. Extract and format research report with citations
-6. Output marked research ready to paste into research-results.md
+6. Output marked research ready to save to research/p2-perplexity.md
 
 Research prompt: [insert Perplexity prompt from prompts.md]"
 ```
@@ -769,7 +779,7 @@ Research prompt: [insert Perplexity prompt from prompts.md]"
 - Go to https://www.perplexity.ai/
 - Enable Pro Search
 - Paste prompt from prompts.md
-- Copy output to research-results.md
+- Copy output to research/p2-perplexity.md
 
 **Note:** API requires PERPLEXITY_API_KEY in .env. Get key at https://www.perplexity.ai/settings/api
 
@@ -784,7 +794,7 @@ Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
 
 **When user provides Perplexity results (Phase 1 complete):**
 
-1. **Read and analyze Perplexity research from research-results.md**
+1. **Read and analyze Perplexity research from research/p2-perplexity.md**
 2. **Create Phase 2 analysis in prompts.md** using the question discovery framework:
    - What subtopics and themes emerged?
    - What gaps exist in the academic literature?
@@ -1132,8 +1142,7 @@ wc -w podcast/episodes/YYYY-MM-DD-slug/report.md
 **Update todos:**
 ```
 Mark "Synthesize narrative report" as completed.
-Mark "Generate cover art" as in_progress.
-Mark "Obtain audio from NotebookLM" as in_progress (user's parallel task).
+Mark "Create episode content plan" as in_progress.
 ```
 
 ═══════════════════════════════════════════════════════════════
@@ -1141,11 +1150,84 @@ Mark "Obtain audio from NotebookLM" as in_progress (user's parallel task).
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 8: COVER ART
+                    PHASE 8: EPISODE PLANNING
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
 ✓ report.md created (Phase 7)
+✓ sources.md created with validated citations
+✓ Ready to create episode structure guidelines for NotebookLM
+
+**⚠️ DO NOT STOP AND WAIT FOR USER - INVOKE SKILL AUTOMATICALLY**
+
+**WORK TO DO:** Invoke the podcast-episode-planner skill to create content_plan.md:
+
+Use the Task tool with subagent_type='general-purpose':
+
+```
+Create episode content plan using the podcast-episode-planner skill.
+
+Episode directory: podcast/episodes/YYYY-MM-DD-slug/
+Episode title: [Episode Title]
+Series name: [Series name or "Standalone"]
+
+Follow .claude/skills/podcast-episode-planner/SKILL.md to:
+1. Read report.md and sources.md
+2. Classify episode type (evidence status, content density, series position)
+3. Select toolkit elements (hook type, takeaway structure, etc.)
+4. Create content_plan.md with three-section structure and NotebookLM guidance
+5. Log to logs/prompts.md
+
+Required files must exist:
+- report.md (narrative synthesis)
+- sources.md (validated citations)
+```
+
+**The skill produces:**
+- `content_plan.md` - Episode structure guide with NotebookLM instructions (8-12KB)
+
+**What content_plan.md provides for NotebookLM:**
+- Three-section structure (Foundation → Evidence → Application)
+- Key terms that must be defined
+- Specific studies/findings to emphasize
+- Narrative arc and transitions
+- Opening hook and closing callback guidance
+
+**VERIFY EPISODE PLANNING COMPLETE:**
+
+```bash
+# Check file exists and has content
+ls -lh podcast/episodes/YYYY-MM-DD-slug/content_plan.md
+```
+
+**Expected output:**
+- ✅ content_plan.md exists (8-12KB)
+
+---
+
+**EXIT CRITERIA (all must be true to proceed):**
+✓ content_plan.md created with three-section structure
+✓ Key terms to define listed
+✓ Studies/findings to emphasize identified
+✓ Narrative arc guidance included
+
+**Update todos:**
+```
+Mark "Create episode content plan" as completed.
+Mark "Generate cover art" as in_progress.
+```
+
+═══════════════════════════════════════════════════════════════
+
+---
+
+═══════════════════════════════════════════════════════════════
+                    PHASE 9: COVER ART
+═══════════════════════════════════════════════════════════════
+
+**ENTRY REQUIREMENTS:**
+✓ report.md created (Phase 7)
+✓ content_plan.md created (Phase 8)
 ✓ Ready to generate cover art based on episode content
 
 **WORK TO DO:** Immediately invoke cover art subagent:
@@ -1197,202 +1279,94 @@ Mark "Generate cover art" as completed.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 9: AUDIO GENERATION
+                    PHASE 10: AUDIO GENERATION
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
 ✓ report.md created (Phase 7)
-✓ sources.md created with validated citations
-✓ research/p1-brief.md available (Phase 1 academic briefing)
-✓ research/p3-briefing.md available (Phase 6 master briefing)
-✓ Cover art generation launched (Phase 8) - can run in parallel
+✓ research/p3-briefing.md exists
+✓ sources.md exists
+✓ Cover art generation launched (Phase 9) - can run in parallel
 
-**Two audio generation options:**
-- **Option A: Gemini Native Audio** (automated, ~15-30 min) - Uses Gemini 2.5 to generate audio locally
-- **Option B: NotebookLM** (manual, user-driven) - User generates audio via Google NotebookLM
+**Primary Method: NotebookLM Enterprise API**
+
+Uses the Discovery Engine API to automate the NotebookLM workflow:
+- Two-host conversational "Deep Dive" format
+- Uploads 4 source files automatically
+- Custom episodeFocus prompt for Yudame Research branding
+- Typical output: 20-40 minute episodes
 
 ---
 
-### Option A: Gemini Audio Generation (Recommended)
+### Generate Audio with NotebookLM API
 
-**4 Critical Input Files Required:**
-
-| File | Location | Purpose | Required |
-|------|----------|---------|----------|
-| `report.md` | Episode root | Synthesized research report | **Yes** |
-| `sources.md` | Episode root | Validated source citations | Recommended |
-| `p1-brief.md` | `research/` | Phase 1 academic briefing | Recommended |
-| `p3-briefing.md` | `research/` | Phase 3 master briefing | Recommended |
-
-**Target context size:** 80-150KB combined for optimal 36-minute episode
-
-**Verify input files exist:**
+**Verify source files exist:**
 ```bash
 cd podcast/episodes/EPISODE_PATH
-ls -la report.md sources.md research/p1-brief.md research/p3-briefing.md
-wc -c report.md sources.md research/p1-brief.md research/p3-briefing.md
+ls -lh research/p1-brief.md report.md research/p3-briefing.md sources.md content_plan.md
 ```
 
-**Invoke Gemini audio generation:**
-
-Use the Task tool to invoke the `podcast-audio-processing` skill with Gemini mode:
-
-```
-Generate podcast audio for this episode using the podcast-audio-processing skill with Gemini.
-
-Episode path: podcast/episodes/YYYY-MM-DD-slug
-Episode slug: YYYY-MM-DD-slug
-
-Required input files (verify all 4 exist):
-- report.md (synthesized research report)
-- sources.md (validated citations)
-- research/p1-brief.md (Phase 1 academic briefing)
-- research/p3-briefing.md (Phase 3 master briefing)
-
-Follow the podcast-audio-processing skill Workflow A to:
-1. Verify all 4 required input files exist
-2. Check combined context size (target: 80-150KB)
-3. Run generate_audio.py --context-rich mode
-4. Process output (transcribe, chapters, embed)
-5. Log to logs/prompts.md
-
-CRITICAL: Report back the file metadata when complete:
-- Duration: MM:SS format (target: ~36:00)
-- File size: bytes
+**Run the API script:**
+```bash
+cd podcast/tools
+python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Name" --cleanup
 ```
 
-**Expected runtime:** 15-30 minutes depending on API latency
+**Arguments:**
+- `episode_dir` - Path to episode directory (required)
+- `--series` - Series name for audio intro (optional)
+- `--title` - Episode title, defaults to directory name (optional)
+- `--cleanup` - Delete notebook after generation (optional)
+- `--timeout` - Timeout in minutes, default 30 (optional)
 
-**What Gemini generation does:**
-1. Loads ALL 4 source materials as rich context (NotebookLM-style)
-2. Generates 3 parts (~12 minutes each) using Gemini 2.5 Native Audio API
-3. Feeds transcript of each part into the next for continuity
-4. Stitches parts together into final ~36 minute episode
-5. Transcribes using local Whisper
-6. Outputs: mp3 file + transcript.txt
+**What the script does:**
+1. Creates notebook via Discovery Engine API
+2. Uploads 5 source files (p1-brief.md, report.md, p3-briefing.md, sources.md, content_plan.md)
+3. Generates audio with episodeFocus prompt (Yudame Research branding)
+4. Polls for completion (typically 5-15 minutes)
+5. Downloads MP3 to episode directory
 
 **Output files:**
-- `EPISODE_SLUG.mp3` - Final stitched audio (~30MB)
-- `transcript.txt` - Full episode transcript
-- `tmp/generation_metrics.json` - Generation stats
+- `EPISODE_SLUG.mp3` - Final audio (typically 20-40 min)
 
-**Skip to Phase 10** for chapter creation and embedding after Gemini completes.
+**Expected runtime:** 5-15 minutes
 
 ---
 
-### Option B: NotebookLM Audio Generation (Manual)
+### Fallback: Manual NotebookLM
 
-**Files to upload to NotebookLM:**
-1. `report.md` (narrative synthesis from podcast-synthesis-writer)
-2. `research/p3-briefing.md` (organized source material)
-3. `research/p2-*.md` files (individual tool research outputs for additional context)
-4. Any PDFs or documents in `research/documents/` folder
+If API is unavailable, use the manual workflow:
 
-**NotebookLM Prompt (Standard Template - DO NOT customize):**
+- **NotebookLM (manual):** `.claude/skills/notebooklm-audio/SKILL.md`
+  - Go to https://notebooklm.google.com/
+  - Upload source files manually
+  - Use episodeFocus prompt from skill documentation
 
-```
-Create an intellectually rigorous podcast that balances analytical depth with clear explanation.
-
-Opening: Begin with "Yudame Research" (add series name if applicable) and introduce the topic's value.
-
-Core principles:
-- Spell out acronyms first: "High-Intensity Interval Training, or HIIT" - then use acronym
-- Define technical terms immediately in plain language before building on them
-- Use concrete examples ONLY from source material - never fabricate
-- Highlight findings that reveal strategic lessons or challenge assumptions
-- Extract frameworks and connect to practical implications
-- Maintain scientific rigor: distinguish correlation from causation, note effect sizes and uncertainties
-
-Emphasis areas:
-- Spell-first for acronyms, definition-first for technical terms
-- Evidence-based analysis: cite studies, report effect sizes, note sample sizes
-- Include human elements when they exist: decisions made, reasoning, outcomes
-- Use conversational check-ins: "Let me define that term..." or "To be clear..."
-- Translate findings to practical meaning and broader patterns
-
-Highlight insights worth examining:
-- Counter-intuitive findings that reveal strategic lessons
-- Failures that illustrate specific mistakes or systemic issues
-- Unexpected outcomes that challenge assumptions
-- Make numbers meaningful through context and comparisons
-
-Avoid:
-- Undefined acronyms and jargon
-- Academic language when simpler words work
-- Introducing 3+ new technical terms in one sentence
-- Fabricated examples or over-hedging that obscures findings
-- Dry explanations when human stories exist in research
-- Repeatedly restating context
-
-Target: Intelligent listeners wanting deep understanding and practical insights. Appreciate technical depth but need terms defined.
-
-Tone: Intellectually rigorous but accessible - "conversational expert explaining to a bright student"
-
-When presenting stories:
-- Include decision-making context: "Do Kwon announced X, which led to Y" not "The protocol experienced stress"
-- Provide specific details: "On Friday afternoon, Circle announced..." not "Circle had exposure"
-- Use precise numbers for context: "$3.3 billion frozen over a weekend" not "some funds were inaccessible"
-- Show scale through comparisons: "Supply increased from millions to trillions - a thousand-fold change"
-- Connect to lessons: Explain what the outcome reveals about systems, incentives, or strategy
-
-When presenting research: Focus on what numbers mean, use comparisons ("like losing 5 years of profits"), translate statistics to implications.
-
-Closing: Summarize 2-3 key takeaways, close with "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
-```
-
-**Add to logs/prompts.md under "NotebookLM Audio Generation Phase"**
-
-**Settings:**
-- Format: **Deep Dive** (or Brief/Critique/Debate as appropriate)
-- Length: **Long** (or adjust based on topic complexity)
-
-**Inform user:**
-"Ready for NotebookLM audio generation:
-
-1. Upload these files to NotebookLM:
-   - report.md (narrative report)
-   - research/p3-briefing.md (organized sources)
-   - research/p2-*.md files (individual tool research)
-   - Any research/documents/ files if present
-
-2. Use 'Audio Overview' feature with the prompt saved in logs/prompts.md (just added)
-
-3. Select format: Deep Dive, Length: Long
-
-4. Generate and download the audio file
-
-5. Return with the audio file and I'll process it (transcribe, chapters, embed)"
+After manual generation, process the audio with `podcast-audio-processing` skill for transcription.
 
 ---
 
 **Update todos when audio is ready:**
 ```
-Mark "Obtain audio" as completed.
-Mark "Process audio (transcribe, chapters)" as in_progress.
+Mark "Generate audio" as completed.
+Mark "Process audio (chapters)" as in_progress.
 ```
 
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 10: AUDIO PROCESSING
+                    PHASE 11: AUDIO PROCESSING
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
-✓ Audio generated (Phase 9) - either via Gemini or NotebookLM
-✓ Audio file is in episode directory (.mp3 for Gemini, .m4a/.mp3 for NotebookLM)
-✓ Transcript available (transcript.txt for Gemini, needs creation for NotebookLM)
-
-**Processing differs based on Phase 9 audio source:**
+✓ Audio generated (Phase 10) via NotebookLM API
+✓ Audio file is in episode directory (.mp3)
 
 ---
 
-### If Gemini Audio (Phase 9 Option A)
+### Transcribe and Create Chapters
 
-Gemini already produced:
-- `EPISODE_SLUG.mp3` - Final audio file
-- `transcript.txt` - Full transcript
-
-**Remaining work:** Create chapters and embed them
+**NotebookLM output requires transcription:**
 
 ```bash
 cd podcast/episodes/EPISODE_PATH
@@ -1405,8 +1379,9 @@ ls -l *.mp3 | awk '{print $5}'  # File size in bytes
 ffmpeg -i *.mp3 2>&1 | grep Duration  # Duration
 ```
 
-**Create chapters from transcript:**
-- Read transcript.txt and identify 10-15 natural topic transitions
+**Create chapters from transcript/script:**
+- Read script.md or transcript.txt and identify 10-15 natural topic transitions
+- Use `[TRANSITION: new section]` markers as primary chapter boundaries
 - Create `EPISODE_SLUG_chapters.txt` (FFmpeg format) and `EPISODE_SLUG_chapters.json` (Podcasting 2.0)
 - See chapter format templates in podcast-audio-processing skill
 
@@ -1511,14 +1486,14 @@ Mark "Create publishing metadata" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 11: PUBLISHING
+                    PHASE 12: PUBLISHING
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
-✓ Audio processing complete (Phase 10)
+✓ Audio processing complete (Phase 11)
 ✓ Duration known (MM:SS format)
 ✓ File size known (exact bytes)
-✓ Transcript exists (tmp/*_transcript.json)
+✓ Transcript exists (transcript.txt)
 ✓ report.md and research/p3-briefing.md available
 
 **WORK TO DO:** Generate episode description, keywords, and source links:
@@ -1656,7 +1631,7 @@ Mark "Update feed.xml and commit" as in_progress.
 ---
 
 ═══════════════════════════════════════════════════════════════
-                    PHASE 12: COMMIT & PUSH
+                    PHASE 13: COMMIT & PUSH
 ═══════════════════════════════════════════════════════════════
 
 **ENTRY REQUIREMENTS:**
@@ -1827,29 +1802,27 @@ ALL EPISODE WORKFLOW TASKS COMPLETE! ✅
 
 **User handles:**
 - Manual research submission for web-based tools (Grok, Claude)
-- NotebookLM audio generation (if using Option B in Phase 9)
 
 **You handle:**
 - File organization and directory setup
 - Reading seed research-prompt.md if present
-- **Phase 1:** Creating comprehensive Perplexity academic research prompt
-- **Phase 2:** Attempting Perplexity API automation (30-120 seconds)
+- **Phase 1:** Setup - Creating episode directory and initial files
+- **Phase 2:** Perplexity API automation for academic research (30-120 seconds)
 - **Phase 3:** Analyzing Perplexity results and conducting question discovery
-- **Phase 4:** Generating targeted Phase 3 prompts based on discovered questions
-- **Phase 5:** Attempting automation for ChatGPT, Gemini research as needed
-- **Phase 6:** Cross-validation matrix creation across all research sources
-- **Phase 7:** Master research briefing compilation organized by topic
-- **Phase 8:** **Invoking podcast-synthesis-writer agent** to create report.md
+- **Phase 4:** Generating targeted prompts and running GPT-Researcher, Gemini research
+- **Phase 5:** Cross-validation matrix creation across all research sources
+- **Phase 6:** Master research briefing compilation (research/p3-briefing.md)
+- **Phase 7:** **Invoking podcast-synthesis-writer agent** to create report.md
+- **Phase 8:** **Invoking podcast-episode-planner** to create content_plan.md
 - **Phase 9:** Cover art generation (Gemini via OpenRouter) and branding
-- **Phase 10:** Audio generation via Gemini Native Audio (Option A - automated) OR processing NotebookLM audio (Option B)
-- **Phase 11:** Chapter generation from transcript analysis
-- **Phase 12:** Description, keywords, source validation for metadata
-- **Phase 13:** feed.xml updates
-- **Phase 14:** Git workflow and commits
+- **Phase 10:** Audio generation via NotebookLM Enterprise API
+- **Phase 11:** Transcription (Whisper), chapter creation and embedding
+- **Phase 12:** Description, keywords, source validation, feed.xml update
+- **Phase 13:** Git commit and push (publishes episode)
 
-**Audio Generation Options:**
-- **Option A (Gemini - Recommended):** Fully automated using `generate_audio.py --context-rich`. Requires 4 input files: report.md, sources.md, research/p1-brief.md, research/p3-briefing.md (80-150KB combined). Produces ~36-minute episode.
-- **Option B (NotebookLM):** User manually generates audio via NotebookLM. You process the resulting m4a/mp3 file.
+**Audio Generation:**
+- **Primary:** NotebookLM Enterprise API (`.claude/skills/notebooklm-enterprise-api/`) - Two-host conversational format, automated via Discovery Engine API
+- **Manual fallback:** NotebookLM web interface (`.claude/skills/notebooklm-audio/`) - Use when API unavailable
 
 
 ## Getting Started
@@ -1859,26 +1832,18 @@ When user wants to create a new episode:
 1. **Create todo list** with TodoWrite tool
 2. **Determine episode details** (use today's date; only ask about series/slug/title if not provided)
 3. **Check for existing research-prompt.md** (seed document) and read if present
-4. **Create all episode files** including research-briefing.md
-5. **Phase 1:** Creating comprehensive Perplexity academic research prompt
-6. **Phase 2:** Attempting Perplexity API automation (30-120 seconds)
-7. User pastes Perplexity results into research-results.md when complete
-8. **Phase 3:** Analyzing Perplexity results and conducting question discovery
-9. **Phase 4:** Generating targeted Phase 3 prompts based on discovered questions
-10. **Phase 5:** Attempting automation for ChatGPT, Gemini research as needed
-11. User collects all Phase 3 research into research-results.md
-12. **Phase 6:** Cross-validation matrix creation across all research sources
-13. **Phase 7:** Master research briefing compilation organized by topic
-14. **Phase 8:** Invoking podcast-synthesis-writer agent to create report.md from research materials
-15. **Phase 9:** Cover art generation (Gemini via OpenRouter) and branding
-16. **Phase 10:** Audio generation:
-    - **Option A (Recommended):** Gemini Native Audio via `generate_audio.py --context-rich`
-      - Uses 4 critical files: report.md, sources.md, research/p1-brief.md, research/p3-briefing.md
-      - Produces ~36-minute episode automatically
-    - **Option B:** NotebookLM (user generates manually, you process the file)
-17. **Phase 11:** Chapter generation and embedding
-18. **Phase 12:** Description, keywords, source validation for metadata
-19. **Phase 13:** feed.xml updates
-20. **Phase 14:** Git workflow and commits
+4. **Phase 1:** Create episode directory and initial files (research/, logs/, tmp/, sources.md)
+5. **Phase 2:** Run Perplexity API for academic foundation (30-120 seconds)
+6. **Phase 3:** Analyze Perplexity results, conduct question discovery
+7. **Phase 4:** Run targeted research (GPT-Researcher, Gemini automated; Grok, Claude manual)
+8. **Phase 5:** Create cross-validation matrix across all sources
+9. **Phase 6:** Compile master briefing (research/p3-briefing.md organized by topic)
+10. **Phase 7:** Invoke podcast-synthesis-writer agent to create report.md
+11. **Phase 8:** Invoke podcast-episode-planner to create content_plan.md
+12. **Phase 9:** Generate cover art (Gemini via OpenRouter) and apply branding
+13. **Phase 10:** Generate audio via NotebookLM Enterprise API (~5-15 min)
+14. **Phase 11:** Transcribe with Whisper, create chapters, and embed in mp3
+15. **Phase 12:** Create metadata, update feed.xml, validate with podcast-feed-validator
+16. **Phase 13:** Git commit and push to publish (EPISODE LIVE)
 
 **Key:** Update TodoWrite at every phase transition. The sequential workflow builds research progressively: academic foundation → question discovery → targeted followup, producing higher quality, better verified, non-redundant research.
