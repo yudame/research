@@ -22,10 +22,10 @@ See `docs/design/TAGLINE.md` for full rationale.
 ### Podcast Host
 **Valor Engels** — Host and primary voice of Yudame Research.
 
-Headshot asset: `podcast/valor-headshot-4x.png` (transparent background, suitable for hero sections with larger-than-life cropping)
+Headshot asset: `podcast/valor-headshot.png` (transparent background, suitable for hero sections with larger-than-life cropping)
 
 ### Visual Assets
-- **Podcast Cover Art:** `podcast/podcast-cover.png` — Features Yudame branding with yellow border and host headshot
+- **Podcast Cover Art:** `podcast/cover.png` — Features Yudame branding with host headshot
 - **Logo:** `podcast/yudame-logo.png` — Yellow "A" icon + "Yudame Research" text
 
 ---

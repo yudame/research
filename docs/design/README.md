@@ -68,8 +68,8 @@ Located in `reference images/`:
 **Brand Identity:**
 - **Tagline:** "Be the most prepared person in the room."
 - **Podcast Host:** Valor Engels
-- **Cover Art:** `podcast/podcast-cover.png`
-- **Host Headshot:** `podcast/valor-headshot-4x.png`
+- **Cover Art:** `podcast/cover.png`
+- **Host Headshot:** `podcast/valor-headshot.png`
 
 **Visual Identity:**
 - Minimal black on white/cream foundation
