@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Wed, 25 Dec 2025 03:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2025 14:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -544,23 +544,24 @@
     <!-- Episode 2: Cardiovascular Health Series - Episode 1 -->
     <item>
       <title>Cardiovascular Health: Ep. 1, Lifestyle Foundations</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png?v=2025-12-21b"/>
-      <description>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both (full report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md). This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.</description>
-      <content:encoded><![CDATA[<p>Discover how VO₂ max and heart rate variability (HRV) predict longevity better than traditional risk factors, and learn the foundational lifestyle framework to optimize both. This evidence-based deep dive reveals that each 1-MET improvement in VO₂ max reduces all-cause mortality by 11-17%, while optimal sleep (7-8 hours) and the Mediterranean diet create synergistic effects that can prevent over 80% of cardiovascular events. Episode 1 of a 4-part series establishing the foundations—subsequent episodes cover advanced training protocols, HRV-guided recovery, and evidence-based supplementation.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md">https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/aha-recs-for-physical-activity-in-adults">AHA Physical Activity Guidelines</a></li><li><a href="https://www.bmj.com/content/337/bmj.a1344">PREDIMED Mediterranean Diet Trial</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10551663/">DASH Diet Meta-Analysis</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11103301/">VO₂ Max and Mortality Meta-Analysis</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6201443/">Sleep Duration and Cardiovascular Health</a></li></ul>]]></content:encoded>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/cover.png?v=2025-12-26"/>
+      <description>Poor sleep quality increases coronary heart disease risk by 44%—rivaling traditional risk factors like hypertension and high cholesterol. That's why the American Heart Association added sleep as the 8th component of their Life's Essential 8 framework in 2022. This episode establishes why sleep is the non-negotiable foundation for cardiovascular health: the U-shaped mortality curve (optimal 6.5-8 hours), why sleep architecture matters more than duration, and the four biological mechanisms linking poor sleep to heart disease. We cover autonomic dysregulation, inflammation, blood pressure disruption, metabolic dysfunction, and the underdiagnosed threat of sleep apnea. Episode 1 of a 6-part series—subsequent episodes cover VO2 max, HRV, supplementation, diet, and beyond-lifestyle interventions. Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md</description>
+      <content:encoded><![CDATA[<p>Poor sleep quality increases coronary heart disease risk by 44%—rivaling traditional risk factors like hypertension and high cholesterol. That's why the American Heart Association added sleep as the 8th component of their Life's Essential 8 framework in 2022. This episode establishes why sleep is the non-negotiable foundation for cardiovascular health.</p><p>We examine the <strong>U-shaped mortality curve</strong> (optimal 6.5-8 hours), why <strong>sleep architecture</strong> matters more than duration (N3 deep sleep, REM, fragmentation), and the four biological mechanisms linking poor sleep to heart disease: autonomic dysregulation, inflammation, blood pressure disruption, and metabolic dysfunction. Sleep apnea (OSA) affects 40-80% of cardiovascular patients and nearly doubles mortality risk when untreated.</p><p>The synergy data is striking: the Mediterranean diet's 20% cardiovascular protection disappears entirely when sleep falls below 7 hours. Sleep optimization provides the leverage—without it, your diet and training gains are systematically sabotaged.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/21300732/">Cappuccio et al. Sleep Meta-analysis</a> - 474,684 participants: 48% CHD risk with &lt;6h sleep, 65% stroke risk with &gt;9h</li><li><a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001078">AHA Life's Essential 8 (2022)</a> - Sleep added as 8th cardiovascular health metric</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/29100190/">MrOS Sleep Study</a> - 83% higher hypertension odds with low N3 sleep; 13% mortality per 5% REM reduction</li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6201443/">Sleep Heart Health Study</a> - 89% higher CV mortality with &lt;80% sleep efficiency</li><li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1800389">PREDIMED Trial</a> - Mediterranean diet benefits only present with adequate sleep</li></ul>]]></content:encoded>
       <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Mon, 18 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3"
-                 length="42201056"
+      <pubDate>Thu, 26 Dec 2025 14:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/ep1-lifestyle.mp3"
+                 length="39708534"
                  type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/2025-11-21-cardiovascular-health-episode-1-lifestyle.mp3</guid>
+      <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/ep1-lifestyle.mp3</guid>
       <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>43:57</itunes:duration>
+      <itunes:duration>41:21</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>2</itunes:season>
+      <itunes:season>4</itunes:season>
       <itunes:episode>1</itunes:episode>
-      <itunes:keywords>VO2 max, heart rate variability, HRV, cardiovascular health, sleep optimization, Mediterranean diet, DASH diet, exercise physiology, HIIT training, baroreflex, autonomic nervous system, longevity, mortality risk, stress management, smoking cessation</itunes:keywords>
+      <itunes:keywords>sleep cardiovascular, Life's Essential 8, AHA, U-shaped mortality, sleep architecture, N3 deep sleep, REM sleep, sleep fragmentation, autonomic dysregulation, HRV, nocturnal dipping, blood pressure, inflammation, CRP, sleep apnea, OSA, CPAP, metabolic syndrome, Mediterranean diet synergy, VO2 max, 40 year old men heart health</itunes:keywords>
       <research:series>Cardiovascular Health</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep1-lifestyle/ep1-lifestyle_chapters.json" type="application/json+chapters"/>
     </item>
 
     <!-- Episode 1: Stablecoin Build & Launch Series - Episode 1 -->
