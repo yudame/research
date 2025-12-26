@@ -1,0 +1,20 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {"startTime": 0, "title": "Introduction: Sleep as Foundation"},
+    {"startTime": 165, "title": "VO2 Max & HRV Preview"},
+    {"startTime": 281, "title": "Key Terms & Definitions"},
+    {"startTime": 428, "title": "The U-Shaped Mortality Curve"},
+    {"startTime": 567, "title": "Short Sleep Risks (<6 hours)"},
+    {"startTime": 744, "title": "Long Sleep Risks (>9 hours)"},
+    {"startTime": 891, "title": "Deep Sleep (N3) Importance"},
+    {"startTime": 1031, "title": "Sleep Fragmentation Dangers"},
+    {"startTime": 1190, "title": "Mechanism 1: Autonomic Dysregulation"},
+    {"startTime": 1362, "title": "Mechanism 2: Inflammation"},
+    {"startTime": 1560, "title": "Mechanism 3: Blood Pressure"},
+    {"startTime": 1667, "title": "Mechanism 4: Metabolic & OSA"},
+    {"startTime": 1920, "title": "Sleep & Exercise Synergy"},
+    {"startTime": 2100, "title": "Sleep & Diet Connection"},
+    {"startTime": 2280, "title": "Closing & Next Episodes"}
+  ]
+}

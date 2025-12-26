@@ -1,0 +1,91 @@
+;FFMETADATA1
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=165000
+title=Introduction: Sleep as Foundation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=165000
+END=281000
+title=VO2 Max & HRV Preview
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=281000
+END=428000
+title=Key Terms & Definitions
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=428000
+END=567000
+title=The U-Shaped Mortality Curve
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=567000
+END=744000
+title=Short Sleep Risks (<6 hours)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=744000
+END=891000
+title=Long Sleep Risks (>9 hours)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=891000
+END=1031000
+title=Deep Sleep (N3) Importance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1031000
+END=1190000
+title=Sleep Fragmentation Dangers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1190000
+END=1362000
+title=Mechanism 1: Autonomic Dysregulation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1362000
+END=1560000
+title=Mechanism 2: Inflammation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1667000
+title=Mechanism 3: Blood Pressure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1667000
+END=1920000
+title=Mechanism 4: Metabolic & OSA
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2100000
+title=Sleep & Exercise Synergy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=2280000
+title=Sleep & Diet Connection
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2481000
+title=Closing & Next Episodes
