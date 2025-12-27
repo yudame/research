@@ -1,0 +1,84 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=67000
+title=Introduction: The Go-to-Market Challenge
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=67000
+END=180000
+title=The Libra Failure vs 2025 Partnerships
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=330000
+title=Key Terms: GTM, Network Effects & Distribution Rails
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=330000
+END=510000
+title=The Measurement Paradox: 71% Bot Volume
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=510000
+END=695000
+title=Consumer Trust Barrier: 75% Bank Preference
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=695000
+END=890000
+title=The Intention-Action Gap & Generational Divide
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=890000
+END=1100000
+title=Where Stablecoins Work: Remittances & Emerging Markets
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1100000
+END=1310000
+title=Institutional Settlement & Working Capital
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1310000
+END=1500000
+title=Network Effects: USDT vs USDC Competition
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1720000
+title=The Regulatory Moat: MiCA & Circle's Advantage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1720000
+END=1960000
+title=Failed Strategies: Terra, Mercenary Capital & Incentives
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1960000
+END=2200000
+title=Winning Distribution: Visa, Stripe & Mastercard Partnerships
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2200000
+END=2440000
+title=Historical Precedents: M-Pesa, Alipay & Zelle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2440000
+END=2676480
+title=Conclusion: The Path Through Traditional Finance

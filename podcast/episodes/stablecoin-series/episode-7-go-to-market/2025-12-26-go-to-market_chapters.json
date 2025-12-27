@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Go-to-Market Challenge"
+    },
+    {
+      "startTime": 67,
+      "title": "The Libra Failure vs 2025 Partnerships"
+    },
+    {
+      "startTime": 180,
+      "title": "Key Terms: GTM, Network Effects & Distribution Rails"
+    },
+    {
+      "startTime": 330,
+      "title": "The Measurement Paradox: 71% Bot Volume"
+    },
+    {
+      "startTime": 510,
+      "title": "Consumer Trust Barrier: 75% Bank Preference"
+    },
+    {
+      "startTime": 695,
+      "title": "The Intention-Action Gap & Generational Divide"
+    },
+    {
+      "startTime": 890,
+      "title": "Where Stablecoins Work: Remittances & Emerging Markets"
+    },
+    {
+      "startTime": 1100,
+      "title": "Institutional Settlement & Working Capital"
+    },
+    {
+      "startTime": 1310,
+      "title": "Network Effects: USDT vs USDC Competition"
+    },
+    {
+      "startTime": 1500,
+      "title": "The Regulatory Moat: MiCA & Circle's Advantage"
+    },
+    {
+      "startTime": 1720,
+      "title": "Failed Strategies: Terra, Mercenary Capital & Incentives"
+    },
+    {
+      "startTime": 1960,
+      "title": "Winning Distribution: Visa, Stripe & Mastercard Partnerships"
+    },
+    {
+      "startTime": 2200,
+      "title": "Historical Precedents: M-Pesa, Alipay & Zelle"
+    },
+    {
+      "startTime": 2440,
+      "title": "Conclusion: The Path Through Traditional Finance"
+    }
+  ]
+}

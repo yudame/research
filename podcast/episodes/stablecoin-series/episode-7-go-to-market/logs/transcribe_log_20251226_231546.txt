@@ -1,0 +1,8 @@
+Starting transcription: 2025-12-26-go-to-market.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/stablecoin-series/episode-7-go-to-market/2025-12-26-go-to-market.mp3...
+
+✓ Transcript saved to: ../episodes/stablecoin-series/episode-7-go-to-market/logs/2025-12-26-go-to-market_transcript.json
+✓ Log saved to: ../episodes/stablecoin-series/episode-7-go-to-market/logs/transcribe_log_20251226_231546.txt
+✓ Transcript length: 7221 words
