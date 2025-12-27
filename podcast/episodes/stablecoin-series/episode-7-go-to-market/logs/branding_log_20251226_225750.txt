@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-7-go-to-market/cover.png
+Background brightness: 236 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-7-go-to-market/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-7-go-to-market/cover.png
