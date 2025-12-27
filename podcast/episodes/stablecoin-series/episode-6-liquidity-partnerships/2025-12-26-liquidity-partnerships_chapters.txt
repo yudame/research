@@ -1,0 +1,120 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=110000
+title=Introduction: The 87-Fold Arbitrage Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=110000
+END=230000
+title=The Electrical Grid Analogy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=230000
+END=350000
+title=Market Makers & Authorized Participants
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=350000
+END=450000
+title=Primary vs Secondary Markets
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=450000
+END=570000
+title=The SVB Crisis: Two-Tiered System Exposed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=570000
+END=690000
+title=How Arbitrageurs Maintain the Peg
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=690000
+END=810000
+title=Concentrated vs Distributed Arbitrage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=810000
+END=930000
+title=Professional Market Makers: The Power Plants
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=930000
+END=1080000
+title=Capital Hierarchy: $1M to $100M
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1080000
+END=1230000
+title=Wintermute, DWF Labs & Market Maker Economics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1230000
+END=1350000
+title=CEX Listing Requirements
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1350000
+END=1500000
+title=DEX Innovation: Uniswap V3 & Curve Finance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1650000
+title=Multi-Chain Fragmentation & Bridge Risks
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1650000
+END=1800000
+title=Case Study: USDC's Institutional Ascent
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1800000
+END=1920000
+title=Case Study: Ethena USDe's Yield Fragility
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2010000
+title=Case Study: PayPal USD's Platform Leverage
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2010000
+END=2130000
+title=Case Study: Terra's Liquidity Collapse
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2130000
+END=2310000
+title=Regulatory Landscape: GENIUS Act & MiCA
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2310000
+END=2400000
+title=Basel III: The 1,250% Risk Weight
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2512360
+title=Four-Step Liquidity Evaluation Protocol & Conclusion
