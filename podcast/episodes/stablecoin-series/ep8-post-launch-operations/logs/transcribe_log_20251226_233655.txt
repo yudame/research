@@ -1,0 +1,8 @@
+Starting transcription: 2025-12-26-post-launch-operations.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/stablecoin-series/ep8-post-launch-operations/2025-12-26-post-launch-operations.mp3...
+
+✓ Transcript saved to: ../episodes/stablecoin-series/ep8-post-launch-operations/logs/2025-12-26-post-launch-operations_transcript.json
+✓ Log saved to: ../episodes/stablecoin-series/ep8-post-launch-operations/logs/transcribe_log_20251226_233655.txt
+✓ Transcript length: 6226 words

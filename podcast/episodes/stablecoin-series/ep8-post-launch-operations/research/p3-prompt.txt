@@ -1,0 +1,19 @@
+Research stablecoin regulatory compliance and enforcement post-GENIUS Act and MiCA implementation, focusing on these specific questions:
+
+Regulatory & Policy Frameworks:
+- What enforcement actions have occurred under GENIUS Act (signed July 2025) or MiCA (effective 2024)?
+- What are the specific compliance deadlines and requirements issuers must meet under each framework?
+- How do Travel Rule requirements differ between US (FinCEN), EU (TFR), UK (FCA), and Asia-Pacific jurisdictions?
+
+Comparative Policy Analysis:
+- How do stablecoin reserve requirements differ across US, EU, UK, Hong Kong, Singapore, and Japan?
+- What happens when regulatory requirements conflict across jurisdictions? (e.g., MiCA interest payment restrictions vs US permissiveness)
+- How are central banks treating stablecoins vs CBDCs in regulatory frameworks?
+
+Strategic Context:
+- What is the Federal Reserve's position on stablecoin master account access and systemic risk?
+- How are banking regulators responding to deposit displacement concerns?
+- What policy debates are ongoing about recovery/resolution procedures for systemic stablecoin failures?
+
+Focus on: Regulatory frameworks, legislation, government policy documents, official guidance, enforcement actions, strategic policy analysis.
+Provide findings with official source citations, effective dates, and policy context.

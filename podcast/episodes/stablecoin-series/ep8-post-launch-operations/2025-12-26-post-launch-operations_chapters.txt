@@ -1,0 +1,84 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=35000
+title=Introduction: The Ultimate Stress Test
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=35000
+END=180000
+title=The SVB Crisis: Saturday Morning March 11, 2023
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=270000
+title=Key Terms: GENIUS Act, MiCA, and the Travel Rule
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=270000
+END=420000
+title=The Gini Coefficient and Flash Loan Attacks
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=560000
+title=Scale: $180 Billion Ecosystem and 30+ Chains
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=560000
+END=750000
+title=The GENIUS Act: US Reserve Framework
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=750000
+END=920000
+title=MiCA: The Transatlantic Divide on Reserves
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=920000
+END=1100000
+title=Travel Rule Fragmentation and Compliance Nightmares
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1100000
+END=1350000
+title=SVB Weekend: Three Governance Models Tested
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1350000
+END=1600000
+title=Governance Concentration: The 0.84 Gini Reality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1600000
+END=1850000
+title=Attack Case Studies: Beanstalk, Compound, Build Finance
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1850000
+END=2050000
+title=Operational Failures: Custody, Banking, Oracles
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2050000
+END=2200000
+title=2025 De-Pegging Events: USDe vs USDX
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2200000
+END=2280720
+title=Conclusion: Operational Maturity and the Road Ahead
