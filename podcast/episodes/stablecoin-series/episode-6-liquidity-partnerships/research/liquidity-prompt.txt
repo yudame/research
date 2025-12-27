@@ -1,0 +1,19 @@
+Research stablecoin liquidity bootstrapping and market making economics, focusing on these specific questions:
+
+**Industry Analysis:**
+- What are the actual costs and compensation structures in market making agreements (trading fees, token allocations, minimum commitments)?
+- How do new stablecoins overcome the cold-start problem (no users because no liquidity, no liquidity because no users)?
+- What capital requirements exist to establish minimum viable liquidity?
+
+**Case Studies & Implementation:**
+- What specific liquidity bootstrapping strategies succeeded or failed? (USDC growth, PayPal USD launch, Ethena USDe)
+- How did smaller stablecoins (FRAX, LUSD, GHO) build liquidity without Tether/Circle resources?
+- What lessons from failed stablecoin launches relate to liquidity problems?
+
+**Technical Implementation:**
+- How do market makers technically integrate across CEXs, DEXs, and multiple chains?
+- What infrastructure do projects need before approaching market makers?
+- How are liquidity mining incentives structured and are they sustainable?
+
+Focus on: Industry analyst reports, market research, case studies, technical documentation, financial/business analysis.
+Provide comprehensive findings with citations, data sources, and comparative analysis.

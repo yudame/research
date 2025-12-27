@@ -1,0 +1,19 @@
+Research regulatory impacts on stablecoin exchange listings and market making, focusing on these specific questions:
+
+**Regulatory & Policy Frameworks:**
+- How is the GENIUS Act (July 2025) specifically affecting stablecoin exchange listings in the US?
+- What MiCA compliance requirements apply to market makers and liquidity providers?
+- What regulatory clarity do institutional market makers need to operate (licensing, capital requirements)?
+
+**Comparative Policy Analysis:**
+- How do US (GENIUS Act), EU (MiCA), and Asian jurisdictions differ in regulating stablecoin liquidity?
+- Which regulatory frameworks favor new stablecoin entrants vs incumbents?
+- How are exchanges responding to regulatory fragmentation (dual listings, regional restrictions)?
+
+**Strategic Context:**
+- What policy debates are ongoing about stablecoin market concentration risks?
+- How might future regulations address the USDT/USDC duopoly?
+- What reforms could reduce barriers to entry for new stablecoin issuers?
+
+Focus on: Regulatory frameworks, legislation, government policy documents, strategic plans, comparative policy analysis.
+Provide findings with official source citations, effective dates, and policy context.

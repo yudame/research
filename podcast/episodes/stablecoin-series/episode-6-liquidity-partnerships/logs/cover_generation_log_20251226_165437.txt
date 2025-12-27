@@ -1,0 +1,30 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Episode 6 Liquidity Partnerships":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: The stablecoin market has grown to approximately $300 billion as of December 2025, with Tether's USDT and Circle's USDC controlling a combined 84% of the market. But here is a question that rarely get
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Episode 6 Liquidity Partnerships":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual eleme...
+✓ Cover art saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-6-liquidity-partnerships/cover.png
+✓ Metadata saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-6-liquidity-partnerships/logs/cover_generation_metadata_20251226_165455.json
+
+✓ Done! Cover art ready at: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-6-liquidity-partnerships/cover.png
+✓ Log saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/episode-6-liquidity-partnerships/logs/cover_generation_log_20251226_165437.txt
+
+Next step: Add branding with add_logo_watermark.py
+
+To use in feed.xml, add this line to the episode <item>:
+  <itunes:image href="https://research.yuda.me/podcast/episodes/episode-6-liquidity-partnerships/cover.png?v=1"/>
