@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Micro School - Yudame Research</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../podcast/yudame-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../../../css/base.css">
+    <link rel="stylesheet" href="../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/navigation.css">
+    <link rel="stylesheet" href="../../../docs/design/components/podcast-player.css">
+    <link rel="stylesheet" href="../../../docs/design/components/buttons.css">
+</head>
+<body class="bg-graph-paper-light paper-texture">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../../../" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="../../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+                <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="../../../" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../../../methodology.html" class="nav-link">Methodology</a></li>
+                    <li class="nav-item"><a href="../../../podcast/subscribe.html" class="nav-link is-active">Podcast</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="mobile-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li class="mobile-nav-item"><a href="../../../" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="../../../methodology.html" class="mobile-nav-link">Methodology</a></li>
+            <li class="mobile-nav-item"><a href="../../../podcast/subscribe.html" class="mobile-nav-link is-active">Podcast</a></li>
+        </ul>
+    </div>
+
+    <main class="series-content">
+        <div class="page-header">
+            <h1 class="page-title">Building a Micro School</h1>
+            <p class="page-tagline">A practical guide to creating small, flexible learning environments for children ages 4-9.</p>
+        </div>
+
+        <div class="subscribe-buttons">
+            <a href="https://podcasts.apple.com/us/podcast/yudame-research-podcast/id1862329179" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #9333ea;">
+                <i class="fa-solid fa-podcast"></i> Apple Podcasts
+            </a>
+            <a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc" class="podcast-button" target="_blank" rel="noopener noreferrer" style="background: #1db954;">
+                <i class="fa-brands fa-spotify"></i> Spotify
+            </a>
+            <a href="../../../podcast/subscribe.html" class="podcast-button" style="background: var(--color-gray-600);">
+                <i class="fa-solid fa-rss"></i> Other
+            </a>
+        </div>
+
+        <h2 class="section-title">Episodes</h2>
+
+        <div class="episode-list">
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 1</span>
+                    <span class="episode-title">The Micro-School Kindergarten</span>
+                </div>
+                <div class="episode-summary">Practical setup for ages 4-5: space design, daily rhythm, ratio implementation, and balancing structure with play.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Covers physical space design for small kindergartens (5-15 children), daily rhythm structure, practical challenges of maintaining 7-10:1 ratios, licensing and regulatory considerations, startup costs, and common first-year mistakes. Builds on developmental science from the Kindergarten First Principles series.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 2</span>
+                    <span class="episode-title">The 2-Hour Core Model</span>
+                </div>
+                <div class="episode-summary">Critical examination of Alpha School's compressed academics approach and AI tutoring evidence.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Examines the evidence behind compressed academic learning models like Alpha School's "2-Hour Learning" platform. Investigates AI tutoring effectiveness, accountability gaps (including Pennsylvania's charter denial), the guide vs. teacher distinction, and whether these models are replicable outside proprietary platforms.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 3</span>
+                    <span class="episode-title">The Self-Direction Transition</span>
+                </div>
+                <div class="episode-summary">When and how children ages 6-9 develop capacity for independent learning.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Explores mastery-based progression systems, mixed-age grouping benefits and challenges, scaffolding the transition from guided to independent work, metacognition development, productive struggle vs. frustration, and handling the wide range of abilities in ages 6-9.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 4</span>
+                    <span class="episode-title">Technology as Infrastructure</span>
+                </div>
+                <div class="episode-summary">Evidence-based approaches to technology integration for ages 4-9.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Covers current screen time research, which edtech tools have actual evidence of effectiveness, practical screen time policies, how to evaluate edtech claims critically, minimum viable technology stack for a micro-school, and digital citizenship for young children.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 5</span>
+                    <span class="episode-title">The Soft Skills Curriculum</span>
+                </div>
+                <div class="episode-summary">Designing intentional development of empathy, resilience, and communication.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Explores which soft skills are most predictive of long-term success, explicit teaching methods for empathy and resilience, SEL curricula for small settings, assessment without standardized testing, and the role of project-based learning and mixed-age interactions in soft skills development.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 6</span>
+                    <span class="episode-title">Mentors and Apprenticeships</span>
+                </div>
+                <div class="episode-summary">Building relationships beyond parents through community involvement and real-world experiences.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Examines developmental impact of non-parental mentors, age-appropriate job shadowing, structuring mentor relationships for young children, community involvement models, mentor vetting and safety, and balancing real-world exposure with protecting childhood.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 7</span>
+                    <span class="episode-title">Outdoors as Classroom</span>
+                </div>
+                <div class="episode-summary">Forest school principles and practical logistics of nature-based education.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Covers forest school structures, minimum effective outdoor time, weather and safety logistics, age-appropriate outdoor activities, integrating academics with outdoor experiences, and required equipment and spaces for effective outdoor programming.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 8</span>
+                    <span class="episode-title">Autonomy and Choice</span>
+                </div>
+                <div class="episode-summary">Navigating the balance between child-led and parent-guided activities and learning paths.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Explores child-led vs. parent-directed choices, the sampling vs. specializing debate, supporting intrinsic motivation, when adult guidance helps vs. hinders, handling quitting and resistance to new experiences, and the surprising role of boredom in creativity and development.</div>
+                </details>
+            </div>
+
+            <div class="episode">
+                <div class="episode-header">
+                    <span class="episode-number">Ep 9</span>
+                    <span class="episode-title">Sustainability and Equity</span>
+                </div>
+                <div class="episode-summary">Avoiding common failure modes and building accessible, sustainable learning communities.</div>
+                <details class="episode-details">
+                    <summary>More</summary>
+                    <div class="episode-full-description">Examines common reasons micro-schools fail in the first 3 years, educator burnout prevention, cost models at different price points, serving diverse learners including those with disabilities, school choice funding mechanisms, and building community to avoid isolation for children and educators alike.</div>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">Yudame<br>Research</div>
+                    <div class="footer-tagline">Be the most prepared person in the room.</div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Research</h3>
+                    <ul class="footer-links">
+                        <li><a href="../kindergarten-first-principles/">Kindergarten Series</a></li>
+                        <li><a href="../cardiovascular-health/">Cardiovascular Health</a></li>
+                        <li><a href="../algorithms-for-life/">Algorithms for Life</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Podcast</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc">Spotify</a></li>
+                        <li><a href="../../../podcast/feed.xml">RSS Feed</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://yuda.me">Home</a></li>
+                        <li><a href="https://ai.yuda.me">AI</a></li>
+                        <li><a href="https://research.yuda.me">Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; <span id="year"></span> Yudame</p>
+                <p class="footer-dedication">We do the research. You get the edge.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('is-active');
+                this.classList.toggle('is-active');
+            });
+        }
+
+        // Update year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
