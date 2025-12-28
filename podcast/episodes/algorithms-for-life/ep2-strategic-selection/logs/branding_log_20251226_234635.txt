@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover.png
+Background brightness: 240 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover.png

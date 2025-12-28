@@ -1,0 +1,65 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The Paradox of Possibility"
+    },
+    {
+      "startTime": 120,
+      "title": "Context Switching Costs (20% Capacity Loss)"
+    },
+    {
+      "startTime": 329,
+      "title": "Working Memory Limits (4-7 Items)"
+    },
+    {
+      "startTime": 480,
+      "title": "Opportunity Cost Psychology"
+    },
+    {
+      "startTime": 600,
+      "title": "The Openness-Conscientiousness Tension"
+    },
+    {
+      "startTime": 780,
+      "title": "Neurobiology of Novelty-Seeking"
+    },
+    {
+      "startTime": 920,
+      "title": "Implementation Intentions (d = 0.65)"
+    },
+    {
+      "startTime": 1140,
+      "title": "The Accountability Effect (2x Baseline)"
+    },
+    {
+      "startTime": 1320,
+      "title": "The Constraint-Creativity Curve"
+    },
+    {
+      "startTime": 1500,
+      "title": "Effectuation: How Experts Decide"
+    },
+    {
+      "startTime": 1680,
+      "title": "Human-AI Collaboration Paradox"
+    },
+    {
+      "startTime": 1860,
+      "title": "The 2-3 Project Limit Rule"
+    },
+    {
+      "startTime": 2040,
+      "title": "Review Cadences (Weekly/Monthly/Quarterly)"
+    },
+    {
+      "startTime": 2220,
+      "title": "Minimum Viable Structure System"
+    },
+    {
+      "startTime": 2400,
+      "title": "Conclusion: Engineering Your Environment"
+    }
+  ]
+}

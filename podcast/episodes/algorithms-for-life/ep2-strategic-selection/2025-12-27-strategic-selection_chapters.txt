@@ -1,0 +1,90 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=120000
+title=Introduction: The Paradox of Possibility
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120000
+END=329000
+title=Context Switching Costs (20% Capacity Loss)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=329000
+END=480000
+title=Working Memory Limits (4-7 Items)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=480000
+END=600000
+title=Opportunity Cost Psychology
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=600000
+END=780000
+title=The Openness-Conscientiousness Tension
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=780000
+END=920000
+title=Neurobiology of Novelty-Seeking
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=920000
+END=1140000
+title=Implementation Intentions (d = 0.65)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1320000
+title=The Accountability Effect (2x Baseline)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1320000
+END=1500000
+title=The Constraint-Creativity Curve
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1680000
+title=Effectuation: How Experts Decide
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1860000
+title=Human-AI Collaboration Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=2040000
+title=The 2-3 Project Limit Rule
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2220000
+title=Review Cadences (Weekly/Monthly/Quarterly)
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2220000
+END=2400000
+title=Minimum Viable Structure System
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2400000
+END=2439000
+title=Conclusion: Engineering Your Environment

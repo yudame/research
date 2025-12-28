@@ -1,0 +1,30 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep2 Strategic Selection":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: What if your greatest cognitive strength is also your greatest liability? Here is a surprising finding from the research: the same brain architecture that enables breakthrough strategic vision systema
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep2 Strategic Selection":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suita...
+✓ Cover art saved to: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover.png
+✓ Metadata saved to: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/logs/cover_generation_metadata_20251226_234635.json
+
+✓ Done! Cover art ready at: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover.png
+✓ Log saved to: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep2-strategic-selection/logs/cover_generation_log_20251226_234608.txt
+
+Next step: Add branding with add_logo_watermark.py
+
+To use in feed.xml, add this line to the episode <item>:
+  <itunes:image href="https://research.yuda.me/podcast/episodes/ep2-strategic-selection/cover.png?v=1"/>
