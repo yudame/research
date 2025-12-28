@@ -181,13 +181,11 @@ mv temp.mp3 EPISODE_SLUG.mp3
 ## First-Time Setup
 
 ```bash
-cd ~/src/research/podcast/tools
-
-# Fix SSL certificates (macOS Python)
+# Fix SSL certificates (macOS Python - one-time)
 /Applications/Python\ 3.12/Install\ Certificates.command
 
-# Install dependencies
-pip install -r requirements.txt
+# Dependencies auto-managed by uv - no manual install needed
+# Just use: uv run python transcribe_only.py ...
 ```
 
 ---
@@ -228,8 +226,8 @@ After completion, these files should exist in the episode directory:
 ### Transcription Errors
 
 **If transcription fails:**
-- Check that Whisper is installed: `pip list | grep openai-whisper`
-- Verify audio file is accessible
+- Always use `uv run python` (not bare `python`) - this ensures correct venv
+- Verify audio file exists and path is correct
 - Try smaller model (tiny) if base is too slow
 
 ### Chapter Embedding Errors

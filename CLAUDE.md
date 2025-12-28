@@ -37,8 +37,10 @@ ffmpeg -i "original.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
 **Generate transcript (local Whisper):**
 ```bash
 cd podcast/tools
-python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
+uv run python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
 ```
+
+**Note:** Always use `uv run python` to ensure correct virtual environment with Whisper dependencies.
 
 Whisper model options:
 - `tiny` - Fastest (~1-2 min for 30 min audio), basic accuracy
@@ -120,9 +122,11 @@ Verify settings: Repository Settings → Pages
 
 First-time Whisper setup (macOS):
 ```bash
-cd podcast/tools
+# Fix SSL certificates (one-time)
 /Applications/Python\ 3.12/Install\ Certificates.command
-pip install -r requirements.txt
+
+# Dependencies auto-managed by uv - no manual install needed
+# Just use: uv run python transcribe_only.py ...
 ```
 
 ## Learning Research Context
