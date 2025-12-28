@@ -39,3 +39,4 @@ output/
 
 # Source video files
 *.mp4
+podcast/episodes/**/*.wav

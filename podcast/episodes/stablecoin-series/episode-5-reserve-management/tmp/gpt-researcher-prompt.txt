@@ -1,0 +1,20 @@
+Research stablecoin reserve management and custody infrastructure implementation, focusing on these specific questions:
+
+**Industry Analysis:**
+- What are the actual costs of maintaining qualified custody relationships at scale (custody fees, insurance, operational overhead)?
+- How are different issuers structuring multi-custodian arrangements to reduce concentration risk?
+- What business models work for smaller stablecoin issuers facing high compliance costs?
+
+**Case Studies & Implementation:**
+- How is Circle implementing GENIUS Act compliance and AICPA 2025 Criteria reporting?
+- What does Ripple's RLUSD transparency reporting include (CUSIP-level detail, real-time dashboards)?
+- How are trust company issuers (Paxos, GUSD) structuring bankruptcy-remote reserves?
+- What happened operationally when Circle faced SVB's failure - timeline, decision-making, recovery?
+
+**Technical Implementation:**
+- How do real-time proof of reserves systems work (APIs, data feeds, reconciliation frequency)?
+- What SOC 2 Type II controls are required for institutional-grade custody?
+- How are multi-signature custody arrangements implemented for stablecoin reserves?
+
+Focus on: Industry reports, case studies, technical documentation, cost benchmarks, and implementation guides.
+Provide comprehensive findings with citations, data sources, and comparative analysis.
