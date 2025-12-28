@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode Transcript - Yudame Research</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../../../podcast/yudame-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../../../../docs/design/components/foundation.css">
+    <link rel="stylesheet" href="../../../../docs/design/components/navigation.css">
+
+    <style>
+        .article-container {
+            max-width: var(--max-width-article);
+            margin: 0 auto;
+            padding: var(--space-6);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+            text-decoration: none;
+            margin-bottom: var(--space-4);
+            transition: color var(--transition-base);
+        }
+
+        .back-link:hover {
+            color: var(--color-black);
+        }
+
+        .transcript-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-semibold);
+            color: var(--color-black);
+            margin-bottom: var(--space-4);
+        }
+
+        .transcript-content {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            line-height: var(--leading-loose);
+            color: var(--color-gray-800);
+        }
+
+        .transcript-content p {
+            margin-bottom: var(--space-3);
+        }
+
+        .speaker {
+            font-weight: var(--weight-medium);
+            color: var(--color-black);
+        }
+
+        .timestamp {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: var(--space-3);
+            }
+
+            .transcript-title {
+                font-size: var(--text-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../../../../" class="header-logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="../../../../podcast/yudame-logo.png" alt="" style="height: 32px;">
+                <span style="font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-black);">Yudame Research</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <a href="../index.html" class="back-link">← Back to Series</a>
+        <h1 class="transcript-title">Episode Transcript</h1>
+        <div class="transcript-content" id="content">
+            Loading transcript...
+        </div>
+    </main>
+
+    <script>
+        // Find the transcript JSON file
+        fetch('.')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = Array.from(doc.querySelectorAll('a'));
+                const transcriptFile = links
+                    .map(a => a.href.split('/').pop())
+                    .find(name => name.endsWith('_transcript.json'));
+
+                if (transcriptFile) {
+                    return fetch(transcriptFile);
+                }
+                throw new Error('No transcript file found');
+            })
+            .then(response => response.json())
+            .then(data => {
+                const content = document.getElementById('content');
+                if (data.text) {
+                    content.innerHTML = data.text.split('\n').map(p => `<p>${p}</p>`).join('');
+                } else if (data.segments) {
+                    content.innerHTML = data.segments.map(seg => {
+                        const mins = Math.floor(seg.start / 60);
+                        const secs = Math.floor(seg.start % 60).toString().padStart(2, '0');
+                        return `<p><span class="timestamp">[${mins}:${secs}]</span> ${seg.text}</p>`;
+                    }).join('');
+                }
+            })
+            .catch(err => {
+                document.getElementById('content').innerHTML = '<p>Error loading transcript</p>';
+            });
+    </script>
+</body>
+</html>

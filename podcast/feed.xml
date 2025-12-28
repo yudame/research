@@ -27,6 +27,29 @@
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
 
+    <!-- Episode 31: Algorithms for Life - Episode 2 -->
+    <item>
+      <title>Algorithms for Life: Ep. 2, Strategic Selection</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/cover.png?v=2025-12-27"/>
+      <description>The same brain architecture that enables breakthrough strategic vision systematically undermines sustained execution. A 2024 meta-analysis in Nature Human Behaviour found human-AI collaboration often performs worse than either alone (g = -0.23)—yet for creative tasks, the relationship reverses. This episode explores why possibility-oriented minds face systematic execution challenges, what research reveals about minimum viable structure, and how to engineer systems that leverage creative strengths while compensating for trait-based vulnerabilities. Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/report</description>
+      <content:encoded><![CDATA[<p>What if your greatest cognitive strength is also your greatest liability? Research reveals that <strong>high-openness, novelty-seeking individuals</strong> generate more ideas, make more creative connections, and spot opportunities others miss—yet they also abandon projects prematurely, struggle with routine maintenance, and experience choice paralysis when facing multiple compelling options.</p><p>A 2024 meta-analysis in <em>Nature Human Behaviour</em> of 106 experiments revealed something counterintuitive: human-AI collaboration often performs worse than either alone, with an effect size of <strong>Hedges' g = -0.23</strong>. Yet for creative and generative tasks, the relationship reversed. The quality of the human-AI interface mattered more than the capability of the AI itself.</p><p><strong>Key findings:</strong></p><ul><li><strong>Context Switching Costs:</strong> 20% cognitive capacity lost per switch, 20+ minutes to recover (attention residue research)</li><li><strong>Working Memory Limits:</strong> Only 4-7 items can be maintained simultaneously; strategic initiatives exceed this</li><li><strong>Implementation Intentions:</strong> d = 0.65 effect size—the highest-leverage intervention for bridging intention-execution gaps</li><li><strong>Accountability Effect:</strong> Weekly progress reports to a friend nearly double goal achievement (8.4 vs 4.28 baseline)</li><li><strong>The 2-3 Rule:</strong> Beyond 4 concurrent projects, productivity approaches zero</li></ul><p><strong>Protocols for Strategic Selection:</strong></p><ul><li><strong>Minimum Viable Structure:</strong> Explicit strategic direction, assigned accountability, clear trade-off framework, visible progress</li><li><strong>Implementation Intentions:</strong> "If [situation], then [action]" format automates behavioral initiation</li><li><strong>Three-Layer Review:</strong> Weekly (execution triage), Monthly (initiative health), Quarterly (portfolio reallocation)</li><li><strong>AI Collaboration Framework:</strong> Use AI for synthesis, generation, scenario modeling; preserve human judgment for novel framing and value-based prioritization</li></ul><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/report">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.nature.com/articles/s41562-024-02004-9">Vaccaro et al. (2024) Nature Human Behaviour</a> - Human-AI collaboration meta-analysis (106 experiments)</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/10435676/">Gollwitzer (1999)</a> - Implementation intentions meta-analysis (94 studies, d = 0.65)</li><li><a href="https://www.researchgate.net/publication/49765853">Leroy (2009)</a> - Attention residue research</li><li><a href="https://journals.aom.org/doi/10.5465/256963">Sarasvathy (2001)</a> - Effectuation theory (27 expert entrepreneurs)</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sat, 28 Dec 2025 08:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/2025-12-27-strategic-selection.mp3"
+                 length="39027798"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/2025-12-27-strategic-selection.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>40:39</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>6</itunes:season>
+      <itunes:episode>2</itunes:episode>
+      <itunes:keywords>strategic selection, decision science, opportunity cost, cognitive load, context switching, attention residue, working memory, implementation intentions, WOOP, accountability, personality psychology, openness, conscientiousness, novelty-seeking, ADHD, executive function, effectuation, expert entrepreneurs, AI collaboration, human-AI teaming, minimum viable structure, portfolio management, project prioritization</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/2025-12-27-strategic-selection_chapters.json" type="application/json+chapters"/>
+    </item>
+
     <!-- Episode 30: Stablecoin Series - Episode 8 (Series Finale) -->
     <item>
       <title>Stablecoin Series: Ep. 8, Post-Launch Operations &amp; Continuous Compliance</title>
