@@ -334,7 +334,28 @@ For: podcast-synthesis-writer agent
 ---
 
 ## PRACTITIONER PERSPECTIVES
-[Direct quotes or summaries from practitioners/experts]
+[Direct quotes from credentialed experts - doctors, researchers, industry leaders]
+[These carry weight as informed opinion, but are NOT peer-reviewed evidence]
+
+---
+
+## PUBLIC DISCOURSE (Opinion - NOT Evidence)
+
+⚠️ **For podcast context only** - Use to contrast "what people believe" vs "what research shows"
+
+### What X/Twitter Is Saying
+- [Notable voice]: "[Quote]" — [@handle, credential, date, engagement]
+- [Notable voice]: "[Quote]" — [@handle, credential, date, engagement]
+
+### Active Debates/Controversies
+- **Debate:** [Topic of disagreement]
+  - **Pro position:** [Who's arguing this, their case]
+  - **Con position:** [Who's arguing this, their case]
+
+### Popular Misconceptions to Address
+- **Belief:** [What many people think]
+- **Reality:** [What evidence actually shows]
+- **Podcast angle:** [How to bridge this gap for listeners]
 
 ---
 
@@ -358,12 +379,13 @@ For: podcast-synthesis-writer agent
 # Sources for [Episode Title]
 
 ## Research Tools Used
-- Perplexity (Academic & Official - automated)
-- Grok (Real-Time & Regional - manual)
-- GPT-Researcher (Industry & Technical - OpenAI GPT-5.2 - automated)
-- Gemini Deep Research (Strategic & Policy - automated) [if used]
+- Perplexity (Academic & Official - automated) → Evidence
+- GPT-Researcher (Industry & Technical - automated) → Evidence + Case Studies
+- Gemini Deep Research (Strategic & Policy - automated) → Evidence + Policy
+- Claude (Comprehensive Synthesis - manual) → Evidence synthesis
+- Grok (X/Twitter Discourse - manual) → **Opinion/Sentiment ONLY**
 
-## Verified Sources by Tier
+## Evidence Sources (For factual claims)
 
 ### Tier 1: Meta-analyses, Systematic Reviews, Official Statistics
 <!-- Add after cross-validation -->
@@ -372,6 +394,19 @@ For: podcast-synthesis-writer agent
 <!-- Add after cross-validation -->
 
 ### Tier 3: Case Studies, Industry Reports, News
+<!-- Add after cross-validation -->
+
+---
+
+## Opinion/Discourse Sources (For "what people think" context)
+
+⚠️ **These are NOT evidence** - Use only for podcast segments contrasting belief vs. research
+
+### Expert Opinion (credentialed but not peer-reviewed)
+<!-- Industry leaders, researchers speaking informally, etc. -->
+
+### Public Discourse (X/Twitter, forums)
+<!-- Notable voices, debates, sentiment - cite with handle + date -->
 <!-- Add after cross-validation -->
 
 ---
@@ -555,44 +590,62 @@ Based on Phase 2 question discovery, create specific prompts for each tool.
 
 **Important:** Default to using all four Phase 3 tools (Grok, ChatGPT, Gemini, Claude). Each tool provides a unique perspective that strengthens the research. Only omit a tool if its focus area is genuinely not applicable to the topic - this should be rare.
 
-**Grok - Recent Developments & Practitioner Perspectives**
+**Grok - X/Twitter Discourse & Real-Time Sentiment (OPINION, not evidence)**
+
+⚠️ **Note:** Grok output is PUBLIC OPINION, not scientific evidence. Use for "what people are saying" segments in the podcast, contrasting popular belief with research findings.
 
 Template:
 ```
-Research [TOPIC], focusing on these specific questions:
+Search X/Twitter and recent news for [TOPIC].
 
-**Recent Developments (last 12 months):**
-- [Specific question from Phase 2 about recent developments]
-- [Specific question about emerging trends]
+**Active X/Twitter Debates (last 30 days):**
+- Who are the loudest voices on this topic? (Names, handles, credentials)
+- What positions are they arguing? Quote specific posts.
+- What's the sentiment split? (e.g., "60% skeptical, 40% supportive")
+- Include engagement metrics for notable posts
 
-**Practitioner Perspectives:**
-- [Specific question about implementation]
-- [Specific question about professional community discussions]
+**Practitioner Complaints & Frustrations:**
+- What are people *doing this work* complaining about on X?
+- What do they say "the research gets wrong" or "academics don't understand"?
 
-**Regional/Local Context:**
-- [Specific question about local perspectives if relevant]
+**News from the Last 30 Days:**
+- What happened THIS MONTH? (announcements, launches, controversies)
+- Link to specific articles with dates
 
-Focus on: Recent news, industry discussions on X/Twitter, practitioner insights, regional sources.
-Provide findings with source links, publication dates, and credibility indicators.
+**Contrarian Takes:**
+- Who's arguing against the mainstream view? What's their case?
+- Who's defending the mainstream view against critics?
+
+**Output format:**
+- Name every source (person + handle + credential + date)
+- Tag credibility: [HIGH] industry leader, [MED] informed practitioner, [LOW] random account
+- Include X post URLs where possible
 ```
 
 **Example based on "early childhood educator burnout" Phase 2 analysis:**
 ```
-Research early childhood educator burnout, focusing on these specific questions:
+Search X/Twitter and recent news for early childhood educator burnout.
 
-**Recent Developments (last 12 months):**
-- What new policies or programs have been implemented to address educator burnout?
-- How has post-pandemic burnout evolved - are we seeing recovery or worsening?
+**Active X/Twitter Debates (last 30 days):**
+- Who are the loudest voices discussing ECE burnout? (Names, handles, credentials)
+- What positions are they arguing? Quote specific posts.
+- What's the sentiment - are educators optimistic or pessimistic about solutions?
 
-**Practitioner Perspectives:**
-- What are early childhood educators saying about burnout on professional X/Twitter communities?
-- What coping strategies are practitioners actually using vs. what research recommends?
+**Practitioner Complaints & Frustrations:**
+- What are ECE teachers complaining about on X that isn't captured in research?
+- What do they say policymakers or researchers "don't get"?
 
-**Regional Variations:**
-- Are there geographic differences in burnout rates or support programs?
+**News from the Last 30 Days:**
+- Any new programs, policies, or controversies announced this month?
 
-Focus on: Recent news, industry discussions on X/Twitter, practitioner insights, regional sources.
-Provide findings with source links, publication dates, and credibility indicators.
+**Contrarian Takes:**
+- Is anyone arguing burnout is overstated? What's their case?
+- Is anyone defending current support systems?
+
+**Output format:**
+- Name every source (person + handle + credential + date)
+- Tag credibility: [HIGH] industry leader, [MED] informed practitioner, [LOW] random account
+- Include X post URLs where possible
 ```
 
 ---
@@ -1047,8 +1100,9 @@ Mark "Create master research briefing" as in_progress.
 3. Source inventory (tiered by quality)
 4. Comparison tables
 5. Timeline of developments (if applicable)
-6. Practitioner perspectives
-7. Notes for Opus 4.5
+6. Practitioner perspectives (credentialed experts)
+7. **Public discourse (opinion - NOT evidence)** ← From Grok
+8. Notes for Opus 4.5
 
 **Key principles:**
 - Organize by TOPIC, not by which tool found it
@@ -1057,6 +1111,10 @@ Mark "Create master research briefing" as in_progress.
 - Note methodological limitations
 - Provide direct quotes for color/authority
 - Flag gaps that Opus should acknowledge
+- **CRITICAL: Keep opinion separate from evidence**
+  - Grok's X/Twitter discourse goes in PUBLIC DISCOURSE section only
+  - Never cite X posts as evidence for factual claims
+  - Use opinion for "many people believe X, but research shows Y" segments
 
 **Example structure for a subtopic:**
 
@@ -1120,7 +1178,11 @@ The podcast-synthesis-writer agent will:
 2. Transform organized research into engaging narrative report
 3. Apply evidence standards and podcast storytelling principles
 4. Create report.md with proper citations and source hierarchy
-5. Verify all quality requirements are met
+5. **Keep opinion separate from evidence:**
+   - Factual claims cite only Tier 1-3 sources (peer-reviewed, studies, reports)
+   - X/Twitter discourse (from Grok) used ONLY for "popular belief vs research" segments
+   - Frame opinion content as: "While many on social media argue X... the research actually shows Y"
+6. Verify all quality requirements are met
 
 Required files must exist:
 - research/p3-briefing.md (master briefing with verified findings)
