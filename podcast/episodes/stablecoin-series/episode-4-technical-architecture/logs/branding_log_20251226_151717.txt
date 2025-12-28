@@ -1,0 +1,4 @@
+Loading cover: ../episodes/stablecoin-series/episode-4-technical-architecture/cover.png
+Background brightness: 237 (light)
+✓ Branded cover saved to: ../episodes/stablecoin-series/episode-4-technical-architecture/cover_branded.png
+✓ Original replaced: ../episodes/stablecoin-series/episode-4-technical-architecture/cover.png
