@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sat, 28 Dec 2025 06:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2025 10:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -26,6 +26,29 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 32: Algorithms for Life - Episode 3 -->
+    <item>
+      <title>Algorithms for Life: Ep. 3, How to Delegate</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/cover.png?v=2025-12-29"/>
+      <description>Everyone knows the 70% rule: delegate if someone can do it 70% as well as you. It appears in management books, executive coaching, and countless LinkedIn posts. There's just one problem: it has zero empirical validation. When you trace it back, you find a single source—one consultant's intuition from 2014. Meanwhile, CEOs with high delegation capacity achieve 112% higher three-year growth (Gallup 2014), and founders spending 10 hours weekly on low-value tasks face $280,800 in annual opportunity cost. This episode examines why high-competence entrepreneurs resist delegation, what research predicts about trainability (learning agility correlates at 0.47-0.75 vs cognitive ability at 0.31), and how successful founders like Brian Chesky redesigned their involvement rather than simply "letting go." Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/report</description>
+      <content:encoded><![CDATA[<p>Everyone knows the 70% rule. If someone can do a task 70% as well as you, delegate it immediately. The rule appears in management books, executive coaching programs, and countless LinkedIn posts. It feels intuitively right. <strong>There is just one problem: it has zero empirical validation.</strong></p><p>When you trace the 70% rule back to its origin, you find a single source: Jim Schleckser, CEO of The CEO Project, writing in Inc.com in 2014. The number emerged from his consulting experience with 2,500-3,000 CEOs, not from any study or experiment. The most widely-cited delegation framework in business is one consultant's intuition, elevated to gospel through repetition.</p><p><strong>Key findings:</strong></p><ul><li><strong>Economic Cost:</strong> CEOs with high delegation capacity achieve 112% higher three-year growth rates (Gallup 2014). Founders on $50/hour tasks when worth $500/hour face $280,800 annual opportunity cost.</li><li><strong>Learning Agility Predicts Success:</strong> Correlation of 0.47-0.75 with leader outcomes (De Meuse 2019 meta-analysis), far better than cognitive ability at 0.31 (Sackett 2022 revision).</li><li><strong>Hiring Failures Are Attitudinal:</strong> 46% of new hires fail within 18 months; 89% fail for attitudinal reasons, not skill gaps. Lack of coachability is the leading cause (Leadership IQ).</li><li><strong>The Diagnostic Question:</strong> "Tell me about a time you made a mistake at work"—red flags include deflection to hypotheticals and inability to identify genuine mistakes.</li><li><strong>Founder Mode Debate:</strong> Brian Chesky called broad delegation "disastrous" at Airbnb. Resolution: successful founders redesign involvement around unique value-add rather than simply letting go.</li></ul><p><strong>Protocols for Effective Delegation:</strong></p><ul><li><strong>OPPTY Framework (9-12 weeks):</strong> Observation → Practice → Partnering → Taking Responsibility for tacit knowledge transfer</li><li><strong>Situational Leadership Matching:</strong> Match leadership style (S1-S4) to development level (D1-D4) for each specific task</li><li><strong>Decision Boundaries:</strong> Clear thresholds for escalation using RACI and Conviction-Consequence Matrix (Thiel)</li><li><strong>Remote Trust:</strong> Documentation compensates for interpersonal trust; GitLab's 10,400+ pages as model</li></ul><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/report">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.inc.com/jim-schleckser/the-70-rule-when-to-delegate.html">Jim Schleckser, Inc.com (2014)</a> - Origin of the 70% rule (no empirical validation)</li><li><a href="https://www.gallup.com">Gallup (2014)</a> - CEO delegation and 112% higher growth rates</li><li>De Meuse (2019) - Learning agility meta-analysis (ρ = 0.47-0.75)</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/27228105/">Breuer, Hüffmeier &amp; Hertel (2016)</a> - Trust in virtual teams meta-analysis</li><li><a href="https://paulgraham.com/foundermode.html">Paul Graham, "Founder Mode" (2024)</a> - Sparked founder involvement debate</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Sun, 29 Dec 2025 10:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/how-to-delegate.mp3"
+                 length="31916028"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/how-to-delegate.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>33:14</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>6</itunes:season>
+      <itunes:episode>3</itunes:episode>
+      <itunes:keywords>delegation, 70% rule, founder mode, learning agility, tacit knowledge, situational leadership, hiring, coachability, micromanagement, perfectionism, opportunity cost, founder bottleneck, Brian Chesky, Airbnb, OPPTY framework, structured interview, cognitive apprenticeship, task-relevant maturity, Andy Grove, remote work, AI delegation, scaling</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/how-to-delegate_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 31: Algorithms for Life - Episode 2 -->
     <item>
