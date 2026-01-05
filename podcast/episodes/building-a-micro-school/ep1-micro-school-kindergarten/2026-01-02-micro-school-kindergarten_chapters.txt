@@ -1,0 +1,78 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=137000
+title=Introduction: The Evidence Gap
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=137000
+END=327000
+title=Foundational Glossary: Key Terms and Metrics
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=327000
+END=406000
+title=Why Parents Choose Micro-Schools: Brain Development
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=406000
+END=553000
+title=Tennessee STAR and the Small Class Research
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=553000
+END=692000
+title=Play-Based Learning vs Direct Instruction
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=692000
+END=799000
+title=Montessori Research and the Credential Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=799000
+END=936000
+title=The Impossible Triangle: Financial Realities
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=936000
+END=1087000
+title=Four Business Models That Work
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1087000
+END=1228000
+title=Regulatory Maze: Zoning and Fire Codes
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1228000
+END=1368000
+title=Evidence-Based Daily Operations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1368000
+END=1537000
+title=Quality Control and Staffing Strategy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1537000
+END=1708000
+title=Parent Checklist: Seven Critical Questions
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1708000
+END=1828000
+title=Conclusion: Promise, Risk, and Epistemic Humility
