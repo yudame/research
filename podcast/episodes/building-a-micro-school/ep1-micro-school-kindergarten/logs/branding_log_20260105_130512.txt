@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/cover.png
+Background brightness: 237 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/cover.png

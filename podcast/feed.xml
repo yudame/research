@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Sun, 29 Dec 2025 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2026 00:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -26,6 +26,36 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode 33: Building a Micro School - Episode 1 -->
+    <item>
+      <title>Building a Micro School: Ep. 1, The Micro-School Kindergarten</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/cover.png"/>
+      <description><![CDATA[Explore the operational realities, financial constraints, and evidence base for starting and running a micro-school kindergarten. We confront the central challenge: 750,000-2M children are in micro-schools, yet there's virtually zero rigorous research on outcomes. Read the full research report at https://research.yuda.me/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/report.md
+
+Key Sources:
+• RAND Corporation - Micro-school Evaluation Challenges: https://www.rand.org/pubs/research_reports/RRA4414-1.html
+• Tennessee STAR Project - Small Class Size Research: https://ies.ed.gov/ncee/wwc/study/79114
+• International Journal of Early Years Education - Teacher Qualifications Review: https://www.tandfonline.com/doi/full/10.1080/09669760.2025.2451301
+• Stateline - Micro-school Regulations: https://stateline.org/2025/08/08/microschools-are-growing-in-popularity-but-state-regulations-havent-caught-up/
+• Utah SB 13 - Micro-school Zoning Deregulation: https://le.utah.gov/~2024/bills/static/SB0013.html]]></description>
+      <content:encoded><![CDATA[<p>What if 750,000 to 2 million American children are currently enrolled in an educational model with <strong>virtually zero rigorous research on outcomes?</strong> The RAND Corporation attempted to study micro-school effectiveness and could identify fewer than <strong>0.1% of micro-schools</strong> for analysis using traditional research methods. This is the central paradox: parents are flocking to micro-schools for kindergarten-age children, driven by dissatisfaction with factory-model classrooms, yet we lack the outcome data available for traditional options.</p><p>This episode confronts that evidence gap with intellectual honesty. Since direct micro-school research doesn't exist, we synthesize decades of proxy evidence from early childhood education: Tennessee Project STAR's findings on small class size (<strong>0.15-0.20 SD gains</strong>, with Black students benefiting even more), meta-analyses showing play-based learning outperforms direct instruction for children under 8, and the 2025 Lillard RCT demonstrating lasting gains from certified Montessori programs.</p><p><strong>Key findings:</strong></p><ul><li><strong>The Impossible Triangle:</strong> Cannot simultaneously achieve affordable tuition (<$8K/year), teacher living wages, and financial sustainability without external support (ESAs, networks, donated space)</li><li><strong>Four Viable Business Models:</strong> Home-based + lean operations; cooperative parent labor; network-supported (Prenda, Wildflower); ESA-funded (32% of micro-schools)</li><li><strong>Teacher Credential Paradox:</strong> Higher qualifications predict better classroom environments (ECERS) but show "largely null or contradictory" associations with child outcomes (Early et al. 2007). Process quality matters more than credentials alone.</li><li><strong>Regulatory Missing Middle:</strong> Most states lack legal category for 5-15 student programs. Utah SB 13 pioneered home-based micro-school zoning exemptions; Florida/Colorado force programs into ill-fitting childcare licensing.</li><li><strong>Evidence-Based Ratios:</strong> Strongest effects below 7.5:1 adult-child ratio (<strong>0.22 SD per child reduction</strong>) and class sizes below 15 students (<strong>0.10 SD per child reduction</strong>)—Bowne meta-analysis</li></ul><p><strong>Operational frameworks:</strong></p><ul><li><strong>Space Requirements:</strong> 45-55 sq ft per child of usable activity space</li><li><strong>Daily Schedule:</strong> 30-45 min free play, 45 min explicit literacy, 30-45 min math, 60+ min outdoor time, 30-45 min project work</li><li><strong>Quality Monitoring:</strong> CLASS observation tool, progress portfolios, parent feedback loops, developmental milestone tracking</li><li><strong>Burnout Prevention:</strong> Multi-role founder stress documented; network support reduces administrative burden from 20-25 hrs/week to 10 hrs/week</li></ul><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.rand.org/pubs/research_reports/RRA4414-1.html">RAND Corporation - Micro-school Evaluation Challenges</a> - Less than 0.1% of micro-schools identifiable for rigorous study</li><li><a href="https://ies.ed.gov/ncee/wwc/study/79114">Tennessee STAR Project</a> - Gold-standard RCT on small class sizes (1985-89, n=11,600+)</li><li><a href="https://www.tandfonline.com/doi/full/10.1080/09669760.2025.2451301">International Journal of Early Years Education</a> - 2025 systematic review of teacher qualification impacts</li><li><a href="https://stateline.org/2025/08/08/microschools-are-growing-in-popularity-but-state-regulations-havent-caught-up/">Stateline - Micro-school Regulations</a> - 84% unaccredited, 55% operate under homeschool laws</li><li><a href="https://le.utah.gov/~2024/bills/static/SB0013.html">Utah SB 13 (2024)</a> - First state law defining micro-schools and exempting from zoning restrictions</li></ul>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Thu, 02 Jan 2026 00:00:00 -0800</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/2026-01-02-micro-school-kindergarten.mp3"
+                 length="29256860"
+                 type="audio/mpeg"/>
+      <guid>building-a-micro-school-ep1-2026-01-02</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>30:28</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>7</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:keywords>micro-school, kindergarten, early childhood education, teacher qualifications, financial sustainability, education policy, ESA, small class size, play-based learning, Montessori, regulatory compliance, startup costs, homeschool, private school, childcare licensing, Tennessee STAR, process quality, structural quality, impossible triangle, business models, network support, Prenda, Wildflower, Utah SB 13</itunes:keywords>
+      <research:series>Building a Micro School</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/building-a-micro-school/ep1-micro-school-kindergarten/2026-01-02-micro-school-kindergarten_chapters.json" type="application/json+chapters"/>
+    </item>
 
     <!-- Episode 32: Algorithms for Life - Episode 3 -->
     <item>
