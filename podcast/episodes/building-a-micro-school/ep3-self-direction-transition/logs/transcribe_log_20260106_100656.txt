@@ -1,0 +1,8 @@
+Starting transcription: 2026-01-05-self-direction-transition.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/building-a-micro-school/ep3-self-direction-transition/2026-01-05-self-direction-transition.mp3...
+
+✓ Transcript saved to: ../episodes/building-a-micro-school/ep3-self-direction-transition/logs/2026-01-05-self-direction-transition_transcript.json
+✓ Log saved to: ../episodes/building-a-micro-school/ep3-self-direction-transition/logs/transcribe_log_20260106_100656.txt
+✓ Transcript length: 5862 words

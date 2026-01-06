@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep3-self-direction-transition/cover.png
+Background brightness: 234 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep3-self-direction-transition/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep3-self-direction-transition/cover.png
