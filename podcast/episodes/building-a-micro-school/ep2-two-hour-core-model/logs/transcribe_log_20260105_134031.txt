@@ -1,0 +1,8 @@
+Starting transcription: ep2-two-hour-core-model.mp3
+Method: Local Whisper (base)
+Loading Whisper model 'base'...
+Transcribing ../episodes/building-a-micro-school/ep2-two-hour-core-model/ep2-two-hour-core-model.mp3...
+
+✓ Transcript saved to: ../episodes/building-a-micro-school/ep2-two-hour-core-model/logs/ep2-two-hour-core-model_transcript.json
+✓ Log saved to: ../episodes/building-a-micro-school/ep2-two-hour-core-model/logs/transcribe_log_20260105_134031.txt
+✓ Transcript length: 5900 words

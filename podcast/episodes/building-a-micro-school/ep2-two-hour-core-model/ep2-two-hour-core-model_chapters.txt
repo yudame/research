@@ -1,0 +1,84 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=120000
+title=Introduction: The 2-Hour Learning Revolution
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120000
+END=270000
+title=Claim #1: The Two-Hour Myth
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=270000
+END=420000
+title=Claim #2: The Teacherless Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=570000
+title=Claim #3: The AI Technology Misnomer
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=570000
+END=750000
+title=The Evidence Base: Mastery Learning Works
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=750000
+END=870000
+title=The Homeschool Pilot Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=870000
+END=1020000
+title=Compressed Schedules and Learning Loss
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1020000
+END=1200000
+title=AI Cognitive Science: Harvard vs Penn Studies
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1380000
+title=Pennsylvania Charter Rejection
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1380000
+END=1560000
+title=Conflicts of Interest and Data Transparency
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1560000
+END=1740000
+title=The Cost Barrier and Selection Effect
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1740000
+END=1920000
+title=Scalability Challenges: Infrastructure and Special Ed
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1920000
+END=2040000
+title=The Long-Term Retention Question
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2040000
+END=2137200
+title=Synthesis: Innovation vs Accountability
