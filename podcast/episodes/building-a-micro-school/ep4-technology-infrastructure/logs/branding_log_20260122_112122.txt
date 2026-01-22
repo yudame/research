@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/cover.png
+Background brightness: 236 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/cover.png
