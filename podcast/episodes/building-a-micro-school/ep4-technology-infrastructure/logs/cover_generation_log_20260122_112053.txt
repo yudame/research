@@ -1,0 +1,30 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep4 Technology Infrastructure":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: A 2025 meta-analysis of 10,116 children found that excessive screen time was associated with poorer social-emotional development, with an odds ratio of 1.24 (95% CI: 1.16-1.33). Hyperactivity showed a
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep4 Technology Infrastructure":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements...
+✓ Cover art saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/cover.png
+✓ Metadata saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/logs/cover_generation_metadata_20260122_112122.json
+
+✓ Done! Cover art ready at: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/cover.png
+✓ Log saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep4-technology-infrastructure/logs/cover_generation_log_20260122_112053.txt
+
+Next step: Add branding with add_logo_watermark.py
+
+To use in feed.xml, add this line to the episode <item>:
+  <itunes:image href="https://research.yuda.me/podcast/episodes/ep4-technology-infrastructure/cover.png?v=1"/>

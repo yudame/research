@@ -27,22 +27,25 @@ The Perplexity Deep Research API provides programmatic access to comprehensive r
 
 ## Prerequisites
 
-- Perplexity API key in `/Users/valorengels/.env` (auto-loaded via ~/.zshenv)
+- Perplexity API key in repository `.env` or `/Users/valorengels/.env`
 - Python 3.x with `requests` and `python-dotenv` installed
 - API key from: https://www.perplexity.ai/settings/api
 
 ## API Key Setup
 
-**Check if API key exists:**
+**Check if API key exists (checks repository .env first, then home directory):**
 
 ```bash
-grep PERPLEXITY_API_KEY /Users/valorengels/.env
+grep PERPLEXITY_API_KEY .env 2>/dev/null || grep PERPLEXITY_API_KEY /Users/valorengels/.env 2>/dev/null || echo "PERPLEXITY_API_KEY not found"
 ```
 
-If not found, add to global `.env` file:
+If not found, add to repository `.env` file (preferred) or global `.env` file:
 
 ```bash
-# API keys are stored in /Users/valorengels/.env (auto-loaded via ~/.zshenv)
+# Preferred: Store in repository .env file
+echo 'PERPLEXITY_API_KEY=pplx-your-api-key-here' >> .env
+
+# Alternative: Store in global .env file (auto-loaded via ~/.zshenv)
 echo 'PERPLEXITY_API_KEY=pplx-your-api-key-here' >> /Users/valorengels/.env
 ```
 
@@ -56,13 +59,13 @@ echo 'PERPLEXITY_API_KEY=pplx-your-api-key-here' >> /Users/valorengels/.env
 
 ### Step 1: Verify API Key
 
-Use Bash to check if the API key is configured:
+Use Bash to check if the API key is configured (checks repository .env first, then home directory):
 
 ```bash
-grep PERPLEXITY_API_KEY .env
+grep PERPLEXITY_API_KEY .env 2>/dev/null || grep PERPLEXITY_API_KEY /Users/valorengels/.env 2>/dev/null || echo "PERPLEXITY_API_KEY not found"
 ```
 
-If not found, inform user to set up API key at https://www.perplexity.ai/settings/api
+If not found in either location, inform user to set up API key at https://www.perplexity.ai/settings/api
 
 ### Step 2: Prepare Research Prompt
 
@@ -240,10 +243,10 @@ python perplexity_deep_research.py --no-auto-save "Research prompt"
 **Error:** `ERROR: PERPLEXITY_API_KEY not found`
 
 **Solution:**
-1. Check `.env` file exists in repository root
-2. Verify API key is set: `grep PERPLEXITY_API_KEY .env`
+1. Check if `.env` file exists in repository root or home directory
+2. Verify API key is set: `grep PERPLEXITY_API_KEY .env 2>/dev/null || grep PERPLEXITY_API_KEY /Users/valorengels/.env 2>/dev/null`
 3. Get API key from https://www.perplexity.ai/settings/api
-4. Add to `.env`: `PERPLEXITY_API_KEY=pplx-your-key-here`
+4. Add to repository `.env` (preferred): `echo 'PERPLEXITY_API_KEY=pplx-your-key-here' >> .env`
 
 ### API Request Failures
 
