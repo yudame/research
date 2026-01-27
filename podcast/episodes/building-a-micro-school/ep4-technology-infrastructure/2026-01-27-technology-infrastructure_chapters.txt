@@ -1,0 +1,94 @@
+;FFMETADATA1
+title=Building a Micro School: Ep. 4, Technology as Infrastructure
+artist=Yudame Research
+album=Building a Micro School
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=72000
+title=Introduction: The Technology Paradox
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=72000
+END=154000
+title=Understanding Screen Time: The Salt Analogy
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=154000
+END=246000
+title=Active vs. Passive Screen Time
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=246000
+END=346000
+title=The Video Deficit Effect
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=346000
+END=448000
+title=Social Contingency: Why Live Interaction Matters
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=448000
+END=591000
+title=The Displacement Hypothesis
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=591000
+END=722000
+title=What Works: Coding and Executive Function
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=722000
+END=850000
+title=Math Apps and Blended Learning
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=850000
+END=1002000
+title=What Doesn't Work: AI Tutoring Hype
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1002000
+END=1120000
+title=The Adult Mediation Multiplier
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1120000
+END=1260000
+title=Minimum Viable Tech Stack
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1362000
+title=Age-Specific Screen Time Guidelines
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1362000
+END=1490000
+title=Compliance: COPPA and WCAG Requirements
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1490000
+END=1582000
+title=Content Selection: The Four Pillars Framework
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1582000
+END=1687140
+title=Key Takeaways and Closing
