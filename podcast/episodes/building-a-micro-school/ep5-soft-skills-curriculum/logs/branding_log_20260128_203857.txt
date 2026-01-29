@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/cover.png
+Background brightness: 240 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/cover.png
