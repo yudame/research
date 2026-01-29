@@ -1,0 +1,66 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=121200
+title=Introduction - The Soft Stuff Isn't Soft
+[CHAPTER]
+TIMEBASE=1/1000
+START=121200
+END=220200
+title=The 15-Year Study - Life-Changing Results
+[CHAPTER]
+TIMEBASE=1/1000
+START=220200
+END=361500
+title=The Operating System Metaphor
+[CHAPTER]
+TIMEBASE=1/1000
+START=361500
+END=662100
+title=The CASEL Framework - Five Core Competencies
+[CHAPTER]
+TIMEBASE=1/1000
+START=662100
+END=871300
+title=The Pandemic Cohort - Meeting Kids Where They Are
+[CHAPTER]
+TIMEBASE=1/1000
+START=871300
+END=1101800
+title=The Evidence - Meta-Analysis Results
+[CHAPTER]
+TIMEBASE=1/1000
+START=1101800
+END=1472200
+title=How to Teach SEL - Explicit vs Integrated
+[CHAPTER]
+TIMEBASE=1/1000
+START=1472200
+END=1620800
+title=Protocol 1 - The Daily Morning Meeting
+[CHAPTER]
+TIMEBASE=1/1000
+START=1620800
+END=1737400
+title=Protocol 2 - The Calm Down Corner
+[CHAPTER]
+TIMEBASE=1/1000
+START=1737400
+END=1819500
+title=Protocol 3 - Weekly Structured Lessons
+[CHAPTER]
+TIMEBASE=1/1000
+START=1819500
+END=1898800
+title=Protocol 4 - Mixed-Age Group Strategies
+[CHAPTER]
+TIMEBASE=1/1000
+START=1898800
+END=2118600
+title=Budget and Implementation Strategies
+[CHAPTER]
+TIMEBASE=1/1000
+START=2118600
+END=2220480
+title=Long-Term Impact and Call to Action
