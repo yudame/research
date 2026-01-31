@@ -7,7 +7,7 @@
 
 ---
 
-## Status Update (2026-01-30)
+## Status Update (2026-01-31)
 
 ### ✅ Completed: Measurement Framework
 
@@ -22,17 +22,52 @@
 - Scorecard template: `.claude/skills/podcast-quality-scorecard/SKILL.md`
 - Baseline scorecard: `podcast/episodes/algorithms-for-life/ep3-how-to-delegate/logs/quality_scorecard.md`
 
-### 🔲 Remaining: 37 Workflow Improvement Tasks
+### ✅ Completed: Wave 1 - Research & Synthesis Improvements
 
-The measurement framework is complete. Now we implement the actual workflow improvements across 6 waves:
-- **Wave 1:** Research & Synthesis (5 tasks) - NOT STARTED
+**Wave 1: Research & Synthesis (5 tasks) - COMPLETE**
+- [x] **B1.1** - Add "Depth Distribution Analysis" to Phase 6 (Master Briefing)
+  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 29-46)
+  - Provides table to assess relative depth across subtopics
+  - Flags shallow topics needing additional research
+
+- [x] **B1.2** - Create "Counterpoint Discovery" step in research cross-validation
+  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1071-1092)
+  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 158-175)
+  - Identifies disagreements, alternative frameworks, and tension points
+
+- [x] **B1.3** - Add "Practical Implementation Audit" to research briefing
+  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 49-77)
+  - Ensures "How would someone actually do this?" is answered for each finding
+  - Includes specificity checks (timeframes, thresholds, concrete criteria)
+
+- [x] **B2.1** - Add "Takeaway Clarity Check" to report.md quality requirements
+  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1198-1202)
+  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 191-194)
+  - Implemented in: `.claude/agents/podcast-synthesis-writer.md` (checklist)
+  - Requires: Each section ends with "What does this mean?" + 1-3 core takeaways
+
+- [x] **B2.2** - Create "Story Bank" section in research briefing
+  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 109-128)
+  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1203-1206)
+  - Collects examples with memorability ratings and integration guidance
+
+**Artifacts:**
+- Enhanced template: `docs/templates/p3-briefing-enhanced.md`
+- Workflow integration: `.claude/skills/new-podcast-episode.md` (Phases 5-7)
+- Agent checklist: `.claude/agents/podcast-synthesis-writer.md` (self-verification)
+
+**Implementation Notes:**
+Wave 1 was already implemented in prior work (referenced as "Wave 1 improvements" in the workflow). This verification pass confirmed all 5 tasks are present and integrated into the workflow, and added explicit Wave 1 quality checks to the synthesis writer agent.
+
+### 🔲 Remaining: 32 Workflow Improvement Tasks
+
 - **Wave 2:** Episode Planning (9 tasks) - NOT STARTED
 - **Wave 3:** Audio Generation (4 tasks) - NOT STARTED
 - **Wave 4:** Publishing & Productization (11 tasks) - NOT STARTED
 - **Wave 5:** Quality Gates (2 tasks) - NOT STARTED
 - **Wave 6:** Format Experiments (6 tasks) - NOT STARTED
 
-**Next Action:** Start Wave 1 (Research & Synthesis improvements) on next episode production.
+**Next Action:** Begin Wave 2 (Episode Planning improvements) on next episode production.
 
 ---
 

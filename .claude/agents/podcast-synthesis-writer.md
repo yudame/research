@@ -180,6 +180,12 @@ Before finalizing, verify:
 - [ ] Report is 15-25KB in size (comprehensive coverage)
 - [ ] Episode answers a single core question from a specific perspective
 
+*Wave 1 Quality Improvements (Podcast Improvements Plan):*
+- [ ] **Takeaway Clarity (B2.1):** Each major section ends with "What does this mean for listeners?" and 1-3 core takeaways are explicitly stated
+- [ ] **Story Integration (B2.2):** High-memorability stories from Story Bank are integrated strategically (not scattered randomly)
+- [ ] **Practical Actionability (B1.3):** Findings include specific implementation steps with concrete parameters (not just concepts)
+- [ ] **Depth Balance (B1.1):** Topics receive coverage proportional to their importance and evidence quality (no rushed subtopics)
+
 **Absolute Prohibitions:**
 - Making claims without source citations
 - Ignoring contradictory findings to create a simpler narrative

@@ -273,106 +273,96 @@ Each follows the same pattern:
 ```
 
 **research/p3-briefing.md (template - created after cross-validation):**
+
+**⭐ ENHANCED WITH WAVE 1 IMPROVEMENTS ⭐**
+
+See full enhanced template at: `docs/templates/p3-briefing-enhanced.md`
+
+**Key Wave 1 additions to this template:**
+1. **DEPTH DISTRIBUTION ANALYSIS** (Task B1.1) - Assess relative depth, flag shallow topics
+2. **PRACTICAL IMPLEMENTATION AUDIT** (Task B1.3) - "How would someone actually do this?"
+3. **STORY BANK** (Task B2.2) - Collect examples with memorability ratings
+4. **COUNTERPOINT DISCOVERY** - Document for dialogue dynamics in Phase 8
+5. **Enhanced NOTES FOR OPUS** - Include takeaway clarity requirements (Task B2.1)
+
+**Template structure:**
 ```markdown
 # Master Research Briefing: [Episode Title]
 
-Date: [Today's date in YYYY-MM-DD format]
+Date: [Today's date]
 For: podcast-synthesis-writer agent
 
 ---
 
 ## VERIFIED KEY FINDINGS
-
-### [Subtopic 1]
-**Main finding:** [One sentence summary]
-
-**Evidence:**
-- [Stat/Finding] — Source: [Citation] — Quality: [Meta-analysis/RCT/etc] — N=[sample]
-- [Stat/Finding] — Source: [Citation] — Quality: [Study type] — N=[sample]
-
-**Contradictions/Nuances:**
-- [If sources disagree, note here]
-
-**Source quality notes:**
-- [Methodological limitations to be aware of]
+[Organized by subtopic with evidence, contradictions, source quality notes]
 
 ---
 
-<!-- More subtopics as research reveals them -->
+## DEPTH DISTRIBUTION ANALYSIS ⭐ NEW
+[Table showing research depth per subtopic, flags shallow areas]
+
+---
+
+## PRACTICAL IMPLEMENTATION AUDIT ⭐ NEW
+[For each finding: specific tactics, steps, timeframes, thresholds]
 
 ---
 
 ## RESEARCH GAPS & UNCERTAINTIES
-
-- **Well-established:** [What we know with confidence]
-- **Preliminary/Limited evidence:** [What has some support but needs more]
-- **Unknown/Unstudied:** [What we don't know]
+[Well-established vs. preliminary vs. unknown]
 
 ---
 
 ## SOURCE INVENTORY
-
-### Tier 1 Sources (Meta-analyses, Systematic Reviews, Official Statistics)
-1. [Full citation] — [Key contribution] — [URL]
-
-### Tier 2 Sources (RCTs, Large Studies, Government Reports)
-1. [Full citation] — [Key contribution] — [URL]
-
-### Tier 3 Sources (Case Studies, Industry Reports, News)
-1. [Full citation] — [Key contribution] — [URL]
+[Tiered: Meta-analyses → RCTs → Case studies]
 
 ---
 
 ## COMPARISON TABLES
-[Tables comparing similar markets/programs/implementations]
+[If applicable]
 
 ---
 
 ## TIMELINE OF DEVELOPMENTS
-[Chronological key events for topics with recent changes]
+[If applicable]
+
+---
+
+## STORY BANK ⭐ NEW
+[3-5 stories with: summary, illustrates what, emotional resonance, memorability]
 
 ---
 
 ## PRACTITIONER PERSPECTIVES
-[Direct quotes from credentialed experts - doctors, researchers, industry leaders]
-[These carry weight as informed opinion, but are NOT peer-reviewed evidence]
+[Credentialed expert quotes - informed opinion, NOT peer-reviewed evidence]
 
 ---
 
 ## PUBLIC DISCOURSE (Opinion - NOT Evidence)
-
-⚠️ **For podcast context only** - Use to contrast "what people believe" vs "what research shows"
-
-### What X/Twitter Is Saying
-- [Notable voice]: "[Quote]" — [@handle, credential, date, engagement]
-- [Notable voice]: "[Quote]" — [@handle, credential, date, engagement]
-
-### Active Debates/Controversies
-- **Debate:** [Topic of disagreement]
-  - **Pro position:** [Who's arguing this, their case]
-  - **Con position:** [Who's arguing this, their case]
-
-### Popular Misconceptions to Address
-- **Belief:** [What many people think]
-- **Reality:** [What evidence actually shows]
-- **Podcast angle:** [How to bridge this gap for listeners]
+[X/Twitter discourse, debates, misconceptions]
 
 ---
 
-## NOTES FOR OPUS 4.5
+## COUNTERPOINT DISCOVERY ⭐ NEW
+[Where sources disagree, alternative frameworks - feeds Phase 8 dialogue design]
 
-**Strongest evidence for:**
-- [Topic areas with robust sources]
+---
 
-**Weaker evidence for:**
-- [Topic areas with limited or conflicting sources]
+## NOTES FOR SYNTHESIS AGENT
 
-**Interesting tensions/contradictions:**
-- [Where sources disagree - worth exploring why]
+**Strongest evidence for:** [Topic areas with robust sources]
+**Weaker evidence for:** [Topic areas with limited sources]
+**Interesting tensions/contradictions:** [Where sources disagree]
+**Missing context:** [Gaps to acknowledge]
 
-**Missing context:**
-- [Gaps that should be acknowledged]
+**Takeaway clarity requirements** ⭐ NEW **(Wave 1, Task B2.1):**
+- Each major section should end with "What does this mean for listeners?"
+- Identify 1-3 core takeaways for the entire episode
+- Make these takeaways explicit in the synthesis
 ```
+
+**📄 Use the full template at:** `docs/templates/p3-briefing-enhanced.md`
 
 **sources.md:**
 ```markdown
@@ -1078,6 +1068,29 @@ Topic: [Main Topic]
 **Action needed:** [List any gaps requiring additional research]
 ```
 
+**Counterpoint Discovery (Wave 1, Task B1.2):**
+
+Identify where sources disagree for use in dialogue design during Phase 8 (Episode Planning).
+
+```markdown
+## Counterpoint Discovery
+
+**Purpose:** Flag disagreements, alternative frameworks, and tensions that create dialogue opportunities
+
+| Topic | Source/Position A | Source/Position B | Nature of Disagreement | Dialogue Opportunity |
+|-------|------------------|------------------|----------------------|---------------------|
+| [Topic 1] | [Source A]: [Position] | [Source B]: [Conflicting position] | [Methodological/Interpretive/Scope] | Speaker A defends A, Speaker B defends B |
+| [Topic 2] | [Framework X] | [Alternative Framework Y] | [Different approaches to same problem] | "Wait, but what about [Y]?" moment |
+
+**Alternative frameworks identified:**
+- [Framework A vs. Framework B - which is better? When? Trade-offs?]
+
+**Missing perspectives that could create productive tension:**
+- [What viewpoint isn't represented that could spark debate?]
+
+**💡 Note:** These counterpoints feed directly into "Counterpoint Moments Design" in Phase 8 content_plan.md
+```
+
 **Update todos:**
 ```
 Mark "Cross-validate research findings" as completed.
@@ -1182,7 +1195,16 @@ The podcast-synthesis-writer agent will:
    - Factual claims cite only Tier 1-3 sources (peer-reviewed, studies, reports)
    - X/Twitter discourse (from Grok) used ONLY for "popular belief vs research" segments
    - Frame opinion content as: "While many on social media argue X... the research actually shows Y"
-6. Verify all quality requirements are met
+6. **⭐ Ensure takeaway clarity (Wave 1, Task B2.1):**
+   - Each major section ends with "What does this mean for listeners?"
+   - 1-3 core takeaways for entire episode identified and made explicit
+   - Takeaways stated clearly in synthesis (not just implied)
+   - Core points are memorable and actionable
+7. **⭐ Leverage Story Bank (Wave 1, Task B2.2):**
+   - Integrate high-memorability stories from research/p3-briefing.md Story Bank
+   - Use stories to illustrate concepts, not as tangential add-ons
+   - Place stories strategically in arc (not clustered or scattered randomly)
+8. Verify all quality requirements are met
 
 Required files must exist:
 - research/p3-briefing.md (master briefing with verified findings)
@@ -1251,27 +1273,54 @@ Episode directory: podcast/episodes/YYYY-MM-DD-slug/
 Episode title: [Episode Title]
 Series name: [Series name or "Standalone"]
 
+⭐ USE ENHANCED TEMPLATE: docs/templates/content_plan-enhanced.md
+
 Follow .claude/skills/podcast-episode-planner/SKILL.md to:
-1. Read report.md and sources.md
+1. Read report.md, sources.md, and research/p3-briefing.md
 2. Classify episode type (evidence status, content density, series position)
-3. Select toolkit elements (hook type, takeaway structure, etc.)
-4. Create content_plan.md with three-section structure and NotebookLM guidance
-5. Log to logs/prompts.md
+3. Create content_plan.md using ENHANCED template with Wave 2 improvements:
+   - Episode Structure Map (modes and transitions)
+   - Mode-Switching Framework (philosophy/research/storytelling/practical/landing)
+   - Signposting Language (transition phrases, progress markers)
+   - Depth Budget (time allocation per theme from p3-briefing depth analysis)
+   - Problem → Solution Architecture
+   - Build Toward Resolution (work backward from main takeaway)
+   - Counterpoint Moments (2-3 minimum from p3-briefing counterpoint discovery)
+   - Episode Arc Template (Opening → Middle → Closing)
+4. Log to logs/prompts.md
 
 Required files must exist:
 - report.md (narrative synthesis)
 - sources.md (validated citations)
+- research/p3-briefing.md (depth analysis, story bank, counterpoint discovery)
 ```
 
 **The skill produces:**
-- `content_plan.md` - Episode structure guide with NotebookLM instructions (8-12KB)
+- `content_plan.md` - Episode structure guide with Wave 2 improvements (12-18KB)
 
-**What content_plan.md provides for NotebookLM:**
-- Three-section structure (Foundation → Evidence → Application)
-- Key terms that must be defined
-- Specific studies/findings to emphasize
-- Narrative arc and transitions
-- Opening hook and closing callback guidance
+**⭐ What ENHANCED content_plan.md provides (Wave 2):**
+
+**Section 1: Episode Classification**
+- Evidence status, content density, series context
+
+**Section 2: Structural Design (NEW - Wave 2)**
+- **Episode Structure Map** - When to be philosophical/practical/storytelling/analytical
+- **Mode-Switching Framework** - Clear transitions between 5 modes with language markers
+- **Signposting Language** - Copy-paste ready transition phrases for NotebookLM
+- **Depth Budget** - Time allocation table ensuring balanced coverage
+- **Problem → Solution Architecture** - Separate exploration from delivery
+- **Build Toward Resolution** - Work backward from main takeaway
+- **Counterpoint Moments** - 2-3 designed dialogue divergence points
+- **Episode Arc Template** - Opening (3-5 min) → Middle (20-30 min) → Closing (3-5 min)
+
+**Section 3: NotebookLM Guidance (Enhanced - Wave 3)**
+- Key terms to define
+- Studies/findings to emphasize
+- Stories to feature (from Story Bank)
+- Transition moments planned
+- Counterpoint moments specified
+- Closing callback designed
+- Call-to-action included
 
 **VERIFY EPISODE PLANNING COMPLETE:**
 
@@ -1286,10 +1335,40 @@ ls -lh podcast/episodes/YYYY-MM-DD-slug/content_plan.md
 ---
 
 **EXIT CRITERIA (all must be true to proceed):**
-✓ content_plan.md created with three-section structure
+
+**⭐ Wave 5, Task E3.1 - Enhanced Quality Checks:**
+
+**Structural Clarity (Wave 2):**
+✓ content_plan.md created with enhanced three-section structure
+✓ Episode Structure Map defined (modes and transitions clear)
+✓ Mode-Switching Framework applied (5 modes with language markers)
+✓ Signposting language included (preview, transitions, progress markers)
+
+**Depth & Balance (Wave 1 + 2):**
+✓ Depth Budget table created and validates even coverage
+✓ No primary theme gets <15% time when it deserves more
+✓ Time allocation matches research depth from p3-briefing.md
+✓ Shallow topics (⭐⭐☆☆☆) flagged appropriately (preview only or acknowledged as preliminary)
+
+**Content Architecture (Wave 2):**
+✓ Problem → Solution architecture clear
+✓ Episode builds toward clear resolution/takeaway (not trailing off)
+✓ Episode Arc Template followed (Opening → Middle → Closing structure)
+
+**Dialogue Dynamics (Wave 1 + 2):**
+✓ Counterpoint moments designed (2-3 minimum identified with topics and positions)
+✓ Counterpoint language templates provided for NotebookLM
+✓ Balance between tension and collaboration maintained
+
+**NotebookLM Guidance (Wave 2 + 3):**
 ✓ Key terms to define listed
-✓ Studies/findings to emphasize identified
-✓ Narrative arc guidance included
+✓ Studies/findings to emphasize specified
+✓ Stories to feature selected from Story Bank
+✓ Transition moments planned with signposting language
+✓ Closing callback designed (references opening hook)
+✓ Call-to-action included (voiced and metadata versions)
+
+**⚠️ DO NOT PROCEED TO PHASE 9 UNTIL ALL EXIT CRITERIA MET**
 
 **Update todos:**
 ```
@@ -1345,14 +1424,50 @@ uv run python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Na
 **What the script does:**
 1. Creates notebook via Discovery Engine API
 2. Uploads 5 source files (p1-brief.md, report.md, p3-briefing.md, sources.md, content_plan.md)
-3. Generates audio with episodeFocus prompt (Yudame Research branding)
+3. Generates audio with **⭐ ENHANCED episodeFocus prompt (Wave 3 - Tasks A3.1-A3.3)**
+   - Reads content_plan.md to extract structural guidance
+   - Includes Episode Structure Map, Mode-Switching Framework, Signposting Language
+   - Specifies Depth Budget time allocations
+   - Injects Dialogue Dynamics (counterpoint moments with specific prompts)
+   - Provides Episode Arc Template (Opening → Middle → Closing)
 4. Polls for completion (typically 5-15 minutes)
 5. Downloads MP3 to episode directory
+
+**⭐ Enhanced episodeFocus prompt template (Wave 3):**
+
+The notebooklm_api.py script now generates episodeFocus prompts like:
+
+```
+You are creating a Yudame Research podcast episode: [Episode Title]
+
+STRUCTURAL GUIDANCE (from content_plan.md):
+- Episode Structure Map: [Summary of when to use each mode]
+- Mode-Switching: Use clear transitions when moving between philosophy/research/storytelling/practical/landing modes
+- Signposting Language: Preview structure at opening, use progress markers throughout
+- Depth Budget: Allocate time proportionally - [Theme 1: X%, Theme 2: Y%, etc.]
+
+DIALOGUE DYNAMICS:
+- Counterpoint Moments: At these specific points, speakers should diverge or push back:
+  * [~X min] [Topic]: Speaker A defends [position], Speaker B challenges with [position]
+  * [~Y min] [Topic]: "Wait, but what about...?" moment
+- Request 2-3 counterpoint exchanges total
+- Avoid pure agreement pattern - encourage supportive challenge
+
+EPISODE ARC:
+- Opening (3-5 min): Hook + Problem Definition + Structure Preview
+- Middle (20-30 min): Exploration with clear mode-switching and signposting
+- Closing (3-5 min): Synthesis + Key Takeaway + Clear Next Step + Callback to opening
+
+Follow the episode content plan and research materials to create an engaging, well-structured conversation.
+```
 
 **Output files:**
 - `EPISODE_SLUG.mp3` - Final audio (typically 20-40 min)
 
 **Expected runtime:** 5-15 minutes
+
+**⚠️ Script Update Required (Wave 3, Task E1.3):**
+The `podcast/tools/notebooklm_api.py` and `podcast/tools/notebooklm_prompt.py` scripts must be updated to read content_plan.md and inject the enhanced episodeFocus template shown above.
 
 ---
 
@@ -1561,28 +1676,21 @@ Can run in background while creating metadata.
 
 ---
 
-**WORK TO DO:** Generate episode description, keywords, and source links:
+**⭐ WORK TO DO (Wave 4 Enhancements):** Generate comprehensive publishing metadata
 
-a. **Create compelling 1-2 sentence description (plain text):**
-   - Based on report.md and transcript
-   - Highlight key topics, major stories/events covered, and main takeaways
-   - Focus on what makes this episode valuable and what listeners will learn
-   - Keep this version plain text for the `<description>` tag
-   - Include link to full research report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
+**⭐ USE ENHANCED TEMPLATE:** `docs/templates/metadata-enhanced.md`
 
-b. **Generate episode-specific keywords (5-10 keywords):**
-   - Analyze report.md, transcript, and chapter titles
-   - Extract the most important concepts, terms, protocols, people, events mentioned
-   - Prioritize: specific technical terms, proper nouns, key concepts, frameworks
-   - Format as comma-separated list for iTunes keywords field
+**Wave 4 adds these packaging improvements:**
+1. **"What You'll Learn" section** (Task C1.1) - 3-5 compelling bullet points
+2. **Key Timestamps** (Task C1.1) - 5-7 major sections with enticing descriptions
+3. **Resources & Tools section** (Task C1.3) - Grouped sources with actionable descriptions
+4. **Call-to-Action framework** (Task C1.2) - Primary/secondary CTAs + voiced version
+5. **Companion Resources tracking** (Task C3.1) - One-pager, checklist, diagrams
+6. **Enhanced HTML show notes** (Task C2.2) - Structured for standalone value
+7. **iTunes episode metadata** (Task C2.1) - episodeType, episode number
+8. **Podcast transcript tag** (Task C2.3) - Links to transcript.txt
 
-c. **Add validated source links (3-5 sources):**
-   - Use sources from research/p3-briefing.md (Tier 1 and Tier 2 prioritized)
-   - Verify links are still accessible with WebFetch when possible
-   - Prioritize: official legislation/regulation, academic analysis, primary sources
-   - These will be formatted as clickable HTML links in `<content:encoded>`
-
-**Create logs/metadata.md:**
+**Create logs/metadata.md using enhanced template:**
 
 ```markdown
 # Episode Publishing Metadata
@@ -1597,6 +1705,7 @@ c. **Add validated source links (3-5 sources):**
 - **Series Name:** [Series Name]
 - **Season Number:** [N]
 - **Episode Number:** [N]
+- **Episode Type:** [full/trailer/bonus]  ⭐ NEW
 
 ## Audio
 - **Duration:** [HH:MM:SS or MM:SS]
@@ -1604,20 +1713,68 @@ c. **Add validated source links (3-5 sources):**
 - **Format:** audio/mpeg
 
 ## Description (Plain Text)
-[1-2 sentence compelling description covering key topics and takeaways.]
+[1-2 compelling sentences highlighting key topics and takeaways]
 
-Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
+Full research report: https://research.yuda.me/podcast/episodes/[slug]/report.md
 
-## Key Sources (for HTML show notes)
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
+## ⭐ What You'll Learn (Wave 4, Task C1.1)
+- [Bullet 1: Specific insight or myth-bust]
+- [Bullet 2: Practical framework or takeaway]
+- [Bullet 3: Surprising statistic or finding]
+- [Bullet 4: Story or case study featured]
+- [Bullet 5: Key question answered]
+
+## ⭐ Key Timestamps (Wave 4, Task C1.1)
+- **[00:00]** - Introduction: [Brief description]
+- **[XX:XX]** - [Section title]: [Enticing 1-sentence description]
+- [5-7 total timestamps from major chapters]
+
+## ⭐ Resources & Tools Mentioned (Wave 4, Task C1.3)
+### Research Papers
+- **[Author Year]**: [Actionable description]
+  - URL: [URL]
+  - Use this to: [Specific application]
+
+### Tools & Templates
+- **[Tool Name]**: [What it does]
+  - URL: [URL]
+  - Use this to: [Specific application]
+
+## ⭐ Call-to-Action (Wave 4, Task C1.2)
+### Primary CTA
+[Next logical step - related episode, resource, etc.]
+
+### Voiced CTA (for audio)
+> "[Brief natural language CTA for hosts to voice]"
 
 ## Keywords
-[keyword1, keyword2, keyword3, specific-term, specific-concept]
+[keyword1, keyword2, specific-framework, etc.]
+
+## ⭐ Companion Resources (Wave 4, Task C3.1)
+- [ ] One-page summary/cheat sheet
+- [ ] Action checklist
+- [ ] Framework diagram
+- [ ] Decision tree (if applicable)
 ```
+
+**📄 Use the full enhanced template at:** `docs/templates/metadata-enhanced.md`
+
+**⭐ NEW: Create Companion Resources (Wave 4, Task C3.1)**
+
+After creating metadata, generate companion resources:
+
+```bash
+cd ~/src/research/podcast/tools
+# This script will be created as part of Wave 4, Task E2.3
+python generate_companion_resources.py ../episodes/YYYY-MM-DD-slug/
+```
+
+**Companion resources to create:**
+1. **One-page summary** - Key frameworks, formulas, decision trees distilled
+2. **Action checklist** - Step-by-step items from episode
+3. **Framework diagram** (if applicable) - Visual of key framework (e.g., OPPTY progression)
+
+**Note:** Script `generate_companion_resources.py` reads report.md, content_plan.md, and logs/metadata.md to automatically generate these resources
 
 **Update feed.xml using update_feed.py:**
 
@@ -1690,14 +1847,47 @@ git diff podcast/feed.xml | head -50
 ---
 
 **EXIT CRITERIA (all must be true to proceed):**
+
+**⭐ Wave 5, Task E3.2 - Enhanced Publishing Quality Checks:**
+
+**Core Files:**
 ✓ cover.png exists and branded (~1MB)
-✓ logs/metadata.md created with all fields
-✓ Episode description written (1-2 sentences + report link)
-✓ Keywords generated (5-10 episode-specific terms)
-✓ Key sources validated (3-5 Tier 1/2 sources with working URLs)
+✓ logs/metadata.md created with enhanced template
+
+**Description & Discovery (Wave 4):**
+✓ Plain text description written (1-2 sentences + report link)
+✓ **⭐ "What You'll Learn" section complete** (3-5 compelling bullets that entice)
+✓ **⭐ Key timestamps extracted** (5-7 major sections with enticing descriptions)
+✓ Keywords generated (5-10 episode-specific terms, not generic)
+
+**Resources (Wave 4):**
+✓ **⭐ Resources & Tools section complete** (5-10 sources)
+✓ **⭐ Sources grouped by type** (Research / Tools / Reading)
+✓ **⭐ Each source has actionable 1-sentence description** ("Use this to...")
+✓ All source URLs validated and working
+
+**Call-to-Action (Wave 4):**
+✓ **⭐ Primary CTA defined** (clear next step for listener)
+✓ **⭐ Voiced CTA written** (natural language for hosts to voice in closing)
+✓ CTA was included in episodeFocus prompt (for audio generation in Phase 9)
+
+**Companion Resources (Wave 4):**
+✓ **⭐ At least one companion resource created:**
+  - [ ] One-page summary/cheat sheet
+  - [ ] Action checklist
+  - [ ] Framework diagram
+✓ **⭐ Resources referenced in show notes** with download links
+
+**Feed.xml Enhancements (Wave 4):**
 ✓ feed.xml updated with new `<item>` entry
-✓ `<lastBuildDate>` updated in feed.xml channel metadata
+✓ `<lastBuildDate>` updated in channel metadata
+✓ **⭐ iTunes episode metadata included** (episodeType, episode number if series)
+✓ **⭐ Podcast transcript tag added** (links to transcript.txt)
+✓ **⭐ Enhanced <content:encoded> HTML show notes** (structured sections, not just plain text)
 ✓ All metadata accurate (duration matches file, size matches file, pubDate is RFC 2822)
+✓ All XML properly escaped
+
+**Feed Validation:**
 ✓ 🚨 **Feed validator reports VALID or VALID WITH WARNINGS** (not INVALID)
 ✓ All ❌ failed checks from validator have been fixed
 ✓ File metadata verification passed (size and duration match actual files)
