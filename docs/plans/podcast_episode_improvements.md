@@ -7,7 +7,7 @@
 
 ---
 
-## Status Update (2026-01-31)
+## Status Update (2026-02-01)
 
 ### ✅ Completed: Measurement Framework
 
@@ -22,52 +22,54 @@
 - Scorecard template: `.claude/skills/podcast-quality-scorecard/SKILL.md`
 - Baseline scorecard: `podcast/episodes/algorithms-for-life/ep3-how-to-delegate/logs/quality_scorecard.md`
 
-### ✅ Completed: Wave 1 - Research & Synthesis Improvements
+### ⚠️ Wave 1 - Research & Synthesis: PLANNED BUT NOT ENFORCED
 
-**Wave 1: Research & Synthesis (5 tasks) - COMPLETE**
-- [x] **B1.1** - Add "Depth Distribution Analysis" to Phase 6 (Master Briefing)
-  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 29-46)
-  - Provides table to assess relative depth across subtopics
-  - Flags shallow topics needing additional research
+**Reality Check:** Enhanced templates exist, but the active workflow doesn't enforce them. Recent episodes (ep4, ep5 from Jan 2026) do NOT include Wave 1 improvements.
 
-- [x] **B1.2** - Create "Counterpoint Discovery" step in research cross-validation
-  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1071-1092)
-  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 158-175)
-  - Identifies disagreements, alternative frameworks, and tension points
+| Task | Template Exists | In Workflow | Enforced | Used in Practice |
+|------|----------------|-------------|----------|------------------|
+| **B1.1** - Depth Distribution | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **B1.2** - Counterpoint Discovery | ✅ Yes | ⚠️ Mentioned | ❌ No | ❌ No |
+| **B1.3** - Practical Audit | ✅ Yes | ⚠️ Mentioned | ❌ No | ❌ No |
+| **B2.1** - Takeaway Clarity | ✅ Yes | ⚠️ Optional | ❌ No | ⚠️ Informal |
+| **B2.2** - Story Bank | ✅ Yes | ❌ No | ❌ No | ❌ No |
 
-- [x] **B1.3** - Add "Practical Implementation Audit" to research briefing
-  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 49-77)
-  - Ensures "How would someone actually do this?" is answered for each finding
-  - Includes specificity checks (timeframes, thresholds, concrete criteria)
+**What exists:**
+- ✅ Enhanced template: `docs/templates/p3-briefing-enhanced.md` with all Wave 1 sections
+- ✅ Optional synthesis agent checklist: `.claude/agents/podcast-synthesis-writer.md`
+- ✅ Brief references in workflow documentation
 
-- [x] **B2.1** - Add "Takeaway Clarity Check" to report.md quality requirements
-  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1198-1202)
-  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 191-194)
-  - Implemented in: `.claude/agents/podcast-synthesis-writer.md` (checklist)
-  - Requires: Each section ends with "What does this mean?" + 1-3 core takeaways
+**What's missing:**
+- ❌ Phase 6 workflow still uses basic p3-briefing.md (not enhanced version)
+- ❌ No Phase 6 exit criteria require Wave 1 sections
+- ❌ Enhanced template not linked/enforced in `.claude/skills/new-podcast-episode.md`
+- ❌ Synthesis agent checklist is optional (not blocking)
+- ❌ Recent episodes show zero Wave 1 features in actual use
 
-- [x] **B2.2** - Create "Story Bank" section in research briefing
-  - Implemented in: `docs/templates/p3-briefing-enhanced.md` (lines 109-128)
-  - Implemented in: `.claude/skills/new-podcast-episode.md` (lines 1203-1206)
-  - Collects examples with memorability ratings and integration guidance
+**Verification:** Checked episodes `ep4-technology-infrastructure` and `ep5-soft-skills-curriculum` (published Jan 28, 2026). Neither has:
+- Depth Distribution Analysis tables
+- Story Bank sections
+- Practical Implementation Audit structures
+- Structured takeaway clarity checks
 
-**Artifacts:**
-- Enhanced template: `docs/templates/p3-briefing-enhanced.md`
-- Workflow integration: `.claude/skills/new-podcast-episode.md` (Phases 5-7)
-- Agent checklist: `.claude/agents/podcast-synthesis-writer.md` (self-verification)
+**To actually complete Wave 1:**
+1. [ ] Update Phase 6 workflow to require enhanced template (not just reference it)
+2. [ ] Add Wave 1 sections to Phase 6 blocking exit criteria
+3. [ ] Make synthesis agent Wave 1 checklist blocking (fail if not met)
+4. [ ] Test enforcement on one episode end-to-end
 
-**Implementation Notes:**
-Wave 1 was already implemented in prior work (referenced as "Wave 1 improvements" in the workflow). This verification pass confirmed all 5 tasks are present and integrated into the workflow, and added explicit Wave 1 quality checks to the synthesis writer agent.
+**Current Status:** Wave 1 is 40% done (templates created, documentation written) but 0% enforced (not required, not used).
 
-### 🔲 Remaining: 32 Workflow Improvement Tasks
+### 🔲 Remaining: 37 Workflow Improvement Tasks
 
+- **Wave 1:** Research & Synthesis (5 tasks) - **NEEDS ENFORCEMENT** (templates exist but not integrated)
 - **Wave 2:** Episode Planning (9 tasks) - NOT STARTED
 - **Wave 3:** Audio Generation (4 tasks) - NOT STARTED
 - **Wave 4:** Publishing & Productization (11 tasks) - NOT STARTED
 - **Wave 5:** Quality Gates (2 tasks) - NOT STARTED
 - **Wave 6:** Format Experiments (6 tasks) - NOT STARTED
 
-**Next Action:** Begin Wave 2 (Episode Planning improvements) on next episode production.
+**Next Action:** Complete Wave 1 enforcement integration, test on one episode, THEN proceed to Wave 2.
 
 ---
 
