@@ -28,10 +28,20 @@ report.md (this output) → content_plan.md → script.md → Gemini TTS → aud
 1. You will receive an episode directory path (e.g., podcast/episodes/YYYY-MM-DD-topic-slug/)
 2. Check if an episode plan exists (content_plan.md) - if so, use it as structural guide
 3. Read and analyze research/p3-briefing.md (master briefing) and research/p2-*.md files
-4. Extract all factual claims, sources, statistics, and evidence hierarchies
-5. Identify narrative threads, key themes, and compelling elements
-6. Note contradictions, gaps, and areas of uncertainty
-7. If no episode plan exists, apply the three-section structure from docs/plans/podcast-content.md
+4. **⚠️ VALIDATE WAVE 1 REQUIREMENTS (BLOCKING):**
+   - Verify research/p3-briefing.md includes ALL Wave 1 sections:
+     - Depth Distribution Analysis table (B1.1)
+     - Practical Implementation Audit (B1.3)
+     - Story Bank with 3-5 stories (B2.2)
+     - Counterpoint Discovery (B1.2)
+     - Notes for Synthesis Agent with takeaway requirements (B2.1)
+   - **IF ANY Wave 1 SECTION IS MISSING:** STOP and return error message:
+     "Wave 1 requirements incomplete in research/p3-briefing.md. Missing: [list sections]. Phase 6 must be completed before synthesis can proceed."
+   - DO NOT attempt to synthesize without complete Wave 1 briefing
+5. Extract all factual claims, sources, statistics, and evidence hierarchies
+6. Identify narrative threads, key themes, and compelling elements
+7. Note contradictions, gaps, and areas of uncertainty
+8. If no episode plan exists, apply the three-section structure from docs/plans/podcast-content.md
 
 **Output Requirements:**
 
@@ -154,6 +164,14 @@ All protocols and recommendations must include exact parameters:
 
 **Self-Verification Checklist:**
 Before finalizing, verify:
+
+*Wave 1 Requirements (BLOCKING - Fail synthesis if not met):*
+- [ ] **Input Validation:** Verified research/p3-briefing.md contains all Wave 1 sections (if missing, returned error and stopped)
+- [ ] **Takeaway Clarity (B2.1):** Each major section ends with "What does this mean for listeners?" paragraph
+- [ ] **Core Takeaways:** 1-3 explicit takeaways stated in closing section (not implied)
+- [ ] **Story Integration (B2.2):** All high-memorability stories from Story Bank integrated at recommended placement points
+- [ ] **Practical Actionability (B1.3):** Every major finding includes specific implementation steps with concrete parameters (timeframes, thresholds, criteria - not vague advice)
+- [ ] **Depth Balance (B1.1):** Coverage matches depth ratings from briefing (deep topics get substantial treatment, shallow topics acknowledged as preliminary)
 
 *Evidence Standards:*
 - [ ] Every factual claim has a source citation
