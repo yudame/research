@@ -1,0 +1,66 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=180000
+title=Introduction: The Hidden Cost of Running Money
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=180000
+END=420000
+title=The $908 Million Distribution Payment: Why Technology Isn't Enough
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=420000
+END=660000
+title=24/7 Monitoring: The NORAD of Stablecoin Operations
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=660000
+END=900000
+title=Staffing Models: Tether's 125 vs Circle's 1200
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=900000
+END=1140000
+title=Technical Infrastructure: MPC, HSMs, and Key Management
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1140000
+END=1380000
+title=Multi-Chain Operations: The Hub-and-Spoke Model
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1380000
+END=1620000
+title=When to Exit: Tether's Strategic Chain Deprecation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1620000
+END=1860000
+title=Enforcement Models: High-Throughput vs Judicially Anchored
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1860000
+END=2100000
+title=Monthly Attestation: The Logistical Gauntlet
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=2280000
+title=Operational Playbooks: Compliance-Led Expansion
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2280000
+END=2338500
+title=Conclusion: Stablecoins Are Banks Disguised As Software

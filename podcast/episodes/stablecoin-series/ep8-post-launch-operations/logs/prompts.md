@@ -123,6 +123,27 @@ Research the day-to-day operational realities of running a stablecoin at scale a
 
 Based on Phase 2 analysis, creating targeted prompts for all 4 tools...
 
+---
+
+## Content Planning Phase
+
+### Episode Classification
+- **Series Position:** Closer (Episode 8 of 8)
+- **Evidence Status:** Minor conflict (sources agree on cost ranges and operations; diverge on Tether model transparency)
+- **Content Density:** Protocol-heavy (4 operational protocols, specific cost figures, vendor stacks)
+
+### Toolkit Selections
+- **Hook Type:** Surprising Statistic -- Circle's $908M annual Coinbase payment
+- **Takeaway Structure:** Numbered Protocol -- 4 sequential operational protocols (monitoring, attestation, multi-chain, enforcement)
+- **Contradiction Handling:** Brief acknowledgment -- Tether efficiency vs. transparency gap
+
+### Output
+- `content_plan.md` created: 2026-02-02
+- Follows three-section structure: Foundation (why this is banking), Evidence (cost structures, enforcement, integration), Application (operational playbook)
+- Series finale framing included with wrap-up guidance
+
+---
+
 
 #### Claude Research - Comprehensive Synthesis
 
