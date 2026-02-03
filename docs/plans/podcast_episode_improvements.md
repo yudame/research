@@ -7,7 +7,7 @@
 
 ---
 
-## Status Update (2026-01-30)
+## Status Update (2026-02-01 - Wave 1 Enforcement Complete)
 
 ### ✅ Completed: Measurement Framework
 
@@ -22,17 +22,72 @@
 - Scorecard template: `.claude/skills/podcast-quality-scorecard/SKILL.md`
 - Baseline scorecard: `podcast/episodes/algorithms-for-life/ep3-how-to-delegate/logs/quality_scorecard.md`
 
-### 🔲 Remaining: 37 Workflow Improvement Tasks
+### ✅ Wave 1 - Research & Synthesis: ENFORCEMENT COMPLETE
 
-The measurement framework is complete. Now we implement the actual workflow improvements across 6 waves:
-- **Wave 1:** Research & Synthesis (5 tasks) - NOT STARTED
+**Status:** All 5 Wave 1 tasks are now BLOCKING requirements in the workflow. Next episode will be required to use Wave 1 improvements.
+
+| Task | Template | Workflow | Exit Criteria | Synthesis Agent | Status |
+|------|----------|----------|---------------|-----------------|--------|
+| **B1.1** - Depth Distribution | ✅ | ✅ Required | ✅ Blocking | ✅ Validated | ✅ **ENFORCED** |
+| **B1.2** - Counterpoint Discovery | ✅ | ✅ Required | ✅ Blocking | ✅ Validated | ✅ **ENFORCED** |
+| **B1.3** - Practical Audit | ✅ | ✅ Required | ✅ Blocking | ✅ Blocking | ✅ **ENFORCED** |
+| **B2.1** - Takeaway Clarity | ✅ | ✅ Required | ✅ Blocking | ✅ Blocking | ✅ **ENFORCED** |
+| **B2.2** - Story Bank | ✅ | ✅ Required | ✅ Blocking | ✅ Blocking | ✅ **ENFORCED** |
+
+**What was implemented (Feb 1, 2026):**
+
+1. **✅ Phase 6 Workflow Updated** (`.claude/skills/new-podcast-episode.md`)
+   - Now REQUIRES enhanced template (`docs/templates/p3-briefing-enhanced.md`)
+   - Lists all Wave 1 sections as required structure (12 sections total)
+   - Added **"PHASE 6 EXIT CRITERIA - WAVE 1 ENFORCEMENT"** section
+   - BLOCKING: Cannot proceed to Phase 7 without all Wave 1 sections complete
+
+2. **✅ Phase 6 Exit Criteria Added (BLOCKING)**
+   - Depth Distribution Analysis table with depth ratings (B1.1)
+   - Practical Implementation Audit with concrete steps (B1.3)
+   - Story Bank with 3-5 stories minimum (B2.2)
+   - Counterpoint Discovery with 2-3 dialogue opportunities (B1.2)
+   - Notes for Synthesis Agent with takeaway requirements (B2.1)
+   - **Enforcement:** Workflow explicitly states "DO NOT PROCEED" if missing
+
+3. **✅ Synthesis Agent Enforcement** (`.claude/agents/podcast-synthesis-writer.md`)
+   - Added Wave 1 **input validation as first step** (BLOCKING)
+   - Agent **fails immediately** with error if any Wave 1 section missing
+   - Wave 1 checklist moved from optional to **first checklist section** (blocking)
+   - Error message: "Wave 1 requirements incomplete in research/p3-briefing.md. Missing: [list]. Phase 6 must be completed before synthesis can proceed."
+
+**Enforcement Flow:**
+```
+Phase 6 → Exit Criteria Check → If Wave 1 incomplete → STOP (cannot proceed)
+                               → If Wave 1 complete → Phase 7
+                                                    ↓
+Phase 7 → Synthesis Agent → Input Validation → If Wave 1 missing → FAIL with error
+                                              → If Wave 1 present → Create report.md
+```
+
+**Next Episode Will:**
+1. **Must** create enhanced p3-briefing.md with all 12 sections (not 8)
+2. **Cannot** proceed to synthesis until Phase 6 exit criteria verified
+3. **Will fail** if synthesis agent doesn't find Wave 1 sections
+4. **Must** meet all Wave 1 quality standards in report.md
+
+**Testing Status:** ⚠️ Ready for validation on next episode production. Until an episode is produced using this workflow, actual usage remains untested.
+
+**Artifacts Created:**
+- Enhanced workflow: `.claude/skills/new-podcast-episode.md` (Phase 6 with exit criteria)
+- Blocking agent: `.claude/agents/podcast-synthesis-writer.md` (input validation + checklist)
+- Enhanced template: `docs/templates/p3-briefing-enhanced.md` (reference spec)
+
+### 🔲 Remaining: 32 Workflow Improvement Tasks
+
+- **Wave 1:** Research & Synthesis (5 tasks) - ✅ **COMPLETE** (enforced, awaiting real-world test)
 - **Wave 2:** Episode Planning (9 tasks) - NOT STARTED
 - **Wave 3:** Audio Generation (4 tasks) - NOT STARTED
 - **Wave 4:** Publishing & Productization (11 tasks) - NOT STARTED
 - **Wave 5:** Quality Gates (2 tasks) - NOT STARTED
 - **Wave 6:** Format Experiments (6 tasks) - NOT STARTED
 
-**Next Action:** Start Wave 1 (Research & Synthesis improvements) on next episode production.
+**Next Action:** Wave 1 enforcement complete. Test on next episode production, then proceed to Wave 2.
 
 ---
 

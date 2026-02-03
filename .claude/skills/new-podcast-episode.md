@@ -1092,17 +1092,36 @@ Mark "Create master research briefing" as in_progress.
 
 **⚠️ DO NOT STOP AND WAIT FOR USER - CONTINUE AUTOMATICALLY**
 
-**Compile research/p3-briefing.md organized by topic, not by tool:**
+**⭐ REQUIRED: Use the enhanced Wave 1 template from `docs/templates/p3-briefing-enhanced.md`**
 
-**Structure:**
-1. Verified key findings (by subtopic)
-2. Research gaps & uncertainties
-3. Source inventory (tiered by quality)
-4. Comparison tables
-5. Timeline of developments (if applicable)
-6. Practitioner perspectives (credentialed experts)
-7. **Public discourse (opinion - NOT evidence)** ← From Grok
-8. Notes for Opus 4.5
+This template includes all Wave 1 quality improvements. DO NOT use the basic template.
+
+**Required Structure (from enhanced template):**
+1. **Verified key findings (by subtopic)**
+2. **⭐ Depth Distribution Analysis** (Wave 1, Task B1.1) - REQUIRED
+   - Table showing sources found, depth rating, evidence quality per subtopic
+   - Flag shallow topics needing additional research
+   - Recommendation for synthesis (what's deep enough vs. preliminary)
+3. **⭐ Practical Implementation Audit** (Wave 1, Task B1.3) - REQUIRED
+   - For each major finding: "How would someone actually do this?"
+   - Specific tactics/steps with concrete parameters (timeframes, thresholds, criteria)
+   - Actionability check: Can listener implement this tomorrow?
+4. **Research gaps & uncertainties**
+5. **Source inventory (tiered by quality)**
+6. **Comparison tables** (if applicable)
+7. **Timeline of developments** (if applicable)
+8. **⭐ Story Bank** (Wave 1, Task B2.2) - REQUIRED
+   - 3-5 high-quality examples/case studies from research
+   - Tagged by: illustrative power, emotional resonance, memorability
+   - Integration opportunity notes (where in episode arc story fits best)
+9. **Practitioner perspectives** (credentialed experts)
+10. **Public discourse (opinion - NOT evidence)** ← From Grok
+11. **⭐ Counterpoint Discovery** (Wave 1, Task B1.2) - REQUIRED
+    - Where sources disagree or present alternative frameworks
+    - Dialogue opportunities (for Phase 8 episode planning)
+    - Missing perspectives that could create productive tension
+12. **Notes for Synthesis Agent** (Opus 4.5)
+    - Include takeaway clarity requirements (Wave 1, Task B2.1)
 
 **Key principles:**
 - Organize by TOPIC, not by which tool found it
@@ -1143,6 +1162,36 @@ Mark "Create master research briefing" as in_progress.
 
 **Update sources.md with verified sources organized by tier.**
 
+---
+
+**⭐ PHASE 6 EXIT CRITERIA - WAVE 1 ENFORCEMENT:**
+
+Before proceeding to Phase 7 (Synthesis), verify ALL of these requirements:
+
+✓ research/p3-briefing.md created using enhanced template (docs/templates/p3-briefing-enhanced.md)
+✓ **Depth Distribution Analysis table present** (B1.1)
+  - Shows depth rating for all major subtopics
+  - Flags shallow topics
+  - Includes recommendations for synthesis
+✓ **Practical Implementation Audit completed** (B1.3)
+  - Each major finding includes "how to do this" steps
+  - Steps include concrete parameters (timeframes, thresholds, criteria)
+  - Actionability confirmed for each finding
+✓ **Story Bank created with 3-5 stories minimum** (B2.2)
+  - Each story tagged by memorability, emotional resonance
+  - Integration opportunities documented
+✓ **Counterpoint Discovery documented** (B1.2)
+  - Where sources disagree or present alternatives
+  - Dialogue opportunities identified (2-3 minimum)
+✓ **Notes for Synthesis Agent include takeaway clarity requirements** (B2.1)
+  - Requirement stated: "Each section ends with listener implications"
+  - 1-3 core takeaways identified for entire episode
+✓ All sources tiered by quality (Tier 1-3)
+✓ Research gaps and uncertainties explicitly noted
+
+**If ANY Wave 1 requirement is missing, DO NOT PROCEED to Phase 7.**
+Return to Phase 6 and complete the missing sections.
+
 **Update todos:**
 ```
 Mark "Create master research briefing" as completed.
@@ -1182,10 +1231,17 @@ The podcast-synthesis-writer agent will:
    - Factual claims cite only Tier 1-3 sources (peer-reviewed, studies, reports)
    - X/Twitter discourse (from Grok) used ONLY for "popular belief vs research" segments
    - Frame opinion content as: "While many on social media argue X... the research actually shows Y"
-6. Verify all quality requirements are met
+6. **⭐ ENFORCE Wave 1 quality requirements (BLOCKING):**
+   - **Takeaway Clarity (B2.1):** Each major section MUST end with "What does this mean for listeners?"
+   - **Core Takeaways:** 1-3 explicit takeaways stated clearly (not just implied)
+   - **Story Integration (B2.2):** Use high-memorability stories from Story Bank strategically
+   - **Practical Actionability (B1.3):** Findings MUST include specific implementation steps
+   - **Depth Balance (B1.1):** Topics receive coverage proportional to depth ratings from briefing
+   - If briefing is missing Wave 1 sections, FAIL and request Phase 6 completion
+7. Verify all quality requirements are met
 
 Required files must exist:
-- research/p3-briefing.md (master briefing with verified findings)
+- research/p3-briefing.md (master briefing with Wave 1 sections complete)
 - research/p2-*.md files (individual tool outputs for additional context)
 ```
 
