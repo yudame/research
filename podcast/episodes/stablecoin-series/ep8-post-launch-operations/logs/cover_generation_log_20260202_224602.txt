@@ -1,0 +1,20 @@
+Auto-generating prompt from report.md...
+
+Generated prompt:
+Modern podcast episode cover art for "Ep8 Post Launch Operations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements suitable for square format
+Color palette: Light warm cream/off-white (#F5F1E8) background with black (#000000) and warm salmon/coral (#E8B4A8) accents
+Concept: Circle, the company behind USDC, pays Coinbase $908 million per year. Not for technology. Not for custody. For distribution. That single line item from Circle's S-1 filing with the SEC tells you more 
+
+Design as square format (1024x1024px) with space for text overlay.
+Professional, minimalist aesthetic suitable for Apple Podcasts.
+No text in the image - pure visual design.
+
+Generating image with google/gemini-3-pro-image-preview...
+Aspect ratio: 1:1
+Enhanced prompt: Modern podcast episode cover art for "Ep8 Post Launch Operations":
+
+Style: Clean, professional, abstract visualization
+Layout: Bold visual elements su...
