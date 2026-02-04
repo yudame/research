@@ -1,0 +1,71 @@
+;FFMETADATA1
+title=Stablecoin Series: Ep. 8, Post-Launch Operations
+artist=Yudame Research
+album=Stablecoin Series
+date=2026-02-04
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=240000
+title=Introduction: The $908 Million Question
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=240000
+END=540000
+title=The Software Myth vs Banking Reality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=540000
+END=780000
+title=The Four-Layer Monitoring Stack
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=780000
+END=960000
+title=The Vendor Ecosystem
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1200000
+title=Tale of Two Models: Tether vs Circle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1200000
+END=1380000
+title=Enforcement Operations: Two Philosophies
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1380000
+END=1500000
+title=The Monthly Attestation Cycle
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1500000
+END=1620000
+title=SVB Crisis & Redemption Reality
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1620000
+END=1680000
+title=Profitability Under Pressure
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1680000
+END=1735000
+title=The Operator's Playbook: Four Protocols
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1735000
+END=1735810
+title=Closing: The Price of Admission
