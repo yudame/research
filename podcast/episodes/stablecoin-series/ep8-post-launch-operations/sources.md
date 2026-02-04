@@ -20,6 +20,6 @@
 ---
 
 ## Notes
-- Research compiled: 2026-02-02
+- Research compiled: 2026-02-04
 - Sources cross-validated across multiple tools
 - Conflicting sources noted in research/p3-briefing.md

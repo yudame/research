@@ -1,0 +1,4 @@
+Loading cover: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/ep8-post-launch-operations/cover.png
+Background brightness: 238 (light)
+✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/ep8-post-launch-operations/cover_branded.png
+✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/stablecoin-series/ep8-post-launch-operations/cover.png

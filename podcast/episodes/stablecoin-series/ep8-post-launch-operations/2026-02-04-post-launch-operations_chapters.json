@@ -1,0 +1,71 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Introduction: The $908 Million Question",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 240,
+      "title": "The Software Myth vs Banking Reality",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 540,
+      "title": "The Four-Layer Monitoring Stack",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 780,
+      "title": "The Vendor Ecosystem",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 960,
+      "title": "Tale of Two Models: Tether vs Circle",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1200,
+      "title": "Enforcement Operations: Two Philosophies",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1380,
+      "title": "The Monthly Attestation Cycle",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1500,
+      "title": "SVB Crisis & Redemption Reality",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1620,
+      "title": "Profitability Under Pressure",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1680,
+      "title": "The Operator's Playbook: Four Protocols",
+      "img": "",
+      "url": ""
+    },
+    {
+      "startTime": 1735,
+      "title": "Closing: The Price of Admission",
+      "img": "",
+      "url": ""
+    }
+  ]
+}
