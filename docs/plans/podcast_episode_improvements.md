@@ -7,7 +7,7 @@
 
 ---
 
-## Status Update (2026-02-01 - Wave 1 Enforcement Complete)
+## Status Update (2026-02-04 - Wave 1 Validated, Wave 2 Next)
 
 ### ✅ Completed: Measurement Framework
 
@@ -22,9 +22,29 @@
 - Scorecard template: `.claude/skills/podcast-quality-scorecard/SKILL.md`
 - Baseline scorecard: `podcast/episodes/algorithms-for-life/ep3-how-to-delegate/logs/quality_scorecard.md`
 
-### ✅ Wave 1 - Research & Synthesis: ENFORCEMENT COMPLETE
+### ✅ Wave 1 - Research & Synthesis: VALIDATED & COMPLETE
 
-**Status:** All 5 Wave 1 tasks are now BLOCKING requirements in the workflow. Next episode will be required to use Wave 1 improvements.
+**Status:** All 5 Wave 1 tasks enforced and validated on Stablecoin Ep. 8 (Feb 4, 2026).
+
+**🎉 Validation Results:**
+- **Pre-refactoring baseline (Feb 3):** 28/50 (56%)
+- **Post-Wave 1 (Feb 4):** 44/50 (88%)
+- **Improvement:** +16 points (+32%) ✅
+
+**Dimension improvements:**
+- Companion Resources: 2 → 5 (+3) 🚀
+- Depth Distribution: 2 → 4 (+2) 🎯
+- Takeaway Clarity: 4 → 5 (+1)
+- Storytelling Quality: 4 → 5 (+1)
+- Structural Clarity: 4 → 5 (+1)
+- Episode Arc: 4 → 5 (+1)
+- Practical Actionability: 5 → 5 (maintained perfection)
+
+**Enforcement validated:**
+- ✅ Phase 6 exit criteria successfully blocked progression without quality inputs
+- ✅ All 5 Wave 1 sections completed in p3-briefing.md
+- ✅ Synthesis agent input validation worked as designed (no blocking errors)
+- ✅ 5 of 10 dimensions directly improved by Wave 1 achieved 4-5 scores
 
 | Task | Template | Workflow | Exit Criteria | Synthesis Agent | Status |
 |------|----------|----------|---------------|-----------------|--------|
@@ -78,7 +98,59 @@ Phase 7 → Synthesis Agent → Input Validation → If Wave 1 missing → FAIL 
 - Blocking agent: `.claude/agents/podcast-synthesis-writer.md` (input validation + checklist)
 - Enhanced template: `docs/templates/p3-briefing-enhanced.md` (reference spec)
 
-### 🔲 Remaining: 32 Workflow Improvement Tasks
+**Validation Episode:**
+- Stablecoin Series Ep. 8 - Post-Launch Operations (Feb 4, 2026)
+- Scorecard: `podcast/episodes/stablecoin-series/ep8-post-launch-operations/logs/quality_scorecard.md`
+- Pre-refactoring scorecard archived: `logs/archive/quality_scorecard_pre-refactoring_2026-02-03.md`
+
+### 📚 Lessons Learned from Wave 1 Validation (Episode 8)
+
+**What Worked Exceptionally Well:**
+
+1. **Research quality → audio quality translation is real**
+   - Depth Distribution Analysis (B1.1) → Balanced coverage across 7 themes
+   - Practical Implementation Audit (B1.3) → All protocols had budgets, thresholds, timelines
+   - Story Bank (B2.2) → 5 stories with memorability ratings led to compelling storytelling
+   - Takeaway Clarity (B2.1) → 3 explicit takeaways in closing
+
+2. **Exit criteria enforcement works perfectly**
+   - No false blocks, no workarounds attempted
+   - All 5 Wave 1 sections present before synthesis could proceed
+   - Synthesis agent validated inputs successfully
+
+3. **Opening hook execution matters**
+   - $908M Coinbase payment was specific, surprising, thesis-anchoring
+   - Got powerful callback in closing for narrative resolution
+   - Lesson: Opening hooks should be concrete numbers, not abstract statements
+
+**Critical Gap Identified:**
+
+1. **🚨 Counterpoint research ≠ audio execution**
+   - Counterpoint Discovery (B1.2) completed: 3 debates documented in p3-briefing.md
+   - BUT: Not executed in audio as positional dialogue
+   - Hosts presented both views collaboratively instead of taking opposing positions
+   - Result: Dimension 4 (Dialogue Dynamics) only 3/5 (should be 4-5)
+   - **Root cause:** content_plan.md didn't instruct speakers to TAKE POSITIONS, only to "present both frameworks"
+   - **Fix:** Wave 2 Tasks A2.3 + A3.2 need MUCH STRONGER execution language (see updates below)
+
+2. **Runtime constraints create end-of-episode compression**
+   - 28:55 episode compressed operator's playbook to 2% (40 seconds)
+   - Practical content at episode end gets squeezed when time runs out
+   - **Fix:** Wave 2 Task A1.4 (Depth Budget) needs guidance to front-load practical content
+
+**Packaging Opportunities:**
+
+3. **Wave 4 is independent and low-effort**
+   - Description, timestamps, CTAs can be added without affecting audio
+   - Template-driven, can be applied retroactively
+   - **Action:** Prioritize C1.1-C1.3 as HIGH PRIORITY (quick wins)
+
+**Next Wave Strategy:**
+- Wave 1: ✅ COMPLETE (validated +16 points)
+- Wave 2: 🎯 NEXT (address counterpoint execution gap, add depth budget guidance)
+- Wave 4: 🔄 IN PARALLEL (packaging improvements, can do immediately)
+
+### 🔲 Remaining: 31 Workflow Improvement Tasks
 
 - **Wave 1:** Research & Synthesis (5 tasks) - ✅ **COMPLETE** (enforced, awaiting real-world test)
 - **Wave 2:** Episode Planning (9 tasks) - NOT STARTED
@@ -132,6 +204,12 @@ These improvements affect how we plan episode content before audio generation.
   - Allocate time percentage to each major theme (e.g., AI: 35%, Leadership types: 35%, Implementation: 30%)
   - Flag when themes need equal treatment vs. when one is meant to be primary
   - Ensure sub-topics get proportional depth to their importance
+  - **⚠️ Runtime constraint guidance (Episode 8 lesson):**
+    - If runtime is ≤30 min, compression happens at episode END when time runs out
+    - **Front-load practical content** - Place in Section 2 (Evidence) instead of Section 3 (Application)
+    - Example: For 30-min episode, allocate Foundation 30% (9 min), Evidence 45% (13.5 min), Application 25% (7.5 min)
+    - Validate: Does Application section have enough allocated time to deliver protocols in detail?
+  - Use Depth Distribution Analysis from p3-briefing.md (B1.1) to inform budget allocation
 
 #### A2. Content Architecture Tasks
 
@@ -145,10 +223,19 @@ These improvements affect how we plan episode content before audio generation.
   - Work backward to ensure each section builds toward it
   - Avoid trailing-off endings by front-loading philosophical content
 
-- [ ] **A2.3** - Design "Counterpoint Moments" into structure
+- [ ] **A2.3** - Design "Counterpoint Moments" into structure **⚠️ EXECUTION CRITICAL**
   - Identify 2-3 moments per episode where speakers should diverge or push back
-  - Create prompts that invite disagreement or alternative perspectives
-  - Frame as "wait, but what about..." or "I see it differently because..."
+  - **🚨 ASSIGN POSITIONS - not just "present both views"**
+    - ❌ WRONG: "Both interpretations have merit. Framework A says X, Framework B says Y."
+    - ✅ RIGHT: "Speaker A: 'I think Framework A is better because...' Speaker B: 'Wait, I disagree. Framework B is stronger because...'"
+  - Use Counterpoint Discovery from p3-briefing.md (B1.2 output)
+  - **Explicitly state in content_plan.md:**
+    - Topic: [What the debate is about]
+    - Speaker A position: [Specific stance]
+    - Speaker B position: [Opposing or alternative stance]
+    - Language templates: "Wait, but what about..." or "I see it differently because..."
+  - **Quality check:** Each counterpoint must include EXPLICIT DISAGREEMENT, not collaborative framing
+  - **Episode 8 lesson:** Researched counterpoints were presented collaboratively; need positional debate
 
 #### A3. NotebookLM Guidance Enhancement
 
@@ -157,10 +244,25 @@ These improvements affect how we plan episode content before audio generation.
   - Include signposting language requirements
   - Specify when to use counterpoint vs. agreement
 
-- [ ] **A3.2** - Add "Dialogue Dynamics" section to episodeFocus
-  - Request specific moments of push-back or divergence
-  - Ask for "natural disagreement" on X% of topics
-  - Encourage "supportive challenge" rather than pure agreement
+- [ ] **A3.2** - Add "Dialogue Dynamics" section to episodeFocus **⚠️ EXECUTION CRITICAL**
+  - **🚨 NotebookLM needs VERY EXPLICIT instructions to create disagreement**
+  - **Use counterpoint moments from content_plan.md (Task A2.3 output)**
+  - **Example episodeFocus language:**
+    ```
+    DIALOGUE DYNAMICS:
+    At [timestamp ~X min], discuss [Topic]. Speaker A should argue [Position X]
+    while Speaker B challenges with [Position Y]. This should be a respectful
+    debate with explicit disagreement, not collaborative exploration.
+
+    Use phrases like:
+    - "Wait, but what about..."
+    - "I disagree because..."
+    - "I see it differently. Here's why..."
+
+    Request 2-3 total counterpoint moments where speakers TAKE POSITIONS and debate.
+    ```
+  - **Quality requirement:** Must include ASSIGNED POSITIONS, not just "explore both views"
+  - **Episode 8 lesson:** Generic "create counterpoint" instructions produced collaborative framing; need specific position assignments
 
 - [ ] **A3.3** - Create "Episode Arc Template" for NotebookLM
   - Opening: Hook + Problem Definition + Structure Preview (3-5 min)
@@ -208,50 +310,69 @@ These improvements affect how we gather and organize research before episode pla
 
 These improvements affect how episodes are packaged and presented to listeners.
 
-#### C1. Episode Description Enhancements
+**Priority Assessment (from Episode 8):**
+- **🔴 HIGH PRIORITY:** C1.1-C1.3 (template-driven, low effort, immediate impact)
+- **🟡 MEDIUM PRIORITY:** C3.1-C3.2 (companion resources require more work)
+- **🟢 LOW PRIORITY:** C2.1-C2.3 (feed.xml enhancements, nice-to-have)
 
-- [ ] **C1.1** - Expand description template in `logs/metadata.md`
+#### C1. Episode Description Enhancements **🔴 HIGH PRIORITY**
+
+- [ ] **C1.1** - Expand description template in `logs/metadata.md` **🔴 QUICK WIN**
   - Add "What You'll Learn" section (3-5 bullet points)
   - Add "Key Timestamps" section (link to major sections)
   - Add "Resources & Tools Mentioned" section
+  - **Episode 8 lesson:** Description was informative but lacked discoverability enhancements
+  - **Effort:** LOW - Template update, can be applied retroactively
+  - **Impact:** Raises Dimension 9 (Packaging) from 3 to 3.5-4
 
-- [ ] **C1.2** - Create "Call-to-Action Framework"
+- [ ] **C1.2** - Create "Call-to-Action Framework" **🔴 QUICK WIN**
   - Define standard CTAs: related episodes, deep-dive resources, community links
   - Template end-of-episode redirect language
   - Include in episodeFocus prompt for NotebookLM to voice
+  - **Effort:** LOW - Define once, reuse everywhere
+  - **Impact:** Listener engagement and next steps
 
-- [ ] **C1.3** - Enhance source links presentation
+- [ ] **C1.3** - Enhance source links presentation **🔴 QUICK WIN**
   - Group sources by type: Research Papers, Tools/Templates, Further Reading
-  - Add 1-sentence description for each link
-  - Make descriptions actionable: "Use this framework to assess your team's delegation readiness"
+  - Add 1-sentence actionable description for each link
+  - Example: "Circle S-1 SEC Filing — Use this to benchmark operational expenses against institutional-scale issuer"
+  - **Episode 8 lesson:** Sources were validated but descriptions not actionable
+  - **Effort:** LOW - Template update
+  - **Impact:** Resource utility increases
 
-#### C2. Feed.xml Metadata Improvements
+#### C2. Feed.xml Metadata Improvements **🟢 LOW PRIORITY**
 
 - [ ] **C2.1** - Add `<itunes:episode>` and `<itunes:episodeType>` tags
   - Properly label as full, trailer, or bonus episodes
   - Include episode numbers for series
+  - **Priority:** LOW - Nice-to-have, not blocking
 
 - [ ] **C2.2** - Enhance `<content:encoded>` HTML show notes
   - Add structured sections: Overview, Key Insights, Timestamps, Resources
   - Include visual formatting (headers, lists, links)
   - Make it a standalone resource (useful even without listening)
+  - **Priority:** LOW - Most podcast apps ignore <content:encoded>
 
 - [ ] **C2.3** - Add `<podcast:transcript>` tag support
   - Link to transcript.txt file
   - Include type="text/plain" attribute
   - Improve accessibility and SEO
+  - **Priority:** LOW - Few apps support Podcasting 2.0 tags
 
-#### C3. Listener Resource Creation
+#### C3. Listener Resource Creation **🟡 MEDIUM PRIORITY**
 
-- [ ] **C3.1** - Create companion resource templates
+- [ ] **C3.1** - Create companion resource templates **🟡 VALUABLE BUT HIGHER EFFORT**
   - One-page summary/cheat sheet
   - Action checklist
   - Framework diagram or decision tree
+  - **Episode 8 lesson:** Episode 8 scored 5/5 on Companion Resources WITH just report.md and briefing
+  - **Priority:** MEDIUM - Valuable but requires work; not blocking for high scores
 
-- [ ] **C3.2** - Add "Episode Landing Page" generation
+- [ ] **C3.2** - Add "Episode Landing Page" generation **🟡 VALUABLE BUT HIGHER EFFORT**
   - Auto-generate HTML page for each episode
   - Include: full description, timestamps, resources, transcript
   - Link from feed.xml and episode description
+  - **Priority:** MEDIUM - Nice-to-have web presence, not critical for podcast quality
 
 ---
 
@@ -343,10 +464,16 @@ These tasks integrate improvements into the actual workflow in `.claude/skills/n
 
 #### E3. Quality Checklist Updates
 
-- [ ] **E3.1** - Add structural checks to Phase 8 exit criteria
+- [ ] **E3.1** - Add structural checks to Phase 8 exit criteria **⚠️ UPDATED BASED ON EPISODE 8**
   - ✓ Episode structure map defined
   - ✓ Mode-switching framework applied
   - ✓ Signposting language included
+  - **⚠️ NEW - Counterpoint execution check:**
+    - ✓ Counterpoint moments designed (2-3 minimum)
+    - ✓ Each counterpoint includes: Topic, Speaker A position, Speaker B position
+    - ✓ Language templates provided ("Wait, but what about..." phrases)
+    - ✓ Positions are ASSIGNED (not just "present both views")
+  - **Episode 8 lesson:** Exit criteria didn't enforce counterpoint execution, only research
   - ✓ Depth budget confirms even coverage
   - ✓ Counterpoint moments designed
 
@@ -1078,3 +1205,106 @@ Wave 6 experiments test alternatives (problem-first, debate structure, etc.) whi
 - Iterative improvement: Each episode builds on learnings from previous
 - Sustainable quality: Changes are integrated into workflow, not manual per-episode effort
 - Productized output: Episodes become complete learning resources, not just audio files
+
+---
+
+## Wave 2-5 Updates Based on Episode 8 Learnings (2026-02-04)
+
+### Summary of Changes
+
+**Context:** Stablecoin Ep. 8 validated Wave 1 (+16 points, 28→44/50) but revealed one critical gap: counterpoint research ≠ audio execution. Based on this, Waves 2-5 have been updated with:
+
+### 1. **Strengthened Counterpoint Execution Requirements**
+
+**Wave 2, Task A2.3 - Design "Counterpoint Moments"**
+- **OLD:** "Identify 2-3 moments where speakers should diverge"
+- **NEW:** "ASSIGN POSITIONS - not just 'present both views'"
+- **Added:** Explicit examples of wrong vs. right execution
+- **Added:** Quality check requiring EXPLICIT DISAGREEMENT, not collaborative framing
+
+**Wave 3, Task A3.2 - Add "Dialogue Dynamics" to episodeFocus**
+- **OLD:** "Request specific moments of push-back"
+- **NEW:** "NotebookLM needs VERY EXPLICIT instructions with ASSIGNED POSITIONS"
+- **Added:** Example episodeFocus language showing position assignments
+- **Added:** Quality requirement for assigned positions, not generic "explore both views"
+
+**Wave 5, Task E3.1 - Phase 8 Exit Criteria**
+- **Added:** Counterpoint execution check (2-3 moments with assigned positions)
+- **Added:** Quality requirements for each counterpoint (Topic, Speaker A/B positions, language templates)
+
+**Rationale:** Episode 8 showed that Counterpoint Discovery (B1.2) was completed perfectly (3 debates documented), but not executed in audio as positional dialogue. The fix is in Wave 2-3 execution, not Wave 1 research.
+
+### 2. **Added Runtime Constraint Guidance**
+
+**Wave 2, Task A1.4 - Implement "Depth Budget"**
+- **Added:** "If runtime ≤30 min, front-load practical content in Section 2 (Evidence)"
+- **Added:** Warning that compression happens at episode end when time runs out
+- **Added:** Example allocation for 30-min episode (Foundation 30%, Evidence 45%, Application 25%)
+
+**Rationale:** Episode 8 compressed operator's playbook to 2% (40 seconds) because it was placed at episode end. Front-loading prevents this.
+
+### 3. **Reprioritized Wave 4 Tasks**
+
+**Wave 4 - Packaging & Productization**
+- **Marked HIGH PRIORITY:** C1.1-C1.3 (description, CTA, source enhancements)
+  - Template-driven, low effort, immediate impact
+  - Can be applied retroactively to Episode 8
+  - Raises Dimension 9 (Packaging) from 3 to 4
+- **Marked MEDIUM PRIORITY:** C3.1-C3.2 (companion resources, landing page)
+  - Episode 8 scored 5/5 on Companion Resources with just report.md and briefing
+  - Valuable but not blocking for high scores
+- **Marked LOW PRIORITY:** C2.1-C2.3 (feed.xml enhancements)
+  - Nice-to-have, few apps support advanced tags
+
+**Rationale:** Episode 8 showed packaging is independent of audio quality and can be quick wins. Prioritize template-driven improvements first.
+
+### 4. **Validated Wave 1 Baseline**
+
+**Results:**
+- Pre-refactoring: 28/50 (56%)
+- Post-Wave 1: 44/50 (88%)
+- Improvement: +16 points (+32%)
+
+**Impact by dimension:**
+- Companion Resources: 2 → 5 (+3) - Enhanced research briefing with 5 Wave 1 sections
+- Depth Distribution: 2 → 4 (+2) - Depth Distribution Analysis table prevented imbalances
+- Takeaway Clarity: 4 → 5 (+1) - Explicit synthesis requirements worked
+- Storytelling: 4 → 5 (+1) - Story Bank with memorability ratings delivered
+- Structural Clarity: 4 → 5 (+1) - Better signposting and preview
+- Episode Arc: 4 → 5 (+1) - Strong opening hook + callback structure
+- Practical Actionability: 5 → 5 - Practical Implementation Audit maintained perfection
+
+**Enforcement validated:**
+- ✅ Phase 6 exit criteria blocked progression without quality inputs
+- ✅ Synthesis agent input validation worked perfectly
+- ✅ All 5 Wave 1 sections completed before synthesis could proceed
+
+### 5. **Clear Next Steps**
+
+**Next Wave Priority:**
+- **Wave 2:** HIGH - Address counterpoint execution gap (Dimension 4: 3→4-5)
+  - Focus on Tasks A2.3 (assign positions) and A1.4 (depth budget)
+- **Wave 4:** PARALLEL - Quick packaging wins (Dimension 9: 3→4)
+  - Focus on Tasks C1.1-C1.3 (template-driven improvements)
+- **Wave 3:** After Wave 2 - Implement enhanced episodeFocus prompt
+  - Task A3.2 depends on Wave 2 Task A2.3 output
+
+**Target for next episode:** 47-49/50 (94-98%)
+- Maintain 8 dimensions at 4-5
+- Raise Dimension 4 (Dialogue Dynamics) from 3 to 4-5
+- Raise Dimension 9 (Packaging) from 3 to 4
+
+---
+
+## Changes Made to This Document (2026-02-04)
+
+1. **Updated Status Section** - Wave 1 marked as VALIDATED & COMPLETE with Episode 8 results
+2. **Added "Lessons Learned" Section** - Documented what worked, critical gaps, and packaging opportunities
+3. **Strengthened Wave 2 Task A2.3** - Added execution language for assigned positions vs. collaborative framing
+4. **Enhanced Wave 2 Task A1.4** - Added runtime constraint guidance (front-load practical content)
+5. **Strengthened Wave 3 Task A3.2** - Added explicit episodeFocus examples with position assignments
+6. **Reprioritized Wave 4 Tasks** - Marked C1.1-C1.3 HIGH, C3.1-C3.2 MEDIUM, C2.1-C2.3 LOW
+7. **Updated Wave 5 Task E3.1** - Added counterpoint execution check to Phase 8 exit criteria
+8. **Added This Summary Section** - Document changes made based on real-world testing
+
+**Philosophy:** These updates preserve the original improvement plan structure while incorporating learnings from Episode 8. The counterpoint execution gap was the most critical finding, requiring strengthened language in Waves 2-3. All changes are backwards-compatible with existing work.
