@@ -1,5 +1,78 @@
 # Gold-Standard Research Workflow
 
+---
+
+## Status Update (2026-02-05)
+
+### Summary
+
+This document was created as an aspirational vision for "publication-quality research that happens to become podcasts." Since then, **Wave 1 of the podcast improvement plan** (validated Feb 4, 2026 on Stablecoin Ep. 8) has implemented many of the practical research quality improvements from this plan.
+
+**Key finding:** The full academic rigor proposed here (16 phases, 20-35 hours, 3-4 weeks per episode) is appropriate for research publications but exceeds what's needed for podcast production. The **pragmatic subset** implemented in Wave 1 achieves significant quality gains (+16 points, 28 to 44/50) while maintaining podcast production timelines.
+
+### What Has Been Implemented
+
+The following goals from this document have been achieved via Wave 1 (Tasks B1.1-B1.3, B2.1-B2.2):
+
+| Goal | Status | Implementation |
+|------|--------|----------------|
+| ✅ **Depth distribution analysis** | IMPLEMENTED | Wave 1 Task B1.1 - Required section in `p3-briefing-enhanced.md` |
+| ✅ **Source quality tiering** | RETAINED | Already in workflow as Tier 1/2/3 source organization |
+| ✅ **Evidence hierarchy awareness** | RETAINED | Synthesis agent requirements distinguish meta-analyses from case studies |
+| ✅ **Contradiction surfacing** | ENHANCED | Wave 1 Task B1.2 - Counterpoint Discovery section in briefing |
+| ✅ **Practical implementation audit** | IMPLEMENTED | Wave 1 Task B1.3 - "How would someone do this?" for each finding |
+| ✅ **Takeaway clarity requirements** | IMPLEMENTED | Wave 1 Task B2.1 - Explicit takeaways in Notes for Synthesis Agent |
+| ✅ **Story/example collection** | IMPLEMENTED | Wave 1 Task B2.2 - Story Bank with memorability ratings |
+| ✅ **Bias acknowledgment** | RETAINED | AI tool bias documented in briefing template |
+| ✅ **Cross-validation matrix** | RETAINED | Multi-source verification in Phase 5 |
+| ✅ **Research gaps documentation** | ENHANCED | Required section in enhanced briefing template |
+
+### What Remains Valuable (Future Enhancement)
+
+These items from this document are NOT yet implemented but could add value for high-stakes episodes:
+
+| Item | Value | When to Use |
+|------|-------|-------------|
+| **Phase 0: Research Protocol** | HIGH | For topics requiring academic defensibility (health, policy) |
+| **Phase 2.5: Primary Source Collection** | MEDIUM | For regulatory/legal topics requiring original documents |
+| **Phase 4.5: Expert Consultation** | HIGH | For contentious topics or when research gaps are identified |
+| **Phase 5.5: External Peer Review** | HIGH | For flagship episodes or topics with public health implications |
+| **Manual database searches** (PubMed, ERIC) | MEDIUM | When AI-mediated summaries miss key academic sources |
+| **PRISMA flow diagram** | LOW | For formal research publications, not podcast production |
+| **Newcastle-Ottawa Scale** | LOW | For formal study quality assessment beyond current tiering |
+| **Complete audit trail** | MEDIUM | For reproducibility in contentious topics |
+
+### What Is Obsolete or Superseded
+
+| Item | Status | Reason |
+|------|--------|--------|
+| **16-phase workflow** | SUPERSEDED | Current 12-phase workflow with Wave 1 enhancements achieves similar quality |
+| **20-35 hours per episode** | SUPERSEDED | Current workflow: ~8-15 hours including all improvements |
+| **3-4 weeks calendar time** | SUPERSEDED | Current workflow: 1-3 days with automation |
+| **Pre-registered protocol for every episode** | REDUCED SCOPE | Only needed for high-stakes topics |
+| **External peer review for every episode** | REDUCED SCOPE | Reserve for flagship episodes |
+| **FOIA requests, interlibrary loans** | IMPRACTICAL | Exceeds podcast production timelines |
+
+### Recommended Use of This Document
+
+1. **For standard episodes:** Use the current workflow (`.claude/skills/new-podcast-episode.md`) with Wave 1 enhancements. This document is NOT needed.
+
+2. **For high-stakes episodes** (health claims, policy analysis, contentious topics): Selectively apply:
+   - Phase 0 (Research Protocol) for methodology transparency
+   - Phase 4.5 (Expert Consultation) for validation
+   - Phase 5.5 (External Peer Review) for accountability
+
+3. **For future workflow evolution:** Use the detailed templates in Phases 0, 2.5, 4.5, and 5.5 as starting points when expanding research rigor.
+
+### References to Wave 1 Implementation
+
+- **Enhanced briefing template:** `docs/templates/p3-briefing-enhanced.md`
+- **Workflow with exit criteria:** `.claude/skills/new-podcast-episode.md` (Phase 6)
+- **Synthesis agent with validation:** `.claude/agents/podcast-synthesis-writer.md`
+- **Improvement plan details:** `docs/plans/podcast_episode_improvements.md` (Wave 1 section)
+
+---
+
 ## Executive Summary
 
 This document proposes enhancements to transform our podcast research workflow from "excellent for podcasts" to "publication-quality research that happens to become podcasts." The enhanced workflow incorporates systematic literature review methodology, primary source verification, expert consultation, formal bias assessment, and external peer review.
@@ -8,35 +81,41 @@ This document proposes enhancements to transform our podcast research workflow f
 
 **Target Quality Level:** Research outputs should be defensible in academic peer review, citable by other researchers, and verifiable by fact-checkers.
 
+> **Note (2026-02-05):** The full workflow below represents maximum rigor. For standard podcast production, see the Status Update above for the pragmatic subset now implemented.
+
 ---
 
 ## Current State Assessment
 
 ### Strengths (Retain These)
 
-| Element | Description | Quality |
-|---------|-------------|---------|
-| Sequential question discovery | Phase 2 analyzes initial results to inform targeted followup | Excellent |
-| Multi-tool triangulation | 5 research tools with different strengths | Excellent |
-| Cross-validation matrix | Explicit tracking of multi-source verification | Very Good |
-| Source quality tiering | Tier 1/2/3 hierarchy | Very Good |
-| Evidence hierarchy awareness | Distinguishes meta-analyses from case studies | Very Good |
-| Synthesis agent standards | Strict evidence requirements, no fabrication | Very Good |
-| Contradiction surfacing | Explicitly flags disagreements | Very Good |
+| Element | Description | Quality | Status (2026-02-05) |
+|---------|-------------|---------|---------------------|
+| Sequential question discovery | Phase 2 analyzes initial results to inform targeted followup | Excellent | ✅ RETAINED |
+| Multi-tool triangulation | 5 research tools with different strengths | Excellent | ✅ RETAINED |
+| Cross-validation matrix | Explicit tracking of multi-source verification | Very Good | ✅ RETAINED |
+| Source quality tiering | Tier 1/2/3 hierarchy | Very Good | ✅ RETAINED |
+| Evidence hierarchy awareness | Distinguishes meta-analyses from case studies | Very Good | ✅ RETAINED |
+| Synthesis agent standards | Strict evidence requirements, no fabrication | Very Good | ✅ ENHANCED (Wave 1) |
+| Contradiction surfacing | Explicitly flags disagreements | Very Good | ✅ ENHANCED (B1.2 Counterpoint Discovery) |
 
 ### Gaps to Address
 
-| Gap | Current State | Target State |
-|-----|---------------|--------------|
-| Research protocol | Ad-hoc research questions | Pre-registered protocol with inclusion/exclusion criteria |
-| Literature search | AI-mediated summaries | Systematic database searches + AI augmentation |
-| Primary sources | AI extracts and summarizes | Original documents archived with provenance |
-| Expert input | Secondhand via Grok/X | Direct expert consultation (email, interviews) |
-| Source verification | AI cross-reference | Human spot-check of critical claims |
-| Bias assessment | Mentioned in prompts | Formal bias assessment protocol |
-| Peer review | Self-verification checklist | External expert review |
-| Audit trail | Partial (prompts.md) | Complete research log with timestamps |
-| Historical depth | AI knowledge cutoffs | Archive.org, historical databases, primary archives |
+| Gap | Current State | Target State | Status (2026-02-05) |
+|-----|---------------|--------------|---------------------|
+| Research protocol | Ad-hoc research questions | Pre-registered protocol with inclusion/exclusion criteria | 🔶 OPTIONAL (high-stakes only) |
+| Literature search | AI-mediated summaries | Systematic database searches + AI augmentation | 🔶 OPTIONAL (when AI misses sources) |
+| Primary sources | AI extracts and summarizes | Original documents archived with provenance | 🔶 OPTIONAL (regulatory topics) |
+| Expert input | Secondhand via Grok/X | Direct expert consultation (email, interviews) | 🔶 FUTURE (Phase 4.5 template ready) |
+| Source verification | AI cross-reference | Human spot-check of critical claims | ✅ PARTIAL (cross-validation matrix) |
+| Bias assessment | Mentioned in prompts | Formal bias assessment protocol | ✅ PARTIAL (AI tool bias in template) |
+| Peer review | Self-verification checklist | External expert review | 🔶 OPTIONAL (flagship episodes) |
+| Audit trail | Partial (prompts.md) | Complete research log with timestamps | ✅ IMPROVED (logs/ directory) |
+| Historical depth | AI knowledge cutoffs | Archive.org, historical databases, primary archives | 🔶 FUTURE (not implemented) |
+| **Depth distribution** | Uneven topic coverage | Analyze and balance depth across subtopics | ✅ IMPLEMENTED (B1.1) |
+| **Practical implementation** | Conceptual findings only | "How would someone do this?" audit | ✅ IMPLEMENTED (B1.3) |
+| **Takeaway clarity** | Implicit conclusions | Explicit 1-3 core takeaways | ✅ IMPLEMENTED (B2.1) |
+| **Story collection** | Ad-hoc examples | Curated Story Bank with memorability ratings | ✅ IMPLEMENTED (B2.2) |
 
 ---
 
@@ -48,30 +127,34 @@ The enhanced workflow expands from 12 phases to 16 phases, adding:
 - **Phase 4.5:** Expert Consultation
 - **Phase 5.5:** External Peer Review
 
+> **Status (2026-02-05):** The current production workflow uses 12 phases with Wave 1 enhancements. The 4 additional phases below (0, 2.5, 4.5, 5.5) are **optional** for high-stakes episodes only. Templates remain valuable as reference.
+
 ### Phase Overview
 
 ```
-Phase 0:   Research Protocol Development (NEW)
-Phase 1:   Setup
-Phase 2:   Academic Foundation (Perplexity + Database Searches)
-Phase 2.5: Primary Source Collection (NEW)
-Phase 3:   Question Discovery
-Phase 4:   Targeted Followup Research
-Phase 4.5: Expert Consultation (NEW)
-Phase 5:   Cross-Validation & Verification
-Phase 5.5: External Peer Review (NEW)
-Phase 6:   Master Research Briefing
-Phase 7:   Synthesis
-Phase 8:   Cover Art
-Phase 9:   Audio from User (NotebookLM)
-Phase 10:  Audio Processing
-Phase 11:  Publishing
-Phase 12:  Commit & Push
+Phase 0:   Research Protocol Development (NEW) ← 🔶 OPTIONAL: High-stakes only
+Phase 1:   Setup ← ✅ IN PRODUCTION
+Phase 2:   Academic Foundation (Perplexity + Database Searches) ← ✅ IN PRODUCTION
+Phase 2.5: Primary Source Collection (NEW) ← 🔶 OPTIONAL: Regulatory topics
+Phase 3:   Question Discovery ← ✅ IN PRODUCTION
+Phase 4:   Targeted Followup Research ← ✅ IN PRODUCTION
+Phase 4.5: Expert Consultation (NEW) ← 🔶 OPTIONAL: Contentious topics
+Phase 5:   Cross-Validation & Verification ← ✅ IN PRODUCTION (Enhanced with Wave 1)
+Phase 5.5: External Peer Review (NEW) ← 🔶 OPTIONAL: Flagship episodes
+Phase 6:   Master Research Briefing ← ✅ IN PRODUCTION (Enhanced with Wave 1 B1.1-B2.2)
+Phase 7:   Synthesis ← ✅ IN PRODUCTION
+Phase 8:   Cover Art ← ✅ IN PRODUCTION (now Episode Planning in current workflow)
+Phase 9:   Audio from User (NotebookLM) ← ✅ IN PRODUCTION
+Phase 10:  Audio Processing ← ✅ IN PRODUCTION
+Phase 11:  Publishing ← ✅ IN PRODUCTION
+Phase 12:  Commit & Push ← ✅ IN PRODUCTION
 ```
 
 ---
 
 ## Phase 0: Research Protocol Development (NEW)
+
+> **Status (2026-02-05):** 🔶 OPTIONAL - Use for high-stakes episodes requiring academic defensibility (health claims, policy analysis, contentious topics). Not required for standard podcast production.
 
 **Purpose:** Establish explicit research methodology before any data collection. This is the foundation of reproducible, defensible research.
 
@@ -307,11 +390,13 @@ Create `research/p0-protocol.md` using this structure.
 
 ## Phase 2: Academic Foundation (Enhanced)
 
+> **Status (2026-02-05):** ✅ IN PRODUCTION - The AI-augmented research (Step 2.3) is fully implemented. Manual database searches (Steps 2.1, 2.2, 2.4, 2.5) are 🔶 OPTIONAL for when AI-mediated summaries miss key academic sources.
+
 **Purpose:** Build comprehensive academic foundation through systematic database searches augmented by AI tools.
 
-**Time Required:** 2-4 hours (mix of human and automated)
+**Time Required:** 2-4 hours (mix of human and automated) | Current production: 30-120 seconds (API) + manual tool time
 
-### Step 2.1: Manual Database Searches (Human)
+### Step 2.1: Manual Database Searches (Human) - 🔶 OPTIONAL
 
 Perform searches in academic databases per the protocol:
 
@@ -472,6 +557,8 @@ Apply quality assessment framework to all included studies:
 
 ## Phase 2.5: Primary Source Collection (NEW)
 
+> **Status (2026-02-05):** 🔶 OPTIONAL - Use for regulatory/legal topics requiring original government documents, legislation, or court filings. Not required for standard podcast production.
+
 **Purpose:** Obtain and archive original documents rather than relying solely on AI summaries.
 
 **Time Required:** 1-3 hours (human)
@@ -599,6 +686,8 @@ For each primary source:
 ---
 
 ## Phase 4.5: Expert Consultation (NEW)
+
+> **Status (2026-02-05):** 🔶 OPTIONAL - HIGH VALUE for contentious topics or when significant research gaps are identified. Templates below ready for use. Consider for flagship episodes or topics with public health/safety implications.
 
 **Purpose:** Obtain direct expert input to validate findings, identify blind spots, and capture practitioner knowledge not available in published sources.
 
@@ -771,9 +860,11 @@ research.yuda.me
 
 ## Phase 5: Cross-Validation & Verification (Enhanced)
 
+> **Status (2026-02-05):** ✅ IN PRODUCTION - Cross-validation matrix and multi-source verification are implemented in the current workflow. Human spot-check (Step 5.3) and formal bias assessment (Step 5.4) are 🔶 OPTIONAL for high-stakes episodes.
+
 **Purpose:** Rigorous verification of all claims through multiple methods.
 
-**Time Required:** 2-4 hours
+**Time Required:** 2-4 hours | Current production: ~30-60 minutes (automated cross-validation)
 
 ### Step 5.1: Claim Extraction
 
@@ -948,6 +1039,8 @@ Extract all factual claims that will appear in the final report:
 
 ## Phase 5.5: External Peer Review (NEW)
 
+> **Status (2026-02-05):** 🔶 OPTIONAL - HIGH VALUE for flagship episodes or topics with public health/safety/policy implications. Templates below ready for use. Consider when making claims that could significantly impact listener behavior or decisions.
+
 **Purpose:** Independent expert review of research findings before synthesis.
 
 **Time Required:** 1-2 weeks (calendar time)
@@ -1103,6 +1196,15 @@ Thank you for agreeing to review this research package.
 ---
 
 ## Phase 6: Master Research Briefing (Enhanced)
+
+> **Status (2026-02-05):** ✅ IN PRODUCTION - Significantly enhanced via Wave 1 (Tasks B1.1-B1.3, B2.1-B2.2). The production template is `docs/templates/p3-briefing-enhanced.md`. The template below represents maximum rigor; the production template is the pragmatic subset.
+>
+> **Wave 1 additions now in production:**
+> - ✅ Depth Distribution Analysis (B1.1)
+> - ✅ Counterpoint Discovery (B1.2)
+> - ✅ Practical Implementation Audit (B1.3)
+> - ✅ Takeaway Clarity Requirements (B2.1)
+> - ✅ Story Bank (B2.2)
 
 **Purpose:** Create the definitive research compilation for synthesis, incorporating all verification and review findings.
 
@@ -1610,13 +1712,23 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 
 This enhanced workflow transforms podcast research from "good AI-assisted research" to "publication-quality systematic research that becomes podcasts." Key additions:
 
-1. **Pre-registered research protocol** (Phase 0)
-2. **Systematic database searches** with PRISMA reporting
-3. **Primary source collection** with provenance tracking (Phase 2.5)
-4. **Formal quality assessment** using established tools
-5. **Expert consultation** with structured protocols (Phase 4.5)
-6. **External peer review** (Phase 5.5)
-7. **Complete audit trail** for reproducibility
-8. **Bias assessment** at multiple levels
+1. **Pre-registered research protocol** (Phase 0) - 🔶 OPTIONAL for high-stakes
+2. **Systematic database searches** with PRISMA reporting - 🔶 OPTIONAL when AI misses sources
+3. **Primary source collection** with provenance tracking (Phase 2.5) - 🔶 OPTIONAL for regulatory topics
+4. **Formal quality assessment** using established tools - 🔶 OPTIONAL (current tiering suffices)
+5. **Expert consultation** with structured protocols (Phase 4.5) - 🔶 OPTIONAL for contentious topics
+6. **External peer review** (Phase 5.5) - 🔶 OPTIONAL for flagship episodes
+7. **Complete audit trail** for reproducibility - ✅ PARTIAL (logs/ directory)
+8. **Bias assessment** at multiple levels - ✅ PARTIAL (AI tool bias acknowledged)
 
-The result is research that could withstand academic scrutiny while remaining accessible and engaging for podcast audiences.
+**Wave 1 Pragmatic Subset (now in production):**
+1. ✅ **Depth Distribution Analysis** - Ensures balanced coverage across subtopics
+2. ✅ **Counterpoint Discovery** - Identifies disagreements for dialogue dynamics
+3. ✅ **Practical Implementation Audit** - "How would someone do this?" for each finding
+4. ✅ **Takeaway Clarity Requirements** - Explicit 1-3 core takeaways
+5. ✅ **Story Bank** - Curated examples with memorability ratings
+
+The result is research that achieves significant quality gains (+16 points, 28 to 44/50 on quality scorecard) while maintaining podcast production timelines (1-3 days vs. 3-4 weeks).
+
+**For maximum rigor:** Use the full 16-phase workflow for academic publications or high-stakes episodes.
+**For standard production:** Use the 12-phase workflow with Wave 1 enhancements (see `.claude/skills/new-podcast-episode.md`).

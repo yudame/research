@@ -1,5 +1,72 @@
 # PRD: Yudame Research Podcast Audio Engine
 
+---
+
+## Status Update (2026-02-05)
+
+### Implementation Assessment
+
+This document originally proposed a **Gemini TTS-based audio pipeline** with full script control for generating podcast audio. Since then, the actual podcast workflow has evolved to use **NotebookLM** as the primary audio generation method, which takes a fundamentally different approach.
+
+### What Was Implemented (Different Approach)
+
+The production system uses NotebookLM (via Enterprise API or manual web interface) instead of Gemini TTS:
+
+| Original Plan | Current Implementation | Notes |
+|---------------|------------------------|-------|
+| Claude generates ~5,200 word script | NotebookLM generates conversational audio from research docs | Two-host format vs. single narrator |
+| Gemini TTS converts script to audio | NotebookLM creates AI-hosted discussion | More dynamic, less controlled |
+| Embedded TTS directives | `content_plan.md` provides structural guidance | Different control mechanism |
+| Section-by-section generation | Single audio generation pass | Simpler pipeline |
+| 128kbps MP3 @ ~30MB | 128kbps MP3 @ ~30-40MB | Similar output specs |
+
+**Implemented tools and skills:**
+- `.claude/skills/podcast-audio-processing/SKILL.md` - Audio conversion, Whisper transcription, chapter creation
+- `.claude/skills/notebooklm-enterprise-api/SKILL.md` - Automated NotebookLM audio generation (requires paid subscription)
+- `.claude/skills/notebooklm-audio/SKILL.md` - Manual NotebookLM fallback workflow
+- `podcast/tools/notebooklm_api.py` - Discovery Engine API integration
+- `podcast/tools/notebooklm_prompt.py` - Prompt generation for manual workflow
+- `podcast/tools/transcribe_only.py` - Local Whisper transcription
+
+### Items Achieved (Via Different Methods)
+
+- **Audio Duration Control** - Achieved via `content_plan.md` structure guidance (not script word count)
+- **Voice Identity** - NotebookLM maintains consistent two-host personalities
+- **Chapter Support** - Implemented in `podcast-audio-processing` skill (FFmpeg metadata + Podcasting 2.0 JSON)
+- **128kbps MP3 Output** - Standard across all workflows
+- **Quality Assurance** - Implemented via Episode Quality Scorecard (Wave 1 validated)
+
+### Items Not Implemented (Gemini TTS Specific)
+
+These items are specific to the Gemini TTS approach and were not pursued:
+
+- **Script-based generation** - NotebookLM doesn't use pre-written scripts
+- **TTS directive embedding** (`[VOICE: warm]`, `[PAUSE: 0.8s]`, etc.) - Not applicable to NotebookLM
+- **Section-by-section WAV generation** - NotebookLM generates complete audio
+- **PCM-to-WAV-to-MP3 pipeline** - NotebookLM outputs MP3 directly
+- **Parallel section processing** - Single-pass generation used instead
+
+### Valuable Future Work
+
+These concepts remain valuable and could be implemented for scenarios where NotebookLM doesn't meet needs:
+
+1. **Single-narrator episodes** - Gemini TTS approach would be ideal for solo host format
+2. **Fine-grained prosody control** - When specific emotional delivery is required
+3. **Script-first workflow** - For episodes requiring exact word-for-word delivery
+4. **Hybrid approach** - Use NotebookLM for conversation, Gemini TTS for intros/outros
+
+### Recommendation
+
+**Archive this document as a reference design** rather than an active plan. The NotebookLM-based workflow has proven effective (Wave 1 validated with +16 point improvement). If Gemini TTS becomes desirable for specific use cases (single narrator, precise control), this PRD provides a solid starting point.
+
+---
+
+## Original Document (Archived for Reference)
+
+> **Note:** The content below represents the original PRD for a Gemini TTS-based approach. It has not been implemented but is preserved as a reference design.
+
+---
+
 This document outlines the technical and creative requirements for generating podcast audio using **Gemini TTS API** with full script control.
 
 ---
@@ -8,7 +75,7 @@ This document outlines the technical and creative requirements for generating po
 
 **Target Duration:** 35 Minutes (30-40 acceptable)
 
-**Approach:** Text-first with embedded directives → Gemini TTS
+**Approach:** Text-first with embedded directives -> Gemini TTS
 
 **Model:** `gemini-2.5-flash-preview-tts` or `gemini-2.5-pro-preview-tts`
 
@@ -21,65 +88,65 @@ The system generates a complete ~5,200 word script with embedded TTS directives,
 ## 2. Architecture Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                     TEXT-FIRST AUDIO PIPELINE                        │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
-│  │  report.md   │    │ p3-briefing  │    │  sources.md  │          │
-│  │  (~18KB)     │    │  (~60KB)     │    │  (~10KB)     │          │
-│  └──────┬───────┘    └──────┬───────┘    └──────┬───────┘          │
-│         │                   │                   │                   │
-│         └───────────────────┴───────────────────┘                   │
-│                             │                                       │
-│                             ▼                                       │
-│                   ┌─────────────────┐                               │
-│                   │   LLM (Claude)  │                               │
-│                   │ Script Generator│                               │
-│                   └────────┬────────┘                               │
-│                            │                                        │
-│                            ▼                                        │
-│                   ┌─────────────────┐                               │
-│                   │   script.md     │  ◄── ~5,200 words             │
-│                   │  + Directives   │      ~35 min spoken           │
-│                   └────────┬────────┘                               │
-│                            │                                        │
-│         ┌──────────────────┼──────────────────┐                    │
-│         ▼                  ▼                  ▼                     │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐             │
-│  │  Section 1  │    │  Section 2  │    │  Section 3  │             │
-│  │ Foundation  │    │  Evidence   │    │ Application │             │
-│  │ (~12 min)   │    │  (~12 min)  │    │  (~11 min)  │             │
-│  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘             │
-│         │                  │                  │                     │
-│         ▼                  ▼                  ▼                     │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐             │
-│  │ Gemini TTS  │    │ Gemini TTS  │    │ Gemini TTS  │             │
-│  │   API       │    │   API       │    │   API       │             │
-│  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘             │
-│         │                  │                  │                     │
-│         ▼                  ▼                  ▼                     │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐             │
-│  │  WAV Audio  │    │  WAV Audio  │    │  WAV Audio  │             │
-│  │  part_1.wav │    │  part_2.wav │    │  part_3.wav │             │
-│  └──────┬──────┘    └──────┬──────┘    └──────┬──────┘             │
-│         │                  │                  │                     │
-│         └──────────────────┼──────────────────┘                    │
-│                            │                                        │
-│                            ▼                                        │
-│                   ┌─────────────────┐                               │
-│                   │    STITCHER     │                               │
-│                   │  + Room Tone    │                               │
-│                   └────────┬────────┘                               │
-│                            │                                        │
-│                            ▼                                        │
-│                   ┌─────────────────┐                               │
-│                   │   Final MP3     │                               │
-│                   │   128kbps       │                               │
-│                   │   ~30MB/35min   │                               │
-│                   └─────────────────┘                               │
-│                                                                      │
-└─────────────────────────────────────────────────────────────────────┘
++---------------------------------------------------------------------+
+|                     TEXT-FIRST AUDIO PIPELINE                        |
++---------------------------------------------------------------------+
+|                                                                      |
+|  +--------------+    +--------------+    +--------------+          |
+|  |  report.md   |    | p3-briefing  |    |  sources.md  |          |
+|  |  (~18KB)     |    |  (~60KB)     |    |  (~10KB)     |          |
+|  +------+-------+    +------+-------+    +------+-------+          |
+|         |                   |                   |                   |
+|         +-------------------+-------------------+                   |
+|                             |                                       |
+|                             v                                       |
+|                   +-----------------+                               |
+|                   |   LLM (Claude)  |                               |
+|                   | Script Generator|                               |
+|                   +--------+--------+                               |
+|                            |                                        |
+|                            v                                        |
+|                   +-----------------+                               |
+|                   |   script.md     |  <-- ~5,200 words             |
+|                   |  + Directives   |      ~35 min spoken           |
+|                   +--------+--------+                               |
+|                            |                                        |
+|         +------------------+------------------+                    |
+|         v                  v                  v                     |
+|  +-------------+    +-------------+    +-------------+             |
+|  |  Section 1  |    |  Section 2  |    |  Section 3  |             |
+|  | Foundation  |    |  Evidence   |    | Application |             |
+|  | (~12 min)   |    |  (~12 min)  |    |  (~11 min)  |             |
+|  +------+------+    +------+------+    +------+------+             |
+|         |                  |                  |                     |
+|         v                  v                  v                     |
+|  +-------------+    +-------------+    +-------------+             |
+|  | Gemini TTS  |    | Gemini TTS  |    | Gemini TTS  |             |
+|  |   API       |    |   API       |    |   API       |             |
+|  +------+------+    +------+------+    +------+------+             |
+|         |                  |                  |                     |
+|         v                  v                  v                     |
+|  +-------------+    +-------------+    +-------------+             |
+|  |  WAV Audio  |    |  WAV Audio  |    |  WAV Audio  |             |
+|  |  part_1.wav |    |  part_2.wav |    |  part_3.wav |             |
+|  +------+------+    +------+------+    +------+------+             |
+|         |                  |                  |                     |
+|         +------------------+------------------+                    |
+|                            |                                        |
+|                            v                                        |
+|                   +-----------------+                               |
+|                   |    STITCHER     |                               |
+|                   |  + Room Tone    |                               |
+|                   +--------+--------+                               |
+|                            |                                        |
+|                            v                                        |
+|                   +-----------------+                               |
+|                   |   Final MP3     |                               |
+|                   |   128kbps       |                               |
+|                   |   ~30MB/35min   |                               |
+|                   +-----------------+                               |
+|                                                                      |
++---------------------------------------------------------------------+
 ```
 
 ---
@@ -130,7 +197,7 @@ audio_data = response.candidates[0].content.parts[0].inline_data.data
 | Kore | Female alternative |
 | Charon | Male alternative |
 | Puck | Lighter tone |
-| Zephyr | — |
+| Zephyr | -- |
 | Aoede | Female |
 | Achernar | Female |
 
@@ -170,7 +237,7 @@ you knew about cardiovascular health.
 Here's where it gets interesting...
 
 [EMPHASIS: strong]
-The effect size was 0.8—that's substantial.
+The effect size was 0.8--that's substantial.
 
 [PAUSE: 1.2s]
 [VOICE: matter-of-fact, precise]
@@ -401,7 +468,7 @@ We opened with [reference to hook]. Now you understand why [resolution].
 [VOICE: warm, encouraging]
 [PACE: measured, final]
 
-Find the full research and sources at research dot yuda dot me—that's
+Find the full research and sources at research dot yuda dot me--that's
 Y-U-D-A dot M-E.
 
 [PAUSE: 0.5s]
@@ -421,9 +488,9 @@ Until next time.
 PHASE 9: AUDIO GENERATION (Gemini TTS)
 
 ENTRY REQUIREMENTS:
-✓ report.md created (Phase 7)
-✓ sources.md available (validated links)
-✓ script.md created (Phase 8 - Script Generation)
+- report.md created (Phase 7)
+- sources.md available (validated links)
+- script.md created (Phase 8 - Script Generation)
 
 INPUT FILES:
 1. script.md (complete spoken script with directives, ~5,200 words)
@@ -437,10 +504,10 @@ WORK TO DO:
 6. Generate transcript from script (strip directives)
 
 EXIT CRITERIA:
-✓ YYYY-MM-DD-slug.mp3 exists (~30MB for 35 min)
-✓ Duration: 30-40 minutes (target ~35 min)
-✓ Natural prosody with emotional variation
-✓ All sections stitched seamlessly
+- YYYY-MM-DD-slug.mp3 exists (~30MB for 35 min)
+- Duration: 30-40 minutes (target ~35 min)
+- Natural prosody with emotional variation
+- All sections stitched seamlessly
 ```
 
 ### 6.2 Single-Call vs Split Generation
@@ -620,7 +687,7 @@ if __name__ == "__main__":
 
 Before TTS generation:
 
-- [ ] Word count ~5,200 (±500)
+- [ ] Word count ~5,200 (+/-500)
 - [ ] Three sections clearly marked with `[TRANSITION: new section]`
 - [ ] Opening hook present
 - [ ] Brand + mission statement included
@@ -663,19 +730,19 @@ After generation:
 
 ```
 episode-directory/
-├── research/
-│   ├── p1-brief.md
-│   ├── p2-*.md
-│   └── p3-briefing.md
-├── report.md              # Research synthesis
-├── sources.md             # Validated links
-├── script.md              # NEW: Full TTS script with directives
-├── YYYY-MM-DD-slug.mp3    # Final audio
-├── YYYY-MM-DD-slug_transcript.txt  # Plain text (directives stripped)
-└── tmp/
-    ├── section_1.wav      # Intermediate (deleted after stitch)
-    ├── section_2.wav
-    └── section_3.wav
+|-- research/
+|   |-- p1-brief.md
+|   |-- p2-*.md
+|   +-- p3-briefing.md
+|-- report.md              # Research synthesis
+|-- sources.md             # Validated links
+|-- script.md              # NEW: Full TTS script with directives
+|-- YYYY-MM-DD-slug.mp3    # Final audio
+|-- YYYY-MM-DD-slug_transcript.txt  # Plain text (directives stripped)
++-- tmp/
+    |-- section_1.wav      # Intermediate (deleted after stitch)
+    |-- section_2.wav
+    +-- section_3.wav
 ```
 
 ---
@@ -734,5 +801,6 @@ grep GOOGLE_API_KEY /Users/valorengels/.env
 
 ---
 
-*Last Updated: 2025-12-24*
-*Version: 3.0 - TTS-based approach*
+*Original Document: 2025-12-24*
+*Status Update: 2026-02-05*
+*Version: 3.0 - TTS-based approach (archived - NotebookLM implemented instead)*
