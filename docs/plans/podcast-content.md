@@ -1,8 +1,99 @@
 # Yudame Research Podcast: Episode Planning Framework
 
-**Version:** 3.0
-**Last Updated:** 2025-12-24
-**Purpose:** Comprehensive reference and operational instructions for structuring 35-minute single-host educational podcast episodes with TTS-ready scripts.
+**Version:** 3.1
+**Last Updated:** 2026-02-05
+**Purpose:** Comprehensive reference and operational instructions for structuring 35-minute educational podcast episodes.
+
+---
+
+## Status Update (2026-02-05)
+
+### Implementation Summary
+
+This document was originally created for a **single-host TTS workflow** (Gemini TTS API). The podcast system has since evolved to use **NotebookLM's two-host AI format**. Many planning concepts remain valuable, but the TTS-specific generation pipeline is now obsolete.
+
+### What's Been Implemented
+
+#### Wave 1 (Research & Synthesis) - COMPLETE AND VALIDATED
+
+The following improvements are now enforced in the workflow (validated on Stablecoin Ep. 8, Feb 4 2026):
+
+| Task | Description | Status |
+|------|-------------|--------|
+| **B1.1** | Depth Distribution Analysis | ✅ Required in p3-briefing.md, blocking exit criteria |
+| **B1.2** | Counterpoint Discovery | ✅ Required for dialogue opportunities |
+| **B1.3** | Practical Implementation Audit | ✅ Ensures actionable content with specifics |
+| **B2.1** | Takeaway Clarity | ✅ Explicit takeaways required in synthesis |
+| **B2.2** | Story Bank | ✅ Stories collected with memorability ratings |
+
+**Validation Results:** Pre-refactoring 28/50 (56%) -> Post-Wave 1 44/50 (88%), +16 points improvement.
+
+**Artifacts:**
+- Enhanced template: `docs/templates/p3-briefing-enhanced.md`
+- Workflow enforcement: `.claude/skills/new-podcast-episode.md` (Phase 6 exit criteria)
+- Synthesis agent: `.claude/agents/podcast-synthesis-writer.md` (input validation)
+
+#### Wave 2 (Episode Planning) - TEMPLATE CREATED, READY FOR IMPLEMENTATION
+
+The enhanced content plan template exists at `docs/templates/content_plan-enhanced.md` with:
+
+| Task | Description | Status |
+|------|-------------|--------|
+| **A1.1** | Episode Structure Map | ✅ Template created - maps philosophical, practical, storytelling, analytical modes |
+| **A1.2** | Mode-Switching Framework | ✅ Template created - defines 5 modes with language markers |
+| **A1.3** | Signposting Language | ✅ Template created - transition phrases for NotebookLM |
+| **A1.4** | Depth Budget | ✅ Template created - time allocation with runtime constraint guidance |
+| **A2.1** | Problem -> Solution Architecture | ✅ Template created - separates problem exploration from solution |
+| **A2.2** | Build Toward Resolution | ✅ Template created - works backward from main takeaway |
+| **A2.3** | Counterpoint Moments Design | ✅ Template created - assigns speaker positions for debates |
+| **E1.1** | Update content_plan.md template | ✅ Template created at `docs/templates/content_plan-enhanced.md` |
+| **E1.2** | Create podcast-episode-planner skill | ✅ Created at `.claude/skills/podcast-episode-planner/SKILL.md` |
+
+**Artifacts:**
+- Enhanced template: `docs/templates/content_plan-enhanced.md`
+- Planner skill: `.claude/skills/podcast-episode-planner/SKILL.md`
+
+### What's Superseded or Obsolete
+
+| Original Section | Status | Replacement/Notes |
+|------------------|--------|-------------------|
+| Section 1.4: Output Pipeline (TTS phases) | Obsolete | NotebookLM handles audio generation directly |
+| Section 6: Episode Plan Output Format | Superseded | `docs/templates/content_plan-enhanced.md` has enhanced structure |
+| Appendix B: Script Generation with TTS Directives | Obsolete | No longer generate script.md; NotebookLM creates audio directly |
+| Appendix C: File Structure (script.md reference) | Obsolete | script.md no longer generated |
+| Section 7.1: Word count criteria for script.md | Obsolete | NotebookLM controls duration |
+
+### What Remains Valuable and Current
+
+| Section | Status | Notes |
+|---------|--------|-------|
+| Section 1.1-1.3: Core Mission, Persona, Episode Anatomy | ✅ Current | Foundational principles still apply |
+| Section 2: Section Structure (Blended Approach) | ✅ Current | WHY/WHAT/HOW ratios still apply |
+| Section 3: State Tracking Requirements | ✅ Current | Concepts established, callbacks |
+| Section 4: The Toolkit | ✅ Current | Opening hooks, clarity devices, takeaways |
+| Section 5: Episode Planning Process (conceptual) | ✅ Current | Enhanced by Wave 2 template |
+| Section 7.2-7.6: Quality Criteria (non-TTS) | ✅ Current | Adapted into quality scorecard |
+| Section 8: Quick Reference | ✅ Current | Useful reference tables |
+| Appendix A: Episode Type Examples | ✅ Current | Illustrative examples |
+
+### Future Work (Not Yet Implemented)
+
+**Wave 3 (Audio Generation Enhancement):**
+- [ ] A3.1 - Enhanced episodeFocus prompt with structural guidance
+- [ ] A3.2 - Dialogue Dynamics section for NotebookLM (counterpoint execution)
+- [ ] A3.3 - Episode Arc Template integration
+- [ ] E1.3 - Update notebooklm_prompt.py script
+
+**Wave 4 (Publishing & Productization):**
+- [ ] C1.1-C1.3 - Description enhancements, CTA framework, source presentations (HIGH PRIORITY - quick wins)
+- [ ] C2.1-C2.3 - Feed.xml metadata improvements (LOW PRIORITY)
+- [ ] C3.1-C3.2 - Companion resources, landing pages (MEDIUM PRIORITY)
+
+**Wave 5 (Quality Gates):**
+- [ ] E3.1 - Phase 8 exit criteria with counterpoint execution checks
+- [ ] E3.2 - Phase 11 exit criteria for packaging
+
+See `docs/plans/podcast_episode_improvements.md` for the complete task list, status, and lessons learned.
 
 ---
 
@@ -40,8 +131,6 @@ Transform rigorous academic research into accessible, engaging audio content tha
 
 **Total Duration:** ~35 minutes (acceptable range: 30-40 minutes)
 
-**Word Count:** ~5,200 words (at 150 wpm speaking pace)
-
 **Structure:** Three sections of approximately 12 minutes each
 
 | Section | Name | Duration Target | Primary Focus |
@@ -52,17 +141,19 @@ Transform rigorous academic research into accessible, engaging audio content tha
 
 ### 1.4 Output Pipeline
 
-**Two-Phase Generation:**
+> **Note:** This section updated for NotebookLM workflow. TTS pipeline is obsolete.
+
+**Current Pipeline (NotebookLM Two-Host):**
 
 ```
-Phase 1: Content Planning
-report.md + sources.md + research/*.md → content_plan.md (guidance)
+Phase 1-6: Research & Synthesis
+report.md + sources.md + p3-briefing.md -> content_plan.md (guidance)
 
-Phase 2: Script Generation
-content_plan.md + report.md → script.md (full TTS-ready script with directives)
+Phase 7-9: Audio Generation
+content_plan.md + report.md -> NotebookLM -> audio.mp3
 
-Phase 3: Audio Generation
-script.md → Gemini TTS API → audio.mp3
+Phase 10-11: Post-Processing & Publishing
+audio.mp3 -> transcription -> chapters -> feed.xml
 ```
 
 **Required Files:**
@@ -71,7 +162,7 @@ script.md → Gemini TTS API → audio.mp3
 | `report.md` | Synthesized research | 15-25KB |
 | `sources.md` | Validated citations | 5-10KB |
 | `content_plan.md` | Episode structure guide | 8-12KB |
-| `script.md` | Complete spoken script | 25-35KB (~5,200 words) |
+| `p3-briefing.md` | Master research briefing (Wave 1 enhanced) | 10-15KB |
 
 ---
 
@@ -110,7 +201,7 @@ Sections are not rigid silos. Each section has a primary focus with secondary an
 
 **Blend Ratio:** 70% WHAT / 20% WHY / 10% HOW
 
-**Purpose:** Present the evidence base—studies, data, perspectives—while maintaining connection to the foundational "why" and hinting at practical implications.
+**Purpose:** Present the evidence base - studies, data, perspectives - while maintaining connection to the foundational "why" and hinting at practical implications.
 
 **Content Focus:**
 - Key studies and their findings
@@ -141,7 +232,7 @@ Sections are not rigid silos. Each section has a primary focus with secondary an
 - Prioritized recommendations
 - Brief callbacks to the "why" for reinforcement
 - Clear, memorable takeaways
-- Episode summary using What → So What → Now What pattern (implicit, not stated)
+- Episode summary using What -> So What -> Now What pattern (implicit, not stated)
 
 **Micro-Structure:**
 
@@ -182,7 +273,7 @@ Repeat intentionally when:
 - Summarizing at section transitions
 - Reinforcing key takeaways in conclusion
 
-**Callback Format:** "As we discussed earlier, [brief concept]—this is why [new point]."
+**Callback Format:** "As we discussed earlier, [brief concept] - this is why [new point]."
 
 ---
 
@@ -197,11 +288,11 @@ Select appropriate tools based on episode context. Not all tools are used in eve
 | Hook Type | Description | Best For | Example Pattern |
 |-----------|-------------|----------|-----------------|
 | **Provocative Question** | Opens with a question that challenges assumptions | Topics where common beliefs are wrong | "What if everything you believe about X is fundamentally wrong?" |
-| **Surprising Statistic** | Specific number that triggers novelty response | Data-rich topics with counterintuitive findings | "X has Y times more Z than A—and that changes everything about how we should think about B." |
+| **Surprising Statistic** | Specific number that triggers novelty response | Data-rich topics with counterintuitive findings | "X has Y times more Z than A - and that changes everything about how we should think about B." |
 | **Bold Claim** | Confident statement of what listener will gain | Protocol-heavy episodes | "By the end of this episode, you'll understand exactly how to X, with specific protocols you can implement today." |
 | **In Medias Res Story** | Drops listener into the middle of action | Episodes with strong case studies | "The year is X. Researcher Y is staring at data that shouldn't exist. What they discovered would overturn decades of..." |
-| **Counterintuitive Claim** | Statement that contradicts common wisdom | Myth-busting episodes | "The experts have been wrong about this for decades—and the data finally shows us why." |
-| **Stakes Establishment** | Why this matters urgently | Health, business risk, time-sensitive topics | "This single factor predicts X better than any other—and most people are getting it completely wrong." |
+| **Counterintuitive Claim** | Statement that contradicts common wisdom | Myth-busting episodes | "The experts have been wrong about this for decades - and the data finally shows us why." |
+| **Stakes Establishment** | Why this matters urgently | Health, business risk, time-sensitive topics | "This single factor predicts X better than any other - and most people are getting it completely wrong." |
 
 **Usage Rules:**
 - Choose ONE hook type per episode
@@ -242,7 +333,7 @@ Select appropriate tools based on episode context. Not all tools are used in eve
 > "Study A, from [institution/year], found [finding]. Study B, from [institution/year], found [different/opposing finding]. Where they agree: [common ground]. Where they diverge: [specific disagreement]. The likely explanation for this discrepancy is [methodological difference / population difference / measurement difference]. For our purposes, this means [synthesis or actionable implication]."
 
 **Insufficient Confidence Dismissal Template:**
-> "The evidence on [specific sub-topic] is genuinely mixed—studies have produced conflicting results, and we can't include it in our protocols with confidence. What we *can* say is [whatever is established], so let's focus there."
+> "The evidence on [specific sub-topic] is genuinely mixed - studies have produced conflicting results, and we can't include it in our protocols with confidence. What we *can* say is [whatever is established], so let's focus there."
 
 ### 4.4 Clarity Devices
 
@@ -257,8 +348,8 @@ Select appropriate tools based on episode context. Not all tools are used in eve
 | **Rhyme/Rhythm** | Memorable phrasing for key principles | Foundational rules that should stick | MAX 1 per episode, use very rarely |
 
 **Everyday Analogy Examples:**
-- HRV: "Think of it like the responsiveness of your car's suspension—you want it to absorb bumps smoothly, not be rigid."
-- VO2 max: "It's essentially your body's horsepower—how much energy you can produce when you need it most."
+- HRV: "Think of it like the responsiveness of your car's suspension - you want it to absorb bumps smoothly, not be rigid."
+- VO2 max: "It's essentially your body's horsepower - how much energy you can produce when you need it most."
 - Polarized training: "It's like practicing piano: most of your time is slow, deliberate practice, but occasionally you perform at full intensity."
 
 **Mnemonic Decision Criteria:**
@@ -270,8 +361,8 @@ Before creating a mnemonic, ask:
 If yes to all three, consider a mnemonic. Otherwise, skip it.
 
 **Acronym Rule:** Always spell out acronyms on first use:
-- "polyunsaturated fatty acids, or PUFA" — then use "PUFA" freely
-- "high-intensity interval training, or HIIT" — then use "HIIT"
+- "polyunsaturated fatty acids, or PUFA" - then use "PUFA" freely
+- "high-intensity interval training, or HIIT" - then use "HIIT"
 
 ### 4.5 Takeaway Structures
 
@@ -292,9 +383,9 @@ If yes to all three, consider a mnemonic. Otherwise, skip it.
 - Dosage: "2-4 grams" not "some"
 
 **Practical Measures:** Use metric units (grams, ml) or intuitive descriptions:
-- "A handful of almonds" or "30 grams" — not "1 oz"
-- "A thumb-sized piece of cheese" — not "1.5 oz"
-- "A palm-sized portion of protein" — not "4 oz"
+- "A handful of almonds" or "30 grams" - not "1 oz"
+- "A thumb-sized piece of cheese" - not "1.5 oz"
+- "A palm-sized portion of protein" - not "4 oz"
 
 ### 4.6 Narrative Devices
 
@@ -318,14 +409,14 @@ If yes to all three, consider a mnemonic. Otherwise, skip it.
 
 | Technique | Frequency | Implementation |
 |-----------|-----------|----------------|
-| **Content type rotation** | Every 5-7 minutes | Cycle through: explanation → example → insight → story → implication |
+| **Content type rotation** | Every 5-7 minutes | Cycle through: explanation -> example -> insight -> story -> implication |
 | **Pattern interrupts** | Every 7-10 minutes | Vocal shift, topic pivot, direct address, or meta-commentary |
 | **Open loops** | 1-2 per section max | Introduce a question answered later; always close before episode ends |
 | **Signposting** | At every major transition | Explicit markers: "Key point here...", "This brings us to...", "The crucial finding is..." |
 
 ### 4.8 Solo Host Energy Techniques
 
-**Adapted from two-host dialogue patterns for single-host format:**
+> **Note:** These techniques apply to single-host format. For NotebookLM two-host format, see Counterpoint Moments Design in `docs/templates/content_plan-enhanced.md`.
 
 | Technique | Description | Example |
 |-----------|-------------|---------|
@@ -347,18 +438,18 @@ If yes to all three, consider a mnemonic. Otherwise, skip it.
 - Use only when multiple lines of reasoning genuinely require it
 - Always close loops before episode ends
 - Target curiosity around key learning points
-- Avoid manufactured cliffhangers—these feel manipulative in educational content
+- Avoid manufactured cliffhangers - these feel manipulative in educational content
 
 ### 4.9 Summary Patterns
 
-**"What → So What → Now What" (Implicit)**
+**"What -> So What -> Now What" (Implicit)**
 
 Use this three-part pattern for any concise summary (intro preview, section transitions, episode conclusion) WITHOUT stating the words "what, so what, now what" explicitly.
 
 | Component | Function | Example |
 |-----------|----------|---------|
 | **What** | State the finding/concept | "Exercise intensity matters more than duration for cardiovascular adaptation." |
-| **So What** | Why it matters | "This means you can achieve better results in less time—if you structure it correctly." |
+| **So What** | Why it matters | "This means you can achieve better results in less time - if you structure it correctly." |
 | **Now What** | What to do | "Aim for 2-3 high-intensity sessions per week, keeping 80% of your training easy." |
 
 **Conclusion Callback Requirement:** The episode conclusion must reference or resolve the opening hook, creating a complete arc.
@@ -373,7 +464,7 @@ For episodes involving strategic analysis or future projection, use Nancy Duarte
 3. Return to current state with new problem/opportunity
 4. Return to aspirational state with solution
 5. Repeat until convergence
-6. End on "new bliss"—the achievable future state
+6. End on "new bliss" - the achievable future state
 
 **Use Only For:** Business strategy, market analysis, speculative forward-looking episodes
 
@@ -382,6 +473,8 @@ For episodes involving strategic analysis or future projection, use Nancy Duarte
 ---
 
 ## 5. Episode Planning Process
+
+> **Note:** This section provides conceptual guidance. For the full enhanced template with Wave 2 improvements (A1.1-A1.4, A2.1-A2.3, E1.1-E1.2), see `docs/templates/content_plan-enhanced.md`.
 
 ### 5.1 Required Inputs
 
@@ -456,7 +549,17 @@ Produce structured content for each section with:
 
 ## 6. Episode Plan Output Format
 
-**Important:** Plans provide structural guidance, not word-for-word scripts. Content blocks describe what to cover and key points to make — the presenter (or audio generation) creates the actual spoken words.
+> **Superseded by Wave 2 Improvements:** The full enhanced template is now at `docs/templates/content_plan-enhanced.md`. That template includes:
+> - Episode Structure Map (A1.1)
+> - Mode-Switching Framework (A1.2)
+> - Signposting Language (A1.3)
+> - Depth Budget (A1.4)
+> - Problem -> Solution Architecture (A2.1)
+> - Build Toward Resolution (A2.2)
+> - Counterpoint Moments Design (A2.3)
+> - Quality Checklist (E3.1)
+
+For reference, the basic structure is:
 
 ```markdown
 # Episode Plan: [Episode Title]
@@ -465,159 +568,36 @@ Produce structured content for each section with:
 - Series: [Series name or "Standalone"]
 - Position: [Opener / Middle / Closer / Standalone]
 - Core Question: [The question this episode answers]
-- Perspective: [The angle/lens for this episode]
-- Episode Type: [Consensus/Contested] + [Concept-heavy/Protocol-heavy/Balanced]
-- Target Duration: ~36 minutes
+- Episode Type: [Evidence status] + [Content density]
 
 ## Toolkit Selections
 - Hook Type: [Selected hook]
-- Series Modifiers: [If applicable]
-- Contradiction Handling: [If applicable]
 - Takeaway Structure: [Selected structure]
-- Narrative Devices: [If any]
-- Memorability Device: [If any, with justification]
+- Contradiction Handling: [Approach if applicable]
 
----
+## NotebookLM Guidance
+[Opening instructions, key terms, studies to emphasize, narrative arc]
 
-## Section 1: Foundation (~12 min)
+## Section Plans
+[Foundation, Evidence, Application with specifics]
 
-### Objectives
-- [Primary objective]
-- [Secondary objective]
-
-### Opening Hook
-[Specific hook content - first 60-90 seconds]
-
-### Roadmap
-[Brief preview of three sections - 60 seconds]
-
-### Content Blocks
-
-**Block 1: [First major concept]**
-- Key points: [...]
-- Analogy/device: [if applicable]
-- Terms to define: [...]
-- Duration: ~X minutes
-
-**Block 2: [Second major concept]**
-- Key points: [...]
-- Duration: ~X minutes
-
-### Section 1 Synthesis
-[Brief synthesis connecting concepts - 90 seconds]
-
-### Transition to Section 2
-[Bridge language with forward momentum]
-
-### State Tracking: Section 1 Complete
-- Terms defined: [list]
-- Concepts established: [list]
-- Open loops: [if any]
-
----
-
-## Section 2: Evidence (~12 min)
-
-### Section Hook
-[Re-engage and establish section focus - 60 seconds]
-
-### Evidence Block A: [Study/Perspective Cluster 1]
-- Studies: [list with key findings]
-- Key insight: [...]
-- Duration: ~4 minutes
-
-### Evidence Block B: [Study/Perspective Cluster 2]
-- Studies: [list with key findings]
-- Key insight: [...]
-- Duration: ~3 minutes
-
-### Evidence Synthesis
-- Where evidence agrees: [...]
-- Where evidence conflicts: [...]
-- Why the conflict exists: [...]
-- Duration: ~2 minutes
-
-### Implications
-[Bridge toward application - 90 seconds]
-
-### Transition to Section 3
-[Bridge language]
-
-### State Tracking: Section 2 Complete
-- Studies referenced: [list by shorthand]
-- Synthesis conclusions: [list]
-- Open questions: [if any]
-
----
-
-## Section 3: Application (~12 min)
-
-### Section Hook
-[Transition to action - 60 seconds]
-
-### Protocols
-
-**Protocol 1: [Name]**
-- Specific parameters: [timing, duration, frequency, dosage as applicable]
-- Who this applies to: [...]
-- Callback to mechanism: [brief reference to Section 1]
-
-**Protocol 2: [Name]**
-- Specific parameters: [...]
-- Caveats: [...]
-
-### Caveats and Context
-- Who this applies to: [...]
-- Who should modify: [...]
-- Limitations: [...]
-
-### Episode Synthesis
-[What → So What → Now What pattern, implicit]
-
-### Callback to Opening Hook
-[How the opening is resolved/referenced]
-
-### Final Thought
-[Closing statement]
-
-### Open Loops Closed
-- [Confirm all loops closed]
-
----
-
-## Branded Elements
-
-### Opening Sequence (in order)
-
-**1. Hook** (60-90 seconds)
-[Selected hook type - stakes, question, story, etc.]
-
-**2. Brand + Mission Statement** (30 seconds)
-"Welcome to Yudame Research. Our mission today is [specific]: [what listener will understand/be able to do by the end]."
-
-Example: "Welcome to Yudame Research. Our mission today is very specific: we're designing an evidence-based roadmap for optimizing cardiovascular health through diet—and by the end, you'll have concrete protocols you can implement this week."
-
-**3. Research Process Summary** (30 seconds)
-Ground the listener in the rigor before revealing findings:
-- "To answer this question, we synthesized [N] peer-reviewed studies, [N] meta-analyses, and consulted primary sources from [institutions]. Here's what the evidence actually shows."
-
-**4. Roadmap** (60 seconds)
-Brief preview of the three sections.
-
-### Closing
-"Find the full research and sources at research dot yuda dot me—that's Y-U-D-A dot M-E. Until next time."
+## Quality Checklist
+[Pre-generation verification]
 ```
+
+**Use `docs/templates/content_plan-enhanced.md` for the complete enhanced template with Wave 2 improvements.**
 
 ---
 
 ## 7. Quality Criteria
+
+> **Note:** These criteria have been expanded into a 10-dimension quality scorecard. See `.claude/skills/podcast-quality-scorecard/SKILL.md` for the full framework. The scorecard is now applied to every episode.
 
 ### 7.1 Structure
 
 - [ ] Three sections with blended focus (WHY/WHAT/HOW ratios respected)
 - [ ] Each section has beginning, middle, end micro-structure
 - [ ] Total content maps to ~35 minutes (30-40 acceptable)
-- [ ] Word count ~5,200 (±500) for script.md
 - [ ] No section exceeds 14 minutes or falls below 10 minutes
 
 ### 7.2 Clarity
@@ -654,7 +634,7 @@ Brief preview of the three sections.
 - [ ] Opening hook connects to closing callback
 - [ ] Section transitions feel natural, not abrupt
 - [ ] Episode answers its stated core question
-- [ ] "What → So What → Now What" pattern implicit in summaries
+- [ ] "What -> So What -> Now What" pattern implicit in summaries
 
 ---
 
@@ -694,7 +674,7 @@ Brief preview of the three sections.
 
 ### 8.4 Callback Language Templates
 
-- "As we covered in Section 1, [concept]—this is exactly why [new point]."
+- "As we covered in Section 1, [concept] - this is exactly why [new point]."
 - "Remember the mechanism we discussed? [Brief reference]. This study shows it in action."
 - "This brings us back to [opening hook reference]. Now you understand why."
 - "The [term defined earlier] we discussed is what's driving this effect."
@@ -747,186 +727,56 @@ Brief preview of the three sections.
 
 ---
 
-## Appendix B: Script Generation with TTS Directives
+## Appendix B: TTS Script Generation (OBSOLETE)
 
-This planning framework produces `content_plan.md` which guides generation of `script.md` — the complete spoken script with embedded TTS directives.
-
-### Text-First Pipeline
-
-The audio generation uses a text-first approach: generate the complete script, then convert to audio via Gemini TTS API. This provides full duration control (word count = audio length).
-
-```
-content_plan.md + report.md + sources.md
-           ↓
-    LLM (Claude) generates script.md
-           ↓
-    script.md (5,200 words with directives)
-           ↓
-    Split at [TRANSITION: new section] markers
-           ↓
-    Gemini TTS API (3 sections)
-           ↓
-    Stitch + export MP3
-```
-
-### TTS Directive Syntax
-
-Directives are embedded inline in the script. Gemini TTS interprets natural language style cues.
-
-**Categories:**
-
-| Directive | Options | Usage |
-|-----------|---------|-------|
-| `[VOICE: ...]` | warm, authoritative, curious, skeptical, emphatic, reflective, matter-of-fact, precise | Set emotional tone |
-| `[PACE: ...]` | measured, slightly faster, slower, building energy, deliberate | Control speaking speed |
-| `[PAUSE: ...]` | 0.3s, 0.5s, 0.8s, 1.2s, 2.0s | Insert silence |
-| `[EMPHASIS: ...]` | strong, subtle | Word-level stress |
-| `[TRANSITION: ...]` | new section, callback, revelation | Structural markers |
-
-**Example:**
-
-```markdown
-[VOICE: warm, authoritative]
-[PACE: measured]
-
-Welcome to Yudame Research.
-
-[PAUSE: 0.8s]
-
-Today, we're examining something that challenges everything you thought
-you knew about cardiovascular health.
-
-[PACE: building energy]
-[VOICE: curious, leaning in]
-
-Here's where it gets interesting...
-
-[EMPHASIS: strong]
-The effect size was 0.8—that's substantial.
-
-[TRANSITION: new section]
-[PAUSE: 1.2s]
-```
-
-### Voice Identity Mapping
-
-From `docs/design/VOICE-IDENTITY.md`:
-
-| Context | Directive |
-|---------|-----------|
-| Introducing a topic | `[VOICE: curious, inviting]` |
-| Explaining methodology | `[VOICE: precise, matter-of-fact]` |
-| Revealing key findings | `[VOICE: energized, emphatic]` |
-| Challenging assumptions | `[VOICE: direct, confident]` |
-| Synthesizing conclusions | `[VOICE: thoughtful, assured]` |
-| Call to action | `[VOICE: warm, encouraging]` |
-
-### Script Structure
-
-The script follows the three-section structure with `[TRANSITION: new section]` markers used to split for TTS generation:
-
-```markdown
-# [Episode Title] - Full Script
-
-[VOICE: warm, authoritative]
-
-## Opening Hook (90 seconds)
-[Hook content...]
-
-[PAUSE: 1.2s]
-
-## Brand + Mission (30 seconds)
-Welcome to Yudame Research. Our mission today is [specific goal]...
-
-## Research Process Summary (30 seconds)
-[VOICE: matter-of-fact]
-To answer this question, we synthesized [N] studies...
-
-## Roadmap (60 seconds)
-[3-section preview...]
-
-[TRANSITION: new section]
-[PAUSE: 1.5s]
-
----
-
-## Section 1: Foundation (~12 minutes)
-[VOICE: curious, building understanding]
-[Content with embedded directives...]
-
-[TRANSITION: new section]
-[PAUSE: 1.2s]
-
----
-
-## Section 2: Evidence (~12 minutes)
-[VOICE: analytical, building credibility]
-[Content...]
-
-[TRANSITION: new section]
-[PAUSE: 1.2s]
-
----
-
-## Section 3: Application (~11 minutes)
-[VOICE: practical, actionable]
-[Content...]
-
-### Closing
-[VOICE: warm, encouraging]
-Find the full research and sources at research dot yuda dot me—that's
-Y-U-D-A dot M-E.
-
-Until next time.
-
-[PAUSE: 2.0s]
-```
-
-### Script Writing Guidelines
-
-When writing `script.md`:
-
-1. **Target word count** - 5,200 words (±500) for 35-minute episode
-2. **Distribute directives** - Every 2-3 paragraphs, not clustered
-3. **Use section transitions** - Mark with `[TRANSITION: new section]` for TTS splitting
-4. **Include pauses** - Natural breath points, emphasis moments
-5. **Match voice to content** - Use directive mapping from voice identity
-6. **Write for ear** - Spoken rhythm, not written prose
-
-### Quality Checklist
-
-Before TTS generation:
-
-- [ ] Word count ~5,200 (±500)
-- [ ] Three sections marked with `[TRANSITION: new section]`
-- [ ] Opening hook + brand + research summary + roadmap present
-- [ ] Closing with website URL
-- [ ] Directives distributed throughout
-- [ ] Technical terms defined on first use
-- [ ] Protocols include specific parameters
+> **Status:** This section described the Gemini TTS-based script generation workflow. The podcast system now uses NotebookLM's two-host AI format, which handles audio generation internally.
+>
+> For historical reference, the TTS pipeline involved:
+> - Generating `script.md` with ~5,200 words and TTS directives
+> - Splitting at `[TRANSITION: new section]` markers
+> - Processing through Gemini TTS API in 3 sections
+> - Stitching and exporting MP3
+>
+> **Current Workflow:** Upload `content_plan.md` and research materials to NotebookLM, which generates the audio directly.
 
 ---
 
 ## Appendix C: File Structure
 
-Complete episode directory:
+Current episode directory structure:
 
 ```
 podcast/episodes/[series]/[episode-slug]/
 ├── research/
 │   ├── p1-brief.md           # Phase 1 research query
 │   ├── p2-*.md               # Phase 2 research results
-│   └── p3-briefing.md        # Phase 3 synthesis
+│   └── p3-briefing.md        # Phase 3 synthesis (enhanced with Wave 1)
 ├── report.md                 # Narrative synthesis (~18KB)
 ├── sources.md                # Validated links (~8KB)
 ├── content_plan.md           # Episode structure (~10KB)
-├── script.md                 # TTS script with directives (~30KB)
 ├── YYYY-MM-DD-slug.mp3       # Final audio (~30MB)
-├── YYYY-MM-DD-slug_transcript.txt  # Plain text (directives stripped)
-└── cover.png                 # Episode artwork
+├── YYYY-MM-DD-slug_transcript.json  # Whisper output
+├── YYYY-MM-DD-slug_chapters.txt     # FFmpeg metadata
+├── YYYY-MM-DD-slug_chapters.json    # Podcasting 2.0
+└── logs/
+    ├── metadata.md           # Episode metadata
+    └── quality_scorecard.md  # Quality assessment
 ```
+
+**Note:** `script.md` is no longer generated. Audio is produced directly by NotebookLM.
 
 ---
 
-*Version 3.0 - TTS-based approach*
-*Status: Active*
+## Related Documents
+
+- **Enhanced Content Plan Template:** `docs/templates/content_plan-enhanced.md`
+- **Enhanced Research Briefing Template:** `docs/templates/p3-briefing-enhanced.md`
+- **Episode Planner Skill:** `.claude/skills/podcast-episode-planner/SKILL.md`
+- **Quality Scorecard:** `.claude/skills/podcast-quality-scorecard/SKILL.md`
+- **Improvement Plan:** `docs/plans/podcast_episode_improvements.md`
+- **Main Workflow:** `.claude/skills/new-podcast-episode.md`
+
+---
+
+*Version 3.1 - Updated for NotebookLM workflow, Wave 1-2 improvements documented*
+*Status: Active (with noted obsolete sections)*
