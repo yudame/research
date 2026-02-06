@@ -10,42 +10,66 @@ This is a dual-purpose repository:
 
 ## Podcast Workflow Architecture
 
-The podcast creation follows a 7-phase workflow defined in `.claude/skills/new-podcast-episode.md`. The user handles research and audio creation (NotebookLM), while Claude handles file processing, transcription, and publishing.
+The podcast creation follows a **12-phase workflow** defined in `.claude/skills/new-podcast-episode.md`. The system uses NotebookLM for two-host AI audio generation with comprehensive quality controls.
+
+### Quality Framework (Waves 1-5)
+
+The workflow has been enhanced through 5 waves of improvements validated on Episode 8 (44/50 score):
+
+| Wave | Focus | Key Artifacts |
+|------|-------|---------------|
+| Wave 1 | Research & Synthesis | `docs/templates/p3-briefing-enhanced.md` |
+| Wave 2 | Episode Planning | `docs/templates/content_plan-enhanced.md` |
+| Wave 3 | Audio Generation | NotebookLM episodeFocus enhancements |
+| Wave 4 | Publishing | `docs/templates/metadata-enhanced.md` |
+| Wave 5 | Quality Gates | Exit criteria enforcement |
 
 ### Complete Episode Structure
 ```
 podcast/episodes/YYYY-MM-DD-topic-slug/
 ├── research/
-│   ├── sources.md          # Validated source links
-│   ├── documents/          # PDFs, articles
-│   └── assets/             # Images, charts
-├── report.md               # Research report (~20KB)
-├── YYYY-MM-DD-slug.mp3     # Final audio with chapters (~30MB, 128kbps)
-├── YYYY-MM-DD-slug_transcript.json    # Whisper output (~400KB)
-├── YYYY-MM-DD-slug_chapters.txt       # FFmpeg metadata format
-└── YYYY-MM-DD-slug_chapters.json      # Podcasting 2.0 format
+│   ├── p1-brief.md              # Research query
+│   ├── p2-*.md                  # Research results
+│   ├── p3-briefing.md           # Master briefing (Wave 1 enhanced)
+│   ├── sources.md               # Validated source links
+│   ├── documents/               # PDFs, articles
+│   └── assets/                  # Images, charts
+├── report.md                    # Narrative synthesis (~18KB)
+├── sources.md                   # Validated links (~8KB)
+├── content_plan.md              # Episode structure (~10KB)
+├── YYYY-MM-DD-slug.mp3          # Final audio (~30MB, 128kbps)
+├── YYYY-MM-DD-slug_transcript.json
+├── YYYY-MM-DD-slug_chapters.txt
+├── YYYY-MM-DD-slug_chapters.json
+├── companion/                   # One-pagers, checklists (Wave 4)
+│   ├── *-summary.md
+│   ├── *-checklist.md
+│   └── *-frameworks.md
+├── index.html                   # Landing page (Wave 4)
+└── logs/
+    ├── metadata.md              # Publishing metadata
+    └── quality_scorecard.md     # 10-dimension quality assessment
 ```
+
+### Key Tools (`podcast/tools/`)
+
+| Script | Purpose |
+|--------|---------|
+| `notebooklm_api.py` | NotebookLM Enterprise API integration |
+| `notebooklm_prompt.py` | Generate episodeFocus prompts |
+| `transcribe_only.py` | Local Whisper transcription |
+| `generate_chapters.py` | AI-powered chapter generation |
+| `update_feed.py` | Update feed.xml with new episode |
+| `generate_companion_resources.py` | Create summary, checklist, frameworks (Wave 4) |
+| `generate_landing_page.py` | Generate HTML episode page (Wave 4) |
 
 ### Audio Processing Commands
-
-**Convert m4a to mp3:**
-```bash
-cd podcast/episodes/YYYY-MM-DD-slug
-ffmpeg -i "original.m4a" -codec:a libmp3lame -b:a 128k "YYYY-MM-DD-slug.mp3" -y
-```
 
 **Generate transcript (local Whisper):**
 ```bash
 cd podcast/tools
 uv run python transcribe_only.py ../episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 --model base
 ```
-
-**Note:** Always use `uv run python` to ensure correct virtual environment with Whisper dependencies.
-
-Whisper model options:
-- `tiny` - Fastest (~1-2 min for 30 min audio), basic accuracy
-- `base` - **Recommended** (~5-10 min), good accuracy
-- `small` - Slower (~15-20 min), better accuracy
 
 **Embed chapters into mp3:**
 ```bash
@@ -54,10 +78,11 @@ ffmpeg -i YYYY-MM-DD-slug.mp3 -i YYYY-MM-DD-slug_chapters.txt -map_metadata 1 -c
 mv temp.mp3 YYYY-MM-DD-slug.mp3
 ```
 
-**Get file metadata:**
+**Generate companion resources:**
 ```bash
-ls -l file.mp3 | awk '{print $5}'  # File size in bytes
-# Duration appears in ffmpeg output during conversion
+cd podcast/tools
+python generate_companion_resources.py ../episodes/YYYY-MM-DD-slug/
+python generate_landing_page.py ../episodes/YYYY-MM-DD-slug/
 ```
 
 ### Chapter Guidelines
@@ -71,8 +96,8 @@ ls -l file.mp3 | awk '{print $5}'  # File size in bytes
 
 ### Publishing Workflow
 
-1. Update `podcast/feed.xml` with new `<item>` block (insert after `<channel>` metadata, before other episodes)
-2. Include: title, description with report link, validated source links, pubDate (RFC 2822), enclosure URL/length/type, duration, keywords
+1. Update `podcast/feed.xml` using `update_feed.py` or manually
+2. Include: title, description, "What You'll Learn", timestamps, resources, CTAs
 3. Commit with descriptive message using heredoc format
 4. GitHub Pages deploys automatically in 2-3 minutes
 
@@ -87,10 +112,9 @@ ls -l file.mp3 | awk '{print $5}'  # File size in bytes
 - Keep repo under 1GB total
 
 ### Git Practices
-- Use TodoWrite tool to track progress through podcast workflow phases
+- Use TodoWrite tool to track progress through workflow phases
 - Use heredoc format for multi-line commit messages
 - Commit only when explicitly requested by user
-- Source files (.m4a) are gitignored - only commit final .mp3
 
 ### File Naming Convention
 - Episodes: `YYYY-MM-DD-topic-slug.mp3`
@@ -106,28 +130,20 @@ Configuration:
 - `.nojekyll` file present (disables Jekyll processing)
 - Auto-deploys on push to main
 
-Verify settings: Repository Settings → Pages
-
-## Tools & Dependencies
-
-### Podcast Tools (`podcast/tools/`)
-- `transcribe_only.py` - Local Whisper transcription (no API key needed)
-- `generate_chapters.py` - Whisper + Claude chapter generation (requires Anthropic API key)
-- `requirements.txt` - Python dependencies (`openai-whisper`, `anthropic`)
-
-### System Requirements
+## System Requirements
 - Python 3.12
 - FFmpeg 8.0
 - Git
+- API keys in `.env`: ANTHROPIC_API_KEY, OPENROUTER_API_KEY, OPENAI_API_KEY
 
-First-time Whisper setup (macOS):
-```bash
-# Fix SSL certificates (one-time)
-/Applications/Python\ 3.12/Install\ Certificates.command
+## Key Documentation
 
-# Dependencies auto-managed by uv - no manual install needed
-# Just use: uv run python transcribe_only.py ...
-```
+| Document | Purpose |
+|----------|---------|
+| `.claude/skills/new-podcast-episode.md` | Complete 12-phase workflow |
+| `docs/plans/podcast_episode_improvements.md` | Improvement roadmap (37 tasks, 6 waves) |
+| `docs/plans/podcast-content.md` | Content framework reference |
+| `.claude/skills/podcast-quality-scorecard/SKILL.md` | 10-dimension quality assessment |
 
 ## Learning Research Context
 
@@ -155,26 +171,19 @@ When helping craft research prompts for episodes:
 - Include contradictory findings and uncertainties
 - Cite specific studies and sources
 
-Template in `.claude/skills/new-podcast-episode.md` lines 69-87.
-
 ## Episode Description Best Practices
 
 - 1-2 compelling sentences highlighting key topics and takeaways
-- Always include link to full report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
-- Add "Key Sources:" section with 3-5 validated official links
-- Prioritize: official legislation/regulation, academic analysis, primary sources
-- Use WebSearch to find and WebFetch to validate official URLs when possible
+- Include "What You'll Learn" section (3-5 bullets)
+- Add key timestamps for navigation
+- Group resources by type with actionable descriptions
+- Always include link to full report
+- Include clear call-to-action
 
 ## Common Workflows
 
 ### Adding a New Podcast Episode
-Use the `/podcast-episode` slash command with the topic, which triggers the complete 7-phase workflow from `.claude/skills/new-podcast-episode.md`.
-
-### Purging Old Episodes (when approaching limits)
-```bash
-# Use BFG Repo-Cleaner to remove large files from git history
-# Then force push with --force flag
-```
+Use the `/podcast-episode` slash command with the topic, which triggers the complete 12-phase workflow from `.claude/skills/new-podcast-episode.md`.
 
 ### Validating Feed
 After updating feed.xml, check:
@@ -183,4 +192,3 @@ After updating feed.xml, check:
 - Correct duration format (MM:SS or HH:MM:SS)
 - RFC 2822 date format for pubDate
 - All URLs accessible
-- the api keys for Open Router and OpenAI are in .env
