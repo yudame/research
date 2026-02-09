@@ -1,61 +1,18 @@
 {
   "version": "1.2.0",
   "chapters": [
-    {
-      "startTime": 0,
-      "title": "Introduction"
-    },
-    {
-      "startTime": 52,
-      "title": "The 70% Rule Myth"
-    },
-    {
-      "startTime": 190,
-      "title": "Key Terms Defined"
-    },
-    {
-      "startTime": 388,
-      "title": "Economics of Delegation"
-    },
-    {
-      "startTime": 575,
-      "title": "Psychological Barriers"
-    },
-    {
-      "startTime": 710,
-      "title": "Identity Attachment and Feedback Addiction"
-    },
-    {
-      "startTime": 850,
-      "title": "Hiring for Learning Agility"
-    },
-    {
-      "startTime": 1015,
-      "title": "The Diagnostic Interview Question"
-    },
-    {
-      "startTime": 1125,
-      "title": "The Founder Mode Debate"
-    },
-    {
-      "startTime": 1280,
-      "title": "OPPTY Framework for Knowledge Transfer"
-    },
-    {
-      "startTime": 1470,
-      "title": "Situational Leadership Matching"
-    },
-    {
-      "startTime": 1610,
-      "title": "Decision Boundaries and Thresholds"
-    },
-    {
-      "startTime": 1750,
-      "title": "AI and Remote Work Delegation"
-    },
-    {
-      "startTime": 1900,
-      "title": "Conclusion and Takeaways"
-    }
+    {"startTime": 0, "title": "Introduction"},
+    {"startTime": 108, "title": "The 82% Warning Sign"},
+    {"startTime": 282, "title": "The 89% Attitude Gap"},
+    {"startTime": 445, "title": "Learning Agility: The Real Predictor"},
+    {"startTime": 595, "title": "Learning Agility vs. IQ"},
+    {"startTime": 760, "title": "The Evidence Void"},
+    {"startTime": 920, "title": "The 70% Rule on Trial"},
+    {"startTime": 1105, "title": "Founder Mode: The Chesky Story"},
+    {"startTime": 1470, "title": "The Founder's Dilemma"},
+    {"startTime": 1620, "title": "The Cross-Cultural Reversal"},
+    {"startTime": 1960, "title": "Protocol 1: Hiring for Learning Agility"},
+    {"startTime": 2190, "title": "Protocols 2-5: Actionable Frameworks"},
+    {"startTime": 2640, "title": "Three Key Takeaways"}
   ]
 }

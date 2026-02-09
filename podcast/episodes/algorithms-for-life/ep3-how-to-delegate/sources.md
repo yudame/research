@@ -3,112 +3,135 @@
 ## Research Tools Used
 - Perplexity (Academic & Official - automated) → Evidence
 - GPT-Researcher (Industry & Technical - automated) → Evidence + Case Studies
+- Gemini Deep Research (Strategic & Policy - automated) → Evidence + Policy
 - Claude (Comprehensive Synthesis - manual) → Evidence synthesis
 - Grok (X/Twitter Discourse - manual) → **Opinion/Sentiment ONLY**
-- ❌ Gemini - Skipped (no policy/regulatory angle for this topic)
 
 ## Evidence Sources (For factual claims)
 
 ### Tier 1: Meta-analyses, Systematic Reviews, Official Statistics
 
-1. **De Meuse (2019)** - Learning agility meta-analysis
-   - Key finding: ρ = .47-.75 correlation with leader outcomes
-   - Used for: Predicting trainability in hiring
+1. **De Meuse et al. — Learning Agility Meta-Analysis**
+   - Key finding: ρ = 0.74 with leader performance, ρ = 0.75 with leadership potential
+   - 20 field studies; r = 0.09 with general intelligence (60,000+ participants)
 
-2. **Sackett et al. (2022)** - Cognitive ability validity revision
-   - Journal of Applied Psychology
-   - Key finding: Structured interviews ρ = .42 (strongest predictor)
-   - Key finding: Cognitive ability dropped from ρ = .51 to ρ = .31
+2. **Kim, Beehr & Prewett (2018) — Empowering Leadership Meta-Analysis**
+   - Key finding: ρ = .59 for attitudes toward leader, ρ = .31 for performance
+   - 55 samples
 
-3. **Breuer, Hüffmeier & Hertel (2016)** - Trust in virtual teams
-   - Journal of Applied Psychology
-   - Key finding: Trust-performance ρ = .33 in virtual teams (stronger than F2F)
-   - URL: https://pubmed.ncbi.nlm.nih.gov/27228105/
+3. **Lee et al. (2018) — Empowering Leadership Meta-Analysis**
+   - Key finding: Incremental validity over transformational leadership
+   - 105 samples, *Journal of Organizational Behavior*
 
-4. **Ericsson et al.** - Deliberate practice research
-   - Meta-analysis: ~18% variance explained in sports performance
+4. **Wang, Waldman & Zhang (2014) — Shared Leadership Meta-Analysis**
+   - Key finding: ρ = .34 with team effectiveness, stronger for complex work
+
+5. **Zaandam (2021) — Founder-CEO Performance Meta-Analysis**
+   - Key finding: Founder advantages real but institutionally contingent
+   - 117 studies across 22 countries
+
+6. **Seibert, Wang & Courtright (2011) — Empowerment Meta-Analysis**
+   - Key finding: ρ ≈ .31 for empowerment–performance, *Journal of Applied Psychology*
+
+7. **Antonakis, Bendahan, Jacquart & Lalive (2010/2014) — Leadership Endogeneity Review**
+   - Key finding: 66-90% of leadership studies fail causal standards
+   - *Oxford Handbook of Leadership*
+
+8. **Systematic Literature Review of SLII (2025)**
+   - Key finding: "Fundamental paradox: widely used but lacks strong empirical support"
 
 ### Tier 2: RCTs, Large Studies, Government Reports
 
-1. **Gallup (2014)** - CEO delegation and growth study
-   - Key finding: 112% higher 3-year growth for high-delegation CEOs
-   - URL: https://www.gallup.com
+1. **Fahlenbrach (2009) — Founder-CEO Study**
+   - N=2,327 U.S. public firms; 4.4% annual abnormal stock returns
 
-2. **McKinsey Global Institute (Nov 2025)** - AI and work automation
-   - Key finding: 57% of US work hours theoretically automatable
-   - URL: https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai
+2. **Villalonga & Amit (2006) — Family Firm Study**
+   - 0.40 higher Tobin's Q for founder-CEO firms; *Journal of Financial Economics*
 
-3. **Leadership IQ** - New hire failure research
-   - Key finding: 46% fail within 18 months, 89% for attitudinal reasons
+3. **Leadership IQ — New Hire Failure Study**
+   - N=20,000+ across 312 organizations; 46% fail in 18 months; 89% attitudinal
 
-4. **Launchpad Venture Group** - Founder-CEO tenure study
-   - N=140 companies, 20+ years
-   - Key finding: 7+ year founder-CEOs achieve 2.6X returns vs 1.7X
+4. **Logan & Ganster (2007) — Empowerment Field RCT**
+   - N=68 trucking managers; works only with supervisor support; *Journal of Management Studies*
 
-5. **Gartner (2025)** - Agentic AI predictions
-   - Key finding: 40%+ projects will be canceled by 2027
-   - URL: https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027
+5. **Gjedrem & Rege (2017) — Autonomy Reduction Experiment**
+   - Norwegian electronics retail; reducing autonomy increased sales 5.6%
 
-6. **Wasserman, Noam** - Founder-CEO succession research
-   - 202 Internet firms tracked through multiple funding rounds
-   - Key finding: <40% retain founder-CEO by Series D
+6. **Thompson & Vecchio (2009) — SLII Field Test**
+   - N=357 banking employees; revised SLII performed worse than original
+
+7. **Robert, Probst, Martocchio, Drasgow & Lawler (2000) — Cross-Cultural Empowerment**
+   - Empowerment negatively associated with satisfaction in India
+
+8. **Eylon & Au (1999) — Power Distance Experiment**
+   - High power-distance cultures performed better when disempowered
+
+9. **Bloom et al. (2013) — Management Practices RCT**
+   - Indian textile factories; management bundle worked but delegation not isolable
+
+10. **Henrich, Heine & Norenzayan (2010) — WEIRD Sampling Bias**
+    - 12% of population, 96% of samples
+
+11. **Wasserman (2008/2012) — Founder's Dilemma**
+    - 50% replaced by year 3; Rich vs. King tradeoff; *HBR* and book
+
+12. **Rattini (2023) — Autonomy and Cognitive Ability**
+    - High-ability benefit from autonomy; low-ability perform better with constraints
+
+13. **Blunden & Steffel (2024) — Delegated Decisions as Burden**
+    - Behavioral experiments showing delegation can feel burdensome to recipients
+
+14. **Deen et al. (2025) — First Validated Micromanagement Scale**
+    - *Journal of Management*; 79% experienced micromanagement
 
 ### Tier 3: Case Studies, Industry Reports, News
 
-1. **Paul Graham** - "Founder Mode" essay (2024)
-   - URL: https://paulgraham.com/foundermode.html
-   - Key contribution: Sparked debate on hands-on vs. delegation
+1. **McKinsey (2025) — AI Adoption Global Survey**
+   - 88% using AI in ≥1 function; high performers 3x more likely to redesign workflows
 
-2. **First Round Review** - Drew Houston/Dropbox transition
-   - URL: https://review.firstround.com/drew-houstons-morph-from-hacker-to-hyper-growth-ceo/
+2. **Gartner — AI Project Forecasts**
+   - ≥30% GenAI projects abandoned; >40% agentic AI canceled by 2027
 
-3. **Jim Schleckser** - 70% rule origin (Inc.com 2014)
-   - URL: https://www.inc.com/jim-schleckser/the-70-rule-when-to-delegate.html
-   - Note: This is the ORIGIN of the 70% rule - no empirical validation
+3. **MIT (2025) — Enterprise AI Pilot Study**
+   - 95% of custom AI pilots fail measurable value
 
-4. **Smolarek (2025)** - Founder to CEO transition case study
-   - URL: https://jakesmolarek.com/articles/founder-to-ceo-transition/
-   - Key finding: 2x revenue growth in 18 months after delegation
+4. **Schleckser (2016) — *Great CEOs Are Lazy***
+   - Origin of 70% rule; practitioner book
 
-5. **GitLab** - Remote work documentation practices
-   - URL: https://www.tidaro.com/blog/stories/gitlab-remote-work/
-   - Key contribution: 10,400+ pages of process documentation
+5. **Graham (2024) — "Founder Mode" Essay**
+   - September 2024; crystallized practitioner frustration
 
-6. **Strategy Ladders (2025)** - Delegation frameworks overview
-   - URL: https://www.strategyladders.com/best-business-delegation-frameworks/
+6. **Airbnb Case Study — Chesky's Founder Mode Rebuild**
+   - Q3 2025: $4.1B revenue, 50% EBITDA margin; 430 product upgrades in ~2 years
 
-7. **HPT by DTS (2025)** - DELEGATE model
-   - URL: https://blog.hptbydts.com/7-models-for-delegation
+7. **Rosenzweig (2007) — *The Halo Effect***
+   - Retroactive attribution of practices to high-performing firms
 
-8. **Springer (2025)** - Knowledge transfer in franchise systems
-   - URL: https://link.springer.com/article/10.1007/s11187-025-01050-1
+8. **Collins (2001) — *Good to Great* Post-Publication Tracking**
+   - 6/11 underperformed S&P 500 by 2012; Circuit City bankrupt
+
+9. **McKinsey (2022) — RACI Pitfalls Analysis**
+   - 4 major pitfalls identified; DARE alternative proposed (also unvalidated)
 
 ---
 
 ## Opinion/Discourse Sources (For "what people think" context)
 
-⚠️ **These are NOT evidence** - Use only for podcast segments contrasting belief vs. research
+⚠️ **These are NOT evidence** — Use only for podcast segments contrasting belief vs. research
 
 ### Expert Opinion (credentialed but not peer-reviewed)
-
-- **Brian Chesky (Airbnb CEO)** - "Founder Mode" case study
-- **Mark Zuckerberg** - "I don't believe in delegating" for key decisions
-- **Reid Hoffman (LinkedIn founder)** - Three methods of self-scaling
-- **Ben Horowitz** - Peacetime vs. Wartime CEO framework
-- **Keith Rabois** - Task-Relevant Maturity, founders as "editors"
+- Brian Chesky — Airbnb CEO, Founder Mode implementation
+- Paul Graham — Y Combinator, "Founder Mode" essay (Sept 2024)
+- Jim Schleckser — Inc CEO Project, 70% Rule
 
 ### Public Discourse (X/Twitter, forums)
-
-- Paul Graham (@paulg) - Dec 2025 reflections on founder mistakes
-- Naval (@naval) - Dec 10, 2025 on founder involvement in recruiting - 4,192 likes
-- Roland Frasier (@RolandFrasier) - Dec 24, 2025 on three transitions - 35 likes
-- Ryan Deiss (@ryandeiss) - Dec 13, 2025 on delegation failures - 281 likes
-- Olivia Parkes (@thesystemsboss) - Dec 22, 2025 on micromanaging - 7 views
+- Founder Mode debate on X/Twitter (Sept-Dec 2024): strong polarization between founders and professional managers
+- AI delegation discourse: optimism about cost savings tempered by reports of failures
 
 ---
 
 ## Notes
-- Research compiled: 2025-12-27
-- Sources cross-validated across Perplexity, GPT-Researcher, Claude, and Grok
+- Research compiled: 2026-02-09
+- Sources cross-validated across Perplexity, Claude, and Grok
+- ChatGPT (GPT-Researcher) and Gemini research pending
 - Conflicting sources noted in research/p3-briefing.md
-- Key finding: The "70% rule" has no empirical validation

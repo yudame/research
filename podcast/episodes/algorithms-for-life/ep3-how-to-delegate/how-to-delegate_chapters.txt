@@ -1,84 +1,79 @@
 ;FFMETADATA1
+
 [CHAPTER]
 TIMEBASE=1/1000
 START=0
-END=52000
+END=108000
 title=Introduction
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=52000
-END=190000
-title=The 70% Rule Myth
+START=108000
+END=282000
+title=The 82% Warning Sign
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=190000
-END=388000
-title=Key Terms Defined
+START=282000
+END=445000
+title=The 89% Attitude Gap
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=388000
-END=575000
-title=Economics of Delegation
+START=445000
+END=595000
+title=Learning Agility: The Real Predictor
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=575000
-END=710000
-title=Psychological Barriers
+START=595000
+END=760000
+title=Learning Agility vs. IQ
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=710000
-END=850000
-title=Identity Attachment and Feedback Addiction
+START=760000
+END=920000
+title=The Evidence Void
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=850000
-END=1015000
-title=Hiring for Learning Agility
+START=920000
+END=1105000
+title=The 70% Rule on Trial
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=1015000
-END=1125000
-title=The Diagnostic Interview Question
-
-[CHAPTER]
-TIMEBASE=1/1000
-START=1125000
-END=1280000
-title=The Founder Mode Debate
-
-[CHAPTER]
-TIMEBASE=1/1000
-START=1280000
+START=1105000
 END=1470000
-title=OPPTY Framework for Knowledge Transfer
+title=Founder Mode: The Chesky Story
 
 [CHAPTER]
 TIMEBASE=1/1000
 START=1470000
-END=1610000
-title=Situational Leadership Matching
+END=1620000
+title=The Founder's Dilemma
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=1610000
-END=1750000
-title=Decision Boundaries and Thresholds
+START=1620000
+END=1960000
+title=The Cross-Cultural Reversal
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=1750000
-END=1900000
-title=AI and Remote Work Delegation
+START=1960000
+END=2190000
+title=Protocol 1: Hiring for Learning Agility
 
 [CHAPTER]
 TIMEBASE=1/1000
-START=1900000
-END=1994620
-title=Conclusion and Takeaways
+START=2190000
+END=2640000
+title=Protocols 2-5: Actionable Frameworks
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2640000
+END=2792000
+title=Three Key Takeaways

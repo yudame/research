@@ -1,0 +1,122 @@
+EPISODE FOCUS FOR NOTEBOOKLM AUDIO GENERATION
+
+You are creating a podcast episode on "How to Delegate" for the "Algorithms for Life" series. This episode explores research-backed frameworks for effective delegation.
+
+CRITICAL QUALITY GUIDELINES:
+
+1. STRUCTURAL CLARITY
+- Open with clear hook establishing the central question or myth
+- Explicitly signpost transitions between sections
+- Create clear three-act structure: WHY (barriers) → WHAT (evidence) → HOW (frameworks)
+- Strong callback to opening in the conclusion
+
+2. DEPTH DISTRIBUTION
+- Allocate time proportionally to research strength and practical value
+- Avoid rushing contemporary topics (AI delegation, remote work)
+- Major themes should get 4-6 minutes each
+- Minor themes should get 2-3 minutes each
+
+3. MODE-SWITCHING CLARITY
+Use explicit transitions to signal mode changes:
+- Philosophy mode: "Philosophically, what's happening here is..."
+- Research mode: "Let's look at what the research actually found..."
+- Storytelling mode: "Here's how this played out in practice..."
+- Practical mode: "Here's the specific framework you can use..."
+- Landing mode: "So bringing this all together..."
+
+4. DIALOGUE DYNAMICS (CRITICAL)
+Create 3-4 counterpoint moments where speakers disagree or push back:
+- 70% Rule: One defends practical heuristic, other questions lack of evidence
+- Founder Mode: Debate Chesky's success vs. survivorship bias
+- Learning Agility: Question measurement reliability despite strong correlations
+- Situational Leadership: Popular but empirically thin
+
+COUNTERPOINT MECHANICS:
+- Speaker A: "Here's why [POSITION]..."
+- Speaker B: "Wait, but what about [COUNTER-EVIDENCE]?"
+- Brief back-and-forth (3-4 exchanges)
+- Resolution or synthesis: "So the truth is probably..."
+
+5. PRACTICAL ACTIONABILITY
+Every framework must include:
+- Specific timeframes (not "over time" but "9-12 weeks")
+- Concrete thresholds (not "small decisions" but "$5,000")
+- Diagnostic criteria (exact interview questions)
+- Step-by-step processes (week-by-week breakdowns)
+
+6. TAKEAWAY CLARITY
+- Each major section should end with mini-synthesis
+- Conclusion should list 5-7 key takeaways explicitly
+- Takeaways should be memorable and actionable
+
+7. STORYTELLING QUALITY
+Integrate stories throughout:
+- 70% rule origin story (Schleckser consulting experience)
+- Chesky/Airbnb case study (founder mode)
+- Toyota France knowledge transfer example
+- Include specific numbers and outcomes
+
+8. EPISODE ARC & RESOLUTION
+Build momentum through the middle:
+- Start: Provocative hook (70% rule myth)
+- Escalate: Each barrier compounds the previous
+- Tension: Contradictions create questions
+- Resolution: Evidence-based frameworks provide answers
+- Landing: Strong synthesis with callback
+
+9. AVOID PURE AGREEMENT
+Never use these patterns without counterpoint:
+- "Exactly." "Absolutely." "That's right."
+- Speaker B only affirming Speaker A
+- Both speakers agreeing on everything
+
+INSTEAD:
+- "That's interesting, but I wonder if..."
+- "I partially agree, though..."
+- "The data shows X, but couldn't that also mean Y?"
+
+10. CONTEMPORARY CONTEXT
+Balance evergreen frameworks with current trends:
+- AI delegation (costs, failure rates, examples)
+- Remote work impact on knowledge transfer
+- Founder Mode debate (2024 context)
+
+---
+
+TARGET SPECS:
+- Duration: 35-40 minutes
+- Chapters: 12-15 (2-4 minutes each)
+- Tone: Conversational but evidence-grounded
+- Avoid: Jargon without explanation, academic dryness, pure mutual reinforcement
+
+---
+
+KEY RESEARCH HIGHLIGHTS TO FEATURE:
+
+1. 70% rule has zero empirical validation (hook)
+2. Learning agility: ρ=0.74 with leadership, r=0.09 with IQ
+3. 46% new hire failure rate, 89% attitudinal causes
+4. Knowledge transfer: tacit vs explicit mechanisms
+5. Situational Leadership: popular but mixed validation
+6. Founder Mode debate: when delegation advice fails
+7. AI delegation: costs vs. failure rates
+
+---
+
+DEPTH BUDGET (approximate):
+- 70% Rule Myth: 3-4 min (10%)
+- Psychological Barriers: 4-5 min (12%)
+- Learning Agility: 5-6 min (15%)
+- Hiring/Coachability: 4-5 min (12%)
+- Knowledge Transfer: 5-6 min (15%)
+- Situational Leadership: 3-4 min (10%)
+- Founder Mode: 4-5 min (12%)
+- Decision Boundaries: 2-3 min (8%)
+- Remote Work: 2-3 min (8%)
+- AI Delegation: 2-3 min (8%)
+
+Total: 35-40 minutes
+
+---
+
+Generate a two-host conversational podcast following these guidelines. Create genuine dialogue with disagreements, not just mutual reinforcement. Make research findings accessible and actionable.
