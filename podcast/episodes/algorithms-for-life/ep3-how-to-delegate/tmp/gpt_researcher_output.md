@@ -1,10 +1,10 @@
-# GPT-Researcher Results: How to Delegate
-**Date:** 2026-02-09
-**Focus:** Psychological Barriers & Evidence-Based Solutions
+# GPT-Researcher Results
 
-**Model:** openrouter/openai/gpt-4o (via GPT-Researcher framework)
+**Date:** 2026-02-09 17:02
 
-**Prompt:** Synthesize research on psychological barriers to delegation and evidence-based solutions. Cover: (1) perfectionism, identity attachment, and control psychology - what organizational psychology research says about why leaders resist delegating; (2) the "feedback addiction" phenomenon where founders stay in operational details for dopamine hits rather than strategic necessity; (3) opportunity cost calculations - frameworks for quantifying the cost of not delegating (e.g., $500/hour founder time on $50/hour tasks); (4) hiring for coachability and learning agility - what interview questions or assessment methods predict delegation success, including behavioral interviewing research. Integrate psychological theory with practical frameworks.
+**Model:** openrouter/openai/gpt-4o
+
+**Prompt:** Synthesize research on psychological barriers to delegation and evidence-based solutions. Cover: (1) perfectionism, identity attachment, and control psychology - what organizational psychology research says about why leaders resist delegating; (2) the 'feedback addiction' phenomenon where founders stay in operational details for dopamine hits rather than strategic necessity; (3) opportunity cost calculations - frameworks for quantifying the cost of not delegating (e.g., $500/hour founder time on $50/hour tasks); (4) hiring for coachability and learning agility - what interview questions or assessment methods predict delegation success, including behavioral interviewing research. Integrate psychological theory with practical frameworks.
 
 ---
 
@@ -40,7 +40,7 @@ Leaders can address feedback addiction by consciously shifting their focus from 
 
 ### Calculating Opportunity Costs
 
-Frameworks for quantifying the cost of not delegating can aid leaders in making data-driven decisions. The classic ROI formula, ROI = (Total Value of Benefits - Total Cost) / Total Cost, can be applied to delegation to assess its impact on the organization ([Avila Virtual Assistant](https://www.avilava.com/avila-va-blog/how-smart-delegation-restores-roi-for-founders-facing-operational-overload)). By evaluating the financial and strategic benefits of delegation, leaders can prioritize tasks that align with their expertise and organizational goals.
+Frameworks for quantifying the cost of not delegating can aid leaders in making data-driven decisions. The classic ROI formula, ROI = (Total Value of Benefits − Total Cost) / Total Cost, can be applied to delegation to assess its impact on the organization ([Avila Virtual Assistant](https://www.avilava.com/avila-va-blog/how-smart-delegation-restores-roi-for-founders-facing-operational-overload)). By evaluating the financial and strategic benefits of delegation, leaders can prioritize tasks that align with their expertise and organizational goals.
 
 ### Hiring for Coachability and Learning Agility
 
@@ -58,7 +58,7 @@ Avila Virtual Assistant. (n.d.). How Smart Delegation Restores ROI for Founders.
 
 Final Round AI. (n.d.). 25 Essential Learning Agility Interview Questions You Need to Know. Final Round AI. https://www.finalroundai.com/blog/learning-agility-interview-questions
 
-Sustainability Directory. (n.d.). Dopamine Feedback Loops. Sustainability Directory. https://lifestyle.sustainability-directory.com/term/dopamine-feedback-loops/
+Sustainability Directory. (n.d.). Dopamine Feedback Loops → Term. Sustainability Directory. https://lifestyle.sustainability-directory.com/term/dopamine-feedback-loops/
 
 Summers, J. (n.d.). Founder's 80hr week reduced by 45% with delegation and automation. LinkedIn. https://www.linkedin.com/posts/iamjamessummers_delegation-businessgrowth-founderchallenges-activity-7421816809382793216-swbR
 

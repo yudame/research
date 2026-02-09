@@ -79,3 +79,41 @@ Based on research focus, plan to create dialogue tension around:
 2. **70% Rule** - Widely cited but empirically untested
 3. **AI Delegation** - Promise vs. 40%+ failure rates
 4. **Learning Agility vs. Experience** - Counterintuitive hiring priorities
+
+---
+
+## Phase 8: Content Planning (Episode Planner Skill v3.0)
+
+**Date:** 2026-02-09
+**Skill used:** `.claude/skills/podcast-episode-planner/SKILL.md`
+**Template used:** `docs/templates/content_plan-enhanced.md` (Wave 2-5 enhanced)
+
+### Classification Decisions
+- **Evidence Status:** Mixed -- learning agility and empowerment meta-analyses are strong; no named delegation framework has been RCT-tested; cross-cultural reversal well-replicated
+- **Content Density:** Complex -- 4+ interlocking frameworks requiring integration
+- **Series Position:** Middle (Ep. 3 of ongoing series; builds on Ep. 2 strategic selection)
+
+### Toolkit Selections
+- **Hook Type:** Surprising Statistic -- "82% saw the warning signs" + "89% of failures were attitudinal, not technical"
+- **Takeaway Structure:** Conditional Protocol -- context (culture, stakes, skill level) determines best delegation approach; 5 protocols with different applicability conditions
+- **Contradiction Handling:** Substantive conflict -- Founder Mode vs. empowerment evidence, Western vs. cross-cultural, autonomy helps vs. autonomy hurts
+
+### Counterpoint Moments Designed
+1. **70% Rule** (~12-14 min): Practitioner resonance vs. evidence hierarchy
+2. **Founder Mode** (~15-18 min): Chesky results vs. survivorship bias + Wasserman data
+3. **Cross-Cultural Reversal** (~22-25 min): Western empowerment bias vs. high power-distance evidence
+
+### Quality Gate Status
+- [x] Three sections with clear focus (Foundation/Evidence/Application)
+- [x] Maximum 3-4 major concepts per section
+- [x] All key terms listed with definitions (8 terms)
+- [x] Protocols include specific parameters (5 protocols with timelines, percentages, frameworks)
+- [x] Opening hook connects to closing callback (82% stat -> "knowing what to hold on to")
+- [x] Episode answers its stated core question ("What actually works in delegation?")
+
+### Output
+- `content_plan.md` created (Wave 2-5 enhanced format)
+- Sections: Episode Classification, Structural Design, NotebookLM Guidance
+- Duration target: 34-42 minutes
+- Studies emphasized: 7 primary studies with sample sizes
+- Stories selected: 5 narrative elements with timing
