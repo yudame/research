@@ -2,6 +2,7 @@
   "FAST_LLM": "openai:gpt-4o-mini",
   "SMART_LLM": "openrouter:anthropic/claude-opus-4.5",
   "STRATEGIC_LLM": "openrouter:anthropic/claude-opus-4.5",
+  "EMBEDDING": "openai:text-embedding-3-small",
   "RETRIEVER": "duckduckgo",
   "MAX_ITERATIONS": 5,
   "MAX_SEARCH_RESULTS_PER_QUERY": 10,
