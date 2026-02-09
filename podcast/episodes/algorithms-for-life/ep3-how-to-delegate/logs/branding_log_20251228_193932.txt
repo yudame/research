@@ -1,4 +1,0 @@
-Loading cover: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/cover.png
-Background brightness: 238 (light)
-✓ Branded cover saved to: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/cover_branded.png
-✓ Original replaced: /Users/valorengels/src/research/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/cover.png
