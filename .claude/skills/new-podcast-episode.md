@@ -75,23 +75,22 @@ podcast/episodes/YYYY-MM-DD-topic-slug/
 ✓ User has provided episode topic or research question
 ✓ Episode details known or easily inferred (date, slug, title, series info if applicable)
 
-**IMPORTANT: Always use today's actual date (2025-12-15 or current date) for all timestamps. Never use placeholder dates like "YYYY-MM-DD" in created files.**
+**IMPORTANT: Always use today's actual date for all timestamps. Never use placeholder dates like "YYYY-MM-DD" in created files.**
 
-**Create a todo list** to track progress through the workflow:
+**Create a task list** to track progress through the workflow using TaskCreate:
 
-```
-Use TodoWrite to create initial todos:
-- Setup episode structure and files (status: in_progress)
-- Conduct deep research (Perplexity, then targeted followup) (status: pending)
-- Cross-validate research findings (status: pending)
-- Create master research briefing (status: pending)
-- Synthesize narrative report (status: pending)
-- Create episode content plan (status: pending)
-- Generate cover art (status: pending)
-- Generate audio via NotebookLM API (status: pending)
-- Process audio (transcribe, chapters, embed) (status: pending)
-- Update feed.xml and publish (status: pending)
-```
+1. "Setup episode structure and files"
+2. "Conduct deep research (Perplexity, then targeted followup)"
+3. "Cross-validate research findings"
+4. "Create master research briefing"
+5. "Synthesize narrative report"
+6. "Create episode content plan"
+7. "Generate audio via NotebookLM"
+8. "Process audio (transcribe, chapters, embed)"
+9. "Publish episode (cover art, metadata, feed.xml)"
+10. "Commit and push to GitHub"
+
+Then use TaskUpdate to mark task 1 as in_progress. Use TaskList to review progress at any time.
 
 **Determine episode details:**
 
@@ -117,17 +116,15 @@ If the episode directory already exists, check for a `research-prompt.md` file. 
 **Create the episode directory and files using setup_episode.py:**
 
 ```bash
-cd ~/src/research/podcast/tools
-
 # For standalone episodes (uses today's date automatically)
-uv run python setup_episode.py --slug "topic-slug" --title "Episode Title"
+uv run python ~/src/research/podcast/tools/setup_episode.py --slug "topic-slug" --title "Episode Title"
 
 # For series episodes
-uv run python setup_episode.py --slug "topic-slug" --title "Series: Ep. X, Topic" \
+uv run python ~/src/research/podcast/tools/setup_episode.py --slug "topic-slug" --title "Series: Ep. X, Topic" \
   --series "series-name" --episode-num X
 
 # With research context pre-filled
-uv run python setup_episode.py --slug "topic-slug" --title "Episode Title" \
+uv run python ~/src/research/podcast/tools/setup_episode.py --slug "topic-slug" --title "Episode Title" \
   --context "Research focus and key questions"
 ```
 
@@ -359,7 +356,7 @@ For: podcast-synthesis-writer agent
 
 ---
 
-## NOTES FOR OPUS 4.5
+## NOTES FOR OPUS 4.6
 
 **Strongest evidence for:**
 - [Topic areas with robust sources]
@@ -419,12 +416,8 @@ For: podcast-synthesis-writer agent
 
 **VERIFY SETUP COMPLETE - File State Check:**
 
-```bash
-# Verify directory structure created
-ls -la podcast/episodes/YYYY-MM-DD-slug/
-
-# Expected: research/, logs/, tmp/ subdirectories present
-```
+Use Glob to verify directory structure: `podcast/episodes/YYYY-MM-DD-slug/**/*`
+Expected: research/, logs/, tmp/ subdirectories present with initial files.
 
 **Expected directory structure:**
 ```
@@ -454,11 +447,7 @@ podcast/episodes/YYYY-MM-DD-slug/
 ✓ Today's actual date used (not placeholder YYYY-MM-DD)
 ✓ All file templates use correct paths (research/, logs/)
 
-**Update todos:**
-```
-Mark "Setup episode structure and files" as completed.
-Mark "Conduct parallel deep research" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Setup episode structure and files" as completed, then mark "Conduct deep research" as in_progress.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -822,23 +811,16 @@ This prompt will now be saved to logs/prompts.md and used for Phase 1 research.
 
 #### **Perplexity API (sonar-deep-research)**
 
-**Invoke the perplexity-deep-research skill via Task tool:**
+**Invoke the perplexity-deep-research skill:**
 
-```
-Use the Task tool with subagent_type='general-purpose':
+Use the Skill tool: `perplexity-deep-research`
 
-"Automate Perplexity Deep Research API for Phase 1 academic research.
-
-Read and follow the instructions in .claude/skills/perplexity-deep-research/SKILL.md:
+The skill will:
 1. Check for PERPLEXITY_API_KEY in .env file
-2. Create Python script for API call
-3. Submit to sonar-deep-research model with reasoning_effort=high
-4. Wait 30-120 seconds for completion
-5. Extract and format research report with citations
-6. Output marked research ready to save to research/p2-perplexity.md
-
-Research prompt: [insert Perplexity prompt from prompts.md]"
-```
+2. Submit to sonar-deep-research model with reasoning_effort=high
+3. Wait 30-120 seconds for completion
+4. Extract and format research report with citations
+5. Save results to research/p2-perplexity.md
 
 **Expected time:** 30-120 seconds (much faster than browser-based tools)
 
@@ -850,10 +832,7 @@ Research prompt: [insert Perplexity prompt from prompts.md]"
 
 **Note:** API requires PERPLEXITY_API_KEY in .env. Get key at https://www.perplexity.ai/settings/api
 
-**Update todos:**
-```
-Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
-```
+**Update tasks:** "Conduct deep research" remains in_progress (Phase 1 running).
 
 ---
 
@@ -920,65 +899,19 @@ Mark "Conduct parallel deep research" as in_progress (Phase 1 running).
 
    After displaying prompts, save all to logs/prompts.md
 
-5. **Create empty research files for Phase 3 results:**
+5. **Create research files for Phase 3 results:**
 
-```bash
-# Create placeholder files for research results
-cd podcast/episodes/YYYY-MM-DD-slug/research
+Use the Write tool to create placeholder files in the episode's research/ directory:
+- `research/p2-chatgpt.md` — GPT-Researcher output (automated, will be populated by skill)
+- `research/p2-gemini.md` — Gemini output (automated, will be populated by skill)
+- `research/p2-claude.md` — Claude output (manual, user pastes from https://claude.ai)
+- `research/p2-grok.md` — Grok output (manual, user pastes from https://x.com/i/grok)
 
-# GPT-Researcher (automated - will be populated by script)
-touch p2-chatgpt.md
-
-# Gemini (automated - will be populated by script)
-touch p2-gemini.md
-
-# Claude (manual - user will paste here)
-cat > p2-claude.md << 'EOF'
-# Claude Research: [Episode Title]
-
-**Date:** [Today's date]
-**Focus:** Comprehensive Synthesis
-
----
-
-## Research Output
-
-[Paste Claude results here from https://claude.ai]
-
----
-
-## Sources
-
-[Key sources will be extracted after pasting]
-EOF
-
-# Grok (manual - user will paste here)
-cat > p2-grok.md << 'EOF'
-# Grok Research: [Episode Title]
-
-**Date:** [Today's date]
-**Focus:** Real-Time & Regional Sources
-
----
-
-## Research Output
-
-[Paste Grok results here from https://x.com/i/grok]
-
----
-
-## Sources
-
-[Key sources will be extracted after pasting]
-EOF
-```
+Each file follows the standard template: header with date/focus, Research Output section, and Sources section.
 
 6. **Launch automated research (user should already be submitting manual prompts)**
 
-**Update todos:**
-```
-Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete, Phase 3 ready).
-```
+**Update tasks:** "Conduct deep research" remains in_progress (Phase 2 analysis complete, Phase 3 ready).
 
 ---
 
@@ -989,25 +922,11 @@ Mark "Conduct parallel deep research" as in_progress (Phase 2 analysis complete,
 2. Launch GPT-Researcher and Gemini in parallel (automated)
 3. All 4 tools complete roughly together
 
-**Launch automated tools via Task tool:**
+**Launch automated research skills in parallel:**
 
-```
-Use the Task tool with subagent_type='general-purpose':
-
-"Run GPT-Researcher for Phase 3 industry/technical research.
-Episode: [episode path]
-Prompt: [GPT-Researcher prompt from prompts.md]
-Save to: research/p2-chatgpt.md"
-```
-
-```
-Use the Task tool with subagent_type='general-purpose':
-
-"Run Gemini Deep Research for Phase 3 policy/regulatory research.
-Episode: [episode path]
-Prompt: [Gemini prompt from prompts.md]
-Save to: research/p2-gemini.md"
-```
+Use the Skill tool to invoke both (these are long-running, so launch via Task tool with `run_in_background: true`):
+- **GPT-Researcher:** Invoke `gpt-researcher` skill with the industry/technical prompt from prompts.md. Save results to research/p2-chatgpt.md.
+- **Gemini:** Invoke `gemini-deep-research` skill with the policy/strategic prompt from prompts.md. Save results to research/p2-gemini.md.
 
 **Expected timeline:**
 - User submits Claude/Grok while reading this (~1-2 min)
@@ -1017,11 +936,7 @@ Save to: research/p2-gemini.md"
 
 **Fallback for automation failures:** Use prompts from logs/prompts.md manually
 
-**Update todos:**
-```
-Mark "Conduct parallel deep research" as completed when all Phase 3 results are collected.
-Mark "Cross-validate research findings" as in_progress.
-```
+**Update tasks:** When all Phase 3 results are collected, use TaskUpdate to mark "Conduct deep research" as completed, then mark "Cross-validate research findings" as in_progress.
 
 ---
 
@@ -1078,11 +993,7 @@ Topic: [Main Topic]
 **Action needed:** [List any gaps requiring additional research]
 ```
 
-**Update todos:**
-```
-Mark "Cross-validate research findings" as completed.
-Mark "Create master research briefing" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Cross-validate research findings" as completed, then mark "Create master research briefing" as in_progress.
 
 ---
 
@@ -1120,7 +1031,7 @@ This template includes all Wave 1 quality improvements. DO NOT use the basic tem
     - Where sources disagree or present alternative frameworks
     - Dialogue opportunities (for Phase 8 episode planning)
     - Missing perspectives that could create productive tension
-12. **Notes for Synthesis Agent** (Opus 4.5)
+12. **Notes for Synthesis Agent** (Opus 4.6)
     - Include takeaway clarity requirements (Wave 1, Task B2.1)
 
 **Key principles:**
@@ -1192,11 +1103,7 @@ Before proceeding to Phase 7 (Synthesis), verify ALL of these requirements:
 **If ANY Wave 1 requirement is missing, DO NOT PROCEED to Phase 7.**
 Return to Phase 6 and complete the missing sections.
 
-**Update todos:**
-```
-Mark "Create master research briefing" as completed.
-Mark "Synthesize narrative report" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Create master research briefing" as completed, then mark "Synthesize narrative report" as in_progress.
 
 ---
 
@@ -1255,11 +1162,7 @@ Required files must exist:
 
 **VERIFY SYNTHESIS COMPLETE:**
 
-```bash
-# Check report.md exists and has content
-ls -lh podcast/episodes/YYYY-MM-DD-slug/report.md
-wc -w podcast/episodes/YYYY-MM-DD-slug/report.md
-```
+Use Glob to confirm `podcast/episodes/YYYY-MM-DD-slug/report.md` exists, then Read it to verify content quality and length (expect 15-25KB, 5,000-8,000 words).
 
 **Expected output:**
 - ✅ report.md exists
@@ -1275,11 +1178,7 @@ wc -w podcast/episodes/YYYY-MM-DD-slug/report.md
 ✓ All claims have source citations
 ✓ Citations link to verified sources from research/p3-briefing.md
 
-**Update todos:**
-```
-Mark "Synthesize narrative report" as completed.
-Mark "Create episode content plan" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Synthesize narrative report" as completed, then mark "Create episode content plan" as in_progress.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -1296,28 +1195,14 @@ Mark "Create episode content plan" as in_progress.
 
 **⚠️ DO NOT STOP AND WAIT FOR USER - INVOKE SKILL AUTOMATICALLY**
 
-**WORK TO DO:** Invoke the podcast-episode-planner skill to create content_plan.md:
+**WORK TO DO:** Create content_plan.md using the podcast-episode-planner skill.
 
-Use the Task tool with subagent_type='general-purpose':
-
-```
-Create episode content plan using the podcast-episode-planner skill.
-
-Episode directory: podcast/episodes/YYYY-MM-DD-slug/
-Episode title: [Episode Title]
-Series name: [Series name or "Standalone"]
-
-Follow .claude/skills/podcast-episode-planner/SKILL.md to:
-1. Read report.md and sources.md
+Read `.claude/skills/podcast-episode-planner/SKILL.md` and follow it to:
+1. Read report.md and sources.md from the episode directory
 2. Classify episode type (evidence status, content density, series position)
 3. Select toolkit elements (hook type, takeaway structure, etc.)
 4. Create content_plan.md with three-section structure and NotebookLM guidance
 5. Log to logs/prompts.md
-
-Required files must exist:
-- report.md (narrative synthesis)
-- sources.md (validated citations)
-```
 
 **The skill produces:**
 - `content_plan.md` - Episode structure guide with NotebookLM instructions (8-12KB)
@@ -1331,10 +1216,7 @@ Required files must exist:
 
 **VERIFY EPISODE PLANNING COMPLETE:**
 
-```bash
-# Check file exists and has content
-ls -lh podcast/episodes/YYYY-MM-DD-slug/content_plan.md
-```
+Use Glob to confirm `podcast/episodes/YYYY-MM-DD-slug/content_plan.md` exists, then Read to verify it contains all required sections.
 
 **Expected output:**
 - ✅ content_plan.md exists (8-12KB)
@@ -1347,11 +1229,7 @@ ls -lh podcast/episodes/YYYY-MM-DD-slug/content_plan.md
 ✓ Studies/findings to emphasize identified
 ✓ Narrative arc guidance included
 
-**Update todos:**
-```
-Mark "Create episode content plan" as completed.
-Mark "Generate cover art" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Create episode content plan" as completed, then mark "Generate audio via NotebookLM" as in_progress.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -1380,15 +1258,13 @@ Uses the Discovery Engine API to automate the NotebookLM workflow:
 ### Generate Audio with NotebookLM API
 
 **Verify source files exist:**
-```bash
-cd podcast/episodes/EPISODE_PATH
-ls -lh research/p1-brief.md report.md research/p3-briefing.md sources.md content_plan.md
-```
+
+Use Glob to confirm all 5 source files exist in the episode directory:
+`research/p1-brief.md`, `report.md`, `research/p3-briefing.md`, `sources.md`, `content_plan.md`
 
 **Run the API script:**
 ```bash
-cd podcast/tools
-uv run python notebooklm_api.py ../episodes/YYYY-MM-DD-slug/ --series "Series Name" --cleanup
+uv run python ~/src/research/podcast/tools/notebooklm_api.py podcast/episodes/YYYY-MM-DD-slug/ --series "Series Name" --cleanup
 ```
 
 **Arguments:**
@@ -1419,8 +1295,7 @@ If API is unavailable, use the `notebooklm-audio` skill for manual workflow.
 **Step 1: Generate the prompt using the script (DO NOT make up a prompt):**
 
 ```bash
-cd ~/src/research/podcast/tools
-python notebooklm_prompt.py ../episodes/EPISODE_PATH/ --copy
+python ~/src/research/podcast/tools/notebooklm_prompt.py podcast/episodes/EPISODE_PATH/ --copy
 ```
 
 This script:
@@ -1453,11 +1328,7 @@ After manual generation, process the audio with `podcast-audio-processing` skill
 
 ---
 
-**Update todos when audio is ready:**
-```
-Mark "Generate audio" as completed.
-Mark "Process audio (chapters)" as in_progress.
-```
+**Update tasks when audio is ready:** Use TaskUpdate to mark "Generate audio via NotebookLM" as completed, then mark "Process audio (transcribe, chapters, embed)" as in_progress.
 
 ---
 
@@ -1475,15 +1346,10 @@ Mark "Process audio (chapters)" as in_progress.
 
 **NotebookLM output requires transcription:**
 
+Use Glob to check for `*.mp3` and `transcript.txt` in the episode directory.
+Then get file metadata with Bash (ffmpeg required):
 ```bash
-cd podcast/episodes/EPISODE_PATH
-
-# 1. Verify files exist
-ls -la *.mp3 transcript.txt
-
-# 2. Get file metadata
-ls -l *.mp3 | awk '{print $5}'  # File size in bytes
-ffmpeg -i *.mp3 2>&1 | grep Duration  # Duration
+ffmpeg -i podcast/episodes/EPISODE_PATH/EPISODE_SLUG.mp3 2>&1
 ```
 
 **Create chapters from transcript/script:**
@@ -1502,18 +1368,11 @@ mv temp.mp3 EPISODE_SLUG.mp3
 
 ### If NotebookLM Audio (Phase 9 Option B)
 
-**Invoke audio processing subagent:**
+**Invoke audio processing:**
 
-Use the Task tool to invoke the `podcast-audio-processing` skill:
+Use the Skill tool: `podcast-audio-processing`
 
-```
-Process the podcast audio file for this episode using the podcast-audio-processing skill.
-
-Episode path: podcast/episodes/YYYY-MM-DD-slug
-Audio filename: [filename user provided, e.g., 'Original_Audio.m4a']
-Episode slug: YYYY-MM-DD-slug
-
-Follow the podcast-audio-processing skill Workflow B to:
+The skill will:
 1. Convert to mp3 if needed (m4a → mp3)
 2. Get file metadata (size in bytes, duration)
 3. Transcribe with local Whisper (base model) → save to tmp/
@@ -1521,35 +1380,19 @@ Follow the podcast-audio-processing skill Workflow B to:
 5. Embed chapters into mp3
 6. Log to logs/prompts.md
 
-CRITICAL: Report back the file metadata when complete:
-- Duration: MM:SS format
-- File size: bytes
-This metadata is needed for the publishing phase.
-```
+CRITICAL: Note the file metadata when complete (duration in MM:SS, file size in bytes) — needed for publishing phase.
 
 ---
 
 **VERIFY AUDIO PROCESSING SUCCEEDED:**
 
-After processing completes, check:
+After processing completes, verify using dedicated tools:
 
-```bash
-# 1. Verify mp3 exists with correct name
-ls -lh podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3
-
-# 2. Check file size and duration
-ffmpeg -i YYYY-MM-DD-slug.mp3 2>&1 | grep -E "Duration|bitrate"
-
-# 3. Verify transcript exists
-ls -lh podcast/episodes/YYYY-MM-DD-slug/transcript.txt  # Gemini
-ls -lh podcast/episodes/YYYY-MM-DD-slug/tmp/*_transcript.json  # NotebookLM
-
-# 4. Verify chapters JSON exists
-ls -lh podcast/episodes/YYYY-MM-DD-slug/*_chapters.json
-
-# 5. Verify chapters are embedded in mp3
-ffmpeg -i YYYY-MM-DD-slug.mp3 -f ffmetadata - 2>/dev/null | grep CHAPTER
-```
+1. **mp3 exists:** Use Glob for `podcast/episodes/YYYY-MM-DD-slug/*.mp3`
+2. **File size and duration:** Use Bash: `ffmpeg -i podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 2>&1`
+3. **Transcript exists:** Use Glob for `podcast/episodes/YYYY-MM-DD-slug/transcript.txt` or `tmp/*_transcript.json`
+4. **Chapters JSON exists:** Use Glob for `podcast/episodes/YYYY-MM-DD-slug/*_chapters.json`
+5. **Chapters embedded:** Use Bash: `ffmpeg -i podcast/episodes/YYYY-MM-DD-slug/YYYY-MM-DD-slug.mp3 -f ffmetadata - 2>/dev/null`
 
 **Expected outputs:**
 
@@ -1582,11 +1425,7 @@ ffmpeg -i YYYY-MM-DD-slug.mp3 -f ffmetadata - 2>/dev/null | grep CHAPTER
 
 **⚠️ DO NOT PROCEED TO PHASE 11 UNTIL FILE METADATA IS CONFIRMED**
 
-**Update todos:**
-```
-Mark "Process audio (transcribe, chapters)" as completed.
-Mark "Create publishing metadata" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Process audio (transcribe, chapters, embed)" as completed, then mark "Publish episode (cover art, metadata, feed.xml)" as in_progress.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -1608,8 +1447,7 @@ Mark "Create publishing metadata" as in_progress.
 ### Generate Cover Art (runs in parallel with metadata)
 
 ```bash
-cd ~/src/research/podcast/tools
-python cover_art.py ../episodes/YYYY-MM-DD-slug/
+python ~/src/research/podcast/tools/cover_art.py podcast/episodes/YYYY-MM-DD-slug/
 ```
 
 This auto-detects title/series and generates + brands cover art in one step.
@@ -1678,13 +1516,11 @@ Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
 **Update feed.xml using update_feed.py:**
 
 ```bash
-cd ~/src/research/podcast/tools
-
 # Preview changes (dry-run)
-uv run python update_feed.py ../episodes/EPISODE_PATH/ --dry-run
+uv run python ~/src/research/podcast/tools/update_feed.py podcast/episodes/EPISODE_PATH/ --dry-run
 
 # Apply changes
-uv run python update_feed.py ../episodes/EPISODE_PATH/
+uv run python ~/src/research/podcast/tools/update_feed.py podcast/episodes/EPISODE_PATH/
 ```
 
 **What update_feed.py does:**
@@ -1697,39 +1533,22 @@ uv run python update_feed.py ../episodes/EPISODE_PATH/
 
 🚨 **CRITICAL: Validate feed.xml**
 
-**Invoke feed validation subagent via Task tool:**
+**Invoke feed validation:**
 
-```
-Use the Task tool with subagent_type='general-purpose':
+Use the Skill tool: `podcast-feed-validator`
 
-"Validate the podcast feed against RSS specification standards using the podcast-feed-validator skill.
+The skill validates:
+1. Channel-level metadata (Section 1 requirements)
+2. Episode metadata (Section 2 & 3 requirements)
+3. File metadata accuracy (actual file size and duration match feed)
+4. XML structure validity
+5. Content quality checks (report links, source URLs, HTML formatting)
 
-Feed path: podcast/feed.xml
-Specification path: docs/RSS-specification.md
-Episode to validate: Most recent episode only
-
-Follow the podcast-feed-validator skill to:
-1. Read docs/RSS-specification.md (Sections 1, 2, 3, and 8)
-2. Read podcast/feed.xml and identify the most recent episode
-3. Validate channel-level metadata (Section 1 requirements)
-4. Validate episode metadata (Section 2 & 3 requirements)
-5. Verify file metadata accuracy (actual file size and duration match feed)
-6. Check XML structure validity
-7. Perform content quality checks (report links, source URLs, HTML formatting)
-8. Provide validation report with specific issues and fixes needed
-
-Return comprehensive validation report showing:
-- ✅ Passed checks
-- ❌ Failed checks with specific fixes
-- ⚠️ Warnings for optional elements
-
-If validation fails, DO NOT proceed to Phase 11 until issues are fixed."
-```
+If validation fails, DO NOT proceed to Phase 12 until issues are fixed.
 
 **VERIFY FEED.XML UPDATE:**
-```bash
-git diff podcast/feed.xml | head -50
-```
+
+Use Bash: `git diff podcast/feed.xml` to review the new `<item>` entry.
 
 **Expected output:**
 - New `<item>` entry visible
@@ -1760,11 +1579,7 @@ git diff podcast/feed.xml | head -50
 
 **⚠️ DO NOT PROCEED TO PHASE 12 UNTIL ALL EXIT CRITERIA MET**
 
-**Update todos:**
-```
-Mark "Create publishing metadata" as completed.
-Mark "Update feed.xml and commit" as in_progress.
-```
+**Update tasks:** Use TaskUpdate to mark "Publish episode (cover art, metadata, feed.xml)" as completed, then mark "Commit and push to GitHub" as in_progress.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -1904,9 +1719,7 @@ git ls-remote origin main | grep main
 
 Wait 2-3 minutes for GitHub Pages deployment, then verify:
 
-```bash
-curl -s https://research.yuda.me/podcast/feed.xml | grep -A 5 "YYYY-MM-DD-slug"
-```
+Use WebFetch to verify the episode appears at `https://research.yuda.me/podcast/feed.xml`.
 
 **Expected output:** Should return the episode title and enclosure URL
 
@@ -1930,12 +1743,7 @@ curl -s https://research.yuda.me/podcast/feed.xml | grep -A 5 "YYYY-MM-DD-slug"
 ✓ feed.xml updated on live site (after 2-3 min)
 ✓ Episode appears in feed.xml
 
-**Update todos:**
-```
-Mark "Update feed.xml and commit" as completed.
-Mark "Commit & Push" as completed.
-ALL EPISODE WORKFLOW TASKS COMPLETE! ✅
-```
+**Update tasks:** Use TaskUpdate to mark "Commit and push to GitHub" as completed. Use TaskList to verify all tasks show completed.
 
 ═══════════════════════════════════════════════════════════════
 
@@ -1969,7 +1777,7 @@ ALL EPISODE WORKFLOW TASKS COMPLETE! ✅
 
 When user wants to create a new episode:
 
-1. **Create todo list** with TodoWrite tool
+1. **Create task list** with TaskCreate
 2. **Determine episode details** (use today's date; only ask about series/slug/title if not provided)
 3. **Check for existing research-prompt.md** (seed document) and read if present
 4. **Phase 1:** Create episode directory and initial files (research/, logs/, tmp/, sources.md)
@@ -1985,4 +1793,4 @@ When user wants to create a new episode:
 14. **Phase 11:** Generate cover art, create metadata, update feed.xml, validate
 15. **Phase 12:** Git commit and push to publish (EPISODE LIVE)
 
-**Key:** Update TodoWrite at every phase transition. The sequential workflow builds research progressively: academic foundation → question discovery → targeted followup, producing higher quality, better verified, non-redundant research.
+**Key:** Use TaskUpdate at every phase transition to track progress. The sequential workflow builds research progressively: academic foundation → question discovery → targeted followup, producing higher quality, better verified, non-redundant research.

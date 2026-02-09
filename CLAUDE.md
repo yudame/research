@@ -112,7 +112,7 @@ python generate_landing_page.py ../episodes/YYYY-MM-DD-slug/
 - Keep repo under 1GB total
 
 ### Git Practices
-- Use TodoWrite tool to track progress through workflow phases
+- Use Task tools (TaskCreate, TaskUpdate, TaskList) to track progress through workflow phases
 - Use heredoc format for multi-line commit messages
 - Commit only when explicitly requested by user
 
