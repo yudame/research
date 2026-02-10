@@ -1,6 +1,7 @@
 ---
 name: chatgpt-deep-research
 description: DEPRECATED - Use gpt-researcher skill instead. This browser automation approach has been replaced with the local GPT-Researcher framework using OpenAI o1.
+user-invocable: false
 ---
 
 # ChatGPT Deep Research - DEPRECATED

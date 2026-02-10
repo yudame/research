@@ -1,3 +1,9 @@
+---
+name: podcast-episode-planner
+description: Transform research materials into structured episode plans that guide NotebookLM audio generation. Creates content_plan.md with three-section structure, Wave 2 structural design, and NotebookLM guidance.
+user-invocable: false
+---
+
 # Podcast Episode Planner Skill
 
 **Purpose:** Transform research materials into a structured episode plan that guides NotebookLM's two-host audio generation.
