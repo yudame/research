@@ -1,3 +1,9 @@
+---
+name: podcast-quality-scorecard
+description: Evaluate completed podcast episodes across 10 quality dimensions. Diagnostic tool that produces detailed scorecards with evidence-based ratings, strengths, weaknesses, and workflow improvement recommendations.
+user-invocable: false
+---
+
 # Podcast Quality Scorecard Skill
 
 **Purpose:** Evaluate completed podcast episodes across 10 quality dimensions to identify strengths and weaknesses. This is a diagnostic tool (not before/after comparison) applied to every episode to understand its unique profile.

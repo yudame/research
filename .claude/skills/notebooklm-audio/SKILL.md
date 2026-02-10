@@ -1,6 +1,7 @@
 ---
 name: notebooklm-audio
 description: "LEGACY SKILL - Manual NotebookLM web interface workflow. The primary workflow now uses notebooklm-enterprise-api for automated audio generation. Use this skill only when the API is unavailable."
+user-invocable: false
 ---
 
 # NotebookLM Audio Generation (Manual Fallback)
