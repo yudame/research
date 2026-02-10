@@ -328,17 +328,39 @@ def generate_episode_focus(episode_title: str, series_name: str = "") -> str:
 
     return f"""Create a two-host podcast episode on: {episode_title}{series_intro}
 
-IMPORTANT: Follow the structure and guidance in content_plan.md - it contains:
+IMPORTANT: Follow the structure and guidance in content_plan.md carefully. It contains:
 - The opening hook to use
 - Key terms to define (with pronunciations)
 - Studies to emphasize
 - Three-section narrative arc (Foundation → Evidence → Application)
+- Episode Structure Map with modes, durations, and transitions
+- Signposting language for transitions between sections
 - Closing callback and sign-off
+
+STRUCTURAL GUIDANCE:
+- Follow the Episode Structure Map in content_plan.md for section order, modes, and timing
+- Use the signposting language provided for transitions: preview the structure at the start ("In this episode, we'll first explore X, then Y, and finally Z"), signal mode switches clearly, and use progress markers
+- Follow the Depth Budget - allocate time to themes as specified, don't let any major theme get compressed at the end
+- Build toward the resolution identified in content_plan.md - each section should raise the stakes or deepen understanding
+
+DIALOGUE DYNAMICS - CRITICAL:
+- Find the "Counterpoint Moments" section in content_plan.md
+- At each counterpoint moment, speakers must TAKE POSITIONS and DISAGREE respectfully
+- Speaker A should argue their assigned position; Speaker B should actively push back with their assigned counter-position
+- This must be genuine disagreement, NOT collaborative exploration where both hosts present views neutrally
+- Use phrases like: "Wait, but doesn't that contradict...", "I disagree because...", "I see it differently - here's why...", "Let me push back on that..."
+- After debating, resolve through synthesis: "Both perspectives have merit when you consider..."
+- Target 2-3 counterpoint moments throughout the episode
 
 Brand elements:
 - Host: Valor Engels
 - Open with: "Welcome to Yuda Me Research{series_intro}. I'm Valor Engels..."
 - Close with: "Find full research and sources at research dot yuda dot me - that's Y-U-D-A dot M-E"
+
+EPISODE ARC:
+- Opening (3-5 min): Hook with specific stat/story, define the problem, preview structure
+- Middle (20-30 min): Build from foundation to evidence to application with clear mode-switching
+- Closing (3-5 min): Synthesize key takeaways (state 1-3 explicitly), callback to opening hook, call-to-action
 
 Tone: Intellectually rigorous but accessible - two experts having a genuine conversation, making complex research understandable.
 
@@ -354,7 +376,8 @@ Avoid:
 - Undefined jargon
 - Fabricated examples (use only what's in the source material)
 - Over-hedging that obscures findings
-- Repeating context unnecessarily"""
+- Repeating context unnecessarily
+- Collaborative framing of counterpoints (hosts must actually disagree)"""
 
 
 def main():

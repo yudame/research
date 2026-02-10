@@ -109,9 +109,44 @@ def parse_metadata_md(metadata_path: Path) -> dict:
         metadata['sources'] = sources
 
     # Extract keywords
-    keywords_match = re.search(r'^## Keywords\s*\n+(.+?)(?=\n#|\Z)', content, re.MULTILINE | re.DOTALL)
+    keywords_match = re.search(r'^## Keywords.*?\n+(.+?)(?=\n#|\Z)', content, re.MULTILINE | re.DOTALL)
     if keywords_match:
         metadata['keywords'] = keywords_match.group(1).strip()
+
+    # Extract "What You'll Learn" section
+    learn_match = re.search(r"^## What You'll Learn.*?\n+(.+?)(?=\n---|\n#|\Z)", content, re.MULTILINE | re.DOTALL)
+    if learn_match:
+        learn_text = learn_match.group(1).strip()
+        bullets = []
+        for line in learn_text.split('\n'):
+            line = line.strip()
+            if line.startswith('-'):
+                bullet = line[1:].strip()
+                if bullet and not bullet.startswith('**Format'):
+                    bullets.append(bullet)
+        if bullets:
+            metadata['what_youll_learn'] = bullets
+
+    # Extract Key Timestamps section
+    timestamps_match = re.search(r'^## Key Timestamps.*?\n+(.+?)(?=\n---|\n#|\Z)', content, re.MULTILINE | re.DOTALL)
+    if timestamps_match:
+        ts_text = timestamps_match.group(1).strip()
+        timestamps = []
+        for line in ts_text.split('\n'):
+            line = line.strip()
+            if line.startswith('-') and '[' in line:
+                ts_match = re.match(r'-\s*\*?\*?\[(\d+:\d+)\]\*?\*?\s*-?\s*(.*)', line)
+                if ts_match:
+                    timestamps.append({'time': ts_match.group(1), 'description': ts_match.group(2).strip()})
+        if timestamps:
+            metadata['timestamps'] = timestamps
+
+    # Extract Call-to-Action section
+    cta_match = re.search(r'^### Primary CTA\s*\n+(.+?)(?=\n###|\n---|\n#|\Z)', content, re.MULTILINE | re.DOTALL)
+    if cta_match:
+        cta_text = cta_match.group(1).strip()
+        if cta_text and not cta_text.startswith('['):
+            metadata['cta'] = cta_text
 
     return metadata
 
@@ -178,28 +213,55 @@ def build_episode_url(episode_dir: Path, filename: str) -> str:
     return f"https://research.yuda.me/podcast/episodes/{rel_path}/{filename}"
 
 
-def generate_content_encoded(description: str, sources: list, report_url: str) -> str:
-    """Generate HTML content for content:encoded field."""
+def generate_content_encoded(metadata: dict, report_url: str) -> str:
+    """Generate enhanced HTML content for content:encoded field."""
+    description = metadata.get('description', '')
+    sources = metadata.get('sources', [])
+    what_youll_learn = metadata.get('what_youll_learn', [])
+    timestamps = metadata.get('timestamps', [])
+    cta = metadata.get('cta', '')
+
     html_parts = []
 
-    # Split description into paragraphs
+    # Overview
+    html_parts.append("<h2>Overview</h2>")
     paragraphs = description.split('\n\n')
     for para in paragraphs:
         para = para.strip()
         if para and not para.startswith('Full research report:'):
-            # Escape HTML but preserve any existing formatting
             html_parts.append(f"<p>{escape(para)}</p>")
 
-    # Add report link
-    html_parts.append(f'<p><strong>Full research report:</strong> <a href="{report_url}">report.md</a></p>')
+    # What You'll Learn
+    if what_youll_learn:
+        html_parts.append("<h2>What You'll Learn</h2>")
+        html_parts.append("<ul>")
+        for bullet in what_youll_learn:
+            html_parts.append(f"<li>{escape(bullet)}</li>")
+        html_parts.append("</ul>")
 
-    # Add sources
+    # Key Timestamps
+    if timestamps:
+        html_parts.append("<h2>Key Timestamps</h2>")
+        html_parts.append("<ul>")
+        for ts in timestamps:
+            html_parts.append(f'<li><strong>[{escape(ts["time"])}]</strong> - {escape(ts["description"])}</li>')
+        html_parts.append("</ul>")
+
+    # Sources grouped
     if sources:
-        html_parts.append("<p><strong>Key Sources:</strong></p>")
+        html_parts.append("<h2>Resources &amp; Sources</h2>")
         html_parts.append("<ul>")
         for source in sources:
             html_parts.append(f'<li><a href="{escape(source["url"])}">{escape(source["name"])}</a></li>')
         html_parts.append("</ul>")
+
+    # Full research report link
+    html_parts.append(f'<h2>Full Research Report</h2>')
+    html_parts.append(f'<p>Read the complete research synthesis with all citations at: <a href="{report_url}">research.yuda.me</a></p>')
+
+    # Call-to-action
+    if cta:
+        html_parts.append(f"<p><em>{escape(cta)}</em></p>")
 
     return "<![CDATA[" + "".join(html_parts) + "]]>"
 
@@ -242,11 +304,7 @@ def generate_item_xml(metadata: dict, episode_dir: Path, audio_file: Path) -> st
     description = metadata.get('description', '')
 
     # Generate content:encoded (HTML)
-    content_encoded = generate_content_encoded(
-        description,
-        metadata.get('sources', []),
-        report_url
-    )
+    content_encoded = generate_content_encoded(metadata, report_url)
 
     # Build the XML
     lines = []
@@ -283,6 +341,12 @@ def generate_item_xml(metadata: dict, episode_dir: Path, audio_file: Path) -> st
 
     if chapters_url:
         lines.append(f'      <podcast:chapters url="{chapters_url}" type="application/json+chapters"/>')
+
+    # Add podcast:transcript tag if transcript.txt exists
+    transcript_path = episode_dir / "transcript.txt"
+    if transcript_path.exists():
+        transcript_url = build_episode_url(episode_dir, "transcript.txt")
+        lines.append(f'      <podcast:transcript url="{transcript_url}" type="text/plain"/>')
 
     lines.append("    </item>")
 
