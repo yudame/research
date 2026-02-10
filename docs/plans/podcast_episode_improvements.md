@@ -150,16 +150,41 @@ Phase 7 → Synthesis Agent → Input Validation → If Wave 1 missing → FAIL 
 - Wave 2: 🎯 NEXT (address counterpoint execution gap, add depth budget guidance)
 - Wave 4: 🔄 IN PARALLEL (packaging improvements, can do immediately)
 
-### 🔲 Remaining: 31 Workflow Improvement Tasks
+### Status: Waves 1-5 COMPLETE (2026-02-10)
 
-- **Wave 1:** Research & Synthesis (5 tasks) - ✅ **COMPLETE** (enforced, awaiting real-world test)
-- **Wave 2:** Episode Planning (9 tasks) - NOT STARTED
-- **Wave 3:** Audio Generation (4 tasks) - NOT STARTED
-- **Wave 4:** Publishing & Productization (11 tasks) - NOT STARTED
-- **Wave 5:** Quality Gates (2 tasks) - NOT STARTED
+- **Wave 1:** Research & Synthesis (5 tasks) - ✅ **COMPLETE** (validated on Ep. 8, +16 pts)
+- **Wave 2:** Episode Planning (9 tasks) - ✅ **COMPLETE** (templates + exit criteria enforced)
+- **Wave 3:** Audio Generation (4 tasks) - ✅ **COMPLETE** (episodeFocus enhanced with structural/dialogue/arc guidance)
+- **Wave 4:** Publishing & Productization (11 tasks) - ✅ **COMPLETE** (update_feed.py enhanced, companion resources integrated)
+- **Wave 5:** Quality Gates (2 tasks) - ✅ **COMPLETE** (Phase 8 + Phase 11 exit criteria enforced)
 - **Wave 6:** Format Experiments (6 tasks) - NOT STARTED
 
-**Next Action:** Wave 1 enforcement complete. Test on next episode production, then proceed to Wave 2.
+**What was implemented (2026-02-10):**
+
+**Wave 2 completion:**
+- Updated `podcast-episode-planner` skill (v4.0) to produce Wave 2 structural sections
+- Added Wave 2 exit criteria to Phase 8 workflow (Episode Structure Map, Mode-Switching, Signposting, Depth Budget, Counterpoint Moments with assigned positions, Episode Arc)
+- Enhanced template referenced: `docs/templates/content_plan-enhanced.md`
+
+**Wave 3 completion:**
+- Enhanced `notebooklm_prompt.py` `generate_prompt()` with STRUCTURAL GUIDANCE, DIALOGUE DYNAMICS, and EPISODE ARC sections
+- Enhanced `notebooklm_api.py` `generate_episode_focus()` with identical improvements
+- Dialogue dynamics now explicitly instruct speakers to TAKE POSITIONS and DISAGREE (not collaborative framing)
+- Added specific disagreement phrases and synthesis guidance
+
+**Wave 4 completion:**
+- Enhanced `update_feed.py` to parse "What You'll Learn", Key Timestamps, CTA from metadata.md
+- `generate_content_encoded()` now produces structured HTML: Overview, What You'll Learn, Timestamps, Resources, Report link, CTA
+- Added `<podcast:transcript>` tag support (links to transcript.txt)
+- Integrated companion resource scripts into Phase 11 workflow
+- Phase 11 now references enhanced metadata template
+
+**Wave 5 completion:**
+- Phase 8 exit criteria enforce all Wave 2 structural sections (blocking)
+- Phase 11 exit criteria enforce all Wave 4 packaging sections (blocking)
+- Both quality gates prevent proceeding without complete quality requirements
+
+**Next Action:** Wave 6 (Format Experiments) available when ready. Validate Waves 2-5 on next episode production.
 
 ---
 

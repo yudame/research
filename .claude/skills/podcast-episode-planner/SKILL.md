@@ -4,6 +4,10 @@
 
 **When to Use:** After research is complete (Phase 7 report.md exists) and before audio generation. This skill creates `content_plan.md` - the structural blueprint that NotebookLM uses to create coherent, well-organized podcast audio.
 
+**⭐ REQUIRED: Use the enhanced Wave 2 template from `docs/templates/content_plan-enhanced.md`**
+
+This template includes all Wave 2 structural improvements. DO NOT use a basic template.
+
 ---
 
 ## Skill Overview
@@ -139,7 +143,27 @@ Track what's been established to enable callbacks:
 - **Concepts established:** [list - can callback without re-explaining]
 - **Open loops:** [questions raised that must be answered by end]
 
-### Step 5: Quality Check
+### Step 5: Wave 2 Structural Design
+
+**After classification and toolkit selection, design the structural elements:**
+
+a. **Episode Structure Map (A1.1):** Map when to be philosophical, practical, storytelling, analytical. Define primary mode, duration, purpose, and key elements for each section.
+
+b. **Mode-Switching Framework (A1.2):** Define clear transitions between philosophy, research, storytelling, practical, and landing modes with specific language markers and duration allocation.
+
+c. **Signposting Language (A1.3):** Create opening structure preview, transition phrases, progress markers, and mode-switch signals that listeners can follow.
+
+d. **Depth Budget (A1.4):** Allocate time percentage to each theme using Depth Distribution Analysis from p3-briefing.md. Validate: primary themes get ≥25% each, no primary theme <15%. If runtime ≤30 min, front-load practical content in Section 2.
+
+e. **Problem → Solution Architecture (A2.1):** Separate problem exploration from solution delivery. Choose single-focus or multi-dimensional approach.
+
+f. **Build Toward Resolution (A2.2):** Work backward from main takeaway. Each section must raise stakes or deepen understanding. Closing must feel like a conclusion, not "we ran out of time."
+
+g. **Counterpoint Moments (A2.3):** Design 2-3 moments using Counterpoint Discovery from p3-briefing.md. **CRITICAL: ASSIGN POSITIONS to speakers, not "present both views."** Each counterpoint must include: Topic, Speaker A position, Speaker B position, and language templates.
+
+h. **Episode Arc Template (A3.3):** Opening (Hook + Problem + Structure Preview, 3-5 min), Middle (Escalating depth with mode-switching, 20-30 min), Closing (Synthesis + Takeaways + Callback + CTA, 3-5 min).
+
+### Step 6: Quality Check
 
 Before finalizing, verify:
 
@@ -150,11 +174,24 @@ Before finalizing, verify:
 - [ ] Opening hook connects to closing callback
 - [ ] Episode answers its stated core question
 
+**Wave 2 Structural Checks (REQUIRED):**
+- [ ] Episode Structure Map defined (modes, durations, transitions)
+- [ ] Mode-Switching Framework applied (each mode has language markers)
+- [ ] Signposting language included (preview, transitions, progress markers)
+- [ ] Depth Budget validates even coverage (no theme <15% when it deserves more)
+- [ ] Problem → Solution architecture clear
+- [ ] Episode builds toward clear resolution/takeaway
+- [ ] Counterpoint moments designed (2-3 minimum with ASSIGNED POSITIONS)
+- [ ] Episode Arc template followed (Opening/Middle/Closing)
+- [ ] Call-to-action included
+
 ---
 
 ## Output Format
 
-Produce `content_plan.md` in this structure:
+Produce `content_plan.md` following the enhanced template at `docs/templates/content_plan-enhanced.md`.
+
+The output must include ALL of the following sections:
 
 ```markdown
 # Episode Plan: [Episode Title]
@@ -169,6 +206,45 @@ Produce `content_plan.md` in this structure:
 - **Hook Type:** [Selected hook]
 - **Takeaway Structure:** [Selected structure]
 - **Contradiction Handling:** [Approach if applicable]
+
+---
+
+## Structural Design (Wave 2)
+
+### Episode Structure Map
+| Section | Primary Mode | Duration | Purpose | Key Elements |
+|---------|-------------|----------|---------|--------------|
+| Opening | Hook + Problem | 3-5 min | ... | ... |
+| Part 1 | [Mode] | [X min] | ... | ... |
+| Part 2 | [Mode] | [X min] | ... | ... |
+| Part 3 | [Mode] | [X min] | ... | ... |
+| Closing | Landing + Synthesis | 3-5 min | ... | ... |
+
+### Mode-Switching Framework
+[Define each mode: Philosophy, Research, Storytelling, Practical, Landing]
+[Include language markers and duration allocation for each]
+
+### Signposting Language
+[Opening structure preview, transition phrases, progress markers, mode-switch signals]
+
+### Depth Budget
+| Theme | Importance | Duration | % | Research Depth | Notes |
+|-------|-----------|----------|---|----------------|-------|
+[Allocate time per theme, validate against p3-briefing.md depth analysis]
+
+### Problem → Solution Architecture
+[Problem definition, exploration approach, solution delivery plan]
+
+### Build Toward Resolution
+[Main takeaway, how each section builds toward it, momentum check]
+
+### Counterpoint Moments
+| Moment | Topic | Speaker A Position | Speaker B Position | Tension Type | Timing |
+|--------|-------|-------------------|-------------------|-------------|--------|
+[2-3 counterpoints with ASSIGNED POSITIONS, language templates]
+
+### Episode Arc
+[Opening (3-5 min), Middle (20-30 min), Closing (3-5 min) breakdown]
 
 ---
 
@@ -189,6 +265,10 @@ Produce `content_plan.md` in this structure:
    - Why it matters: [Context]
 
 2. **[Study name]** - [Key finding]
+
+### Stories to Feature (from Story Bank)
+1. **[Story title]** - Use at [X min mark] to illustrate [concept]
+2. **[Story title]** - Use at [X min mark] to illustrate [concept]
 
 ### Narrative Arc
 
@@ -211,9 +291,15 @@ Produce `content_plan.md` in this structure:
 - Protocol 2: [If applicable]
 - Caveats: [Important limitations]
 
+### Counterpoint Execution (for NotebookLM)
+- At ~[X min]: [Topic] - Speaker A argues [position], Speaker B challenges with [position]
+  - Use phrases: "Wait, but doesn't that contradict...", "I see it differently because..."
+- At ~[X min]: [Topic] - Speaker A defends [view], Speaker B pushes back with [alternative]
+
 ### Closing Instructions
 - Callback to opening: [How to reference the opening hook]
 - Key takeaway: [Single most important point]
+- Call-to-action: [Next step for listener]
 - Sign-off: "Find the full research and sources at research dot yuda dot me—that's Y-U-D-A dot M-E."
 
 ---
@@ -297,5 +383,5 @@ The episodeFocus prompt in the NotebookLM API provides additional guidance on to
 
 ---
 
-*Skill Version: 3.0*
-*Output: content_plan.md only (NotebookLM guidance)*
+*Skill Version: 4.0 (Wave 2 structural improvements)*
+*Output: content_plan.md with Wave 2 structural design + NotebookLM guidance*

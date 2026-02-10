@@ -1197,22 +1197,28 @@ Use Glob to confirm `podcast/episodes/YYYY-MM-DD-slug/report.md` exists, then Re
 
 **WORK TO DO:** Create content_plan.md using the podcast-episode-planner skill.
 
+**⭐ REQUIRED: Use the enhanced Wave 2 template from `docs/templates/content_plan-enhanced.md`**
+
 Read `.claude/skills/podcast-episode-planner/SKILL.md` and follow it to:
-1. Read report.md and sources.md from the episode directory
+1. Read report.md, sources.md, and research/p3-briefing.md from the episode directory
 2. Classify episode type (evidence status, content density, series position)
 3. Select toolkit elements (hook type, takeaway structure, etc.)
-4. Create content_plan.md with three-section structure and NotebookLM guidance
-5. Log to logs/prompts.md
+4. **Design Wave 2 structural elements** (Structure Map, Mode-Switching, Signposting, Depth Budget, Problem→Solution, Counterpoint Moments, Episode Arc)
+5. Create content_plan.md with structural design + NotebookLM guidance
+6. Log to logs/prompts.md
 
 **The skill produces:**
-- `content_plan.md` - Episode structure guide with NotebookLM instructions (8-12KB)
+- `content_plan.md` - Episode structure guide with Wave 2 structural design + NotebookLM instructions (10-15KB)
 
 **What content_plan.md provides for NotebookLM:**
+- **Wave 2 Structural Design:** Episode Structure Map, Mode-Switching Framework, Signposting Language, Depth Budget, Problem→Solution Architecture, Build Toward Resolution, Counterpoint Moments with assigned positions, Episode Arc
 - Three-section structure (Foundation → Evidence → Application)
 - Key terms that must be defined
 - Specific studies/findings to emphasize
 - Narrative arc and transitions
 - Opening hook and closing callback guidance
+- **Counterpoint execution instructions** with assigned speaker positions
+- Call-to-action
 
 **VERIFY EPISODE PLANNING COMPLETE:**
 
@@ -1223,11 +1229,44 @@ Use Glob to confirm `podcast/episodes/YYYY-MM-DD-slug/content_plan.md` exists, t
 
 ---
 
-**EXIT CRITERIA (all must be true to proceed):**
-✓ content_plan.md created with three-section structure
+**⭐ PHASE 8 EXIT CRITERIA - WAVE 2 ENFORCEMENT:**
+
+Before proceeding to Phase 9 (Audio Generation), verify ALL of these requirements:
+
+✓ content_plan.md created using enhanced template (docs/templates/content_plan-enhanced.md)
+
+**Structural Clarity (Wave 2, Tasks A1.1-A1.3):**
+✓ Episode Structure Map defined (modes, durations, transitions for each section)
+✓ Mode-Switching Framework applied (each mode has clear language markers)
+✓ Signposting language included (structure preview, transitions, progress markers)
+
+**Depth & Balance (Wave 2, Task A1.4):**
+✓ Depth Budget validates even coverage (no primary theme <15% when it deserves more)
+✓ Time allocation matches research depth from p3-briefing.md
+✓ If runtime ≤30 min, practical content front-loaded in Section 2
+
+**Content Architecture (Wave 2, Tasks A2.1-A2.2):**
+✓ Problem → Solution architecture clear
+✓ Episode builds toward clear resolution/takeaway (not trailing off)
+
+**Dialogue Dynamics (Wave 2, Task A2.3) - EXECUTION CRITICAL:**
+✓ Counterpoint moments designed (2-3 minimum)
+✓ Each counterpoint includes: Topic, Speaker A position, Speaker B position
+✓ Language templates provided ("Wait, but what about..." phrases)
+✓ Positions are ASSIGNED (not just "present both views")
+✓ **Quality check:** Each counterpoint has EXPLICIT DISAGREEMENT, not collaborative framing
+
+**NotebookLM Guidance:**
 ✓ Key terms to define listed
 ✓ Studies/findings to emphasize identified
-✓ Narrative arc guidance included
+✓ Stories to feature selected from Story Bank
+✓ Transition moments planned with signposting language
+✓ Counterpoint execution instructions for NotebookLM
+✓ Closing callback designed
+✓ Call-to-action included
+
+**If ANY Wave 2 requirement is missing, DO NOT PROCEED to Phase 9.**
+Return to content_plan.md and complete the missing sections.
 
 **Update tasks:** Use TaskUpdate to mark "Create episode content plan" as completed, then mark "Generate audio via NotebookLM" as in_progress.
 
@@ -1455,7 +1494,9 @@ Can run in background while creating metadata.
 
 ---
 
-**WORK TO DO:** Generate episode description, keywords, and source links:
+**WORK TO DO:** Generate episode metadata, companion resources, and publishing artifacts.
+
+**⭐ REQUIRED: Use the enhanced metadata template from `docs/templates/metadata-enhanced.md`**
 
 a. **Create compelling 1-2 sentence description (plain text):**
    - Based on report.md and transcript
@@ -1464,54 +1505,50 @@ a. **Create compelling 1-2 sentence description (plain text):**
    - Keep this version plain text for the `<description>` tag
    - Include link to full research report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
-b. **Generate episode-specific keywords (5-10 keywords):**
+b. **Create "What You'll Learn" section (3-5 bullets):**
+   - Specific, compelling insights or myth-busts
+   - Start each bullet with verb or "Why/How/What"
+   - Include numbers when impactful
+
+c. **Extract Key Timestamps (5-7 major sections):**
+   - Use chapter markers as reference
+   - Include enticing descriptions (not just section titles)
+
+d. **Generate episode-specific keywords (5-10 keywords):**
    - Analyze report.md, transcript, and chapter titles
    - Extract the most important concepts, terms, protocols, people, events mentioned
    - Prioritize: specific technical terms, proper nouns, key concepts, frameworks
    - Format as comma-separated list for iTunes keywords field
 
-c. **Add validated source links (3-5 sources):**
+e. **Add validated source links (3-5 sources) with actionable descriptions:**
    - Use sources from research/p3-briefing.md (Tier 1 and Tier 2 prioritized)
    - Verify links are still accessible with WebFetch when possible
-   - Prioritize: official legislation/regulation, academic analysis, primary sources
-   - These will be formatted as clickable HTML links in `<content:encoded>`
+   - Group by type: Research Papers, Tools/Templates, Further Reading
+   - Add 1-sentence actionable description for each link
 
-**Create logs/metadata.md:**
+f. **Define Call-to-Action:**
+   - Primary CTA: next logical step for listener
+   - Voiced CTA for audio (included in episodeFocus prompt)
 
-```markdown
-# Episode Publishing Metadata
+**Create logs/metadata.md using the enhanced template** (docs/templates/metadata-enhanced.md):
 
-## Title
-[Episode Title]
+The enhanced template includes sections for: Title, Publication Date, Series Info, Audio, Description, What You'll Learn, Key Timestamps, Resources & Tools Mentioned, Call-to-Action, Keywords, Companion Resources, Show Notes HTML, and Feed.xml Technical Metadata.
 
-## Publication Date
-[Day, DD Mon YYYY HH:MM:SS GMT - RFC 2822 format]
+**Generate Companion Resources:**
 
-## Series Info (if applicable)
-- **Series Name:** [Series Name]
-- **Season Number:** [N]
-- **Episode Number:** [N]
+```bash
+# Generate summary, checklist, and frameworks
+uv run python ~/src/research/podcast/tools/generate_companion_resources.py podcast/episodes/YYYY-MM-DD-slug/
 
-## Audio
-- **Duration:** [HH:MM:SS or MM:SS]
-- **File Size:** [bytes]
-- **Format:** audio/mpeg
-
-## Description (Plain Text)
-[1-2 sentence compelling description covering key topics and takeaways.]
-
-Full research report: https://research.yuda.me/podcast/episodes/[path]/report.md
-
-## Key Sources (for HTML show notes)
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-- [Source Name]: [URL]
-
-## Keywords
-[keyword1, keyword2, keyword3, specific-term, specific-concept]
+# Generate HTML landing page
+uv run python ~/src/research/podcast/tools/generate_landing_page.py podcast/episodes/YYYY-MM-DD-slug/
 ```
+
+These scripts create:
+- `companion/*-summary.md` - One-page episode summary
+- `companion/*-checklist.md` - Action checklist
+- `companion/*-frameworks.md` - Key frameworks reference
+- `index.html` - Episode landing page
 
 **Update feed.xml using update_feed.py:**
 
@@ -1564,18 +1601,47 @@ Use Bash: `git diff podcast/feed.xml` to review the new `<item>` entry.
 
 ---
 
-**EXIT CRITERIA (all must be true to proceed):**
+**⭐ PHASE 11 EXIT CRITERIA - WAVE 4/5 ENFORCEMENT:**
+
+Before proceeding to Phase 12 (Commit & Push), verify ALL of these requirements:
+
+**Core Publishing (required):**
 ✓ cover.png exists and branded (~1MB)
-✓ logs/metadata.md created with all fields
-✓ Episode description written (1-2 sentences + report link)
-✓ Keywords generated (5-10 episode-specific terms)
-✓ Key sources validated (3-5 Tier 1/2 sources with working URLs)
+✓ logs/metadata.md created using enhanced template (docs/templates/metadata-enhanced.md)
 ✓ feed.xml updated with new `<item>` entry
 ✓ `<lastBuildDate>` updated in feed.xml channel metadata
 ✓ All metadata accurate (duration matches file, size matches file, pubDate is RFC 2822)
 ✓ 🚨 **Feed validator reports VALID or VALID WITH WARNINGS** (not INVALID)
 ✓ All ❌ failed checks from validator have been fixed
-✓ File metadata verification passed (size and duration match actual files)
+
+**Description & Discovery (Wave 4, Task C1.1):**
+✓ Plain text description written (1-2 sentences + report link)
+✓ "What You'll Learn" section complete (3-5 compelling bullets, verb-led)
+✓ Key timestamps extracted (5-7 major sections with enticing descriptions)
+✓ Keywords generated (5-10 episode-specific terms, not generic)
+
+**Resources (Wave 4, Task C1.3):**
+✓ Resources & Tools section complete (5-10 sources)
+✓ Sources grouped by type (Research / Tools / Reading)
+✓ Each source has actionable 1-sentence description
+✓ All URLs validated and working
+
+**Call-to-Action (Wave 4, Task C1.2):**
+✓ Primary CTA defined (clear next step for listener)
+✓ Voiced CTA written (natural language for audio)
+
+**Companion Resources (Wave 4, Task C3.1):**
+✓ generate_companion_resources.py run (creates summary, checklist, frameworks)
+✓ generate_landing_page.py run (creates index.html)
+✓ At least one companion resource exists in companion/ directory
+
+**Feed.xml Enhancements (Wave 4, Tasks C2.1-C2.3):**
+✓ `<itunes:episodeType>` tag present
+✓ `<itunes:episode>` tag present (if series episode)
+✓ `<podcast:transcript>` tag present (links to transcript.txt)
+✓ Enhanced `<content:encoded>` HTML with Overview, What You'll Learn, Timestamps, Resources sections
+
+**If ANY packaging requirement is missing, complete it before proceeding.**
 
 **⚠️ DO NOT PROCEED TO PHASE 12 UNTIL ALL EXIT CRITERIA MET**
 
