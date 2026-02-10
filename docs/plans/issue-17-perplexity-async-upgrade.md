@@ -171,19 +171,81 @@ gemini:
 
 ## Testing Plan
 
+**⚠️ CRITICAL: What we have works. These changes must not break existing functionality.**
+
+### Unit Tests (per phase)
+
 1. Test async submission returns valid job_id
 2. Test polling with short/long research queries
 3. Test job_id retrieval for existing jobs
 4. Test metadata parsing (citations, costs, search_results)
 5. Test --no-wait + later --job-id workflow
-6. Test integration with podcast episode workflow
+6. Test --sync flag still works (fallback path)
+
+### End-to-End Validation (REQUIRED before merge)
+
+**E2E Test 1: Full podcast research workflow**
+```bash
+# Run actual Perplexity research for a real topic
+cd podcast/tools
+python perplexity_deep_research.py \
+  "Research the health effects of intermittent fasting. Focus on peer-reviewed studies." \
+  --output /tmp/e2e-test-perplexity.md
+
+# Verify output
+- [ ] File exists and is >2KB
+- [ ] Contains inline citations [1][2][3]
+- [ ] Contains source URLs
+- [ ] Markdown formatting is valid
+```
+
+**E2E Test 2: Async fire-and-poll workflow**
+```bash
+# Submit without waiting
+python perplexity_deep_research.py --no-wait "Research topic"
+# Capture job_id from output
+
+# Poll for results
+python perplexity_deep_research.py --job-id <job_id> --output results.md
+
+# Verify
+- [ ] Job submitted successfully
+- [ ] Polling retrieves complete results
+- [ ] Output matches sync workflow quality
+```
+
+**E2E Test 3: Sync fallback still works**
+```bash
+python perplexity_deep_research.py --sync "Research topic" --output results.md
+
+# Verify
+- [ ] Sync path executes (no async)
+- [ ] Results identical in quality to pre-upgrade
+```
+
+**E2E Test 4: Integration with podcast episode**
+```bash
+# Use in actual episode context (Phase 3 research)
+# Compare output quality to previous episodes
+- [ ] Research quality matches or exceeds previous episodes
+- [ ] No workflow disruption
+```
+
+### Acceptance Criteria
+
+- [ ] All E2E tests pass
+- [ ] --sync flag provides working fallback to current behavior
+- [ ] No regression in research output quality
+- [ ] Async workflow completes successfully for real research queries
+- [ ] Error handling works (bad API key, network failure, invalid job_id)
 
 ## Rollout
 
-1. Implement async alongside existing sync (--sync flag for fallback)
-2. Default to async for new calls
-3. After validation, deprecate sync path
-4. Update skill to async-first documentation
+1. **Implement async alongside existing sync** (--sync flag for fallback)
+2. **Run all E2E tests** before any merge
+3. **Default to sync initially** — async opt-in with --async flag
+4. After 2-3 successful episode researches with async, flip default
+5. Deprecate sync path only after async proven stable
 
 ## Estimated Time
 
