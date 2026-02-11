@@ -1,0 +1,90 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=28000
+title=Welcome & The Phone Call Ritual
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=28000
+END=120000
+title=The TCP Handshake in Human Conversation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=120000
+END=245000
+title=Your Brain: A 10-Bit Processor
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=245000
+END=380000
+title=The Universal Speed Limit of Speech
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=380000
+END=530000
+title=Context Switching and Attention Residue
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=530000
+END=690000
+title=Conversational ACKs and Flow Control
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=690000
+END=800000
+title=Protocol Mismatch: The Walmart Germany Story
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=800000
+END=960000
+title=Exponential Backoff: The Algorithm of Forgiveness
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=960000
+END=1260000
+title=Async vs Sync: The Great Debate
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1260000
+END=1460000
+title=Network Topology: The Amazon API Mandate
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1460000
+END=1650000
+title=Structural Holes and Information Brokers
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1650000
+END=1870000
+title=Fuzzy Trace Theory: When Lossy Beats Lossless
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=1870000
+END=2000000
+title=Buffer Management: Your Inbox Is Overflowing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2000000
+END=2165000
+title=Where the Metaphor Breaks Down
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2165000
+END=2265360
+title=Three Takeaways and the Callback to Hello
