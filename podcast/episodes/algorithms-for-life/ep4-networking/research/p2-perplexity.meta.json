@@ -1,0 +1,879 @@
+{
+  "timestamp": "2026-02-11T11:25:15.973507",
+  "model": "sonar-deep-research",
+  "usage": {
+    "prompt_tokens": 491,
+    "completion_tokens": 7300,
+    "total_tokens": 7791,
+    "citation_tokens": 74895,
+    "reasoning_tokens": 640724,
+    "search_queries": 42
+  },
+  "cost": {
+    "input_tokens": {
+      "count": 0,
+      "cost": 0.0
+    },
+    "output_tokens": {
+      "count": 0,
+      "cost": 0.0
+    },
+    "citation_tokens": {
+      "count": 74895,
+      "cost": 0.14979
+    },
+    "reasoning_tokens": {
+      "count": 640724,
+      "cost": 1.922172
+    },
+    "search_queries": {
+      "count": 42,
+      "cost": 0.21
+    },
+    "total": 2.281962
+  },
+  "citations": [
+    "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+    "https://aclanthology.org/A00-2037.pdf",
+    "https://cs162.org/static/readings/jacobson-congestion.pdf",
+    "https://www.a1.digital/knowledge-hub/tcp-ip-explained/",
+    "https://www.cs.williams.edu/~tom/courses/105/outlines/CS105_337.html",
+    "https://en.wikipedia.org/wiki/Exponential_backoff",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8248661/",
+    "https://pollackpeacebuilding.com/blog/de-escalation-skills/",
+    "https://www.medial.com/post/the-difference-between-synchronous-and-asynchronous-communication",
+    "https://dl.acm.org/doi/full/10.1145/3579541",
+    "https://missionprephealthcare.com/mental-health-resources/interventions/de-escalation-techniques/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7808296/",
+    "https://itbd.net/blog/noc/the-complete-guide-to-networking-topologies-mesh-star-bus-more/",
+    "https://www.forrester.com/blogs/organization-and-social-network-analysis-how-it-can-revolutionize-your-operating-model/",
+    "https://www.geeksforgeeks.org/computer-networks/classification-of-routing-algorithms/",
+    "https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/",
+    "https://visiblenetworklabs.com/guides/social-network-analysis-101/",
+    "https://pages.cs.wisc.edu/~tvrdik/7/html/Section7.html",
+    "https://hpbn.co/primer-on-latency-and-bandwidth/",
+    "https://blog.danslimmon.com/2019/02/26/the-latency-throughput-tradeoff-why-fast-services-are-slow-and-vice-versa/",
+    "https://www.aporc.org/LNOR/8/ISORA2008F07.pdf",
+    "https://en.wikipedia.org/wiki/End-to-end_principle",
+    "https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F14/projects/reports/project11_report_ver3.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4465555/",
+    "https://www.geeksforgeeks.org/system-design/peer-to-peer-p2p-architecture/",
+    "https://en.wikipedia.org/wiki/Packet_switching",
+    "https://www.osti.gov/servlets/purl/918389",
+    "https://www.regoladigitalconsulting.co.uk/post/demystifying-peer-to-peer-networks-a-comprehensive-guide",
+    "https://www.geeksforgeeks.org/computer-networks/difference-between-circuit-switching-and-packet-switching/",
+    "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2512&context=cstech",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC122850/",
+    "https://visiblenetworklabs.com/2021/04/16/understanding-network-centrality/",
+    "https://climate.sustainability-directory.com/term/network-resilience-metrics/",
+    "https://www.emerald.com/md/article/55/4/730/285959/Social-influence-of-hubs-in-information-cascade",
+    "https://www.pnas.org/doi/10.1073/pnas.2420334122",
+    "https://asmedigitalcollection.asme.org/computingengineering/article/23/3/030906/1160385/A-Comparison-of-Graph-Theoretic-Approaches-for",
+    "https://arxiv.org/html/2501.08946v1",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9818937/",
+    "https://snap.stanford.edu/class/cs224w-readings/burt00capital.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12627207/",
+    "http://sundaram.cs.illinois.edu/Example_reports/Review_overload.pdf",
+    "https://en.wikipedia.org/wiki/Structural_holes",
+    "https://pdodds.w3.uvm.edu/research/papers/others/2009/watts2009a.pdf",
+    "https://www.zipitwireless.com/blog/what-is-network-redundancy-and-why-is-it-critical-for-iot",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9005192/",
+    "https://wires.onlinelibrary.wiley.com/doi/10.1002/wcc.813",
+    "https://www.meter.com/resources/network-redundancy",
+    "https://digitalcommons.memphis.edu/cgi/viewcontent.cgi?article=1024&context=ccrg_papers",
+    "https://www.cloudflare.com/learning/security/glossary/what-is-bgp/",
+    "https://www.geeksforgeeks.org/electronics-engineering/shannon-capacity/",
+    "https://www.ecgi.global/sites/default/files/working_papers/documents/informationflows.pdf",
+    "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/5212-46.html",
+    "https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem",
+    "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-sen.2015.0112",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7644465/",
+    "https://www.liveaction.com/resources/blog-post/what-is-packet-loss/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6593277/",
+    "https://pages.stern.nyu.edu/~bakos/roles-of-elec-interm.pdf",
+    "https://www.pubnub.com/blog/network-packet-loss/",
+    "https://psychiatry.ucsd.edu/research/programs-centers/instep/tools-resource/Marlow-et-al.-2018_highlighted.pdf",
+    "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+    "https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10132955/",
+    "https://www.twingate.com/blog/glossary/exponential-backoff-algorithm",
+    "https://www.scylladb.com/glossary/paxos-consensus-algorithm/",
+    "https://commons.erau.edu/context/publication/article/3247/viewcontent/Connecting_Organizational_Learning___Gordon.pdf",
+    "https://designmodo.com/time-interaction-design/",
+    "https://www.orgvue.com/resources/articles/8-organizational-design-types/",
+    "https://econpapers.repec.org/RePEc:eee:jobhdp:v:144:y:2018:i:c:p:145-170",
+    "https://www.nngroup.com/articles/response-times-3-important-limits/",
+    "https://www.heflo.com/blog/organizational-structures-examples",
+    "https://psychiatry.ucsd.edu/research/programs-centers/instep/tools-resource/Marlow-et-al.-2018_highlighted.pdf",
+    "https://journals.sagepub.com/doi/10.1177/154193120605002204",
+    "https://imotions.com/blog/insights/understanding-cognitive-workload-what-is-it-and-how-does-it-affect-us/",
+    "https://shsu-ir.tdl.org/bitstreams/0002d4bc-dd4f-482c-afd1-c024a189d8a0/download",
+    "https://airccse.org/journal/jwmn/0413wmn08.pdf",
+    "https://onlinelibrary.wiley.com/doi/full/10.1155/ahci/9313239",
+    "https://eiscouncil.org/the-hidden-web-of-critical-infrastructure-why-resilience-planning-is-a-must/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8828878/",
+    "https://www.techtarget.com/searchnetworking/feature/12-common-network-protocols-and-their-functions-explained",
+    "https://www.exam-labs.com/blog/exploring-network-metrics-a-deep-dive-into-bandwidth-latency-and-jitter",
+    "https://www.technologynetworks.com/neuroscience/news/caltech-scientists-have-quantified-the-speed-of-human-thought-394395",
+    "https://www.pubnub.com/learn/glossary/communication-protocols/",
+    "https://www.riverbed.com/blogs/what-are-the-three-major-network-performance-metrics-to-focus-on/"
+  ],
+  "search_results": [
+    {
+      "title": "Transmission Control Protocol - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+      "date": null,
+      "last_updated": null,
+      "snippet": "TCP provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating via an IP network.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Acknowledgments in Human-Computer Interaction - ACL Anthology",
+      "url": "https://aclanthology.org/A00-2037.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Typical human-computer dialogue models are structured in ways that suppress the use of acknowledgments. In many systems turn-taking is completely controlled by ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Congestion Avoidance and Control - CS 162",
+      "url": "https://cs162.org/static/readings/jacobson-congestion.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The retransmit backoff problem is essentially the same as showing that no backoff'slower' than an expo- nential will guarantee stability on an Ethernet.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is TCP/IP? The communication model explained | A1 Digital",
+      "url": "https://www.a1.digital/knowledge-hub/tcp-ip-explained/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Another key aspect of TCP is flow control, which adjusts the speed of data transmission to prevent network congestion. These features make the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "CS 105 -- Acknowledgements and Retransmission",
+      "url": "https://www.cs.williams.edu/~tom/courses/105/outlines/CS105_337.html",
+      "date": null,
+      "last_updated": null,
+      "snippet": "WHEN A MESSAGE IS RECEIVED, THE RECIPIENT IS EXPECTED TO REPLY WITH AN ACKNOWLEDGEMENT (ACK). THE SENDER OF A MESSAGE RESENDS THE MESSAGE IF ACK IS NOT RECEIVED ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Exponential backoff - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Exponential_backoff",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Exponential backoff is an algorithm that uses feedback to multiplicatively decrease the rate of some process, in order to gradually find an acceptable rate.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A general model of conversational dynamics and an example ... - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8248661/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In this paper, we describe COnversational DYnamics Model (CODYM) analysis, a novel approach for studying patterns of information flow in conversations.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "7 De-Escalation Skills Essential for Defusing Conflict",
+      "url": "https://pollackpeacebuilding.com/blog/de-escalation-skills/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Mastering de-escalation techniques can turn these conflicts into positive interactions that can actually strengthen your customer relations.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Difference Between Synchronous and Asynchronous ... - MEDIAL",
+      "url": "https://www.medial.com/post/the-difference-between-synchronous-and-asynchronous-communication",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The core difference between synchronous and asynchronous communication is simple: synchronous communication is real-time interaction, like a ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Explaining Recommendations through Conversations: Dialog Model ...",
+      "url": "https://dl.acm.org/doi/full/10.1145/3579541",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We present ConvEx, a novel conversational agent for explainable RS, which supports conversation flows for different types of intents, providing ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Crisis De-Escalation Techniques: Mental Health Communication",
+      "url": "https://missionprephealthcare.com/mental-health-resources/interventions/de-escalation-techniques/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Learn practical de\u2011escalation techniques mental health providers use to calm crises, support coping, and safely reduce tension in teens and ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Examining the impact of an asynchronous communication platform ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7808296/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The asynchronous platform improved clinical communication compared with synchronous methods, contributing to efficiencies in workflow and may positively affect ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Network Topology Guide: Mesh, Star, Bus Types Explained",
+      "url": "https://itbd.net/blog/noc/the-complete-guide-to-networking-topologies-mesh-star-bus-more/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Discover network topology basics, types, and best practices. See how NOC services ensure performance, reliability, and scalability.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Revolutionize Your Operating Model With Network Analysis - Forrester",
+      "url": "https://www.forrester.com/blogs/organization-and-social-network-analysis-how-it-can-revolutionize-your-operating-model/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In this blog post, we demonstrate the use of three key approaches: organizational network analysis, social network analysis, and social infrastructure analysis.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Classification of Routing Algorithms - GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/computer-networks/classification-of-routing-algorithms/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Adaptive Algorithms. These are the algorithms that change their routing decisions whenever network topology or traffic load changes.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Types of Network Topology - GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A network topology is the arrangement of devices (nodes) and connections (links) in a computer network. It shows how computers, servers, ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Social Network Analysis 101: Ultimate Guide",
+      "url": "https://visiblenetworklabs.com/guides/social-network-analysis-101/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Social network analysis is a powerful tool for visualizing, understanding, and harnessing the power of networks and relationships.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Routing algorithms and switching techniques - cs.wisc.edu",
+      "url": "https://pages.cs.wisc.edu/~tvrdik/7/html/Section7.html",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A router can implement fixed-size smallest unit of communication containing routing information (eg, a destination address) and sequencing information in its ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Networking 101: Primer on Latency and Bandwidth",
+      "url": "https://hpbn.co/primer-on-latency-and-bandwidth/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In this chapter, we will focus on the two critical components that dictate the performance of all network traffic: latency and bandwidth.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Latency/Throughput Tradeoff: Why Fast Services Are Slow And ...",
+      "url": "https://blog.danslimmon.com/2019/02/26/the-latency-throughput-tradeoff-why-fast-services-are-slow-and-vice-versa/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "I'm devoting this blog post to exploring the relationships among latency, throughput, and capacity from a queueing perspective.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] The monitoring of the network traffic based on queuing theory",
+      "url": "https://www.aporc.org/LNOR/8/ISORA2008F07.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The article explains how to build the basic model of network traffic analysis based on. Queuing Theory, using this, we can obtain the network traffic ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "End-to-end principle - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/End-to-end_principle",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The end-to-end (E2E) principle is a design principle in computer networking that requires application-specific features (such as reliability and security) to ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Optimizing Latency and Throughput Trade-offs in a Stream ...",
+      "url": "https://people.eecs.berkeley.edu/~kubitron/courses/cs262a-F14/projects/reports/project11_report_ver3.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "It is widely believed that to achieve low latency, ap- plications should use the record-at-a-time approach, while for high throughput, the micro-batch model is ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Modeling Patient Flows Using a Queuing Network with Blocking - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4465555/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This study applies a queuing network system with blocking to analyze such congestion processes. \u201cBlocking\u201d denotes situations where patients are turned away ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Peer-to-Peer (P2P) Architecture - GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/system-design/peer-to-peer-p2p-architecture/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Peer-to-peer (P2P) architecture is a decentralized computing model where network participants share resources directly with each other ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Packet switching",
+      "url": "https://en.wikipedia.org/wiki/Packet_switching",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Packet switching contrasts with another principal networking paradigm, circuit switching, a method which pre-allocates dedicated network bandwidth specifically ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Evaluation of TCP Congestion Control Algorithms - OSTI",
+      "url": "https://www.osti.gov/servlets/purl/918389",
+      "date": null,
+      "last_updated": null,
+      "snippet": "slow start algorithm. During slow start, the congestion window is increased by one segment for every new ACK received. The connection remains in slow start.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Demystifying Peer-to-Peer Networks: A Comprehensive Guide",
+      "url": "https://www.regoladigitalconsulting.co.uk/post/demystifying-peer-to-peer-networks-a-comprehensive-guide",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Peer-to-peer networks operate on a distributed model where participants, or peers, can directly exchange data without the need for a central server.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Difference between Circuit Switching and Packet Switching",
+      "url": "https://www.geeksforgeeks.org/computer-networks/difference-between-circuit-switching-and-packet-switching/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Circuit switching is a communication method where a dedicated communication path, or circuit, is established between two devices before data transmission ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] TCP Congestion Control: Overview and Survey Of Ongoing Research",
+      "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2512&context=cstech",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The slow start algorithm uses a new variable called congestion window (cwnd). The sender can only send the mini\u00b7 mum of cwnd and the receiver advertised window ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A simple model of global cascades on random networks - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC122850/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This paper presents a possible explanation of this phenomenon in terms of a sparse, random network of interacting agents whose decisions are determined by the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Network Centrality: Understanding Degree, Closeness ...",
+      "url": "https://visiblenetworklabs.com/2021/04/16/understanding-network-centrality/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Network centrality is among the most well-known social network analysis metrics, measuring the degree to which a person or organization is central to a network.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Network Resilience Metrics \u2192 Term",
+      "url": "https://climate.sustainability-directory.com/term/network-resilience-metrics/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Meaning \u2192 Metrics quantifying network system robustness, recovery speed, and adaptability against disruptions for sustained operations.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Social influence of hubs in information cascade processes",
+      "url": "https://www.emerald.com/md/article/55/4/730/285959/Social-influence-of-hubs-in-information-cascade",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In small-world networks, specifically, only a slight rewiring of the network can have the substantial effect of decreasing average distance. Thus, it is ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Perception of own centrality in social networks - PNAS",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2420334122",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This study explores how individuals perceive their social networks, with a focus on their own positioning. Using experimental methods and ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A Comparison of Graph-Theoretic Approaches for Resilient System ...",
+      "url": "https://asmedigitalcollection.asme.org/computingengineering/article/23/3/030906/1160385/A-Comparison-of-Graph-Theoretic-Approaches-for",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This work uses two representative SoS case studies to test the graph-theoretic metrics: a manufacturing and resource distribution network and a disaster ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Applying General Turn-taking Models to Conversational Human ...",
+      "url": "https://arxiv.org/html/2501.08946v1",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This paper investigates, for the first time, the application of general turn-taking models, specifically TurnGPT and Voice Activity Projection (VAP), to ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "How Differential Dimensions of Social Media Overload Influences ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9818937/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The obtained outcomes demonstrated that information overload and communication overload positively impacted young people's fatigue.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Structural Holes versus Network Closure as Social Capital",
+      "url": "https://snap.stanford.edu/class/cs224w-readings/burt00capital.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The weaker connections between groups in Figure 1 are holes in the social structure of the market. These holes in social structure \u2014 or more simply, structural.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Human turn-taking development: A multi-faceted review of ... - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12627207/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Turn-taking has predominantly been studied via conversation analysis (CA), which is a primarily qualitative form of micro-analysis of human social action ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] A Literature Review on the Influence of Information Overload on ...",
+      "url": "http://sundaram.cs.illinois.edu/Example_reports/Review_overload.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This literature review aims to examine how excessive informa- tion exposure influences individual decision-making processes. The review will ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Structural holes - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Structural_holes",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A structural hole is understood as a gap between two individuals who have complementary sources to information. The study of structural holes spans the fields ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] THRESHOLD MODELS OF SOCIAL INFLUENCE",
+      "url": "https://pdodds.w3.uvm.edu/research/papers/others/2009/watts2009a.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The study of social influence in decision-making has a long history in social science, dating back at least a century, to when economic philosophers like ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is Network Redundancy and Why Is It Critical for IoT?",
+      "url": "https://www.zipitwireless.com/blog/what-is-network-redundancy-and-why-is-it-critical-for-iot",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Cost efficiency\u200b\u200b Although implementing redundancy may involve initial costs, it can result in long-term cost savings. Redundancy mitigates the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Strategy-dependent effects of working-memory limitations on human ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9005192/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "These findings suggest that working-memory load might have affected our participants' decision strategies, such that a higher load corresponded to an increased ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Social tipping points everywhere?\u2014Patterns and risks of overuse",
+      "url": "https://wires.onlinelibrary.wiley.com/doi/10.1002/wcc.813",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This article identifies four deleterious patterns in the application of the STP concept in this recent wave of research on nonlinear social change.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is network redundancy, why it matters, and how to build it - Meter",
+      "url": "https://www.meter.com/resources/network-redundancy",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Network redundancy ensures consistent network availability by duplicating critical parts. This principle of network design keeps your system running smoothly.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Constrained Incrementalist Moral Decision Making for a Biologically ...",
+      "url": "https://digitalcommons.memphis.edu/cgi/viewcontent.cgi?article=1024&context=ccrg_papers",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The field includes the ethics of how humans act through or with robots, and the ethical relationships between humans and robots, as well as the ethics of how to ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is BGP? | BGP routing explained - Cloudflare",
+      "url": "https://www.cloudflare.com/learning/security/glossary/what-is-bgp/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "BGP is the routing protocol for the Internet. Much like the post office processing mail, BGP picks the most efficient routes for delivering Internet traffic.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Shannon Capacity - GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/electronics-engineering/shannon-capacity/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In simple terms, Shannon's channel capacity tells us the theoretical highest limit in which any channel can transmit signals with the presence ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Information Flows, Organizational Structure, and Corporate ... - ECGI",
+      "url": "https://www.ecgi.global/sites/default/files/working_papers/documents/informationflows.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This survey provides an overview of theoretical and empirical research on information flows in corporations. It highlights key frictions preventing ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Understand how Load Balancing Works - Cisco",
+      "url": "https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/5212-46.html",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Four entries is the default in Cisco IOS for most IP routing protocols with the exception of Border Gateway Protocol (BGP), where one entry is the default.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Shannon\u2013Hartley theorem - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The theorem establishes Shannon's channel capacity for such a communication link, a bound on the maximum amount of error-free information per time unit that ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Empirical study of communication structures and barriers in ...",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-sen.2015.0112",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The benefits of establishing a more cohesive organisational structure can enable an increased efficiency in the exchange and flow of information ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Coordination Cost and Super-Efficiency in Teamwork",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7644465/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The development of team knowledge decreases coordination cost because teammates learn to communicate more effectively and save energy through ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is Packet Loss?",
+      "url": "https://www.liveaction.com/resources/blog-post/what-is-packet-loss/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Forward Error Correction (FEC) \u2013 This adds redundant information to packets, allowing the receiver to detect and correct errors eliminating the need for ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What, When, and How to Measure Team Dynamics Over Time - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6593277/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The purpose of this paper is to present a review of relevant academic articles detailing the science behind methodological tools and general approaches to ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] An Exploratory Study of the Emerging Role of Electronic Intermediaries",
+      "url": "https://pages.stern.nyu.edu/~bakos/roles-of-elec-interm.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We explore thirteen case studies of firms participating in electronic commerce and find evidence of certain new emerging roles for electronic intermediaries, ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Network Packet Loss - Causes, Effects, and Solutions",
+      "url": "https://www.pubnub.com/blog/network-packet-loss/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Packet loss disrupts network performance, affecting web browsing, real-time communication, and overall connection reliability. You can ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] A meta-analysis of team communication and performance",
+      "url": "https://psychiatry.ucsd.edu/research/programs-centers/instep/tools-resource/Marlow-et-al.-2018_highlighted.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Team virtuality moderates the relationship between communication and team performance such that this relationship is stronger in face-to-face ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Transmission Control Protocol",
+      "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol",
+      "date": null,
+      "last_updated": null,
+      "snippet": "TCP provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating via an IP network.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Raft Protocol: A Better Paxos? | Engineering Health",
+      "url": "https://engineering.cerner.com/blog/the-raft-protocol-a-better-paxos/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Distributed consensus can be described as the act of reaching agreement among a collection of machines cooperating to solve a problem. With the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Role of adaptive leadership in learning organizations to boost ... - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10132955/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This study proposes adaptive leadership as a moderator between learning organizations, change self-efficacy, and organizational innovations.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is the Exponential Backoff Algorithm?",
+      "url": "https://www.twingate.com/blog/glossary/exponential-backoff-algorithm",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The exponential backoff algorithm increases the wait time between retries exponentially after each failure, helping to manage network congestion and avoid ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is Paxos Consensus Algorithm? Definition & FAQs | ScyllaDB",
+      "url": "https://www.scylladb.com/glossary/paxos-consensus-algorithm/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The Paxos algorithm provides a mechanism that enables distributed systems to continue working in a predictable way in the event of network partitioning or ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Connecting Organizational Learning Strategies to Organizational ...",
+      "url": "https://commons.erau.edu/context/publication/article/3247/viewcontent/Connecting_Organizational_Learning___Gordon.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Purpose: The objective of this study is to analyze the conceptual and domain overlap of organizational learning and organizational resilience; ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "How Time Perception Impacts Interaction Design - Designmodo",
+      "url": "https://designmodo.com/time-interaction-design/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Understand the human perception of time, the limits of speed (and carousels), and the importance of directness in clicking in interaction ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "8 Organizational design types",
+      "url": "https://www.orgvue.com/resources/articles/8-organizational-design-types/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We'll explore the various types of organizational structures, their pros and cons, and provide a guide on how to design the best structure for your company.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A meta-analysis of team communication and performance",
+      "url": "https://econpapers.repec.org/RePEc:eee:jobhdp:v:144:y:2018:i:c:p:145-170",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The findings revealed several fundamental insights. First, communication quality had a significantly stronger relationship with team performance ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Response Time Limits: Article by Jakob Nielsen - NN/G",
+      "url": "https://www.nngroup.com/articles/response-times-3-important-limits/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "There are 3 main time limits (which are determined by human perceptual abilities) to keep in mind when optimizing web and application performance.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "9 Examples of Organizational Structures - HEFLO",
+      "url": "https://www.heflo.com/blog/organizational-structures-examples",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In this guide, we'll explore organizational structures examples that illustrate how different models impact communication, decision-making, and performance.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] A meta-analysis of team communication and performance",
+      "url": "https://psychiatry.ucsd.edu/research/programs-centers/instep/tools-resource/Marlow-et-al.-2018_highlighted.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "For example, information elaboration encompasses more elements of communication quality; these measures as- sess the degree to which information ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Queuing Network Modeling of Driver Workload and Performance",
+      "url": "https://journals.sagepub.com/doi/10.1177/154193120605002204",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We propose a new computational modeling approach\u2014a queuing network approach based on queuing network theory of human performance (Liu, 1996, 1997) and ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Understanding Cognitive Workload: What Is It and How ... - iMotions",
+      "url": "https://imotions.com/blog/insights/understanding-cognitive-workload-what-is-it-and-how-does-it-affect-us/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Cognitive workload refers to the mental effort and resources required to perform a specific task or activity.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] resilience to high consequence cascading failures",
+      "url": "https://shsu-ir.tdl.org/bitstreams/0002d4bc-dd4f-482c-afd1-c024a189d8a0/download",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The standard methods to mitigate risks are to define the likelihood and consequences of threats and failures in the system using historically observed threat.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Performance Simulation and Analysis for LTESystem Using Human ...",
+      "url": "https://airccse.org/journal/jwmn/0413wmn08.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The Real Time Human Behavior Queue Model have been discussed in Section III. The simulationand analysis results are given in Section IV.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A Systematic Literature Review: Cognitive Workload Assessment in ...",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1155/ahci/9313239",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This paper reviews published articles on cognitive workload, multitasking, the multiattribute task battery, physiological measurements of cognitive workload,",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Critical Infrastructure Web: Why Resilience Planning is A Must",
+      "url": "https://eiscouncil.org/the-hidden-web-of-critical-infrastructure-why-resilience-planning-is-a-must/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "... system theorists call a \u201ccascading failure.\u201d Cascading failures are especially dangerous in the power sector. A major blackout that disables large segments ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Brain information processing capacity modeling - PMC - NIH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8828878/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Our analysis showed that\u2014for a given cognitive task and subject\u2014higher information processing capacity leads to lower neuronal activity and faster responses.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "15 Common Network Protocols and Their Functions Explained",
+      "url": "https://www.techtarget.com/searchnetworking/feature/12-common-network-protocols-and-their-functions-explained",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Explore 15 common network protocols, including TCP/IP, HTTP, BGP and DNS. Learn about their roles in internet communication, data management ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "A Deep Dive into Bandwidth, Latency, and Jitter - Exam-Labs",
+      "url": "https://www.exam-labs.com/blog/exploring-network-metrics-a-deep-dive-into-bandwidth-latency-and-jitter",
+      "date": null,
+      "last_updated": null,
+      "snippet": "At the heart of network performance lie several key metrics: bandwidth, latency, jitter, and packet loss. Each plays a distinct role in determining the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "How Much Information Can the Brain Process? - Technology Networks",
+      "url": "https://www.technologynetworks.com/neuroscience/news/caltech-scientists-have-quantified-the-speed-of-human-thought-394395",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Discover how much information the brain can process, why thought speed is limited and what this means for neuroscience research.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What is Communication Protocol? Networking - PubNub",
+      "url": "https://www.pubnub.com/learn/glossary/communication-protocols/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A communication protocol is a standardized set of rules and conventions that dictate how data is exchanged between devices or systems in a network.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "What Are the Three Major Network Performance Metrics to Focus On?",
+      "url": "https://www.riverbed.com/blogs/what-are-the-three-major-network-performance-metrics-to-focus-on/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Network performance metrics, including Throughput, Network Latency (Delay), and Jitter, provide valuable insights into the efficiency and ...",
+      "source": "web",
+      "place_metadata": null
+    }
+  ]
+}

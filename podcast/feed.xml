@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Mon, 09 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 09:18:01 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -26,6 +26,32 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode: Algorithms for Life -->
+    <item>
+      <title>Algorithms for Life: Ep. 4, How to Communicate</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/cover.png?v=2026-02-11"/>
+      <description>What can computer networking protocols teach us about human communication? Discover how your brain's 10-bit-per-second bottleneck shapes every conversation, why exponential backoff is "the algorithm of forgiveness" for flaky friends, and the counterintuitive science showing that lossy communication often beats lossless precision. From TCP handshakes hiding in your phone greetings to Walmart's billion-dollar protocol mismatch in Germany, this episode maps the hidden parallels between network engineering and human connection.
+
+Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/report.md</description>
+      <content:encoded><![CDATA[<h2>Overview</h2><p>What can computer networking protocols teach us about human communication? Discover how your brain's 10-bit-per-second bottleneck shapes every conversation, why exponential backoff is "the algorithm of forgiveness" for flaky friends, and the counterintuitive science showing that lossy communication often beats lossless precision. From TCP handshakes hiding in your phone greetings to Walmart's billion-dollar protocol mismatch in Germany, this episode maps the hidden parallels between network engineering and human connection.</p><h2>What You'll Learn</h2><ul><li>Why your brain processes only 10 bits per second through a billion-bit firehose — and how to work with this bottleneck instead of against it</li><li>How the "algorithm of forgiveness" (exponential backoff) provides a mathematically elegant strategy for dealing with flaky friends</li><li>What a billion-dollar protocol mismatch at Walmart Germany teaches about cross-cultural communication failures</li><li>Why experts make better decisions using "lossy" gist-based thinking than precise verbatim details (Fuzzy Trace Theory)</li><li>How to use the "two-exchange rule" to know exactly when to switch from text to a phone call</li></ul><h2>Key Timestamps</h2><ul><li><strong>[00:00]</strong> - The TCP Handshake: Why your "hello" ritual is identical to how computers establish connections</li><li><strong>[02:00]</strong> - Your 10-Bit Brain: The landmark 2025 study revealing conscious thought processes at just 10 bits per second</li><li><strong>[06:20]</strong> - Context Switching Costs: Why "quick questions" destroy up to 40% of your productivity</li><li><strong>[08:50]</strong> - Conversational ACKs: The science of "uh-huh" — how 51% of conversational turns begin with acknowledgments</li><li><strong>[11:30]</strong> - Walmart's Protocol Tragedy: The billion-dollar lesson in cross-cultural communication mismatch</li><li><strong>[13:20]</strong> - The Algorithm of Forgiveness: How exponential backoff from ALOHAnet solves the flaky friend problem</li><li><strong>[16:00]</strong> - Async vs Sync Debate: Healthcare data showing 58.8% time savings clashes with trust-building research</li><li><strong>[21:00]</strong> - Amazon's API Mandate: How treating teams like network nodes accidentally created AWS</li><li><strong>[27:30]</strong> - Fuzzy Trace Theory: The biggest surprise — why lossy beats lossless in human cognition</li><li><strong>[33:20]</strong> - Where the Metaphor Breaks: Why Shannon excluded meaning and what strategic ambiguity teaches us</li><li><strong>[36:05]</strong> - Three Takeaways: Diagnose the protocol, respect the bottleneck, and don't mistake the map for the territory</li></ul><h2>Full Research Report</h2><p>Read the complete research synthesis with all citations at: <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/report.md">research.yuda.me</a></p><p><em>Try the two-exchange rule this week: the next time you find yourself going back and forth more than twice in an email or Slack thread, stop typing and pick up the phone.</em></p>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Wed, 12 Feb 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/ep4-networking.mp3"
+                 length="36248007"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/ep4-networking.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>37:45</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>4</itunes:episode>
+      <itunes:keywords>TCP handshake, exponential backoff, algorithms to live by, fuzzy trace theory, async communication, network topology, structural holes, cognitive bandwidth, protocol mismatch, 10 bits per second</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/ep4-networking_chapters.json" type="application/json+chapters"/>
+      <podcast:transcript url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/transcript.txt" type="text/plain"/>
+    </item>
 
     <!-- Episode 38: Stablecoin Series - Episode 8 -->
     <item>

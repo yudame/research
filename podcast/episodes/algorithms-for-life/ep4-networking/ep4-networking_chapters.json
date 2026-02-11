@@ -1,0 +1,65 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Welcome & The Phone Call Ritual"
+    },
+    {
+      "startTime": 28,
+      "title": "The TCP Handshake in Human Conversation"
+    },
+    {
+      "startTime": 120,
+      "title": "Your Brain: A 10-Bit Processor"
+    },
+    {
+      "startTime": 245,
+      "title": "The Universal Speed Limit of Speech"
+    },
+    {
+      "startTime": 380,
+      "title": "Context Switching and Attention Residue"
+    },
+    {
+      "startTime": 530,
+      "title": "Conversational ACKs and Flow Control"
+    },
+    {
+      "startTime": 690,
+      "title": "Protocol Mismatch: The Walmart Germany Story"
+    },
+    {
+      "startTime": 800,
+      "title": "Exponential Backoff: The Algorithm of Forgiveness"
+    },
+    {
+      "startTime": 960,
+      "title": "Async vs Sync: The Great Debate"
+    },
+    {
+      "startTime": 1260,
+      "title": "Network Topology: The Amazon API Mandate"
+    },
+    {
+      "startTime": 1460,
+      "title": "Structural Holes and Information Brokers"
+    },
+    {
+      "startTime": 1650,
+      "title": "Fuzzy Trace Theory: When Lossy Beats Lossless"
+    },
+    {
+      "startTime": 1870,
+      "title": "Buffer Management: Your Inbox Is Overflowing"
+    },
+    {
+      "startTime": 2000,
+      "title": "Where the Metaphor Breaks Down"
+    },
+    {
+      "startTime": 2165,
+      "title": "Three Takeaways and the Callback to Hello"
+    }
+  ]
+}
