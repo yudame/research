@@ -233,10 +233,10 @@ python perplexity_deep_research.py --sync "Research topic" --output results.md
 
 ### Acceptance Criteria
 
-- [ ] All E2E tests pass
-- [ ] --sync flag provides working fallback to current behavior
-- [ ] No regression in research output quality
-- [ ] Async workflow completes successfully for real research queries
+- [x] All E2E tests pass (2026-02-11)
+- [x] --sync flag provides working fallback to current behavior
+- [x] No regression in research output quality
+- [x] Async workflow completes successfully for real research queries
 - [ ] Error handling works (bad API key, network failure, invalid job_id)
 
 ## Rollout
