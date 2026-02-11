@@ -798,8 +798,9 @@ This prompt will now be saved to logs/prompts.md and used for Phase 1 research.
 
 **Using the `perplexity-deep-research` skill:**
 - API-based automation with sonar-deep-research model
-- Expected time: 30-120 seconds
-- Automatically formatted output ready to paste into research/p2-perplexity.md
+- Supports sync (default, 30-120s blocking) and async (fire-and-poll, no timeout) modes
+- Use `--async` for submit-and-poll, or `--no-wait` to fire off research and continue other work
+- Automatically formatted output saved to research/p2-perplexity.md with metadata sidecar (.meta.json)
 
 **Fallback:** If API automation fails, manually run at https://www.perplexity.ai/ with Pro Search enabled.
 
@@ -818,11 +819,13 @@ Use the Skill tool: `perplexity-deep-research`
 The skill will:
 1. Check for PERPLEXITY_API_KEY in .env file
 2. Submit to sonar-deep-research model with reasoning_effort=high
-3. Wait 30-120 seconds for completion
-4. Extract and format research report with citations
-5. Save results to research/p2-perplexity.md
+3. **Sync mode (default):** Wait 30-120 seconds for completion with automatic retries
+4. **Async mode (`--async`):** Submit, poll for results, no client-side timeout
+5. **Fire-and-forget (`--no-wait`):** Submit and return job ID; poll later with `--job-id`
+6. Extract and format research report with citations
+7. Save results to research/p2-perplexity.md + metadata to .meta.json
 
-**Expected time:** 30-120 seconds (much faster than browser-based tools)
+**Expected time:** 30-120 seconds (sync) or fire-and-poll (async, no blocking)
 
 **Fallback if skill unavailable or API fails:**
 - Go to https://www.perplexity.ai/
