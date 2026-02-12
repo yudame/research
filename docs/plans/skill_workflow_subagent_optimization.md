@@ -1,5 +1,5 @@
 ---
-status: Planning
+status: Approved
 type: chore
 appetite: Medium
 owner: Tom
@@ -106,7 +106,7 @@ Each time a p2-*.md file is saved, **Orchestrator** spawns a **Research Digest A
 
 **Phase 6: Master Briefing** (NEW: delegated)
 
-**Orchestrator** → spawns **Master Briefing Agent** (Opus, reads all p2-*.md, writes p3-briefing.md to disk) → returns summary of findings (~2-3KB) → **Orchestrator** spawns **Briefing Validator** (Opus, reads p3-briefing.md, checks Wave 1 criteria) → returns pass/fail with details. On failure (rare — 0% failure rate on ep5/ep6), re-run the master briefing agent with the specific missing sections noted.
+**Orchestrator** → spawns **Master Briefing Agent** (Opus, reads all p2-*.md + cross-validation summary from Phase 5, writes p3-briefing.md to disk) → returns summary of findings (~2-3KB) → **Orchestrator** spawns **Briefing Validator** (Opus, reads p3-briefing.md, checks Wave 1 criteria) → returns pass/fail with details. On failure (rare — 0% failure rate on ep5/ep6), re-run the master briefing agent with the specific missing sections noted.
 
 **Phase 7: Synthesis** (KEPT: synthesis-writer reads all research for maximum quality)
 
@@ -114,7 +114,7 @@ Each time a p2-*.md file is saved, **Orchestrator** spawns a **Research Digest A
 
 **Phase 8: Episode Planning** (NEW: delegated)
 
-**Orchestrator** → spawns **Episode Planner Agent** (Opus, reads report.md + p3-briefing.md + sources.md, writes content_plan.md) → returns summary → **Orchestrator** spawns **Plan Validator** (Opus, checks Wave 2 criteria) → returns pass/fail
+**Orchestrator** → spawns **Episode Planner Agent** (Opus, reads `.claude/skills/podcast-episode-planner/SKILL.md` + `docs/templates/content_plan-enhanced.md` for full Wave 2 methodology, then reads report.md + p3-briefing.md + sources.md, writes content_plan.md) → returns summary → **Orchestrator** spawns **Plan Validator** (Opus, checks Wave 2 criteria) → returns pass/fail
 
 **Phase 9-10: Audio** (unchanged — external tools)
 
@@ -134,9 +134,9 @@ Create focused agent definitions for each sub-agent type:
 - `research-qa.md` — Opus agent. Reads a single p2-*.md file and answers a specific question.
 - `question-discovery.md` — Opus agent. Reads p2-perplexity.md, outputs structured gap analysis.
 - `cross-validator.md` — Opus agent. Reads all p2-*.md, outputs verification matrix.
-- `master-briefing-writer.md` — Opus agent. Reads all research, writes p3-briefing.md.
+- `master-briefing-writer.md` — Opus agent. Reads all research + cross-validation summary, writes p3-briefing.md.
 - `briefing-validator.md` — Opus agent. Reads p3-briefing.md, checks Wave 1 criteria.
-- `episode-planner.md` — Opus agent. Reads report.md + sources, writes content_plan.md.
+- `episode-planner.md` — Opus agent. Reads SKILL.md methodology + report.md + sources, writes content_plan.md.
 - `plan-validator.md` — Opus agent. Reads content_plan.md, checks Wave 2 criteria.
 - `metadata-writer.md` — Opus agent. Reads episode files, writes logs/metadata.md.
 
@@ -328,14 +328,15 @@ No agent integration required — this is a restructuring of the podcast workflo
 
 ### 5. Create master briefing writer agent definition
 - **Task ID**: build-briefing-writer-agent
-- **Depends On**: none
+- **Depends On**: build-cross-validation-agent
 - **Assigned To**: agent-author
 - **Agent Type**: agent-architect
 - **Parallel**: true
 - Create `.claude/agents/master-briefing-writer.md` — Opus agent for Phase 6
-- Input: episode directory path + enhanced template reference
+- Input: episode directory path + enhanced template reference + cross-validation summary (verification matrix + coverage map from Phase 5)
 - Output: writes p3-briefing.md to disk, returns summary (<3KB)
 - Must enforce Wave 1 template requirements
+- The cross-validation summary gives the agent a head start on contradictions, coverage gaps, and areas needing emphasis — avoiding redundant re-discovery from raw files
 
 ### 6. Create briefing/plan validator agent definitions
 - **Task ID**: build-validator-agents
@@ -355,7 +356,8 @@ No agent integration required — this is a restructuring of the podcast workflo
 - **Agent Type**: agent-architect
 - **Parallel**: true
 - Create `.claude/agents/episode-planner.md` — Opus agent for Phase 8
-- Input: episode directory path + planner skill reference
+- **CRITICAL: Agent must read full Wave 2 methodology at runtime** — instruct agent to read `.claude/skills/podcast-episode-planner/SKILL.md` (14KB) and `docs/templates/content_plan-enhanced.md` before planning. The methodology contains toolkit selection, mode-switching framework, counterpoint design, depth budgets, and signposting language that are essential for content_plan quality. Do NOT attempt to summarize the methodology in the agent definition — the agent must read the full source files.
+- Input: episode directory path (agent reads SKILL.md + template + report.md + p3-briefing.md + sources.md)
 - Output: writes content_plan.md, returns summary (<3KB)
 
 ### 8. Create metadata writer agent definition
