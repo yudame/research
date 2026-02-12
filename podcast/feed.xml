@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Wed, 11 Feb 2026 09:18:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2026 00:00:00 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -27,7 +27,32 @@
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
 
-    <!-- Episode: Algorithms for Life -->
+    <!-- Episode: Algorithms for Life - Ep. 5 -->
+    <item>
+      <title>Algorithms for Life: Ep. 5, When to Scout, When to Settle</title>
+      <description>A mathematician proposes to the statistically optimal woman — and gets rejected. That story launches a deep dive into the 37% rule, the explore/exploit tradeoff, and multi-armed bandits as frameworks for life's biggest decisions. From the satisficing paradox that makes maximizers richer but more miserable, to Kodak's fatal exploitation trap and Amazon's $170M failure that birthed Alexa, discover why the principle of "explore then commit" matters far more than any magic number. Includes the five-question stopping test and Plan ABC career framework.
+
+Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/report.md</description>
+      <content:encoded><![CDATA[<h2>Overview</h2><p>A mathematician proposes to the statistically optimal woman — and gets rejected. That story launches a deep dive into the 37% rule, the explore/exploit tradeoff, and multi-armed bandits as frameworks for life's biggest decisions. From the satisficing paradox that makes maximizers richer but more miserable, to Kodak's fatal exploitation trap and Amazon's $170M failure that birthed Alexa, discover why the principle of "explore then commit" matters far more than any magic number.</p><h2>What You'll Learn</h2><ul><li>Why the famous 37% rule is almost always wrong — but the principle behind it is pure gold</li><li>How maximizers earn $7,500 more but feel significantly worse about their jobs (the satisficing paradox)</li><li>What Kodak's suppression of the digital camera and Nokia's culture of fear reveal about the exploitation trap</li><li>Why Amazon's $170 million Fire Phone disaster was actually the key to dominating the smart speaker market</li><li>How the Malamud study of England vs Scotland proves late specializers win the career marathon</li></ul><h2>Key Timestamps</h2><ul><li><strong>[00:00]</strong> - Welcome: The universal anxiety of commitment and missing out</li><li><strong>[01:06]</strong> - Michael Trick's Story: The operations researcher who optimized his love life</li><li><strong>[04:58]</strong> - The Secretary Problem: The elegant math behind look-then-leap</li><li><strong>[08:17]</strong> - When 37% Breaks: How recall and "good enough" goals change everything</li><li><strong>[15:05]</strong> - The Satisficing Paradox: Why richer maximizers are more miserable</li><li><strong>[21:44]</strong> - The Exploitation Trap: Kodak, Nokia, Amazon, and organizational ambidexterity</li><li><strong>[30:09]</strong> - Practical Frameworks: Multi-armed bandits, stopping test, and Plan ABC</li><li><strong>[37:58]</strong> - Three Takeaways: Principle over number, strategic satisficing, calibrate by domain</li></ul><h2>Resources</h2><h3>Research Papers</h3><ul><li>Iyengar, Wells &amp; Schwartz 2006 — Maximizers secured ~$7,500 more but were significantly less satisfied</li><li>Petrucci 1993 — With 50% recall probability, optimal exploration jumps from 37% to 61%</li><li>Malamud — England vs Scotland: early specializers switch careers more; late specializers find better fit</li><li>O'Reilly &amp; Tushman — Structured exploration units: &gt;90% success vs 0% for permission-based models</li></ul><h3>Tools &amp; Frameworks</h3><ul><li><strong>Five-Question Stopping Test</strong> — Break decision paralysis: Can you define great? Still learning? Met your threshold? Best guess stable? Unresolved mystery box?</li><li><a href="https://80000hours.org/career-planning/">Plan ABC (80,000 Hours)</a> — Structure career risk with exploit mode, pre-set pivot triggers, and a lifeboat plan</li></ul><h3>Further Reading</h3><ul><li><strong>Algorithms to Live By</strong> (Christian &amp; Griffiths) — The foundational book on applying computer science to everyday decisions</li><li><strong>Range</strong> (David Epstein) — The case for broad sampling and late specialization</li></ul><h2>Full Research Report</h2><p>Read the complete research synthesis with all citations at: <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/report.md">research.yuda.me</a></p><p><em>Try the five-question stopping test this week: the next time you're stuck in a decision loop, ask yourself — am I still learning anything new, or am I just stalling?</em></p>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Wed, 12 Feb 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/2026-02-11-optimal-stopping-explore-exploit.mp3"
+                 length="38956607"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/2026-02-11-optimal-stopping-explore-exploit.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>40:34</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>5</itunes:episode>
+      <itunes:keywords>optimal stopping, 37% rule, secretary problem, explore exploit tradeoff, multi-armed bandit, satisficing paradox, organizational ambidexterity, algorithms to live by, Gittins index, strategic satisficing</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/2026-02-11-optimal-stopping-explore-exploit_chapters.json" type="application/json+chapters"/>
+      <podcast:transcript url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep5-optimal-stopping-explore-exploit/transcript.txt" type="text/plain"/>
+    </item>
+
+    <!-- Episode: Algorithms for Life - Ep. 4 -->
     <item>
       <title>Algorithms for Life: Ep. 4, How to Communicate</title>
       <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/cover.png?v=2026-02-11"/>
