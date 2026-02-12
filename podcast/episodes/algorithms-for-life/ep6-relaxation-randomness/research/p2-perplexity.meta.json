@@ -1,0 +1,679 @@
+{
+  "timestamp": "2026-02-11T16:37:16.699903",
+  "model": "sonar-deep-research",
+  "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 12148,
+    "total_tokens": 12545,
+    "citation_tokens": 63498,
+    "reasoning_tokens": 708476,
+    "search_queries": 39
+  },
+  "cost": {
+    "input_tokens": {
+      "count": 0,
+      "cost": 0.0
+    },
+    "output_tokens": {
+      "count": 0,
+      "cost": 0.0
+    },
+    "citation_tokens": {
+      "count": 63498,
+      "cost": 0.126996
+    },
+    "reasoning_tokens": {
+      "count": 708476,
+      "cost": 2.125428
+    },
+    "search_queries": {
+      "count": 39,
+      "cost": 0.195
+    },
+    "total": 2.447424
+  },
+  "citations": [
+    "http://theory.stanford.edu/~trevisan/cs261/lecture07.pdf",
+    "https://taylorandfrancis.com/knowledge/Engineering_and_technology/Engineering_support_and_special_topics/Lagrangian_relaxation/",
+    "https://kolegite.com/EE_library/books_and_lectures/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%D1%80%D0%B0%D0%BD%D0%B5/algorithms-to-live-by-the-computer-science-of-tom--annas-archive--libgenrs-nf-3206012.pdf",
+    "https://epubs.siam.org/doi/10.1137/17M1142922",
+    "https://www.geeksforgeeks.org/dsa/randomized-algorithms-set-2-classification-and-applications/",
+    "https://en.wikipedia.org/wiki/Simulated_annealing",
+    "https://www.arxiv.org/abs/2602.00532",
+    "https://www.cs.cmu.edu/~harchol/Probability/chapters/chpt22.pdf",
+    "https://sites.gatech.edu/omscs7641/2024/02/19/simulated-annealing-methods-and-real-world-applications/",
+    "https://pserc.wisc.edu/wp-content/uploads/sites/755/2018/08/M-34_Final_Report.pdf",
+    "https://psychotricks.com/bounded-rationality/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11093701/",
+    "https://arxiv.org/html/2405.01226v1",
+    "https://thedecisionlab.com/biases/bounded-rationality",
+    "https://greenlab.psych.wisc.edu/wp-content/uploads/sites/280/2024/03/Green_2024_structure-and-development-of-explore-exploit-decision-making.pdf",
+    "https://www.cs.cmu.edu/~epxing/Class/10715/project-reports/DannDickWong.pdf",
+    "https://www.stern.nyu.edu/sites/default/files/assets/documents/Anisha%20Patel_Thesis_Honors%202014.pdf",
+    "https://www.baeldung.com/cs/deterministic-stochastic-optimization",
+    "https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01035.x",
+    "https://thedecisionlab.com/biases/choice-overload-bias",
+    "https://uwaterloo.ca/applied-mathematics/sites/default/files/uploads/documents/riley_brooks.pdf",
+    "https://www.airuniversity.af.edu/Portals/10/CMSA/documents/ReadAheads/PBS402A-Cognitive-Influences-on-Decision-Making.pdf",
+    "https://www.cs.ucr.edu/~neal/publication/Klein10Approximation.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11892090/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10963855/",
+    "https://en.wikipedia.org/wiki/Approximation_algorithm",
+    "https://www.drpaulmccarthy.com/post/cbt-exercises-master-your-mind-with-these-10-practice-tools",
+    "http://www.cs.toronto.edu/~anikolov/CSC473W20/Lectures/Rounding.pdf",
+    "https://math.mit.edu/~goemans/18434S06/knapsack-katherine.pdf",
+    "https://matonecounseling.com/principle-2-satisfice-decision-making-tips-from-matone-mental-health-pros/",
+    "https://hochbaum.ieor.berkeley.edu/html/pub/Approx-Alg-book-ch3.pdf",
+    "https://www.youtube.com/watch?v=GyDTT3PxFP4",
+    "https://thedecisionlab.com/reference-guide/psychology/satisficing",
+    "https://www.saspublishers.com/article/2764/download/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6119549/",
+    "https://www.wisebrain.org/media/Papers/maximizing.pdf",
+    "https://arxiv.org/pdf/1508.05342.pdf",
+    "https://www.semanticscholar.org/paper/Maximizing-versus-satisficing:-happiness-is-a-of-Schwartz-Ward/aec5cbb241ecb4375694fab83af436040374f2e4",
+    "https://en.wikipedia.org/wiki/Cutting-plane_method",
+    "https://en.wikipedia.org/wiki/Randomized_algorithm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12867925/",
+    "https://optimization.cbe.cornell.edu/index.php?title=Column_generation_algorithms",
+    "https://www.csun.edu/~ctoth/Handbook/chap44.pdf",
+    "https://eml.berkeley.edu/~kariv/CK_II.pdf",
+    "https://www.assembled.com/blog/np-hard-scheduling-optimization",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10232769/",
+    "https://en.wikipedia.org/wiki/Travelling_salesman_problem",
+    "https://web.stanford.edu/class/cme241/lecture_slides/MultiArmedBandits.pdf",
+    "https://ai.dmi.unibas.ch/_files/teaching/fs19/ai/slides/ai28.pdf",
+    "https://leeds-faculty.colorado.edu/glover/Publications/TSP.pdf",
+    "https://scholarship.libraries.rutgers.edu/esploro/outputs/technicalDocumentation/Two-approaches-to-the-hierarchical-solution/991031549979904646",
+    "http://www.cs.cmu.edu/~ninamf/LGO10/lect1005.pdf",
+    "https://www.cs.cmu.edu/~avrim/Papers/regret-chapter.pdf",
+    "https://thedecisionlab.com/biases",
+    "https://web.stanford.edu/~bvr/pubs/TS_Tutorial.pdf",
+    "https://www.psychologytoday.com/us/blog/how-to-make-better-choices/202509/embracing-uncertainty-in-decision-making",
+    "https://robinchen121.github.io/blog/2024/branch-bound-cut-price/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5801139/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5119758/",
+    "https://www.gurobi.com/resources/mixed-integer-programming-mip-a-primer-on-the-basics/",
+    "http://www.cs.toronto.edu/~avner/teaching/S7-2411/LN/7/lec7.pdf",
+    "https://ogs.ny.gov/system/files/documents/2024/12/how-to-use-game-_-theory-to-maximize-your-negotiation-outcomes.pdf",
+    "https://en.wikipedia.org/wiki/Interior-point_method",
+    "https://negotiations.substack.com/p/the-three-commandments-of-negotiation"
+  ],
+  "search_results": [
+    {
+      "title": "[PDF] Lecture 7 1 Linear Programming Relaxations - Stanford CS Theory",
+      "url": "http://theory.stanford.edu/~trevisan/cs261/lecture07.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "a very expressive language to formulate combinatorial optimization problems, and finding optimal solutions for ILPs is NP-hard. If we are ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Lagrangian relaxation \u2013 Knowledge and References - Taylor & Francis",
+      "url": "https://taylorandfrancis.com/knowledge/Engineering_and_technology/Engineering_support_and_special_topics/Lagrangian_relaxation/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Lagrangian relaxation is a technique used to simplify complex optimization problems by relaxing certain constraints and creating a relaxed version of the ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Algorithms to Live By",
+      "url": "https://kolegite.com/EE_library/books_and_lectures/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%D1%80%D0%B0%D0%BD%D0%B5/algorithms-to-live-by-the-computer-science-of-tom--annas-archive--libgenrs-nf-3206012.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Simple algorithms offer solutions not only to an apartment hunt but to all such situations in life where we confront the question of optimal stopping. People ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Solving LP Relaxations of Some NP-Hard Problems Is As ... - SIAM.org",
+      "url": "https://epubs.siam.org/doi/10.1137/17M1142922",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We show that the general linear programming (LP) problem reduces in nearly linear time to the LP relaxations of many classical NP-hard combinatorial ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Randomized Algorithms - Classification and Applications",
+      "url": "https://www.geeksforgeeks.org/dsa/randomized-algorithms-set-2-classification-and-applications/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A Las Vegas algorithm is an algorithm which uses randomness, but gives guarantees that the solution obtained for given problem is correct.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Simulated annealing - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Simulated_annealing",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Simulated annealing (SA) is a probabilistic technique for approximating the global optimum of a given function.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Reinforcement Learning-assisted Constraint Relaxation for ... - arXiv",
+      "url": "https://www.arxiv.org/abs/2602.00532",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Abstract:Constraint handling plays a key role in solving realistic complex optimization problems. Though intensively discussed in the last ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] 22 Monte Carlo Randomized Algorithms",
+      "url": "https://www.cs.cmu.edu/~harchol/Probability/chapters/chpt22.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In the last chapter we studied randomized algorithms of the Las Vegas variety. This chapter is devoted to randomized algorithms of the Monte Carlo variety.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Simulated Annealing : Methods and Real-World Applications",
+      "url": "https://sites.gatech.edu/omscs7641/2024/02/19/simulated-annealing-methods-and-real-world-applications/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Non-convex optimization problems can be challenging due to the presence of numerous local minima, potentially causing algorithms to get ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Risk Assessment of Constraint Relaxation Practices",
+      "url": "https://pserc.wisc.edu/wp-content/uploads/sites/755/2018/08/M-34_Final_Report.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Today, system operators employ constraint relaxations practices, which allow certain constraints to be relaxed for penalty prices, in their ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Satisficing and Optimizing: A Bounded Rationality Approach",
+      "url": "https://psychotricks.com/bounded-rationality/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Simon argued that individuals often make decisions that are \u201cgood enough\u201d rather than striving for the absolute best outcome. This concept, ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Explore/Exploit Trade-off: An Ecologically Valid and ... - PMC - NIH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11093701/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The explore/exploit trade-off is a decision-making process that is conserved across species and balances exploring unfamiliar choices of unknown value.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Avoiding Redundant Restarts in Multimodal Global Optimization",
+      "url": "https://arxiv.org/html/2405.01226v1",
+      "date": null,
+      "last_updated": null,
+      "snippet": "When independent restarts converge to the same local optima, these essentially waste function evaluations, which could be prevented by more effectively guiding ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Bounded Rationality - The Decision Lab",
+      "url": "https://thedecisionlab.com/biases/bounded-rationality",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Herbert Simon found that people use heuristics to arrive at satisfactory rather than optimal solutions. While heuristics make it easier for us to make snap ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] The structure and development of explore-exploit decision making",
+      "url": "https://greenlab.psych.wisc.edu/wp-content/uploads/sites/280/2024/03/Green_2024_structure-and-development-of-explore-exploit-decision-making.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Examples of this type of decision problem include choosing between selecting a familiar meal at the cafeteria versus trying a new food; choosing ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] How many random restarts are enough?",
+      "url": "https://www.cs.cmu.edu/~epxing/Class/10715/project-reports/DannDickWong.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "As the func- tion value of many local optima might be much worse than the true global optimum, these methods are run several times with random initializations.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Incorporating Choice Paralysis into the Multinomial Logit Model",
+      "url": "https://www.stern.nyu.edu/sites/default/files/assets/documents/Anisha%20Patel_Thesis_Honors%202014.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In this research, we aim to quantify this choice overload phenomenon and propose a model that aims to incorporate these currently uncaptured effects. As they ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Deterministic and Stochastic Optimization Methods - Baeldung",
+      "url": "https://www.baeldung.com/cs/deterministic-stochastic-optimization",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Stochastic optimization aims to reach proper solutions to multiple problems, similar to deterministic optimization. However, different from ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Social Optimization in the Presence of Cognitive Local Optima ...",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01035.x",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A population of parallel constraint satisfaction networks was created, with globally and locally optimal activation patterns. Individuals ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Choice Overload - The Decision Lab",
+      "url": "https://thedecisionlab.com/biases/choice-overload-bias",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Choice overload, also known as overchoice, choice paralysis, or the paradox of choice, describes how people get overwhelmed when they are presented with many ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Convergence Analysis of Deterministic and Stochastic Methods for ...",
+      "url": "https://uwaterloo.ca/applied-mathematics/sites/default/files/uploads/documents/riley_brooks.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The goal is to present a unified survey of several deterministic and stochastic optimization algorithms commonly used or discussed in the literature. Page 12 ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] COGNITIVE TENDENCIES and INFLUENCES IN DECISION MAKING",
+      "url": "https://www.airuniversity.af.edu/Portals/10/CMSA/documents/ReadAheads/PBS402A-Cognitive-Influences-on-Decision-Making.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Human decision making is complex. It might not always seem to be because people make judgments and decisions all throughout the day, every day.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Approximation algorithms for NP-hard optimization problems",
+      "url": "https://www.cs.ucr.edu/~neal/publication/Klein10Approximation.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "\u03c1-approximation algorithm \u2014 An approximation algorithm that is guaranteed to find a solution whose value is at most (or at least, as appropriate) \u03c1 times ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Adaptive Decision\u2010Making \u201cFast\u201d and \u201cSlow\u201d: A Model of Creative ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11892090/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The late Daniel Kahneman introduced the concept of fast and slow thinking, representing two distinct cognitive systems involved in decision\u2010making (DM).",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The neurocomputational signature of decision-making for unfair ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10963855/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The results showed that acute psychosocial stress did not affect acceptance rates in the UG, but it did reduce adaptability to fairness and lead to more random ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Approximation algorithm - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Approximation_algorithm",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Approximation algorithms are efficient algorithms that find approximate solutions to optimization problems (in particular NP-hard problems) with provable ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "CBT Exercises: Master Your Mind with These 10 Practice Tools",
+      "url": "https://www.drpaulmccarthy.com/post/cbt-exercises-master-your-mind-with-these-10-practice-tools",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Unlock the power of CBT exercises to reshape your mind and improve mental health. Discover 10 essential CBT exercises to boost resilience ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Rounding and Approximation Algorithms",
+      "url": "http://www.cs.toronto.edu/~anikolov/CSC473W20/Lectures/Rounding.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Approximation Algorithms. \u2022 Many natural and important optimization problems are NP-Hard. \u2022 Vertex/Set cover, Max SAT, Max Cut, Sparsest Cut, Traveling Salesman ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] The Knapsack Problem and Fully Polynomial Time Approximation ...",
+      "url": "https://math.mit.edu/~goemans/18434S06/knapsack-katherine.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Thus the fully polynomial time approximation scheme, or FPTAS, is an approximation scheme for which the algorithm is bounded polynomially in ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Principle 2: Satisfice \u2013 Decision Making Tips From Matone Mental ...",
+      "url": "https://matonecounseling.com/principle-2-satisfice-decision-making-tips-from-matone-mental-health-pros/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Maximizers strive to make the very best choice while satisficers aim to make a good enough choice.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] approximating covering and packing problems: set cover, vertex ...",
+      "url": "https://hochbaum.ieor.berkeley.edu/html/pub/Approx-Alg-book-ch3.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This rounding algorithm (rounding II) will always produce a cover no larger than the rounding algorithm; although it does not offer any advantage in terms of ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Knapsack FPTAS - YouTube",
+      "url": "https://www.youtube.com/watch?v=GyDTT3PxFP4",
+      "date": null,
+      "last_updated": null,
+      "snippet": "... approximation scheme, or FPTas for short.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Satisficing - The Decision Lab",
+      "url": "https://thedecisionlab.com/reference-guide/psychology/satisficing",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Satisficing is a decision-making process in which an individual makes a choice that is satisfactory rather than optimal.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] A Genetic Algorithm for Solving Multimodal Functions Based on ...",
+      "url": "https://www.saspublishers.com/article/2764/download/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Genetic algorithm (GA) is a random global optimization search algorithm that simulates the natural selection and genetic mechanism in the biological.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Decision Fatigue: A Conceptual Analysis - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6119549/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "A series of empirical studies indicated that when individuals were subjected to making a series of choices, it predisposed them to the sequelae ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Maximizing Versus Satisficing: Happiness Is a Matter of Choice",
+      "url": "https://www.wisebrain.org/media/Papers/maximizing.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Schwartz (2000) recently argued that the proliferation of options can have a variety of negative effects on well-being. He suggested that as options are added ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Genetic Algorithms for multimodal optimization: A review - arXiv",
+      "url": "https://arxiv.org/pdf/1508.05342.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Abstract\u2014In this article we provide a comprehensive review of the different evolutionary algorithm techniques used to address multimodal optimization ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Maximizing versus satisficing: happiness is a matter of choice.",
+      "url": "https://www.semanticscholar.org/paper/Maximizing-versus-satisficing:-happiness-is-a-of-Schwartz-Ward/aec5cbb241ecb4375694fab83af436040374f2e4",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The present studies suggest that some people--maximizers--can feel worse off as the options they face increase, and the interaction between maximizing and ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Cutting-plane method - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cutting-plane_method",
+      "date": null,
+      "last_updated": null,
+      "snippet": "History. Cutting planes were proposed by Ralph Gomory in the 1950s as a method for solving integer programming and mixed-integer programming problems.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Randomized algorithm - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Randomized_algorithm",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This technique has become known as the probabilistic method. Erd\u0151s gave his first application of the probabilistic method in 1947, when he used a ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The effect of the creative problem-solving approach on ... - PMC - NIH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12867925/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This study aims to investigate the impact of the Creative Problem-Solving (CPS)model on students' creative thinking skills in mathematics ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Column generation algorithms - Optimization Wiki",
+      "url": "https://optimization.cbe.cornell.edu/index.php?title=Column_generation_algorithms",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Column generation (CG) is an iterative decomposition method for solving linear problems that typically have a prohibitively large number of variables.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] 44 RANDOMIZATION AND DERANDOMIZATION - CSUN",
+      "url": "https://www.csun.edu/~ctoth/Handbook/chap44.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This chapter focuses on the randomized algorithmic techniques being used in computational geometry, and not so much on particular results obtained using these.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Distinguishing Informational Cascades from Herd Behavior in the ...",
+      "url": "https://eml.berkeley.edu/~kariv/CK_II.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "An informational cascade is said to occur when an infinite sequence of individuals ignore their pri- vate information when making a decision, ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "How we achieved a 12\u00d7 speedup on an NP hard problem - Assembled",
+      "url": "https://www.assembled.com/blog/np-hard-scheduling-optimization",
+      "date": null,
+      "last_updated": null,
+      "snippet": "See how Assembled achieved a 12\u00d7 speedup solving an NP-hard workforce scheduling problem using old-school AI and smart problem ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Bounded rationality, enactive problem solving, and the ... - PMC - NIH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10232769/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "This article aims to show that there is an alternative way to explain human action with respect to the bottlenecks of the psychology of decision making.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Travelling salesman problem - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Travelling_salesman_problem",
+      "date": null,
+      "last_updated": null,
+      "snippet": "It is an NP-hard problem in combinatorial optimization, important in theoretical computer science and operations research.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Multi-Armed Bandits: Exploration versus Exploitation",
+      "url": "https://web.stanford.edu/class/cme241/lecture_slides/MultiArmedBandits.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Multi-Armed Bandits: Exploration versus Exploitation. Ashwin Rao. ICME ... A Multi-Armed bandit problem is a 2-tuple (A,R). A is a known set of m actions ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Constraint Satisfaction Problems: Decomposition Methods",
+      "url": "https://ai.dmi.unibas.ch/_files/teaching/fs19/ai/slides/ai28.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Constraints in meta constraint network: subsolutions must be compatible. Solve meta constraint network with an algorithm for tree-like networks.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Local Search and Metaheuristics for the Traveling Salesman Problem1",
+      "url": "https://leeds-faculty.colorado.edu/glover/Publications/TSP.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The aim of this chapter is to present an overview of classical and modern local search procedures for the TSP and discuss issues involved in creating more effi-.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Two approaches to the hierarchical solution of constraint satisfaction ...",
+      "url": "https://scholarship.libraries.rutgers.edu/esploro/outputs/technicalDocumentation/Two-approaches-to-the-hierarchical-solution/991031549979904646",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The decomposition algorithms seek to reduce artificial dependencies in a problem, and the resulting decompositions can be solved in the bottom-up solution ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Price of Anarchy and Price of Staility",
+      "url": "http://www.cs.cmu.edu/~ninamf/LGO10/lect1005.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In both cases, the price of stability is the ratio between the quality of the best NE to the quality of the optimal solution. PoS is relevant for games with ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] 4 Learning, Regret minimization, and Equilibria",
+      "url": "https://www.cs.cmu.edu/~avrim/Papers/regret-chapter.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The motivation behind regret analysis can be viewed as the fol- lowing: we design a sophisticated online algorithm that deals with various issues of uncertainty ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "List of Cognitive Biases and Heuristics - The Decision Lab",
+      "url": "https://thedecisionlab.com/biases",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Representativeness Heuristic. Why do we use similarity to gauge statistical probability? Response Bias. Why do we give false survey responses? Restraint Bias.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] A Tutorial on Thompson Sampling - Stanford University",
+      "url": "https://web.stanford.edu/~bvr/pubs/TS_Tutorial.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "demonstrates deep exploration and results in learning the optimal policy within a single episode. In order to apply TS to policy selection we need a way of ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Embracing Uncertainty in Decision-Making - Psychology Today",
+      "url": "https://www.psychologytoday.com/us/blog/how-to-make-better-choices/202509/embracing-uncertainty-in-decision-making",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Uncertainty fuels anxiety, but it doesn't have to. By reframing how we think and decide, we can shift from fear to resilience and even ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Branch and bound, branch and cut, branch and price | Dr. Chen",
+      "url": "https://robinchen121.github.io/blog/2024/branch-bound-cut-price/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The idea of branch-and-cut is to add cutting plane constraints before continuing to branch in step 4.2 of the branch-and-bound process, so that ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Deconstructing the human algorithms for exploration - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5801139/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The key property of Thompson sampling that distinguishes it from softmax exploration is the uncertainty-based determination of choice stochasticity: the agent ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Emotion and Decision-Making Under Uncertainty - PMC - NIH",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5119758/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Uncertainty, which is ubiquitous in decision-making, can be fractionated into known probabilities (risk) and unknown probabilities (ambiguity).",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Mixed-Integer Programming (MIP/MILP) \u2013 A Primer on the Basics",
+      "url": "https://www.gurobi.com/resources/mixed-integer-programming-mip-a-primer-on-the-basics/",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Mixed Integer Linear Programming problems are generally solved using a linear-programming based branch-and-bound algorithm. Overview. Basic LP-based branch-and- ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] Ellipsoid Algorithm and Interior Point Methods",
+      "url": "http://www.cs.toronto.edu/~avner/teaching/S7-2411/LN/7/lec7.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "We also present a high level description of interior point methods, which is the most commonly used algorithm for solving linear programming ...",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "[PDF] How to use game theory to maximize your negotiation outcomes",
+      "url": "https://ogs.ny.gov/system/files/documents/2024/12/how-to-use-game-_-theory-to-maximize-your-negotiation-outcomes.pdf",
+      "date": null,
+      "last_updated": null,
+      "snippet": "In supplier negotiations, procurement is the policeman! The policeman used mechanism design (game design) to shape the prisoners dilemma to optimize its outcome.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "Interior-point method - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Interior-point_method",
+      "date": null,
+      "last_updated": null,
+      "snippet": "Interior-point methods (also referred to as barrier methods or IPMs) are algorithms for solving linear and non-linear convex optimization problems.",
+      "source": "web",
+      "place_metadata": null
+    },
+    {
+      "title": "The Three Commandments of Negotiation that Game Theory ...",
+      "url": "https://negotiations.substack.com/p/the-three-commandments-of-negotiation",
+      "date": null,
+      "last_updated": null,
+      "snippet": "The first commandment: (Real) Commitment \u00b7 The second commandment: Incentive Design \u00b7 The third commandment: Strategic Thinking \u00b7 The first ...",
+      "source": "web",
+      "place_metadata": null
+    }
+  ]
+}

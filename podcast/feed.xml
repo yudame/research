@@ -12,7 +12,7 @@
     <copyright>© 2025 Yudame Inc. For research and educational use.</copyright>
     <managingEditor>valor@yuda.me (Valor Engels)</managingEditor>
     <webMaster>valor@yuda.me (Valor Engels)</webMaster>
-    <lastBuildDate>Wed, 12 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 04:36:03 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <itunes:author>Valor Engels</itunes:author>
     <itunes:summary>Research verified across multiple sources. Every claim synthesized from academic papers, technical analysis, policy frameworks, and real-time data—then cross-checked for contradictions. Topics span science, health, technology, education, and policy.</itunes:summary>
@@ -26,6 +26,32 @@
     <itunes:category text="Technology"/>
     <itunes:image href="https://research.yuda.me/podcast/cover.png?v=2025-12-27"/>
     <itunes:type>episodic</itunes:type>
+
+    <!-- Episode: Algorithms for Life -->
+    <item>
+      <title>Algorithms for Life: Ep. 6, Letting Go</title>
+      <itunes:image href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/cover.png?v=2026-02-12"/>
+      <description>Gene Kranz didn't care what the hose was designed to do — he cared what it could do. That Apollo 13 moment launches a deep dive into constraint relaxation and strategic randomness, two computer science strategies that explain why the most successful pivots in history all required deliberately breaking the rules. But the same principle that saved Apollo 13 killed 346 people on the Boeing 737 MAX, revealing a critical asymmetry: individuals are systematically too cautious, while institutions are systematically too reckless. Includes five practical protocols for knowing when to let go.
+
+Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md</description>
+      <content:encoded><![CDATA[<h2>Overview</h2><p>Gene Kranz didn't care what the hose was designed to do — he cared what it could do. That Apollo 13 moment launches a deep dive into constraint relaxation and strategic randomness, two computer science strategies that explain why the most successful pivots in history all required deliberately breaking the rules. But the same principle that saved Apollo 13 killed 346 people on the Boeing 737 MAX, revealing a critical asymmetry: individuals are systematically too cautious, while institutions are systematically too reckless.</p><h2>What You'll Learn</h2><ul><li>How "half a camera" solves impossible problems — the counterintuitive math of LP relaxation and why breaking reality fixes reality</li><li>Why people who flip a coin and make a change are 2.2 points happier on a 10-point scale six months later (Levitt, N=22,500)</li><li>The jam study is wrong: a 50-experiment meta-analysis found the effect size of choice overload is virtually zero</li><li>Why decision fatigue isn't about glucose — the replication crisis busted the willpower-as-fuel model (Hagger 2016, 23 labs)</li><li>The asymmetry framework: individuals need to be pushed to let go, institutions need to be forced to hold on</li></ul><h2>Key Timestamps</h2><ul><li><strong>[00:00]</strong> - Apollo 13: Gene Kranz's famous order and why it's actually a computer science operation</li><li><strong>[02:13]</strong> - NP-Hard Problems: Why 100 intersections creates more combinations than atoms in the universe</li><li><strong>[04:35]</strong> - Voyager, JWST, and Startups: Constraint relaxation patterns from space exploration to Silicon Valley</li><li><strong>[06:31]</strong> - Simulated Annealing: Why algorithms deliberately go downhill — and why humans refuse to</li><li><strong>[09:17]</strong> - Satisficing vs. Maximizing: The paradox of richer but more miserable decision-makers</li><li><strong>[10:22]</strong> - Myth-Busting: The jam study correction and the death of the glucose model of decision fatigue</li><li><strong>[12:57]</strong> - Boeing 737 MAX: When constraint relaxation becomes lethal</li><li><strong>[14:38]</strong> - Five Practical Protocols: The calibrated coin flip, constraint inventory, strategic satisficing, engineered serendipity, and environment design</li></ul><h2>Resources</h2><h3>Research Papers</h3><ul><li><a href="https://gwern.net/doc/psychology/cognitive-bias/2020-levitt.pdf">Levitt 2020</a> — Coin-flip experiment: making changes leads to +2.2 happiness points at 6 months (N=22,500)</li><li>Scheibehenne et al. 2010 — Choice overload meta-analysis: effect size ~0 across 50 experiments</li><li>Hagger et al. 2016 — Ego depletion failed to replicate across 23 labs (N=2,000+)</li><li><a href="https://www.science.org/doi/10.1126/science.abl4476">Rajkumar et al. 2022</a> — LinkedIn weak ties: moderately weak ties maximize job mobility (N=20M)</li><li>Schwartz — Maximizers earn 20% more but correlate with regret at r&gt;0.50</li></ul><h3>Frameworks &amp; Tools</h3><ul><li><strong>Five Practical Protocols</strong> — Calibrated coin flip, constraint inventory, strategic satisficing, engineered serendipity, environment design</li><li><strong>Asymmetry Framework</strong> — Individuals: relax constraints to grow. Institutions: tighten constraints to protect</li><li><strong>Theory of Constraints</strong> — Label rules as physics, legal, or self-imposed. Test one self-imposed constraint</li></ul><h3>Further Reading</h3><ul><li><strong>Algorithms to Live By</strong> (Christian &amp; Griffiths) — Constraint relaxation, simulated annealing, and randomized algorithms</li><li><strong>Quit</strong> (Annie Duke 2022) — Strategic quitting framework</li></ul><h2>Full Research Report</h2><p>Read the complete research synthesis with all citations at: <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md">research.yuda.me</a></p><p><em>Try the constraint inventory this week: list the reasons you "can't" do something, then label each one — physics, legal, or self-imposed. Test one.</em></p>]]></content:encoded>
+      <author>valor@yuda.me (Valor Engels)</author>
+      <pubDate>Thu, 12 Feb 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/ep6-relaxation-randomness.mp3"
+                 length="16425261"
+                 type="audio/mpeg"/>
+      <guid>https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/ep6-relaxation-randomness.mp3</guid>
+      <itunes:author>Valor Engels</itunes:author>
+      <itunes:duration>17:06</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>6</itunes:episode>
+      <itunes:keywords>constraint relaxation, simulated annealing, LP relaxation, satisficing, analysis paralysis, decision fatigue, choice overload, weak ties, asymmetry framework, algorithms to live by, Boeing 737 MAX, Levitt coin flip</itunes:keywords>
+      <research:series>Algorithms for Life</research:series>
+      <podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/ep6-relaxation-randomness_chapters.json" type="application/json+chapters"/>
+      <podcast:transcript url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/transcript.txt" type="text/plain"/>
+    </item>
 
     <!-- Episode: Algorithms for Life - Ep. 5 -->
     <item>
