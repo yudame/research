@@ -159,7 +159,7 @@ Configuration:
 | `.claude/skills/podcast-episode-planner/SKILL.md` | Episode planner v4.0 with Wave 2 structural design |
 | `.claude/agents/podcast-synthesis-writer.md` | Synthesis agent with Wave 1 input validation |
 | `.claude/skills/podcast-quality-scorecard/SKILL.md` | 10-dimension quality assessment |
-| `docs/plans/podcast_episode_improvements.md` | Improvement roadmap (Waves 1-5 complete, Wave 6 pending) |
+| `docs/plans/skill_workflow_subagent_optimization.md` | Sub-agent optimization plan (active) |
 | `docs/templates/p3-briefing-enhanced.md` | Wave 1 research briefing template |
 | `docs/templates/content_plan-enhanced.md` | Wave 2 episode planning template |
 | `docs/templates/metadata-enhanced.md` | Wave 4 publishing metadata template |

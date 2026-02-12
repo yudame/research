@@ -307,7 +307,6 @@ Create summary section with:
 - List 2-3 moderate improvements needed
 
 **Workflow Improvements to Apply for Next Episode:**
-- Map weaknesses to specific Wave tasks from `/docs/plans/podcast_episode_improvements.md`
 - Prioritize 3-5 high-impact improvements for next episode
 
 ---
@@ -381,4 +380,4 @@ Format: Standard workflow (baseline evaluation)"
 - **Not a before/after comparison** - Each episode gets its own diagnostic profile
 - **Apply to every episode** - Baseline, improved, and experimental formats all get scored
 - **Aggregate over time** - After 5-10 episodes, identify patterns (consistent strengths, persistent weaknesses)
-- **Reference improvement plan** - Map weaknesses to Wave tasks in `/docs/plans/podcast_episode_improvements.md`
+- **Reference quality framework** - Quality Waves 1-5 are documented in CLAUDE.md
