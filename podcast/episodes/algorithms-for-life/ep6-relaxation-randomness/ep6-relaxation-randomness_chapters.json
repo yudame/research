@@ -1,0 +1,61 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "Welcome"
+    },
+    {
+      "startTime": 5,
+      "title": "Apollo 13: The Ultimate Constraint Relaxation"
+    },
+    {
+      "startTime": 133,
+      "title": "NP-Hard Problems and LP Relaxation"
+    },
+    {
+      "startTime": 275,
+      "title": "Voyager, JWST, and Relaxation in History"
+    },
+    {
+      "startTime": 336,
+      "title": "Startup Pivots: Slack and YouTube"
+    },
+    {
+      "startTime": 391,
+      "title": "Simulated Annealing and Going Downhill"
+    },
+    {
+      "startTime": 439,
+      "title": "The Levitt Coin Flip Experiment"
+    },
+    {
+      "startTime": 557,
+      "title": "Satisficing vs. Maximizing"
+    },
+    {
+      "startTime": 622,
+      "title": "Busting Myths: Jam Study and Decision Fatigue"
+    },
+    {
+      "startTime": 721,
+      "title": "Serendipity and Weak Ties"
+    },
+    {
+      "startTime": 777,
+      "title": "The Boeing 737 MAX Warning"
+    },
+    {
+      "startTime": 835,
+      "title": "The Asymmetry Framework"
+    },
+    {
+      "startTime": 878,
+      "title": "Five Practical Protocols"
+    },
+    {
+      "startTime": 973,
+      "title": "Which Rules Are Load-Bearing?"
+    }
+  ]
+}

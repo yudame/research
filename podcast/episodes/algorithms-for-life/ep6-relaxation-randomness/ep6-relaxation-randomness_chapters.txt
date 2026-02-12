@@ -1,0 +1,85 @@
+;FFMETADATA1
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=4999
+title=Welcome
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=5000
+END=132999
+title=Apollo 13: The Ultimate Constraint Relaxation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=133000
+END=274999
+title=NP-Hard Problems and LP Relaxation
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=275000
+END=335999
+title=Voyager, JWST, and Relaxation in History
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=336000
+END=390999
+title=Startup Pivots: Slack and YouTube
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=391000
+END=438999
+title=Simulated Annealing and Going Downhill
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=439000
+END=556999
+title=The Levitt Coin Flip Experiment
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=557000
+END=621999
+title=Satisficing vs. Maximizing
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=622000
+END=720999
+title=Busting Myths: Jam Study and Decision Fatigue
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=721000
+END=776999
+title=Serendipity and Weak Ties
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=777000
+END=834999
+title=The Boeing 737 MAX Warning
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=835000
+END=877999
+title=The Asymmetry Framework
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=878000
+END=972999
+title=Five Practical Protocols
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=973000
+END=1026000
+title=Which Rules Are Load-Bearing?
