@@ -97,7 +97,7 @@ kindergarten-first-principles/
 ## Listening Options
 
 **Spotify**: [Listen on Spotify](https://open.spotify.com/show/32xUME8x4FN1DcNwBOrYfc)
-**RSS Feed**: `https://research.yuda.me/podcast/feed.xml`
+**RSS Feed**: `https://research.bwforce.ai/podcast/feed.xml`
 **Web Player**: Available on each episode page via index.html
 
 ## Research Transparency

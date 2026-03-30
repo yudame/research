@@ -126,7 +126,7 @@ COMPOSITION:
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
-                "HTTP-Referer": "https://research.yuda.me",
+                "HTTP-Referer": "https://research.bwforce.ai",
                 "X-Title": "Yudame Research Podcast Cover Generator"
             },
             json={
@@ -329,7 +329,7 @@ def main():
     if not args.quiet:
         log(f"\nNext step: Add branding with add_logo_watermark.py")
         log(f"\nTo use in feed.xml, add this line to the episode <item>:")
-        log(f'  <itunes:image href="https://research.yuda.me/podcast/episodes/{episode_dir.name}/{output_filename}?v=1"/>')
+        log(f'  <itunes:image href="https://research.bwforce.ai/podcast/episodes/{episode_dir.name}/{output_filename}?v=1"/>')
 
     return 0
 

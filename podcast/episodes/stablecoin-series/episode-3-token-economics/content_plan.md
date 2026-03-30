@@ -129,7 +129,7 @@ TERMS TO DEFINE:
 TONE:
 Intellectually rigorous but accessible. This is the third episode in the series, so listeners have context from previous episodes on market structure and regulation.
 
-Close by summarizing the key design principles and directing listeners to research.yuda.me for the full report.
+Close by summarizing the key design principles and directing listeners to research.bwforce.ai for the full report.
 ```
 
 ---
@@ -158,4 +158,4 @@ Close by summarizing the key design principles and directing listeners to resear
 - Target duration: 28-38 minutes
 - Format: Two-host conversational (NotebookLM Deep Dive style)
 - Opening: "Welcome to Yudame Research" + series context
-- Closing: Summary + website URL (research.yuda.me)
+- Closing: Summary + website URL (research.bwforce.ai)

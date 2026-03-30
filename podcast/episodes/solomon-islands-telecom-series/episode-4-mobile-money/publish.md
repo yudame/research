@@ -19,7 +19,7 @@ Thu, 12 Dec 2024 00:00:00 GMT
 ## Description (Plain Text)
 In Kenya, mobile money lifted 194,000 households out of poverty. In the Philippines, GCash doubled financial inclusion in four years. Yet in the Solomon Islands, these proven formulas face an uncomfortable reality: the market may be too small to work. This episode examines the "viability paradox" - how M-SELEN and IumiCash compete in a market requiring 50x current transaction volumes to break even, why 8,700+ seasonal workers pay $2.8-5M annually in excess remittance fees, and what mobile money success looks like when conventional economics don't apply.
 
-Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md
+Full research report: https://research.bwforce.ai/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md
 
 ## Key Sources (for HTML show notes)
 - GSMA State of the Industry Report 2024-2025: https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/gsma-state-of-industry-report-on-mobile-money-2024/

@@ -181,11 +181,11 @@ podcast/episodes/cardiovascular-health/
 ```xml
 <item>
   <title>Cardiovascular Health: Ep. 4, Supplementation</title>
-  <description>Episode description... Full research report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
-  <enclosure url="https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
+  <description>Episode description... Full research report: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md</description>
+  <enclosure url="https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3"
              length="36144828"
              type="audio/mpeg"/>
-  <guid>https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
+  <guid>https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep4-supplementation/2025-11-21-cardiovascular-health-episode-4-supplementation.mp3</guid>
 </item>
 ```
 
@@ -236,7 +236,7 @@ Each series should have an `index.html` landing page showcasing all episodes wit
 
 **Location:** `podcast/episodes/series-name/index.html`
 
-**URL:** `https://research.yuda.me/podcast/episodes/series-name/`
+**URL:** `https://research.bwforce.ai/podcast/episodes/series-name/`
 
 ### Creating a Series Index Page
 

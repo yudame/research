@@ -32,7 +32,7 @@ Thu, 12 Feb 2026 12:00:00 GMT
 
 Gene Kranz didn't care what the hose was designed to do — he cared what it could do. That Apollo 13 moment launches a deep dive into constraint relaxation and strategic randomness, two computer science strategies that explain why the most successful pivots in history (Slack's $27.7B exit, Voyager's gravity assist, JWST's folding mirror) all required deliberately breaking the rules. But the same principle that saved Apollo 13 killed 346 people on the Boeing 737 MAX, revealing a critical asymmetry: individuals are systematically too cautious, while institutions are systematically too reckless. Includes Levitt's 22,500-person coin-flip study, myth-busts on the jam study and decision fatigue, and five practical protocols for knowing when to let go.
 
-Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md
+Full research report: https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md
 
 ---
 
@@ -98,10 +98,10 @@ Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-l
 ## Call-to-Action
 
 ### Primary CTA
-Explore the full research report with all citations and studies at: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md
+Explore the full research report with all citations and studies at: https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md
 
 ### Voiced CTA
-> "You can find the full stack of research, including the Levitt study and the analysis of the 737 MAX at research.yuda.me. That's Y-U-D-A dot M-E."
+> "You can find the full stack of research, including the Levitt study and the analysis of the 737 MAX at research.bwforce.ai. That's Y-U-D-A dot M-E."
 
 ---
 
@@ -162,7 +162,7 @@ constraint relaxation, simulated annealing, LP relaxation, satisficing, analysis
 </ul>
 
 <h2>Full Research Report</h2>
-<p>Read the complete research synthesis with all citations at: <a href="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md">research.yuda.me</a></p>
+<p>Read the complete research synthesis with all citations at: <a href="https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/report.md">research.bwforce.ai</a></p>
 
 <p><em>Try the constraint inventory this week: list the reasons you "can't" do something, then label each one — physics, legal, or self-imposed. Test one.</em></p>
 ```
@@ -180,8 +180,8 @@ constraint relaxation, simulated annealing, LP relaxation, satisficing, analysis
 
 ### Podcast Namespace Tags
 ```xml
-<podcast:transcript url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/transcript.txt" type="text/plain" />
-<podcast:chapters url="https://research.yuda.me/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/ep6-relaxation-randomness_chapters.json" type="application/json+chapters" />
+<podcast:transcript url="https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/transcript.txt" type="text/plain" />
+<podcast:chapters url="https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep6-relaxation-randomness/ep6-relaxation-randomness_chapters.json" type="application/json+chapters" />
 ```
 
 ---

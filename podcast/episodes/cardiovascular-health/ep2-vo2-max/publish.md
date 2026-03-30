@@ -14,8 +14,8 @@ Tue, 19 Nov 2025 12:00:00 GMT
 ## Description
 Episode 2 in the Cardiovascular Health series. Deep dive into evidence-based strategies to maximize VO2 max—the strongest predictor of longevity—through polarized training (80% easy, 20% brutally hard), optimal interval protocols, performance nutrition, and strategic supplementation.
 
-Full Report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
-Sources: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep2-vo2-max/sources.md
+Full Report: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep2-vo2-max/report.md
+Sources: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep2-vo2-max/sources.md
 
 ## Key Sources
 - JAMA Network Open: 122,000-patient study showing 5-fold mortality difference between fitness quartiles: https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2707428

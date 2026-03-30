@@ -14,8 +14,8 @@ Sun, 01 Dec 2025 12:00:00 GMT
 ## Description
 The kindergarten classroom is a social laboratory where children develop competencies through peer interaction that adults cannot replicate. This episode explores the unique value of symmetrical peer relationships, why conflict is developmental fuel when properly scaffolded, and the evidence-based design principles for optimal social-emotional learning environments. We examine effect sizes from major meta-analyses (d = 0.35-0.69), the ratio question (why 7.5:1 matters), the SEL paradox (large effects vs. fade-out concerns), and how individual differences (temperament, ADHD, autism, attachment) require differentiated support.
 
-Full Report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/report.md
-Sources: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/sources.md
+Full Report: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/report.md
+Sources: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep4-social-laboratory/sources.md
 
 ## Key Sources
 - Tenenbaum et al. (2020) Meta-Analysis: https://www.apa.org/pubs/journals/features/edu-edu0000436.pdf

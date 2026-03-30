@@ -116,7 +116,7 @@ python generate_landing_page.py ../episodes/YYYY-MM-DD-slug/
 5. Commit with descriptive message using heredoc format
 6. GitHub Pages deploys automatically in 2-3 minutes
 
-**Feed URL:** `https://research.yuda.me/podcast/feed.xml`
+**Feed URL:** `https://research.bwforce.ai/podcast/feed.xml`
 
 ## Repository Constraints
 
@@ -138,7 +138,7 @@ python generate_landing_page.py ../episodes/YYYY-MM-DD-slug/
 
 ## GitHub Pages Setup
 
-Located at: `https://research.yuda.me/`
+Located at: `https://research.bwforce.ai/`
 
 Configuration:
 - Source: main branch, root folder

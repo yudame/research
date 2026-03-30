@@ -654,7 +654,7 @@ Cannot assess:
 - Include "What You'll Learn" section (5-7 bullets)
 - Add key timestamps for navigation
 - List resources with actionable descriptions
-- Include clear CTA pointing to research.yuda.me
+- Include clear CTA pointing to research.bwforce.ai
 
 ---
 

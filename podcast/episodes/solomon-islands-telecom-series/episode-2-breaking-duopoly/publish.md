@@ -19,7 +19,7 @@ Sun, 08 Dec 2024 19:00:00 GMT
 ## Description (Plain Text)
 Entering the Solomon Islands duopoly market where data costs 77x more than Fiji. This episode examines competitive dynamics between Our Telekom (government-controlled, 60% share) and Bmobile-Vodafone (40% share), regulatory barriers under TCSI framework, and lessons from Digicel's 2,400% growth disruption in PNG. Explores how SATSOL infrastructure partnerships and IumiCash mobile money integration create differentiation for a third operator entering a market with no number portability and massive rural coverage gaps.
 
-Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md
+Full research report: https://research.bwforce.ai/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md
 
 ## Key Sources (for HTML show notes)
 - [TCSI - Telecommunications Commission Solomon Islands](https://www.tcsi.org.sb/)
