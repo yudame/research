@@ -14,8 +14,8 @@ Sun, 01 Dec 2025 12:00:00 GMT
 ## Description
 Missing a single nap causes irreversible memory loss in habitual nappers—overnight sleep cannot compensate. Rebecca Spencer's landmark research reveals why the hippocampal "desk" fills up faster in young children, requiring strategic timing of declarative content before naps and procedural skills after. Sleep deprivation symptoms mimic ADHD, making sleep quality the primary upstream intervention for classroom behavior and retention.
 
-Full Report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/report.md
-Sources: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/sources.md
+Full Report: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/report.md
+Sources: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep3-sleep-memory-scheduling/sources.md
 
 ## Key Sources
 - Spencer & Riggins (2022) - Hippocampal desk hypothesis: https://www.pnas.org/doi/10.1073/pnas.2123415119

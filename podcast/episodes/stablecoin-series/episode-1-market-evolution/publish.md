@@ -14,8 +14,8 @@ Tue, 19 Nov 2025 12:00:00 GMT
 ## Description
 A comprehensive analysis of stablecoin evolution from 2017-2025, covering major events like the Terra/UST collapse, the GENIUS Act, and strategic lessons for launching new stablecoins. Learn about the "Three Pillars of Trust" and why fully-backed models dominate the $280B market.
 
-Full Report: https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/report.md
-Sources: https://research.yuda.me/podcast/episodes/2025-11-19-stablecoin-history/sources.md
+Full Report: https://research.bwforce.ai/podcast/episodes/2025-11-19-stablecoin-history/report.md
+Sources: https://research.bwforce.ai/podcast/episodes/2025-11-19-stablecoin-history/sources.md
 
 ## Key Sources
 - US GENIUS Act: https://www.congress.gov/bill/119th-congress/senate-bill/1582

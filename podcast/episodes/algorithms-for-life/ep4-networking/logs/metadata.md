@@ -32,7 +32,7 @@ Wed, 12 Feb 2026 00:00:00 GMT
 
 What can computer networking protocols teach us about human communication? Discover how your brain's 10-bit-per-second bottleneck shapes every conversation, why exponential backoff is "the algorithm of forgiveness" for flaky friends, and the counterintuitive science showing that lossy communication often beats lossless precision. From TCP handshakes hiding in your phone greetings to Walmart's billion-dollar protocol mismatch in Germany, this episode maps the hidden parallels between network engineering and human connection.
 
-Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-life/ep4-networking/report.md
+Full research report: https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep4-networking/report.md
 
 ---
 
@@ -102,7 +102,7 @@ Full research report: https://research.yuda.me/podcast/episodes/algorithms-for-l
 Try the two-exchange rule this week: the next time you find yourself going back and forth more than twice in an email or Slack thread, stop typing and pick up the phone.
 
 ### Voiced CTA
-> "My challenge to you this week is to try the two-exchange rule. The next time you find yourself going back and forth more than twice in an email or a Slack thread, just stop. Pick up the phone, see what happens. It really works. You can find all the research studies and a full transcript at research.yuda.me — that's Y-U-D-A dot M-E."
+> "My challenge to you this week is to try the two-exchange rule. The next time you find yourself going back and forth more than twice in an email or a Slack thread, just stop. Pick up the phone, see what happens. It really works. You can find all the research studies and a full transcript at research.bwforce.ai — that's Y-U-D-A dot M-E."
 
 ---
 

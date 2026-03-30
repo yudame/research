@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Letting Go — Delegation Cheat Sheet</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 10px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 9.5pt; line-height: 1.35; color: #1A2332;
+            max-width: 8.5in; margin: 0 auto; padding: 0.4in; background: #fff;
+        }
+        :root {
+            --teal: #2A9D8F; --teal-light: #E8F5F3; --teal-mid: #D0EEEA;
+            --navy: #1A2332; --navy-light: #2A3A50;
+            --gray-bg: #F5F7FA; --gray-border: #D8DEE6; --gray-text: #5A6577;
+            --white: #FFFFFF;
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--navy); color: var(--white);
+            padding: 10px 14px; display: flex; justify-content: space-between;
+            align-items: center; border-radius: 4px; margin-bottom: 24px;
+        }
+        .header-left h1 { font-size: 15pt; font-weight: 700; letter-spacing: -0.3px; line-height: 1.15; }
+        .header-left .subtitle { font-size: 8.5pt; font-weight: 400; opacity: 0.85; margin-top: 1px; }
+        .header-right { text-align: right; font-size: 7pt; opacity: 0.7; line-height: 1.4; white-space: nowrap; }
+
+        /* CORE INSIGHT */
+        .core-insight {
+            background: var(--teal-light); border-left: 3px solid var(--teal);
+            padding: 8px 12px; margin-bottom: 28px; border-radius: 0 4px 4px 0;
+            font-size: 9pt; line-height: 1.35;
+        }
+        .core-insight strong { color: var(--navy); }
+        .core-insight em { color: var(--teal); font-style: italic; }
+
+        /* SECTION HEADERS */
+        .section-header {
+            font-size: 9pt; font-weight: 700; color: var(--teal);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1.5px solid var(--teal);
+        }
+
+        /* DECISION FLOW */
+        .decision-flow { margin-bottom: 28px; }
+        .flow-steps { display: flex; gap: 6px; }
+        .flow-step {
+            flex: 1; background: var(--gray-bg); border: 1px solid var(--gray-border);
+            border-top: 3px solid var(--teal); border-radius: 3px; padding: 6px 7px; position: relative;
+        }
+        .flow-step .step-num {
+            display: inline-block; background: var(--teal); color: var(--white);
+            font-size: 7pt; font-weight: 700; width: 15px; height: 15px;
+            line-height: 15px; text-align: center; border-radius: 50%;
+            margin-right: 3px; vertical-align: middle;
+        }
+        .flow-step .step-title { font-weight: 700; font-size: 8.5pt; color: var(--navy); vertical-align: middle; }
+        .flow-step .step-body { font-size: 8pt; color: var(--gray-text); margin-top: 2px; line-height: 1.3; }
+        .flow-step .step-body .stat { color: var(--teal); font-weight: 600; }
+        .flow-step + .flow-step::before {
+            content: ''; position: absolute; left: -6px; top: 50%; transform: translateY(-50%);
+            width: 0; height: 0; border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent; border-left: 5px solid var(--teal);
+        }
+
+        /* TWO-COLUMN */
+        .two-col { display: flex; gap: 8px; margin-bottom: 28px; }
+        .two-col > .col { flex: 1; }
+        .two-col > .col-wide { flex: 1.6; }
+
+        /* INTERVIEW TABLE */
+        .interview-table { width: 100%; border-collapse: collapse; font-size: 7.5pt; line-height: 1.3; }
+        .interview-table th {
+            background: var(--navy); color: var(--white); padding: 4px 5px;
+            text-align: left; font-size: 7pt; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .interview-table td { padding: 4px 5px; border-bottom: 1px solid var(--gray-border); vertical-align: top; }
+        .interview-table tr:nth-child(even) td { background: var(--gray-bg); }
+        .interview-table .question-cell { font-weight: 500; color: var(--navy); }
+        .interview-table .green { color: #1B7A3D; font-size: 7pt; }
+        .interview-table .red { color: #B8352A; font-size: 7pt; }
+        .interview-table .label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.3px; }
+
+        /* OPPTY SECTION (full-width) */
+        .oppty-section { margin-bottom: 28px; }
+        .oppty-timeline { display: flex; gap: 6px; margin-top: 4px; }
+        .oppty-step { flex: 1; text-align: center; border-radius: 4px; overflow: hidden; }
+        .oppty-step .oppty-header {
+            background: var(--teal); color: var(--white);
+            font-size: 9pt; font-weight: 700; padding: 5px 4px; letter-spacing: 0.3px;
+        }
+        .oppty-step .oppty-week {
+            background: var(--navy); color: var(--white); font-size: 7.5pt; padding: 3px 4px;
+        }
+        .oppty-step .oppty-desc {
+            background: var(--gray-bg); border: 1px solid var(--gray-border); border-top: none;
+            font-size: 8pt; padding: 5px 4px; color: var(--gray-text);
+            line-height: 1.3; border-radius: 0 0 4px 4px;
+        }
+        .oppty-step .oppty-role {
+            font-size: 7pt; color: var(--teal); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px;
+        }
+        .oppty-arrow {
+            display: flex; align-items: center; color: var(--teal);
+            font-size: 14pt; font-weight: 700; flex-shrink: 0; width: 10px; justify-content: center;
+        }
+
+        /* THRESHOLDS */
+        .subsection { margin-top: 6px; }
+        .subsection-header {
+            font-size: 7.5pt; font-weight: 700; color: var(--navy);
+            margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .threshold-bar { display: flex; align-items: center; gap: 4px; margin-bottom: 3px; font-size: 7.5pt; }
+        .threshold-bar .bar-label { width: 75px; flex-shrink: 0; font-weight: 600; color: var(--navy); font-size: 7pt; }
+        .threshold-bar .bar-track {
+            flex: 1; height: 13px; background: #E8ECEF; border-radius: 2px; position: relative; overflow: hidden;
+        }
+        .threshold-bar .bar-fill {
+            height: 100%; border-radius: 2px; display: flex; align-items: center;
+            justify-content: center; color: var(--white); font-size: 7pt; font-weight: 700;
+        }
+        .bar-fill.low { background: var(--teal); width: 50%; }
+        .bar-fill.mid { background: #247A70; width: 70%; }
+        .bar-fill.high { background: var(--navy); width: 90%; }
+
+        /* STYLE QUESTION */
+        .style-question {
+            background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 3px;
+            padding: 4px 6px; font-size: 7.5pt; font-style: italic; color: var(--navy);
+            margin-top: 4px; line-height: 1.3;
+        }
+        .style-question strong { font-style: normal; color: var(--teal); }
+
+        /* TAKEAWAYS */
+        .takeaways { display: flex; gap: 6px; margin-bottom: 28px; }
+        .takeaway {
+            flex: 1; padding: 5px 6px; background: var(--teal-light);
+            border-radius: 3px; border: 1px solid var(--teal-mid);
+        }
+        .takeaway .takeaway-title { font-weight: 700; font-size: 8.5pt; color: var(--teal); margin-bottom: 1px; }
+        .takeaway .takeaway-body { font-size: 7.5pt; color: var(--gray-text); line-height: 1.3; }
+
+        /* FOOTER */
+        .footer {
+            border-top: 1.5px solid var(--gray-border); padding-top: 4px;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 7pt; color: var(--gray-text);
+        }
+        .footer .quote { font-style: italic; max-width: 65%; line-height: 1.3; }
+        .footer .links { text-align: right; line-height: 1.4; }
+        .footer .links a { color: var(--teal); text-decoration: none; }
+
+        /* PRINT */
+        @media print {
+            html { font-size: 10px; }
+            body { padding: 0; margin: 0; max-width: none; }
+            @page { size: letter; margin: 0.4in; }
+            .header, .core-insight, .decision-flow, .two-col, .oppty-section, .takeaways, .footer {
+                page-break-inside: avoid; break-inside: avoid;
+            }
+            .header, .interview-table th, .oppty-step .oppty-header, .oppty-step .oppty-week,
+            .flow-step .step-num, .bar-fill, .interview-table tr:nth-child(even) td,
+            .flow-step, .oppty-step .oppty-desc, .core-insight, .takeaway,
+            .threshold-bar .bar-track, .style-question {
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+            * { box-shadow: none !important; }
+        }
+
+        /* SCREEN */
+        @media screen {
+            body { background: #E8ECEF; padding: 0.5in; }
+            .page {
+                background: #fff; padding: 0.4in;
+                box-shadow: 0 1px 8px rgba(0,0,0,0.12); border-radius: 4px;
+                max-width: 8.5in; min-height: 10.2in;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <div class="header-left">
+            <h1>The Science of Letting Go</h1>
+            <div class="subtitle">Evidence-Based Delegation Cheat Sheet</div>
+        </div>
+        <div class="header-right">
+            Algorithms for Life Ep. 8<br>Yudame Research by Valor Engels
+        </div>
+    </div>
+
+    <div class="core-insight">
+        <strong>89% of delegation failures are attitudinal, not technical.</strong>
+        Hire the <em>metabolism</em>, not the resume.
+    </div>
+
+    <div class="decision-flow">
+        <div class="section-header">The Decision Flow</div>
+        <div class="flow-steps">
+            <div class="flow-step">
+                <span class="step-num">1</span>
+                <span class="step-title">Screen the Person</span>
+                <div class="step-body">
+                    Does this person learn from mistakes? Are they coachable?
+                    Learning agility correlates with success at <span class="stat">0.74</span> &mdash; stronger than height predicts weight.
+                </div>
+            </div>
+            <div class="flow-step">
+                <span class="step-num">2</span>
+                <span class="step-title">Calibrate the Stakes</span>
+                <div class="step-body">
+                    Low-risk: <span class="stat">50%</span> competence threshold.
+                    Standard: <span class="stat">70%</span>.
+                    High-stakes/irreversible: <span class="stat">90%</span>.
+                </div>
+            </div>
+            <div class="flow-step">
+                <span class="step-num">3</span>
+                <span class="step-title">Match the Style</span>
+                <div class="step-body">
+                    Ask: <em>&ldquo;Would detailed direction or developing your own approach be more helpful?&rdquo;</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-col">
+        <div class="col col-wide interview-section">
+            <div class="section-header">The Interview Cheat Code</div>
+            <table class="interview-table">
+                <thead>
+                    <tr>
+                        <th style="width: 52%">Ask This</th>
+                        <th>Watch For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="question-cell">&ldquo;Tell me about a time you had to learn something completely new. Walk me through your process.&rdquo;</td>
+                        <td>
+                            <span class="label green">Green:</span> <span class="green">Extracts patterns, builds systems</span><br>
+                            <span class="label red">Red:</span> <span class="red">Focuses on &ldquo;what&rdquo; not &ldquo;how&rdquo;</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="question-cell">&ldquo;What&rsquo;s the harshest feedback you&rsquo;ve ever received, and what did you do with it?&rdquo;</td>
+                        <td>
+                            <span class="label green">Green:</span> <span class="green">Ownership, specific change</span><br>
+                            <span class="label red">Red:</span> <span class="red">Deflection, blame-shifting</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="question-cell"><strong>The Live Test:</strong> Give genuine feedback on their answer mid-interview.</td>
+                        <td>
+                            <span class="label green">Green:</span> <span class="green">Curiosity, adjustment</span><br>
+                            <span class="label red">Red:</span> <span class="red">Defensiveness, dismissiveness</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col">
+            <div class="section-header">Competence Thresholds</div>
+            <div class="threshold-bar">
+                <span class="bar-label">Low-risk</span>
+                <div class="bar-track"><div class="bar-fill low">50%</div></div>
+            </div>
+            <div class="threshold-bar">
+                <span class="bar-label">Standard</span>
+                <div class="bar-track"><div class="bar-fill mid">70%</div></div>
+            </div>
+            <div class="threshold-bar">
+                <span class="bar-label">High-stakes</span>
+                <div class="bar-track"><div class="bar-fill high">90%</div></div>
+            </div>
+
+            <div class="style-question">
+                <strong>The One Question:</strong> &ldquo;Would detailed direction or developing your own approach be more helpful?&rdquo;
+            </div>
+        </div>
+    </div>
+
+    <div class="oppty-section">
+        <div class="section-header">The Graduated Handoff (OPPTY) &mdash; 12-Week Timeline</div>
+        <div class="oppty-timeline">
+            <div class="oppty-step">
+                <div class="oppty-header">Observe</div>
+                <div class="oppty-week">Weeks 1&ndash;2</div>
+                <div class="oppty-desc">Shadow you; ask &ldquo;why&rdquo; and &ldquo;how&rdquo;<div class="oppty-role">Your role: Narrator</div></div>
+            </div>
+            <div class="oppty-arrow">&rsaquo;</div>
+            <div class="oppty-step">
+                <div class="oppty-header">Practice</div>
+                <div class="oppty-week">Weeks 3&ndash;4</div>
+                <div class="oppty-desc">Attempt tasks under direct supervision<div class="oppty-role">Your role: Coach</div></div>
+            </div>
+            <div class="oppty-arrow">&rsaquo;</div>
+            <div class="oppty-step">
+                <div class="oppty-header">Partner</div>
+                <div class="oppty-week">Weeks 5&ndash;7</div>
+                <div class="oppty-desc">They lead the task; you co-pilot<div class="oppty-role">Your role: Advisor</div></div>
+            </div>
+            <div class="oppty-arrow">&rsaquo;</div>
+            <div class="oppty-step">
+                <div class="oppty-header">Own It</div>
+                <div class="oppty-week">Weeks 8&ndash;10</div>
+                <div class="oppty-desc">Independent execution; you review after<div class="oppty-role">Your role: Reviewer</div></div>
+            </div>
+            <div class="oppty-arrow">&rsaquo;</div>
+            <div class="oppty-step">
+                <div class="oppty-header">Autonomous</div>
+                <div class="oppty-week">Weeks 11&ndash;12</div>
+                <div class="oppty-desc">Full autonomy; exception-based reporting<div class="oppty-role">Your role: Safety net</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header">Three Takeaways</div>
+    <div class="takeaways">
+        <div class="takeaway">
+            <div class="takeaway-title">1. Who > What</div>
+            <div class="takeaway-body">Who you delegate to matters more than which framework you use.</div>
+        </div>
+        <div class="takeaway">
+            <div class="takeaway-title">2. Tools, Not Rules</div>
+            <div class="takeaway-body">The 70% Rule, RACI, SLII have zero empirical validation. Use as thinking aids, not gospel.</div>
+        </div>
+        <div class="takeaway">
+            <div class="takeaway-title">3. Context Is King</div>
+            <div class="takeaway-body">More autonomy can backfire. Match your style to the person, culture, and stakes.</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="quote">
+            &ldquo;The science of letting go is less about letting go and more about knowing what to hold on to.&rdquo;
+        </div>
+        <div class="links">
+            Full research: <a href="https://research.bwforce.ai">research.bwforce.ai</a><br>
+            Podcast: Yudame Research by Valor Engels
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

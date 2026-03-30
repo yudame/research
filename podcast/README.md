@@ -12,7 +12,7 @@ This system provides end-to-end podcast episode creation from research through p
 - **Cover Art Generation**: AI-generated imagery with automated branding
 - **Publishing**: Automated RSS feed updates and GitHub Pages deployment
 
-**Live Feed:** `https://research.yuda.me/podcast/feed.xml`
+**Live Feed:** `https://research.bwforce.ai/podcast/feed.xml`
 
 **Subscribe:** See [SUBSCRIBE.md](./SUBSCRIBE.md) for platform-specific instructions
 
@@ -307,7 +307,7 @@ After audio processing, update `podcast/feed.xml`:
 
 ### GitHub Pages
 
-- **URL:** `https://research.yuda.me/podcast/feed.xml`
+- **URL:** `https://research.bwforce.ai/podcast/feed.xml`
 - **Deploy time:** 2-3 minutes after push
 - **Source:** main branch, root folder
 - **Configuration:** `.nojekyll` file disables Jekyll processing
@@ -388,7 +388,7 @@ Template available in `.claude/skills/new-podcast-episode.md`.
 ## Episode Description Best Practices
 
 - **Hook:** 1-2 compelling sentences highlighting key topics
-- **Report link:** Always include `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
+- **Report link:** Always include `https://research.bwforce.ai/podcast/episodes/YYYY-MM-DD-slug/report.md`
 - **Key sources:** 3-5 validated official links
 - **Priority order:** Official legislation/regulation → Academic analysis → Primary sources
 - **Validation:** Use WebSearch to find, WebFetch to validate official URLs

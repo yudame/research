@@ -14,8 +14,8 @@ Wed, 26 Nov 2025 12:00:00 GMT
 ## Description
 An Asian stablecoin faces a paradox: regulations from the US and EU—jurisdictions where it doesn't operate—determine whether it achieves global adoption. This episode analyzes the extraterritorial reach of the GENIUS Act and MiCA, revealing how Tether got delisted across Europe for non-compliance, why MiCA's 60% EU bank reserve rule was the dealbreaker, and the practical licensing pathways (PPSI, EMI) that Circle and GMO used to gain market access.
 
-Full Report: https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md
-Sources: https://research.yuda.me/podcast/episodes/2025-11-26-stablecoin-compliance-asia/sources.md
+Full Report: https://research.bwforce.ai/podcast/episodes/2025-11-26-stablecoin-compliance-asia/report.md
+Sources: https://research.bwforce.ai/podcast/episodes/2025-11-26-stablecoin-compliance-asia/sources.md
 
 ## Key Sources
 - US GENIUS Act (S.394): https://www.congress.gov/bill/119th-congress/senate-bill/394/text

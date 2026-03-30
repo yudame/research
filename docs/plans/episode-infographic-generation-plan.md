@@ -153,7 +153,7 @@ Background: White (#FFFFFF)
 │ DIVIDER (Gray #E5E5E5, 2px)            │
 ┌─────────────────────────────────────────┐
 │ FOOTER (5%)                             │
-│ [Yudame Logo] research.yuda.me/podcast │
+│ [Yudame Logo] research.bwforce.ai/podcast │
 │ Background: White                       │
 └─────────────────────────────────────────┘
 ```
@@ -249,7 +249,7 @@ Border top: 1px solid #E5E5E5
 
 Layout (horizontal, center aligned):
   - Left: Yudame wordmark or logo (24px height)
-  - Right: URL "research.yuda.me/podcast"
+  - Right: URL "research.bwforce.ai/podcast"
   - Font: Inter, 12px, color #6B6B6B
   - Vertical center aligned
 ```
@@ -341,7 +341,7 @@ STRUCTURE (TOP TO BOTTOM):
 4. FOOTER (5% of height):
    - Background: White
    - Left: "Yudame Research" wordmark (Playfair 14px)
-   - Right: "research.yuda.me/podcast" (Inter 12px, gray)
+   - Right: "research.bwforce.ai/podcast" (Inter 12px, gray)
    - Border top: 1px #E5E5E5
 
 DESIGN REQUIREMENTS:
