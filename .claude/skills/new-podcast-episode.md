@@ -17,7 +17,7 @@
 - [ ] **Phase 11: Publishing** → Cover art, metadata, feed.xml updated
 - [ ] **Phase 12: Commit & Push** → Changes committed and pushed to GitHub
 
-**Verification:** After Phase 12, check https://research.bwforce.ai/podcast/feed.xml refreshes with new episode in 2-3 minutes.
+**Verification:** After Phase 12, check https://research.yuda.me/podcast/feed.xml refreshes with new episode in 2-3 minutes.
 
 ---
 
@@ -1506,7 +1506,7 @@ a. **Create compelling 1-2 sentence description (plain text):**
    - Highlight key topics, major stories/events covered, and main takeaways
    - Focus on what makes this episode valuable and what listeners will learn
    - Keep this version plain text for the `<description>` tag
-   - Include link to full research report: `https://research.bwforce.ai/podcast/episodes/YYYY-MM-DD-slug/report.md`
+   - Include link to full research report: `https://research.yuda.me/podcast/episodes/YYYY-MM-DD-slug/report.md`
 
 b. **Create "What You'll Learn" section (3-5 bullets):**
    - Specific, compelling insights or myth-busts
@@ -1788,11 +1788,11 @@ git ls-remote origin main | grep main
 
 Wait 2-3 minutes for GitHub Pages deployment, then verify:
 
-Use WebFetch to verify the episode appears at `https://research.bwforce.ai/podcast/feed.xml`.
+Use WebFetch to verify the episode appears at `https://research.yuda.me/podcast/feed.xml`.
 
 **Expected output:** Should return the episode title and enclosure URL
 
-**Alternative verification:** Visit https://research.bwforce.ai/podcast/feed.xml in browser and search for episode title
+**Alternative verification:** Visit https://research.yuda.me/podcast/feed.xml in browser and search for episode title
 
 **✅ Episode is live when:**
 - feed.xml shows new episode

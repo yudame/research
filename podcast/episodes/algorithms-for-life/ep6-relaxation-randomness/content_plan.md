@@ -206,7 +206,7 @@
 1. **Synthesis** — "Here's what all of this comes down to..."
 2. **Core takeaways** — 3 explicit takeaways (individuals should push toward change; know which constraints are load-bearing; engineer serendipity through weak ties)
 3. **Callback** — Return to Gene Kranz: "He didn't abandon all constraints. He abandoned exactly the right ones."
-4. **CTA** — Full research and sources at research.bwforce.ai
+4. **CTA** — Full research and sources at research.yuda.me
 
 ---
 

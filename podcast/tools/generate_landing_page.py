@@ -162,7 +162,7 @@ def generate_html(metadata: dict, episode_dir: Path, companion_resources: list,
     slug = episode_dir.name
 
     # Build base URL
-    base_url = f"https://research.bwforce.ai/podcast/episodes/{slug}"
+    base_url = f"https://research.yuda.me/podcast/episodes/{slug}"
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -375,7 +375,7 @@ def generate_html(metadata: dict, episode_dir: Path, companion_resources: list,
 
     <footer>
         <p>Yudame Research Podcast &copy; {datetime.now().year}</p>
-        <p><a href="https://research.bwforce.ai/podcast/feed.xml">Subscribe via RSS</a></p>
+        <p><a href="https://research.yuda.me/podcast/feed.xml">Subscribe via RSS</a></p>
     </footer>
 </body>
 </html>
@@ -454,7 +454,7 @@ def main():
     output_path = episode_dir / args.output
     output_path.write_text(html)
     print(f"\nCreated: {output_path}")
-    print(f"URL: https://research.bwforce.ai/podcast/episodes/{episode_dir.name}/")
+    print(f"URL: https://research.yuda.me/podcast/episodes/{episode_dir.name}/")
 
     return 0
 

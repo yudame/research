@@ -13,7 +13,7 @@
 
 Why do the same minds that generate breakthrough strategic vision struggle with sustained execution? This episode explores the paradox that high-openness, novelty-seeking cognitive architecture systematically undermines long-horizon follow-through—not as a character flaw, but as neurobiology operating as designed. Drawing from a 2024 meta-analysis showing human-AI collaboration underperforms on average (g = -0.23) but reverses for creative tasks, plus research on implementation intentions (d = 0.65), effectuation theory, and the constraint-creativity curve, we examine practical protocols for strategic selection under opportunity abundance.
 
-**Full Report:** https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep2-strategic-selection/report.md
+**Full Report:** https://research.yuda.me/podcast/episodes/algorithms-for-life/ep2-strategic-selection/report.md
 
 ## Key Sources
 

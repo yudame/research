@@ -388,7 +388,7 @@ Before proceeding to Phase 9 (Audio Generation), verify:
 - [x] Stories to feature selected from Story Bank (5 stories with timing and purpose)
 - [x] Transition moments planned (2 major transitions with signposting language)
 - [x] Closing callback designed (return to "Hello?" handshake + acknowledging a person)
-- [x] Call-to-action included (two-exchange rule + research.bwforce.ai)
+- [x] Call-to-action included (two-exchange rule + research.yuda.me)
 
 ---
 

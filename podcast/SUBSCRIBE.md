@@ -2,7 +2,7 @@
 
 Subscribe to this podcast using your favorite podcast app. The RSS feed URL is:
 
-**`https://research.bwforce.ai/podcast/feed.xml`**
+**`https://research.yuda.me/podcast/feed.xml`**
 
 ## Apple Podcasts (70.8% of listeners)
 
@@ -10,13 +10,13 @@ Subscribe to this podcast using your favorite podcast app. The RSS feed URL is:
 1. Open the **Podcasts** app
 2. Tap **Library** at the bottom
 3. Tap **Edit** in the top right, then **Add a Show by URL...**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ### macOS
 1. Open the **Podcasts** app
 2. Go to **File** → **Add a Show by URL...**
-3. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+3. Paste: `https://research.yuda.me/podcast/feed.xml`
 4. Click **Subscribe**
 
 ## Overcast (1.6% of listeners - iOS only)
@@ -26,7 +26,7 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open the **Overcast** app
 2. Tap **+** (Add) at the bottom
 3. Tap **Add URL**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ## Pocket Casts
@@ -34,7 +34,7 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open **Pocket Casts**
 2. Tap **Profile** → **Settings** (gear icon)
 3. Scroll to **Add Podcast by RSS URL**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ## Castro
@@ -42,7 +42,7 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open **Castro**
 2. Tap **Add** (+ icon)
 3. Select **Add by URL**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ## Podcast Addict (Android)
@@ -50,7 +50,7 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open **Podcast Addict**
 2. Tap **+** → **Add a podcast**
 3. Select **RSS feed**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ## AntennaPod (Android - Open Source)
@@ -58,7 +58,7 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open **AntennaPod**
 2. Tap **+** → **Add podcast**
 3. Select **Add podcast by RSS address**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Confirm**
 
 ## Google Podcasts (1.2% of listeners)
@@ -68,14 +68,14 @@ Overcast is known for Smart Speed, Voice Boost, and privacy-focused features.
 1. Open **Google Podcasts**
 2. Tap your profile icon → **Activity**
 3. Tap **Subscriptions** → **Add by RSS feed**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Tap **Subscribe**
 
 ## Any RSS Reader
 
 You can also subscribe using any RSS feed reader app (Feedly, Inoreader, NewsBlur, etc.):
 
-1. Add feed: `https://research.bwforce.ai/podcast/feed.xml`
+1. Add feed: `https://research.yuda.me/podcast/feed.xml`
 2. Episodes will appear as posts with audio enclosures
 
 ## Desktop Apps
@@ -87,12 +87,12 @@ See [Apple Podcasts - macOS](#macos) above
 1. Open **iTunes**
 2. Switch to **Podcasts** library
 3. Go to **File** → **Subscribe to Podcast...**
-4. Paste: `https://research.bwforce.ai/podcast/feed.xml`
+4. Paste: `https://research.yuda.me/podcast/feed.xml`
 5. Click **Subscribe**
 
 ### Web Browser
 You can view and download episodes directly:
-1. Visit: `https://research.bwforce.ai/podcast/feed.xml`
+1. Visit: `https://research.yuda.me/podcast/feed.xml`
 2. Browse episodes in your browser
 3. Download MP3 files directly
 
@@ -127,7 +127,7 @@ The following platforms **do not support custom RSS feeds** and require podcast 
 ## Troubleshooting
 
 ### "Unable to find podcast" error
-- Verify you copied the complete URL: `https://research.bwforce.ai/podcast/feed.xml`
+- Verify you copied the complete URL: `https://research.yuda.me/podcast/feed.xml`
 - Ensure you have internet connectivity
 - Try adding `https://` if your app removed it
 
@@ -152,7 +152,7 @@ The following platforms **do not support custom RSS feeds** and require podcast 
 - **Audio Format:** MP3, 128 kbps, 44.1 kHz
 - **Chapter Support:** Yes (Podcasting 2.0 and ID3 chapters)
 - **Hosting:** GitHub Pages (self-hosted)
-- **Feed URL:** https://research.bwforce.ai/podcast/feed.xml
+- **Feed URL:** https://research.yuda.me/podcast/feed.xml
 
 ## Questions?
 
@@ -162,4 +162,4 @@ https://github.com/valorengels/research
 ---
 
 **Direct Episode Access:** Episodes can also be browsed directly at:
-https://research.bwforce.ai/podcast/episodes/
+https://research.yuda.me/podcast/episodes/

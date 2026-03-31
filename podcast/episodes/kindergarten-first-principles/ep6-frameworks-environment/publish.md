@@ -14,8 +14,8 @@ Thu, 05 Dec 2025 12:00:00 GMT
 ## Description
 The final episode examines what research actually reveals about Montessori, Reggio Emilia, Waldorf, and other educational frameworks—from the Perry Preschool's $12:1 return on investment to the shocking finding that only 5% of "Montessori" schools meet rigorous standards. Explores environmental design research showing classroom layout explains 16% of learning variation, why 90 toys is worse than 4, and how implementation fidelity matters more than philosophical labels.
 
-Full Report: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep6-frameworks-environment/report.md
-Sources: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep6-frameworks-environment/sources.md
+Full Report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep6-frameworks-environment/report.md
+Sources: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep6-frameworks-environment/sources.md
 
 ## Key Sources
 - Randolph et al. (2023) Campbell Systematic Review: https://pmc.ncbi.nlm.nih.gov/articles/PMC10406168/

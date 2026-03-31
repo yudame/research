@@ -19,7 +19,7 @@ Sun, 08 Dec 2024 22:00:00 GMT
 ## Description (Plain Text)
 How do you launch a mobile network across 1,000+ islands without financial bankruptcy? Episode 3 examines infrastructure economics and the convergence strategy slashing initial capital requirements by 50-80%—from $100M+ greenfield to $15-30M partnership models. Topics: SINBIP's 161 government-funded towers, Starlink backhaul economics (KDDI's 1,200-tower validation), hybrid architecture strategies, Tonga's 38-day cable outage, 700 MHz coverage multiplier, and 5-year NPV analysis proving partnership models are 3x more attractive than build-from-scratch approaches.
 
-Full research report: https://research.bwforce.ai/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md
+Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md
 
 ## Key Sources (for HTML show notes)
 - [SINBIP government announcement](https://solomons.gov.sb/solomon-tower-limited-delivered-14-mobile-tower-sites-under-the-solomon-islands-national-broadband-infrastructure-project-sinbip/) - 161 tower sites funded by CNY 448.9M, STL infrastructure sharing model

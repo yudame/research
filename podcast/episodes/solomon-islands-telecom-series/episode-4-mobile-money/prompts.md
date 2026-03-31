@@ -311,7 +311,7 @@ mv temp.mp3 episode-4-mobile-money.mp3
 **For RSS Feed:**
 - **Duration:** 39:54 (MM:SS format)
 - **File Size:** 38318634 bytes
-- **Enclosure URL:** https://research.bwforce.ai/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3
+- **Enclosure URL:** https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3
 - **Type:** audio/mpeg
 
 **Files Created:**

@@ -136,7 +136,7 @@ Create an engaging podcast discussion about this research that:
   <description><![CDATA[
     How do stablecoin issuers safely hold billions in assets? This episode examines the custody infrastructure, regulatory frameworks (GENIUS Act, MiCA, Singapore MAS), and verification mechanisms that determine whether your stablecoins can survive a banking crisis—opening with Circle's $3.3 billion SVB exposure and the "disclosure paradox."
 
-    Full report: https://research.bwforce.ai/podcast/episodes/stablecoin-series/episode-5-reserve-management/report
+    Full report: https://research.yuda.me/podcast/episodes/stablecoin-series/episode-5-reserve-management/report
 
     Key Sources:
     • GENIUS Act (S.1582) - congress.gov
@@ -144,15 +144,15 @@ Create an engaging podcast discussion about this research that:
     • Circle Transparency Portal - circle.com/transparency
     • Ripple USD Transparency - ripple.com/solutions/stablecoin/transparency
   ]]></description>
-  <link>https://research.bwforce.ai/podcast/episodes/stablecoin-series/episode-5-reserve-management/</link>
+  <link>https://research.yuda.me/podcast/episodes/stablecoin-series/episode-5-reserve-management/</link>
   <guid isPermaLink="false">stablecoin-series-ep5-reserve-management-2025-12-26</guid>
   <pubDate>[RFC 2822 DATE]</pubDate>
-  <enclosure url="https://research.bwforce.ai/podcast/episodes/stablecoin-series/episode-5-reserve-management/[FILENAME].mp3" length="[FILE_SIZE_BYTES]" type="audio/mpeg"/>
+  <enclosure url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-5-reserve-management/[FILENAME].mp3" length="[FILE_SIZE_BYTES]" type="audio/mpeg"/>
   <itunes:duration>[DURATION]</itunes:duration>
   <itunes:explicit>false</itunes:explicit>
   <itunes:episode>5</itunes:episode>
   <itunes:episodeType>full</itunes:episodeType>
-  <podcast:chapters url="https://research.bwforce.ai/podcast/episodes/stablecoin-series/episode-5-reserve-management/[FILENAME]_chapters.json" type="application/json+chapters"/>
+  <podcast:chapters url="https://research.yuda.me/podcast/episodes/stablecoin-series/episode-5-reserve-management/[FILENAME]_chapters.json" type="application/json+chapters"/>
 </item>
 ```
 
