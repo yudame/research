@@ -14,8 +14,8 @@ Thu, 21 Nov 2025 18:00:00 GMT
 ## Description
 Evidence-based guide to cardiovascular supplements and medications for 40-year-old men, covering what works, what fails spectacularly, and optimal dosing protocols. Learn why high-dose omega-3 reduces heart attacks by 25% but increases atrial fibrillation risk by 50%, how CoQ10 cut heart failure mortality by 49% in the Q-SYMBIO trial, and why vitamin D and niacin failed despite decades of hype.
 
-Full Report: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
-Sources: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep4-supplementation/sources.md
+Full Report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/report.md
+Sources: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep4-supplementation/sources.md
 
 ## Key Sources
 - REDUCE-IT Trial (omega-3 EPA): https://www.ahajournals.org/doi/10.1161/JAHA.119.013543

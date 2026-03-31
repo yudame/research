@@ -27,4 +27,4 @@ Layout: Bold visual elements suita...
 Next step: Add branding with add_logo_watermark.py
 
 To use in feed.xml, add this line to the episode <item>:
-  <itunes:image href="https://research.bwforce.ai/podcast/episodes/ep2-two-hour-core-model/cover.png?v=1"/>
+  <itunes:image href="https://research.yuda.me/podcast/episodes/ep2-two-hour-core-model/cover.png?v=1"/>

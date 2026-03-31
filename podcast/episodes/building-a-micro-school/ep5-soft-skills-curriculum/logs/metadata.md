@@ -21,7 +21,7 @@ Children who received social-emotional learning (SEL) at age 7 were 23% more lik
 
 We examine meta-analyses spanning 575,000+ students showing SEL programs produce 0.23 standard deviation gains, why teacher-delivered programs outperform specialists by 3x, the evidence for explicit instruction plus integration, and practical protocols for morning meetings, calm-down corners, and mixed-age SEL delivery.
 
-**Full research report:** https://research.bwforce.ai/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/report.md
+**Full research report:** https://research.yuda.me/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/report.md
 
 **Key Sources:**
 - Durlak et al. (2011) - Meta-analysis of 213 school-based SEL programs (270,034 students)
@@ -45,16 +45,16 @@ social-emotional learning, SEL, soft skills, emotional intelligence, CASEL frame
 **Publication Date:** Tuesday, January 28, 2026 (RFC 2822: Tue, 28 Jan 2026 00:00:00 -0800)
 **Cover Art:** cover.png (1216 KB, 1024x1024px)
 
-**Feed URL:** https://research.bwforce.ai/podcast/feed.xml
-**Episode URL:** https://research.bwforce.ai/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/2026-01-28-soft-skills-curriculum.mp3
-**Cover Art URL:** https://research.bwforce.ai/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/cover.png
+**Feed URL:** https://research.yuda.me/podcast/feed.xml
+**Episode URL:** https://research.yuda.me/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/2026-01-28-soft-skills-curriculum.mp3
+**Cover Art URL:** https://research.yuda.me/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/cover.png
 
 ---
 
 ## Technical Details
 
 **Enclosure:**
-- url: https://research.bwforce.ai/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/2026-01-28-soft-skills-curriculum.mp3
+- url: https://research.yuda.me/podcast/episodes/building-a-micro-school/ep5-soft-skills-curriculum/2026-01-28-soft-skills-curriculum.mp3
 - length: 35543993
 - type: audio/mpeg
 

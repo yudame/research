@@ -12,7 +12,7 @@
 
 Discover why the active recovery "paradox" challenges gym wisdom: studies show active recovery clears lactate faster and feels easier during workouts, yet produces identical long-term fitness gains as passive rest. This deep dive reveals what actually changes for trained 40+ athletes (hint: it's not protein requirements), why a $20 foam roller delivers 80% of the benefits of expensive tech, and the three evidence-based principles that separate marginal gains from foundational recovery.
 
-Full research report: https://research.bwforce.ai/podcast/episodes/active-recovery/ep1-foundations/report.md
+Full research report: https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/report.md
 
 ## Key Sources
 
@@ -69,7 +69,7 @@ active recovery, master athletes, recovery protocols, 40 plus fitness, lactate c
   <description><![CDATA[
     Discover why the active recovery "paradox" challenges gym wisdom: studies show active recovery clears lactate faster and feels easier during workouts, yet produces identical long-term fitness gains as passive rest. This deep dive reveals what actually changes for trained 40+ athletes (hint: it's not protein requirements), why a $20 foam roller delivers 80% of the benefits of expensive tech, and the three evidence-based principles that separate marginal gains from foundational recovery.
 
-    Full research report: https://research.bwforce.ai/podcast/episodes/active-recovery/ep1-foundations/report.md
+    Full research report: https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/report.md
 
     Key Sources:
     • Sports Medicine - Open (2024) - Systematic review on active vs passive recovery
@@ -79,12 +79,12 @@ active recovery, master athletes, recovery protocols, 40 plus fitness, lactate c
     • University of Jyväskylä (2025) - Infrared sauna dissertation
   ]]></description>
   <pubDate>Sat, 14 Dec 2025 00:00:00 -0800</pubDate>
-  <enclosure url="https://research.bwforce.ai/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations.mp3" length="42281723" type="audio/mpeg"/>
+  <enclosure url="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations.mp3" length="42281723" type="audio/mpeg"/>
   <guid isPermaLink="false">active-recovery-ep1-foundations-2025-12-14</guid>
   <itunes:duration>44:02</itunes:duration>
   <itunes:keywords>active recovery, master athletes, recovery protocols, 40 plus fitness, lactate clearance, protein timing, anabolic window, sleep optimization, HRV monitoring</itunes:keywords>
-  <itunes:image href="https://research.bwforce.ai/podcast/episodes/active-recovery/ep1-foundations/cover.png"/>
-  <podcast:chapters url="https://research.bwforce.ai/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations_chapters.json" type="application/json+chapters"/>
+  <itunes:image href="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/cover.png"/>
+  <podcast:chapters url="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations_chapters.json" type="application/json+chapters"/>
 </item>
 ```
 

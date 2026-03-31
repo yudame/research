@@ -374,7 +374,7 @@ Before proceeding to Phase 9 (Audio Generation), verify:
 - [x] Stories to feature selected (5 stories with timing and purpose)
 - [x] Transition moments planned (2 major transitions with signposting language)
 - [x] Closing callback designed (return to 82% stat + "knowing what to hold on to")
-- [x] Call-to-action included (research.bwforce.ai + share + series teaser)
+- [x] Call-to-action included (research.yuda.me + share + series teaser)
 
 ---
 

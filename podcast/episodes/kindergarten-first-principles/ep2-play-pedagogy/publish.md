@@ -14,8 +14,8 @@ Sun, 01 Dec 2025 12:00:00 GMT
 ## Description
 The neuroscience of play is remarkably strong—precise mechanisms show how play shapes brain architecture through BDNF upregulation and synaptic pruning. Yet behavioral evidence reveals modest effect sizes (g ≈ 0.3-0.4) and limited transfer across domains. This episode examines the paradox: strong neurobiological foundations meet surprisingly modest measurable gains. We explore guided play as the optimal approach (outperforming both free play and direct instruction), the deprivation-enrichment asymmetry, the minimum effective dose (35+ minutes), and why at-risk children benefit most. The evidence favors "equifinality"—play as one of multiple valid developmental routes—challenging claims that play is uniquely necessary.
 
-Full Report: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep2-play-pedagogy/report.md
-Sources: https://research.bwforce.ai/podcast/episodes/kindergarten-first-principles/ep2-play-pedagogy/sources.md
+Full Report: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep2-play-pedagogy/report.md
+Sources: https://research.yuda.me/podcast/episodes/kindergarten-first-principles/ep2-play-pedagogy/sources.md
 
 ## Key Sources
 - Skene et al. (2022) meta-analysis on guided play: https://srcd.onlinelibrary.wiley.com/doi/10.1111/cdev.13730

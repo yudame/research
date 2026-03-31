@@ -18,10 +18,10 @@
 ## Publishing
 
 - **Published:** 2026-02-09
-- **Feed URL:** https://research.bwforce.ai/podcast/feed.xml
-- **Episode URL:** https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/
-- **Audio URL:** https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/how-to-delegate.mp3
-- **Report URL:** https://research.bwforce.ai/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/report.md
+- **Feed URL:** https://research.yuda.me/podcast/feed.xml
+- **Episode URL:** https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/
+- **Audio URL:** https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/how-to-delegate.mp3
+- **Report URL:** https://research.yuda.me/podcast/episodes/algorithms-for-life/ep3-how-to-delegate/report.md
 - **Cover art:** cover.png (1024x1024)
 
 ## Research Sources

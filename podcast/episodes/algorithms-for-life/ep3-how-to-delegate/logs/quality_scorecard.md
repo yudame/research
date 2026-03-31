@@ -344,7 +344,7 @@ Five protocols translate evidence into action. The closing synthesis ties everyt
 | "What You'll Learn" bullets | Partial | Key findings listed but not labeled as "What You'll Learn" |
 | Key timestamps | Yes | 13 chapters in both FFmpeg and Podcasting 2.0 format; chapters listed in metadata.md |
 | Validated sources | Yes | Tiered sources in sources.md; key sources listed in description |
-| Call-to-action | Yes | "Find the full research report at research.bwforce.ai" in both audio and description |
+| Call-to-action | Yes | "Find the full research report at research.yuda.me" in both audio and description |
 | Cover art | Yes | 1024x1024 AI-generated with Yudame branding |
 | iTunes metadata | Yes | Episode type, season, episode number, keywords |
 | Podcast:chapters tag | Yes | JSON chapters linked in feed |

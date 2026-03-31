@@ -598,7 +598,7 @@ Content_plan.md specified: "Callback to opening: That $908 million payment to Co
 2. **Description (from feed.xml):**
    - **Opening sentences:** "Circle pays Coinbase $908 million per year—not for technology or custody, but for distribution. That single line item reveals what running a stablecoin actually looks like once the whitepapers are done and the infrastructure must operate 24/7 under federal supervision."
    - **Body:** 2-3 paragraph summary covering cost structures, two models (Tether lean vs. Circle compliance-heavy), operational requirements (monitoring, attestation, enforcement), and GENIUS Act implications
-   - **Report link:** "Read the full research report: https://research.bwforce.ai/podcast/episodes/stablecoin-series/ep8-post-launch-operations/report.md"
+   - **Report link:** "Read the full research report: https://research.yuda.me/podcast/episodes/stablecoin-series/ep8-post-launch-operations/report.md"
    - **Key Sources section:** 8 validated official links (Circle S-1, GENIUS Act, AICPA 2025 Criteria, Tether attestations, etc.)
 
 **Quality assessment:** Good descriptive summary, includes report link and validated sources. However:
@@ -664,7 +664,7 @@ Content_plan.md specified: "Callback to opening: That $908 million payment to Co
 
 9. **Episode landing page** (C3.2)
    - No HTML landing page
-   - No standalone resource at https://research.bwforce.ai/podcast/episodes/.../index.html
+   - No standalone resource at https://research.yuda.me/podcast/episodes/.../index.html
 
 ### Assessment
 
@@ -952,7 +952,7 @@ The episode provides **highly valuable companion resources** through:
   6. HTML show notes (C2.2)—plain text description, not structured HTML with headers/lists/formatting
   7. Transcript tag (C2.3)—missing `<podcast:transcript>` tag for accessibility/SEO
   8. Companion resources (C3.1)—no one-page cheat sheet, action checklist, framework diagrams
-  9. Episode landing page (C3.2)—no HTML resource hub at research.bwforce.ai
+  9. Episode landing page (C3.2)—no HTML resource hub at research.yuda.me
 
 **Why this score (not higher):**
 - Missing 9 of 11 packaging improvements from Wave 4 plan

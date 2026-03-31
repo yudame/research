@@ -75,4 +75,4 @@ title=Section 3: Design Principles and Regulatory Response
 TIMEBASE=1/1000
 START=2432400
 END=2445000
-title=Closing: Find Research at research.bwforce.ai
+title=Closing: Find Research at research.yuda.me

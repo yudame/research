@@ -210,7 +210,7 @@ def build_episode_url(episode_dir: Path, filename: str) -> str:
     except ValueError:
         rel_path = episode_dir.name
 
-    return f"https://research.bwforce.ai/podcast/episodes/{rel_path}/{filename}"
+    return f"https://research.yuda.me/podcast/episodes/{rel_path}/{filename}"
 
 
 def generate_content_encoded(metadata: dict, report_url: str) -> str:
@@ -257,7 +257,7 @@ def generate_content_encoded(metadata: dict, report_url: str) -> str:
 
     # Full research report link
     html_parts.append(f'<h2>Full Research Report</h2>')
-    html_parts.append(f'<p>Read the complete research synthesis with all citations at: <a href="{report_url}">research.bwforce.ai</a></p>')
+    html_parts.append(f'<p>Read the complete research synthesis with all citations at: <a href="{report_url}">research.yuda.me</a></p>')
 
     # Call-to-action
     if cta:
@@ -316,7 +316,7 @@ def generate_item_xml(metadata: dict, episode_dir: Path, audio_file: Path) -> st
 
     lines.append(f"      <description>{escape(description)}</description>")
     lines.append(f"      <content:encoded>{content_encoded}</content:encoded>")
-    lines.append(f"      <author>valor@yudame.org (Valor Engels)</author>")
+    lines.append(f"      <author>valor@yuda.me (Valor Engels)</author>")
     lines.append(f"      <pubDate>{pub_date_str}</pubDate>")
     lines.append(f'      <enclosure url="{audio_url}"')
     lines.append(f'                 length="{file_size}"')

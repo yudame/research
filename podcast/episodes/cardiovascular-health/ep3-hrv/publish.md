@@ -14,8 +14,8 @@ Wed, 20 Nov 2025 15:00:00 GMT
 ## Description
 Heart rate variability (HRV) has moved from clinical labs to consumer wearables, offering a powerful window into autonomic nervous system function, stress resilience, and training readiness. This episode synthesizes meta-analyses and systematic reviews to provide an evidence-based playbook for the active 40-year-old man: which metrics actually matter (RMSSD vs SDNN), how to measure reliably with validated devices, when a 15% drop signals overtraining, and which interventions show the largest effect sizes for improving cardiovascular health.
 
-Full Report: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
-Sources: https://research.bwforce.ai/podcast/episodes/cardiovascular-health/ep3-hrv/sources.md
+Full Report: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/report.md
+Sources: https://research.yuda.me/podcast/episodes/cardiovascular-health/ep3-hrv/sources.md
 
 ## Key Sources
 - Shaffer & Ginsberg (2017) - HRV Metrics Overview: https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/
