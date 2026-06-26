@@ -73,6 +73,15 @@ Located in `podcast/tools/`:
 - **add_logo_watermark.py** - Brand overlay for cover images
 - **generate_chapters.py** - Chapter marker generation
 
+## Running
+
+No server to run — this is a research content repository. Use the processing scripts in `podcast/tools/` directly:
+
+```bash
+python podcast/tools/transcribe_only.py <audio-file>
+python podcast/tools/generate_cover.py <episode-dir>
+```
+
 ## License
 
 Research reports and analysis are shared for educational purposes. Source materials retain their original licenses.
