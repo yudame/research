@@ -35,9 +35,6 @@ for episode_dir in /Users/valorengels/src/research/podcast/episodes/*/*; do
     "kindergarten-first-principles")
       back_text="Kindergarten First Principles Series"
       ;;
-    "solomon-islands-telecom-series")
-      back_text="Solomon Islands Telecom Series"
-      ;;
     "stablecoin-series")
       back_text="Stablecoin Series"
       ;;

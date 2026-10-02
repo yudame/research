@@ -591,29 +591,6 @@ Key Sources:
       <podcast:chapters url="https://research.yuda.me/podcast/episodes/active-recovery/ep3-emerging/2025-12-15-emerging-edges_chapters.json" type="application/json+chapters"/>
     </item>
 
-    <!-- Episode 19: Solomon Islands Telecom Series - Episode 6 -->
-    <item>
-      <title>Solomon Islands Telecom Series: Ep. 6, The Smartphone Frontier</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/cover.png?v=2025-12-21b"/>
-      <description>Across the Pacific, 86% of the population lives within range of mobile broadband—yet only 27% actually use it. This 59-percentage-point coverage-usage gap reveals the digital divide is no longer about building towers but about addressing five co-equal barriers: affordability (devices cost 30% of monthly income), infrastructure quality (data costs 38% of income), digital literacy (42% lack basic skills), content gaps, and gender inequality. China's 2025 subsidy experiment provides the cautionary evidence: 48 million participants and $20 billion in sales, followed by a 5% year-over-year decline by week 11. Meanwhile, PAYGO financing—proven successful with M-KOPA's 4.8 million customers—remains blocked in Solomon Islands by non-existent mobile money infrastructure (13,400 accounts, 10-15% active). The Vanuatu contrast is stark: aggressive device subsidies achieved 98% coverage versus Solomon Islands' conservative 42%. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/report.md</description>
-      <content:encoded><![CDATA[<p>Across the Pacific, 86% of the population lives within range of mobile broadband—yet only 27% actually use it. This 59-percentage-point coverage-usage gap reveals the digital divide is no longer about building towers but about addressing five co-equal barriers: affordability (devices cost 30% of monthly income), infrastructure quality (data costs 38% of income), digital literacy (42% lack basic skills), content gaps, and gender inequality. China's 2025 subsidy experiment provides the cautionary evidence: 48 million participants and $20 billion in sales, followed by a 5% year-over-year decline by week 11. Meanwhile, PAYGO financing—proven successful with M-KOPA's 4.8 million customers—remains blocked in Solomon Islands by non-existent mobile money infrastructure (13,400 accounts, 10-15% active). The Vanuatu contrast is stark: aggressive device subsidies achieved 98% coverage versus Solomon Islands' conservative 42%.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/blog/the-mobile-gender-gap-report-2024/">GSMA Mobile Gender Gap Report 2024</a> - 25% smartphone gender gap in Sub-Saharan Africa; 265M fewer women use mobile internet</li><li><a href="https://www.worldbank.org/en/news/press-release/2025/07/16/mobile-phone-technology-powers-saving-surge-in-developing-economies">World Bank 2025: Mobile Phone Technology & Saving Surge</a> - PAYGO financing assessment for low-income populations</li><li><a href="https://cbsi.com.sb/">Central Bank of Solomon Islands - NFIS3 (2021-2025)</a> - 400,000 active financial accounts target, 50% women mandate</li><li><a href="https://english.www.gov.cn/news/202501/16/content_WS678843dfc6d0868f4e8eed98.html">China State Council: Equipment Upgrade & Trade-In Program</a> - 15% subsidies, 48M participants, week 11 failure analysis</li><li><a href="https://datareportal.com/reports/digital-2025-solomon-islands">DataReportal 2025: Digital Solomon Islands</a> - 42% smartphone penetration, 352,000 internet users</li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Sun, 15 Dec 2025 08:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3"
-                 length="35359483"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>36:49</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>1</itunes:season>
-      <itunes:episode>6</itunes:episode>
-      <itunes:keywords>smartphone adoption, digital divide, Pacific Islands, PAYGO financing, mobile money, device subsidies, China subsidy experiment, gender digital gap, mobile number portability, M-KOPA, Vanuatu, Solomon Islands, coverage-usage gap, digital literacy, NFIS3, financial inclusion, USSD, M-Pesa, Starlink, infrastructure paradox</itunes:keywords>
-      <research:series>Solomon Islands Telecom Series</research:series>
-      <podcast:chapters url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-6-smartphone-frontier/episode-6-smartphone-frontier_chapters.json" type="application/json+chapters"/>
-    </item>
-
     <!-- Episode 20: Active Recovery Series - Episode 2 -->
     <item>
       <title>Active Recovery: Ep. 2, Heat, Cold, Touch, and Stretch</title>
@@ -658,94 +635,6 @@ Key Sources:
       <itunes:keywords>active recovery, master athletes, recovery protocols, 40 plus fitness, lactate clearance, protein timing, anabolic window, sleep optimization, HRV monitoring, compression therapy, cryotherapy, sauna protocols</itunes:keywords>
       <research:series>Active Recovery Series</research:series>
       <podcast:chapters url="https://research.yuda.me/podcast/episodes/active-recovery/ep1-foundations/ep1-foundations_chapters.json" type="application/json+chapters"/>
-    </item>
-
-    <!-- Episode 17: Solomon Islands Telecom Series - Episode 5 -->
-    <item>
-      <title>Solomon Islands Telecom Series: Ep. 5, Launch Execution</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-5-launch-execution/cover.png?v=2025-12-21b"/>
-      <description>To break even in the Solomon Islands market, a new mobile operator must capture 48-63% market share—a threshold that took even DigiCell years to achieve in countries where it was the first challenger. Yet the opportunity persists: submarine fiber (40 Tbps), 161 publicly-funded towers, and Starlink licensing have transformed infrastructure economics, while B-Mobile operates no 4G network whatsoever. This episode examines the brutal financial realities ($40-70M capital, 5-10 years to profitability), regulatory pathways (TCSI licensing, spectrum set-aside strategies), and the radical partnership model (SATSOL's $15-30K data gardens vs. $80-150K traditional sites) that could make a third operator viable where conventional economics say failure. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-5-launch-execution/report.md</description>
-      <content:encoded><![CDATA[<p>To break even in the Solomon Islands market, a new mobile operator must capture 48-63% market share—a threshold that took even DigiCell years to achieve in countries where it was the first challenger. Yet the opportunity persists: submarine fiber (40 Tbps), 161 publicly-funded towers, and Starlink licensing have transformed infrastructure economics, while B-Mobile operates no 4G network whatsoever. This episode examines the brutal financial realities ($40-70M capital, 5-10 years to profitability), regulatory pathways (TCSI licensing, spectrum set-aside strategies), and the radical partnership model (SATSOL's $15-30K data gardens vs. $80-150K traditional sites) that could make a third operator viable where conventional economics say failure.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-5-launch-execution/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.tcsi.org.sb/">Telecommunications Commission of Solomon Islands (TCSI)</a> - Regulatory framework and licensing</li><li><a href="https://www.tcsi.org.sb/index.php/library/legislation/49-telecommunications-act-2009">Telecommunications Act 2009</a> - Legal foundation for market entry</li><li><a href="https://www.adb.org/sites/default/files/project-documents/43929-014-png-xarr.pdf">Asian Development Bank - Digicel PNG Expansion</a> - 2,400% subscriber growth case study</li><li><a href="https://www.trbr.vu/attachments/article/927/trbr_sector_report_2024.pdf">Vanuatu TRBR Sector Report 2024</a> - Spectrum allocation precedents</li><li><a href="https://www.accc.gov.au/system/files/OneWiFi%20&%20Infrastructure.pdf">ACCC Regional Infrastructure Cost Analysis</a> - Tower deployment economics</li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Sat, 14 Dec 2025 20:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-5-launch-execution/episode-5-launch-execution.mp3"
-                 length="31588930"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-5-launch-execution/episode-5-launch-execution.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>32:54</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>1</itunes:season>
-      <itunes:episode>5</itunes:episode>
-      <itunes:keywords>mobile network operator, MNO licensing, TCSI, break-even analysis, market entry strategy, Coral Sea Cable, SINBIP, Starlink, spectrum allocation, SATSOL, IumiCash, DigiCell Pacific, Our Telekom, B-Mobile Vodafone, dual-SIM strategy, number portability, infrastructure partnership, telecommunications regulation, Pacific Islands, archipelago connectivity</itunes:keywords>
-      <research:series>Solomon Islands Telecom Series</research:series>
-    </item>
-
-    <!-- Episode 16: Solomon Islands Telecom Series - Episode 4 -->
-    <item>
-      <title>Solomon Islands Telecom Series: Ep. 4, Mobile Money Strategy</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/cover.png?v=2025-12-21b"/>
-      <description>In Kenya, mobile money lifted 194,000 households out of poverty. In the Philippines, GCash doubled financial inclusion in four years. Yet in the Solomon Islands, these proven formulas face an uncomfortable reality: the market may be too small to work. This episode examines the "viability paradox" - how M-SELEN and IumiCash compete in a market requiring 50x current transaction volumes to break even, why 8,700+ seasonal workers pay $2.8-5M annually in excess remittance fees, and what mobile money success looks like when conventional economics don't apply. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md</description>
-      <content:encoded><![CDATA[<p>In Kenya, mobile money lifted 194,000 households out of poverty. In the Philippines, GCash doubled financial inclusion in four years. Yet in the Solomon Islands, these proven formulas face an uncomfortable reality: the market may be too small to work. This episode examines the "viability paradox" - how M-SELEN and IumiCash compete in a market requiring 50x current transaction volumes to break even, why 8,700+ seasonal workers pay $2.8-5M annually in excess remittance fees, and what mobile money success looks like when conventional economics don't apply.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/gsma-state-of-industry-report-on-mobile-money-2024/">GSMA State of the Industry Report 2024-2025</a> - Supply-side survey of 119 MMPs from 67 countries</li><li><a href="https://www.worldbank.org/en/publication/globalfindex">World Bank Global Findex 2025</a> - Nationally representative surveys in 125+ countries</li><li><a href="https://www.cbsi.com.sb/">CBSI Payment Systems Act 2022</a> - Legal framework for mobile money regulation</li><li><a href="https://www.science.org/doi/10.1126/science.aah5309">Jack & Suri (2016) M-Pesa Kenya Panel Study</a> - Longitudinal data on mobile money welfare effects</li><li><a href="https://www.uncdf.org/pacific">UNCDF Pacific Mobile Money Analysis</a> - Pacific Islands market viability research</li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Thu, 12 Dec 2025 00:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3"
-                 length="38318634"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-4-mobile-money/episode-4-mobile-money.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>39:54</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>1</itunes:season>
-      <itunes:episode>4</itunes:episode>
-      <itunes:keywords>mobile money, financial inclusion, M-SELEN, IumiCash, Solomon Islands, CBSI, agent networks, remittances, PALM scheme, M-Pesa, GCash, fintech regulation, Pacific Islands, viability paradox, transaction economics</itunes:keywords>
-      <research:series>Solomon Islands Telecom Series</research:series>
-    </item>
-
-    <!-- Episode 15: Solomon Islands Telecom Series - Episode 3 -->
-    <item>
-      <title>Solomon Islands Telecom Series: Ep. 3, Infrastructure Without Capital</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/cover.png?v=2025-12-21b"/>
-      <description>How do you launch a mobile network across 1,000+ islands without financial bankruptcy? Episode 3 examines infrastructure economics and the convergence strategy slashing initial capital requirements by 50-80%—from $100M+ greenfield to $15-30M partnership models. Topics: SINBIP's 161 government-funded towers, Starlink backhaul economics (KDDI's 1,200-tower validation), hybrid architecture strategies, Tonga's 38-day cable outage, 700 MHz coverage multiplier, and 5-year NPV analysis proving partnership models are 3x more attractive than build-from-scratch approaches. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md</description>
-      <content:encoded><![CDATA[<p>How do you launch a mobile network across 1,000+ islands without financial bankruptcy? Episode 3 examines infrastructure economics and the convergence strategy slashing initial capital requirements by 50-80%—from $100M+ greenfield to $15-30M partnership models. Topics: SINBIP's 161 government-funded towers, Starlink backhaul economics (KDDI's 1,200-tower validation), hybrid architecture strategies, Tonga's 38-day cable outage, 700 MHz coverage multiplier, and 5-year NPV analysis proving partnership models are 3x more attractive than build-from-scratch approaches.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://solomons.gov.sb/solomon-tower-limited-delivered-14-mobile-tower-sites-under-the-solomon-islands-national-broadband-infrastructure-project-sinbip/">SINBIP government announcement</a> - 161 tower sites funded by CNY 448.9M, STL infrastructure sharing model</li><li><a href="https://news.kddi.com/kddi/corporate/english/newsrelease/2022/12/01/6415.html">KDDI Japan Starlink deployment</a> - 1,200 towers using Starlink backhaul, performance comparable to fiber</li><li><a href="https://news.berkeley.edu/2024/05/09/submarine-communications-cables/">Tonga volcanic eruption cable damage</a> - 80km section destroyed, 38-day international outage, 18-month domestic restoration</li><li><a href="https://documents1.worldbank.org/curated/en/099121724111526960/pdf/P1785971617dfc0361b79b10ed943988d67.pdf">World Bank resilience guide 2024</a> - 4:1 ROI on resilience investment in disaster-prone regions</li><li><a href="https://www.ifc.org/content/dam/ifc/doc/mgrt/emcompass-note-79-digital-infrastructure-sharing.pdf">IFC Digital Infrastructure Sharing</a> - Infrastructure partnerships reduce CAPEX by up to 40%</li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Sun, 08 Dec 2025 22:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3"
-                 length="34006967"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-3-infrastructure-advantage/episode-3-infrastructure-advantage.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>35:25</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>1</itunes:season>
-      <itunes:episode>3</itunes:episode>
-      <itunes:keywords>SINBIP, Solomon Tower Limited, Starlink backhaul, LEO satellites, infrastructure sharing, CAPEX reduction, CapEx vs OpEx, 700 MHz spectrum, hybrid backhaul architecture, KDDI Japan, Tonga volcanic eruption, submarine cable resilience, Open RAN, cloud-native core, archipelago deployment, TCSI, Solomon Islands telecom</itunes:keywords>
-      <research:series>Solomon Islands Telecom Launch Series</research:series>
-    </item>
-
-    <!-- Episode 14: Solomon Islands Telecom Series - Episode 2 -->
-    <item>
-      <title>Solomon Islands Telecom: Ep. 2, Breaking the Duopoly</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/cover.png?v=2025-12-21b"/>
-      <description>Entering the Solomon Islands duopoly market where data costs 77x more than Fiji. This episode examines competitive dynamics between Our Telekom (government-controlled, 60% share) and Bmobile-Vodafone (40% share), regulatory barriers under TCSI framework, and lessons from Digicel's 2,400% growth disruption in PNG. Explores how SATSOL infrastructure partnerships and IumiCash mobile money integration create differentiation for a third operator entering a market with no number portability and massive rural coverage gaps. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md</description>
-      <content:encoded><![CDATA[<p>Entering the Solomon Islands duopoly market where data costs 77x more than Fiji. This episode examines competitive dynamics between Our Telekom (government-controlled, 60% share) and Bmobile-Vodafone (40% share), regulatory barriers under TCSI framework, and lessons from Digicel's 2,400% growth disruption in PNG. Explores how SATSOL infrastructure partnerships and IumiCash mobile money integration create differentiation for a third operator entering a market with no number portability and massive rural coverage gaps.</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/report.md">report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.tcsi.org.sb/">TCSI - Telecommunications Commission Solomon Islands</a></li><li><a href="http://www.paclii.org/sb/legis/consol_act/ta2009214.pdf">Telecommunications Act 2009 (Full Text)</a></li><li><a href="https://devpolicy.org/ten-years-papua-new-guinea-conversation-digicel-20170731/">DevPolicy - Ten Years in Papua New Guinea: In Conversation with Digicel</a></li><li><a href="https://www.cbsi.com.sb/press-release-no-3-25-cbsi-grants-money-transfer-service-license-to-iumicash-ltd/">CBSI - IumiCash Money Transfer Service License</a></li><li><a href="https://nsc.anu.edu.au/sites/default/files/2024-06/QTN_Telecom_Amanda%20Watson%20and%20Ioana%20Chan%20Mow_Telecommunications%20in%20the%20Pacific%20Islands%20region_NSC_0.pdf">ANU - Telecommunications in the Pacific Islands Region</a></li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Sun, 08 Dec 2025 19:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3"
-                 length="36020074"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-2-breaking-duopoly/episode-2-breaking-duopoly.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>37:31</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>1</itunes:season>
-      <itunes:episode>2</itunes:episode>
-      <itunes:keywords>Solomon Islands, telecommunications, duopoly, market entry, Our Telekom, Bmobile-Vodafone, TCSI, Digicel PNG, SATSOL, IumiCash, mobile money, number portability, infrastructure sharing, Pacific telecom, regulatory framework</itunes:keywords>
-      <research:series>Solomon Islands Telecom Series</research:series>
     </item>
 
     <!-- Episode 13: Kindergarten from First Principles - Episode 6 -->
@@ -878,28 +767,6 @@ Key Sources:
       <itunes:episode>1</itunes:episode>
       <itunes:keywords>kindergarten, early childhood education, executive function, self-regulation, developmental science, ages 4-6, Duncan study, early math, guided play, Montessori, Tools of the Mind, process skills, content mastery, prefrontal cortex, cognitive development, fade-out effect</itunes:keywords>
       <research:series>Kindergarten, from First Principles</research:series>
-    </item>
-
-    <!-- Episode 7: Solomon Islands Telecom Launch Series - Episode 1 -->
-    <item>
-      <title>Solomon Islands Telecom Launch: Ep. 1, Financial Infrastructure</title>
-      <itunes:image href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/cover.png?v=2025-12-21b"/>
-      <description>The foundation episode of a 6-part series exploring partnership-enabled market entry for a new telecommunications provider in the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years—proving massive latent demand for financial services. This episode examines why the 75% unbanked, 70% mobile ownership gap defines the strategic opportunity for integrated telecom + fintech services. Explores the practical realities: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system. Full research report: https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md</description>
-      <content:encoded><![CDATA[<p>The foundation episode of a 6-part series exploring partnership-enabled market entry for a new telecommunications provider in the Solomon Islands. In a nation where 80% of transactions are cash and only 25% of the population has bank accounts, mobile money platform M-SELEN has captured 350,000 users in under two years—proving massive latent demand for financial services. This episode examines why the 75% unbanked, 70% mobile ownership gap defines the strategic opportunity for integrated telecom + fintech services.</p><p>Explores the practical realities: geographic challenges across 1,000 islands, the $8.67 average cost just to reach a financial access point, the 11% fees on the $431M remittance market, and the competitive landscape dominated by the incumbent's proprietary mobile money system.</p><p><strong>Series context:</strong> This is Episode 1 of 6 in the Solomon Islands Telecom Launch Series, examining how to launch a third mobile network operator with strategic partnerships from SATSOL (infrastructure) and IumiCash (mobile money).</p><p><strong>Full research report:</strong> <a href="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md">https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/report.md</a></p><p><strong>Key Sources:</strong></p><ul><li><a href="https://www.cbsi.com.sb/financial-inclusion/">Central Bank of Solomon Islands Financial Inclusion</a></li><li><a href="https://www.worldbank.org/en/publication/globalfindex">World Bank Findex Database</a></li><li><a href="https://www.imf.org/en/Countries/SLB">IMF Solomon Islands Assessment</a></li><li><a href="https://www.pfip.org/">Pacific Financial Inclusion Programme</a></li></ul>]]></content:encoded>
-      <author>valor@yuda.me (Valor Engels)</author>
-      <pubDate>Fri, 28 Nov 2025 12:00:00 GMT</pubDate>
-      <enclosure url="https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3"
-                 length="29204808"
-                 type="audio/mpeg"/>
-      <guid>https://research.yuda.me/podcast/episodes/solomon-islands-telecom-series/episode-1-financial-infrastructure/2025-11-28-solomon-islands-finance.mp3</guid>
-      <itunes:author>Valor Engels</itunes:author>
-      <itunes:duration>30:25</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:season>3</itunes:season>
-      <itunes:episode>1</itunes:episode>
-      <itunes:keywords>Solomon Islands, mobile money, M-SELEN, financial inclusion, remittances, CBSI, Pacific Islands, telecom, USSD, agent network, cash economy, Bokolo Cash, CBDC, utility payments, market entry, IumiCash, SATSOL, Starlink</itunes:keywords>
-      <research:series>Solomon Islands Telecom Launch</research:series>
     </item>
 
     <!-- Episode 6: Stablecoin Build & Launch Series - Episode 2 -->
